@@ -1,0 +1,362 @@
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="generator" content="Prologue Sing Html Version 1.0a">
+<meta name="version" content="*PRL@INFO*#11a003">
+<link href="style.css" type="text/css" rel="stylesheet" media="screen">
+<link href="style.css" type="text/css" rel="stylesheet" media="print">
+<title>Sing Version 1.0a
+</title>
+</head><body>
+<div align="center">
+<table class="DOC">
+<tr><th><h1 align="center">
+Sing Version 1.0a
+</h1>
+<td><div align="center"><img src="singlogo.gif">
+</div></table></div><p>
+<a name="singtree.sng">
+
+<p>
+<div align="center">
+<table class="DS">
+<tr><th><h2 align="center">
+Tree View
+</h2>
+
+<tr><td><p><div align="center"><img src="singtree.gif" usemap="#Tree_View" >
+</div><p>
+<tr><td>
+
+<map name="Tree_View">
+<area type=rect href="#ConfigurationIcon" coords="6,32,24,50">
+<area type=rect href="#ProjectIcon" coords="22,52,40,70">
+<area type=rect href="#VisualFormIcon" coords="40,70,58,88">
+<area type=rect href="#WidgetIcon" coords="58,88,76,106">
+<area type=rect href="#ImageFileIcon" coords="40,106,58,124">
+<area type=rect href="#SourceFileIcon" coords="40,126,58,144">
+<area type=rect href="#ToolBarControl" coords="19,2,44,27">
+<area type=rect href="#PaletteControl" coords="840,4,864,29">
+<area type=rect href="#File" coords="64,6,125,27">
+<area type=rect href="#View" coords="126,8,205,27">
+<area type=rect href="#Event" coords="200,6,282,27">
+<area type=rect href="#Options" coords="278,5,349,25">
+<area type=rect href="#Executer" coords="694,7,712,22">
+<area type=rect href="#Editor" coords="713,7,731,22">
+<area type=rect href="#Translate" coords="732,7,750,22">
+<area type=rect href="#Linker" coords="751,7,769,22">
+</map>
+The <b>Tree View</b> tool of the ABAL 3 development environment provides a hierarchical
+
+view of all projects and their various components.<p>
+The tree view controlled by
+the global menu option <b>View TreeView</b>. 
+Selection of this menu option toggles
+the state of the tree viewer between visible or hidden.<p>
+The tree view display area
+may be redimensioned by draggin the left edge of its scroll bar
+to the required position.<p>
+The
+tree view may not be redimensioned nor its state be toggled whilst the internal text
+editor
+is active.<p>
+The section of the treeview to be made visible may be selected by means
+of its scroll bar.
+A click on the top button will cause the viewer to scroll up by
+one item, whilst a click
+on the bottom button will cause the viewer to scroll down
+by one item.
+The bar may be dragged to the required position holding either the left
+button or the
+right button. In the first case a <b>quick scroll</b> operation will
+occur but will the
+last item of the tree to the bottom of the treeview zone.
+In the
+second case, with the right button, a <b>lazy scroll</b> operation will occur with
+the
+last item allowed to moce freely from the bottom edge.<p>
+By clicking on an individual
+item it will become the current tree view item. If it has
+subordinate components then
+the list will be opened and displayed in the tree view. A
+further click on the item
+will close its component list.<p>
+The remainder of this document will be describe
+the behaviour of the various components
+of the actual treeview list.
+<p>
+
+
+
+<p>
+
+<dl>
+<dt class=type><a name="ConfigurationIcon">
+<b>ConfigurationIcon
+</b></a>
+<dd class=data>This treeview component icon represents the ABAL development environment configuration.
+The
+textual label is provided by the configuration variable <b>IDENTITY</b> and allows
+easy
+identification of the current configuration.<p>
+A click on this icon or its label
+with the right button of the mouse will give access to
+the <a href="vrefer.htm">Configuration
+Options</a> dialog box for inspection and
+eventual modification of the global tool
+configuration.
+
+ 
+
+
+<p>
+<dt class=type><a name="ProjectIcon">
+<b>ProjectIcon
+</b></a>
+<dd class=data>This icon represents an ABAL 3 project and its subordinate collection of components.
+Initially
+one such icon is added to represent the startup project. 
+The textual label will indicate
+the project filename of the project controlled by the 
+project icon. <p>
+Subsequent
+projects
+may be opened via the global menu option <b>File Open</b> giving rise, upon
+completion to 
+new icons on the tree view list.
+Projects may also be dropped from
+the list via the global menu option <b>File Drop</b>.<p>
+The project icon may be dragged
+into the desktop area by pressing the left button and
+moving the mouse into the destop
+area abd then releasing the mouse button. In this case
+the project will become the
+current contents of the 
+<a href="singproj.htm">Application Project 3D Editor Tool</a><p>
+A
+click with the right button of the mouse will open the <a "vcamera.htm"> Camera Properties</a>
+dialog
+box of the corresponding application project model.
+
+
+
+
+<p>
+<dt class=type><a name="VisualFormIcon">
+<b>VisualFormIcon
+</b></a>
+<dd class=data>This icon represents an ABAL 3 <b>Forms</b> or <b>Document</b> component model of
+an application
+project model. The textual label of these icons presents the forms
+filename from which
+the forms description has been read, and to which it will be written
+by the corresponding
+quick save operation.<p>
+The forms model icon may be selected
+by pressing the left button and moving the mouse into
+the desktop area and then releasing
+the mouse button. 
+In this way it will be come the current active model of the <a
+href="singform.htm">Visual Forms Editor</a>.<p>
+A click with the right button of the
+mouse will give access to the <a href="vform.htm">Form Parameters</a>
+dialog box allowing
+consultation and modification of the characteristics of the form.<p>
+A left button
+click on components of this type will toggle the state of their widget component list
+between
+visible and hidden.
+
+
+
+
+<p>
+<dt class=type><a name="WidgetIcon">
+<b>WidgetIcon
+</b></a>
+<dd class=data>These icons represent the component parts of their parent visual forms or document
+model.<p>
+The textual label describes the specific widget instance providing its class,
+
+its instance name and the names of the scenario integration methods that have been
+defined.<p>
+A click with the right button of the mouse gives direct access to the
+<a href="vwidget.htm">
+Widget Properties</a> dialog box for the selected widget allowing
+consultation and
+modification of its various properties.<p>
+A click with either button
+selects the widget as the current widget of its parent form.<p>
+The order in which
+widgets are defined in forms models of of great importance.<p>
+Widgets will be instanced,
+constructed and displayed in their declared order.<p>
+They will receive focus in an
+intial lly sequentiel manner.<p>
+Their disappearance and eventual destruction will
+occur in the reverse order of their 
+declaration.<p>
+The tree view is therefore an
+essential tool for the inspection and management of their
+declarative order.<p>
+
+
+
+
+
+
+<p>
+<dt class=type><a name="ImageFileIcon">
+<b>ImageFileIcon
+</b></a>
+<dd class=data>These icons represent image components of their parent application project model.
+They
+may be selected by pressing the left button and moving the mouse into the 
+desktop
+area and releasing the mouse button. As a result of this the image will be 
+made available
+for inspection and modification of its component pixels using the 
+<a href="singbmap.htm">Bitmap
+Image Editor</a><p>
+a Click with the right button of the mouse will give access to
+the <a href="vcube.htm">
+Object Properties</a>  dialog box allowing inspection or
+selection of its properties.
+
+
+<p>
+<dt class=type><a name="SourceFileIcon">
+<b>SourceFileIcon
+</b></a>
+<dd class=data>These icons represent textual and source file components of their parent application
+
+project model.<p> The textual label of these components describes the full path and
+filename
+of the source file controlled by the icon.
+As for Image Icons, these components may
+be dragged into the desktop area using the 
+left button of the mouse, at wich point
+they will become the current contents of the 
+<a href="singedit.htm">Text Editor</a>
+allowing inspection and modification of the
+corresponding source file.
+
+
+<p>
+<dt class=type><a name="ToolBarControl">
+<b>ToolBarControl
+</b></a>
+<dd class=data>The display of the various model editor tools bars is controlled by this
+button. When
+the arrow points upwards a click will cause the display of the
+tool bar to be inhibited.
+The arrow button will then point downwards in which
+case a click will cause the tool
+bar to be redisplayed.
+
+
+<p>
+<dt class=type><a name="PaletteControl">
+<b>PaletteControl
+</b></a>
+<dd class=data>The display of the colour palette bar to the right of the  screen is controlled by
+this
+button. When the arrow points upwards a click will cause the display of the
+palette
+bar to be inhibited. The arrow button will then point downwards in which
+case a click
+will cause the palette bar to be redisplayed.
+
+
+<p>
+<dt class=type><a name="File">
+<b>File
+</b></a>
+<dd class=data>Selection of this menu options gives access to the generic file operations 
+menu described
+for each different model editor.
+
+
+
+<p>
+<dt class=type><a name="View">
+<b>View
+</b></a>
+<dd class=data>Selection of this menu option of the main menu gives access to the 
+view or tool operations
+menu whose options are described in the <a href="singproj.htm">
+Project Editor</a>
+documentation.
+
+
+<p>
+<dt class=type><a name="Event">
+<b>Event
+</b></a>
+<dd class=data>Selection of this menu option gives access to the menu of widget component
+methods
+and documentation.
+
+
+<p>
+<dt class=type><a name="Options">
+<b>Options
+</b></a>
+<dd class=data>Selection of this menu options gives access to the general operations 
+menu the options
+of which are described in the <a href="singproj.htm">Project Editor</a>
+documentation.
+
+
+<p>
+<dt class=type><a name="Executer">
+<b>Executer
+</b></a>
+<dd class=data>This icon button provides access to the ABAL 3 <a href="vdebug.htm">Runtime and Debug
+Parameters</a> dialog
+box allowing execution and debug of ABAL 3 programs from within
+the ABAL 3 development environment.
+
+
+<p>
+<dt class=type><a name="Editor">
+<b>Editor
+</b></a>
+<dd class=data>This icon button provides access to the <a href="vaed.htm">Editor Configuration</a>
+dialog box for
+modification of editor parameters.
+
+
+<p>
+<dt class=type><a name="Translate">
+<b>Translate
+</b></a>
+<dd class=data>This icon button provides access to the ABAL 3 <a href="vtrad.htm">Translator Parameters</a>
+dialog box
+allowing specification of translation parameters prior to the translation
+operation.
+
+
+<p>
+<dt class=type><a name="Linker">
+<b>Linker
+</b></a>
+<dd class=data>This icon button gives access to the ABAL 3 <a href="vlink.htm">Linker Configuration</a>
+dialog box for
+the configuration and activation of ABAL module linking.
+
+
+<p>
+
+
+</dl>
+
+</td>
+</table></div><p>
+
+<p><div align="center">
+<table class="CRT">
+<tr><th><h3 align="center">
+Copyright (c) 2002 Prologue Software
+</h3>
+</table></div><p>
+</body></html>

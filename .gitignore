@@ -1,0 +1,11 @@
+*/*.o
+q/
+qualification/
+product*/
+kitcico/
+*/*/*.o
+*/*.a
+*/*.so
+srczgr31d/
+test*/
+*/pipo*

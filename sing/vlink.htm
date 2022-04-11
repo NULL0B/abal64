@@ -1,0 +1,264 @@
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="generator" content="Prologue Sing Html Version 1.0a">
+<meta name="version" content="*PRL@INFO*#11a003">
+<link href="style.css" type="text/css" rel="stylesheet" media="screen">
+<link href="style.css" type="text/css" rel="stylesheet" media="print">
+<title>Sing Version 1.0a
+</title>
+</head><body>
+<div align="center">
+<table class="DOC">
+<tr><th><h1 align="center">
+Sing Version 1.0a
+</h1>
+<td><div align="center"><img src="singlogo.gif">
+</div></table></div><p>
+<a name="vlink">
+
+<p>
+<div align="center">
+<table class="DS">
+<tr><th><h2 align="center">
+accept linker parameters
+</h2>
+
+<tr><td><p><div align="center"><img src="vlink.gif" usemap="#accept_linker_parameters" >
+</div><p>
+<tr><td>
+
+<map name="accept_linker_parameters">
+<area type=rect href="#Linker" coords="30,120,494,136">
+<area type=rect href="#TargetFile" coords="30,150,142,166">
+<area type=rect href="#TargetName" coords="150,150,494,166">
+<area type=rect href="#Report" coords="30,180,156,196">
+<area type=rect href="#ReportName" coords="150,180,494,196">
+<area type=rect href="#Debug" coords="40,240,124,256">
+<area type=rect href="#InputTrace" coords="230,240,356,256">
+<area type=rect href="#OutputTrace" coords="350,240,476,256">
+<area type=rect href="#Verbose" coords="130,240,228,256">
+<area type=rect href="#Accept" coords="10,320,130,350">
+<area type=rect href="#Cancel" coords="390,320,510,350">
+</map>
+
+<map name="Modules">
+<area type=rect href="#Modules" coords="20,100,500,292">
+<area type=rect href="#Accept" coords="10,320,130,350">
+<area type=rect href="#Cancel" coords="390,320,510,350">
+</map>
+
+<map name="Inclusion">
+<area type=rect href="#IncludePath" coords="20,100,500,292">
+<area type=rect href="#Accept" coords="10,320,130,350">
+<area type=rect href="#Cancel" coords="390,320,510,350">
+</map>
+This dialog frame will be activated is response to one of the following events :
+<p>
+<ul>
+<li>After
+the translation phase of <a href="vaprod.htm">ABAL model production</a> for which
+auto translation
+and linking has not been selected.
+<li>By clicking on the corresponding
+tool button of the menu bar of any one of the various model editors.
+</ul>
+<p>
+allowing
+consultation and modification of parameters which control the
+ABAL 3 Link phase of
+the ABAL Production Cycle for production packages which declare modules for
+linkage.<p>
+Precise
+information pertaining to the ABAL 3 <a href="old.htm">Object Linker</a> may be found
+in the corresponding 
+document.<p>
+
+
+
+<p>
+<ol><ul><li>
+<dl>
+<dt class=type><a name="Linker">
+<b>Linker
+</b></a>
+<dd class=data>This edit field provides the full path and filename of the
+abal module linker to be
+used for the secondary phase of 
+abal program production for visual models which declare
+subordinate
+modules.
+
+<p>
+
+</dl>
+<li>
+<dl>
+<dt class=type><a name="TargetFile">
+<b>TargetFile
+</b></a>
+<dd class=data>This check field, when active, causes the specific target
+file name to be used rather
+than the name of the program
+object amongst the collection of modules.
+
+
+<p>
+
+</dl>
+<li>
+<dl>
+<dt class=type><a name="TargetName">
+<b>TargetName
+</b></a>
+<dd class=data>This edit field provides the name of the executable target
+program file that is to
+be generated as a result of the 
+link operation.
+
+
+<p>
+
+</dl>
+<li>
+<dl>
+<dt class=type><a name="Report">
+<b>Report
+</b></a>
+<dd class=data>This check box, when checked, activates the generation of 
+the link phase report to
+the corresponding html file.
+
+
+<p>
+
+</dl>
+<li>
+<dl>
+<dt class=type><a name="ReportName">
+<b>ReportName
+</b></a>
+<dd class=data>This edit field provides the name of the file to which the
+html report is to generated
+describing the result of the 
+link and providing an exhastive list of components combined
+to
+form the target.
+ 
+
+<p>
+
+</dl>
+<li>
+<dl>
+<dt class=type><a name="Debug">
+<b>Debug
+</b></a>
+<dd class=data>This control may be checked to indicate that symbolic 
+information is to be generated
+for debug purposes.
+
+
+<p>
+
+</dl>
+<li>
+<dl>
+<dt class=type><a name="InputTrace">
+<b>InputTrace
+</b></a>
+<dd class=data>When this check control is active detailed trace information, describing the 
+various
+input modules, will be printed to the text screen.
+
+
+<p>
+
+</dl>
+<li>
+<dl>
+<dt class=type><a name="OutputTrace">
+<b>OutputTrace
+</b></a>
+<dd class=data>When this check is active detailed trace information concerning the production of
+target
+blocks will be printer to the text screen.
+
+
+<p>
+
+</dl>
+<li>
+<dl>
+<dt class=type><a name="Verbose">
+<b>Verbose
+</b></a>
+<dd class=data>When this check control is active information messages will be printed to the
+text
+screen during the link operation.
+
+
+<p>
+
+</dl>
+</ul><img src="vlink2.gif" usemap="#Modules" >
+<ul><li>
+<dl>
+<dt class=type><a name="Modules">
+<b>Modules
+</b></a>
+<dd class=data>This edit field displays the list of modules to be linked
+to produce the abal executable
+program.
+
+
+<p>
+
+</dl>
+</ul><img src="vlink3.gif" usemap="#Inclusion" >
+<ul><li>
+<dl>
+<dt class=type><a name="IncludePath">
+<b>IncludePath
+</b></a>
+<dd class=data>This edit field displays the list of modules to be linked
+to produce the abal executable
+program.
+
+
+<p>
+
+</dl>
+<li>
+<dl>
+<dt class=type><a name="Accept">
+<b>Accept
+</b></a>
+<dd class=data>Pres on this push button to accept the parameters and activate the link operation.
+
+
+<p>
+
+</dl>
+<li>
+<dl>
+<dt class=type><a name="Cancel">
+<b>Cancel
+</b></a>
+<dd class=data>This button allows the link operation to be abandoned.
+
+
+<p>
+
+</dl>
+</ul></ol>
+
+</td>
+</table></div><p>
+
+<p><div align="center">
+<table class="CRT">
+<tr><th><h3 align="center">
+Copyright (c) 2002 Prologue Software
+</h3>
+</table></div><p>
+</body></html>
