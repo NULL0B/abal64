@@ -1,0 +1,103 @@
+<html>
+<head>
+<title>Abal 3 : Visual Atributs</title>
+<META NAME="VERSION" CONTENT="*PRL@INFO*$6:31a001">
+<link href="style.css" rel="STYLESHEET" type="text/css" media="SCREEN">
+</head>
+<body>
+<table>
+<tr><th><h1 align=center>Abal 3 : Visual Atributs</title>
+<tr><th><h1 align=center>Confidential</title>
+</table>
+
+<table>
+<tr><td>
+
+<p>
+
+									
+	This function allows the definition of individual visual atbs	
+	and will specify the behaviour required in terms of framing	
+	fonting, colour, alignment and bold/shadow/underline etc	
+									
+<p>
+									
+	The data buffer comprises the following fields , in order :	
+<p>
+
+<table>
+<tr><th>Field<th>Description
+<tr><td>
+									
+	a	atribut id 	<td> lower case alpha character a .. z 	
+									
+<tr><td>
+	Z	zone type	<td> upper case hex digit 0 .. F		
+				  representing the 16 zone types   	
+									
+				<p>
+				<table>
+				<tr><td>
+				<tr><td>  0 <td> block (inhibited : plain text )	
+				<tr><td>  1 <td> inset				
+				<tr><td>  2 <td> outset				
+				<tr><td>  3 <td> ridge				
+				<tr><td>  4 <td> groove				
+				<tr><td>  5 <td> editbox				
+				<tr><td>  6 <td> pushbutton			
+				<tr><td>  7 <td> pushedbutton			
+				<tr><td>  8 <td> checkbox				
+				<tr><td>  9 <td> checkedbox			
+				<tr><td>  10<td> radiobutton			
+				<tr><td>  11<td> radioedbutton			
+				 <tr><td> 12<td> off switch			
+				 <tr><td> 13 <td>on  switch			
+				</table>
+				<p>
+<tr><td>
+	F	font number	<td> decimal digit between 1 and 9 	
+				  representing the 9 text fonts		
+									
+<tr><td>
+	T	text colour	<td> upper case zex digit 0 ... Z		
+				  representing the 16 paint colours	
+									
+<tr><td>
+	W	wash colour	<td> upper case zex digit 0 ... Z		
+				  representing the 16 paint colours	
+									
+<tr><td>
+	A	alignment  	<td> L=left, R=right, C=center, J=justify	
+									
+<tr><td>
+	X	text atributs	<td> B=bold,S=shadow,U=underline		
+									
+</table>
+<p>
+<table>
+<tr><td>
+<code><pre>
+
+	Example :							
+									
+		nZFTWAX							
+		b0240LBUS						
+									
+			atribut 'b'					
+			zone 0 (none or plain text)			
+			font number 2 (proportional)			
+			left aligned					
+			bold underlined shadowed			
+			characters blue on black/transparent		
+									
+</pre>
+</code>
+
+</table>
+<p>
+</table>
+<p>
+
+</body>
+</html>
+

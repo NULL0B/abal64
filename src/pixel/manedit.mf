@@ -1,0 +1,35 @@
+! include $(ABAL)/common/common.def
+
+INCLUSION = $(INCLUSION) -I /home/c2/accords-platform/coxml/src/
+
+newnode.o: $(SP02)newnode.c
+	-$(COMPILE) $(INCLUSION) $(SP02)newnode.c 1>pipo1 2>pipo2
+	-cat pipo1 pipo2 > pipo
+	agr -apipo
+newmanifest.o: $(SP02)newmanifest.c
+	-$(COMPILE) $(INCLUSION) $(SP02)newmanifest.c 1>pipo1 2>pipo2
+	-cat pipo1 pipo2 > pipo
+	agr -apipo
+
+manmenu.o: $(SP02)manmenu.c
+	-$(COMPILE) $(INCLUSION) $(SP02)manmenu.c 1>pipo1 2>pipo2
+	-cat pipo1 pipo2 > pipo
+	agr -apipo
+
+nodemenu.o: $(SP02)nodemenu.c
+	-$(COMPILE) $(INCLUSION) $(SP02)nodemenu.c 1>pipo1 2>pipo2
+	-cat pipo1 pipo2 > pipo
+	agr -apipo
+
+manedit.o: $(SP02)manedit.c
+	-$(COMPILE) $(INCLUSION) $(SP02)manedit.c 1>pipo1 2>pipo2
+	-cat pipo1 pipo2 > pipo
+	agr -apipo
+
+../bin/manedit: manedit.o stdprod.o vobject.o newnode.o newmanifest.o manmenu.o nodemenu.o $(PIXILIB) $(LIBIMAGE) $(ALLOCATE) $(LIBJPEG) $(LIBACCESS) $(FNPARSER) 
+	$(LD) $@ manedit.o stdprod.o vobject.o newnode.o newmanifest.o manmenu.o nodemenu.o $(PIXILIB) $(LIBIMAGE) $(LIBJPEG) $(ALLOCATE) $(LIBACCESS) $(IXCICONR) $(LIBLDAP) $(XLIB) $(FNPARSER)
+	cp $@ $(EXABIN)
+
+! make
+
+

@@ -1,0 +1,259 @@
+@domain sing;
+
+database_editor_frame	{
+	background-colour: white;
+	border-style: none;
+	background-image: url(singbg.jpg);
+	background-align: tile;
+	content: none;
+	}
+
+database_member_margin {
+	margin: 		1mm;
+	height: 		8mm;
+	}
+
+database_editor_title	{
+	text-font: url(arial3.fmf);
+	text-align: center;
+	text-colour: black;
+	background-image: url(singbg.jpg);
+	background-align: tile;
+	border-style: solid;
+	border-colour: black;
+	height: 8mm;
+	}
+
+database_editor_header	{
+	class:	database_member_margin;
+	margin: 0mm;
+	height: 10mm;
+	text-font: url(arial3.fmf);
+	text-align: center;
+	text-colour: black;
+	background-colour: white;
+	border-style: solid;
+	border-colour: black;
+	}
+
+database_editor_focus	{
+	class: database_editor_header;
+	background-colour: white;
+	text-colour: black;
+	border-style: double;
+	}
+
+database_model_tray	{
+	margin-top: 2mm;
+	margin-left: 2mm;
+	border-colour: grey;
+	border-style: shade;
+	border-width: 0px;
+	width: 2mm+;
+	height: 2mm+;
+	}
+
+database_model_frame	{
+	background-colour: white;
+	border-style: solid;
+	text-font: url(arial2.fmf);
+	text-align: center;
+	border-colour: black;
+	}
+
+database_model_focus	{
+	background-colour: white;
+	border-colour: blue;
+	border-style: solid;
+	}
+
+database_member_frame	{
+	class:	database_member_margin;
+	height: 7mm;
+	text-font: 		url(arial2.fmf);
+	text-align: 		left;
+	text-colour: 		black;
+	padding:		1mm;
+	padding-left:		8mm;
+	background-colour: 	white;
+	border-colour: 		black;
+	border-style: 		none;
+	margin-top: 		0.5mm;
+	margin-bottom: 		2mm;
+	}
+
+database_member_focus	{
+	class:	database_member_frame;
+	background-colour: black;
+	text-colour: white;
+	}
+
+database_index_frame	{
+	class: database_member_frame;
+	text-decoration: 	underline;
+	}
+
+database_index_focus	{
+	class:	database_index_frame;
+	background-colour: black;
+	text-colour: white;
+	}
+
+database_index_link	{
+	class:	database_index_frame;
+	background-image: url(key.png);
+	background-align: makefit;
+	background-align: transparent;
+	text-colour: white;
+	width: 6mm;
+	}
+database_index_list	{
+	class:	database_index_link;
+	background-image: url(apply.png);
+	}
+
+database_member_link	{
+	class:	database_index_link;
+	}
+database_member_list	{
+	class:	database_index_list;
+	}
+
+/* Database Interfile Relation Tracing */
+/* ----------------------------------- */
+database_relation_source {
+	text-font: url(arial1.fmf);
+	text-align: center;
+	text-colour: black;
+	background-colour: white;
+	border-colour: black;
+	border-style: solid;
+	}
+
+database_relation_source_left	{
+	class:	database_relation_source;
+	}
+database_relation_source_right	{
+	class:	database_relation_source;
+	}
+
+database_relation_target {
+	class: database_relation_source;
+	}
+
+database_relation_target_left	{
+	class:	database_relation_target;
+	}
+database_relation_target_right	{
+	class:	database_relation_target;
+	}
+
+
+database_relation_frame {
+	background-colour: red;
+	border-colour: black;
+	border-width: 2px;
+	border-style: rounded(1);
+	background-colour: white;
+	content: none;
+	height: 7mm;
+	}
+
+database_file_relation {
+	class: database_relation_source;
+	background-image: url(database.png);
+	content: none;
+	border-style: none;
+	background-colour: transparent;
+	background-align: transparent;
+	background-align: makefit;
+	}
+
+database_relation_extern {
+	class: database_file_relation;
+	background-image: url(database.png);
+	}
+
+database_source_file {
+	class: database_file_relation;
+	background-image: url(database.png);
+	}
+
+database_target_file {
+	class: database_file_relation;
+	background-image: url(datafile.png);
+	}
+
+database_relation_label {
+	margin: 1mm;
+	text-colour: black;
+	background-colour: transparent;
+	border-style: none;
+	text-font: url(arial1.fmf);
+	text-align: center;
+	content: text;
+	}
+
+database_trace_north	{
+	content: none;
+	background-colour: #101010;
+	border-style: hconvex;
+	width: 1mm;
+	}
+
+
+database_trace_east	{
+	content: none;
+	background-colour: #101010;
+	border-style: vconvex;
+	height: 1mm;
+	}
+
+database_trace_south	{ 	class: database_trace_north;	}
+database_trace_west	{	class: database_trace_east;	}
+
+database_trace_point	{
+	content: none;
+	border-style: vconvex;
+	background-colour: #101010;
+	width: 1mm;
+	height: 1mm;
+	}
+
+database_help_bubble	{
+	background-colour: white;
+	border-colour: green;
+	text-colour: red;
+	border-style: double;
+	text-align: justify;
+	padding: 2mm;
+	content: text;
+	text-font: url(times2.fmf);
+	}
+
+database_hyperview_tray {
+	border-style:  outset;
+	content: none;
+	}
+
+database_hyperview_frame {
+	border-style:  inset;
+	margin: 1mm;
+	content: none;
+	}
+
+
+database_hyperview_cursor {
+	border-style:  solid;
+	border-colour: black;
+	content: none;
+	}
+
+database_hyperview_zoom {
+	border-style:  vconcave;
+	border-colour: transparent;
+	content: none;
+	}
+
+@domain null;
+

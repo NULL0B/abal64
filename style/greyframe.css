@@ -1,0 +1,49 @@
+/*	-----------	*/
+/*	Frame Style 	*/
+/*	-----------	*/
+basicframe {
+	class: centertext;
+	border-colour: colour(15); 
+	border-style: solid;
+	background-colour: colour(16);
+	corner-top-left-style: url(stwbtl.png);
+	border-top-width: 10px;
+	border-top-style: url(stwbt.jpg);
+	corner-top-right-style: url(stwbtr.png);
+	border-right-width: 10px;
+	border-right-style: url(stwbr.jpg);
+	corner-bottom-right-style: url(stwbbr.png);
+	border-bottom-width: 10px;
+	border-bottom-style: url(stwbb.jpg);
+	corner-bottom-left-style: url(stwbbl.png);
+	border-left-width: 10px;
+	border-left-style: url(stwbl.jpg);
+	background-image: url(stwbm.jpg);
+	border-align: makefit;
+	border-align: transparent;
+	}
+
+inverseframe {
+	class: centertext;
+	border-colour: colour(15); 
+	border-style: solid;
+	background-colour: colour(16);
+	corner-top-left-style: url(istwbtl.png);
+	border-top-width: 10px;
+	border-top-style: url(istwbt.png);
+	corner-top-right-style: url(istwbtr.png);
+	border-right-width: 10px;
+	border-right-style: url(stwbr.jpg);
+	corner-bottom-right-style: url(istwbbr.png);
+	border-bottom-width: 10px;
+	border-bottom-style: url(istwbb.png);
+	corner-bottom-left-style: url(istwbbl.png);
+	border-left-width: 10px;
+	border-left-style: url(stwbl.jpg);
+	background-image: url(stwbm.jpg);
+	border-align: makefit;
+	border-align: transparent;
+	}
+
+
+

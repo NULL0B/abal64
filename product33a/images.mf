@@ -1,0 +1,399 @@
+# generated makefile : images.mf 
+# ------------------------------------
+$(ABAL)/product33a/images/goldrough.gif: $(ABAL)/images/goldrough.gif
+	cp $* $@ 
+$(ABAL)/product33a/images/prologue.gif: $(ABAL)/images/prologue.gif
+	cp $* $@ 
+$(ABAL)/product33a/images/prologue.jpg: $(ABAL)/images/prologue.jpg
+	cp $* $@ 
+$(ABAL)/product33a/images/abal3d.gif: $(ABAL)/images/abal3d.gif
+	cp $* $@ 
+$(ABAL)/product33a/images/abal3.gif: $(ABAL)/images/abal3.gif
+	cp $* $@ 
+$(ABAL)/product33a/images/singbg.jpg: $(ABAL)/images/singbg.jpg 
+	cp $* $@ 
+$(ABAL)/product33a/images/singbar.jpg: $(ABAL)/images/singbar.jpg 
+	cp $* $@ 
+$(ABAL)/product33a/images/sing.png: $(ABAL)/images/sing.png 
+	cp $* $@ 
+$(ABAL)/product33a/doc/sing.png: $(ABAL)/images/sing.png 
+	cp $* $@ 
+$(ABAL)/product33a/doc/en/sing.png: $(ABAL)/images/sing.png 
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/sing.png: $(ABAL)/images/sing.png 
+	cp $* $@ 
+$(ABAL)/product33a/images/abal3.jpg: $(ABAL)/images/abal3.jpg
+	cp $* $@ 
+$(ABAL)/product33a/images/maxi.gif: $(ABAL)/images/maxi.gif
+	cp $* $@ 
+$(ABAL)/product33a/images/mini.gif: $(ABAL)/images/mini.gif
+	cp $* $@ 
+$(ABAL)/product33a/images/abal.gif: $(ABAL)/images/abal.gif
+	cp $* $@ 
+$(ABAL)/product33a/images/abalicon.gif: $(ABAL)/images/abalicon.gif
+	cp $* $@ 
+$(ABAL)/product33a/images/aedicon.gif: $(ABAL)/images/aedicon.gif
+	cp $* $@ 
+$(ABAL)/product33a/images/rgb.png: $(ABAL)/images/rgb.png
+	cp $* $@ 
+$(ABAL)/product33a/images/sphere.gif: $(ABAL)/images/sphere.gif
+	cp $* $@ 
+$(ABAL)/product33a/images/pen.png: $(ABAL)/images/pen.png
+	cp $* $@ 
+$(ABAL)/product33a/images/bombicon.gif: $(ABAL)/images/bombicon.gif
+	cp $* $@ 
+$(ABAL)/product33a/images/brail.gif: $(ABAL)/images/brail.gif
+	cp $* $@ 
+$(ABAL)/product33a/images/break.gif: $(ABAL)/images/break.gif
+	cp $* $@ 
+$(ABAL)/product33a/images/cancel.gif: $(ABAL)/images/cancel.gif
+	cp $* $@ 
+$(ABAL)/product33a/images/ccicon.gif: $(ABAL)/images/ccicon.gif
+	cp $* $@ 
+$(ABAL)/product33a/images/cicon.gif: $(ABAL)/images/cicon.gif
+	cp $* $@ 
+$(ABAL)/product33a/images/clear.gif: $(ABAL)/images/clear.gif
+	cp $* $@ 
+$(ABAL)/product33a/images/consicon.gif: $(ABAL)/images/consicon.gif
+	cp $* $@ 
+$(ABAL)/product33a/images/dataicon.gif: $(ABAL)/images/dataicon.gif
+	cp $* $@ 
+$(ABAL)/product33a/images/debug.gif: $(ABAL)/images/debug.gif
+	cp $* $@ 
+$(ABAL)/product33a/images/downicon.gif: $(ABAL)/images/downicon.gif
+	cp $* $@ 
+$(ABAL)/product33a/images/exaicon.gif: $(ABAL)/images/exaicon.gif
+	cp $* $@ 
+$(ABAL)/product33a/images/exit.gif: $(ABAL)/images/exit.gif
+	cp $* $@ 
+$(ABAL)/product33a/images/fileicon.gif: $(ABAL)/images/fileicon.gif
+	cp $* $@ 
+$(ABAL)/product33a/images/formicon.gif: $(ABAL)/images/formicon.gif
+	cp $* $@ 
+$(ABAL)/product33a/images/formtool.gif: $(ABAL)/images/formtool.gif
+	cp $* $@ 
+$(ABAL)/product33a/images/goto.gif: $(ABAL)/images/goto.gif
+	cp $* $@ 
+$(ABAL)/product33a/images/gridicon.gif: $(ABAL)/images/gridicon.gif
+	cp $* $@ 
+$(ABAL)/product33a/images/htmlicon.gif: $(ABAL)/images/htmlicon.gif
+	cp $* $@ 
+$(ABAL)/product33a/images/imgicon.gif: $(ABAL)/images/imgicon.gif
+	cp $* $@ 
+$(ABAL)/product33a/images/imgtool.gif: $(ABAL)/images/imgtool.gif
+	cp $* $@ 
+$(ABAL)/product33a/images/lefticon.gif: $(ABAL)/images/lefticon.gif
+	cp $* $@ 
+$(ABAL)/product33a/images/lockicon.gif: $(ABAL)/images/lockicon.gif
+	cp $* $@ 
+$(ABAL)/product33a/images/logo.jpg: $(ABAL)/images/logo.jpg
+	cp $* $@ 
+$(ABAL)/product33a/images/methicon.gif: $(ABAL)/images/methicon.gif
+	cp $* $@ 
+$(ABAL)/product33a/images/moveicon.gif: $(ABAL)/images/moveicon.gif
+	cp $* $@ 
+
+# ---------------------------------------------------------------------
+# These images are used by the national language flags in visual window
+# ---------------------------------------------------------------------
+$(ABAL)/product33a/images/en.gif: $(ABAL)/images/en.gif
+	cp $* $@ 
+$(ABAL)/product33a/images/fr.gif: $(ABAL)/images/fr.gif
+	cp $* $@ 
+$(ABAL)/product33a/images/it.gif: $(ABAL)/images/it.gif
+	cp $* $@ 
+$(ABAL)/product33a/images/es.gif: $(ABAL)/images/es.gif
+	cp $* $@ 
+$(ABAL)/product33a/images/de.gif: $(ABAL)/images/de.gif
+	cp $* $@ 
+$(ABAL)/product33a/images/nl.gif: $(ABAL)/images/nl.gif
+	cp $* $@ 
+$(ABAL)/product33a/images/pt.gif: $(ABAL)/images/pt.gif
+	cp $* $@ 
+$(ABAL)/product33a/images/xx.gif: $(ABAL)/images/xx.gif
+	cp $* $@ 
+
+# -------------------------------------------------------------------------
+# These images are required for the new visual components for use with sing
+# -------------------------------------------------------------------------
+$(ABAL)/product33a/images/key.png: $(ABAL)/images/key.png
+	cp $* $@ 
+$(ABAL)/product33a/images/apply.png: $(ABAL)/images/apply.png
+	cp $* $@ 
+$(ABAL)/product33a/images/email.png: $(ABAL)/images/email.png
+	cp $* $@ 
+$(ABAL)/product33a/images/help.png: $(ABAL)/images/help.png
+	cp $* $@ 
+$(ABAL)/product33a/images/leftarrow.png: $(ABAL)/images/leftarrow.png
+	cp $* $@ 
+$(ABAL)/product33a/images/rightarrow.png: $(ABAL)/images/rightarrow.png
+	cp $* $@ 
+$(ABAL)/product33a/images/uparrow.png: $(ABAL)/images/uparrow.png
+	cp $* $@ 
+$(ABAL)/product33a/images/downarrow.png: $(ABAL)/images/downarrow.png
+	cp $* $@ 
+
+# ---------------------------
+
+$(ABAL)/product33a/images/natlang.png: $(ABAL)/images/natlang.png
+	cp $* $@ 
+$(ABAL)/product33a/doc/en/natlang.png: $(ABAL)/images/natlang.png
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/natlang.png: $(ABAL)/images/natlang.png
+	cp $* $@ 
+$(ABAL)/product33a/images/natlang.gif: $(ABAL)/images/natlang.gif
+	cp $* $@ 
+$(ABAL)/product33a/doc/en/natlang.gif: $(ABAL)/images/natlang.gif
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/natlang.gif: $(ABAL)/images/natlang.gif
+	cp $* $@ 
+$(ABAL)/product33a/images/ok.gif: $(ABAL)/images/ok.gif
+	cp $* $@ 
+$(ABAL)/product33a/doc/en/ok.gif: $(ABAL)/images/ok.gif
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/ok.gif: $(ABAL)/images/ok.gif
+	cp $* $@ 
+$(ABAL)/product33a/doc/en/cancel.gif: $(ABAL)/images/cancel.gif
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/cancel.gif: $(ABAL)/images/cancel.gif
+	cp $* $@ 
+$(ABAL)/product33a/doc/en/screen.gif: $(ABAL)/images/screen.gif
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/screen.gif: $(ABAL)/images/screen.gif
+	cp $* $@ 
+$(ABAL)/product33a/images/oldicon.gif: $(ABAL)/images/oldicon.gif
+	cp $* $@ 
+$(ABAL)/product33a/images/otricon.gif: $(ABAL)/images/otricon.gif
+	cp $* $@ 
+$(ABAL)/product33a/images/paper.gif: $(ABAL)/images/paper.gif
+	cp $* $@ 
+$(ABAL)/product33a/images/penicon.gif: $(ABAL)/images/penicon.gif
+	cp $* $@ 
+$(ABAL)/product33a/images/pipicon.gif: $(ABAL)/images/pipicon.gif
+	cp $* $@ 
+$(ABAL)/product33a/images/plusicon.gif: $(ABAL)/images/plusicon.gif
+	cp $* $@ 
+$(ABAL)/product33a/images/pouricon.gif: $(ABAL)/images/pouricon.gif
+	cp $* $@ 
+$(ABAL)/product33a/images/printer.gif: $(ABAL)/images/printer.gif
+	cp $* $@ 
+$(ABAL)/product33a/images/projicon.gif: $(ABAL)/images/projicon.gif
+	cp $* $@ 
+$(ABAL)/product33a/images/riteicon.gif: $(ABAL)/images/riteicon.gif
+	cp $* $@ 
+$(ABAL)/product33a/images/rooticon.gif: $(ABAL)/images/rooticon.gif
+	cp $* $@ 
+$(ABAL)/product33a/images/run.gif: $(ABAL)/images/run.gif
+	cp $* $@ 
+$(ABAL)/product33a/images/screen.gif: $(ABAL)/images/screen.gif
+	cp $* $@ 
+$(ABAL)/product33a/images/sing.gif: $(ABAL)/images/sing.gif
+	cp $* $@ 
+$(ABAL)/product33a/images/skin.gif: $(ABAL)/images/skin.gif
+	cp $* $@ 
+$(ABAL)/product33a/images/staricon.gif: $(ABAL)/images/staricon.gif
+	cp $* $@ 
+$(ABAL)/product33a/images/startwo.gif: $(ABAL)/images/startwo.gif
+	cp $* $@ 
+$(ABAL)/product33a/images/step.gif: $(ABAL)/images/step.gif
+	cp $* $@ 
+$(ABAL)/product33a/images/texticon.gif: $(ABAL)/images/texticon.gif
+	cp $* $@ 
+$(ABAL)/product33a/images/trap.gif: $(ABAL)/images/trap.gif
+	cp $* $@ 
+$(ABAL)/product33a/images/trash.gif: $(ABAL)/images/trash.gif
+	cp $* $@ 
+$(ABAL)/product33a/images/treeicon.gif: $(ABAL)/images/treeicon.gif
+	cp $* $@ 
+$(ABAL)/product33a/images/treetool.gif: $(ABAL)/images/treetool.gif
+	cp $* $@ 
+$(ABAL)/product33a/images/upicon.gif: $(ABAL)/images/upicon.gif
+	cp $* $@ 
+$(ABAL)/product33a/images/vdbicon.gif: $(ABAL)/images/vdbicon.gif
+	cp $* $@ 
+$(ABAL)/product33a/images/view.gif: $(ABAL)/images/view.gif
+	cp $* $@ 
+$(ABAL)/product33a/images/widgicon.gif: $(ABAL)/images/widgicon.gif
+	cp $* $@ 
+$(ABAL)/product33a/images/wood.gif: $(ABAL)/images/wood.gif
+	cp $* $@ 
+# ------------------------------------------
+# New Visual Exadb Button Icons : 01/06/2006
+# ------------------------------------------
+$(ABAL)/product33a/images/dbtexture.png: $(ABAL)/images/dbtexture.png
+	cp $* $@ 
+$(ABAL)/product33a/images/dbstep.png: $(ABAL)/images/dbstep.png
+	cp $* $@ 
+$(ABAL)/product33a/images/dbgoto.png: $(ABAL)/images/dbgoto.png
+	cp $* $@ 
+$(ABAL)/product33a/images/dbrun.png: $(ABAL)/images/dbrun.png
+	cp $* $@ 
+$(ABAL)/product33a/images/dbexit.png: $(ABAL)/images/dbexit.png
+	cp $* $@ 
+$(ABAL)/product33a/images/dbbreak.png: $(ABAL)/images/dbbreak.png
+	cp $* $@ 
+$(ABAL)/product33a/images/dbclear.png: $(ABAL)/images/dbclear.png
+	cp $* $@ 
+$(ABAL)/product33a/images/dbview.png: $(ABAL)/images/dbview.png
+	cp $* $@ 
+$(ABAL)/product33a/images/dbhelp.png: $(ABAL)/images/dbhelp.png
+	cp $* $@ 
+$(ABAL)/product33a/images/dbcursor.png: $(ABAL)/images/dbcursor.png
+	cp $* $@ 
+$(ABAL)/product33a/images/dbsave.png: $(ABAL)/images/dbsave.png
+	cp $* $@ 
+$(ABAL)/product33a/images/dbtrap.png: $(ABAL)/images/dbtrap.png
+	cp $* $@ 
+$(ABAL)/product33a/images/dbgrid.png: $(ABAL)/images/dbgrid.png
+	cp $* $@ 
+$(ABAL)/product33a/images/clock.png: $(ABAL)/images/clock.png
+	cp $* $@ 
+$(ABAL)/product33a/images/calculator.png: $(ABAL)/images/calculator.png
+	cp $* $@ 
+$(ABAL)/product33a/images/warning.png: $(ABAL)/images/warning.png
+	cp $* $@ 
+$(ABAL)/product33a/images/audio.png: $(ABAL)/images/audio.png
+	cp $* $@ 
+! make
+$(ABAL)/product33a/images/nuit.rgb: $(ABAL)/images/nuit.rgb
+	cp $* $@ 
+$(ABAL)/product33a/images/aqua.rgb: $(ABAL)/images/aqua.rgb
+	cp $* $@ 
+$(ABAL)/product33a/images/bleu.rgb: $(ABAL)/images/bleu.rgb
+	cp $* $@ 
+$(ABAL)/product33a/images/bonbon.rgb: $(ABAL)/images/bonbon.rgb
+	cp $* $@ 
+$(ABAL)/product33a/images/desert.rgb: $(ABAL)/images/desert.rgb
+	cp $* $@ 
+$(ABAL)/product33a/images/foret.rgb: $(ABAL)/images/foret.rgb
+	cp $* $@ 
+$(ABAL)/product33a/images/grisstd.rgb: $(ABAL)/images/grisstd.rgb
+	cp $* $@ 
+$(ABAL)/product33a/images/sable.rgb: $(ABAL)/images/sable.rgb
+	cp $* $@ 
+$(ABAL)/product33a/images/standard.rgb: $(ABAL)/images/standard.rgb
+	cp $* $@ 
+$(ABAL)/product33a/images/vert.rgb: $(ABAL)/images/vert.rgb
+	cp $* $@ 
+! make
+
+# ifdef modelling
+
+$(ABAL)/product33a/images/flowoverlay.png: $(ABAL)/images/flowoverlay.png
+	cp $* $@ 
+$(ABAL)/product33a/images/flowlibrary.png: $(ABAL)/images/flowlibrary.png
+	cp $* $@ 
+$(ABAL)/product33a/images/flowchain.png: $(ABAL)/images/flowchain.png
+	cp $* $@ 
+$(ABAL)/product33a/images/flowrevchain.png: $(ABAL)/images/flowrevchain.png
+	cp $* $@ 
+$(ABAL)/product33a/images/flowloadgo.png: $(ABAL)/images/flowloadgo.png
+	cp $* $@ 
+$(ABAL)/product33a/images/flowprogram.png: $(ABAL)/images/flowprogram.png
+	cp $* $@ 
+$(ABAL)/product33a/images/database.png: $(ABAL)/images/database.png
+	cp $* $@ 
+$(ABAL)/product33a/images/datafile.png: $(ABAL)/images/datafile.png
+	cp $* $@ 
+
+$(ABAL)/product33a/images/search.png: $(ABAL)/images/search.png
+	cp $* $@ 
+$(ABAL)/product33a/images/replace.png: $(ABAL)/images/replace.png
+	cp $* $@ 
+$(ABAL)/product33a/images/book.png: $(ABAL)/images/book.png
+	cp $* $@ 
+
+! make
+# endif
+
+$(ABAL)/product33a/images/ad.png: $(ABAL)/images/ad.png
+	cp $* $@ 
+$(ABAL)/product33a/images/cr.png: $(ABAL)/images/cr.png
+	cp $* $@ 
+
+$(ABAL)/product33a/images/istwbbl.png: $(ABAL)/images/istwbbl.png
+	cp $* $@ 
+$(ABAL)/product33a/images/istwbb.png: $(ABAL)/images/istwbb.png
+	cp $* $@ 
+$(ABAL)/product33a/images/istwbbr.png: $(ABAL)/images/istwbbr.png
+	cp $* $@ 
+$(ABAL)/product33a/images/istwbtl.png: $(ABAL)/images/istwbtl.png
+	cp $* $@ 
+$(ABAL)/product33a/images/istwbt.png: $(ABAL)/images/istwbt.png
+	cp $* $@ 
+$(ABAL)/product33a/images/istwbtr.png: $(ABAL)/images/istwbtr.png
+	cp $* $@ 
+
+$(ABAL)/product33a/images/pstwbbl.png: $(ABAL)/images/pstwbbl.png
+	cp $* $@ 
+$(ABAL)/product33a/images/pstwbb.png: $(ABAL)/images/pstwbb.png
+	cp $* $@ 
+$(ABAL)/product33a/images/pstwbbr.png: $(ABAL)/images/pstwbbr.png
+	cp $* $@ 
+
+$(ABAL)/product33a/images/stwbbl.png: $(ABAL)/images/stwbbl.png
+	cp $* $@ 
+$(ABAL)/product33a/images/stwbb.png: $(ABAL)/images/stwbb.png
+	cp $* $@ 
+$(ABAL)/product33a/images/stwbbr.png: $(ABAL)/images/stwbbr.png
+	cp $* $@ 
+$(ABAL)/product33a/images/stwbl.png: $(ABAL)/images/stwbl.png
+	cp $* $@ 
+$(ABAL)/product33a/images/stwbm.png: $(ABAL)/images/stwbm.png
+	cp $* $@ 
+$(ABAL)/product33a/images/stwbr.png: $(ABAL)/images/stwbr.png
+	cp $* $@ 
+$(ABAL)/product33a/images/stwbtl.png: $(ABAL)/images/stwbtl.png
+	cp $* $@ 
+$(ABAL)/product33a/images/stwbt.png: $(ABAL)/images/stwbt.png
+	cp $* $@ 
+$(ABAL)/product33a/images/stwbtr.png: $(ABAL)/images/stwbtr.png
+	cp $* $@ 
+$(ABAL)/product33a/images/wh.png: $(ABAL)/images/wh.png
+	cp $* $@ 
+
+$(ABAL)/product33a/images/istbl.png: $(ABAL)/images/istbl.png
+	cp $* $@ 
+$(ABAL)/product33a/images/istb.png: $(ABAL)/images/istb.png
+	cp $* $@ 
+$(ABAL)/product33a/images/istbr.png: $(ABAL)/images/istbr.png
+	cp $* $@ 
+
+$(ABAL)/product33a/images/pstbl.png: $(ABAL)/images/pstbl.png
+	cp $* $@ 
+$(ABAL)/product33a/images/pstb.png: $(ABAL)/images/pstb.png
+	cp $* $@ 
+$(ABAL)/product33a/images/pstbr.png: $(ABAL)/images/pstbr.png
+	cp $* $@ 
+
+$(ABAL)/product33a/images/isttl.png: $(ABAL)/images/isttl.png
+	cp $* $@ 
+$(ABAL)/product33a/images/istt.png: $(ABAL)/images/istt.png
+	cp $* $@ 
+$(ABAL)/product33a/images/isttr.png: $(ABAL)/images/isttr.png
+	cp $* $@ 
+$(ABAL)/product33a/images/stbl.png: $(ABAL)/images/stbl.png
+	cp $* $@ 
+$(ABAL)/product33a/images/stb.png: $(ABAL)/images/stb.png
+	cp $* $@ 
+$(ABAL)/product33a/images/stbr.png: $(ABAL)/images/stbr.png
+	cp $* $@ 
+$(ABAL)/product33a/images/stl.png: $(ABAL)/images/stl.png
+	cp $* $@ 
+$(ABAL)/product33a/images/stm.png: $(ABAL)/images/stm.png
+	cp $* $@ 
+$(ABAL)/product33a/images/str.png: $(ABAL)/images/str.png
+	cp $* $@ 
+$(ABAL)/product33a/images/sttl.png: $(ABAL)/images/sttl.png
+	cp $* $@ 
+$(ABAL)/product33a/images/stt.png: $(ABAL)/images/stt.png
+	cp $* $@ 
+$(ABAL)/product33a/images/sttr.png: $(ABAL)/images/sttr.png
+	cp $* $@ 
+
+
+! shell chmod uog+r images/*
+! make
+
+
+

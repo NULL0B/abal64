@@ -1,0 +1,104 @@
+
+/*
+	Desc :	LkMes.hg
+	Proj :	June
+	Copyright (c) 1997 Prologue Software
+
+		Message table.
+		
+
+	BEWARE : THIS FILE IS GENERATED - DO NOT MODIFY MANUALLY !
+
+	Generated on:  -  14/11/01 -  16:02 - from AWK Script
+
+*/
+
+/*
+    Message du moteur
+*/
+
+#define ErreurMoteur01        (int)  9		/*  Fichier d'entr‚e incorrect */
+#define ErreurMoteur02        (int)  10		/*  M‚moire insuffisante */
+#define ErreurMoteur03        (int)  11		/*  Module au lieu de programme */
+#define ErreurMoteur04        (int)  12		/*  Module incorrect */
+#define ErreurMoteur05        (int)  13		/*  Programme d‚j… ex‚cutable */
+#define ErreurMoteur06        (int)  14		/*  D‚bordement de la table des constantes globales */
+#define ErreurMoteur07        (int)  15		/*  D‚bordement de la table des variables globales */
+#define ErreurMoteur08        (int)  16		/*  D‚bordement de la table des proc‚dures */
+#define ErreurMoteur09        (int)  17		/*  Nombre de variables globales trop grand */
+#define ErreurMoteur10        (int)  18		/*  D‚bordement de l'espace de donn‚es globales */
+#define ErreurMoteur11        (int)  19		/*  D‚bordement de la table des noms de variables */
+#define ErreurMoteur12        (int)  20		/*  D‚bordement de la table des segments */
+#define MessageResultat        (int)  21		/*  Fichier r‚sultat ouvert ou en cours d'ex‚cution */
+#define MessagePartage        (int)  22		/*  Fichier non partageable */
+#define MessageFmodule        (int)  23		/*  Traitement du module: */
+#define MessageBanenv        (int)  24		/* Environnement */
+#define MessageErrep        (int)  25		/*  Utilisation des sous r‚pertoires interdite */
+#define MessageErrsynt        (int)  26		/*  Le module comporte encore des erreurs de syntaxe */
+#define MessageProg        (int)  27		/* Programme  : */
+#define MessageEncours        (int)  28		/* En cours   : */
+#define MessageProc        (int)  29		/* R‚solution des  externes... */
+#define MessageMcr        (int)  30		/*  Appuyez sur un touche pour continuer */
+#define MessageConbib        (int)  31		/*  Conflit de nom de bibliothŠque */
+#define MessageAction        (int)  32		/* Action     : */
+#define MessageOuverture        (int)  33		/*  Ouverture ... */
+#define MessagePasse        (int)  34		/*  Passe */
+#define MessageExtprocredef        (int)  35		/*  Proc‚dure externe d‚j… r‚solue */
+#define MessageExtsegredef        (int)  36		/*  Segment externe d‚j… r‚solu */
+#define MessageConstruct        (int)  37		/*  Assemblage final */
+#define MessageLocalConst        (int)  38		/*  Utilisation incorrecte du pragma LOCAL_CONSTANT */
+
+/*
+    Message du noyau
+*/
+
+#define ErreurNoyau01        (int)  5		/*  Syntaxe d'appel incorrecte */
+#define ErreurNoyau02        (int)  6		/*  AccŠs fichier impossible : */
+#define MessageNonResol        (int)  7		/*  R‚f‚rence(s) non r‚solue(s) : */
+#define MessageToutResol        (int)  8		/* Aucune */
+
+/*
+    Message de présentation
+*/
+
+#define MessageToolName        (int)  1		/* Edition des liens... */
+
+/*
+    
+*/
+
+#define MessageErr        (int)  2		/* ** Erreur: */
+#define MessageLnk        (int)  3		/* Liens avec le module : */
+#define MessageMore        (int)  4		/* <CR> -> Abandon   <Autre touche> -> pour continuer */
+
+/*
+    Message de l'aide rapide
+*/
+
+#define MessageBanniere1        (int)  39		/*  Syntaxe : ald [ */
+#define MessageBanniere2        (int)  40		/*  -a              : Compactage de la table des constantes */
+#define MessageBanniere3        (int)  41		/*  -r<Chemin>      : Chemin d'accŠs, par d‚faut, aux modules */
+#define MessageBanniere4        (int)  42		/*  -d<Fichier>     : Nom du fichier r‚sultat */
+#define MessageBanniere5        (int)  43		/*  -h              : Activation mode ensemble int‚gr‚ */
+#define MessageBanniere6        (int)  44		/*  -f<Fichier>     : Suite de la ligne de commande dans le fichier */
+#define MessageBanniere7        (int)  45		/*  -i              : Affiche les r‚f‚rences externes d'un module */
+#define MessageBanniere8        (int)  46		/*  -v              : Mode bavard */
+#define MessageBanniere9        (int)  47		/*                ] <module1>,,,,<moduleN> */
+#define MessageVariable        (int)  48		/* Variables  : */
+#define MessageProcedure        (int)  49		/* Proc‚dures : */
+#define MessageSegment        (int)  50		/* Segments   : */
+#define MessageProcParathese        (int)  51		/* (P) */
+#define MessageSegParathese        (int)  52		/* (S) */
+#define MessageAncParathese        (int)  53		/* (V) */
+#define MessageMFin        (int)  54		/* Reloc=M en FIN */
+#define MessageMIns        (int)  55		/* Reloc=M en INSERTION */
+#define MessageMRec        (int)  56		/* Reloc=M en RECOUVREMENT */
+#define MessageEFin        (int)  57		/* Reloc=E en FIN */
+#define MessageEIns        (int)  58		/* Reloc=E en INSERTION */
+#define MessageERec        (int)  59		/* Reloc=E en RECOUVREMENT */
+#define MessagePtr        (int)  60		/* RedefPTR */
+#define MessagePt        (int)  61		/* PTR */
+#define MessageStop        (int)  62		/*  Arrˆt de l'‚dition de liens */
+#define MessageExtvarredef        (int)  63		/*  Variable externe d‚j… r‚solue */
+
+

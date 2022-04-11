@@ -1,0 +1,143 @@
+/*
+ *	Definitions communes
+ *	--------------------
+ *
+ *	Copyright (c) 1990 Prologue s.a.
+ *
+ *	type.h - definitions des types de variables
+ *
+ *	$Header: /home/Produits/Abal3/asfun/_type.hhh,v 1.1.1.1 2003/11/04 23:40:49 root Exp $
+ *
+ */
+
+#ifndef	TYPEH
+#define	TYPEH
+
+/*
+ *	octet non signe
+ *	---------------
+ */
+
+#ifdef BYTE
+#undef BYTE
+#endif /* BYTE */
+
+typedef unsigned char BYTE;
+
+
+/*
+ *	octet signe
+ *	-----------
+ */
+
+#ifdef CHAR
+#undef CHAR
+#endif /* CHAR */
+
+typedef char CHAR;
+
+#ifdef VOID
+#undef VOID
+#endif
+
+#define VOID	void
+
+/*
+ *	mot de 16 bits non signe
+ *	------------------------
+ */
+
+#ifdef WORD
+#undef WORD
+#endif /* WORD */
+
+#define WORD unsigned short 
+
+/*
+ *	mot de 32 bits signe
+ *	--------------------
+ */
+#ifdef LONG
+#undef LONG
+#endif /* LONG */
+
+typedef long LONG;
+
+/*
+ *	mot de 32 bits non signe
+ *	------------------------
+ */
+
+#ifndef _DWORD_DEFINED
+
+#ifdef dword
+#undef dword
+#endif /* dword */
+
+typedef unsigned long dword;
+
+#define _DWORD_DEFINED
+#endif /* _DWORD_DEFINED */
+
+
+/*
+ *	booleen
+ *	-------
+ */
+
+#ifndef _BOOL_DEFINED
+
+#ifdef BOOL
+#undef BOOL
+#endif /* BOOL */
+
+#ifdef FALSE
+#undef FALSE
+#endif /* FALSE */
+
+#ifdef TRUE
+#undef TRUE
+#endif /* TRUE */
+
+#define _NO_ENUM
+#ifdef _NO_ENUM
+
+#define FALSE	0
+#define TRUE	1
+typedef int BOOL;
+
+#else
+
+#define	BOOL bool
+
+typedef enum {FALSE, TRUE} BOOL;	/* booleen			*/
+
+#endif /* _NO_ENUM */
+
+#define _BOOL_DEFINED
+#endif /* _BOOL_DEFINED */
+
+
+/*
+ *	modificateur d'allocation
+ *	-------------------------
+ */
+
+#ifndef _FAR_DEFINED
+
+#ifndef FAR
+
+#if M_I8086 || M_I186 || M_I286 || __TURBOC__
+#define FAR far
+#else
+#define FAR
+#endif /* M_I8086 || M_I186 || M_I286 || __TURBOC__ */
+
+#endif /* FAR */
+
+#define _FAR_DEFINED
+#endif /* _FAR_DEFINED */
+
+#endif	/* TYPEH */
+	/* ----- */
+/* fin de fichier */

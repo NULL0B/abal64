@@ -1,0 +1,28 @@
+# generated makefile : bin16cri.mf 
+# ------------------------------------
+$(ABAL)/product32b/bin16cri/abalprocess: $(ABAL)/bin/abalprocess
+	cp $* $@ 
+$(ABAL)/product32b/bin16cri/ald22c: $(ABAL)/bin/ald22c
+	cp $* $@ 
+$(ABAL)/product32b/bin16cri/atr22c: $(ABAL)/bin/atr22c
+	cp $* $@ 
+$(ABAL)/product32b/bin16cri/exa16: $(ABAL)/bin/exa16
+	cp $* $@ 
+$(ABAL)/product32b/bin16cri/access: $(ABAL)/bin/access
+	cp $* $@ 
+$(ABAL)/product32b/bin16cri/exadb16: $(ABAL)/bin/exadb16
+	cp $* $@ 
+$(ABAL)/product32b/bin16cri/rtam37.at: $(ABAL)/traduit/rtam37.at
+	cp $* $@ 
+$(ABAL)/product32b/bin16cri/svam37.at: $(ABAL)/traduit/svam37.at
+	cp $* $@ 
+$(ABAL)/product32b/bin16cri/strlwr: $(ABAL)/traduit/strlwr
+	cp $* $@ 
+$(ABAL)/product32b/bin16cri/strupr: $(ABAL)/traduit/strupr
+	cp $* $@ 
+$(ABAL)/product32b/bin16cri/crirest.at: $(ABAL)/traduit/crirest.at
+	cp $* $@ 
+$(ABAL)/product32b/bin16cri/topoint: $(ABAL)/traduit/topoint
+	cp $* $@ 
+
+

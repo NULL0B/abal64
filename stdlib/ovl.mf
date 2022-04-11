@@ -1,0 +1,22 @@
+STDLIB  = /home/Dev/abal32/stdlib/
+OPTIONS =  -m -x -o -nSTDLIB=$(STDLIB)
+
+.as.at:
+	otr32 -sas -d$@ $(OPTIONS) $*
+
+deskcalc.at: deskcalc.as
+windower.at: windower.as
+scroller.at: scroller.as
+boxmenu.at: boxmenu.as
+softmach.at: softmach.as
+stream.at: stream.as
+rawio.at: rawio.as
+! make
+! shite
+#printer.at: printer.as
+
+#guipixel.at: guipixel.as
+#guisalon.at: guisalon.as
+
+! make
+

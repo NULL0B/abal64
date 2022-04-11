@@ -1,0 +1,6 @@
+
+$(POBJ)singfont$(OBJ):  $(SP01)singfont.c $(SP01)sing.h $(SP01)ctrl.h /home/abal64/include/allocate.h $(SP01)singname.h $(SP01)singtrac.h $(SP01)singstyle.h $(SP01)singnatl.h $(SP01)vform.h $(SP01)singeve.h $(SP01)singtree.h $(SP01)singform.h $(SP01)singpage.h /home/abal64/src/pixel/stdpsu.h '
+/home/abal64/src/pixel/stdtypes.h /home/abal64/src/pixel/sysfile.h $(SP01)singmod.h $(SP01)vwidget.h /home/abal64/src/pixel/threed.h $(SP01)process.h /home/abal64/src/pixel/palet.h /home/abal64/src/pixel/guimouse.h $(SP01)singrel.h $(SP01)vframe.h $(SP01)singpix.h /home/abal64/src/pixel/sysimage.h '
+$(SP01)vimage.h $(SP01)strucpsu.h /home/abal64/src/pixel/zgif.h /home/abal64/src/pixel/zpng.h /home/abal64/src/pixel/zico.h /home/abal64/src/pixel/zbmp.h /home/abal64/src/pixel/zjpeg.h /home/abal64/src/pixel/stdimage.h $(SP01)singprod.h $(SP01)singmenu.h $(SP01)vnatlang.h $(SP01)singalig.h '
+$(SP01)singprot.h $(SP01)vobject.h $(SP01)vobjapi.h $(SP01)pixelgui.h $(SP01)pubmanagercico.h $(SP01)vcamera.h $(SP01)vclass.h $(SP01)choixrepfic.h $(SP01)singconf.h $(SP01)singgrid.c $(SP01)singfont.h /home/abal64/src/pixel/stdfmf.h $(SP01)fontfunc.c
+

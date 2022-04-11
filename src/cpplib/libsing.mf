@@ -1,0 +1,107 @@
+! include $(ABAL)/common/common.def
+! include $(ABAL)/common/editor.def
+! include $(ABAL)/common/libaccess.def
+! include $(ABAL)/common/ixmisc.def 
+! include $(ABAL)/common/repmisc.def 
+! include $(ABAL)/common/dirmisc.def 
+! include $(ABAL)/common/misc.def 
+! include $(ABAL)/common/jpeg.def 
+! include $(ABAL)/common/ldap.def 
+! include $(ABAL)/common/libimage.def
+! include $(ABAL)/common/paper.def 
+! include $(ABAL)/common/avnfile.def
+! include $(ABAL)/common/ixciconr32.def
+! include $(ABAL)/common/asbcore.def 
+! include $(ABAL)/common/trace.def 
+
+INCLUSION = -I$(ABAL)/src/pixel -I$(ABAL)/include -I$(ABAL)/src/sing/cpp -I$(ABAL)/src/sing -I$(ABAL)/src/sing/cpp/ecrans 
+EXCLUSION = -zstrucpsu.h -zpubmanagercicoapi.h
+
+COMPILECPP   = g++ -c -g $(GDB) $(CC_SHARED) $(HOST) -Wmissing-prototypes $(INCLUSION) -DP3D32 $(SYSLDAP) -DCPP_PRODUCT
+COMPILE   = $(GCC) -c -g $(GDB) $(CC_SHARED) $(HOST) -Wmissing-prototypes $(INCLUSION) -DP3D32 $(SYSLDAP) -DCPP_PRODUCT
+
+SP01    = $(ABAL)/src/sing/
+SPCPP    = $(ABAL)/src/sing/cpp/
+POBJ    =
+OBJ     = .o
+DIRSEEK = $(ABAL)/exa36/exllfind.o
+PIPO =  2>> pipo
+
+.c.mf:
+	genmake -m$@ $(INCLUSION) $(EXCLUSION) -x $?
+
+singmain.mf: $(SP01)sing.c 
+singdesk.mf: $(SP01)singdesk.c 
+singcam.mf:  $(SP01)singcam.c $(SP01)threed.c
+singform.mf: $(SP01)singform.c 
+singfont.mf: $(SP01)singfont.c 
+singc.mf:    $(SP01)singc.c 
+styleman.mf:    $(SP01)styleman.c 
+singa.mf:    $(SP01)singa.c 
+singexpo.mf: $(SP01)singexpo.c 
+singabal.mf: $(SP01)singabal.c 
+singplus.mf: $(SP01)singplus.c 
+singcob.mf: $(SP01)singcob.c 
+! make
+xmlparse.mf: $(SP01)xmlparse.c
+xmlform.mf: $(SP01)xmlform.c
+xmlthree.mf: $(SP01)xmlthree.c
+! make
+
+.c.o:
+	-$(COMPILE) $* 1> pipo1 2> pipo2
+	cat pipo1 pipo2 > pipo 
+	agr -apipo
+
+.cpp.o:
+	-$(COMPILECPP) $* 1> pipo1 2> pipo2
+	cat pipo1 pipo2 > pipo 
+	agr -apipo
+
+! include vlibsing.mf
+! make
+! include singmain.mf
+! include singdesk.mf
+! include singcam.mf
+! include singform.mf
+! include singfont.mf
+! include singc.mf
+! include singa.mf
+! include styleman.mf
+! include singexpo.mf
+! include singabal.mf
+! include singplus.mf
+! include singcob.mf
+! make
+! include xmlparse
+! include xmlform
+! include xmlthree
+! make
+
+THREED   = threed.o $(FNPARSER) $(DIRSEEK) $(SYSTEMD)
+SINGMAIN = sing.o singdesk.o singcam.o 
+SINGTYPE = singfont.o singform.o xmlparse.o
+SINGPROD = singexpo.o singc.o xmlform.o xmlthree.o singcob.o
+SINGABAL = singabal.o singplus.o singa.o 
+
+SINGOBJ  = $(SINGMAIN) $(SINGTYPE) $(SINGPROD) $(SINGABAL) $(THREED) $(PAPER) $(ASBCORE)
+VOBJECT  = $(VGENERAL) $(VIMAGES) $(VFONTS) $(VFORMS) $(VEDIT) $(VTOOLS) $(VPROJECT) $(VPRODUCT) $(VMENUS) $(VWNEW) $(VACC)
+
+$(ABAL)/lib/libsing.so: $(SINGOBJ) $(VOBJECT) $(PIXILIB) $(LIBACCESS) $(ALLOCATE) $(EDILIB) $(LIBREP) $(LIBJPEG) $(LIBIMAGE) $(IXCICONR32)
+	g++ -shared -o $@ $(SINGOBJ) $(VOBJECT) $(PIXILIB) $(IXCICONR32) $(XLIB) $(LIBACCESS) $(LIBJPEG) $(LIBIMAGE) $(TRACE) $(ALLOCATE) $(EDILIB) $(LIBLDAP) $(LIBREP) 2> pipo2 1> pipo1
+	-cat pipo1 pipo2 > pipo
+	agr -apipo
+	cp $@ /lib
+
+! make
+! make
+
+
+
+
+
+
+
+
+
+

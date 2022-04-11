@@ -1,0 +1,15 @@
+$(SPMF)ctr2$(MF): $(SP01)trbuffer$(C) $(SP01)cbparser$(C)
+	genmake -m$@ -x -y$(@B) $?
+$(SPMF)ctrb$(MF): $(SP01)trcbmsg$(C) $(SP01)trfctrl$(C)
+	genmake -m$@ -x -y$(@B) $?
+$(SPMF)ctrc$(MF): $(SP01)trscreen$(C) $(SP01)traccept$(C)
+	genmake -m$@ -x -y$(@B) $?
+$(SPMF)ctrd$(MF): $(SP01)trpctrl$(C) $(SP01)trcobol$(C)
+	genmake -m$@ -x -y$(@B) $?
+! make
+! include $(SPMF)ctr2
+! include $(SPMF)ctrb
+! include $(SPMF)ctrc
+! include $(SPMF)ctrd
+! make
+

@@ -1,0 +1,23 @@
+# generated makefile : rtbin.mf 
+# ------------------------------------
+/home/Dev/abal32/product31e/rtbin/abal3.access: /home/Dev/abal32/bin/abal3.access
+	cp $* $@ 
+/home/Dev/abal32/product31e/rtbin/abal3.schema: /home/Dev/abal32/bin/abal3.schema
+	cp $* $@ 
+/home/Dev/abal32/product31e/rtbin/abalprocess: /home/Dev/abal32/bin/abalprocess
+	cp $* $@ 
+/home/Dev/abal32/product31e/rtbin/access: /home/Dev/abal32/bin/access
+	cp $* $@ 
+/home/Dev/abal32/product31e/rtbin/aed32: /home/Dev/abal32/bin/aed32
+	cp $* $@ 
+/home/Dev/abal32/product31e/rtbin/exa32.36: /home/Dev/abal32/bin/exa32.36
+	cp $* $@ 
+/home/Dev/abal32/product31e/rtbin/exa32.37: /home/Dev/abal32/bin/exa32.37
+	cp $* $@ 
+/home/Dev/abal32/product31e/rtbin/exa32.37: /home/Dev/abal32/bin/exa32.38
+	cp $* $@ 
+/home/Dev/abal32/product31e/rtbin/iview: /home/Dev/abal32/bin/iview
+	cp $* $@ 
+/home/Dev/abal32/product31e/rtbin/visual.cfg: /home/Dev/abal32/bin/visual.cfg
+	cp $* $@ 
+

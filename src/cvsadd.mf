@@ -1,0 +1,44 @@
+! shell -cd  access; cvs add *.c *.h
+! shell -cd  agr; cvs add *.c *.h
+! shell -cd  allocate; cvs add *.c *.h
+! shell -cd  amake; cvs add *.c *.h
+! shell -cd  ao; cvs add *.c *.h
+! shell -cd  asfun; cvs add *.c *.h
+! shell -cd  assert; cvs add *.c *.h
+! shell -cd  bdanet; cvs add *.c *.h
+! shell -cd  bibmath; cvs add *.c *.h
+! shell -cd  blaster; cvs add *.c *.h
+! shell -cd  cico; cvs add *.c *.h
+! shell -cd  class; cvs add *.c *.h
+! shell -cd  common; cvs add *.c *.h
+! shell -cd  cutter; cvs add *.c *.h
+! shell -cd  doc; cvs add *.c *.h! shell -cd  
+! shell -cd  exa; cvs add *.c *.h
+! shell -cd  exa22c; cvs add *.c *.h
+! shell -cd  exmafl; cvs add *.c *.h
+! shell -cd  fac; cvs add *.c *.h
+! shell -cd  glibc; cvs add *.c *.h! shell -cd  
+! shell -cd  global; cvs add *.c *.h
+! shell -cd  grafabal; cvs add *.c *.h
+! shell -cd  include; cvs add *.c *.h
+! shell -cd  ixmisc; cvs add *.c *.h
+! shell -cd  jpeg; cvs add *.c *.h
+! shell -cd  ldap; cvs add *.c *.h
+! shell -cd  ldfbda; cvs add *.c *.h
+! shell -cd  linbda; cvs add *.c *.h
+! shell -cd  modext; cvs add *.c *.h
+! shell -cd  montty; cvs add *.c *.h
+! shell -cd  ned; cvs add *.c *.h
+! shell -cd  nv; cvs add *.c *.h
+! shell -cd  old; cvs add *.c *.h
+! shell -cd  otr; cvs add *.c *.h
+! shell -cd  pixel; cvs add *.c *.h
+! shell -cd  printer; cvs add *.c *.h
+! shell -cd  prltra; cvs add *.c *.h
+! shell -cd  reftty; cvs add *.c *.h
+! shell -cd  sing; cvs add *.c *.h
+! shell -cd  tty; cvs add *.c *.h
+! shell -cd  xml; cvs add *.c *.h
+! shell -cd  z; cvs add *.c *.h
+! shell -cd  zgr; cvs add *.c *.h
+

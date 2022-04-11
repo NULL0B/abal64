@@ -1,0 +1,98 @@
+/*
+ *      Projet  : ABAL                  Copyright Prologue s.a. (c) 1990, 1995
+ *      Module  : ATR
+ *      Fichier : IOFNT.H
+ *      Version : 2.1f
+ *      Date    : 22/11/95
+ *      Systeme : DOS / PRL / UNIX / VMS
+ *
+ *      Traducteur ABAL
+ *
+ *      [Definitions relatives aux instructions sur numero logique]
+ *
+ */
+
+#ifdef _IOFNT
+#define EXT_IOFNT
+#else
+#define EXT_IOFNT extern
+#endif /* _IOFNT */
+
+/* PUBLIC */
+/* ------ */
+
+/* PUBLIC VARIABLES */
+/* ---------------- */
+
+/* PUBLIC FONCTIONS */
+/* ---------------- */
+
+#ifdef LINT_ARGS
+
+EXT_IOFNT void passign (void);
+EXT_IOFNT void pfile (void);
+EXT_IOFNT void pfind (void);
+EXT_IOFNT void pcfile (void);
+EXT_IOFNT void pdfile (void);
+EXT_IOFNT void prename (void);
+EXT_IOFNT void patb (void);
+EXT_IOFNT void pextend (void);
+EXT_IOFNT void pldgo (int);
+EXT_IOFNT void pupdwn (int);
+EXT_IOFNT void pmodif (void);
+EXT_IOFNT void pname (void);
+EXT_IOFNT void psearch (void);
+EXT_IOFNT void pinsdel (int);
+EXT_IOFNT void pliste (int);
+EXT_IOFNT void pclpj (int);
+EXT_IOFNT void prenkj (int);
+EXT_IOFNT void pfkey (void);
+EXT_IOFNT void pkey (void);
+EXT_IOFNT void prdwr (int);
+EXT_IOFNT void pngfnlog (int);
+EXT_IOFNT void trcreate(int);
+EXT_IOFNT void trforget(int);
+//#ifdef _CRIEXT_
+EXT_IOFNT void pxcri (void);
+//#endif
+
+#else
+
+EXT_IOFNT void passign ();
+EXT_IOFNT void pfile ();
+EXT_IOFNT void pfind ();
+EXT_IOFNT void pcfile ();
+EXT_IOFNT void pdfile ();
+EXT_IOFNT void prename ();
+EXT_IOFNT void patb ();
+EXT_IOFNT void pextend ();
+EXT_IOFNT void pldgo ();
+EXT_IOFNT void pupdwn ();
+EXT_IOFNT void pmodif ();
+EXT_IOFNT void pname ();
+EXT_IOFNT void psearch ();
+EXT_IOFNT void pinsdel ();
+EXT_IOFNT void pliste ();
+EXT_IOFNT void pclpj ();
+EXT_IOFNT void prenkj ();
+EXT_IOFNT void pfkey ();
+EXT_IOFNT void pkey ();
+EXT_IOFNT void prdwr ();
+EXT_IOFNT void pngfnlog ();
+EXT_IOFNT void trcreate ();
+EXT_IOFNT void trforget ();
+//#ifdef _CRIEXT_
+EXT_IOFNT void pxcri ();
+//#endif
+
+
+#endif /* LINT_ARGS */
+
+/* PUBLIC END */
+/* ---------- */
+
+/* FIN DEFINITIONS INTERNES */
+/* ------------------------ */
+
+/* ---------------- FIN iofnt.he -----------------------------------------*/
+

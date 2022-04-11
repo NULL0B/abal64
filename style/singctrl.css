@@ -1,0 +1,30 @@
+@domain sing;
+control_help_button	{
+	class: sing_window_title;
+	padding:1mm;
+	margin: 1mm;
+	height: auto;
+	border-style: rounded(2);
+	border-colour: black;
+	background-colour: white;
+	}
+
+control_help_label	{
+	class: sing_window_frame;
+	padding:1mm;
+	margin: 1mm;
+	text-font: url(arial2.fmf);
+	text-align: left;
+	content: text;
+	text-colour: black;
+	}
+
+control_help_frame {
+	class: sing_window_inner;
+	margin: 0mm;
+	}
+
+@domain null;
+	
+
+

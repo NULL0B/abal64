@@ -1,0 +1,22 @@
+$(ABAL)/product32b/tools/copyfile.ext: $(ABAL)/src/tools32b/copyfile.ext
+	cp $* $@
+$(ABAL)/product32b/tools/delfile.ext: $(ABAL)/src/tools32b/delfile.ext
+	cp $* $@
+$(ABAL)/product32b/tools/filefinder.ext: $(ABAL)/src/tools32b/filefinder.ext
+	cp $* $@
+$(ABAL)/product32b/tools/fileinfo.ext: $(ABAL)/src/tools32b/fileinfo.ext
+	cp $* $@
+$(ABAL)/product32b/tools/filemenu.ext: $(ABAL)/src/tools32b/filemenu.ext
+	cp $* $@
+$(ABAL)/product32b/tools/renfile.ext: $(ABAL)/src/tools32b/renfile.ext
+	cp $* $@
+$(ABAL)/product32b/tools/statusbar.ext: $(ABAL)/src/tools32b/statusbar.ext
+	cp $* $@
+$(ABAL)/product32b/tools/toolman.ext: $(ABAL)/src/tools32b/toolman.ext
+	cp $* $@
+$(ABAL)/product32b/tools/calculator.ext: $(ABAL)/src/tools32b/calculator.ext
+	cp $* $@
+$(ABAL)/product32b/tools/calender.ext: $(ABAL)/src/tools32b/calender.ext
+	cp $* $@
+
+

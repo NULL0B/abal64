@@ -1,0 +1,19 @@
+# ---------------------------------------------------------------------
+# this makefile is responsible for the transfer of abal 3 class files
+# to the production directories for inclusion in the production package
+# ---------------------------------------------------------------------
+
+SP01 = /home/Dev/abal32/src/class/
+TP01 = /home/Dev/abal32/product31e/class/
+
+$(TP01)pragmas.as: $(SP01)pragmas.as
+	cp $* $@
+$(TP01)makefile: $(SP01)makefile.product
+	cp $* $@
+! make
+
+! include visual.mf
+! include files.mf
+
+! make
+

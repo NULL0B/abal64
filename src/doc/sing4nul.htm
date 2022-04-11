@@ -1,0 +1,585 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>ABAL 3 : Prise en main de Sing</title>
+<META NAME="VERSION" CONTENT="*PRL@INFO*$6:31a001">
+<link href="style.css" rel="STYLESHEET" type="text/css" media="screen">
+<link href="print.css" rel="STYLESHEET" type="text/css" media="print">
+</head>
+<body>
+<div align=center>
+<table  >
+<tr><th><h1>ABAL 3 : Sing </h1>
+<tr><th><h2>Prise en main</h2>
+<tr><th><h3>Table des mati&egrave;res</h3>
+<tr><td>
+<p>
+<ol>
+<li><h4><a href="#intro">Introduction</a></h4>
+<li><h4><a href="#install">Installation</a></h4>
+<li><h4><a href="#config">Configuration</a></h4>
+<li><h4><a href="#walkthru">Prise en main</a></h4>
+<ol>
+<li><h5><a href="#newproject">Commencer un nouveau projet</a></h5>
+<li><h5><a href="#addsource">Cr&eacute;ation d'un programme source</a></h5>
+<li><h5><a href="#translate">Traduction d'un programme source</a></h5>
+<li><h5><a href="#execute">Execution d'un programme </a></h5>
+<li><h5><a href="#multiple">Attachement de fichiers source existants</a></h5>
+<li><h5><a href="#addform">Cr&eacute;ation d'un Formulaire Visual</a></h5>
+<li><h5><a href="#dialogbox">Le Formulaire Bo&icirc;te de Dialogue</a></h5>
+<li><h5><a href="#document">Le Formulaire Document Imprim&eacute;</a></h5>
+</ol>
+</ol>
+<p>
+</table>
+<p><table><tr><th><h3><a name="intro">Introduction</a></h3>
+<tr><td><p>
+ Ce document est conçu pour aider les nouveaux venus &agrave; d&eacute;marrer avec l'outil de design graphique
+ abal3 connu sous le nom de <b>Sing</b>.
+<p>Le lecteur sera guid&eacute; pas &agrave; pas, &agrave; travers diff&eacute;rentes &eacute;tapes et cycles, et impliqu&eacute; dans le 
+d&eacute;veloppement d'une application simple mais cependant compl&egrave;te, en utilisant cet outil.
+ <p>Les diff&eacute;rentes op&eacute;rations pr&eacute;sent&eacute;es dans ce document sont &eacute;galement disponibles sous forme de 
+ scripts d'animation qui peuvent &ecirc;tre visualis&eacute;s par l'outil de design. Cela permet une confirmation
+ visuelle des descriptions textuelles en cas de difficult&eacute; rencontr&eacute;e dans la compr&eacute;hension des
+ manipulations ou techniques en cours .
+ 
+
+<p>
+</table>
+<p><table><tr><th><h3><a name="install">Installation</a></h3>
+<tr><td>
+<p>
+L'installation de <b>Sing</b> se produit pendant l'installation d'un package auto-installable 
+de <b>abal 3</b> de type <b>abal3.1a.x.xx</b>.
+<p>Ce package devrait &ecirc;tre ex&eacute;cut&eacute; en pr&eacute;cisant le chemin d'acc&egrave;s complet.
+<p>Depuis la version <b>abal3.1a.0.15</b>, l'installation ex&eacute;cute toutes 
+les op&eacute;rations n&eacute;cessaires, aussi bien sous <b>Useit 1.3</b> que sous <b>Useit 1.4</b>.
+<p>Les packages ant&eacute;rieurs &agrave; cette version ne peuvent s'installer que sous <b>Useit 1.3</b>
+<p>La structure de r&eacute;pertoire suivante est cr&eacute;&eacute;e par la proc&eacute;dure d'installation.
+<p>
+<dl><dt>/home<dd><dl><dt>/abal3<dd>
+<dl>
+<dt>/bin<dd>
+<dt>/lib<dd>
+<dt>/class<dd>
+<dt>/include<dd>
+<dt>/fonts<dd>
+<dt>/images<dd>
+<dt>/examples<dd>
+<dt>/doc<dd><dl><dt>/en<dd><dt>/fr<dd></dl>
+</dl>
+</dl>
+</dl>
+<p>Le contenu du r&eacute;pertoire <b>/home/abal3/bin</b> est copi&eacute; vers le r&eacute;pertoire <b>/opt/prologue/bin</b>.
+<p>Le contenu du r&eacute;pertoire <b>/home/abal3/lib</b> est copi&eacute; vers le r&eacute;pertoire<b>/lib</b>.
+<p>Les fichiers de configuration ldap <b>/home/abal3/bin/abal3.schema</b> et <b>/home/abal3/bin/abal3.access</b>
+sont copi&eacute;s vers le r&eacute;pertoire ldap <b>/etc/openldap/schema</b>.
+<p>Suivant la version du syt&egrave;me, des fichiers de configuration ldap seront modifi&eacute;s
+<p><dl><dt><b>Useit 1.3b</b><dd>Le fichier <b>/etc/openldap/slapd.conf</b> est modifi&eacute; pour 
+inclure le fichier <b>/etc/openldap/schema/abal3.schema</b>. 
+Ce fichier fournit la description des classes ldap requises par <b>Sing</b> et <b>Visual</b>
+pour la description de leurs objets de configuration.
+<p><dt><b>Useit 1.4</b><dd>Les fichiers 
+<b>/etc/openldap/schema/language.schema</b> et
+<b>/etc/openldap/schema/language.access</b> sont modifi&eacute;s pour inclure respectivement les fichiers 
+<b>/etc/openldap/schema/abal3.schema</b> et
+<b>/etc/openldap/schema/abal3.access</b> .
+</dl>
+<p>le fichier <b>/etc/profile.prologue</b> est modifi&eacute; pour d&eacute;finir les variables d'environnement
+requises par <b>Sing</b> et <b>Visual</b> pour une ex&eacute;cution correcte
+<p><dl><dt><b>ABALHOST</b><dd>Cette variable est fix&eacute;e &agrave; l'adresse IP locale de la machine
+h&ocirc;te (host)
+<p>Elle est utilis&eacute;e par <b>Sing</b> et <b>Visual</b> pour l'identification de leur serveur 
+ldap devant &ecirc;tre utilis&eacute; pour la r&eacute;cup&eacute;ration des informations de configuration.<p>
+<dt><b>VEXADB</b><dd>Cette variable d&eacute;finit le nom de l'ensemble de configuration qu'utilise l'utilitaire
+de d&eacute;bogage visuel abal 3.<p>
+<dt><b>SINGXML</b><dd>Cette variable d&eacute;finit le sch&eacute;ma XML qui doit &ecirc;tre utilis&eacute; par <b>Sing</b>.
+<p>Quand elle est pr&eacute;sente, cette variable provoque la  g&eacute;n&eacute;ration et le chargement d'une ressource XML
+ &agrave; activer par d&eacute;faut.
+</dl>
+<p>A la suite du processus d'installation, un nouveau terminal est d&eacute;marr&eacute; pour s'assurer
+que les diverses variables d'environnement sont correctement positionn&eacute;es.
+<p>
+<table>
+<p><table><tr><th><h3><a name="config">Configuration</a></h3>
+<tr><td><p>Une fois l'installation termin&eacute;e <b>Sing</b> ne n&eacute;cessite pas de configuration additionnelle
+pour &ecirc;tre pr&ecirc;t &agrave; l'utilisation. 
+<p>Si la configuration ldap est disponible,  <b>Sing</b> peut &ecirc;tre lanc&eacute; de n'importe quel r&eacute;pertoire
+, la totalit&eacute; des informations de configuration sont prises depuis le serveur de r&eacute;pertoire ldap
+d&eacute;fini par la variable d'environnement <b>ABALHOST</b>.
+<p>Dans des situations o&ugrave; la configuration ldap n'est pas possible ou non souhait&eacute;e,
+<b>Sing</b> devra &ecirc;tre lanc&eacute; avec un fichier de configuration valide pr&eacute;sent dans le r&eacute;pertoire de travail.
+
+<p>Pour plus d'information au sujet des diff&eacute;rents &eacute;lements de configuration pour
+ <b>Sing</b> et <b>Visual</b> vous pouvez consulter le document 
+<a href="vrefer.htm"> Configuration de Sing</a>.
+</table>
+<p><table><tr><th><h3><a name="walkthru">Prise en main</a></h3>
+<tr><td><p>La suite de ce document est consacr&eacute; &agrave; la pr&eacute;sentation d'un exemple concret
+de l'utilisation de <b>Sing</b> pour le d&eacute;veloppement d'un exemple d'application r&eacute;duit mais cependant 
+exhaustif.
+<a name="newproject">&nbsp;</a>
+<p><dl><dt>
+En premier lieu, nous cr&eacute;ons un r&eacute;pertoire de travail dans le cadre de 
+cette pr&eacute;sentation dans lequel tous les aspects du projet seront enregistr&eacute;s...<p>
+<dd><b>mkdir /home/walkthrough<p></b>
+<dt>... nous nous positionnons ensuite dans ce nouveau r&eacute;pertoire comme le r&eacute;pertoire de 
+travail courant ...<p>
+<dd><b>cd /home/walkthrough</b><p>
+<dt>... et nous d&eacute;marrons  <b>Sing</b>, depuis la ligne de commande, en indiquant le nom de notre
+fichier de projet, celui dans lequel nous voulons travailler, appel&eacute; dans ce cas <b>myproject</b>. <p>
+<dd><b>sing myproject</b><p>
+<dt>A ce point, l'&eacute;cran devrait approximativement ressembler &agrave; l'image suivante, les couleurs pouvant diff&eacute;rer,
+mais les divers &eacute;l&eacute;ments &eacute;tant identiques.<p>
+<dd><b>Fig 1. Ecran de d&eacute;marrage Sing</b><p><img src="sing001.gif"><p>
+<dt>Ceci est r&eacute;f&eacute;renc&eacute; comme la vue d'<b>Editeur de Projet</b> et affichera en temps voulu 
+tous les items  attach&eacute;s &agrave; ce projet.
+<p>
+<dt>Votre attention est attir&eacute;e , &agrave; ce point, par les diverses zones 
+de l'&eacute;cran initial de d&eacute;marrage
+<p>
+<dd>Vous pourrez remarquer 
+<p><ol>
+<li>La <b>barre de menu</b> en haut de l'&eacute;cran, comprenant plusieurs options de menu
+et plusieurs boutons poussoirs.<p>
+<li>La <b>barre de statut</b> en bas de l'&eacute;cran comprenant trois zones d'affichage<p>
+<li>Le <b>bureau</b> ou zone de travail dans le milieu de l'&eacute;cran qui peut &ecirc;tre noir 
+et compl&egrave;tement vide.
+</ol>
+<p>Ces trois &eacute;l&eacute;ments sont pr&eacute;sents au cours de l'&eacute;x&eacute;cution de <b>Sing</b>, leur 
+contenu pouvant varier en fonction de l'&eacute;diteur, occupant couramment l'espace de travail central.
+<p>A gauche et &agrave; droite du menu sup&eacute;rieur, vous pouvez noter deux boutons poussoirs en forme de fl&egrave;che.
+<p>Celui sur la gauche de la barre de menu contr&ocirc;le l'affichage de la barre d'outils contextuelle ou bo&icirc;te
+qui peut appara&icirc;tre ou dispara&icirc;tre en cliquant sur ce bouton..
+<p>Le bouton en forme de fl&egrave;che &agrave; droite de l'&eacute;cran contr&ocirc;le de la m&ecirc;me mani&egrave;re l'affichage de 
+la barre de palette ou bo&icirc;te qui peut appara&icirc;tre ou dispara&icirc;tre en cliquant sur de bouton.
+<p>Esssayez maintenant ces deux op&eacute;rations pour vous familiariser avec leur comportement.
+<p>Chacune des options de menu textuelles s'ouvre pour pr&eacute;senter une bo&icirc;te de menu des choix subordonn&eacute;s
+par un simple clic souris, ou plus pr&eacute;cis&eacute;ment un  <b>&eacute;v&eacute;nement de bouton "relach&eacute;"</b>, sur le texte correspondant.
+<p>Ces bo&icirc;tes de menu  peuvent &ecirc;tre chang&eacute;s par un clic ult&eacute;rieur sur une autre option de 
+menu principal ou peuvent dispara&icirc;tre par un clic souris sur une autre partie de l'&eacute;cran.
+<p>les choix subordonn&eacute;s pr&eacute;sent&eacute;s par les bo&icirc;tes du menu principal
+peuvent &ecirc;tre activ&eacute;s par un clic ou un &eacute;v&eacute;nement "relach&eacute;" d'un bouton de la souris 
+qui transf&eacute;rera le contr&ocirc;le  &agrave; la fonction sous-jacente correspondante.
+<p>En examinant plus dans le d&eacute;tail la barre de menu, on peut noter que les options de menu textuelles
+pr&eacute;sentent un caract&egrave;re d&eacute;clencheur. La façon dont cela est repr&eacute;sent&eacute; d&eacute;pend de la configuration et peut 
+aussi bien &ecirc;tre <ol><li>soulign&eacute;<li>gras<li>d'une couleur diff&eacute;rente</ol>
+<p>Ce d&eacute;clencheur peut &ecirc;tre utilis&eacute; en conjonction avec la touche <b>Alt</b> du clavier
+comme un raccourci pour l'activation de l'option de menu correspondante.
+<p>A droite de l'&eacute;cran, mais &agrave; gauche du bouton de contr&ocirc;le de la barre de palette,
+il faut noter un ensemble de cinq boutons d'activation d'utilitaires.
+<p>Le comportement de ces boutons est contextuel et d&eacute;pend
+de la nature de la cible &agrave; laquelle ils seront appliqu&eacute;s mais ils peuvent &agrave; peu pr&egrave;s &ecirc;tre consid&eacute;r&eacute;s
+ comme repr&eacute;sentant les fonctions utilitaires de base suivantes 
+<ul>
+<li><b>Execution en mode Debug</b>
+<li><b>Execution Normale</b>
+<li><b>Configuration de l'Editeur</b>
+<li><b>Traduction</b>
+<li><b>Lien Objet</b>
+</ul>
+<p>Chacun de ces cinq boutons peut &ecirc;tre actionn&eacute; par un clic ou un &eacute;v&eacute;nement "relach&eacute;" de la 
+souris.
+<p>Quand le bouton gauche de la souris est utilis&eacute;, la fonction soulign&eacute;e est actionn&eacute;e 
+directement.
+<p>Le bouton droit de la souris n&eacute;anmoins active la bo&icirc;te de dialogue correspondante
+pour une &eacute;ventuelle modification et confirmation des param&egrave;tres associ&eacute;s &agrave; cette op&eacute;ration.
+<p>Essayez maintenant de cliquer sur ces boutons d'utilitaires
+avec le bouton droit de la souris pour vous familiariser avec leur comportement.
+<p>La barre de status en bas de l'&eacute;cran pr&eacute;sente trois zones de message. 
+<p>Affich&eacute; le plus &agrave; droite, vous pouvez noter le message <b>Xml parse failure</b>.
+<p>C'est normal tant que le fichier pass&eacute; comme param&egrave;tre &agrave; la ligne de commande
+pour l'invocation de <b>Sing</b> n'existe pas encore (pas encore enregistr&eacute;).
+<p>La zone de message la plus &agrave; gauche dans la ligne de status montre la position
+courante de la vue du projet. 
+<p>La zone de travail centrale, couramment utilis&eacute;e par l'&eacute;diteur de projet,
+est un espace tridimensionnel qui peut &ecirc;tre d&eacute;plac&eacute; le long des trois axes par divers 
+&eacute;v&eacute;nements souris et actions des contr&ocirc;les de barre d'outils.
+ <p>Pour plus d'information sur cet &eacute;l&eacute;ment , vous pouvez consulter le
+ document  <a href="singproj.htm">Editeur de Projet Sing</a> correspondant.
+</dl>
+<p><hr>
+<p>
+<a name="addsource">&nbsp;</a>
+Maintenant, nous pouvons ajouter notre premier composant dans le projet. Cela peut &ecirc;tre un fichier
+source abal pour montrer la façon dont les fichiers de programmes et d'inclusion (include) peuvent
+&ecirc;tre ajout&eacute;s au projet.
+Activez l'option <b>Projet</b> du menu principal,  par une s&eacute;quence de raccourci clavier <b>Alt P</b>
+ou en cliquant avec la souris sur le texte de l'option dans le menu . 
+<p>Activez ensuite l'option de menu subordonn&eacute;e <b>Ajout d'un Source</b> qui charge la bo&icirc;te de dialogue
+<a href="vcube.htm">Propri&eacute;t&eacute;s de l'objet 3D<a>.
+<p>Vous devez &agrave; ce niveau entrer le nom du fichier source et pour cela, comme premier exemple,
+ taper <b>program.as</b> dans le champ de saisie <b>Identit&eacute;</b> puis cliquer sur le bouton <b>Valider</b>.
+<p>Vous retournez &agrave; la vue de l'&eacute;diteur de projet o&ugrave; un petit rectangle blanc affichant le texte <b>program.as</b>
+ devient visible.
+<p>Nous ouvrons maintenant un fichier texte vide pour &ecirc;tre capables de taper les instructions de 
+notre premier programme source.
+<p><dl><dt>Pour faire cela <dd>activez la s&eacute;quence de menu <b>Vue</b> . <b>Visual</b><dt>ou,
+<dd>en utilisant la souris, d&eacute;placez la souris au dessus du rectangle blanc,  appuyez sur le bouton gauche ,
+cliquez sur le bouton droit, puis relachez le bouton gauche.
+</dl>
+<p>Dans les deux cas le fichier texte est ouvert,  dans l'
+<a href="singedit.htm">Editeur Texte</a> et le contenu vide du fichier, <b>program.as</b>, est affich&eacute;
+dans la zone de travail. 
+<p>Simultan&eacute;ment, vous pouvez noter que l'option du menu principal <b>Projet</b> a disparu 
+pour &ecirc;tre remplac&eacute; par la nouvelle option de menu <b>Editeur</b>.
+<p>L'&eacute;diteur texte interne utilis&eacute; par <b>Sing</b> est l'&eacute;diteur texte standard abal <b>AED</b>
+mais mis sous forme d'une biblioth&egrave;que dynamique pour faciliter l'int&eacute;gration.
+<p>Toutes les fonctions de l'&eacute;diteur standard abal sont utilisables.
+<p>Vous pouvez noter les diff&eacute;rentes cases de statut et le compteur de lignes qui appara&icirc;t &eacute;galement
+dans la barre de menu en haut de l'&eacute;cran, &agrave; gauche des boutons d'utilitaires. Ceux-ci sont 
+pr&eacute;sents uniquement pour information donc n'essayez pas de cliquer dessus.
+<p>La premi&egrave;re case de status montre le statut <b>INSERT</b> de l'&eacute;diteur, qui peut &ecirc;tre bascul&eacute; par la
+touche <b>INS</b> ou la combinaison standard de touches <b>Ctrl O</b>, il est toujours actif quand l'&eacute;diteur d&eacute;marre.
+ <p>La seconde case de statut montre le statut <b>SELECTION</b> de l'&eacute;diteur, et peut &ecirc;tre bascul&eacute;
+ par la combinaison de touches <b>Ctrl W</b> ou par les techniques de s&eacute;lection du bouton droit de la souris, 
+ il est toujours inactif quand l'&eacute;diteur d&eacute;marre.
+<p>A ce point, vous pouvez taper les instructions du programmme &eacute;l&eacute;mentaire suivant
+<p>
+<dl><dt><dd>
+<code><pre>
+Program " "
+Segment 0
+Pause "Abal"
+Eseg 0
+End
+</pre></code>
+</dl>
+<p> Quand vous avez termin&eacute; de taper les instructions ci-dessus, activez la s&eacute;quence <b>Fichier</b>.<b>Sauver</b>
+ dans le menu principal, pour enregistrer le texte de votre fichier, suivi par la s&eacute;quence <b>Fichier</b>.<b>Quitter</b> 
+ dans le menu principal pour retourner &agrave; l'<b>Editeur de projet</b>.
+<a name="translate">&nbsp;</a>
+<p>Nous pouvons maintenant traduire notre fichier de programme source en activant le bouton d'utilitaire 
+<b>Traduction</b> de la barre de boutons d'utilitaires en haut de l'&eacute;cran.
+<a name="execute">&nbsp;</a>
+<p>Une fois la traduction termin&eacute;e, ce programme &eacute;l&eacute;mentaire peut &ecirc;tre ex&eacute;cut&eacute; par le bouton d'utilitaire  
+<b>Ex&eacute;cution Normale</b> ou par le bouton <b>Ex&eacute;cution en mode Debug</b> dans la barre de boutons d'utilitaires
+ en haut de l'&eacute;cran.
+<p>Vous &ecirc;tes encourag&eacute;s &agrave; r&eacute;p&eacute;ter ces op&eacute;rations autant que n&eacute;cessaire pour vous familiariser 
+avec les diff&eacute;rentes &eacute;tapes. Ce serait &eacute;galement une bonne chose, avant de continuer, d'enregistrer
+l'&eacute;tat actuel de votre projet dans un fichier projet.
+<p>pour cela, activez l'option <b>Fichier</b>.<b>Sauver sous</b> du menu principal pour acc&eacute;der &agrave; la bo&icirc;te de
+dialogue <a href="vsave.htm">enregistrement du mod&egrave;le de projet</a>.
+<p>Vous devez vous assurer que le fichier projet a le nom requis; il peut &ecirc;tre chang&eacute; si vous le
+souhaitez. Cliquez ensuite sur le bouton <b>Valider</b> pour confirmer cette op&eacute;ration.
+<p>Le nom de fichier du projet doit avoir une extension de fichier <b>.xml</b> pour permettre &agrave; <b>Sing</b>
+d'enregitrer la description de projet  en utilisant un format <b>XML RESSOURCE</b>.
+<p>Vous pouvez ensuite sortir de <b>Sing</b> et revenir &agrave; la ligne de commande du syst&egrave;me h&ocirc;te en activant 
+la s&eacute;quence <b>Fichier</b>.<b>Quitter</b> du menu. Si vous n'avez pas encore enregistr&eacute;
+votre projet, la bo&icirc;te de dialogue  <a href="vexit.htm">Validation Sortie</a> s'affiche, vous permettant 
+d'enregistrer, d'abandonner la modification ou annuler l'op&eacute;ration de sortie.
+ <p>
+<dl><dt>Ce serait maintenant une bonne chose de r&eacute;ex&eacute;cuter <b>Sing</b> avec la syntaxe d'origine 
+de la ligne de commmande 
+<p>
+<dd><b>sing myproject</b><p>
+<dt>pour s'assurer que le projet enregistr&eacute; peut &ecirc;tre correctement recharg&eacute;.
+<p>Dans ce cas, le message <b>XML parser failure</b> ne sera plus visible dans la zone droite
+de la ligne de message dans la barre de statut.
+
+</dl>
+<a name="multiple">&nbsp;</a>
+<p>Avant de passer &agrave; la prochaine section, il faut remarquer que cette technique
+peut &ecirc;tre appliqu&eacute;e &agrave; un ensemble de fichiers sources existants incluant une
+application abal existante.
+<p>Un ensemble de fichiers sources peut &ecirc;tre attach&eacute; &agrave; un projet 
+tout aussi facilement par l'activation de la s&eacute;quence <b>Projet</b>.<b>Ajout d'un source</b> dans le menu. 
+Cette fois, une sp&eacute;cification joker (wildcard) est fournie, repr&eacute;sentant l'ensemble des sources
+&agrave; attacher.
+<p>
+<dl>
+<dt>par exemple<p>
+<dd><b>/home/users/monappli/*.as</b><p>
+<dt>ou <p>
+<dd><b>/home/abal3/include/*.as</b><p>
+</dl>
+<p>Tous les fichiers correspondant aux crit&egrave;res de recherche sont
+par cons&eacute;quent attach&eacute;s au projet, et repr&eacute;sent&eacute;s par des rectangles blancs 
+contenant le nom de fichier.
+<p>La m&ecirc;me chose peut &ecirc;tre faite par la s&eacute;quence de menu <b>Projet</b>.<b>Ajout Image</b>, permettant
+d'attacher un ensemble d'images &agrave; un projet.
+<p><hr>
+<a name="addform">&nbsp;</a>
+<p>Nous allons maintenant continuer notre tour guid&eacute; de <b>Sing</b> et proc&eacute;der &agrave; la cr&eacute;ation
+d'un autre type de composant de projet : notre premier formulaire visuel.
+<p>Vous devez activer la s&eacute;quence de menu <b>Projet</b>.<b>Ajout formulaire</b>, 
+et pr&eacute;ciser le nom de fichier du formulaire visuel devant &ecirc;tre cr&eacute;&eacute;, dans le cas de notre
+exemple, tapez <b>example</b>, et cliquez sur le bouton <b>Valider</b> pour valider 
+l'op&eacute;ration et pour obtenir l'affichage de la bo&icirc;te de dialogue  <a href="vmload.htm">Chargement de Formulaire</a>
+en indiquant le nom du formulaire &agrave; charger. L'extension <b>XML</b> est ajout&eacute;e &agrave; notre nom de fichier souche 
+ <b>example</b>, &eacute;tant donn&eacute; que tous les formulaires visuels sont stock&eacute;s et charg&eacute;s comme des fichiers <b>RESSOURCE XML</b>. 
+En activant le bouton  <b> Valider</b> vous revenez &agrave; la vue d'&eacute;diteur de projet comme 
+pr&eacute;c&eacute;demment et vous pourrez remarquer <p>
+<ol>
+<li>un rectangle gris qui a &eacute;t&eacute; ajout&eacute; au centre de la vue projet.
+<li>Le message <b>xml parse failure</b> montre que le formulaire n'existe pas.
+</ol>
+<p>Ce nouveau composant formulaire peut maintenant &ecirc;tre ouvert, comme pour le fichier source pr&eacute;c&eacute;dent,
+  par la combinaison de clics souris gauche et droit au dessus du rectangle du composant de projet
+ ou par activation de la s&eacute;quence de menu <b>Vue</b>.<b>Visual</b>. 
+Dans ces deux cas, le compsant formulaire est ouvert et l'&eacute;diteur de formulaire
+remplace l'&eacute;diteur de projet dans la zone de travail centrale. L'option de menu <b>Projet</b> est replac&eacute;e
+par deux nouvelles options de menu <b>Formulaire</b> et <b>&eacute;l&eacute;ment graphique</b> et, si la barre d'outils
+&agrave; gauche de l'&eacute;cran est active, son contenu change pour montrer les diff&eacute;rents outils de fabrication d'&eacute;l&eacute;ments graphiques (&eacute;l&eacute;ments graphiques)
+offerts par l'<a href="singform.htm">&eacute;diteur de formulaires</a>.
+<p>Ce serait une bonne chose d'activer la barre d'outils situ&eacute;e &agrave; gauche et la barre de palette situ&eacute;e &agrave; droite
+si cela n'est pas d&eacute;j&agrave; fait.
+<p>La barre d'outils d'&eacute;diteur de formulaires pr&eacute;sente deux colonnes d'outils d'&eacute;l&eacute;ments graphiques et d'ic&ocirc;nes;
+ en bas de la bo&icirc;te d'outils une seule ic&ocirc;ne centr&eacute;e indique le type de l'&eacute;l&eacute;ment graphique ou outil s&eacute;lectionn&eacute;.
+ 
+<p>Un type d'&eacute;l&eacute;ment graphique ou outil peut &ecirc;tre s&eacute;lectionn&eacute; pour l'utilisation
+en cliquant sur l'ic&ocirc;ne correspondant avec le bouton de la souris. Cet ic&ocirc;ne est ensuite affich&eacute;
+au bas de la bo&icirc;te d'outils en tant que s&eacute;lection courante.
+<p>Essayez ces diff&eacute;rents types, en choisissant le type d'&eacute;l&eacute;ment graphique ou outil courant,
+pour se familiariser avec cette op&eacute;ration. On peut dire que la s&eacute;lection courante
+est ind&eacute;pendante de l'affichage de la bo&icirc;te d'outils. La s&eacute;lection courante est pr&eacute;serv&eacute;e et restor&eacute;e lors de 
+l'affichage ou non de la barre d'outils.
+<p>Avant de commencer &agrave; utiliser ces outils, ce serait une bonne chose d'essayer de 
+cliquer sur les couleurs offertes dans la barre de palette, d'abord avec le bouton gauche de la souris
+puis avec le bouton droit de la souris.
+<p>Pour en comprendre l'impact, il est n&eacute;cessaire que la barre d'outils soit visible.
+<p>En regardant pr&eacute;cis&eacute;ment l'ic&ocirc;ne <b>Texte</b> &agrave; la quatri&egrave;me ligne de la 
+premi&egrave;re colonne, vous pouvez noter qu'un clic avec le bouton gauche de la souris affecte
+la couleur s&eacute;lectionn&eacute;e &agrave; l'avant plan ou les caract&egrave;res du texte.
+Un clic avec le bouton droit affecte la couleur de fond du texte.
+<p>Essayez plusieurs fois et notez la façon dont se modifient diff&eacute;rentes ic&ocirc;nes d'&eacute;l&eacute;ments
+graphiques  lorsque sont s&eacute;lectionn&eacute;es les couleurs de fond et d'avant-plan dans la barre de
+palette.
+<p>Il peut &eacute;galement &ecirc;tre not&eacute; que certaines ic&ocirc;nes d'&eacute;l&eacute;ments graphiques 
+ne r&eacute;pondent pas aux
+&eacute;v&eacute;nements de modification de couleurs car elles sont standardis&eacute;es en utilisant les couleurs
+r&eacute;serv&eacute;es de l'interface utilisateur graphique dans l'intervalle de 16 &agrave; 31.
+Cette &eacute;tendue des couleurs diff&egrave;re en fonction du fichier de palette courante, d&eacute;finie
+par la variable d'environnement <b>GIGO</b>, la variable de configuration <b>PALETTE</b> ou 
+le champ de palette par d&eacute;faut de l'&eacute;diteur de projet <a href="vcamera.htm">Camera</a>.
+<p>Un dernier point concernant les couleurs : la premi&egrave;re entr&eacute;e dans la palette, de valeur 0, vue comme du noir,
+est en fait utilis&eacute;e pour repr&eacute;senter la transparence. Cela peut &ecirc;tre v&eacute;rifi&eacute; par un clic bouton droit sur la couleur 
+ suivi de l'examen de l'ic&ocirc;ne <b>El&eacute;ment Texte</b> de la barre d'outils.
+<p>On peut noter que la zone de travail centrale est couverte par une <b>grille</b> qui, 
+quand elle est active, est utilis&eacute;e pour le positionnement et les calculs de dimension de tous les &eacute;l&eacute;ments
+graphiques.Les dimensions et positions des &eacute;l&eacute;ments graphiques seront effectivement
+v&eacute;rrouill&eacute;es aux intersections du quadrillage si la grille est active.
+<p>les dimensions de la grille et son &eacute;tat peuvent &ecirc;tre modifi&eacute;es, entre autre,
+en activant la s&eacute;quence de menu <b>Options</b>.<b>Param&egrave;tres</b> faisant appara&icirc;tre la bo&icirc;te de 
+dialogue <a href="vparam.htm">Param&egrave;tres G&eacute;n&eacute;raux</a> .
+<p>Essayez de changer les valeurs des champs  <b>Largeur de Grille</b> et <b>Hauteur de grille</b> avant
+d'appuyer sur le bouton <b>Valider</b> et d'observer la grille de l'&eacute;diteur de formulaires.
+<p>Avant de continuer, restaurez les largeur et hauteur de grille &agrave; 10, comme valeurs par d&eacute;faut .
+<p>La m&ecirc;me bo&icirc;te de dialogue permet &eacute;galement de pr&eacute;ciser des valeurs par d&eacute;faut
+pour les propri&eacute;t&eacute;s d'&eacute;l&eacute;ments graphiques <b>Fonte</b>, <b>Alignement</b>, <b>Gras</b>, <b>Soulign&eacute;</b> et 
+<b>Ombr&eacute;</b>. Ces valeurs par d&eacute;faut, ainsi que les couleurs s&eacute;lectionn&eacute;es 
+via la barre de palette, comme d&eacute;crit pr&eacute;c&eacute;demment, sont utilis&eacute;es au fur et &agrave; mesure lors de la cr&eacute;ation
+de nouveaux &eacute;l&eacute;ments graphiques qui s'ajoutent au formulaire.
+<p>Continuons maintenant afin d'utiliser les diff&eacute;rents types d'&eacute;l&eacute;ments graphiques et outils
+, la barre d'outils et la palette devant &ecirc;tre actives :
+<p>
+<ol>
+<li>Choisir l'ic&ocirc;ne de type <b>Fen&ecirc;tre</b> sur la premi&egrave;re colonne et la sixi&egrave;me ligne.<p>
+<li>Assurez-vous que cela devienne le type d'&eacute;l&eacute;ment graphique ou outil courant en bas de la bo&icirc;te d'outils.<p>
+<li>D&eacute;placez le curseur de la souris sur la cellule la plus en haut &agrave; gauche de la grille. <p>
+<li>Appuyez et conservez enfonc&eacute; le bouton gauche de la souris.<p>
+<li>D&eacute;placez le curseur de la souris vers la droite et en bas, aussi loin que vous le voulez , 
+tout en restant dans la zone de travail.<p>
+<li>Pendant que vous maintenez enfonc&eacute; le bouton de la souris et que vous 
+d&eacute;placez le curseur, vous pouvez noter :
+<ul><li>le rectangle vert repr&eacute;sentant la position et les dimensions du nouvel &eacute;l&eacute;ment graphique <li>
+ainsi que les coordonn&eacute;es de la position et les dimensions dans la zone de 
+message la plus &agrave; gauche dans la barre de statut.
+</ul><p>
+<li>Relachez le bouton de la souris et vous pouvez voir un composant  <b>fen&ecirc;tre</b>
+&agrave; la place du rectangle vert.<p>
+<li>La zone de message centrale de la barre de statut affiche maintenant les 
+caract&eacute;ristiques, classe, nom, position et dimensions du composant de formulaire
+ou &eacute;l&eacute;ment graphique courant.<p>
+<li>La zone de message  gauche de la barre de status affiche le nom
+du formulaire et ses dimensions totales, dans ce cas celles du seul 
+composant fen&ecirc;tre.
+</ol>
+<p>Vous pouvez appuyer sur la touche <b>Suppr</b> du clavier pour supprimer le composant 
+et r&eacute;p&eacute;ter l'op&eacute;ration autant de fois que vous le sentez n&eacute;c&eacute;ssaire.
+<p>Quand vous vous sentez &agrave; l'aise avec la proc&eacute;dure pr&eacute;c&eacute;dente, en gardant 
+votre dernier composant fen&ecirc;tre cr&eacute;&eacute;, passez &agrave; la suite : <p>
+<ol>
+<li>Choisissez l'ic&ocirc;ne de l'&eacute;l&eacute;ment graphique <b>Bouton poussoir</b> &agrave; la cinqui&egrave;me ligne de
+la seconde colonne<p>
+<li>D&eacute;placez le curseur souris quelque part &agrave; l'int&eacute;rieur du composant fen&ecirc;tre<p>
+<li>Appuyez et maintenez enfonc&eacute; le bouton gauche de la souris<p>
+<li>D&eacute;placez le curseur souris, en le laissant &agrave; l'int&eacute;rieur du composant fen&ecirc;tre
+, pour d&eacute;finir les dimensions du composant<p>
+<li>Relachez le bouton de la souris pour ajouter le composant <b>Bouton Poussoir</b> au formulaire.
+</ol>
+<p>Vous devriez maintenant voir le composant bouton poussoir visible dans votre composant fen&ecirc;tre
+et nous pouvons g&eacute;n&eacute;rer notre premier programme visuel avec sing.
+<p>L'activation de la s&eacute;quence de menu <b>Fichier</b>.<b>Production</b>, depuis l'&eacute;diteur de formulaires,
+ouvre la bo&icirc;te de dialogue <a href="vaprod.htm">Production Abal</a>,  permettant de modifier les diff&eacute;rentes 
+options de production. Pour le moment, activez simplement le bouton <b>Valider</b> pour confirmer
+l'op&eacute;ration de production et retourner &agrave; la vue de l'&eacute;diteur de formulaires.
+<p>Comme r&eacute;sultat de l'op&eacute;ration pr&eacute;c&eacute;dente, les trois op&eacute;rations suivantes se produisent<p>
+<ol>
+<li>Le source abal repr&eacute;sentant le formulaire &eacute;l&eacute;mentaire, comprenant une fen&ecirc;tre et un bouton
+est &eacute;crit dans le fichier <b>new.as</b> pr&eacute;cis&eacute; par la propri&eacute;t&eacute; <b>Nom de Fichier</b> 
+de la bo&icirc;te de dialogue <a href="vaprod.htm">Production Abal</a>.<p>
+<li>Le source abal est traduit en utilisant l'utilitaire de traduction d&eacute;fini dans la propri&eacute;t&eacute;
+de configuration.<p>
+<li>le mod&egrave;le de formulaire est enregistr&eacute; dans le fichier de ressource xml du projet, sauf si cela a 
+&eacute;t&eacute; d&eacute;sactiv&eacute; dans la bo&icirc;te de dialogue <a href="vparam.htm">Param&egrave;tres G&eacute;n&eacute;raux</a>.
+</ol>
+<p>Vous pouvez regarder le source abal g&eacute;n&eacute;r&eacute; par <b>Sing</b> en activant la s&eacute;quence de menu
+ <b>Vue</b>.<b>Texte</b> L'&eacute;diteur texte interne ouvre le contenu du fichier source dans la zone
+ centrale. Pour &ecirc;tre capable de comprendre l'architecture et les d&eacute;tails du source
+ g&eacute;n&eacute;r&eacute;, vous pourrez trouver utile de consulter les documents
+  <a href="abalprod.htm">Production de Source Abal</a> et la <a href="visual.htm">Biblioth&egrave;que Visual Abal</a>.
+<p>Pour pouvez maintenant ex&eacute;cuter le programme nouvellement cr&eacute;&eacute; en cliquant sur le bouton d'utilitaire
+<b>Ex&eacute;cution Normale</b> ou l'utilitaire <b>Ex&eacute;cution en mode Debug</b>  de la barre de menu en haut de l'&eacute;cran.
+<p>Pour quitter le programme visual, vous devez appuyer sur la touche <b>Echap</b> du clavier 
+puisque jusqu'&agrave; pr&eacute;sent nous n'avons pas d&eacute;fini le comportement des composants fen&ecirc;tre et bouton.
+<p>Vous &ecirc;tes maintenant revenu &agrave; l'&eacute;diteur de formulaires, apr&egrave;s l'&eacute;x&eacute;cution du programme :<p>
+<ol>
+<li>D&eacute;placez le curseur souris dans le composant fen&ecirc;tre mais pas sur le composant bouton<p>
+<li>Appuyez et maintenez enfonc&eacute; le bouton gauche de la souris<p>
+<li>Notez que le composant fen&ecirc;tre devient le composant actif courant comme affich&eacute; dans la zone centrale
+de la bo&icirc;te de statut.<p>
+<li>D&eacute;placez le curseur de la souris dans la zone centrale du bureau<p>
+<li>Notez les points suivants:
+<ul>
+<li>Le composant fen&ecirc;tre est d&eacute;plac&eacute; en fonction du mouvement de la souris
+<li>Le composant bouton est &eacute;galement d&eacute;plac&eacute; en conservant sa position dans la fen&ecirc;tre.
+<li>L'information sur la position courante du composant fen&ecirc;tre est report&eacute; dans la zone de 
+message centrale de la barre de statut.
+</ul>
+<p>
+<li>Relachez le bouton gauche de la souris pour &eacute;tablir la nouvelle position de la fen&ecirc;tre et de son
+bouton.<p>
+</ol>
+<p>Essayez maintenant la chose suivante<p>
+<ol>
+<li>D&eacute;placez le curseur de la souris sur le composant bouton<p>
+<li>Appuyez et maintenez enfonc&eacute; le bouton gauche de la souris<p>
+<li>Notez que le composant bouton poussoir devient maintenant le composant actif courant 
+au vu de l'information affich&eacute;e dans la zone centrale de la barre de statut.<p>
+<li>D&eacute;placez le curseur de la souris<p>
+<li>Notez le mouvement du composant bouton par rapport au mouvement de la souris mai &eacute;galement
+que la position de la fen&ecirc;tre n'est pas affect&eacute;e<p>
+<li>Notez l'information de la zone centrale de la barre de statut concernant la position
+courante du composant bouton poussoir.<p>
+<li>Rel&acirc;chez le bouton de la souris pour &eacute;tablir la nouvelle position du composant bouton poussoir.<p>
+</ol>
+<p>Suite aux pr&eacute;c&eacute;dentes op&eacute;rations il faut comprendre que seul le composant fen&ecirc;tre, parmi tous les 
+autres types d'&eacute;l&eacute;ments graphiques, se comporte comme un <b>Ensemble de Composants</b> 
+alors que le composant bouton poussoir, ainsi que les autres types d'&eacute;l&eacute;ments graphiques, se comportent
+comme des composants singuliers.
+<p>Maintenant nous pouvons continuer pour vous montrer comment
+redimensionner les composants &eacute;l&eacute;ments graphiques.<p>
+<ol>
+<li>D&eacute;placez la souris sur le composant &agrave; redimensionner<p>
+<li>Appuyez et maintenez enfonc&eacute; le bouton <b>droit</b> de la souris.<p>
+<li>Le composant devient le composant actif dans la zone central de la barre de statut.<p>
+<li>D&eacute;placez la souris jusqu'&agrave; ce que le composant atteigne les dimensions requises.<p>
+<li>Les dimensions du composant  sont affich&eacute;es dans la zone centrale de la barre de statut.<p>
+<li>Relachez le bouton <b>droit</b> de la souris pour &eacute;tablir les dimensions finales.<p>
+</ol>
+<p>Vous pouvez maintenant r&eacute;p&eacute;ter les deux op&eacute;rations de repositionnement et de 
+redimensionnement pour vos deux composants de formulaire, jusqu'&agrave; ce que vous vous sentiez
+compl&egrave;tement l'aise avec ces techniques car cela sera fr&eacute;quemment n&eacute;cessaire dans la suite de
+votre travail avec l'&eacute;diteur de formulaire.
+Vous pouvez &eacute;galement reg&eacute;n&eacute;rer et ex&eacute;cuter le programme abal comme d&eacute;crit ci-dessus
+pour v&eacute;rifier l'aspect final de vos modifications.
+<p>Pendant les diff&eacute;rentes tentatives de repositionnement et de 
+redimensionnement des deux composants, il peut &ecirc;tre not&eacute; 
+que pour que la fen&ecirc;tre puisse inclure activement le bouton poussoir, il faut qu'elle l'englobe 
+compl&egrave;tement. Ceci doit &ecirc;tre retenu car cela prendra une importance particuli&egrave;re par la suite
+quand nous regarderons l' <b>Outil de collection d'&eacute;l&eacute;ments graphiques</b>.
+<p>Nous allons continuer avec notre tour pr&eacute;liminaire des &eacute;l&eacute;ments graphiques, leurs comportements et
+leurs diff&eacute;rentes propri&eacute;t&eacute;s.
+<p>A cet effet, en utilisant la souris, selectionnez le composant fen&ecirc;tre comme 
+le composant actif courant.
+Ensuite, en tapant sur la touche de <b>Tabulation</b> du clavier, ou par activation de la s&eacute;quence de menu <b>Vue</b>.
+<b>Propri&eacute;t&eacute;s</b>, vous avez acc&egrave;s &agrave; la bo&icirc;te de dialogue <a href="vwidget.htm">Propri&eacute;t&eacute;s des Widgets</a>
+. De cette façon, vous serez ensuite capables de modifier les diff&eacute;rents attributs des &eacute;l&eacute;ments graphiques
+mais, &agrave; l'heure actuelle, nous focaliserons notre attention sur l'attribut d'identit&eacute;.
+<p>En utilisant le clic souris sur le champ de saisie <b>Identit&eacute;</b>, modifiez le texte puis appuyez sur le 
+bouton <b>Valider</b>. le composant fen&ecirc;tre de votre formulaire devrait maintenant montrer 
+la nouvelle valeur de texte dans sa barre de titre.
+<p>En r&eacute;p&eacute;tant l'op&eacute;ration pour le composant bouton poussoir, vous devriez voir
+le libell&eacute; du bouton changer pour refl&eacute;ter les modifications apport&eacute;es &agrave; son identit&eacute;.
+<p>Essayez maintenant pour les deux composants de changer la propri&eacute;t&eacute; <b>Fonte Texte</b> 
+et notez l'effet r&eacute;sultant. Sentez vous libre de reg&eacute;n&eacute;rer le programme si vous le souhaitez
+afin de confirmer le r&eacute;sultat final.
+<p>Une modification de la propri&eacute;t&eacute; <b>Alignement</b> pour le composant devrait produire des effets
+int&eacute;ressants que vous pourrez d&eacute;couvrir dans le programme g&eacute;n&eacute;r&eacute;.
+Pour que l'effet soit compris, il est pr&eacute;f&eacute;rable que la position du composant fen&ecirc;tre 
+soit fix&eacute; &agrave; l'origine x=0,y=0 sinon le d&eacute;placement produira un effet impr&eacute;visible
+Vous pouvez &eacute;galement exp&eacute;rimenter avec les propri&eacute;t&eacute;s <b>Exit</b> (quitter), <b>Help</b> (aide) et <b>Shadow</b>(Ombr&eacute;)
+ du composant fen&ecirc;tre.En effectuant cela, vous pouvez noter 
+<p>
+<ol>
+<li>l'existence du bouton <b>Exit</b> (sortie) qui peut &ecirc;tre press&eacute; pour fermer la fen&ecirc;tre et quitter le programme
+ .<p>
+<li>L'existence du bouton <b>Help</b> (Aide) qui peut &eacute;ventuellement &ecirc;tre press&eacute; 
+plus tard pour atteindre une documentation en ligne du formulaire.<p>
+<li>L'effet ombr&eacute; pour les fen&ecirc;tres autres que les fen&ecirc;tres plein &eacute;cran.<p>
+</ol>
+<p>Avant de continuer, il est important que vous vous sentiez &agrave; l'aise avec la modification de chacune 
+des propri&eacute;t&eacute;s des &eacute;l&eacute;ments graphiques de ces deux types de composants. En particulier vous pouvez
+exp&eacute;rimenter en changeant la position et les dimensions avec des valeurs autres que des 
+multiples de la taille exacte d'un &eacute;l&eacute;ment carreau du quadrillage.
+<p>Pour compl&eacute;ter cette section de la prise en main, nous allons maintenant
+d&eacute;couvrir la façon dont le comportement des boutons poussoir peut &ecirc;tre d&eacute;fini. 
+<p>En utilisant la souris, s&eacute;lectionnez le composant bouton poussoir, 
+ouvrez la bo&icirc;te de dialogue <a href="vwidget.htm">Propri&eacute;t&eacute;s Widgets</a> (propri&eacute;t&eacute; des &eacute;l&eacute;ments graphiques
+et cliquez sur la propri&eacute;t&eacute; <b>Action/stockage</b> pour ouvrir le composant de s&eacute;lection qui affiche une liste 
+de valeurs. En utilisant la souris ou le d&eacute;filement du clavier, descendez jusqu'&agrave; ce que 
+le curseur color&eacute; se trouve sur  <b>chain</b> puis tranf&eacute;rer le focus de la souris
+sur le champ de saisie <b>Target</b>(cible), et tapez <b>program</b> puis cliquez sur le
+bouton <b>Valider</b> pour confirmer les modifications.
+<p>Reg&eacute;n&eacute;rez le programme et ex&eacute;cutez-le. Si vous cliquez sur le composant bouton poussoir
+pendant l'ex&eacute;cution, cela transf&eacute;rera le contr&ocirc;le d'ex&eacute;cution au programme &eacute;l&eacute;mentaire cr&eacute;&eacute; 
+pendant la premi&egrave;re partie de la prise en main.
+<p>En retournant &agrave; la bo&icirc;te de dialogue des propri&eacute;t&eacute;s des  &eacute;l&eacute;ments graphiques (Widget) pour le composant
+bouton, vous souhaiterez &eacute;ventuellement changer la valeur <b>Action/stockage</b> de <b>Chain</b>
+&agrave;  <b>LoadGo</b>; reg&eacute;n&eacute;rer, r&eacute;-ex&eacute;cuter  et observer les effets.
+<p>Finalement, ajoutez un second composant bouton poussoir &agrave; votre formulaire, selectionnez-le comme
+composant courant et ouvrez la bo&icirc;te de dialogue des propri&eacute;t&eacute;s des &eacute;l&eacute;ments graphiques (widget).
+Changez le champ de saisie <b>Label/Image</b> &agrave; la valeur <b>Quitter</b>. Cliquez
+sur l'onglet <b>Event</b> puis dans le grand champ de saisie; vous pouvez voir le curseur
+color&eacute; de l'&eacute;diteur de texte appara&icirc;tre vous permettant de saisir l'instruction simple :
+<dl><dt><dd><code><pre>
+Exit(27)
+</pre></code></dl>
+<p>Cliquez sur le bouton <b>Valider</b> pour mettre &agrave; jour vos modifications, 
+reg&eacute;n&eacute;rez et traduisez le source puis ex&eacute;cutez le programme. Si vous cliquez 
+sur le bouton nouvellement ajout&eacute;, le programme devrait s'arr&ecirc;ter.
+<p>Un examen d&eacute;taill&eacute; du code g&eacute;n&eacute;r&eacute; est n&eacute;cessaire pour une compr&eacute;hension totale de 
+l'op&eacute;ration finale avec l'instruction ci-dessus <b>Exit(27)</b> 
+et la m&eacute;thode <b>Event</b> de l'&eacute;l&eacute;ment graphique ainsi d&eacute;fini. 
+Ceci pourra encore &ecirc;tre effectu&eacute; en conjonction avec les documents <a href="abalprod.htm">Production de Source Abal</a>
+et la  <a href="visual.htm">Biblioth&egrave;que Abal Visual</a>.
+<p>Ce serait, &agrave; ce point pr&eacute;cis, une bonne id&eacute;e de revenir &agrave; l'&eacute;diteur de projet en activant la s&eacute;quence de
+ menu <b>Vue</b>.<b>Application</b> et en enregistrant le projet complet en activant les s&eacute;quences de
+ menu <b>Fichier</b>.<b>Sauver</b> ou <b>Fichier</b>.<b>Sauver sous</b>.
+<p>Nous avons maintenant termin&eacute; la seconde partie de la prise en main et vous pouvez quitter sing
+par la s&eacute;quence de menu <b>Fichier</b>.<b>Quitter</b>
+<p>
+
+<a name="dialogbox">&nbsp;</a>
+<p>
+
+<a name="document">&nbsp;</a>
+<p>
+
+</table>
+
+<p><table>
+<tr><th width="30%">
+<h3 align=center>Copyright &copy; 
+<a href="http://www.prologue.fr">Prologue</a>
+</h3>
+</table>
+<p>
+</div>
+<p>
+</body>
+</html>
+
+
+

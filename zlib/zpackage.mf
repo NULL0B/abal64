@@ -1,0 +1,27 @@
+zabal2.tgz: include module/abal2 run/abal2
+	tar -czvf $@ include/* '
+                     module/abal2/*.o '
+                     module/abal2/*.dbo '
+                     run/abal2/*.at
+
+zabal3.tgz: include module run
+	tar -czvf $@ include/* '
+                     module/*.o '
+                     module/*.dbo '
+                     run/*.at
+
+! make
+z16abal3.zip: include module/abal2 run/abal2
+	zip $@ include/* '
+               module/abal2/*.o '
+               module/abal2/*.dbo '
+               run/abal2/*.at
+
+z32abal3.zip: include module run
+	zip $@ include/* '
+               module/*.o '
+               module/*.dbo '
+               run/*.at
+
+! make
+

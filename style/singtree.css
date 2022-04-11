@@ -1,0 +1,33 @@
+/* --------------------------- */
+/* Sing Treeview Style Classes */
+/* --------------------------- */
+
+treeview_frame	{
+	class: singframe;
+	}
+
+treeview_bar	{
+	background-image: url(singbar.jpg);
+	background-colour: black;
+	border-style: hconvex;
+	border-colour: transparent;
+	}
+
+treeview_label	{
+	class: singfont;
+	padding-left: 3mm;
+	text-align: left;
+	}
+
+treeview_focus	{
+	class:	treeview_label;
+	text-colour: blue;
+	}
+
+/* ----------- */
+/* End of File */
+/* ----------- */
+
+
+
+

@@ -1,0 +1,52 @@
+/*
+ *      Projet  : ABAL                  Copyright Prologue s.a. (c) 1990, 1995
+ *      Module  : ATR
+ *      Fichier : ATRDEBUG.HE
+ *      Version : 2.1f
+ *      Date    : 27/11/95
+ *      Systeme : DOS / PRL / UNIX / VMS
+ *
+ *      Traducteur ABAL
+ *
+ *      [Debug interne du traducteur]
+ *
+ * 
+ */
+
+ /*
+ * Mises a jour :
+ * ------------
+ */
+#ifdef _ATRDEBUG
+#define EXT_ATRDEBUG
+#else
+#define EXT_ATRDEBUG extern
+#endif /* _ATRDEBUG */
+
+/* Masque de debug : fonction dbgoption */
+
+#define AMEM		0x0001	/* Debug memoire normal  */
+#define AFIC		0x0002	/* Debug memoire fichier */
+#define ATRACE		0x0004	/* Debug trace a l'ecran */
+
+#ifdef LINT_ARGS
+EXT_ATRDEBUG void dbginit(char *);
+EXT_ATRDEBUG void dbgfin(char *);
+EXT_ATRDEBUG void dbgoption(BINAIRE);
+EXT_ATRDEBUG char *dbgalloc(char *, long);
+EXT_ATRDEBUG void dbgfree(char *);
+EXT_ATRDEBUG void dbgstat(void);
+EXT_ATRDEBUG void dbgprint(BINAIRE, char *);
+#else
+EXT_ATRDEBUG void dbginit();
+EXT_ATRDEBUG void dbgfin();
+EXT_ATRDEBUG void dbgoption();
+EXT_ATRDEBUG char *dbgalloc();
+EXT_ATRDEBUG void dbgfree();
+EXT_ATRDEBUG void dbgstat();
+EXT_ATRDEBUG void dbgprint();
+#endif /* LINT_ARGS */
+
+
+/* -------------------- Fichier : atrdebug.he -----------------------*/
+

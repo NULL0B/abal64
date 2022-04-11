@@ -1,0 +1,36 @@
+singframe	{
+	border-style: none;
+	border-colour: black;
+	background-image: url(singbg.jpg);
+	}
+
+toolbar_frame	{
+	class:	singframe;
+	}
+
+toolbar_label	{
+	class:	singfont;
+	text-align: center;
+	background-image: url(singbg.jpg);
+	border-style: inset;
+	margin: 1mm;
+	}
+
+statusbar_frame {
+	class:	toolbar_frame;
+	}
+statusbar_message {
+	class: singfont;
+	border-style: vconcave;
+	height: text;
+	padding-top: 3px;
+	text-colour: black;
+	text-align: right;
+	}
+
+desktop_frame {
+	background-image: url(singbg.jpg);
+	border-style: none;
+	content: none;
+	}
+

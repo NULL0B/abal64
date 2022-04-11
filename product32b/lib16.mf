@@ -1,0 +1,29 @@
+# generated makefile : lib16.mf 
+# ------------------------------------
+$(ABAL)/product32b/lib16/asfun.so: $(ABAL)/lib/asfun.so
+	cp $* $@ 
+$(ABAL)/product32b/lib16/bibasb.so: $(ABAL)/lib/bibasb.so
+	cp $* $@ 
+$(ABAL)/product32b/lib16/fac.so: $(ABAL)/lib/fac.so
+	cp $* $@ 
+$(ABAL)/product32b/lib16/libaccess.so: $(ABAL)/lib/libaccess.so
+	cp $* $@ 
+$(ABAL)/product32b/lib16/libflfile.so: $(ABAL)/lib/libflfile.so
+	cp $* $@ 
+$(ABAL)/product32b/lib16/libprint.so: $(ABAL)/lib/libprint.so
+	cp $* $@ 
+$(ABAL)/product32b/lib16/libimage.so: $(ABAL)/lib/libimage.so
+	cp $* $@ 
+$(ABAL)/product32b/lib16/tty.so: $(ABAL)/lib/tty.so
+	cp $* $@ 
+$(ABAL)/product32b/lib16/zgr.so: $(ABAL)/lib/zgr.so
+	cp $* $@ 
+$(ABAL)/product32b/lib16/z.so: $(ABAL)/lib/z.so
+	cp $* $@ 
+$(ABAL)/product32b/lib16/allocate.so: $(ABAL)/lib/allocate.so
+	cp $* $@ 
+$(ABAL)/product32b/lib16/libjpeg.so: $(ABAL)/lib/libjpeg.so
+	cp $* $@ 
+$(ABAL)/product32b/lib16/libimage.so: $(ABAL)/lib/libimage32.so
+	cp $* $@ 
+

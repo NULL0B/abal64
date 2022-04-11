@@ -1,0 +1,8 @@
+gwb.o: gwb.c gwbedit.c gwbdial.c
+	$(COMPILE) gwb.c
+
+bin/gwb: gwb.o $(PIXLIB) $(GRAPIL) $(ALLOCATE)
+	$(LD) bin/gwb gwb.o $(PIXLIB) $(GRAPIL)  $(ALLOCATE) $(XCICO) $(XLIB)
+
+! make
+

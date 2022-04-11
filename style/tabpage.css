@@ -1,0 +1,34 @@
+/* ------------------------------------ */
+/* Default Visual Library  Frame Styles */
+/* ------------------------------------ */
+
+pageframe	{
+		margin-top: 7mm;
+		border-style: outset;
+		}
+
+pageinner	{	
+		border-style: outset; 
+		margin: 1px;
+		margin-top: 7mm;
+		}
+
+pagebutton	{
+		class: proportional;
+		border-style: convex;
+		content: text;
+		width: text;
+		height: 7mm;
+		text-align: center;
+		text-colour: black;
+		}
+
+pagefocus	{
+		class: pagebutton;
+		border-style: concave;
+		}
+
+/* ----------- */
+/* End of File */
+/* ----------- */
+

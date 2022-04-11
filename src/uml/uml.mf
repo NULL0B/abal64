@@ -1,0 +1,41 @@
+# -------------------------------------------------------------------------------------------
+# this makefile shows the minimum required for the construction of a basic graphic.al program
+# built around the pixel library. this may be used to derive more complicated programs.
+# -------------------------------------------------------------------------------------------
+! include $(ABAL)/common/common.def
+! include $(ABAL)/common/editor.def
+! include $(ABAL)/common/allocate.def
+! include $(ABAL)/common/libaccess.def
+! include $(ABAL)/common/ixmisc.def 
+! include $(ABAL)/common/repmisc.def 
+! include $(ABAL)/common/dirmisc.def 
+! include $(ABAL)/common/misc.def 
+! include $(ABAL)/common/jpeg.def 
+! include $(ABAL)/common/ldap.def 
+! include $(ABAL)/common/libimage.def
+! include $(ABAL)/common/pixilib.def
+! include $(ABAL)/common/ixciconr32.def
+
+COMPILE   = gcc -c -DUNIX 
+
+VOBJECT   = $(ABAL)/pixel/vobject.o
+STDPROD   = $(ABAL)/pixel/stdprod.o
+
+LIBRARY = $(PIXILIB) $(ALLOCATE) $(LIBJPEG) $(FNPARSER) $(IXCICONR32) $(XLIB) $(STDPROD) $(LIBACCESS) $(VOBJECT) $(LIBIMAGE)
+INCLUDE = -I$(ABAL)/src/pixel -I$(ABAL)/src/sing
+
+uml.o: uml.c
+	$(COMPILE)  $(INCLUDE) $*
+! make
+
+umledit.o: umledit.c
+	$(COMPILE)  $(INCLUDE) $*
+! make
+
+uml: uml.o
+	gcc -o $@ uml.o umledit.o $(LIBRARY) $(LIBLDAP) 
+
+! make
+
+
+

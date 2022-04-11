@@ -1,0 +1,162 @@
+# ---------------------------------------------------------------
+#                  ABAL 3 Production Makefile
+# ---------------------------------------------------------------
+# This makefile transfers all files to this production directory
+# and its subdirectories prior to building the tar zipped image
+# package. This image package is then installed in the INSTALL
+# directory. The installed image is then used for the production
+# of the RPM binary package
+# The tar package or the rpm package may be wrapped into an auto
+# installable binary executable program using the abal product33a 
+# builder utility using the following variables.
+# ---------------------------------------------------------------
+SUFFIX  = 
+! include header.mf
+# -------------------
+# Make file variables
+# -------------------
+INSTALL     = install$(SUFFIX) install.ldap 
+STRIP       = echo 
+SOURCE      = $(ABAL)/
+TARGET      = $(ABAL)/product33a/
+INSTALLPATH = /home/abal3
+PAYLOAD     = abal3.tgz
+PAYLOADA    = abal3a.tgz
+PAYLOADB    = abal3b.tgz
+PAYLOADBIN  = abal3bin.tgz
+PAYLOADLIB  = abal3lib.tgz
+PAYLOADDOC  = abal3doc.tgz
+PAYLOADZIP  = abal3doc.zip
+
+# REDHAT_PACKMAN = abal3.spec
+
+# --------------------------------------------------------------
+# Check all package components against source production modules
+# --------------------------------------------------------------
+! include bin.mf
+# include bin16.mf
+# include lib16.mf
+! include lib.mf
+! include doc.mf
+! include class.mf
+! include style.mf
+! include fonts.mf
+! include tools.mf
+! include images.mf
+! include include.mf
+! include kitbda.mf
+! make
+
+# --------------------------------------------------
+# Build the beta and test version tar zipped package
+# --------------------------------------------------
+$(PAYLOAD): $(INSTALL) bin lib doc doc/fr doc/en class style fonts images include example kitbda tools cico data sing tbl tbl/VA tbl/VF 
+	tar -czvf $@ $?
+
+$(PAYLOADA): $(INSTALL) bin lib 
+	tar -czvf $@ $?
+
+$(PAYLOADB): doc doc/fr doc/en class style fonts images include example tools data sing 
+	tar -czvf $@ $?
+
+$(PAYLOADBIN): $(INSTALL) bin
+	tar -czvf $@ $?
+
+$(PAYLOADLIB): lib
+	tar -czvf $@ $?
+
+$(PAYLOADDOC): doc doc/fr doc/en
+	tar -czvf $@ $?
+
+$(PAYLOADZIP): doc doc/fr doc/en
+	zip -r $@ doc
+
+! make
+
+! ifdef REDHAT_PACKMAN
+# -------------------------------------------------------
+# Creation of the Source Image and the RPM Binary package
+# -------------------------------------------------------
+$(REDHAT_PACKMAN): abal3.ins abal3.tgz
+! ifdef	CLEAN
+	rm -r $(INSTALLPATH)
+	mkdir $(INSTALLPATH)
+! endif
+	cp $? /tmp
+	cd /tmp; ./$*
+	cat header                > $@
+	ls $(INSTALLPATH)/bin/*      >> $@
+	ls $(INSTALLPATH)/lib/*.so   >> $@
+	ls $(INSTALLPATH)/lib/cico/* >> $@
+	ls $(INSTALLPATH)/class/*.as >> $@
+	ls $(INSTALLPATH)/class/*.mf >> $@
+	ls $(INSTALLPATH)/doc/*.htm  >> $@
+	ls $(INSTALLPATH)/doc/*.gif  >> $@
+	ls $(INSTALLPATH)/doc/*.css  >> $@
+	ls $(INSTALLPATH)/doc/fr/*.htm  >> $@
+	ls $(INSTALLPATH)/doc/fr/*.gif  >> $@
+	ls $(INSTALLPATH)/doc/fr/*.css  >> $@
+	ls $(INSTALLPATH)/doc/en/*.htm  >> $@
+	ls $(INSTALLPATH)/doc/en/*.gif  >> $@
+	ls $(INSTALLPATH)/doc/en/*.css  >> $@
+	ls $(INSTALLPATH)/fonts/*    >> $@
+	ls $(INSTALLPATH)/images/*   >> $@
+	ls $(INSTALLPATH)/include/*  >> $@
+	ls $(INSTALLPATH)/example/*  >> $@
+	rpm -bb $@
+
+! make
+! endif
+
+# --------------------------------------
+# production of autoinstallation release
+# --------------------------------------
+
+! ifdef RELEASE
+
+PRODUCT     = "-t/home/abal3/$(PAYLOAD)"
+PREINSTALL  = "-bcd /home/abal3"
+DOINSTALL   = "-itar -xzf" 
+POSTINSTALL = "-a./$(INSTALL)"
+
+$(SOURCE)release/$(RELEASE): $(TARGET)abal3.tgz
+	apb -p -z -v -s$* $(PRODUCT) -d/home/abal3 $(PREINSTALL) $(DOINSTALL) $(POSTINSTALL) $@
+! make
+! ifdef ZBUILDER
+z32$(RELEASE): $(ABAL)/zlib/zabal3.tgz
+	apb -p -z -v -s$* -t/home/zlib/zabal3.tgz -d/home/zlib "-bcd /home/zlib" "-itar -xzf" $(ABAL)/release/$@
+
+z16$(RELEASE): $(ABAL)/zlib/zabal2.tgz
+	apb -p -z -v -s$* -t/home/zlib/zabal2.tgz -d/home/zlib "-bcd /home/zlib" "-itar -xzf" $(ABAL)/release/$@
+! make
+! endif
+
+! ifdef WEB
+# -------------------------------------------
+# Transfer to target machine for distribution
+# -------------------------------------------
+! shell scp $(PORTSCP) $(SOURCE)release/$(RELEASE) $(WEB)
+# shell scp $(PORTSCP) $(SOURCE)release/$(RELEASE).txt $(WEB)
+# shell cd ../release; ./archive $(AIREAMH)
+! ifdef CVSTAG
+! shell cd $ABAL/src; cvs commit
+! shell cd $ABAL/src; $(MAKE) cvstag $(CVSTAG)
+! endif
+! endif
+
+
+# ----------------------------------------
+# Perform Useit Runtime Package Production
+# ----------------------------------------
+! endif
+# ifdef USEIT21_PRODUCTION
+#! shell cd $(ABAL)/release/useit21a; $(MAKE)
+# endif
+
+# ---------------
+# End of Makefile
+# ---------------
+ 
+b
+v
+

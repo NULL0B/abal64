@@ -1,0 +1,9 @@
+
+$(POBJ)singclas$(OBJ):  $(SP01)singclas.c $(SP01)sing.h $(SP01)ctrl.h /home/Dev/abal32/src/pixel/allocate.h $(SP01)singname.h $(SP01)singeve.h $(SP01)singtree.h $(SP01)singform.h $(SP01)singpage.h /home/Dev/abal32/src/pixel/stdpsu.h /home/Dev/abal32/src/pixel/stdtypes.h '
+/home/Dev/abal32/src/pixel/sysfile.h  $(SP01)singmod.h $(SP01)vwidget.h /home/Dev/abal32/src/pixel/threed.h /home/Dev/abal32/src/pixel/process.h $(SP01)singalig.h $(SP01)singclas.h $(SP01)singlang.h $(SP01)singprod.h $(SP01)singtype.h $(SP01)singtool.h $(SP01)singedit.h '
+/home/Dev/abal32/src/pixel/sysimage.h $(SP01)vimage.h /home/Dev/abal32/src/pixel/zgif.h /home/Dev/abal32/src/pixel/zbmp.h /home/Dev/abal32/src/pixel/zjpeg.h /home/Dev/abal32/src/pixel/stdimage.h $(SP01)vframe.h /home/Dev/abal32/src/pixel/guimouse.h
+$(POBJ)vclass$(OBJ):  $(SP01)vclass.c $(SP01)visual.h /home/Dev/abal32/src/pixel/allocate.h /home/Dev/abal32/src/pixel/guimouse.h $(SP01)vframe.h $(SP01)vwidget.h
+$(POBJ)vconst$(OBJ):  $(SP01)vconst.c $(SP01)visual.h /home/Dev/abal32/src/pixel/allocate.h /home/Dev/abal32/src/pixel/guimouse.h $(SP01)vframe.h $(SP01)vwidget.h
+$(POBJ)vdata$(OBJ):  $(SP01)vdata.c $(SP01)visual.h /home/Dev/abal32/src/pixel/allocate.h /home/Dev/abal32/src/pixel/guimouse.h $(SP01)vframe.h $(SP01)vwidget.h
+$(POBJ)vmethod$(OBJ):  $(SP01)vmethod.c $(SP01)visual.h /home/Dev/abal32/src/pixel/allocate.h /home/Dev/abal32/src/pixel/guimouse.h $(SP01)vframe.h $(SP01)vwidget.h
+

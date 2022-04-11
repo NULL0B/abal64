@@ -1,0 +1,228 @@
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="generator" content="Prologue Sing Html Version 1.0a">
+<meta name="version" content="*PRL@INFO*#11a003">
+<link href="style.css" type="text/css" rel="stylesheet" media="screen">
+<link href="style.css" type="text/css" rel="stylesheet" media="print">
+<title>Sing Version 1.0a
+</title>
+</head><body>
+<div align="center">
+<table class="DOC">
+<tr><th><h1 align="center">
+Sing Version 1.0a
+</h1>
+<td><div align="center"><img src="singlogo.gif">
+</div></table></div><p>
+<a name="vpage">
+
+<p>
+<div align="center">
+<table class="DS">
+<tr><th><h2 align="center">
+accept visual page
+</h2>
+
+<tr><td><p><div align="center"><img src="vpage.gif" usemap="#accept_visual_page" >
+</div><p>
+<tr><td>
+
+<map name="accept_visual_page">
+<area type=rect href="#DeviceLo" coords="40,90,344,106">
+<area type=rect href="#DriverLo" coords="40,110,344,126">
+<area type=rect href="#PaperType" coords="40,180,166,199">
+<area type=rect href="#PrintDensity" coords="210,180,336,199">
+<area type=rect href="#PageLayout" coords="40,250,180,269">
+<area type=rect href="#PageFeed" coords="210,250,350,269">
+<area type=rect href="#PageAlign" coords="40,350,176,369">
+<area type=rect href="#Preview" coords="210,350,350,366">
+<area type=rect href="#LeftMargin" coords="40,420,104,436">
+<area type=rect href="#LeftMarginUnits" coords="110,420,182,439">
+<area type=rect href="#TopMargin" coords="210,420,274,436">
+<area type=rect href="#TopMarginUnits" coords="280,420,352,439">
+<area type=rect href="#Accept" coords="50,480,162,512">
+<area type=rect href="#Cancel" coords="220,480,332,512">
+</map>
+This dialog box presents the collection of document parameters required for the
+production
+of graphical printed documents. These parameters are save to the 
+document model file
+along with the form parameters and the collection of 
+document widgets.
+
+
+<p>
+
+<dl>
+<dt class=type><a name="DeviceLo">
+<b>DeviceLo
+</b></a>
+<dd class=data>This edit field provides the name of the printer device or the name of the file 
+to
+which the document will be printed. 
+This may be a constant expression or a variable
+providing the name at runtime. 
+Printer names are not platform portable so care should
+in this respect.  
+
+
+<p>
+<dt class=type><a name="DriverLo">
+<b>DriverLo
+</b></a>
+<dd class=data>This edit field provides the name of the printer driver to be used for the conversion
+of
+the document image to the format required by the actual physical printer device.
+This
+name will be used as the ABAL dynamic library in place of the standard 
+<b>printer</b>
+dynamic library.
+
+
+
+<p>
+<dt class=type><a name="PaperType">
+<b>PaperType
+</b></a>
+<dd class=data>This select control allows selection of the paper type from the following table
+<p>
+<table>
+<tr><th>A4
+<tr><th>A3
+<tr><th>A2
+<tr><th>A1
+</table>
+<p>
+The
+page size, in conjunction with the print density, will determine the number
+of bits
+used to represent one pixel and consequently will influence the colour
+or greyscale
+depth.
+
+
+<p>
+<dt class=type><a name="PrintDensity">
+<b>PrintDensity
+</b></a>
+<dd class=data>This select control allows selection of the print density from the following list
+<p>
+<table>
+<tr><th>75
+dpi
+<tr><th>100 dpi
+<tr><th>150 dpi
+<tr><th>300 dpi
+<tr><th>600 dpi
+<tr><th>1200 dpi
+</table>
+<p>
+
+
+<p>
+<dt class=type><a name="PageLayout">
+<b>PageLayout
+</b></a>
+<dd class=data>This select control allows definition of the page layout, portrait or vertical,
+landscape
+or horizontal.
+
+
+<p>
+<dt class=type><a name="PageFeed">
+<b>PageFeed
+</b></a>
+<dd class=data>This select control allows selection of the way in which page feed characters are
+to
+be used. They may be generated prior to printing the page, upon completion of the
+
+page or simply inhibited.
+
+
+<p>
+<dt class=type><a name="PageAlign">
+<b>PageAlign
+</b></a>
+<dd class=data>This select control allows page alignment to be specified. Page alignment will be
+applied
+when the overall output is smaller than the target surface and controls the
+distrobution
+of the surplus.
+
+
+<p>
+<dt class=type><a name="Preview">
+<b>Preview
+</b></a>
+<dd class=data>When this check control has been activated then page preview print control code
+will
+be generated to allows screen preview of the document when the printer name
+has been
+set to space.
+
+
+<p>
+<dt class=type><a name="LeftMargin">
+<b>LeftMargin
+</b></a>
+<dd class=data>This edit field, in conjunction with the following select control, allows precise
+control
+over the dimensions of the left margin allowing exact page positioning of
+the printed
+document.
+
+
+<p>
+<dt class=type><a name="LeftMarginUnits">
+<b>LeftMarginUnits
+</b></a>
+<dd class=data>This select control provides the units of the preceeding margin value.
+
+<p>
+<dt class=type><a name="TopMargin">
+<b>TopMargin
+</b></a>
+<dd class=data>As for the left margin this edit field allows definition of the top margin and
+will
+be used in conjunction with the following select control providing the units.
+
+
+<p>
+<dt class=type><a name="TopMarginUnits">
+<b>TopMarginUnits
+</b></a>
+<dd class=data>This select  control determines the units of the preceeding top margin parameter
+value.
+
+
+<p>
+<dt class=type><a name="Accept">
+<b>Accept
+</b></a>
+<dd class=data>By clicking on this button you will confirm the collection of document parameters.
+
+
+<p>
+<dt class=type><a name="Cancel">
+<b>Cancel
+</b></a>
+<dd class=data>This push button allows abandon of any modifications prior to leaving the document
+
+parameters dialog box.
+
+
+<p>
+
+
+</dl>
+
+</td>
+</table></div><p>
+
+<p><div align="center">
+<table class="CRT">
+<tr><th><h3 align="center">
+Copyright (c) 2002 Prologue Software
+</h3>
+</table></div><p>
+</body></html>

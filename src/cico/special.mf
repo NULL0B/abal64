@@ -1,0 +1,27 @@
+! include $(ABAL)/common/ixciconr32.def
+! include $(ABAL)/common/libaccess.def
+! include $(ABAL)/common/allocate.def
+
+SYSTEM = LINUX
+SP01   = $(ABAL)/src/cico
+BIN    = $(ABAL)/bin
+PBIN   = /opt/prologue/bin
+
+$(BIN)/ciconv: $(SP01)/ciconv.c
+	$(GCC) $(GDB) -D$(SYSTEM)  -o $@ $* $(IXCICONR32) $(LIBACCESS) $(ALLOCATE)
+	cp $@ $(PBIN)
+! make
+
+$(BIN)/capture: $(SP01)/capture.c
+	$(GCC) $(GDB) -D$(SYSTEM)  -o $@ $*
+	cp $@ $(PBIN)
+! make
+
+$(BIN)/replay: $(SP01)/replay.c
+	$(GCC) $(GDB) -D$(SYSTEM)  -o $@ $*
+	cp $@ $(PBIN)
+! make
+
+
+
+

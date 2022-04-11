@@ -1,0 +1,7 @@
+
+!make
+ATR3 =  $(POBJ)trjvsynt$(OBJ) $(POBJ)trerrors$(OBJ)
+$(POBJ)trjvsynt$(OBJ):  $(SP01)trjvsynt.c $(SP01)stdtypes.h $(SP01)hosts.h $(SP01)trsyntax.h $(SP01)trtcngf.h $(SP01)trtciof.h $(SP01)trclass.h $(SP01)trparser.h $(SP01)trmalloc.h
+$(POBJ)trerrors$(OBJ):  $(SP01)trerrors.c $(SP01)stdtypes.h $(SP01)hosts.h $(SP01)trparser.h $(SP01)troption.h $(SP01)trerrors.h $(SP01)trmsg.h $(SP01)trdebug.h
+
+

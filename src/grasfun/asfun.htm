@@ -1,0 +1,98 @@
+<html>
+<head>
+<title>Asfun Dynamic Library</title>
+<link href="style.css" rel="STYLESHEET" type="text/css" media="SCREEN">
+</head>
+<body>
+<div align=center>
+<h1>Asfun Dynamic Library</h1>
+<table border=1 width="90%">
+<tr><th>Number<th>Signature<th>Description
+<tr><th colspan=3>WINDOW and GENERAL FUNCTIONS</th></tr>
+<tr><th rowspan=2>0<th> %winit(#,#,#,#,#)<th>OK</tr><tr><td colspan=2>uses stylesheet for graphical component definitions</tr>
+<tr><th rowspan=2>1<th> %wcreat(%? , $)<th>OK</tr><tr><td colspan=2>&nbsp;</tr>
+<tr><th rowspan=2>2<th> %wsup(%)<th>OK</tr><tr><td colspan=2>&nbsp;</tr>
+<tr><th rowspan=2>3<th> %wwrite(%,%,$)<th>OK</tr><tr><td colspan=2>&nbsp;</tr>
+<tr><th rowspan=2>4<th> %wselect(%)<th>OK</tr><tr><td colspan=2>&nbsp;</tr>
+<tr><th rowspan=2>5<th> %winv(%)<th>OK</tr><tr><td colspan=2>&nbsp;</tr>
+<tr><th rowspan=2>6<th> %wvis(%)<th>OK</tr><tr><td colspan=2>&nbsp;</tr>
+<tr><th rowspan=2>7<th> %wfgen(%,%)<th>OK</tr><tr><td colspan=2>&nbsp;</tr>
+<tr><th rowspan=2>8<th> %watb(%,#,#,#)<th>OK</tr><tr><td colspan=2>&nbsp;</tr>
+<tr><th rowspan=2>9<th> %wposcur(%,%,%)<th>OK</tr><tr><td colspan=2>&nbsp;</tr>
+<tr><th rowspan=2>10<th>%wimpl(%)<th>OK</tr><tr><td colspan=2>&nbsp;</tr>
+<tr><th rowspan=2>11<th>%wgel(%)<th>OK</tr><tr><td colspan=2>&nbsp;</tr>
+<tr><th rowspan=2>12<th>%wfend()<th>OK</tr><tr><td colspan=2>&nbsp;</tr>
+<tr><th rowspan=2>13<th>%wsetatb(%,#,#,#,%,%,%,%)<th>&nbsp;</tr><tr><td colspan=2>&nbsp;</tr>
+<tr><th rowspan=2>45<th>%wfmod(%,%,%?,$?,#,.?)<th>50%</tr><tr><td colspan=2>Needs completion to be sure that it is still compatible with the text mode applications.</tr>
+<tr><th rowspan=2>50<th>%wget_impl(%?)<th>OK</tr><tr><td colspan=2>&nbsp;</tr>
+<tr><th rowspan=2>58<th>%wexit(%)<th>OK</tr><tr><td colspan=2>&nbsp;</tr>
+<tr><th rowspan=2>59<th>%wrefresh()<th>OK</tr><tr><td colspan=2>&nbsp;</tr>
+<tr><th rowspan=2>60<th>%menu_way(#?,$?)<th>OK</tr><tr><td colspan=2>&nbsp;</tr>
+<tr><th rowspan=2>61<th>%swcreat(%?,%,%,%,%,.)<th>OK</tr><tr><td colspan=2>&nbsp;</tr>
+<tr><th rowspan=2>62<th>%wcadre(%,#,.)<th>OK</tr><tr><td colspan=2>&nbsp;</tr>
+<tr><th rowspan=2>63<th>%wtitre(%,#,#,#,.)<th>OK</tr><tr><td colspan=2>&nbsp;</tr>
+<tr><th rowspan=2>64<th>%wmove(%,%,%)<th>OK</tr><tr><td colspan=2>&nbsp;</tr>
+<tr><th rowspan=2>67<th>%set_tch_esc(#,$)<th>OK</tr><tr><td colspan=2>&nbsp;</tr>
+<tr><th rowspan=2>68<th>%winfo(%,$?)<th>OK</tr><tr><td colspan=2>&nbsp;</tr>
+<tr><th rowspan=2>69<th>%get_style(#,$?)<th>&nbsp;</tr><tr><td colspan=2>&nbsp;</tr>
+<tr><th rowspan=2>70<th>%set_style(#,$)<th>&nbsp;</tr><tr><td colspan=2>&nbsp;</tr>
+<tr><th rowspan=2>71<th>%wlangue(#)<th>OK</tr><tr><td colspan=2>&nbsp;</tr>
+<tr><th rowspan=2>72<th>%asfvers($?)<th>OK</tr><tr><td colspan=2>Returns 3.2a to identify this version of Asfun</tr>
+<tr><th rowspan=2>88<th>%who_is_there(%,%,%?,%?)<th>OK</tr><tr><td colspan=2>&nbsp;</tr>
+<tr><th rowspan=2>89<th>%rlecomp($,$,%)<th>OK</tr><tr><td colspan=2>&nbsp;</tr>
+<tr><th rowspan=2>90<th>%rledecomp($,$,%)<th>OK</tr><tr><td colspan=2>&nbsp;</tr>
+<tr><th colspan=3>SERVICES FUNCTIONS</th></tr>
+<tr><th rowspan=2>14<th> %sf_init($)<th>50%</tr><tr><td colspan=2>StatusBar/Menus/Windows, needs lists and dialog boxs</tr>
+<tr><th rowspan=2>15<th>%sl_activ()<th>OK</tr><tr><td colspan=2>&nbsp;</tr>
+<tr><th rowspan=2>16<th>%sl_mess(#,#,$)<th>OK</tr><tr><td colspan=2>&nbsp;</tr>
+<tr><th rowspan=2>17<th>%sl_inv()<th>OK</tr><tr><td colspan=2>&nbsp;</tr>
+<tr><th rowspan=2>18<th>%sl_desac()<th>OK</tr><tr><td colspan=2>&nbsp;</tr>
+<tr><th rowspan=2>44<th>%sf_end()<th>50%</tr><tr><td colspan=2>StatusBar/Menus/Windows</tr>
+<tr><th colspan=3>MENU FUNCTIONS</th></tr>
+<tr><th rowspan=2>19<th>%menu_creat(#,$,.)<th>OK</tr><tr><td colspan=2>&nbsp;</tr>
+<tr><th rowspan=2>20<th>%menu_option(#,#,$,$,$)<th>OK</tr><tr><td colspan=2>&nbsp;</tr>
+<tr><th rowspan=2>21<th>%menu_sep(#,#)<th>OK</tr><tr><td colspan=2>&nbsp;</tr>
+<tr><th rowspan=2>22<th>%menu_modif_opt(#,#,#,$,$,$)<th>OK</tr><tr><td colspan=2>&nbsp;</tr>
+<tr><th rowspan=2>23<th>%menu_latt_opt(#,#,#?,#?,#?,.)<th>OK</tr><tr><td colspan=2>&nbsp;</tr>
+<tr><th rowspan=2>24<th>%menu_matt_opt(#,#,#,#,#)<th>OK</tr><tr><td colspan=2>&nbsp;</tr>
+<tr><th rowspan=2>25<th>%menu_blank_opt(#,#)<th>OK</tr><tr><td colspan=2>&nbsp;</tr>
+<tr><th rowspan=2>26<th>%menu_vis(#,#,#)<th>OK</tr><tr><td colspan=2>&nbsp;</tr>
+<tr><th rowspan=2>27<th>%menu(#,#,#?,#?,$?,.?)<th>OK</tr><tr><td colspan=2>&nbsp;</tr>
+<tr><th rowspan=2>28<th>%menu_inv(#)<th>OK</tr><tr><td colspan=2>&nbsp;</tr>
+<tr><th rowspan=2>29<th>%menu_sup(#)<th>OK</tr><tr><td colspan=2>&nbsp;</tr>
+<tr><th colspan=3>LIST FUNCTIONS</th></tr>
+<tr><th rowspan=2>30<th>%list_creat(#,$,.)<th>&nbsp;</tr><tr><td colspan=2>&nbsp;</tr>
+<tr><th rowspan=2>31<th>%listmul_creat(#,$,.)<th>&nbsp;</tr><tr><td colspan=2>&nbsp;</tr>
+<tr><th rowspan=2>32<th>%list_element(#,%?,#,#,$,$)<th>&nbsp;</tr><tr><td colspan=2>&nbsp;</tr>
+<tr><th rowspan=2>33<th>%list_read_elt(#,%,#?,#?,$?)<th>&nbsp;</tr><tr><td colspan=2>&nbsp;</tr>
+<tr><th rowspan=2>34<th>%list_down(#,%?,#?,#?,$?)<th>&nbsp;</tr><tr><td colspan=2>&nbsp;</tr>
+<tr><th rowspan=2>35<th>%list_up(#,%?,#?,#?,$?)<th>&nbsp;</tr><tr><td colspan=2>&nbsp;</tr>
+<tr><th rowspan=2>36<th>%list_matt_elt(#,%,#,#,.)<th>&nbsp;</tr><tr><td colspan=2>&nbsp;</tr>
+<tr><th rowspan=2>37<th>%list_close(#)<th>&nbsp;</tr><tr><td colspan=2>&nbsp;</tr>
+<tr><th rowspan=2>38<th>%list_vis(#,%,%,.)<th>&nbsp;</tr><tr><td colspan=2>&nbsp;</tr>
+<tr><th rowspan=2>39<th>%list(#,%?,%?,#?,$?,.?)<th>&nbsp;</tr><tr><td colspan=2>&nbsp;</tr>
+<tr><th rowspan=2>40<th>%list_inv(#)<th>&nbsp;</tr><tr><td colspan=2>&nbsp;</tr>
+<tr><th rowspan=2>41<th>%list_sup(#)<th>&nbsp;</tr><tr><td colspan=2>&nbsp;</tr>
+<tr><th rowspan=2>65<th>%listel_del(#,%)<th>&nbsp;</tr><tr><td colspan=2>&nbsp;</tr>
+<tr><th rowspan=2>66<th>%listel_ins(#,%?,#,#,$,$)<th>&nbsp;</tr><tr><td colspan=2>&nbsp;</tr>
+<tr><th colspan=3>VALIDATION BOX FUNCTIONS</th></tr>
+<tr><th rowspan=2>42<th>%bvalid_spc($,$,#?)<th>OK</tr><tr><td colspan=2>&nbsp;</tr>
+<tr><th rowspan=2>43<th>%bvalid(#,#?)<th>OK</tr><tr><td colspan=2>&nbsp;</tr>
+<tr><th colspan=3>ONLINE HELP FUNCTIONS</th></tr>
+<tr><th rowspan=2>46<th>%help_activ(#,$)<th>&nbsp;</tr><tr><td colspan=2>&nbsp;</tr>
+<tr><th rowspan=2>47<th>%help($)<th>&nbsp;</tr><tr><td colspan=2>&nbsp;</tr>
+<tr><th rowspan=2>48<th>%help_desac()<th>&nbsp;</tr><tr><td colspan=2>&nbsp;</tr>
+<tr><th rowspan=2>49<th>%help_def($)<th>&nbsp;</tr><tr><td colspan=2>&nbsp;</tr>
+<tr><th colspan=3>DIALOG BOX FUNCTIONS</th></tr>
+<tr><th rowspan=2>51<th>%bd_creat(%?,%,%,%,%,%,.)<th>&nbsp;</tr><tr><td colspan=2>&nbsp;</tr>
+<tr><th rowspan=2>52<th>%bd_insert(%,%,%,%,.)<th>&nbsp;</tr><tr><td colspan=2>&nbsp;</tr>
+<tr><th rowspan=2>53<th>%bd_use(%,%,%?,.?)<th>&nbsp;</tr><tr><td colspan=2>&nbsp;</tr>
+<tr><th rowspan=2>54<th>%bd_inv(%)<th>&nbsp;</tr><tr><td colspan=2>&nbsp;</tr>
+<tr><th rowspan=2>55<th>%bd_sup(%)<th>&nbsp;</tr><tr><td colspan=2>&nbsp;</tr>
+<tr><th rowspan=2>56<th>%bd_putdata(%,$)<th>&nbsp;</tr><tr><td colspan=2>&nbsp;</tr>
+<tr><th rowspan=2>57<th>%bd_getdata(%,$?)<th>&nbsp;</tr><tr><td colspan=2>&nbsp;</tr>
+</table>
+</div>
+</body>
+</html>
+

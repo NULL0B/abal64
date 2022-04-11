@@ -1,0 +1,29 @@
+# criteria 3.6 modules programs and libraries
+# -------------------------------------------
+bin16cri/crinet: cri36eD4/crinet
+	cp $* $@
+bin16cri/criteria: cri36eD4/criteria
+	cp $* $@
+bin16cri/crirest.at: cri36eD4/crirest.at
+	cp $* $@
+bin16cri/rtam36.at: cri36eD4/rtam36.at
+	cp $* $@
+bin16cri/svam36.at: cri36eD4/svam36.at
+	cp $* $@
+lib16cri/libprltrace.so: cri36eD4/libprltrace.so
+	cp $* $@
+lib16cri/libcriter.so: cri36eD4/libcriter.so
+	cp $* $@
+! make
+
+
+
+
+
+
+
+
+
+
+
+

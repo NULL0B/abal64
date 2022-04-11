@@ -1,0 +1,3 @@
+midi: midi.c miditrak.c midibuff.c
+	cc -g -o $@ midi.c
+

@@ -1,0 +1,7 @@
+
+!make
+BROWSE2 =  $(POBJ)browse$(OBJ) $(POBJ)filefind$(OBJ)
+$(POBJ)browse$(OBJ):  $(SP01)browse.c $(SP01)stdtypes.h $(SP01)browse.h $(SP01)filefind.h $(SP01)version.h $(SP01)agrmsg.c $(SP01)agrfr.h $(SP01)agruk.h $(SP01)agr21x.h
+$(POBJ)filefind$(OBJ):  $(SP01)filefind.c $(SP01)stdtypes.h $(SP01)filefind.h
+
+

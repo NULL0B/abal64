@@ -1,0 +1,2 @@
+! shell cd $(ABAL)/release/useit14b; $(MAKE)
+

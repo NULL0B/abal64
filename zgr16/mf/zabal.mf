@@ -1,0 +1,4 @@
+
+$(POBJ)zabal$(OBJ):  $(SP01)zabal.c /home/abal64/include/bdas/wdef.h /home/abal64/include/bdas/pubsbda.h /home/abal64/include/bdas/pubwbda.h /home/abal64/include/bdas/bda.h /home/abal64/include/bdas/oldbda.h $(SP01)zext.h $(SP01)zint.h /home/abal64/include/banapi.h $(SP01)ztrace.h '
+/home/abal64/include/trace.h $(SP01)jguipix.h $(SP01)zglobal.h $(SP01)zac.h $(SP01)ztext.h $(SP01)zgui.h $(SP01)zgraphic.h $(SP01)zsys.h $(SP01)zxpgrver.h /home/abal64/include/bankrnl.h bankrnl.rc $(SP01)zabaglob.c $(SP01)jlinuxaccess.c $(SP01)zabahead.c
+

@@ -1,0 +1,17 @@
+
+! include $(ABAL)/common/common.def
+
+SP01 = $(ABAL)/src/amake/
+
+apb.o: $(SP01)apb.c
+	-$(GCC) -c -g $(GDB) -DGCC -DUNIX $* 1> pipo1 2> pipo2
+	cat pipo1 pipo2 > pipo
+	agr -apipo
+! make
+
+$(ABAL)/bin/apb: apb.o 
+	$(GCC) -g $(GDB) -o $@ $? 
+
+! make
+
+

@@ -1,0 +1,3 @@
+
+$(POBJ)jcprepct$(OBJ):  $(SP01)jcprepct.c $(SP01)jinclude.h $(SP01)jpeglib.h $(SP01)xp_core.h $(SP01)prtypes.h $(SP01)prcpucfg.h $(SP01)protypes.h $(SP01)jconfig.h $(SP01)jmorecfg.h $(SP01)jwinfig.h $(SP01)jos2fig.h $(SP01)jprlfig.h $(SP01)jri.h $(SP01)jpegint.h $(SP01)jerror.h
+

@@ -1,0 +1,70 @@
+# ---------------------------------------------------------------
+#                  ABAL 3 Runtime Production Makefile
+# ---------------------------------------------------------------
+# This makefile transfers all files to this production directory
+# and its subdirectories prior to building the tar zipped image
+# package. This image package is then installed in the INSTALL
+# directory. The installed image is then used for the production
+# of the RPM binary package
+# The tar package or the rpm package may be wrapped into an auto
+# installable binary executable program using the abal product32b 
+# builder utility using the following variables.
+# ---------------------------------------------------------------
+SUFFIX  = .abal16criteria
+
+! include header.mf
+# -------------------
+# Make file variables
+# -------------------
+STRIP      = echo 
+SOURCE     = $(ABAL)/
+TARGET     = $(ABAL)/product32b/
+INSTALL    = /home/abal3
+PAYLOAD    = abal16criteria.tgz
+
+# --------------------------------------------------------------
+# Check all package components against source production modules
+# --------------------------------------------------------------
+! include cri36.mf
+! include bin16cri.mf
+! include lib16cri.mf
+! include fonts.mf
+! include images.mf
+! make
+
+# --------------------------------------
+# Build the Runtime Installation package
+# --------------------------------------
+$(PAYLOAD):  install$(SUFFIX) remove$(SUFFIX) bin16cri lib16cri fonts images cico tbl tbl/VA tbl/VF
+	tar -czvf $@ $?
+! make
+
+# --------------------------------------
+# production of autoinstallation release
+# --------------------------------------
+! ifdef RELEASE
+PRODUCT     = "-t/home/abal3/$(PAYLOAD)"
+PREINSTALL  = "-bcd /home/abal3"
+DOINSTALL   = "-itar -xzf" 
+POSTINSTALL = "-a./install$(SUFFIX)"
+$(SOURCE)release/$(RELEASE): $(TARGET)$(PAYLOAD)
+	apb -p -z -v -s$* $(PRODUCT) -d/home/abal3 $(PREINSTALL) $(DOINSTALL) $(POSTINSTALL) $@
+! make
+! endif
+
+# -------------------------------------------
+# Transfer to target machine for distribution
+# -------------------------------------------
+! ifdef WEB
+! shell scp $(PORTSCP) $(SOURCE)release/$(RELEASE) $(WEB)
+! shell cp $(SOURCE)release/$(RELEASE) /home/product32b/redhat/31d16
+! endif
+
+
+# ---------------
+# End of Makefile
+# ---------------
+ 
+
+
+

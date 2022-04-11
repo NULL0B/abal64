@@ -1,0 +1,137 @@
+<html>
+<head>
+<title>ABAL 3 : Ldap</title>
+<META NAME="VERSION" CONTENT="*PRL@INFO*$6:31a001">
+<link href="style.css" rel="STYLESHEET" type="text/css" media="SCREEN">
+</head>
+<body>
+<div align=center>
+<table border=1 width="90%">
+<tr><th><h1 align=center>ABAL 3 : LDAP</h1>
+</table>
+<p>
+<table border=1 width="90%">
+<tr><td><p>
+<ol>
+<li><h3>Introduction</h3><p>
+This document provides all the necessary details describing the use of <b>LDAP</b>, the Lightweight Directory Access Protocol, by the <b>ABAL 3</b> Development
+and Runtime tools under <b>USEIT</b>.
+<p>The annuaire of LDAP allows for the centralisation of configuration information on a single configuration server
+to be accessed by all programs , users and machines for the retrieval of their configuration.
+<li><h3>Installation</h3><p>
+Installation of the <b>abal3.schema</b> describing the various atributs and object classes comprising by the ABAL 3 LDAP
+configuration should be installed by following the instructions as described below :
+<p>
+
+<ol>
+<li>Log onto your USEIT system as root !<p>
+<li>Using the text editor of your choice, open the system file <b>/etc/openldap/slapd.conf</b>.<p>
+<b>aed /etc/openldap/slapd.conf</b><p>
+<li>Add the line :<p>
+<b>include /etc/openldap/schema/abal3.schema</b><p>
+just after the line<p>
+<b>include /etc/openldap/schema/UseIt.schema</b><p>
+<li>Save the file to disk and exit from the editor.<p>
+<li>Determine the process number of the LDAP service using the following command.<p>
+<b>ps -ef | grep slapd</b><p>
+This command will return the following information<p>
+root       524     1  0 14:18 ?        00:00:10 /usr/sbin/slapd -f /etc/openldap<br>
+root      2630  2044  0 19:09 pts/2    00:00:00 grep slapd<p>
+The process number is the first value after <b>root</b> in the first line of the output from this command.<p>
+In this case 524 but a different value in your actual case.<p>
+
+<li>Disactivate the LDAP service using process number of slapd above with the following command.<p>
+<b>kill -HUP processnumber</b><p>
+<li>Restart the LDAP service with the command<p>
+<b>slapd</b>
+</ol>
+<p>
+From now on, and after each reboot, the LDAP service will understand the classes and atributs comprising the ABAL3 configuration.
+<p>
+<li><h3>Configuration</h3><p>
+<p>The previous stage has installed the description of the various atributs and classes required for the
+storage of ABAL 3 configuration objects.
+<p>Configuration objects must now be created in the LDAP directory data base. 
+<p>To create the basic configuration objects please follow the instructions provided below.
+<p>
+<ol>
+<li>Open a graphical terminal window by clicking on the coresponding desktop icon.<p>
+<li>Change directory to the ABAL 3 directory with the following command.
+<p><b>cd /home/abal3</b><p>
+<li>Start the ABAL 3 Development tool <b>SING</b> with the following syntax
+<p><b>sing test</b><p>
+<li>Select the option of the main menu <b>Options</b>. This will lead to a pop up menu<p>
+<li>Select the popup menu option <b>Configuration</b> to gain access to the configuration dialog box.<p>
+<li>On the first page of this dialog box you must type <b>sing</b> into the edit field marked <b>FILENAME</b><p>
+<li>Also on the first page of this dialog box you must type your <b>Internet IP Address</b> into the edit field 
+marked <b>ABALHOST</b><p>
+<li>When you then click on the button marked <b>Save Ldap</b> the configuration dialog frame will disappear for 2 or 3 seconds
+as the LDAP configuration object <b>confSing</b> is created.<p>
+<li>When the dialog box returns type <b>visual</b> into the edit field marked <b>FILENAME</b><p>
+<li>When you again click on the button marked <b>Save Ldap</b> the configuration dialog frame will disappear for 2 or 3 seconds
+as the LDAP configuration object <b>confVisual</b> is created.<p>
+<li>You may now leave the configuration dialog box by pressing either escape, or clicking on the cancel button.<p>
+<li>Leave SING via the main menu option <b>File</b> and popup menu option <b>Quit</b><p>
+<li>Inspect the contents of the LDAP annuaire with the following command
+<p><b>ldapview</b><p>
+<li>Using the up and down page and arrow keys to move through the LDAP entries, ensure the existance of the LDAP objects 
+and their atribut sub objects
+<p>
+
+<dl>
+<dt>
+ou=languageAbal
+<dd>
+<dl>
+<dt>ou=confSing
+<dd>ou=confAed
+<br>ou=confAld
+<br>ou=confAtr
+<br>ou=confHtml
+<dd>ou=confOld
+<br>ou=confOtr
+<br>ou=confRuntime
+<br>ou=confVisual
+<dt>ou=confVisual
+<dd>ou=confAed
+<br>ou=confAld
+<br>ou=confAtr
+<br>ou=confHtml
+<dd>ou=confOld
+<br>ou=confOtr
+<br>ou=confRuntime
+<br>ou=confVisual
+</dl>
+</dl>
+
+<p>
+You may inspect the various properties by pressing the space bar to open the sub objects and display their atribut collections.
+<p>
+<li>Finally leave the <b>ldapview</b> utility by pressing the key combination <b>ALT X</b><p>
+</ol>
+<p>
+<li><h3>Operation</h3><p>
+Both the new ABAL 3 design tool <b>SING</b>, and the ABAL 3 runtime libraries <b>visual.so</b> and <b>visual32.so</b>
+may make use of <b>LDAP</b>for the retrieval of their configuration information.<p>
+Activation of this requires the configuration of the environment variable <b>ABALHOST</b> to provide the <b>INTERNET IP ADDRESS</b>
+of a valid LDAP server containing the relevant ABAL3 configuration instance, <b>confSing</b> for <B>sing</b> and <b>confVisual</b> for <b>visual.so</b> and <b>visual32.so</b><p>
+If the environment variable is not set or set to "0" then the corresponding configuration file will be used as the
+source for the configuration information, <b>sing.cfg</b> for <b>sing</b> and <b>visual.cfg</b> for <b>visual.so</b> and <b>visual32.so</b>.<p>
+In addition the configuration mechanisms of the <b>ABAL 3</b> development tool <b>sing</b> may be used to modify and save the
+various configuration values.
+<p>
+</ol>
+
+
+</table>
+<p>
+<table>
+<tr><th><h3 align=center>Copyright &copy; <a href="http://www.prologue-software.fr">Prologue Software</a></h3>
+<tr><th><h3 align=center>Version Fran&ccedil;aise <a href="fr/ldap.htm"><img src="tricolor.gif"></a>
+</table>
+</div>
+</body>
+</html>
+
+
+

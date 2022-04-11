@@ -1,0 +1,785 @@
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="generator" content="Prologue Sing Html Version 1.0a">
+<meta name="version" content="*PRL@INFO*#11a040">
+<link href="style.css" type="text/css" rel="stylesheet" media="screen">
+<link href="style.css" type="text/css" rel="stylesheet" media="print">
+<title>Sing Version 1.0a
+</title>
+</head><body>
+<div align="center">
+<table class="DOC">
+<tr><th><h1 align="center">
+Sing Version 1.0a
+</h1>
+<td><div align="center"><img src="logo.jpg">
+</div></table></div><p>
+<a name="singproj.xml">
+
+<p>
+<div align="center">
+<table class="DS">
+<tr><th><h2 align="center">
+Project Editor
+</h2>
+
+<tr><td><p><div align="center"><img src="singproj.gif" usemap="#Project_Editor" >
+</div><p>
+<tr><td>
+
+<map name="Project_Editor">
+<area type=rect href="#upicon.gif" coords="19,2,44,27">
+<area type=rect href="#X+/-" coords="4,235,54,251">
+<area type=rect href="#ByX" coords="4,252,52,268">
+<area type=rect href="#Y+/-" coords="4,275,54,291">
+<area type=rect href="#ByY" coords="4,292,52,308">
+<area type=rect href="#Z+/-" coords="4,315,54,331">
+<area type=rect href="#ByZ" coords="4,332,52,348">
+<area type=rect href="#MoveLeft" coords="4,88,20,108">
+<area type=rect href="#MoveRight" coords="36,88,52,108">
+<area type=rect href="#MoveUp" coords="20,72,36,92">
+<area type=rect href="#MoveInOut" coords="20,88,36,108">
+<area type=rect href="#MoveDown" coords="20,104,36,124">
+<area type=rect href="#AtX" coords="4,148,52,164">
+<area type=rect href="#AtY" coords="4,170,52,186">
+<area type=rect href="#AtZ" coords="4,192,52,208">
+<area type=rect href="#upicon.gif" coords="840,4,864,29">
+<area type=rect href="#Palette" coords="827,40,875,619">
+<area type=rect href="#File" coords="68,8,158,28">
+<area type=rect href="#New" coords="68,36,148,55">
+<area type=rect href="#Save" coords="70,54,160,74">
+<area type=rect href="#Save As" coords="70,70,160,90">
+<area type=rect href="#Open" coords="70,86,160,106">
+<area type=rect href="#Production" coords="70,102,160,122">
+<area type=rect href="#Drop" coords="70,118,160,138">
+<area type=rect href="#Quit" coords="70,134,160,154">
+<area type=rect href="#View" coords="168,8,258,28">
+<area type=rect href="#Run" coords="172,40,262,58">
+<area type=rect href="#Text" coords="172,56,262,76">
+<area type=rect href="#Image" coords="172,72,262,92">
+<area type=rect href="#Font" coords="172,88,262,108">
+<area type=rect href="#Properties" coords="172,104,262,124">
+<area type=rect href="#Visual" coords="172,120,262,140">
+<area type=rect href="#DataBase" coords="172,136,262,156">
+<area type=rect href="#TreeView" coords="172,152,262,172">
+<area type=rect href="#Application" coords="172,168,262,188">
+<area type=rect href="#Event" coords="280,8,370,28">
+<area type=rect href="#ItemDocument" coords="272,148,371,170">
+<area type=rect href="#FormDocument" coords="272,164,376,184">
+<area type=rect href="#Options" coords="388,8,478,28">
+<area type=rect href="#Parameters" coords="390,38,480,58">
+<area type=rect href="#Refresh" coords="390,56,480,76">
+<area type=rect href="#Configure" coords="390,74,490,94">
+<area type=rect href="#Screen Capture" coords="390,92,500,112">
+<area type=rect href="#Animate" coords="390,110,490,130">
+<area type=rect href="#Project" coords="500,8,590,26">
+<area type=rect href="#Camera" coords="500,40,600,58">
+<area type=rect href="#Translate" coords="500,56,590,78">
+<area type=rect href="#Help Text" coords="500,72,590,94">
+<area type=rect href="#Add Form" coords="500,92,600,112">
+<area type=rect href="#Add Source" coords="500,112,593,131">
+<area type=rect href="#Add Image" coords="500,128,590,148">
+<area type=rect href="#Executeur" coords="695,7,713,22">
+<area type=rect href="#Executeur" coords="675,7,693,22">
+<area type=rect href="#Editor" coords="713,7,731,22">
+<area type=rect href="#Translator" coords="732,7,750,22">
+<area type=rect href="#Linker" coords="751,7,769,22">
+</map>
+The project modelling tool of the ABAL 3 development environment comprises th following
+subsystems : 
+<OL>
+<LI> a three dimensional workbench on which the project components
+are presented
+<LI> a tool bar providing model navigational controls.
+<LI> a palette
+bar allowing choice of colours
+<LI> a status bar for the display of informational
+messages
+<LI> and a popup menu system allowing access to the modelling functions.
+</OL>
+<p>
+Each
+of the subsytems and their component controls will be described in detail in the 
+remainder
+of this document.
+
+
+
+
+
+<p>
+
+<dl>
+<dt class=type><a name="upicon.gif">
+<b>upicon.gif
+</b></a>
+<dd class=data>The display of the various model editor tools bars is controlled by this
+button. When
+the arrow points upwards a click will cause the display of the
+tool bar to be inhibited.
+The arrow button will then point downwards in which
+case a click will cause the tool
+bar to be redisplayed.
+
+
+<p>
+<dt class=type><a name="X+/-">
+<b>X+/-
+</b></a>
+<dd class=data>This push button allows the X step value to be changed. By clicking with the
+left
+button, the current value will be raised by a power of two,By clicking with the
+right
+button, the current value will be decreased by a power of two,
+
+
+<p>
+<dt class=type><a name="ByX">
+<b>ByX
+</b></a>
+<dd class=data>This edit field show the X value of the current camera step. This value will be
+added
+to or subtracted from  the current camera X position in response to 
+<b>MoveLeft</b>
+and <b>MoveRight</b> push button events.
+
+
+
+
+<p>
+<dt class=type><a name="Y+/-">
+<b>Y+/-
+</b></a>
+<dd class=data>This push button allows the Y step value to be changed. By clicking with the
+left
+button, the current value will be raised by a power of two,By clicking with the
+right
+button, the current value will be decreased by a power of two,
+
+
+<p>
+<dt class=type><a name="ByY">
+<b>ByY
+</b></a>
+<dd class=data>This edit field show the Y value of the current camera step. This value will be
+added
+to or subtracted from  the current camera Y position in response to 
+<b>MoveUp</b>
+and <b>MoveDown</b> push button events.
+
+
+<p>
+<dt class=type><a name="Z+/-">
+<b>Z+/-
+</b></a>
+<dd class=data>This push button allows the Z step value to be changed. By clicking with the
+left
+button, the current value will be raised by a power of two,By clicking with the
+right
+button, the current value will be decreased by a power of two,
+
+
+<p>
+<dt class=type><a name="ByZ">
+<b>ByZ
+</b></a>
+<dd class=data>This edit field show the Z value of the current camera step. This value will be
+added
+to or subtracted from  the current camera Z position in response to 
+<b>MoveIn</b>
+and <b>MoveOut</b> push button events.
+
+
+<p>
+<dt class=type><a name="MoveLeft">
+<b>MoveLeft
+</b></a>
+<dd class=data>This push button allows the camera view point to be moved left by the X step value.
+
+
+<p>
+<dt class=type><a name="MoveRight">
+<b>MoveRight
+</b></a>
+<dd class=data>This push button allows the camera view point to be moved right by the X step value.
+
+
+<p>
+<dt class=type><a name="MoveUp">
+<b>MoveUp
+</b></a>
+<dd class=data>This push button allows the camera view point to be moved up.
+
+
+<p>
+<dt class=type><a name="MoveInOut">
+<b>MoveInOut
+</b></a>
+<dd class=data>This push button allows the camera view point to be moved in or out by the
+Z step
+value depending on the mouse button used. The left button of the mouse
+performs the
+<b>MoveIn</b> action, whilst
+the right button  or the mouse performs the <b>MoveOut</b>.
+
+
+<p>
+<dt class=type><a name="MoveDown">
+<b>MoveDown
+</b></a>
+<dd class=data>This push button allows the camera view point to be moved down by the Y step value.
+
+
+<p>
+<dt class=type><a name="AtX">
+<b>AtX
+</b></a>
+<dd class=data>This edit field show the X value of the current camera position.
+
+
+<p>
+<dt class=type><a name="AtY">
+<b>AtY
+</b></a>
+<dd class=data>This edit field show the Y value of the current camera position.
+
+
+<p>
+<dt class=type><a name="AtZ">
+<b>AtZ
+</b></a>
+<dd class=data>This edit field show the Z value of the current camera position.
+
+
+<p>
+<dt class=type><a name="upicon.gif">
+<b>upicon.gif
+</b></a>
+<dd class=data>The display of the colour palette bar to the right of the  screen is controlled by
+this
+button. When the arrow points upwards a click will cause the display of the
+palette
+bar to be inhibited. The arrow button will then point downwards in which
+case a click
+will cause the palette bar to be redisplayed.
+
+
+<p>
+<dt class=type><a name="Palette">
+<b>Palette
+</b></a>
+<dd class=data>The Palette bar displays all colours of the currently loaded palette and allows colour
+selection 
+by a simple click on the required colour.
+A click with the left button
+will set the current foreground colour whilst a click with the right button
+will set
+the current background colour.
+Selection of a colour for the project model background
+is possible in this way, The effect will be 
+visible at one unless a full screen background
+image has already been affected to the project modeler
+background.
+
+
+<p>
+<dt class=type><a name="File">
+<b><u>F</u>ile
+</b></a>
+<dd class=data>Selection of this menu options gives access to the generic file operations 
+menu whose
+options are described here below.
+<dl><dd>
+
+
+
+<p>
+<dt class=type><a name="New">
+<b><u>N</u>ew
+</b></a>
+<dd class=data>Selection of this menu option causes the contents of the current model to
+be reset
+to empty. All components will be released.
+
+
+<p>
+<dt class=type><a name="Save">
+<b><u>S</u>ave
+</b></a>
+<dd class=data>This menu options performs a quick save of the current model to disk 
+without user
+prompt.
+
+
+<p>
+<dt class=type><a name="Save As">
+<b>Sa<u>v</u>e As
+</b></a>
+<dd class=data>Activation of this menu option gives access to the corresponding 
+<a href="vmsave.htm">model
+save</a> parameter input dialog box prior to the eventual 
+model save operation.
+
+
+<p>
+<dt class=type><a name="Open">
+<b><u>O</u>pen
+</b></a>
+<dd class=data>This menu operation gives access to the corresponding <a href="vmload.htm">model load</a>
+
+parameter input dialog box allowing new project models to opened 
+and added to the
+list of open project models.
+
+
+
+<p>
+<dt class=type><a name="Production">
+<b><u>P</u>roduction
+</b></a>
+<dd class=data>Selection of this menu option gives access to the <a href="vmprod.htm">project production</a>
+parameter
+input dialog box allowing control of the project production
+process.
+
+
+<p>
+<dt class=type><a name="Drop">
+<b><u>D</u>rop
+</b></a>
+<dd class=data>Selection of this menu option causes the current project model to be 
+released from
+the list of open project models.
+
+
+<p>
+<dt class=type><a name="Quit">
+<b><u>Q</u>uit
+</b></a>
+<dd class=data>This menu option should be selected if you wish to leave the ABAL 3
+development tool.
+If unsaved modifications are detected amongst any of
+the open project models you will
+be prompted via the 
+<a href="vexit.htm"> exit check </a> dialog box for the appropriate
+action
+required to be taken prior to return to the host operating
+system or calling process.
+</dl>
+
+
+
+
+<p>
+<dt class=type><a name="View">
+<b><u>V</u>iew
+</b></a>
+<dd class=data>Selection of this menu option of the main menu gives access to the 
+view or tool operations
+menu whose options are described below.
+<dl><dd>
+
+
+
+<p>
+<dt class=type><a name="Run">
+<b><u>R</u>un
+</b></a>
+<dd class=data>Select this option in order to gain access to the <a href="vdebug.htm">debug and runtime
+control</a> dialog
+box allowing abal applications to be run, tested and debugged from
+within the development tool.
+
+
+<p>
+<dt class=type><a name="Text">
+<b>Te<u>x</u>t
+</b></a>
+<dd class=data>Selection of this menu option gives explicite access to the 
+<a href="singedit.htm">standard
+text editor </a>
+for the current model component.
+
+
+
+<p>
+<dt class=type><a name="Image">
+<b><u>I</u>mage
+</b></a>
+<dd class=data>Activation of this menu option gives explicite access to the <a href="singbmap.htm">bitmap
+editor</a>.
+allowing inspection and modification of the model image. 
+
+
+<p>
+<dt class=type><a name="Font">
+<b>Fo<u>n</u>t
+</b></a>
+<dd class=data>Select this menu option to gain access to the <a href="singfont.htm">font editor</a>.
+
+
+
+<p>
+<dt class=type><a name="Properties">
+<b><u>P</u>roperties
+</b></a>
+<dd class=data>Selection of the properties menu option gives access to the 
+<a href="vcube.htm">3D
+component</a> properties dialog box
+allowing the various properties to be inspected
+and eventually modified.
+
+
+<p>
+<dt class=type><a name="Visual">
+<b><u>V</u>isual
+</b></a>
+<dd class=data>Selection of this menu option gives access to the component specific visual model
+editor.
+For forms and document models this will be the <a href="singform.htm">visual
+forms editor</a>.
+For Image components
+this will be the <a href="singbmap.htm">bitmap
+editor</a>
+ and for Source components this will be the <a href="singedit.htm">standard
+text editor</a>.
+
+
+<p>
+<dt class=type><a name="DataBase">
+<b><u>D</u>ataBase
+</b></a>
+<dd class=data>Selection of this menu option gives access to the data base or 
+<a href="vfile.htm">
+data object manager</a>
+responsable for the centralisation of all data file and object
+descriptions.
+
+
+
+<p>
+<dt class=type><a name="TreeView">
+<b>Tr<u>e</u>eView
+</b></a>
+<dd class=data>Selection of the treeview menu option toggles the <a href="singtree.htm">treeview</a>
+
+mechanism between visible and hidden states.
+
+
+<p>
+<dt class=type><a name="Application">
+<b><u>A</u>pplication
+</b></a>
+<dd class=data>Selection of this menu option returns control to this project model editor from the
+vrious other
+model editor views.
+</dl>
+
+
+<p>
+<dt class=type><a name="Event">
+<b><u>E</u>vent
+</b></a>
+<dd class=data>Selection of this menu option gives access to the menu of widget component
+methods
+and documentation.
+<dl><dd>
+
+
+<p>
+<dt class=type><a name="ItemDocument">
+<b><u>I</u>temDocument
+</b></a>
+<dd class=data>Selection of this menu option gives access to the <a href="singedit.htm">Html Editor</a>
+allowing
+inspection modification of the documentation associated with the current
+active widget
+of the current forms model.
+<p>Documentation and Information provided in this way
+will be collected together
+along with the information provided at the forms compoent
+level,
+to build the forms documentation during the 
+<a href="vmprod.htm">project model</a>
+production operation.
+
+
+
+<p>
+<dt class=type><a name="FormDocument">
+<b>Form<u>D</u>ocument
+</b></a>
+<dd class=data>Selection of this menu option gives access to the <a href="singedit.htm">Html Editor</a>
+allowing
+inspection and modification of the form level documentation for the
+current form or
+document component of the current project model.
+</dl>
+
+
+<p>
+<dt class=type><a name="Options">
+<b><u>O</u>ptions
+</b></a>
+<dd class=data>Selection of this menu options gives access to the general operations 
+menu the options
+of which are described here below.
+<dl><dd>
+
+
+<p>
+<dt class=type><a name="Parameters">
+<b><u>P</u>arameters
+</b></a>
+<dd class=data>Selection of this menu option gives access to the <a href="vparam.htm">General Parameters</a>
+dialog
+box allowing the various editor parameters to be inspected and modified.
+These parameters
+will be used as default values for all subsequent new widget 
+and other model components
+as they are created.
+
+
+<p>
+<dt class=type><a name="Refresh">
+<b><u>R</u>efresh
+</b></a>
+<dd class=data>Selection of this menu option simply causes the development screen to be redraw
+for
+any particular reason.
+
+
+<p>
+<dt class=type><a name="Configure">
+<b><u>C</u>onfigure
+</b></a>
+<dd class=data>Activation of this menu option gices access to the <a href="vrefer.htm">Configuration
+Parameters</a>
+of the ABAL 3 development tool.
+These configuration values are read
+from the configuration file, normally <b>sing.cfg</b>,
+during the start up and construction
+phase of the development environment.
+
+
+
+<p>
+<dt class=type><a name="Screen Capture">
+<b><u>S</u>creen Capture
+</b></a>
+<dd class=data>This menu option may be activated  in order to perform a screen capture operation.
+The entire screen will 
+be captured to a virtual bitmap then the <a href="visave.htm">
+image save</a> dialog box will be presented
+allowing the target image type and file
+name to be specified.
+
+
+
+<p>
+<dt class=type><a name="Animate">
+<b><u>A</u>nimate
+</b></a>
+<dd class=data>Selection of this menu operation gives access to the 
+<a href="vrecrep.htm">Animation
+Record and Replay</a>
+control dialog box.
+Animation recording allows  user input events,
+equally keyboard and mouse events,
+to the development environment to be recorded to
+an animation script file.
+Animation replay allows a recorded script to be re-enacted
+performing the
+identical sequence of input events.
+These features may be used to create
+input macros or for tutorial purposes.
+</dl>
+
+
+<p>
+<dt class=type><a name="Project">
+<b><u>P</u>roject
+</b></a>
+<dd class=data>Selection of the project menu options gives access to the following 
+project model
+specific menu functions
+<dl><dd>
+
+
+<p>
+<dt class=type><a name="Camera">
+<b><u>C</u>amera
+</b></a>
+<dd class=data>Selction of this menu option gives access to the <a href="vcamera.htm">Camera Properties</a>
+dialog
+box allowing inspection and modification of the project model 3D camera
+operational
+parameters.
+
+
+<p>
+<dt class=type><a name="Translate">
+<b><u>T</u>ranslate
+</b></a>
+<dd class=data>Selection of this menu operation will launch a national language translation 
+operation
+on a global scale. All national language message text payloads will be
+injected into
+the translation dictionary mechanisms and then reaffected to all
+matching widget messages
+for the various languages.
+<p>This operation will only include forms for which the
+<b>international</b>
+check control of the <a href="vform.htm">form properties</a>
+dialog box, has been
+activated.
+
+
+
+
+<p>
+<dt class=type><a name="Help Text">
+<b><u>H</u>elp Text
+</b></a>
+<dd class=data>Selection of this menu operation gives access to the multi-lingual document 
+editor
+for the current project form allowing help text description or 
+documentation to be
+specified.
+
+
+<p>
+<dt class=type><a name="Add Form">
+<b>Add <u>F</u>orm
+</b></a>
+<dd class=data>Selection of this menu option allows form components to be added to a project model
+in
+conjunction with the <a href="vcube.htm">project component</a> description dialog
+box.
+<p>
+The project model name defined in this way may contain wild card characters,
+in 
+which case a multiple form add operation will result.
+
+
+
+<p>
+<dt class=type><a name="Add Source">
+<b>Add <u>S</u>ource
+</b></a>
+<dd class=data>Selection of this menu option allows new source file components to be added to a project
+model
+via the <a href="vcube.htm">project component</a> description dialog box.
+Source
+file components allow both existing and newly created standard source files
+to be
+attached to a project model.
+<p>
+The project model name defined in this way may contain
+wild card characters, in 
+which case a multiple source add operation will result.
+
+
+
+
+
+<p>
+<dt class=type><a name="Add Image">
+<b>Add <u>I</u>mage
+</b></a>
+<dd class=data>Selection of this menu option allows image componets to be added to a project model
+in
+association with the <a href="vcube.htm">project component</a> description dialog
+box.
+<p>
+The project model name defined in this way may contain wild card characters,
+in 
+which case a multiple image add operation will result.
+<p>
+</dl>
+
+
+<p>
+<dt class=type><a name="Executeur">
+<b>Executeur
+</b></a>
+<dd class=data>
+		The behaviour of this button depends on the nature of the project component.
+<p>
+For
+all form components and all abal source files
+this icon button provides access to
+the ABAL 3 <a href="vdebug.htm">Runtime and Debug Parameters</a> dialog
+box allowing
+execution and debug of ABAL 3 programs from within the ABAL 3 development environment.
+<p>
+For
+files with either of the <b>.mf</b> or the <b>.mak</b> extensions of named
+<b>makefile</b>
+this button will activate the <a href="vamake.htm">Project Builder</a>
+dialog box
+allowing consultation of the project build options prior to launching
+the update or
+make operation.
+
+
+
+
+<p>
+<dt class=type><a name="Executeur">
+<b>Executeur
+</b></a>
+<dd class=data>This button allows the ABAL Debug Utility to be launched for the inspection and correction
+of
+ABAL program components.
+<p>By clicking with the right button of the mouse the debug
+parameters
+dialog box will be presented, otherwise with the left button the
+debug
+utility will be direclty launched.
+
+
+
+<p>
+<dt class=type><a name="Editor">
+<b>Editor
+</b></a>
+<dd class=data>This icon button provides access to the <a href="vaed.htm">Editor Configuration</a>
+dialog box for
+modification of editor parameters.
+
+
+<p>
+<dt class=type><a name="Translator">
+<b>Translator
+</b></a>
+<dd class=data>This icon button provides access to the ABAL 3 <a href="vtrad.htm">Translator Parameters</a>
+dialog box
+allowing specification of translation parameters prior to the translation
+operation.
+
+
+<p>
+<dt class=type><a name="Linker">
+<b>Linker
+</b></a>
+<dd class=data>This icon button gives access to the ABAL 3 <a href="vlink.htm">Linker Configuration</a>
+dialog box for
+the configuration and activation of ABAL module linking.
+
+
+<p>
+
+
+</dl>
+
+</td>
+</table></div><p>
+
+<p><div align="center">
+<table class="CRT">
+<tr><th><h3 align="center">
+Copyright (c) 2002,2006 Prologue
+</h3>
+</table></div><p>
+</body></html>

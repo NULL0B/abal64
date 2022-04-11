@@ -1,0 +1,288 @@
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="generator" content="Prologue Sing Html Version 1.0a">
+<meta name="version" content="*PRL@INFO*#11a040">
+<link href="style.css" type="text/css" rel="stylesheet" media="screen">
+<link href="style.css" type="text/css" rel="stylesheet" media="print">
+<title>Sing Version 1.0a
+</title>
+</head><body>
+<div align="center">
+<table class="DOC">
+<tr><th><h1 align="center">
+Sing Version 1.0a
+</h1>
+<td><div align="center"><img src="logo.jpg">
+</div></table></div><p>
+<a name="vmethod.xml">
+
+<p>
+<div align="center">
+<table class="DS">
+<tr><th><h2 align="center">
+accept forms method
+</h2>
+
+<tr><td><p><tr><td>
+
+<map name="MethodPage">
+<area type=rect href="#Accept" coords="40,450,150,480">
+<area type=rect href="#Full Screen" coords="260,450,372,482">
+<area type=rect href="#Cancel" coords="500,450,610,480">
+<area type=rect href="#Method" coords="20,30,99,54">
+<area type=rect href="#Public" coords="40,100,138,116">
+<area type=rect href="#Pointer" coords="300,100,404,116">
+<area type=rect href="#MethodType" coords="140,100,280,119">
+<area type=rect href="#MethodClass" coords="140,130,612,146">
+<area type=rect href="#Inline" coords="140,170,224,186">
+<area type=rect href="#Function" coords="240,170,352,186">
+<area type=rect href="#Virtual" coords="360,170,486,186">
+<area type=rect href="#Overload" coords="500,170,598,186">
+<area type=rect href="#MethodName" coords="140,200,612,216">
+<area type=rect href="#Signature" coords="140,230,612,422">
+<area type=rect href="#Body" coords="99,30,162,54">
+</map>
+
+<map name="BodyPage">
+<area type=rect href="#Accept" coords="40,450,150,480">
+<area type=rect href="#Full Screen" coords="260,450,372,482">
+<area type=rect href="#Cancel" coords="500,450,610,480">
+<area type=rect href="#Method" coords="20,30,99,54">
+<area type=rect href="#Body" coords="99,30,162,54">
+<area type=rect href="#MethodText" coords="40,70,610,430">
+</map>
+This dialog box is presented allowing the inspection and modification of 
+a forms
+method.These methods are defined at forms level and may be accessed
+from any other
+the widget level or other forms level methods.
+
+
+<p>
+<dt class=type><a name="Accept">
+<b><u>A</u>ccept
+</b></a>
+<dd class=data>The ACCEPT button allows the modifications performed to the forms method
+ properties
+to be kept and applied to the parent form.
+
+
+<p>
+<dt class=type><a name="Full Screen">
+<b><u>F</u>ull Screen
+</b></a>
+<dd class=data>By clicking on this button, the full screen source editor will be activated
+for the
+edition of the forms method source.
+
+
+<p>
+<dt class=type><a name="Cancel">
+<b><u>C</u>ancel
+</b></a>
+<dd class=data>The CANCEL button allows modifications performed tn the forms method
+properties to
+be abandoned and discarded.
+
+<p>
+<ol><li>
+<dl>
+<dt class=type><a name="Method">
+<b>Method
+</b></a>
+<dd class=data>This tab page presents the collection of forms method parameters for 
+inspection and
+eventual modification.
+ 
+
+<p>
+
+</dl>
+<img src="vmethod1.gif" usemap="#MethodPage" >
+<ul><li>
+<dl>
+<dt class=type><a name="Public">
+<b>Public
+</b></a>
+<dd class=data>This check control applies to object source generation only, and when 
+active indicates
+that the forms method may be acccessed from outside of
+the forms class. Otherwise
+the method will be private.
+
+
+<p>
+
+</dl>
+<li>
+<dl>
+<dt class=type><a name="Pointer">
+<b>Pointer
+</b></a>
+<dd class=data>This check control when activate indicates that the associated return value
+will be
+a pointer to the type indicated by the select control <b>ReturnType</b>.
+
+
+<p>
+
+</dl>
+<li>
+<dl>
+<dt class=type><a name="MethodType">
+<b>MethodType
+</b></a>
+<dd class=data>This select control allows definition of the return type of the forms method
+taken
+from the table presented below :
+<p>
+<table>
+<tr><th>Type<th>Description
+<tr><th>Void<th>Methods
+of this type will not return values.
+<tr><th>Byte<th>8 bit integer return type.
+<tr><th>Word<th>16
+bit integer return type.
+<tr><th>Long<th>32 bit integer return type.
+<tr><th>Numeric<th>Bcd
+Numeric return type
+<tr><th>String<th>String return type
+<tr><th>Class<th>Class return
+type.
+</table>
+<p>
+
+<p>
+
+</dl>
+<li>
+<dl>
+<dt class=type><a name="MethodClass">
+<b>MethodClass
+</b></a>
+<dd class=data>This edit field allows the name of the class to bespecified for class return types
+
+
+
+<p>
+
+</dl>
+<li>
+<dl>
+<dt class=type><a name="Inline">
+<b>Inline
+</b></a>
+<dd class=data>This collection of radio controls applies to object source generation
+only.
+<p>The
+inline option implies that the application method source will
+be inlined where invoked
+rather than packaged in a procedural function body.
+
+
+
+<p>
+
+</dl>
+<li>
+<dl>
+<dt class=type><a name="Function">
+<b>Function
+</b></a>
+<dd class=data>This radio option indicates procedural function packaging of the forms
+method application
+code.
+
+
+<p>
+
+</dl>
+<li>
+<dl>
+<dt class=type><a name="Virtual">
+<b>Virtual
+</b></a>
+<dd class=data>When this radio option is selected the function method will contribute to
+the virtual
+interface of its parent form.
+
+
+<p>
+
+</dl>
+<li>
+<dl>
+<dt class=type><a name="Overload">
+<b>Overload
+</b></a>
+<dd class=data>When this radio option is selected the forms method function will overload
+a virtual
+function of the parent class or one of its baseclass components.
+
+
+<p>
+
+</dl>
+<li>
+<dl>
+<dt class=type><a name="MethodName">
+<b>MethodName
+</b></a>
+<dd class=data>This edit field defines the formal name of the forms method.
+
+
+<p>
+
+</dl>
+<li>
+<dl>
+<dt class=type><a name="Signature">
+<b>Signature
+</b></a>
+<dd class=data>This edit field allows definition of the parameter variables for the reception
+of
+any eventual parameters values required to be passed to the forms method.
+
+
+<p>
+
+</dl>
+</ul><li>
+<dl>
+<dt class=type><a name="Body">
+<b>Body
+</b></a>
+<dd class=data>This tab page presents the application source code associated with and 
+defined for
+the method.
+
+
+<p>
+
+</dl>
+<img src="vmethod2.gif" usemap="#BodyPage" >
+<ul><li>
+<dl>
+<dt class=type><a name="MethodText">
+<b>MethodText
+</b></a>
+<dd class=data>This edit field allows the application source code to be edited using the 
+internal
+source editor.
+
+
+<p>
+
+</dl>
+</ul></ol>
+
+</td>
+</table></div><p>
+
+<p><div align="center">
+<table class="CRT">
+<tr><th><h3 align="center">
+Copyright (c) 2002 Prologue  
+</h3>
+</table></div><p>
+</body></html>

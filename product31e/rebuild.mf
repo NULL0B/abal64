@@ -1,0 +1,25 @@
+# -----------------------------------------------------------
+#  Abal makfile builder : Version 1.0a 
+# -----------------------------------------------------------
+
+OPT = -zs -ucp
+
+! shell mfabal $(OPT) -t$(ABAL)/bin/ -rbin.mf $(ABAL)/product31e/bin/*
+! shell mfabal $(OPT) -t$(ABAL)/lib/ -rlib.mf $(ABAL)/product31e/lib/*.*
+! shell mfabal $(OPT) -t$(ABAL)/bin/ -rbin16.mf $(ABAL)/product31e/bin16/*
+! shell mfabal $(OPT) -t$(ABAL)/lib/ -rlib16.mf $(ABAL)/product31e/lib16/*.*
+! shell mfabal $(OPT) -t$(ABAL)/src/class/ -rclass.mf $(ABAL)/product31e/class/*.*
+! shell mfabal $(OPT) -t$(ABAL)/src/include/ -rinclude.mf $(ABAL)/product31e/include/*.*
+! shell mfabal $(OPT) -t$(ABAL)/images/ -rimages.mf $(ABAL)/product31e/images/*.*
+! shell mfabal $(OPT) -t$(ABAL)/fonts/ -rfonts.mf $(ABAL)/product31e/fonts/*.*
+! shell mfabal $(OPT) -t$(ABAL)/src/style/ -rstyle.mf $(ABAL)/product31e/style/*.*
+! shell mfabal $(OPT) -t$(ABAL)/src/doc/ -rdoc.mf $(ABAL)/product31e/doc/*.*
+! shell mfabal $(OPT) -t$(ABAL)/src/doc/en/ -rdocen.mf $(ABAL)/product31e/doc/en/*.*
+! shell mfabal $(OPT) -t$(ABAL)/src/doc/fr/ -rdocfr.mf $(ABAL)/product31e/doc/fr/*.*
+
+! make
+
+! shell mfabal $(OPT) -t$(ABAL)/bin/ -rrtbin.mf $(ABAL)/product31e/rtbin/*
+! shell mfabal $(OPT) -t$(ABAL)/lib/ -rrtlib.mf $(ABAL)/product31e/rtlib/*.*
+
+

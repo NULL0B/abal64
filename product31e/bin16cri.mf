@@ -1,0 +1,28 @@
+# generated makefile : bin16cri.mf 
+# ------------------------------------
+/home/Dev/abal32/product31e/bin16cri/abalprocess: /home/Dev/abal32/bin/abalprocess
+	cp $* $@ 
+/home/Dev/abal32/product31e/bin16cri/ald22c: /home/Dev/abal32/bin/ald22c
+	cp $* $@ 
+/home/Dev/abal32/product31e/bin16cri/atr22c: /home/Dev/abal32/bin/atr22c
+	cp $* $@ 
+/home/Dev/abal32/product31e/bin16cri/exa16: /home/Dev/abal32/bin/exa16
+	cp $* $@ 
+/home/Dev/abal32/product31e/bin16cri/access: /home/Dev/abal32/bin/access
+	cp $* $@ 
+/home/Dev/abal32/product31e/bin16cri/exadb16: /home/Dev/abal32/bin/exadb16
+	cp $* $@ 
+/home/Dev/abal32/product31e/bin16cri/rtam37.at: /home/Dev/abal32/traduit/rtam37.at
+	cp $* $@ 
+/home/Dev/abal32/product31e/bin16cri/svam37.at: /home/Dev/abal32/traduit/svam37.at
+	cp $* $@ 
+/home/Dev/abal32/product31e/bin16cri/strlwr: /home/Dev/abal32/traduit/strlwr
+	cp $* $@ 
+/home/Dev/abal32/product31e/bin16cri/strupr: /home/Dev/abal32/traduit/strupr
+	cp $* $@ 
+/home/Dev/abal32/product31e/bin16cri/crirest.at: /home/Dev/abal32/traduit/crirest.at
+	cp $* $@ 
+/home/Dev/abal32/product31e/bin16cri/topoint: /home/Dev/abal32/traduit/topoint
+	cp $* $@ 
+
+

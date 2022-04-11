@@ -1,0 +1,8 @@
+
+!make
+ATC5 =  $(POBJ)tratoc$(OBJ)
+$(POBJ)tratoc$(OBJ):  $(SP01)tratoc.c $(SP01)stdtypes.h $(SP01)hosts.h $(SP01)translat.h $(SP01)trsystem.h $(SP01)trtype.h $(SP01)buffers.h $(SP01)trstruct.h $(SP01)trtext.h $(SP01)trmalloc.h $(SP01)trtree.h $(SP01)trdefine.h $(SP01)trworld.h $(SP01)troption.h $(SP01)trtcode.h $(SP01)trevent.h '
+$(SP01)trexpres.h $(SP01)troutput.h $(SP01)trsyntax.h $(SP01)trtcngf.h $(SP01)trtciof.h $(SP01)triof.h $(SP01)trclf.h $(SP01)trarg.h $(SP01)trproc.h $(SP01)trmember.h $(SP01)trnurone.h $(SP01)trdebug.h $(SP01)trtnode.c $(SP01)trtnode.h $(SP01)trrtltoc.h $(SP01)tratoc.h $(SP01)trrtltoc.c '
+$(SP01)travm.c $(SP01)travm.h $(SP01)tresctoc.c $(SP01)trngftoc.c $(SP01)trclftoc.c $(SP01)trclftoc.h $(SP01)trldftoc.c $(SP01)trioftoc.c $(SP01)trioftoc.h
+
+

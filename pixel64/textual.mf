@@ -1,0 +1,5 @@
+
+$(POBJ)textual$(OBJ):  $(SP01)textual.c /home/abal64/include/bdas/bda.h /home/abal64/include/bdas/oldbda.h /home/abal64/include/bdas/wdef.h /home/abal64/include/bdas/pubsbda.h /home/abal64/include/bdas/pubwbda.h $(SP01)vcico.h /home/abal64/src/pixel/stdimage.h $(SP01)singpix.h '
+/home/abal64/include/bdas/stdtypes.h /home/abal64/src/pixel/cico.c /home/abal64/src/pixel/rgraph.c /home/abal64/src/pixel/xgraph.h /home/abal64/src/pixel/stdpsu.h /home/abal64/src/pixel/sysfile.h $(SP01)vcommand.h $(SP01)visilib.h $(SP01)fnparser.c $(SP01)visual.h '
+/home/abal64/include/bdas/allocate.h /home/abal64/src/pixel/guimouse.h $(SP01)vframe.h $(SP01)vwidget.h $(SP01)vconf.h $(SP01)vbuffer.h
+

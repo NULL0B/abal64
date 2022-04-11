@@ -1,0 +1,372 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>ABAL 3 : Common Library Functions </title>
+<META NAME="VERSION" CONTENT="*PRL@INFO*$6:31a001">
+<link href="style.css" rel="STYLESHEET" type="text/css" media="SCREEN">
+</head>
+<body>
+<div align=center>
+<table cellpadding=5 cellspacing=5>
+<tr><th><h1>ABAL 3 : Common Library Functions </h1><td>
+<tr><th><h2>Programmer Reference Manual</h2><td>
+</table>
+<p>
+<table cellpadding=5 cellspacing=5>
+<tr><th>Syntaxical conventions
+<tr><td>
+<div align=center>
+<p>The following terms will be used in the description of the syntax of the ABAL 3 common library functions.
+<p>
+<table cellpadding=5 cellspacing=5>
+<tr><th>variable<td class=relief>represents a local or global variable declaration
+<tr><th>pointer<td class=relief>represents a local or global variable declaration of pointer type
+<tr><th>constant<td class=relief>represents a valid local, global or implicite constant expression
+<tr><th>procedure<td class=relief>represents a legal, extern, forward or declared procedure identifier
+<tr><th>segement<td class=relief>represents a legal, extern or declared segment name or number
+<tr><th>library<td class=relief>represents a legal library identifier as provided by the runtime clause of the library definition.
+<tr><th>expression<td class=relief>represents any legal combination of constants, variables, functions and operators.
+<tr><th>label<td class=relief>a token repesenting a tcode location or a symbolic term.
+<tr><th>result<td class=relief>either a target variable or a parameter of type expression in any other function.
+<tr><th>format<td class=relief>any legal combination of format instructions
+<tr><th>[ ]<td class=relief>represents an enclosed optional construction
+<tr><th>...<td class=relief>represents an optional repetition of the preceeding term
+</table>
+<p>All other punctuation characters are to be provided as shown in the syntax of the example.
+<p>
+</div>
+</table>
+<p>
+<p><table cellpadding=5 cellspacing=5><tr><th width="30%"> CONV#	<td>explicite conversion to 8  bit integer
+<tr><td colspan=2><p><dl>
+<dt><b>Syntax</b><dd><p><code>result = CONV#( expression )<p></code><dt><b>Description</b><DD><P></DL></table>
+<p><table cellpadding=5 cellspacing=5><tr><th width="30%"> CONV%	<td>explicite conversion to 16 or 32 bit integer
+<tr><td colspan=2><p><dl>
+<dt><b>Syntax</b><dd><p><code>result = CONV%( expression )<p></code><dt><b>Description</b><DD><P></DL></table>
+<p><table cellpadding=5 cellspacing=5><tr><th width="30%"> CONV	<td>implicite conversion to type 
+<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>result = CONV( expression )<p></code><dt><b>Description</b><DD><P></DL></table>
+<p><table cellpadding=5 cellspacing=5><tr><th width="30%"> CONV$	<td>explicite conversion to string 
+<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>result = CONV$( expression )<p></code><dt><b>Description</b><DD><P></DL></table>
+<p><table cellpadding=5 cellspacing=5><tr><th width="30%"> MOD	<td>remainder after division
+<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>result = MOD( expression , expression )<p></code><dt><b>Description</b><DD><P></DL></table>
+<p><table cellpadding=5 cellspacing=5><tr><th width="30%"> PRINT	<td>print to buffer 
+<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>
+variable = Print( [ ( format ) , ] expression [ , expression ... ] )<p>
+</code><dt><b>Description</b><DD><P></DL></table>
+<p><table cellpadding=5 cellspacing=5><tr><th width="30%"> #DATE	<td>translation date
+<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>#DATE<p></code><dt><b>Description</b><DD><P></DL></table>
+<p><table cellpadding=5 cellspacing=5><tr><th width="30%"> #TIME	<td>translation time
+<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>#TIME<p></code><dt><b>Description</b><DD><P></DL></table>
+<p><table cellpadding=5 cellspacing=5><tr><th width="30%"> #FILE	<td>translation file
+<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>#FILE<p></code><dt><b>Description</b><DD><P></DL></table>
+<p><table cellpadding=5 cellspacing=5><tr><th width="30%"> #LINE	<td>translation line
+<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>#LINE<p></code><dt><b>Description</b><DD><P></DL></table>
+<p><table cellpadding=5 cellspacing=5><tr><th width="30%"> NULL	<td>generic null value
+<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>NULL<p></code><dt><b>Description</b><DD><P></DL></table>
+<p><table cellpadding=5 cellspacing=5><tr><th width="30%"> CLASS_NAME <td>current class name 
+<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>CLASS_NAME<p></code><dt><b>Description</b><DD><P></DL></table>
+<p><table cellpadding=5 cellspacing=5><tr><th width="30%"> OBJECT_NAME<td>current object name
+<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>OBJECT_NAME<p></code><dt><b>Description</b><DD><P></DL></table>
+<p><table cellpadding=5 cellspacing=5><tr><th width="30%"> SIZEOF	<td>class instance size
+<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>result = SIZEOF( classname )<p></code><dt><b>Description</b><DD><P></DL></table>
+<p><table cellpadding=5 cellspacing=5><tr><th width="30%"> CLASS_NUMBER<td>contextual class identifier
+<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>CLASS_NUMBER<p></code><dt><b>Description</b><DD><P></DL></table>
+<p><table cellpadding=5 cellspacing=5><tr><th width="30%"> OBJECT_NUMBER<td>contextual object identifier
+<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>OBJECT_NUMBER<p></code><dt><b>Description</b><DD><P></DL></table>
+
+<p><table cellpadding=5 cellspacing=5><tr><th width="30%"> VALIDPTR	<td>pointer validity check
+<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>
+result = VALIDPTR( pointer )<p>
+</code><dt><b>Description</b><DD><P></DL></table>
+<p><table cellpadding=5 cellspacing=5><tr><th width="30%"> ALIAS	<td>pointer duplication<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p>
+<code>result = ALIAS( pointer )</code><p>
+<code>result = ALIAS( variable)<p>
+</code><dt><b>Description</b><DD><P></DL></table>
+<p><table cellpadding=5 cellspacing=5><tr><th width="30%"> LOADGO	<td>system command with result<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>
+result = LOADGO( handle [, command ] )<p>
+</code><dt><b>Description</b><DD><P></DL></table>
+<p><table cellpadding=5 cellspacing=5><tr><th width="30%"> CREATE	<td>pointer creation<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>
+CREATE pointer [ ( expression [ , expression [ , expression ] ] ) ] [ : label, variable ] <p>
+</code><dt><b>Description</b><DD><P></DL></table> 
+<p><table cellpadding=5 cellspacing=5><tr><th width="30%"> REMOVE	<td>pointer release<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>
+REMOVE pointer <p></code><dt><b>Description</b><DD><P></DL></table>
+<p><table cellpadding=5 cellspacing=5><tr><th width="30%"> FORGET	<td>pointer reset<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>
+FORGET pointer
+</code><dt><b>Description</b><DD><P></DL></table>
+<p><table cellpadding=5 cellspacing=5><tr><th width="30%"> ATTACH	<td>overlay attachment<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>
+ATTACH pointer ( expression  ) [ : label, variable ] <p>
+</code><dt><b>Description</b><DD><P></DL></table>
+<p><table cellpadding=5 cellspacing=5><tr><th width="30%"> DETACH	<td>overlay detachment<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>
+DETACH pointer</code><dt><b>Description</b><DD><P></DL></table>
+<p><table cellpadding=5 cellspacing=5><tr><th width="30%"> ALTER	<td>pointer alteration<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>
+ALTER pointer [ ( expression [ , expression [ , expression ] ] ) ] [ : label, variable ] <p>
+</code><dt><b>Description</b><DD><P></DL></table>
+<p><table cellpadding=5 cellspacing=5><tr><th width="30%"> WAIT	<td>unconditional wait<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>
+WAIT expression <p></code><dt><b>Description</b><DD><P></DL></table>
+<p><table cellpadding=5 cellspacing=5><tr><th width="30%"> MASK	<td>set ask mask<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>
+MASK expression<p></code><dt><b>Description</b><DD><P></DL></table>
+<p><table cellpadding=5 cellspacing=5><tr><th width="30%"> RESTORE	<td>set data readpoint<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>
+RESTORE expression<p></code><dt><b>Description</b><DD><P></DL></table>
+<p><table cellpadding=5 cellspacing=5><tr><th width="30%"> DATE	<td>set date value<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>
+DATE( expression ) = expression </code><p>
+<code>DATE( expression , expression ) <p>
+</code><dt><b>Description</b><DD><P></DL></table>
+<p><table cellpadding=5 cellspacing=5><tr><th width="30%"> KBF	<td>set function key value<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>
+KBF( expression ) = expression </code><p>
+<code>KBF( expression , expression ) <p>
+</code><dt><b>Description</b><DD><P></DL></table>
+<p><table cellpadding=5 cellspacing=5><tr><th width="30%"> ASKCOLOR	<td>set ask colour<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>
+ASKCOLOR ( expression , expression ) <p>
+</code><dt><b>Description</b><DD><P></DL></table>
+<p><table cellpadding=5 cellspacing=5><tr><th width="30%"> ASKATB	<td>set ask atribut<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>
+ASKATB [(] expression [)] <p>
+</code><dt><b>Description</b><DD><P></DL></table>
+<p><table cellpadding=5 cellspacing=5><tr><th width="30%"> HOTKEY	<td>set hotkey<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>
+HOTKEY [(] expression [)] <p>
+</code><dt><b>Description</b><DD><P></DL></table>
+<p><table cellpadding=5 cellspacing=5><tr><th width="30%"> LANG	<td>set language code<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>
+LANG [(] expression [)]<p>
+</code><dt><b>Description</b><DD><P></DL></table>
+<p><table cellpadding=5 cellspacing=5><tr><th width="30%"> INITDATA	<td>initialise data variables <tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>
+INITLOCAL</code><p>
+<code>INITGLOBAL<p>
+</code><dt><b>Description</b><DD><P></DL></table>
+<p><table cellpadding=5 cellspacing=5><tr><th width="30%"> END_USER	<td>drop library function<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>
+END_USER library<p>
+</code><dt><b>Description</b><DD><P></DL></table>
+<p><table cellpadding=5 cellspacing=5><tr><th width="30%"> END_PROC	<td>release procedure<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>
+END_PROC [ procedurename ]<p>
+</code><dt><b>Description</b><DD><P></DL></table>
+<p><table cellpadding=5 cellspacing=5><tr><th width="30%"> END_SEG	<td>release segment<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>
+END_SEG [ segmentname | segment_number ]<p>
+</code><dt><b>Description</b><DD><P></DL></table>
+<p><table cellpadding=5 cellspacing=5><tr><th width="30%"> EVENT	<td>set event value<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>
+EVENT ( expression ) = expression<p>
+</code><dt><b>Description</b><DD><P></DL></table>
+<p><table cellpadding=5 cellspacing=5><tr><th width="30%"> LOADUSER	<td>set library name<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>
+LOADUSER ( expression ) = expression</code><p>
+<code>LOADUSER ( expression , expression ) <p>
+</code><dt><b>Description</b><DD><P></DL></table>
+<p><table cellpadding=5 cellspacing=5><tr><th width="30%"> ABS	<td>absolute value<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>
+result = ABS ( expression )<p>
+</code><dt><b>Description</b><DD><P></DL></table>
+<p><table cellpadding=5 cellspacing=5><tr><th width="30%"> INCLUD	<td>include in string<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>
+variable = INCLUD( expression , expresion [ , expression ] )<p>
+</code><dt><b>Description</b><DD><P></DL></table>
+<p><table cellpadding=5 cellspacing=5><tr><th width="30%"> TRAN	<td>transcode string<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>
+variable = TRAN( expression , expression , expression , expression )<p>
+</code><dt><b>Description</b><DD><P></DL></table>
+<p><table cellpadding=5 cellspacing=5><tr><th width="30%"> INSERT	<td>insert into string<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>
+variable = INSERT( expression , expresion [ , expression ] )<p>
+</code><dt><b>Description</b><DD><P></DL></table>
+<p><table cellpadding=5 cellspacing=5><tr><th width="30%"> LARGE	<td>upper case conversion<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>
+result = LARGE( expression ) <p>
+</code><dt><b>Description</b><DD><P></DL></table>
+<p><table cellpadding=5 cellspacing=5><tr><th width="30%"> SMALL	<td>lower case conversion<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>
+result = SMALL( expression ) <p>
+</code><dt><b>Description</b><DD><P></DL></table>
+<p><table cellpadding=5 cellspacing=5><tr><th width="30%"> SHL	<td>align string left<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>
+result = SHL( expression ) <p>
+</code><dt><b>Description</b><DD><P></DL></table>
+<p><table cellpadding=5 cellspacing=5><tr><th width="30%"> SHR	<td>align string right<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>
+result = SHL( expression ) <p>
+</code><dt><b>Description</b><DD><P></DL></table>
+<p><table cellpadding=5 cellspacing=5><tr><th width="30%"> INV	<td>invert string<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>
+result = INV( expression ) <p>
+</code><dt><b>Description</b><DD><P></DL></table>
+<p><table cellpadding=5 cellspacing=5><tr><th width="30%"> FM	<td>format conversion<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>
+variable = FM ( variable ) </code><p>
+<code>variable = FM ( expression )</code> <p>
+<code>variable = FM ( format )<p>
+</code><dt><b>Description</b><DD><P></DL></table>
+<p><table cellpadding=5 cellspacing=5><tr><th width="30%"> ENV	<td>environment variable<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>
+result = ENV ( result )
+</code><dt><b>Description</b><DD><P></DL></table>
+<p><table cellpadding=5 cellspacing=5><tr><th width="30%"> ASCIIFM	<td>ascii format<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>
+result = ASCIIFM ( expression ) <p>
+</code><dt><b>Description</b><DD><P></DL></table>
+<p><table cellpadding=5 cellspacing=5><tr><th width="30%"> HASH	<td>hash code calculation<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>
+result = HASH ( expression , expression ) <p>
+</code><dt><b>Description</b><DD><P></DL></table>
+<p><table cellpadding=5 cellspacing=5><tr><th width="30%"> DEC	<td>decimal conversion<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>
+result = DEC ( expression )<p>
+</code><dt><b>Description</b><DD><P></DL></table>
+<p><table cellpadding=5 cellspacing=5><tr><th width="30%"> LEN	<td>data size<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>
+result = LEN( variable )</code><p>
+<code>result = LEN( constant )</code><p>
+<code>result = LEN( expression )<p>
+</code><dt><b>Description</b><DD><P></DL></table>
+<p><table cellpadding=5 cellspacing=5><tr><th width="30%"> LEN$	<td>data length<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>
+result = LEN$( expression )<p>
+</code><dt><b>Description</b><DD><P></DL></table>
+<p><table cellpadding=5 cellspacing=5><tr><th width="30%"> SGN	<td>numeric sign<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>
+result = SGN( expression )<p>
+</code><dt><b>Description</b><DD><P></DL></table>
+<p><table cellpadding=5 cellspacing=5><tr><th width="30%"> INDEX	<td>offset in string<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>
+result = INDEX( expression , expression )<p>
+</code><dt><b>Description</b><DD><P></DL></table>
+<p><table cellpadding=5 cellspacing=5><tr><th width="30%"> INSTR	<td>presence in string<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>
+result = INSTR( expression , expression , expression )<p>
+</code><dt><b>Description</b><DD><P></DL></table>
+<p><table cellpadding=5 cellspacing=5><tr><th width="30%"> VPTR	<td>offset in memory<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>
+result = VPTR( variable )<p>
+</code><dt><b>Description</b><DD><P></DL></table>
+<p><table cellpadding=5 cellspacing=5><tr><th width="30%"> FMINT	<td>exponent digits<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>
+result = FMINT( expression )<p>
+</code><dt><b>Description</b><DD><P></DL></table>
+<p><table cellpadding=5 cellspacing=5><tr><th width="30%"> FMFP	<td>mantissa digits<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>
+result = FMFP( expression )<p>
+</code><dt><b>Description</b><DD><P></DL></table>
+<p><table cellpadding=5 cellspacing=5><tr><th width="30%"> POWER	<td>numeric power of ten<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>
+result = POWER( expression )<p>
+</code><dt><b>Description</b><DD><P></DL></table>
+<p><table cellpadding=5 cellspacing=5><tr><th width="30%"> CHECKFMT	<td>format verification<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>
+result = CHECKFMT( variable, expression ) </code><p>
+<code>result = CHECKFMT( variable, format )<p>
+</code><dt><b>Description</b><DD><P></DL></table>
+<p><table cellpadding=5 cellspacing=5><tr><th width="30%"> DAYS	<td>date information<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>
+result = DAYS ( expression , expression , expression ) <p>
+</code><dt><b>Description</b><DD><P></DL></table>
+<p><table cellpadding=5 cellspacing=5><tr><th width="30%"> RUNTIME	<td>library number<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>
+result = RUNTIME ( expression ) </code><p>
+<code>result = RUNTIME ( library )<p>
+</code><dt><b>Description</b><DD><P></DL></table>
+<p><table cellpadding=5 cellspacing=5><tr><th width="30%"> LEFT	<td>left string portion<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>
+result = LEFT( expression , expression ) <p>
+</code><dt><b>Description</b><DD><P></DL></table>
+<p><table cellpadding=5 cellspacing=5><tr><th width="30%"> RIGHT	<td>right string portion<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>
+result = RIGHT( expression , expression ) <p>
+</code><dt><b>Description</b><DD><P></DL></table>
+<p><table cellpadding=5 cellspacing=5><tr><th width="30%"> SUBSTR	<td>sub string<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>
+result = SUBSTR( expression , expression ,expression ) <p>
+</code><dt><b>Description</b><DD><P></DL></table>
+<p><table cellpadding=5 cellspacing=5><tr><th width="30%"> MOVE	<td>memory move<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>
+variable = MOVE( variable, expression ,expression ) <p>
+</code><dt><b>Description</b><DD><P></DL></table>
+<p><table cellpadding=5 cellspacing=5><tr><th width="30%"> SWAP	<td>memory swap<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>
+variable = SWAP( variable, expression ,expression ) <p>
+</code><dt><b>Description</b><DD><P></DL></table>
+<p><table cellpadding=5 cellspacing=5><tr><th width="30%"> PARSE	<td>file name parser<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>
+result = PARSE( expression , expression ) <p>
+</code><dt><b>Description</b><DD><P></DL></table>
+<p><table cellpadding=5 cellspacing=5><tr><th width="30%"> ABALANFC	<td>file name convert<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>
+result = ABALANFC( expression , expression ) <p>
+</code><dt><b>Description</b><DD><P></DL></table>
+<p><table cellpadding=5 cellspacing=5><tr><th width="30%"> GENER	<td>string generation<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>
+result = GENER( expression , expression ) </code><p>
+<code>variable  = GENER( expression , expression ) <p>
+</code><dt><b>Description</b><DD><P></DL></table>
+<p><table cellpadding=5 cellspacing=5><tr><th width="30%"> SPACE	<td>space sgeneration<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>
+result = SPACE( expression ) </code><p>
+<code>variable = SPACE( expression ) <p>
+</code><dt><b>Description</b><DD><P></DL></table>
+<p><table cellpadding=5 cellspacing=5><tr><th width="30%"> DATE	<td>date item<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>
+result = DATE( expression ) <p>
+</code><dt><b>Description</b><DD><P></DL></table>
+<p><table cellpadding=5 cellspacing=5><tr><th width="30%"> KBF	<td>function key value<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>
+result = KBF( expression ) <p>
+</code><dt><b>Description</b><DD><P></DL></table>
+<p><table cellpadding=5 cellspacing=5><tr><th width="30%"> CURDIR	<td>current directory<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>
+result = CURDIR<p>
+</code><dt><b>Description</b><DD><P></DL></table>
+<p><table cellpadding=5 cellspacing=5><tr><th width="30%"> CURVOL	<td>current volume<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>
+result = CURVOL<p>
+</code><dt><b>Description</b><DD><P></DL></table>
+<p><table cellpadding=5 cellspacing=5><tr><th width="30%"> HEX	<td>hexadecimal conversion<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>
+result = HEX ( expression )<p>
+</code><dt><b>Description</b><DD><P></DL></table>
+<p><table cellpadding=5 cellspacing=5><tr><th width="30%"> CHR	<td>character<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>
+result = CHR$ ( expression ) </code><p>
+<code>variable = CHR$ ( expression )<p>
+</code><dt><b>Description</b><DD><P></DL></table>
+<p><table cellpadding=5 cellspacing=5><tr><th width="30%"> REPSTR	<td>repeat string<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>
+result = REPSTR ( expression , expression )<p>
+</code><dt><b>Description</b><DD><P></DL></table>
+<p><table cellpadding=5 cellspacing=5><tr><th width="30%"> CRYPT	<td>encryption<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>
+result = CRYPT ( expression , expresion, expression )<p>
+</code><dt><b>Description</b><DD><P></DL></table>
+<p><table cellpadding=5 cellspacing=5><tr><th width="30%"> SYSERROR	<td>system error<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>
+result = SYSERROR <p>
+</code><dt><b>Description</b><DD><P></DL></table>
+<p><table cellpadding=5 cellspacing=5><tr><th width="30%"> PROC	<td>procedure pointer<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>
+variable = PROC PTR ( procedure )</code><p>
+<code>variable = PROC PTR ( variable  )<p>
+</code><dt><b>Description</b><DD><P></DL></table> 
+<p><table cellpadding=5 cellspacing=5><tr><th width="30%"> USER	<td>library function pointer<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>
+variable = USER PTR ( library function )</code><p>
+<code>variable = USER PTR ( variable  )<p>
+</code><dt><b>Description</b><DD><P></DL></table> 
+<p><table cellpadding=5 cellspacing=5><tr><th width="30%"> SEGMENT	<td>segment pointer<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>
+variable = SEGM PTR ( segment )</code><p>
+<code>variable = SEGM PTR ( variable  )<p>
+</code><dt><b>Description</b><DD><P></DL></table> 
+<p><table cellpadding=5 cellspacing=5><tr><th width="30%"> FIX	<td>numerical fix<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>
+result   = FIX ( expression [ , expression ] ) </code><p>
+<code>variable = FIX ( expression [ , expression ] ) <p>
+</code><dt><b>Description</b><DD><P></DL></table>
+<p><table cellpadding=5 cellspacing=5><tr><th width="30%"> ROUN	<td>numerical roundup<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>
+result   = ROUN ( expression [ , expression ] ) <p>
+</code><dt><b>Description</b><DD><P></DL></table>
+<p><table cellpadding=5 cellspacing=5><tr><th width="30%"> FP	<td>floating point<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>
+result   = FP ( expression ) <p>
+</code><dt><b>Description</b><DD><P></DL></table>
+<p><table cellpadding=5 cellspacing=5><tr><th width="30%"> INT	<td>integer portion<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>
+result   = INT ( expression ) <p>
+</code><dt><b>Description</b><DD><P></DL></table>
+<p><table cellpadding=5 cellspacing=5><tr><th width="30%"> VAL	<td>numeric value<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>
+result   = VAL ( expression ) <p>
+</code><dt><b>Description</b><DD><P></DL></table>
+<p><table cellpadding=5 cellspacing=5><tr><th width="30%"> STDFORM	<td>standard form conversion<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>
+result   = STDFORM ( expression ) <p>
+</code><dt><b>Description</b><DD><P></DL></table>
+<p><table cellpadding=5 cellspacing=5><tr><th width="30%"> REAL	<td>real conversion<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>
+result   = REAL ( expression , expression ) <p>
+</code><dt><b>Description</b><DD><P></DL></table>
+<p><table cellpadding=5 cellspacing=5><tr><th width="30%"> STRN	<td>numeric to string<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>
+result   = STRN ( expression ) <p>
+</code><dt><b>Description</b><DD><P></DL></table>
+<p><table cellpadding=5 cellspacing=5><tr><th width="30%"> LONG	<td>numeric to long<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>
+result   = LONG ( expression ) <p>
+</code><dt><b>Description</b><DD><P></DL></table>
+<p><table cellpadding=5 cellspacing=5><tr><th width="30%"> COL	<td>column position<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>
+result   = COL ( expression ) <p>
+</code><dt><b>Description</b><DD><P></DL></table>
+<p><table cellpadding=5 cellspacing=5><tr><th width="30%"> LIN	<td>line position<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>
+result   = LIN ( expression ) <p>
+</code><dt><b>Description</b><DD><P></DL></table>
+<p><table cellpadding=5 cellspacing=5><tr><th width="30%"> PROCESS	<td>process number<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>
+result   = PROCESS <p>
+</code><dt><b>Description</b><DD><P></DL></table> 
+<p><table cellpadding=5 cellspacing=5><tr><th width="30%"> RND	<td>random integer value<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>
+result   = RND [ ( expression ) ] <p>
+</code><dt><b>Description</b><DD><P></DL></table>
+<p><table cellpadding=5 cellspacing=5><tr><th width="30%"> MASK	<td>keyboard mask<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>
+result   = MASK <p>
+</code><dt><b>Description</b><DD><P></DL></table> 
+<p><table cellpadding=5 cellspacing=5><tr><th width="30%"> CONF	<td>configuration value<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>
+result   = CONF ( expression ) <p>
+</code><dt><b>Description</b><DD><P></DL></table>
+<p><table cellpadding=5 cellspacing=5><tr><th width="30%"> ERRADR	<td>error address<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>
+result   = ERRADR <p>
+</code><dt><b>Description</b><DD><P></DL></table>
+<p><table cellpadding=5 cellspacing=5><tr><th width="30%"> RESTORE	<td>data pointer<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>
+result   = RESTORE <p>
+</code><dt><b>Description</b><DD><P></DL></table> 
+<p><table cellpadding=5 cellspacing=5><tr><th width="30%"> EVENTADR	<td>event address<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>
+result   = EVENTADR <p>
+</code><dt><b>Description</b><DD><P></DL></table>
+<p><table cellpadding=5 cellspacing=5><tr><th width="30%"> HOTKEY	<td>hotkey value<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>
+result   = HOTKEY <p>
+</code><dt><b>Description</b><DD><P></DL></table> 
+<p><table cellpadding=5 cellspacing=5><tr><th width="30%"> EVENT	<td>event item<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>
+result   = EVENT ( expression ) <p>
+</code><dt><b>Description</b><DD><P></DL></table>
+<p>
+<table cellpadding=5 cellspacing=5>
+<tr><th width="30%"><h3 align=center>Copyright &copy; <a href="http://www.prologue-software.fr">Prologue Software</a></h3>
+<tr><th width="30%"><h3 align=center>Version Fran&ccedil;aise <a href="fr/event.htm"><img src="tricolor.gif"></a>
+</table>
+</div>
+</body>
+</html>
+

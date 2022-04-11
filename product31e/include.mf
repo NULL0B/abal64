@@ -1,0 +1,42 @@
+# generated makefile : include.mf 
+# ------------------------------------
+/home/Dev/abal32/product31e/include/abal3.ovl: /home/Dev/abal32/src/include/abal3.ovl
+	cp $* $@ 
+/home/Dev/abal32/product31e/include/arg.as: /home/Dev/abal32/src/include/arg.as
+	cp $* $@ 
+/home/Dev/abal32/product31e/include/cleaner.as: /home/Dev/abal32/src/include/cleaner.as
+	cp $* $@ 
+/home/Dev/abal32/product31e/include/asfun.def: /home/Dev/abal32/src/include/asfun.def
+	cp $* $@ 
+/home/Dev/abal32/product31e/include/audio.def: /home/Dev/abal32/src/include/audio.def
+	cp $* $@ 
+/home/Dev/abal32/product31e/include/bdanet.def: /home/Dev/abal32/src/include/bdanet.def
+	cp $* $@ 
+/home/Dev/abal32/product31e/include/bibmath.def: /home/Dev/abal32/src/include/bibmath.def
+	cp $* $@ 
+/home/Dev/abal32/product31e/include/fac.ah: /home/Dev/abal32/src/include/fac.ah
+	cp $* $@ 
+/home/Dev/abal32/product31e/include/fac.dcl: /home/Dev/abal32/src/include/fac.dcl
+	cp $* $@ 
+/home/Dev/abal32/product31e/include/fac.def: /home/Dev/abal32/src/include/fac.def
+	cp $* $@ 
+/home/Dev/abal32/product31e/include/mimo.as: /home/Dev/abal32/src/include/mimo.as
+	cp $* $@ 
+/home/Dev/abal32/product31e/include/mask.as: /home/Dev/abal32/src/include/mask.as
+	cp $* $@ 
+/home/Dev/abal32/product31e/include/printer.def: /home/Dev/abal32/src/include/printer.def
+	cp $* $@ 
+/home/Dev/abal32/product31e/include/prltra.h: /home/Dev/abal32/src/include/prltra.h
+	cp $* $@ 
+/home/Dev/abal32/product31e/include/tty.def: /home/Dev/abal32/src/include/tty.def
+	cp $* $@ 
+/home/Dev/abal32/product31e/include/visidef.as: /home/Dev/abal32/src/include/visidef.as
+	cp $* $@ 
+/home/Dev/abal32/product31e/include/visual.def: /home/Dev/abal32/src/include/visual.def
+	cp $* $@ 
+/home/Dev/abal32/product31e/include/z.def: /home/Dev/abal32/src/include/z.def
+	cp $* $@ 
+! make
+! shell chmod uog+r include/*
+! make
+

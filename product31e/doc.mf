@@ -1,0 +1,22 @@
+# generated makefile : doc.mf 
+# ------------------------------------
+/home/Dev/abal32/product31e/doc/abal3.htm: /home/Dev/abal32/src/doc/abal3.htm
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/abal3.jpg: /home/Dev/abal32/src/doc/abal3.jpg
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/logo.jpg: /home/Dev/abal32/src/doc/logo.jpg
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/print.css: /home/Dev/abal32/src/doc/print.css
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/sing.css: /home/Dev/abal32/src/doc/sing.css
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/sing.dtd: /home/Dev/abal32/src/doc/sing.dtd
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/style.css: /home/Dev/abal32/src/doc/oldstyle.css
+	cp $* $@ 
+
+! include docen.mf
+! include docfr.mf
+! include jpgen.mf
+! make
+

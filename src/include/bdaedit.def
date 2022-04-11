@@ -1,0 +1,31 @@
+Version = 1
+
+Runtime = "bdaedit"
+
+% EditorInitialise($,%)
+% EditorOpen($,%, %,%,%,% )
+% EditorShow(%)
+% EditorGetFocus(%)
+% EditorEvent(%)
+% EditorLoseFocus(%)
+% EditorHide(%)
+% EditorClose(%)
+% EditorLiberate()
+
+% EditorCommand($,%)
+% EditorGetStatus($?,%)
+% EditorSetStatus($,%)
+% EditorFileName($?,%)
+% EditorSeekLine(%)
+% EditorSearch($,%,%)
+% EditorReplace($,%,$,%,%)
+% EditorInsert($,%)
+% EditorFont($,%)
+% EditorConfigure(%,%,%,%)
+
+End
+
+
+
+
+

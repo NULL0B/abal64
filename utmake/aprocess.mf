@@ -1,0 +1,5 @@
+
+$(ABAL)/bin/abalprocess: $(ABAL)/src/amake/abalprocess.c
+	$(GCC) -o $@ $*
+
+

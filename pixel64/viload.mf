@@ -1,0 +1,6 @@
+
+$(POBJ)viload$(OBJ):  $(SP01)viload.c $(SP01)visual.h /home/Dev/abal32/src/pixel/allocate.h /home/Dev/abal32/src/pixel/guimouse.h $(SP01)vframe.h $(SP01)vwidget.h
+$(POBJ)visave$(OBJ):  $(SP01)visave.c $(SP01)visual.h /home/Dev/abal32/src/pixel/allocate.h /home/Dev/abal32/src/pixel/guimouse.h $(SP01)vframe.h $(SP01)vwidget.h
+$(POBJ)vimage$(OBJ):  $(SP01)vimage.c $(SP01)visual.h /home/Dev/abal32/src/pixel/allocate.h /home/Dev/abal32/src/pixel/guimouse.h $(SP01)vframe.h $(SP01)vwidget.h
+$(POBJ)vfextr$(OBJ):  $(SP01)vfextr.c $(SP01)visual.h /home/Dev/abal32/src/pixel/allocate.h /home/Dev/abal32/src/pixel/guimouse.h $(SP01)vframe.h $(SP01)vwidget.h
+

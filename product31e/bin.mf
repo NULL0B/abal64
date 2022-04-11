@@ -1,0 +1,68 @@
+# generated makefile : bin.mf 
+# ------------------------------------
+/home/Dev/abal32/product31e/bin/abal: /home/Dev/abal32/bin/abal
+	cp $* $@ 
+/home/Dev/abal32/product31e/bin/abal3.access: /home/Dev/abal32/bin/abal3.access
+	cp $* $@ 
+/home/Dev/abal32/product31e/bin/abal3doc: /home/Dev/abal32/bin/abal3doc
+	cp $* $@ 
+/home/Dev/abal32/product31e/bin/abal3.ins: /home/Dev/abal32/bin/abal3.ins
+	cp $* $@ 
+/home/Dev/abal32/product31e/bin/abal3.schema: /home/Dev/abal32/bin/abal3.schema
+	cp $* $@ 
+/home/Dev/abal32/product31e/bin/abalprocess: /home/Dev/abal32/bin/abalprocess
+	cp $* $@ 
+/home/Dev/abal32/product31e/bin/access: /home/Dev/abal32/bin/access
+	cp $* $@ 
+/home/Dev/abal32/product31e/bin/aed32: /home/Dev/abal32/bin/aed32
+	cp $* $@ 
+/home/Dev/abal32/product31e/bin/agr: /home/Dev/abal32/bin/agr
+	cp $* $@ 
+/home/Dev/abal32/product31e/bin/asb: /home/Dev/abal32/bin/asb
+	cp $* $@ 
+/home/Dev/abal32/product31e/bin/agr32: /home/Dev/abal32/bin/agr32
+	cp $* $@ 
+/home/Dev/abal32/product31e/bin/amake32: /home/Dev/abal32/bin/amake32
+	cp $* $@ 
+/home/Dev/abal32/product31e/bin/ao32: /home/Dev/abal32/bin/ao32
+	cp $* $@ 
+/home/Dev/abal32/product31e/bin/avnor: /home/Dev/abal32/bin/avnor
+	cp $* $@ 
+/home/Dev/abal32/product31e/bin/bdatester32: /home/Dev/abal32/bin/bdatester32
+	cp $* $@ 
+/home/Dev/abal32/product31e/bin/bdapreload: /home/Dev/abal32/bin/bdapreload
+	cp $* $@ 
+/home/Dev/abal32/product31e/bin/exa32.36: /home/Dev/abal32/bin/exa32.36
+	cp $* $@ 
+/home/Dev/abal32/product31e/bin/exa32.37: /home/Dev/abal32/bin/exa32.37
+	cp $* $@ 
+/home/Dev/abal32/product31e/bin/exa32.37: /home/Dev/abal32/bin/exa32.38
+	cp $* $@ 
+/home/Dev/abal32/product31e/bin/exadb32.36: /home/Dev/abal32/bin/exadb32.36
+	cp $* $@ 
+/home/Dev/abal32/product31e/bin/exadb32.37: /home/Dev/abal32/bin/exadb32.37
+	cp $* $@ 
+/home/Dev/abal32/product31e/bin/exadb32.37: /home/Dev/abal32/bin/exadb32.38
+	cp $* $@ 
+/home/Dev/abal32/product31e/bin/genmake: /home/Dev/abal32/bin/genmake
+	cp $* $@ 
+#/home/Dev/abal32/product31e/bin/install: /home/Dev/abal32/bin/install
+#	cp $* $@ 
+/home/Dev/abal32/product31e/bin/iview: /home/Dev/abal32/bin/iview
+	cp $* $@ 
+/home/Dev/abal32/product31e/bin/old32: /home/Dev/abal32/bin/old32
+	cp $* $@ 
+/home/Dev/abal32/product31e/bin/otr16: /home/Dev/abal32/bin/otr16
+	cp $* $@ 
+/home/Dev/abal32/product31e/bin/otr32: /home/Dev/abal32/bin/otr32
+	cp $* $@ 
+/home/Dev/abal32/product31e/bin/sandr: /home/Dev/abal32/bin/sandr
+	cp $* $@ 
+/home/Dev/abal32/product31e/bin/sing: /home/Dev/abal32/bin/sing
+	cp $* $@ 
+/home/Dev/abal32/product31e/bin/sing.cfg: /home/Dev/abal32/bin/sing.cfg
+	cp $* $@ 
+/home/Dev/abal32/product31e/bin/visual.cfg: /home/Dev/abal32/bin/visual.cfg
+	cp $* $@ 
+/home/Dev/abal32/product31e/bin/yabal: /home/Dev/abal32/bin/yabal
+	cp $* $@ 

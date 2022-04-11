@@ -1,0 +1,41 @@
+TRRTL = trrtlclf.o  trrtliof.o  trrtlldf.o  trrtlngf.o  trgenc.o
+TRGEN = trparser.o trsyntax.o trinput.o trsymbol.o trtables.o trerrors.o
+$(OTR): trabc.o tratoc.o trabal.o $(TRRTL) $(TRGEN) $(FNPARSER) $(ALLOCATE)
+	$(GCC) -ggdb -o $(OTR) $? $(LIBCONV) 
+! make
+! error
+tratoc.o '
+trabmsg.o '
+trapl.o '
+trbuffer.o '
+trclass.o '
+trclf.o '
+trdirect.o '
+trerrors.o '
+trexpres.o '
+trinput.o '
+triof.o '
+triter.o '
+trlabels.o '
+trldf.o '
+trmain.o '
+trmethod.o '
+trngf.o '
+# trnurone.o '
+trparser.o '
+trproc.o '
+# trqual.o '
+trshadow.o '
+trstdc.o '
+trstruct.o '
+trsymbol.o '
+trsyntax.o '
+trtables.o '
+$(ATC1) '
+$(ATC2) '
+$(ATC3) '
+$(ATC4) '
+$(ATC5)
+	$(GCC) -ggdb -o $(OTR) $? $(LIBCONV) 
+
+

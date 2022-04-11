@@ -1,0 +1,19 @@
+/* Variable interne */
+
+static BYTE *cst_tdesc[MAXCDESC]; /* table descripteurs const chaines / BCD */
+static BYTE *lcst_tdesc[MAXCDESC];/* Table des descripteurs constante chaines et BCD en local (segment, procedure) */
+static BYTE *glb_tdesc[MAXTDESC]; /* table descripteurs dcl globales */
+static BYTE *lcl_tdesc[MAXTDESC]; /* table descripteurs dcl locales */
+static BYTE *ext_tdesc[MAXTDESC]; /* table descripteurs dcl externes */
+static BYTE *pr_tdesc[MAXTDESC];  /* table descripteurs procedures */
+
+static long int adrimpl;       /* adresse implantation courante */
+static BINAIRE size_dcl; 	/* taille variables qui viennent d'etre declarees */
+static long int size_xtm; 	/* taille variables declarees en memoire etendue */
+static BINAIRE adsdcl; 	/* adresse relative descripteur courant de variable */
+static BINAIRE adsproc; 	/* adresse relative descripteur courant de procedure */
+static BINAIRE adsdclextcr;    /* adresse courante des externes */
+static BYTE declext;      	/* 0 si DCL memoire, ou nl fichier associe */
+
+
+

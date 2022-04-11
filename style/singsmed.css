@@ -1,0 +1,125 @@
+@domain sing;
+
+dependance_editor_frame	{
+	background-colour: white;
+	border-style: none;
+	background-image: url(singbg.jpg);
+	background-align: tile;
+	content: none;
+	}
+
+dependance_style_editor 	{
+	background-colour: white;
+	border-style: solid;
+	border-colour: black;
+	content: none;
+	}
+
+dependance_editor_title	{
+	text-font: url(arial1.fmf);
+	text-align: center;
+	text-colour: black;
+	background-image: url(singbg.jpg);
+	background-align: tile;
+	border-style: solid;
+	border-colour: black;
+	height: 8mm;
+	}
+
+dependance_member_margin {
+	margin: 		1mm;
+	height: 		8mm;
+	}
+
+dependance_editor_header	{
+	class:	dependance_member_margin;
+	text-font: url(arial3.fmf);
+	text-align: center;
+	text-colour: black;
+	background-colour: white;
+	border-style: solid;
+	border-colour: green;
+	border-style: solid;
+	}
+
+dependance_editor_focus	{
+	class: dependance_editor_header;
+	background-colour: red;
+	text-colour: yellow;
+	border-style: double;
+	}
+
+dependance_model_tray	{
+	margin-top: 2mm;
+	margin-left: 2mm;
+	border-colour: grey;
+	border-style: shade;
+	border-width: 0px;
+	width: 2mm+;
+	height: 2mm+;
+	}
+
+dependance_model_frame	{
+	background-colour: white;
+	border-colour: black;
+	border-style: solid;
+	text-font: url(arial1.fmf);
+	text-align: center;
+	border-style: vconcave;
+	border-colour: grey;
+	}
+
+dependance_model_focus	{
+	background-colour: white;
+	border-colour: blue;
+	border-style: solid;
+	}
+
+dependance_member_frame	{
+	class:	dependance_member_margin;
+	text-font: 		url(arial1.fmf);
+	text-align: 		center;
+	text-colour: 		black;
+	background-colour: 	silver;
+	border-colour: 		black;
+	margin-top: 		0.5mm;
+	margin-bottom: 		0.5mm;
+	border-style: rounded(1);
+	}
+
+dependance_member_focus	{
+	class:	dependance_member_frame;
+	border-colour: 		red;
+	border-style: 		double;
+	text-colour: 		white;
+	border-style: rounded(1);
+	}
+
+/* Database Interfile Relation Tracing */
+/* ----------------------------------- */
+dependance_relation_source {
+	border-colour: black;
+	border-style: none;
+	content: right;
+	width:  6mm;
+	height: 6mm;
+	}
+
+dependance_rev_relation_source {
+	class: dependance_relation_source;
+	content: left;
+	}
+
+
+dependance_relation_target {
+	class: dependance_relation_source;
+	content: right;
+	}
+
+dependance_rev_relation_target {
+	class: dependance_relation_target;
+	content: left;
+	}
+
+@domain null;
+

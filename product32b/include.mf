@@ -1,0 +1,44 @@
+# generated makefile : include.mf 
+# ------------------------------------
+$(ABAL)/product32b/include/abal3.ovl: $(ABAL)/src/include/abal3.ovl
+	cp $* $@ 
+$(ABAL)/product32b/include/arg.as: $(ABAL)/src/include/arg.as
+	cp $* $@ 
+$(ABAL)/product32b/include/cleaner.as: $(ABAL)/src/include/cleaner.as
+	cp $* $@ 
+$(ABAL)/product32b/include/asfun.def: $(ABAL)/src/include/asfun.def
+	cp $* $@ 
+$(ABAL)/product32b/include/audio.def: $(ABAL)/src/include/audio.def
+	cp $* $@ 
+$(ABAL)/product32b/include/bdanet.def: $(ABAL)/src/include/bdanet.def
+	cp $* $@ 
+$(ABAL)/product32b/include/bdaedit.def: $(ABAL)/src/include/bdaedit.def
+	cp $* $@ 
+$(ABAL)/product32b/include/bibmath.def: $(ABAL)/src/include/bibmath.def
+	cp $* $@ 
+$(ABAL)/product32b/include/fac.ah: $(ABAL)/src/include/fac.ah
+	cp $* $@ 
+$(ABAL)/product32b/include/fac.dcl: $(ABAL)/src/include/fac.dcl
+	cp $* $@ 
+$(ABAL)/product32b/include/fac.def: $(ABAL)/src/include/fac.def
+	cp $* $@ 
+$(ABAL)/product32b/include/mimo.as: $(ABAL)/src/include/mimo.as
+	cp $* $@ 
+$(ABAL)/product32b/include/mask.as: $(ABAL)/src/include/mask.as
+	cp $* $@ 
+$(ABAL)/product32b/include/printer.def: $(ABAL)/src/include/printer.def
+	cp $* $@ 
+$(ABAL)/product32b/include/prltra.h: $(ABAL)/src/include/prltra.h
+	cp $* $@ 
+$(ABAL)/product32b/include/tty.def: $(ABAL)/src/include/tty.def
+	cp $* $@ 
+$(ABAL)/product32b/include/visidef.as: $(ABAL)/src/include/visidef.as
+	cp $* $@ 
+$(ABAL)/product32b/include/visual.def: $(ABAL)/src/include/visual.def
+	cp $* $@ 
+$(ABAL)/product32b/include/z.def: $(ABAL)/src/include/z.def
+	cp $* $@ 
+! make
+! shell chmod uog+r include/*
+! make
+

@@ -1,0 +1,9 @@
+
+!make
+APLUS4 =  $(POBJ)parser$(OBJ) $(POBJ)files$(OBJ)
+$(POBJ)parser$(OBJ):  $(SP01)parser.c $(SP01)aplus.h $(SP01)stdtypes.h $(SP01)hosts.h $(SP01)truser.h $(SP01)buffers.h $(SP01)value.h $(SP01)syntax.h $(SP01)status.h $(SP01)options.h $(SP01)macros.h $(SP01)struct.h $(SP01)relation.h $(SP01)friend.h $(SP01)pragma.h $(SP01)world.h $(SP01)memory.h '
+$(SP01)exrdef.h $(SP01)trapping.h $(SP01)abal.h $(SP01)param.h
+$(POBJ)files$(OBJ):  $(SP01)files.c $(SP01)aplus.h $(SP01)stdtypes.h $(SP01)hosts.h $(SP01)truser.h $(SP01)buffers.h $(SP01)value.h $(SP01)status.h $(SP01)options.h $(SP01)memory.h $(SP01)exrdef.h $(SP01)struct.h $(SP01)relation.h $(SP01)friend.h $(SP01)module.h $(SP01)pragma.h $(SP01)world.h '
+$(SP01)trapping.h $(SP01)abal.h $(SP01)allocate.h $(SP01)files.h $(SP01)truser.c $(SP01)trbda.h
+
+

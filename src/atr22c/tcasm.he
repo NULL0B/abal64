@@ -1,0 +1,55 @@
+/*
+ *      Projet  : ABAL                  Copyright Prologue s.a. (c) 1990, 1995
+ *      Module  : ATR
+ *      Fichier : TCASM.HE
+ *      Version : 2.1f
+ *      Date    : 22/11/95
+ *      Systeme : DOS / PRL / UNIX / VMS
+ *
+ *      Traducteur ABAL
+ *
+ *      [Definitions relatives au macroassembleur de Tcode]
+ *
+ * --------------------------------------------------------------------------
+ *      27/10/92 : Debut version 1.5
+ *              Insertion des nouvelles fonctions CLF et  NGF 1.5
+ *              CLF : CREATE (06), REMOVE (16), FORGET (26), ALIAS (36),
+ *                    ASKCOLOR (57), ASKATB (67), SETHOTKEY (77), SETLANG (87),
+ *                    INITDATA (97), LIBUSER (A7), LIBPROC (B7), LIBSEGM (C7),
+ *                    PARSE (5C), POWER (AB), STDFORM (5E), REAL (6E)
+ *              NGF : NAME (29)
+ * --------------------------------------------------------------------------
+ *
+ */
+
+#ifdef _TCASM
+#define EXT_TCASM
+#else
+#define EXT_TCASM extern
+#endif /* _TCASM */
+
+/* PUBLIC */
+/* ------ */
+
+/* PUBLIC VARIABLES */
+/* ---------------- */
+
+/* PUBLIC FONCTIONS */
+/* ---------------- */
+
+EXT_TCASM void masm (BOOL);
+
+#ifdef LINT_ARGS
+
+#else
+
+#endif /* LINT_ARGS */
+
+/* PUBLIC END */
+/* ---------- */
+
+/* FIN DEFINITIONS INTERNES */
+/* ------------------------ */
+
+/* ---------------- FIN tcasm.he -----------------------------------------*/
+

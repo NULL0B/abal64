@@ -1,0 +1,379 @@
+
+/*
+	Desc :	Message.hg
+	Proj :	June
+	Copyright (c) 1997 Prologue Software
+
+		Message table.
+		
+
+	BEWARE : THIS FILE IS GENERATED - DO NOT MODIFY MANUALLY !
+
+	Generated on:  -  14/11/01 -  16:02 - from AWK Script
+
+*/
+
+
+/*
+		Note: 
+			
+			Macros 'Mentete' and 'Oentete' must be defined.
+			
+			Mentete = French header
+			Oentete = English header
+
+*/
+
+
+#ifndef OuiNon
+#define OuiNon "ON0"
+#endif
+#ifndef YesNo
+#define YesNo  "YN0"
+#endif
+
+
+#define Mfil10 "\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"
+
+#define Mfin "*ETX*"
+
+#ifdef HX
+/* ----------------------------------------------
+* Structure de messages adaptee aux compilateurs
+* qui n'assurent pas la continuite des messages
+* ----------------------------------------------
+*/
+#define	MESSAGE_MAX_LEN	66		/* longueur du plus grand message */
+#define m00003 ((char *)&mentete[0][2])
+
+static char mentete[][MESSAGE_MAX_LEN] = {
+		Mentete,
+		OuiNon,
+		"1Editeur de liens ABAL",
+		"1Edition des liens...",
+		"1** Erreur:",
+		"1Liens avec le module :",
+		"1<CR> -> Abandon   <Autre touche> -> pour continuer",
+		"1 Syntaxe d'appel incorrecte",
+		"1 AccŠs fichier impossible :",
+		"1 R‚f‚rence(s) non r‚solue(s) :",
+		"1Aucune",
+		"1 Fichier d'entr‚e incorrect",
+		"1 M‚moire insuffisante",
+		"1 Module au lieu de programme",
+		"1 Module incorrect",
+		"1 Programme d‚j… ex‚cutable",
+		"1 D‚bordement de la table des constantes globales",
+		"1 D‚bordement de la table des variables globales",
+		"1 D‚bordement de la table des proc‚dures",
+		"1 Nombre de variables globales trop grand",
+		"1 D‚bordement de l'espace de donn‚es globales",
+		"1 D‚bordement de la table des noms de variables",
+		"1 D‚bordement de la table des segments",
+		"1 Fichier r‚sultat ouvert ou en cours d'ex‚cution",
+		"1 Fichier non partageable",
+		"1 Traitement du module:",
+		"1Environnement",
+		"1 Utilisation des sous r‚pertoires interdite",
+		"1 Le module comporte encore des erreurs de syntaxe",
+		"1Programme  :",
+		"1En cours   :",
+		"1R‚solution des  externes...",
+		"1 Appuyez sur un touche pour continuer",
+		"1 Conflit de nom de bibliothŠque",
+		"1Action     :",
+		"1 Ouverture ...",
+		"1 Passe",
+		"1 Proc‚dure externe d‚j… r‚solue",
+		"1 Segment externe d‚j… r‚solu",
+		"1 Assemblage final",
+		"1 Utilisation incorrecte du pragma LOCAL_CONSTANT",
+		"1 Syntaxe : ald [",
+		"1 -a              : Compactage de la table des constantes",
+		"1 -r<Chemin>      : Chemin d'accŠs, par d‚faut, aux modules",
+		"1 -d<Fichier>     : Nom du fichier r‚sultat",
+		"1 -h              : Activation mode ensemble int‚gr‚",
+		"1 -f<Fichier>     : Suite de la ligne de commande dans le fichier",
+		"1 -i              : Affiche les r‚f‚rences externes d'un module",
+		"1 -v              : Mode bavard",
+		"1               ] <module1>,,,,<moduleN>",
+		"1Variables  :",
+		"1Proc‚dures :",
+		"1Segments   :",
+		"1(P)",
+		"1(S)",
+		"1(V)",
+		"1Reloc=M en FIN",
+		"1Reloc=M en INSERTION",
+		"1Reloc=M en RECOUVREMENT",
+		"1Reloc=E en FIN",
+		"1Reloc=E en INSERTION",
+		"1Reloc=E en RECOUVREMENT",
+		"1RedefPTR",
+		"1PTR",
+		"1 Arrˆt de l'‚dition de liens",
+		"1 Variable externe d‚j… r‚solue",
+		Mfil10,
+		Mfil10,
+		Mfil10,
+		Mfil10,
+		Mfil10,
+		Mfil10,
+		Mfil10,
+		Mfil10,
+		Mfil10,
+		Mfil10,
+		Mfin
+};
+
+static char oentete[][MESSAGE_MAX_LEN] = {
+		Oentete,
+		OuiNon,
+		"1ABAL linker",
+		"1Linking...",
+		"1** Error:",
+		"1Links with module :",
+		"1<CR> -> Abort    <Other key> -> to continue",
+		"1 Incorrect call syntax",
+		"1 Impossible to access file:",
+		"1 Unresolved references",
+		"1None",
+		"1 Incorrect input file",
+		"1 Not enough memory",
+		"1 Module instead of program",
+		"1 Incorrect module",
+		"1 Program already executable",
+		"1 Global constant table overflow",
+		"1 Global variable table overflow",
+		"1 Procedures table overflow",
+		"1 Too many global variables declared",
+		"1 Global data space overflow",
+		"1 Procedures names table overflow",
+		"1 Segments table overflow",
+		"1 Result file opened or buzy",
+		"1 File not shareable",
+		"1 Processing module :",
+		"1Environment",
+		"1 Subdirectory access forbidden",
+		"1 Incorrect module translation result",
+		"1Program     :",
+		"1Current     :",
+		"1Resolving externals...",
+		"1 Press any key to continue",
+		"1 Failure in library name",
+		"1Action      :",
+		"1 Open ...",
+		"1 Pass",
+		"1 External procedure already resolved",
+		"1 External segment already resolved",
+		"1 Output file re-organisation ...",
+		"1Illegal use of pragma LOCAL_CONSTANT",
+		"1 Syntax : ald [",
+		"1 -a              : Activate constant folding",
+		"1 -r<Access>      : Default access path to modules",
+		"1 -d<File>        : Name of output file",
+		"1 -h              : Activate control panel display",
+		"1 -f<File>        : Specify command line option file",
+		"1 -i              : Display module external references",
+		"1 -v              : Activate informational messages",
+		"1               ] <module1>,,,,<moduleN>",
+		"1Variables  :",
+		"1Procedures :",
+		"1Segments   :",
+		"1(P)",
+		"1(S)",
+		"1(V)",
+		"1Reloc=M END mode",
+		"1Reloc=M INSERT mode",
+		"1Reloc=M OVERLAY mode",
+		"1Reloc=E END mode",
+		"1Reloc=E INSERT mode",
+		"1Reloc=E OVERLAY mode",
+		"1Redef PTR",
+		"1PTR",
+		"1 Object linker abandon",
+		"1 External variable already resolved",
+		Mfil10,
+		Mfil10,
+		Mfil10,
+		Mfil10,
+		Mfil10,
+		Mfil10,
+		Mfil10,
+		Mfil10,
+		Mfil10,
+		Mfil10,
+		Mfin
+};
+#else /* !HX */
+
+/* MESSAGE FRANCAIS */
+
+static char mentete [] = Mentete;
+static char ouinon [] = OuiNon;
+		static char m00003[]="1Editeur de liens ABAL";
+		static char m00004[]="1Edition des liens...";
+		static char m00005[]="1** Erreur:";
+		static char m00006[]="1Liens avec le module :";
+		static char m00007[]="1<CR> -> Abandon   <Autre touche> -> pour continuer";
+		static char m00008[]="1 Syntaxe d'appel incorrecte";
+		static char m00009[]="1 AccŠs fichier impossible :";
+		static char m000010[]="1 R‚f‚rence(s) non r‚solue(s) :";
+		static char m000011[]="1Aucune";
+		static char m000012[]="1 Fichier d'entr‚e incorrect";
+		static char m000013[]="1 M‚moire insuffisante";
+		static char m000014[]="1 Module au lieu de programme";
+		static char m000015[]="1 Module incorrect";
+		static char m000016[]="1 Programme d‚j… ex‚cutable";
+		static char m000017[]="1 D‚bordement de la table des constantes globales";
+		static char m000018[]="1 D‚bordement de la table des variables globales";
+		static char m000019[]="1 D‚bordement de la table des proc‚dures";
+		static char m000020[]="1 Nombre de variables globales trop grand";
+		static char m000021[]="1 D‚bordement de l'espace de donn‚es globales";
+		static char m000022[]="1 D‚bordement de la table des noms de variables";
+		static char m000023[]="1 D‚bordement de la table des segments";
+		static char m000024[]="1 Fichier r‚sultat ouvert ou en cours d'ex‚cution";
+		static char m000025[]="1 Fichier non partageable";
+		static char m000026[]="1 Traitement du module:";
+		static char m000027[]="1Environnement";
+		static char m000028[]="1 Utilisation des sous r‚pertoires interdite";
+		static char m000029[]="1 Le module comporte encore des erreurs de syntaxe";
+		static char m000030[]="1Programme  :";
+		static char m000031[]="1En cours   :";
+		static char m000032[]="1R‚solution des  externes...";
+		static char m000033[]="1 Appuyez sur un touche pour continuer";
+		static char m000034[]="1 Conflit de nom de bibliothŠque";
+		static char m000035[]="1Action     :";
+		static char m000036[]="1 Ouverture ...";
+		static char m000037[]="1 Passe";
+		static char m000038[]="1 Proc‚dure externe d‚j… r‚solue";
+		static char m000039[]="1 Segment externe d‚j… r‚solu";
+		static char m000040[]="1 Assemblage final";
+		static char m000041[]="1 Utilisation incorrecte du pragma LOCAL_CONSTANT";
+		static char m000042[]="1 Syntaxe : ald [";
+		static char m000043[]="1 -a              : Compactage de la table des constantes";
+		static char m000044[]="1 -r<Chemin>      : Chemin d'accŠs, par d‚faut, aux modules";
+		static char m000045[]="1 -d<Fichier>     : Nom du fichier r‚sultat";
+		static char m000046[]="1 -h              : Activation mode ensemble int‚gr‚";
+		static char m000047[]="1 -f<Fichier>     : Suite de la ligne de commande dans le fichier";
+		static char m000048[]="1 -i              : Affiche les r‚f‚rences externes d'un module";
+		static char m000049[]="1 -v              : Mode bavard";
+		static char m000050[]="1               ] <module1>,,,,<moduleN>";
+		static char m000051[]="1Variables  :";
+		static char m000052[]="1Proc‚dures :";
+		static char m000053[]="1Segments   :";
+		static char m000054[]="1(P)";
+		static char m000055[]="1(S)";
+		static char m000056[]="1(V)";
+		static char m000057[]="1Reloc=M en FIN";
+		static char m000058[]="1Reloc=M en INSERTION";
+		static char m000059[]="1Reloc=M en RECOUVREMENT";
+		static char m000060[]="1Reloc=E en FIN";
+		static char m000061[]="1Reloc=E en INSERTION";
+		static char m000062[]="1Reloc=E en RECOUVREMENT";
+		static char m000063[]="1RedefPTR";
+		static char m000064[]="1PTR";
+		static char m000065[]="1 Arrˆt de l'‚dition de liens";
+		static char m000066[]="1 Variable externe d‚j… r‚solue";
+		static char m000067[]=Mfil10;
+		static char m000068[]=Mfil10;
+		static char m000069[]=Mfil10;
+		static char m000070[]=Mfil10;
+		static char m000071[]=Mfil10;
+		static char m000072[]=Mfil10;
+		static char m000073[]=Mfil10;
+		static char m000074[]=Mfil10;
+		static char m000075[]=Mfil10;
+		static char m000076[]=Mfil10;
+		static char mfin[] = Mfin;
+
+/* MESSAGES ANGLAIS */
+
+		static char oentete [] = Oentete;
+		static char oyesno [] = YesNo;
+		static char o00003[]="1ABAL linker";
+		static char o00004[]="1Linking...";
+		static char o00005[]="1** Error:";
+		static char o00006[]="1Links with module :";
+		static char o00007[]="1<CR> -> Abort    <Other key> -> to continue";
+		static char o00008[]="1 Incorrect call syntax";
+		static char o00009[]="1 Impossible to access file:";
+		static char o000010[]="1 Unresolved references";
+		static char o000011[]="1None";
+		static char o000012[]="1 Incorrect input file";
+		static char o000013[]="1 Not enough memory";
+		static char o000014[]="1 Module instead of program";
+		static char o000015[]="1 Incorrect module";
+		static char o000016[]="1 Program already executable";
+		static char o000017[]="1 Global constant table overflow";
+		static char o000018[]="1 Global variable table overflow";
+		static char o000019[]="1 Procedures table overflow";
+		static char o000020[]="1 Too many global variables declared";
+		static char o000021[]="1 Global data space overflow";
+		static char o000022[]="1 Procedures names table overflow";
+		static char o000023[]="1 Segments table overflow";
+		static char o000024[]="1 Result file opened or buzy";
+		static char o000025[]="1 File not shareable";
+		static char o000026[]="1 Processing module :";
+		static char o000027[]="1Environment";
+		static char o000028[]="1 Subdirectory access forbidden";
+		static char o000029[]="1 Incorrect module translation result";
+		static char o000030[]="1Program     :";
+		static char o000031[]="1Current     :";
+		static char o000032[]="1Resolving externals...";
+		static char o000033[]="1 Press any key to continue";
+		static char o000034[]="1 Failure in library name";
+		static char o000035[]="1Action      :";
+		static char o000036[]="1 Open ...";
+		static char o000037[]="1 Pass";
+		static char o000038[]="1 External procedure already resolved";
+		static char o000039[]="1 External segment already resolved";
+		static char o000040[]="1 Output file re-organisation ...";
+		static char o000041[]="1Illegal use of pragma LOCAL_CONSTANT";
+		static char o000042[]="1 Syntax : ald [";
+		static char o000043[]="1 -a              : Activate constant folding";
+		static char o000044[]="1 -r<Access>      : Default access path to modules";
+		static char o000045[]="1 -d<File>        : Name of output file";
+		static char o000046[]="1 -h              : Activate control panel display";
+		static char o000047[]="1 -f<File>        : Specify command line option file";
+		static char o000048[]="1 -i              : Display module external references";
+		static char o000049[]="1 -v              : Activate informational messages";
+		static char o000050[]="1               ] <module1>,,,,<moduleN>";
+		static char o000051[]="1Variables  :";
+		static char o000052[]="1Procedures :";
+		static char o000053[]="1Segments   :";
+		static char o000054[]="1(P)";
+		static char o000055[]="1(S)";
+		static char o000056[]="1(V)";
+		static char o000057[]="1Reloc=M END mode";
+		static char o000058[]="1Reloc=M INSERT mode";
+		static char o000059[]="1Reloc=M OVERLAY mode";
+		static char o000060[]="1Reloc=E END mode";
+		static char o000061[]="1Reloc=E INSERT mode";
+		static char o000062[]="1Reloc=E OVERLAY mode";
+		static char o000063[]="1Redef PTR";
+		static char o000064[]="1PTR";
+		static char o000065[]="1 Object linker abandon";
+		static char o000066[]="1 External variable already resolved";
+		static char o000067[]=Mfil10;
+		static char o000068[]=Mfil10;
+		static char o000069[]=Mfil10;
+		static char o000070[]=Mfil10;
+		static char o000071[]=Mfil10;
+		static char o000072[]=Mfil10;
+		static char o000073[]=Mfil10;
+		static char o000074[]=Mfil10;
+		static char o000075[]=Mfil10;
+		static char o000076[]=Mfil10;
+		static char ofin[] = Mfin;
+#endif /* HX */
+ 
+/*      Definition du nombre de messages        */
+/*      --------------------------------        */
+#define QUICK_HELP_MESSAGE_COUNT     41 /* Aide en Ligne */
+#define LAST_HELP_MESSAGE            66
+ 
+#define MESSAGE_COUNT                66
+ 
+char *messages[MESSAGE_COUNT];
+ 

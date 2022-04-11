@@ -1,0 +1,8 @@
+
+!make
+CTR2 =  $(POBJ)trbuffer$(OBJ) $(POBJ)cbparser$(OBJ)
+$(POBJ)trbuffer$(OBJ):  $(SP01)trbuffer.c $(SP01)buffers.c $(SP01)aplus.h $(SP01)stdtypes.h $(SP01)hosts.h $(SP01)truser.h $(SP01)buffers.h $(SP01)value.h $(SP01)memory.h $(SP01)exrdef.h $(SP01)struct.h $(SP01)relation.h $(SP01)friend.h $(SP01)trapping.h $(SP01)abal.h $(SP01)allocate.h '
+$(SP01)options.h $(SP01)fileseek.c $(SP01)fileseek.h
+$(POBJ)cbparser$(OBJ):  $(SP01)cbparser.c $(SP01)stdtypes.h $(SP01)hosts.h $(SP01)trparser.c $(SP01)trparser.h $(SP01)troption.h $(SP01)trlabels.h $(SP01)trinput.h $(SP01)trdebug.h
+
+

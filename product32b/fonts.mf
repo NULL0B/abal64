@@ -1,0 +1,169 @@
+# generated makefile : fonts.mf 
+# ------------------------------------
+# Fixed Pitch Fonts
+# ------------------------------------
+$(ABAL)/product32b/fonts/standard.fmf: $(ABAL)/fonts/standard.fmf
+	cp $* $@ 
+$(ABAL)/product32b/fonts/ask1016.fmf: $(ABAL)/fonts/ask1016.fmf
+	cp $* $@ 
+$(ABAL)/product32b/fonts/bmap0408.fmf: $(ABAL)/fonts/bmap0408.fmf
+	cp $* $@ 
+$(ABAL)/product32b/fonts/bmap0816.fmf: $(ABAL)/fonts/bmap0816.fmf
+	cp $* $@ 
+$(ABAL)/product32b/fonts/bmap1024.fmf: $(ABAL)/fonts/bmap1024.fmf
+	cp $* $@ 
+$(ABAL)/product32b/fonts/bmap1224.fmf: $(ABAL)/fonts/bmap1224.fmf
+	cp $* $@ 
+$(ABAL)/product32b/fonts/bmap1226.fmf: $(ABAL)/fonts/bmap1226.fmf
+	cp $* $@ 
+$(ABAL)/product32b/fonts/bmap1228.fmf: $(ABAL)/fonts/bmap1228.fmf
+	cp $* $@ 
+$(ABAL)/product32b/fonts/bmap1230.fmf: $(ABAL)/fonts/bmap1230.fmf
+	cp $* $@ 
+$(ABAL)/product32b/fonts/bmap1232.fmf: $(ABAL)/fonts/bmap1232.fmf
+	cp $* $@ 
+$(ABAL)/product32b/fonts/bmap1640.fmf: $(ABAL)/fonts/bmap1640.fmf
+	cp $* $@ 
+$(ABAL)/product32b/fonts/bmap1642.fmf: $(ABAL)/fonts/bmap1642.fmf
+	cp $* $@ 
+$(ABAL)/product32b/fonts/cour1016.fmf: $(ABAL)/fonts/cour1016.fmf
+	cp $* $@ 
+$(ABAL)/product32b/fonts/hand1024.fmf: $(ABAL)/fonts/hand1024.fmf
+	cp $* $@ 
+$(ABAL)/product32b/fonts/real1024.fmf: $(ABAL)/fonts/real1024.fmf
+	cp $* $@ 
+$(ABAL)/product32b/fonts/cyrl1024.fmf: $(ABAL)/fonts/cyrl1024.fmf
+	cp $* $@ 
+$(ABAL)/product32b/fonts/cyrl0816.fmf: $(ABAL)/fonts/cyrl0816.fmf
+	cp $* $@ 
+$(ABAL)/product32b/fonts/edit0815.fmf: $(ABAL)/fonts/edit0815.fmf
+	cp $* $@ 
+$(ABAL)/product32b/fonts/editfont.fmf: $(ABAL)/fonts/editfont.fmf
+	cp $* $@ 
+$(ABAL)/product32b/fonts/cour3.fmf: $(ABAL)/fonts/cour3.fmf
+	cp $* $@ 
+$(ABAL)/product32b/fonts/cour4.fmf: $(ABAL)/fonts/cour4.fmf
+	cp $* $@ 
+$(ABAL)/product32b/fonts/cour5.fmf: $(ABAL)/fonts/cour5.fmf
+	cp $* $@ 
+$(ABAL)/product32b/fonts/cour6.fmf: $(ABAL)/fonts/cour6.fmf
+	cp $* $@ 
+$(ABAL)/product32b/fonts/font2.fmf: $(ABAL)/fonts/font2.fmf
+	cp $* $@ 
+$(ABAL)/product32b/fonts/font3.fmf: $(ABAL)/fonts/font3.fmf
+	cp $* $@ 
+$(ABAL)/product32b/fonts/font4.fmf: $(ABAL)/fonts/font4.fmf
+	cp $* $@ 
+$(ABAL)/product32b/fonts/font5.fmf: $(ABAL)/fonts/font5.fmf
+	cp $* $@ 
+$(ABAL)/product32b/fonts/font6.fmf: $(ABAL)/fonts/font6.fmf
+	cp $* $@ 
+$(ABAL)/product32b/fonts/font7.fmf: $(ABAL)/fonts/font7.fmf
+	cp $* $@ 
+$(ABAL)/product32b/fonts/font8.fmf: $(ABAL)/fonts/font8.fmf
+	cp $* $@ 
+$(ABAL)/product32b/fonts/font9.fmf: $(ABAL)/fonts/font9.fmf
+	cp $* $@ 
+
+# -------------------------
+# Proportional Spaced Fonts
+# -------------------------
+
+$(ABAL)/product32b/fonts/arial1.fmf: $(ABAL)/fonts/arial1.fmf
+	cp $* $@ 
+$(ABAL)/product32b/fonts/arial2.fmf: $(ABAL)/fonts/arial2.fmf
+	cp $* $@ 
+$(ABAL)/product32b/fonts/arial3.fmf: $(ABAL)/fonts/arial3.fmf
+	cp $* $@ 
+$(ABAL)/product32b/fonts/arial4.fmf: $(ABAL)/fonts/arial4.fmf
+	cp $* $@ 
+$(ABAL)/product32b/fonts/arial5.fmf: $(ABAL)/fonts/arial5.fmf
+	cp $* $@ 
+$(ABAL)/product32b/fonts/arial6.fmf: $(ABAL)/fonts/arial6.fmf
+	cp $* $@ 
+$(ABAL)/product32b/fonts/book1.fmf: $(ABAL)/fonts/book1.fmf
+	cp $* $@ 
+$(ABAL)/product32b/fonts/times1.fmf: $(ABAL)/fonts/times1.fmf
+	cp $* $@ 
+$(ABAL)/product32b/fonts/times2.fmf: $(ABAL)/fonts/times2.fmf
+	cp $* $@ 
+$(ABAL)/product32b/fonts/times3.fmf: $(ABAL)/fonts/times3.fmf
+	cp $* $@ 
+$(ABAL)/product32b/fonts/times4.fmf: $(ABAL)/fonts/times4.fmf
+	cp $* $@ 
+$(ABAL)/product32b/fonts/times5.fmf: $(ABAL)/fonts/times5.fmf
+	cp $* $@ 
+$(ABAL)/product32b/fonts/times6.fmf: $(ABAL)/fonts/times6.fmf
+	cp $* $@ 
+$(ABAL)/product32b/fonts/times7.fmf: $(ABAL)/fonts/times7.fmf
+	cp $* $@ 
+$(ABAL)/product32b/fonts/times8.fmf: $(ABAL)/fonts/times8.fmf
+	cp $* $@ 
+
+# ---------------------
+# Normalised Font Names 
+# ---------------------
+$(ABAL)/product32b/fonts/arial0014.fmf: $(ABAL)/fonts/arial0014.fmf
+	cp $* $@ 
+$(ABAL)/product32b/fonts/arial0016.fmf: $(ABAL)/fonts/arial0016.fmf
+	cp $* $@ 
+$(ABAL)/product32b/fonts/arial0020.fmf: $(ABAL)/fonts/arial0020.fmf
+	cp $* $@ 
+$(ABAL)/product32b/fonts/arial0022.fmf: $(ABAL)/fonts/arial0022.fmf
+	cp $* $@ 
+$(ABAL)/product32b/fonts/arial0024.fmf: $(ABAL)/fonts/arial0024.fmf
+	cp $* $@ 
+$(ABAL)/product32b/fonts/arial0026.fmf: $(ABAL)/fonts/arial0026.fmf
+	cp $* $@ 
+$(ABAL)/product32b/fonts/book0020.fmf: $(ABAL)/fonts/book0020.fmf
+	cp $* $@ 
+$(ABAL)/product32b/fonts/cour0022.fmf: $(ABAL)/fonts/cour0022.fmf
+	cp $* $@ 
+$(ABAL)/product32b/fonts/cour0024.fmf: $(ABAL)/fonts/cour0024.fmf
+	cp $* $@ 
+$(ABAL)/product32b/fonts/cour0030.fmf: $(ABAL)/fonts/cour0030.fmf
+	cp $* $@ 
+$(ABAL)/product32b/fonts/cour0032.fmf: $(ABAL)/fonts/cour0032.fmf
+	cp $* $@ 
+$(ABAL)/product32b/fonts/luc0008.fmf: $(ABAL)/fonts/luc0008.fmf
+	cp $* $@ 
+$(ABAL)/product32b/fonts/luc0016.fmf: $(ABAL)/fonts/luc0016.fmf
+	cp $* $@ 
+$(ABAL)/product32b/fonts/luc0018.fmf: $(ABAL)/fonts/luc0018.fmf
+	cp $* $@ 
+$(ABAL)/product32b/fonts/luci0038.fmf: $(ABAL)/fonts/luci0038.fmf
+	cp $* $@ 
+$(ABAL)/product32b/fonts/times0010.fmf: $(ABAL)/fonts/times0010.fmf
+	cp $* $@ 
+$(ABAL)/product32b/fonts/times0013.fmf: $(ABAL)/fonts/times0013.fmf
+	cp $* $@ 
+$(ABAL)/product32b/fonts/times0015.fmf: $(ABAL)/fonts/times0015.fmf
+	cp $* $@ 
+$(ABAL)/product32b/fonts/times0017.fmf: $(ABAL)/fonts/times0017.fmf
+	cp $* $@ 
+$(ABAL)/product32b/fonts/times0019.fmf: $(ABAL)/fonts/times0019.fmf
+	cp $* $@ 
+$(ABAL)/product32b/fonts/times0022.fmf: $(ABAL)/fonts/times0022.fmf
+	cp $* $@ 
+$(ABAL)/product32b/fonts/times0029.fmf: $(ABAL)/fonts/times0029.fmf
+	cp $* $@ 
+$(ABAL)/product32b/fonts/times0037.fmf: $(ABAL)/fonts/times0037.fmf
+	cp $* $@ 
+
+$(ABAL)/product32b/fonts/tahoma.fmf: $(ABAL)/fonts/tahoma.fmf
+	cp $* $@ 
+$(ABAL)/product32b/fonts/tahoma12.fmf: $(ABAL)/fonts/tahoma12.fmf
+	cp $* $@ 
+$(ABAL)/product32b/fonts/tahoma13.fmf: $(ABAL)/fonts/tahoma13.fmf
+	cp $* $@ 
+$(ABAL)/product32b/fonts/tahoma14.fmf: $(ABAL)/fonts/tahoma14.fmf
+	cp $* $@ 
+$(ABAL)/product32b/fonts/tahoma15.fmf: $(ABAL)/fonts/tahoma15.fmf
+	cp $* $@ 
+$(ABAL)/product32b/fonts/standard15.fmf: $(ABAL)/fonts/standard15.fmf
+	cp $* $@ 
+
+! make
+! shell chmod uog+r fonts/*
+! make
+

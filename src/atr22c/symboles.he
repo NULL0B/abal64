@@ -1,0 +1,243 @@
+/*
+ *      Projet  : ABAL                  Copyright Prologue s.a. (c) 1990, 1995
+ *      Module  : ATR
+ *      Fichier : SYMBOLES.H
+ *      Version : 2.1f
+ *      Date    : 22/11/95
+ *      Systeme : DOS / PRL / UNIX / VMS
+ *
+ *      Traducteur ABAL
+ *
+ *      [Definitions de la gestion des tables de symboles]
+ *
+ *	------------ 2.2a -------------------------------------------------
+ *	17/02/97 : Debut revision 2.2
+ *	17/02/97 : nouvelles fonctions :
+ *						 complete_dcl(), newdcl_struct(), new_struct(), newvar_noeud(),
+ *						 get_noeud_size(), get_struct_size(), get_last_struct(),
+ *						 findstruct()
+ *						 fonctions modifi‚es :
+ *						 findvar()
+ *	01/04/97 : Clause with --> newwith() et endwith()
+ *	23/04/97 : Variables globales optimise_tables, nb_dcl_local, nb_dcl_global
+ *	16/07/97 : Variable globale enhanced_debug (info sur les lignes pour le debug)
+ *	11/10/99 : (#SP) Enhancement ATR 23: Local named constants.
+ *             New parameter added to indicate that debug info is needed.
+ */
+
+#ifdef _SYMBOLES
+#define EXT_SYMBOLES
+#else
+#define EXT_SYMBOLES extern
+#endif /* _SYMBOLES */
+
+/* PUBLIC */
+/* ------ */
+
+#define IS_TSTR(t)	( ( (BYTE) t & 0x07 ) == TSTR )
+#define IS_TBCD(t)	( ( (BYTE) t & 0x07 ) == TBCD )	
+#define IS_TBIN1(t)	( ( (BYTE) t & 0x07 ) == TBIN1 )
+#define IS_TBIN2(t)	( ( (BYTE) t & 0x07 ) == TBIN2 )
+#define IS_TBIN(t)	( IS_TBIN1(t) || IS_TBIN2(t) )
+
+/* PUBLIC VARIABLES */
+/* ---------------- */
+/*      Definition relative a l'optimisation des variables "registre"   */
+/*      ------------------------------------------------------------    */
+
+EXT_SYMBOLES BINAIRE nrgvar;    /* num reg associe a variable courante */
+EXT_SYMBOLES BOOL Do_Init_Reg;  /* variables registres a initialiser */
+EXT_SYMBOLES int nb_refpext;    /* nb de references a des proc externes */
+
+EXT_SYMBOLES int nb_refsext;    /* nb de references a des segments externes */
+EXT_SYMBOLES BOOL flglcst;    /* flag d'utilisation des constantes locales */
+EXT_SYMBOLES BINAIRE modextcr;	/* Module externe courant : -1 ANY */
+
+
+/*      Definition relatives a la gestion des fonctions utilisateur */
+/*      ----------------------------------------------------------- */
+
+EXT_SYMBOLES Tbusr *RacTbusr;   /* racine arbre fonctions */
+EXT_SYMBOLES TabuRef *TusrRef;  /* debut liste references aux no de runtime */
+EXT_SYMBOLES TabRt *RacTabRt;   /* debut liste des runtimes */
+
+EXT_SYMBOLES	BOOL optimise_tables;	/* optimisation des tables */
+EXT_SYMBOLES	BOOL enhanced_debug;	/* on: info ligne, off: info offset */
+EXT_SYMBOLES	BOOL NewDBGWithOldExtension; /* Temporary to delete */
+
+EXT_SYMBOLES BINAIRE nb_dcl_local;	/* nbr de variables locales utilis‚e si optimisation ou d‚clar‚e sinon */
+EXT_SYMBOLES BINAIRE nb_dcl_global;	/* nbr de variables globales si optimisation ou d‚clar‚e sinon */
+EXT_SYMBOLES BINAIRE nb_cst_local;	/* nbr de constantes locales */		/* #BG 16/08/01 */
+EXT_SYMBOLES BINAIRE nb_cst_global;	/* nbr de constantes globales */	/* #BG 16/08/01 */
+
+/* PUBLIC FONCTIONS */
+/* ---------------- */
+
+#ifdef LINT_ARGS
+
+EXT_SYMBOLES void lienseg(TabSeg *,BINAIRE,BINAIRE);
+EXT_SYMBOLES BYTE typdesc(BYTE *);
+EXT_SYMBOLES BYTE masqueptr(BYTE);
+EXT_SYMBOLES BOOL ismemglobale(BYTE);
+
+EXT_SYMBOLES void lienproc(TabProc *,BINAIRE,BINAIRE);
+EXT_SYMBOLES void librlien(void);
+
+EXT_SYMBOLES void initsymb (void);
+EXT_SYMBOLES void finsymb (BOOL);
+EXT_SYMBOLES void initlcst (void);
+/* #SP: 11/10/99 (begin) */
+#ifndef __ATR22__
+EXT_SYMBOLES void finlcst (BINAIRE,BYTE *);
+#else
+EXT_SYMBOLES void finlcst (BINAIRE,BYTE *,BOOL);
+#endif
+/* #SP: 11/10/99 (end) */
+
+EXT_SYMBOLES BINAIRE newdclarg (BOOL, BOOL, BYTE **, BINAIRE *);
+EXT_SYMBOLES BOOL newvar_noeud (TabSymb **, TabSymb *, BOOL, BOOL, BOOL, BINAIRE *);
+EXT_SYMBOLES BOOL newdcl_struct (BOOL, BOOL, BOOL, TabStruct *, BINAIRE *);
+EXT_SYMBOLES BOOL new_struct (TabSymb **, char *, BOOL, BOOL, BOOL, BOOL, BOOL, TabStruct *, BINAIRE *,Type *);
+EXT_SYMBOLES BINAIRE newdcl (BOOL, BOOL, BOOL, BOOL);
+
+EXT_SYMBOLES BINAIRE newcst (void);
+EXT_SYMBOLES BINAIRE newstr (char *);
+EXT_SYMBOLES BOOL newwith (void);
+EXT_SYMBOLES BOOL endwith (void);
+EXT_SYMBOLES BOOL newstruct (void);
+EXT_SYMBOLES BINAIRE get_struct_size(TabStruct *);
+EXT_SYMBOLES BINAIRE get_noeud_size(TabSymb *);
+EXT_SYMBOLES TabStruct *get_last_struct(void);
+EXT_SYMBOLES BINAIRE newbcd (BYTE *);
+EXT_SYMBOLES void newfld (BOOL,BOOL);
+
+EXT_SYMBOLES BINAIRE complete_dcl(TabSymb *);
+EXT_SYMBOLES BINAIRE newargs (BYTE,BYTE *,BINAIRE *);
+#ifdef	VERSION_XX
+EXT_SYMBOLES BYTE *newproc(char *,BOOL,BOOL,BINAIRE,BINAIRE,BINAIRE,BINAIRE,BINAIRE,BYTE *,BINAIRE,BINAIRE,TabProc **,BINAIRE *,BOOL,BOOL *,BINAIRE,BINAIRE);
+#else
+EXT_SYMBOLES BYTE *newproc(char *,BOOL,BOOL,BINAIRE,BINAIRE,BINAIRE,BINAIRE,BINAIRE,BYTE *,BINAIRE,BINAIRE,TabProc **,BINAIRE *,BOOL,BOOL *);
+#endif
+EXT_SYMBOLES void newseg(BOOL,BOOL,char *,BINAIRE,BINAIRE,BINAIRE,BINAIRE,BINAIRE,BINAIRE,BINAIRE,BINAIRE,BINAIRE,BINAIRE,BINAIRE,BINAIRE);
+
+EXT_SYMBOLES BOOL recbincst (BINAIRE *);
+EXT_SYMBOLES TabStruct *findstruct (char *);
+EXT_SYMBOLES BYTE findcst (char * , BYTE ** , BINAIRE *);
+EXT_SYMBOLES BYTE *findvar (char *, BYTE *, BINAIRE *, TabSymb **, BOOL);
+EXT_SYMBOLES TabProc *findproc (BINAIRE,char *);
+
+EXT_SYMBOLES TabSeg *findseg (BINAIRE,char *);
+EXT_SYMBOLES BINAIRE findmod (char *);
+EXT_SYMBOLES BINAIRE findsrc (char *);
+
+EXT_SYMBOLES void freelocal (void);
+EXT_SYMBOLES void defetiq (char * , BINAIRE);
+EXT_SYMBOLES BINAIRE refetiq (char * , BINAIRE);
+EXT_SYMBOLES void refproc (TabProc *, BINAIRE, BINAIRE);
+
+EXT_SYMBOLES void refseg (TabSeg *, BINAIRE, BINAIRE);
+
+EXT_SYMBOLES BOOL inmod(BINAIRE *);
+EXT_SYMBOLES BOOL extfldm(BYTE **, BINAIRE *);
+EXT_SYMBOLES BOOL newextfld(void);
+
+EXT_SYMBOLES BOOL newetiqvar(void);
+EXT_SYMBOLES BOOL insetiqvar(char *, char, long);
+EXT_SYMBOLES void libetiqvar(void);
+
+EXT_SYMBOLES BOOL newptancr(void);
+EXT_SYMBOLES LstAncr *insptancr(BINAIRE, char *, char, long);
+EXT_SYMBOLES LstAncr *findptancr(BINAIRE, char *, char);
+EXT_SYMBOLES void libptancr(void);
+
+EXT_SYMBOLES BOOL insxvar(LstAncr *, TabSymb *);
+
+EXT_SYMBOLES void refobj (BOOL, BINAIRE, BINAIRE, BINAIRE);
+EXT_SYMBOLES void recupcst (void);
+EXT_SYMBOLES void chkregs (TabSymb *);
+EXT_SYMBOLES void initregs (TabSymb *);
+
+EXT_SYMBOLES BINAIRE getlong (BYTE);
+EXT_SYMBOLES BOOL	createEmptyStructure(void);
+
+
+#else
+
+EXT_SYMBOLES void lienseg();
+EXT_SYMBOLES BYTE typdesc();
+EXT_SYMBOLES BYTE masqueptr();
+EXT_SYMBOLES BOOL ismemglobale();
+
+EXT_SYMBOLES void lienproc();
+EXT_SYMBOLES void librlien();
+
+EXT_SYMBOLES void initsymb ();
+EXT_SYMBOLES void finsymb ();
+EXT_SYMBOLES void initlcst ();
+EXT_SYMBOLES void finlcst ();
+
+
+EXT_SYMBOLES BINAIRE newdclarg ();
+EXT_SYMBOLES BINAIRE newdcl ();
+
+EXT_SYMBOLES BINAIRE newcst ();
+EXT_SYMBOLES BINAIRE newstr ();
+EXT_SYMBOLES BINAIRE newbcd ();
+EXT_SYMBOLES void newfld ();
+
+EXT_SYMBOLES BINAIRE newargs ();
+EXT_SYMBOLES BYTE *newproc();
+EXT_SYMBOLES void newseg();
+
+EXT_SYMBOLES BOOL recbincst ();
+EXT_SYMBOLES BYTE findcst ();
+EXT_SYMBOLES BYTE *findvar ();
+EXT_SYMBOLES TabProc *findproc ();
+
+EXT_SYMBOLES TabSeg *findseg ();
+EXT_SYMBOLES BINAIRE findmod ();
+EXT_SYMBOLES BINAIRE findsrc ();
+
+EXT_SYMBOLES void freelocal ();
+EXT_SYMBOLES void defetiq ();
+EXT_SYMBOLES BINAIRE refetiq ();
+EXT_SYMBOLES void refproc ();
+
+EXT_SYMBOLES void refseg ();
+
+EXT_SYMBOLES void refobj ();
+EXT_SYMBOLES void recupcst ();
+EXT_SYMBOLES void chkregs ();
+EXT_SYMBOLES void initregs ();
+
+EXT_SYMBOLES BOOL inmod();
+EXT_SYMBOLES BOOL extfldm();
+EXT_SYMBOLES BOOL newextfld();
+
+EXT_SYMBOLES BOOL newetiqvar();
+EXT_SYMBOLES BOOL insetiqvar();
+EXT_SYMBOLES void libetiqvar();
+
+EXT_SYMBOLES BOOL newptancr();
+EXT_SYMBOLES LstAncr *findptancr();
+EXT_SYMBOLES LstAncr *insptancr();
+EXT_SYMBOLES void libptancr();
+
+EXT_SYMBOLES BOOL insxvar();
+
+EXT_SYMBOLES BINAIRE getlong ();
+
+EXT_SYMBOLES BOOL	createEmptyStructure();
+
+
+
+#endif /* LINT_ARGS */
+
+/* PUBLIC END */
+/* ---------- */
+
+/* FIN DEFINITIONS INTERNES */
+/* ------------------------ */
+
+/* ---------------- FIN symboles.he -----------------------------------------*/
+

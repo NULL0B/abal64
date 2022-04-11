@@ -1,0 +1,26 @@
+INCLUDE = -I$(ABAL)/include -I$(ABAL)/src/cico
+AGR     = agr
+
+VERSION = -DUNIX -DVERSION666 -Dold64 -DABAL64 $(VABAL) -DABAL32DBG
+
+ldmain.mf: $(SP01)ldmain.c $(SP01)lderrors.c $(SP01)ldabmsg.c
+	genmake -mldmain.mf -x -yOLDOBJ $(INCLUDE) "-zban*" "-ztrace.h" "-zwold*"  $?
+! make
+.c.o:
+! ifdef AGR
+	-$(GCC) -c $(GDB) $(VERSION) $(INCLUDE) $* 1> pipo1 2> pipo2
+	cat pipo1 pipo2 > pipo
+	agr -apipo
+! else
+	$(GCC) -c $(GDB) $(VERSION) $(INCLUDE) $* 
+! endif
+	
+! include ldmain.mf
+! make
+
+$(ABAL)/bin/old64: $(OLDOBJ) $(ALLOCATE)
+	$(GCC) $(GDB)  -o $@ $?
+! make
+
+
+

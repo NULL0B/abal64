@@ -1,0 +1,223 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>ABAL 3 : Graphical Print Driver </title>
+<META NAME="VERSION" CONTENT="*PRL@INFO*$6:31a001">
+<link href="style.css" rel="STYLESHEET" type="text/css" media="SCREEN">
+</head>
+<body>
+<div align=center>
+<table>
+<tr><th><h1>ABAL 3 : Graphical Print Driver </h1><td>
+<tr><th><h2>Programmer Reference Manual</h2><td>
+<tr><th><h3>Table of Contents</h3><td>
+<tr><td>
+<p>
+<ol>
+<li><a href="#intro">Introduction and Overview</a>
+<li>Library Functions
+<ol>
+<li><a href="#f001">DriverInitialise(colourmap$?,resolution%,width%,height%,option%)</a>
+<li><a href="#f002">DriverColours()</a>
+<li><a href="#f003">DriverConnect(bufferA$,bufferB$,result$?)</a>
+<li><a href="#f004">DriverStartRaster(result$?)</a>
+<li><a href="#f005">DriverPrintRow(result$?,source$)</a>
+<li><a href="#f006">DriverEndRasterresult$?)</a>
+<li><a href="#f007">DriverLiberate(result$?)</a>
+<li><a href="#f008">DriverMargin(left$,leftunits%,top$,topunits%)</a>
+<li><a href="#f008">DriverControl(buffer$,length%)</a>
+</ol>
+<p>
+</ol>
+</table>
+<p>
+<a name ="intro">
+<table>
+<tr><th><h3>Introduction and Overview</h3>
+<tr><td><p>
+This Dynamic Library for ABAL is a Virtual Library Specification in that it represents a template or 
+base class specification from which several different print driver dynamlic libraries may be derived.
+<p>The library interface was initially elaborated for use with the <b>Twin Server</b> internet navigator <b>NV</b>
+to allow graphical printing of <b>HTML</b> documents.
+<p>The current specification is no longer compatible with the original due to important extensions to the 
+driver initialisation function allowing for page alignment and logical page height being taken into consideration
+by the print density calculations.
+<p>All print code packages resulting from the various driver functions are to be <b>ESC T</b> encapsulated being prefixed by
+the corresponding ESC T length encoding header. 
+<p>The integer result values returned by such functions must be adjust to include the 4 ESC T packaging bytes.
+<p>Currently print drivers are available for the following printer code types :
+<p>
+<table>
+<tr><th>DRIVER<th>DESCRIPTION
+<tr><td>ljii<td>HP LaserJet II and Cannon PCL Raster Graphics encoding.
+<tr><td>ljiv<td>HP LaserJet IV and Cannon Optimised PCL Raster Graphics encoding.
+<tr><td>psiii<td>Adobe Postscript Version 3 Graphics Encoding Language
+<tr><td>bj300<td>Cannon Bubble Jet 300 and 330 Ink Jet encoding.
+</table>
+<p>
+</table>
+<p>
+<table>
+<tr><th><h3>Library Functions</h3></table>
+
+<p><table>
+<tr><th><h4><a name="f001">DriverInitialise(colourmap,resolution,width,height,option)</h4>
+<tr><td><h5>Parameters</h5><p><dl>
+<dt>colourmap$%<dd>A string buffer value providing the colour map or palette to be used by the driver.
+<dt>resolution%<dd>An integer value providing the print densitity or resolution in dots per inch.
+<dt>width%<dd>An integer value describing the width of the source bitmap to be printed.
+<dt>height%<dd>An integer value indicating the height in rows of the source bitmap.
+<dt>option%<dd>An integer value providing suplementary options describing the target paper type, A1 to A4, and the
+alignment of the output image on the page.
+<p>
+<table>
+<caption>Paper Type Option</caption>
+<tr><th>BIT VALUE<th>PAPER TYPE
+<tr><td>0<td>A4
+<tr><td>/0100<td>A3
+<tr><td>/0200<td>A2
+<tr><td>/0300<td>A1
+</table>
+<p>
+<table>
+<caption>Alignment Option</caption>
+<tr><th>BIT VALUE<th>Alignment
+<tr><td>0<td>NONE (center)
+<tr><td>1<td>TOP LEFT
+<tr><td>2<td>BOTTOM RIGHT
+<tr><td>3<td>CENTER
+</table>
+<p>
+The option value <b>/1000</b> may also be added to force colour inhibition for print drivers which
+support colour printing.
+<p>
+
+</dl><p><h5>Description</h5>
+<p> This library function performs initialisation of the graphics printer driver providing the
+fundemental parameters required for the calculation of the colour,  greyscale  and other
+output factorisation. It returns an integer value to be used by the calling code as the minimum length
+to be used for the allocation of the three buffers required by the printer driver dynamic library.
+<p>The memory allocation and liberation is the repsonibillity of the calling aplication.
+<p>
+</table>
+
+<p><table>
+<tr><th><h4><a name="f002">DriverColours()</h4>
+<tr><td>
+<p><h5>Description</h5>
+<p>This function returns the number of colours that are may be managed by the print driver dynamic library.
+<p>Black and white or monchrome printer drivers, even when grayscaling, should return zero.
+<p>
+</table>
+
+<p><table>
+<tr><th><h4><a name="f003">DriverConnect(bufferA$,bufferB$,result$?)</h4>
+<tr><td><h5>Parameters</h5><p><dl>
+<dt>bufferA
+<dd>A string buffer parameter that will be used by the print driver through out its operation until the <b>DriverLiberate</b>
+function is called. The buffer should be at least as long as the value returned by the <b>DriverInitialise</b> function.
+
+<dt>bufferB
+<dd>A secondary string buffer parameter that will be used by the print driver through out its operation until the <b>DriverLiberate</b>
+function is called. The buffer should be at least as long as the value returned by the <b>DriverInitialise</b> function.
+<dt>result
+<dd>A string buffer parameter which may return data bytes from the driver requiredto be sent to the printer for
+its correct initialisation sequence corresponding to the initialisation parameters decoded by the <b>DriverInitialise</b> function.
+<p>This buffer should be also at least as long as the value returned by the <b>DriverInitialise</b> function.
+</dl><p><h5>Description</h5>
+<p>This function <b>MUST</b> be called for the connection of the driver to the application provided work buffers.
+<p>As for all subsequent print driver functions this function will return an integer value representing the total number 
+of bytes returned to the application in the result buffer parameter, to be sent to the printer of print file.
+<p>
+</table>
+
+<p><table>
+<tr><th><h4><a name="f004">DriverStartRaster(result$?)</h4>
+<tr><td><h5>Parameters</h5><p><dl>
+<dt>result<dd>A string buffer parameter for the reception of the resulting print code.
+</dl><p><h5>Description</h5>
+<p>This function should be called once at the start of each page of graphics to be printed.
+<p>It will return an integer value representing the total number 
+of bytes returned to the application in the result buffer parameter, to be sent to the printer of print file.
+</table>
+
+<p><table>
+<tr><th><h4><a name="f005">DriverPrintRow(result$?,source$)</h4>
+<tr><td><h5>Parameters</h5><p><dl>
+<dt>result<dd>A string buffer parameter for the reception of the resulting print code.
+<dt>source<dd>A string buffer parameter providing the source row of logical or colour map pixels.
+</dl><p><h5>Description</h5>
+<p>This function will be called to perform the conversion of the source row of colour pixels to the relevent
+printer code corresponding to the mode and resolution established buring the driver initialisation phase.
+<p>All printer code packages are to be <b>ESC T</b> encapsulated to ensure their data integrity across the subsequent
+data transport mechanisms to the final print code consumer.
+<p>
+</table>
+
+<p><table>
+<tr><th><h4><a name="f006">DriverEndRaster(result$?)</h4>
+<tr><td><h5>Parameters</h5><p><dl>
+<dt>result<dd>A string buffer parameter for the reception of the resulting print code.
+</dl><p><h5>Description</h5>
+<p>This function should be called once at the and of each page of graphics to be printed, prior to any page feed code generation.
+<p>It will return an integer value representing the total number 
+of bytes returned to the application in the result buffer parameter, to be sent to the printer of print file.
+</table>
+
+<p><table>
+<tr><th><h4><a name="f007">DriverLiberate(result$?)</h4>
+<tr><td><h5>Parameters</h5><p><dl>
+<dt>result<dd>A string buffer parameter for the reception of the resulting print code.
+</dl><p><h5>Description</h5>
+<p>This function should be called when the graphical printing is complete to disconnect the driver from the
+work buffers and for the generation of any final print code for completion of the operation.
+<p>It will return an integer value representing the total number 
+of bytes returned to the application in the result buffer parameter, to be sent to the printer of print file.
+</table>
+
+<p><table>
+<tr><th><h4><a name="f007">DriverMargins(left$,units%,top$,units%)</h4>
+<tr><td><h5>Parameters</h5><p><dl>
+<dt>left<dd>A string value providing the left margin size in terms of the subsequent units integer value.
+<dt>top<dd>A string value describing the top margin size in terms of the subsequent units integer value.
+<dt>units<dd>An integer value describing the nature of the margin value :
+<p><table><th>Value</th><th>Description</th>
+<tr><td>0<td>pixels
+<tr><td>1<td>inches
+<tr><td>2<td>millimeters</table>
+</dl><p><h5>Description</h5>
+<p>This function should be called after the <code>DriveInitialise</code> funtion to establish 
+hard hitting paper margins that must be applied either to surface calculations or sent to
+the printer as required by the driver.
+<p>Margin information will only take effect when the alignment value of the <code>DriverInitialise</code>
+function has been set to <code>Margin</code>. Otherwise the alignment requested will take effect.
+<p>
+</table>
+
+<p><table>
+<tr><th><h4><a name="f007">DriverControl(buffer$,length%)</h4>
+<tr><td><h5>Parameters</h5><p><dl>
+<dt>buffer<dd>A string buffer parameter providing the device control instructions.
+<dt>length<dd>An integer parameter providing the useable length of the preceeding buffer parameter.
+</dl><p><h5>Description</h5>
+<p>This function should be called prior to the <a href="#f003">DriverConnect</a>
+function in order to specify printer model specific driver control information. 
+The way in which this information is used, if at all, depends on the nature of the 
+graphical print driver library. In the case of the <code>psiit</code> library, the device
+control information will be generated just after the initial comment instruction block and prior to 
+the start of the character and font description tables and allows for paper tray handling and 
+control of various printer specific operations.
+<p>It will return an integer value representing the total number 
+of bytes received and set as the driver control string.
+</table>
+
+<p>
+<table>
+<tr><th><h3 align=center>Copyright &copy; <a href="http://www.prologue.fr">Prologue</a></h3>
+<tr><th><h3 align=center>Version Fran&ccedil;aise <a href="fr/yabal.htm"><img src="tricolor.gif"></a>
+</table>
+</div>
+</body>
+</html>
+
+

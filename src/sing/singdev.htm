@@ -1,0 +1,4568 @@
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="generator" content="Prologue Sing Html Version 1.0a">
+<meta name="version" content="*PRL@INFO*#11a001">
+<link href="style.css" type="text/css" rel="stylesheet" media="screen">
+<link href="style.css" type="text/css" rel="stylesheet" media="print">
+<title>Sing Version 1.0a
+</title>
+</head><body>
+<div align="center">
+<table class="DOC">
+<tr><th><h1 align="center">
+Sing Version 1.0a
+</h1>
+<td><div align="center"><img src="singlogo.gif">
+</div></table></div><p>
+<p><div align="center">
+<table class="TOC">
+<tr><th><h2 align="center">
+Table Of Contents
+</h2>
+
+<tr><td><ol>
+<li><a href="#vsave">accept form save
+</a>
+<br>
+<li><a href="#vload">accept form load
+</a>
+<br>
+<li><a href="#vwidget">accept widget properties
+</a>
+<br>
+<li><a href="#veditor">visual text editor
+</a>
+<br>
+<li><a href="#vfload">accept fontload
+</a>
+<br>
+<li><a href="#vfsave">accept fontsave
+</a>
+<br>
+<li><a href="#vaprod">accept abal production
+</a>
+<br>
+<li><a href="#vcprod">accept c production
+</a>
+<br>
+<li><a href="#visave">accept imagesave
+</a>
+<br>
+<li><a href="#viload">accept imageload
+</a>
+<br>
+<li><a href="#vcube">accept cube properties
+</a>
+<br>
+<li><a href="#vcamera">accept camera properties
+</a>
+<br>
+<li><a href="#vmprod">accept production properties
+</a>
+<br>
+<li><a href="#vabout">inform about
+</a>
+<br>
+<li><a href="#vmenu">accept menu properties
+</a>
+<br>
+<li><a href="#voption">option properties
+</a>
+<br>
+<li><a href="#vtrad">accept traduction
+</a>
+<br>
+<li><a href="#vmsave">accept modelsave
+</a>
+<br>
+<li><a href="#vclass">accept class
+</a>
+<br>
+<li><a href="#vconst">accept constant
+</a>
+<br>
+<li><a href="#vdata">accept data
+</a>
+<br>
+<li><a href="#vmethod">accept method
+</a>
+<br>
+<li><a href="#verror">accept error
+</a>
+<br>
+<li><a href="#vaed">accept editor
+</a>
+<br>
+<li><a href="#vmload">accept modelfilename
+</a>
+<br>
+<li><a href="#vintro">accept introduction
+</a>
+<br>
+<li><a href="#vimport">accept font import
+</a>
+<br>
+<li><a href="#vhtml">accept document parameters
+</a>
+<br>
+<li><a href="#vimage">accept image dimensions
+</a>
+<br>
+<li><a href="#vconfig">accept configuration
+</a>
+<br>
+<li><a href="#vrecrep">accept animation parameters
+</a>
+<br>
+<li><a href="#vparam">accept general options
+</a>
+<br>
+<li><a href="#vfile">accept file properties
+</a>
+<br>
+<li><a href="#vheader">class header
+</a>
+<br>
+<li><a href="#vtimport">text import
+</a>
+<br>
+<li><a href="#vtexport">text export
+</a>
+<br>
+<li><a href="#vfselect">file selector
+</a>
+<br>
+<li><a href="#vform">accept form control
+</a>
+<br>
+<li><a href="#vaccess">visual access
+</a>
+<br>
+<li><a href="#vaccess">visual access
+</a>
+<br>
+<li><a href="#vmprod">accept production properties
+</a>
+<br>
+<li><a href="#vpragma">accept pragmas
+</a>
+<br>
+<li><a href="#vsearch">accept search
+</a>
+<br>
+<li><a href="#vexit">accept exit
+</a>
+<br>
+<li><a href="#vlink">accept linker parameters
+</a>
+<br>
+<li><a href="#vdebug">accept debug parameters
+</a>
+<br>
+<li><a href="#vexadb">visual debug
+</a>
+<br>
+<li><a href="#vrefer">accept configuration
+</a>
+<br>
+<li><a href="#vfextr">accept extraction
+</a>
+<br>
+<li><a href="#vedcmd">accept editor command
+</a>
+<br>
+<li><a href="#vreplace">accept replace
+</a>
+<br>
+<li><a href="#vpagenew">accept visual page
+</a>
+<br>
+<li><a href="#vcompose">accept form syntax
+</a>
+<br>
+
+</ol></td>
+</table></div><p>
+<a name="vsave">
+
+<p>
+<div align="center">
+<table class="DS">
+<tr><th><h2 align="center">
+accept form save
+</h2>
+
+<tr><td><p><div align="center"><img src="vsave.gif">
+</div><p>
+<tr><td>
+This visual frame is presented to allow the filename of a 
+visual form model to be
+specified or modified priot to being 
+saved to disk.  
+
+
+<p>
+
+<dl>
+<dt class=type><b>FileName
+</b>
+<dd class=data>This edit field allows the full path and filename of the file to  
+be specified. 
+                  
+
+
+
+<dt class=type><b>Accept
+</b>
+<dd class=data>By pressing this button the file save operation will be validated
+and consequently
+the model will be saved to the specified file.
+
+
+
+<dt class=type><b>Cancel
+</b>
+<dd class=data>By pressing this button the model save operation may be cancelled.
+.
+
+
+<dt class=type><b>Select
+</b>
+<dd class=data>The Select button provides access  to the
+<a href="vfselect.htm">file selection</a>
+dialog frame allowing
+prompted selection of the filename.
+
+
+
+
+</dl>
+
+</td>
+</table></div><p>
+<a name="vload">
+
+<p>
+<div align="center">
+<table class="DS">
+<tr><th><h2 align="center">
+accept form load
+</h2>
+
+<tr><td><p><div align="center"><img src="vload.gif">
+</div><p>
+<tr><td>
+This visual form will be presented to allow the name of a form to
+   be specified
+prior to a form load operation.
+
+
+<p>
+
+<dl>
+<dt class=type><b>FileName
+</b>
+<dd class=data>This edit field allows the data entry of the full path and 
+filename of the file from
+which the model is to be loaded.
+
+
+
+<dt class=type><b>Accept
+</b>
+<dd class=data>By pressing this button the model identified by the filename field
+will be loaded
+from disk.
+
+
+
+<dt class=type><b>Select
+</b>
+<dd class=data>The Select button gives access  to the
+<a href="vfselect.htm">file selection</a> dialog
+frame allowing
+prompted selection of the filename.
+
+
+<dt class=type><b>Cancel
+</b>
+<dd class=data>By pressing on this button the model load operation will be abandoned.
+
+
+
+
+
+</dl>
+
+</td>
+</table></div><p>
+<a name="vwidget">
+
+<p>
+<div align="center">
+<table class="DS">
+<tr><th><h2 align="center">
+accept widget properties
+</h2>
+
+<tr><td><p><div align="center"><img src="vwidget.gif">
+</div><p>
+<tr><td>
+This visual form allows inspection and modification 
+of the properties and methods
+of the component widgets of 
+visual forms.
+<BR>This is a generic collection of atributs
+with varying 
+semantics depending on the nature of the actual widget.
+<BR>This visual
+form will be activated in response to either
+selecting the menu sequence <B>Edit..Properties</B>
+or by 
+pressing the <B>TAB</B> key in the visual forms editor.
+
+
+<p>
+<ol><li>
+<dl>
+<dt class=type><b>Widget
+</b>
+<dd class=data>This page presents the collection widget properties for 
+inspection and eventual modification.
+
+
+
+
+</dl>
+<ul><li>
+<dl>
+<dt class=type><b>AtX
+</b>
+<dd class=data>The <b>X</b> and <b>Y</b> position edit fields allow the graphical
+pixel position
+of the widget to be specified.
+<br>The widget position may be changed in the visual
+forms editor
+by pressing the left button of the mouse over the widget and then
+moving
+with the button still pressed.
+When the mouse button is released the position fileds
+X and Y will
+reflect the new current position.
+<br>The widget position coordinate
+values are available for use in
+method text via the method terms :
+<p><b>this.X</b>
+<p>and
+<p><b>this.Y</b>
+<p>respectivly.
+
+
+
+
+</dl>
+<li>
+<dl>
+<dt class=type><b>Width
+</b>
+<dd class=data>The DIMENSION edit fields allow the widget size in pixels to be
+modified and represent
+the WIDTH and HEIGHT of the item.
+<p>The dimensions may be modified from the visual
+form editor
+by pressing and holding the right button of the mouse and then
+stretching
+the widget to its required size. The dimension fields
+W and H will adopt the new widget
+dimensions when the right
+button is released.
+<p>The dimensions values are available
+for use in method text 
+through the following terms :
+<p><b>this.W</b>
+<p>and
+<p><b>this.H</b>
+
+
+
+
+</dl>
+<li>
+<dl>
+<dt class=type><b>TextFont
+</b>
+<dd class=data>The TEXT FONT edit field allows the font used by the widget, when
+displaying text,
+to be selected. 
+The initial value of this field will be taken from the current 
+value
+of the general parameter <b>Current Font</b> or the 
+<b>Options.Parameters</b> menu.
+<p>This
+field is of conseqence to all widgets for which the 
+payload represents a text to
+be displayed.
+<br>This field should reference a fixed font for <b>Edit</b>
+widgets.
+In other case proportional fonts are also possible.
+<p>The numeric value of the field
+may be referenced in method text
+by the term :
+<p><b>this.FONT</b>
+<p>Information
+relating to the font dimensions may be refered to
+by the terms :
+<p><b>this.FONTWIDTH</b>
+: the widht of the font in pixels.
+<p><b>this.FONTHEIGHT</b> : the height of the font
+in pixels.
+
+
+
+
+
+</dl>
+<li>
+<dl>
+<dt class=type><b>TextColour
+</b>
+<dd class=data>This edit field allows value of the text colour to be specified.
+The initial value
+of this field is taken from the current default
+foreground colour value as defined
+by the palette control 
+mechanisms of the forms editor context.
+<br>The default value
+may be changed by clicking with the left
+button of the mouse on the desired colour.
+<br>The
+Tool Icons of all widget types which make use of the text
+colour will be redisplayed
+to reflect the text colour change.
+<br>The value of this atribut may be referenced
+in method text 
+expressions by the term :
+<p><b>this.FG</b>
+
+
+
+
+
+</dl>
+<li>
+<dl>
+<dt class=type><b>Background
+</b>
+<dd class=data>This edit field allows value of the background colour of the widget 
+to be specified.
+The
+initial value of this field is taken from the current default
+background colour value
+as defined by the palette control 
+mechanisms of the forms editor context.
+<br>The
+default value may be changed by clicking with the <b>right</b>
+button of the mouse
+on the desired colour in the palette window.
+<br>The Tool Icons of all widget types
+which make use of the background
+colour will be redisplayed to reflect the colour
+change.
+<br>The value of this atribut may be referenced in method text 
+expressions
+by the term :
+<p><b>this.BG</b>
+
+
+
+
+
+</dl>
+<li>
+<dl>
+<dt class=type><b>PayLoad
+</b>
+<dd class=data>This edit field allows the payload of the widget to be specified.
+<br>The semantics
+of the payload depends on the actual widget class
+as can be seen in the following
+table.
+<p><table>
+<tr><th>Class<td>Description
+<tr><td>WINDOW<td>the window title
+<tr><td>TEXT<td>the
+text of the message to display
+<tr><td>CHECK<td>The label of the check box
+<tr><td>RADIO<td>The
+label of the radio button
+<tr><td>BUTTON<td>The label of the push button
+<tr><td>TABPAGE<td>The
+label on the tab page button
+<tr><td>SWITCH<td>The label in the switch button
+<tr><td>SELECT<td>The
+<b>|</b> separated list of option texts
+to numerated  by the selection mechanism.
+<tr><td>TABLE<td>The
+<b>|</b> separated list of column titles
+<tr><td>IMAGE<td>The filename of the image.
+<tr><td>OTHER<td>No
+semantics are defined for the payload of other
+widget types.
+</table>
+<p>The value
+of this atribut may be referenced from method text
+by the term :
+<p><b>this.PAYLOAD</b>
+
+
+
+
+</dl>
+<li>
+<dl>
+<dt class=type><b>Auto4659
+</b>
+<dd class=data>This edit field allows suplementary imformation to be provided 
+for <B>EDIT</B> and
+<B>FORM</B> to be used in conjunction with
+ their pay load in defining their structure
+display and usage.
+
+
+
+
+</dl>
+<li>
+<dl>
+<dt class=type><b>Identity
+</b>
+<dd class=data>This edit field allows an explicite name to give to identify 
+and be able to access
+the widget from method text of other widgets
+and in forms model documentation.
+<br>By
+default widgets are atributed a unique auto generated name 
+with the following basic
+format
+<p><b>auto1345</b>
+
+
+
+
+</dl>
+<li>
+<dl>
+<dt class=type><b>WidgetClass
+</b>
+<dd class=data>This combo selection field allows the nature or class of a widget 
+to be changed.
+The following provides an exhaustive list of all
+widgets types :
+<ol>
+<li>fillzone
+<li>outset
+frame<li>inset frame<li>ridge frame<li>groove frame
+<li>edit<li>text<li>image<li>line<li>push
+button
+<li>window<li>tab view
+<li>check box<li>radio button
+<li>combo select
+<li>form
+or table
+<li>scroll bar or slider
+<li>progress
+<li>switch<li>graph
+</ol>
+
+
+
+
+</dl>
+<li>
+<dl>
+<dt class=type><b>Ok
+</b>
+<dd class=data>The ACCEPT button allows the modifications performed on the widget
+   properties to
+be kept and applied to the widget.
+
+
+
+</dl>
+<li>
+<dl>
+<dt class=type><b>Cancel
+</b>
+<dd class=data>The CANCEL button allows modifications performed on the widget
+   properties to be
+abandoned.
+
+
+
+</dl>
+<li>
+<dl>
+<dt class=type><b>Align
+</b>
+<dd class=data>This combo selection field allows a value to be chosen 
+from a,widget specific,list
+of options.
+<p>The semantics of the options vary depending on the 
+actual class of
+the widget as can be seen in the following table.
+<p>
+<table>
+<tr><td>WIDGET<td>Behaviour
+
+<tr><td>WINDOW<td>The
+alignment value applies to the window itself
+within the parent graphical output screen.
+
+<tr><td>TEXT
+<td><dl><dt>None<dd>no
+alignment is applied and the text will be 
+displayed with automatic line wrap within
+the zone defined by the
+position and dimension values. This alignment value is not
+
+intended for use with proportional fonts.
+<dt>Right,Left,Center<dd>These values will
+cause the text to be 
+displayed aligned in a single line centered in a vertical direction
+within
+the zone.
+<dt>Justify<dd>The text will be space padded displayed such that 
+it touches
+both left and right edges of its zone</dl>
+<tr><td>FRAMES<td>For the various frame
+components, namely
+<b>INSET</b>,<b>OUTSET</b>,<b>GROOVE</b> and<b>RIDGE</b>,
+The alignment
+value applies to the payload which , when provided, 
+will be displayed as a textual
+title for the frame. 
+The alignment value of <b>none</b> inhibits title display.
+
+<tr><td>IMAGE<td>The
+following image options are available.
+<dl><dt>None<dd>no alignment is applied to
+the image.
+<dt>Right<dd>The image will be right aligned in the widget zone.
+<dt>Left<dd>The
+image will be left aligned in the widget zone.
+<dt>Center<dd>The image will be centered
+within the widget zone.
+<dt>Tile<dd>This option causes the images, smaller than their
+
+widget zone, to be <b>tiled</b> or repeated, to fill the entire 
+zone.
+<dt>Makefit<dd>causes
+images to be stretched or squashed to fit
+the entire widget zone.
+<dt>Bestfit<dd>causes
+images to stretched and squashed respecting
+the image proportions. The result may
+stil be smaller than the 
+widget zone in which case it will be centered.
+</dl>
+<tr><td>SCROLLBAR<td>This
+option controls the composition of the
+scroll bar. In all cases, when the zone width
+is found to be
+greater than the zone height a horizontal bar will be displayed.
+Otherwise,
+when the width is less than the height, a vertical bar
+will be displayed.
+
+<dl><dt>None<dd>The
+scroll bar <i>trough</i> will occupy the entire
+widget zone. No butons will be displayed.
+<dt>Right<dd>A
+<b>down</b> or <b>right</b> button will be displayed
+at the appropriate extremity.
+The scroll bar trough will occupy
+the remaining zone.
+<dt>Left<dd>A <b>up</b> or <b>left</b>
+button will be displayed
+at the appropriate extremity. The scroll bar trough will
+occupy
+the remaining zone.
+<dt>Both<dd>Both <b>up</b> and <b>down</b> or <b>left</b>
+and <b>right</b>
+buttons will be displayed at each end of the bar.
+The scroll bar
+trough will occupy the remaining zone.
+<dt>Slider<dd>No buttons will be displayed
+and the slider bar will
+be displayed as a rounded slider in a grooved trough, occupying
+the
+entire widget zone.
+</dl>
+<TR><TD>PUSHBUTTON<TD>This option controls the nature
+of the
+push button as follows.
+<DL><DT>TEXT<DD>The payload of the widget will be displayed
+as the
+textual title of the button with an eventual underlined hotkey
+trigger character.
+<DT>IMAGE<DD>The
+payload ofthe widget will be used as the filename
+of an image to be displayed within
+the surface of the push button.
+</DL>
+<tr><td>OTHER<td>No semantic is currently defined
+for other widget types.
+</table>
+
+
+
+
+
+</dl>
+<li>
+<dl>
+<dt class=type><b>Type
+</b>
+<dd class=data>This combo selection field allows the data or behavioural type 
+associated with the
+widgets as can be seen below
+<p>
+<table>
+<tr><td>Edit<td>These widgets are normally
+of type <b>String</b> 
+and give rise to the declaration of a string buffer
+storage
+area in the object container.
+<tr><td>Edit<td>Widgets of this class also declare <b>string</b>
+storage
+but in addition further declarations allow row and
+column access to the various table
+members or positions.
+<tr><td>Check,Switch<td>These widgets are of type <b>word</b>
+with 
+a single integer declaration representing their state.
+<tr><td>Radio<td>These
+widgets are of type <b>word</b> with 
+a single integer declaration shared between
+all members of the radio
+group identifying the active item of the radio group.
+<tr><td>Button,TabView<td>
+In
+the case of these activator widgets the behavioural type 
+<b>Overlay</b> implies that
+the widget is to trigger the attachment 
+of an ABAL <b>OVERLAY</b> program when activated.
+<tr><td>Progress<td>These
+widgets have two integer data items
+the value and the limit.
+<tr><td>Scroll<td>These
+widgets have three integer data items
+the value, the max and the limit.
+</table>
+<p>The
+various data items may be referenced from method text
+by the terms : 
+<p><table>
+<tr><td><b>this.BUFFER</b>
+<td> returns the string buffer value
+<tr><td><b>this.SIZE</b>   <td> returns the string
+length
+<tr><td><b>this.LINE(N)</b> <td> sets the table line to N
+<tr><td><b>this.LINES</b>
+<td> returns the total number of table lines
+<tr><td><b>this.LINESIZE</b> <td> returns
+the total size in characters
+ of the table line
+<tr><td><b>this.COLUMN(N)</b><td>
+refers to the column N of the current LINE
+<tr><td><b>this.COLUMNS</b> <td> returns
+the total number of table columns
+<tr><td><b>this.COLUMNSIZE</b> <td> returns the
+total size in characters
+ of the table column
+<tr><td><b>this.VALUE</b> <td> returns
+the numeric value
+<tr><td><b>this.LIMIT</b> <td> returns the numeric value
+<tr><td><b>this.MAX</b>
+<td> returns the numeric value
+</table>
+
+
+
+
+
+
+
+
+</dl>
+<li>
+<dl>
+<dt class=type><b>IsBold
+</b>
+<dd class=data>This check box allows the bold atribut to be activated for widgets
+with a textual
+payload.
+
+
+
+
+</dl>
+<li>
+<dl>
+<dt class=type><b>IsUnderline
+</b>
+<dd class=data>This check box allows underlining to be activated for widgets 
+with a textual payload.
+
+
+
+
+</dl>
+<li>
+<dl>
+<dt class=type><b>IsShadow
+</b>
+<dd class=data>This check control allows the shadow atribut to be activated for
+widgets with a textual
+payload.
+
+
+
+
+</dl>
+<li>
+<dl>
+<dt class=type><b>IsLock
+</b>
+<dd class=data>This check box allows the collection of widget properties to be 
+locked and consequently
+protected against accidental modification.
+
+
+
+
+</dl>
+</ul><li>
+<dl>
+<dt class=type><b>OnCreate
+</b>
+<dd class=data>This page presents the text and properties of the widget method
+<b>OnCreate</b>. 
+<p>This
+method will be generated and activated, 
+if text has been defined, 
+directly after
+the allocation and parameter transfer mechanisms
+and provides for application specific
+finalisation of the 
+construction phase for the widget.
+<p><img src="vwidget2.gif">
+<p>
+
+
+
+
+</dl>
+<ul><li>
+<dl>
+<dt class=type><b>CreateOptions
+</b>
+<dd class=data>This combo selection field offers control in two areas : 
+<ol>
+<li>
+<p>Method Instance
+Type : <b>Function</b> or <b>Inline</b>
+<p>Inline methods are generated to the source
+region of their
+activation whilst function methods allow event method invokation
+from
+within methods of other widgets. 
+<li>
+<p>Zone Definition Type : <b>Constant</b> or
+<b>Variable</b>
+<p>Position and Dimension information is normally generated 
+as and
+made available through constants to the various library 
+function calls and widget
+atributs (this.x,y,w,h). In certain
+cases it may be desirable to be able to change
+their positions
+or dimensions during the operation of the visual form. In this 
+case
+the variable option should be activated. 
+</ol>
+
+
+
+
+</dl>
+<li>
+<dl>
+<dt class=type><b>Create
+</b>
+<dd class=data>This field allows the method text of the construction method
+to be edited using the
+standard application text editor.
+
+
+
+
+</dl>
+</ul><li>
+<dl>
+<dt class=type><b>OnShow
+</b>
+<dd class=data>This page presents the text and properties of the widget method
+<b>OnShow</b>. 
+<p>This
+method will be generated and activated,
+if text has been defined, 
+from the forms
+event method of the same name.                  
+<p>Tab View widgets will control
+the display of their sub components
+<p><img src="vwidget3.gif">
+<p>
+
+
+
+
+</dl>
+<ul><li>
+<dl>
+<dt class=type><b>ShowOptions
+</b>
+<dd class=data>This combo selection field offers control in two areas : 
+<ol>
+<li>
+<p>Method Instance
+Type : <b>Function</b> or <b>Inline</b>
+<p>Inline methods are generated to the source
+region of their
+activation whilst function methods allow event method invocation
+from
+within methods of other widgets. 
+<li>
+<p>Widget Display Scheduling : <b>Automatic</b>
+: <b>Conditional</b>
+<p>Widgets for which the display sheduling has been set to 
+<b>automatic</b>
+will be displayed during the parent form
+event method of the same name.
+<p>When sheduling
+is set to conditional then display will be
+inhibited and must be performed as required
+during widget method
+text or by other programming means.
+<p>This feature when combined
+with the variable dimensioning and
+positioning available through the <b>Create</b>
+method properties
+allows the construction of versitile documnet generator type
+programs.
+</ol>
+
+
+
+
+</dl>
+<li>
+<dl>
+<dt class=type><b>Show
+</b>
+<dd class=data>This field allows the method text of the display method
+to be edited using the standard
+application text editor.
+
+
+
+
+</dl>
+</ul><li>
+<dl>
+<dt class=type><b>OnGetFocus
+</b>
+<dd class=data>This page presents the text and properties of the widget method
+<b>OnGetFocus</b>.
+
+<p>This method will be generated and activated,
+if text has been defined, 
+when the
+widget receives the keyboard focus              
+from the parent form focus control
+mechanisms.
+<p><img src="vwidget4.gif">
+<p>
+
+
+
+
+</dl>
+<ul><li>
+<dl>
+<dt class=type><b>FocusOptions
+</b>
+<dd class=data>This combo selection field offers control in two areas : 
+<ol>
+<li>
+<p>Method Instance
+Type : <b>Function</b> or <b>Inline</b>
+<p>Inline methods are generated to the source
+region of their
+activation whilst function methods allow event method invokation
+from
+within methods of other widgets. 
+<li>
+<p> Method Focus : <b>Active</b> or <b>Inactivae</b>
+When
+this option is set to active the widget will be included
+in the focus control mechanisms
+of its parent form.
+Otherwise it will be excluded from receiving focus.
+</ol>
+
+
+
+
+</dl>
+<li>
+<dl>
+<dt class=type><b>GetFocus
+</b>
+<dd class=data>This field allows the method text of the focus reception method
+to be edited using
+the standard application text editor.
+
+
+
+
+</dl>
+</ul><li>
+<dl>
+<dt class=type><b>OnEvent
+</b>
+<dd class=data>This page presents the text and properties of the widget method
+<b>OnEvent</b>. 
+<p>This
+method will be generated and activated,
+if text has been defined, 
+from the forms
+event method of the same name.                  
+<p>These event methods are also suitable
+for interwidget signal
+mechanisms.
+<p>For <b>Button</b> and <b>Tab View</b> Widgets
+of (b>Overlay</b>
+type , this method will encapculate the overlay attachment and
+activation
+mechanisms.
+<p><img src="vwidget5.gif">
+<p>
+
+
+
+
+</dl>
+<ul><li>
+<dl>
+<dt class=type><b>MimoMove
+</b>
+<dd class=data>When this switch is selected the widget specific event method 
+will be invoked upon
+reception of <B>MOUSE MOVE</B> events.
+
+
+
+
+</dl>
+<li>
+<dl>
+<dt class=type><b>MimoDown
+</b>
+<dd class=data>When this switch is selected the widget specific event method 
+will be invoked upon
+reception of <B>MOUSE DOWN</b> events.
+
+
+
+
+</dl>
+<li>
+<dl>
+<dt class=type><b>MimoUp
+</b>
+<dd class=data>When this switch is selected the widget specific event method 
+will be invoked upon
+reception of <B>MOUSE UP</b> events.
+
+
+
+
+</dl>
+<li>
+<dl>
+<dt class=type><b>MimoHold
+</b>
+<dd class=data>When this switch is selected the widget specific event method 
+will be invoked upon
+reception of <B>MOUSE IS DOWN</b> events.
+
+
+
+
+</dl>
+<li>
+<dl>
+<dt class=type><b>EventOptions
+</b>
+<dd class=data>This combo selection field offers control in two areas : 
+<ol>
+<li>
+<p>Method Instance
+Type : <b>Function</b> or <b>Inline</b>
+<p>Inline methods are generated to the source
+region of their
+activation whilst function methods allow event method invocation
+from
+within methods of other widgets. 
+<li>
+<p> Method Event Dispatch : <b>Active</b> or
+<b>Inactive</b>
+When this option is set to active the widget will be included
+in the
+event dispatching mechanisms of its parent form.
+Otherwise it will be oblivious to
+parent form events.
+</ol>
+
+
+
+
+</dl>
+<li>
+<dl>
+<dt class=type><b>Event
+</b>
+<dd class=data>This field allows the method text of the event handling method
+to be edited using
+the standard application text editor.
+
+
+
+
+</dl>
+</ul><li>
+<dl>
+<dt class=type><b>OnLoseFocus
+</b>
+<dd class=data>This page presents the text and properties of the widget method
+<b>OnLoseFocus</b>.
+
+<p>This method will be generated and activated,
+if text has been defined, 
+when the
+widget relinquishes the keyboard focus              
+to the parent form focus control
+mechanisms.
+<p><img src="vwidget6.gif">
+<p>
+
+
+
+
+</dl>
+<ul><li>
+<dl>
+<dt class=type><b>LoseOptions
+</b>
+<dd class=data>This combo selection field offers control in two areas : 
+<ol>
+<li>
+<p>Method Instance
+Type : <b>Function</b> or <b>Inline</b>
+<p>Inline methods are generated to the source
+region of their
+activation whilst function methods allow event method invocation
+from
+within methods of other widgets. 
+<li>
+<p> Method Focus : <b>Active</b> or <b>Inactive</b>
+When
+this option is set to active the widget will be included
+in the focus control mechanisms
+of its parent form.
+Otherwise it will be excluded from receiving focus.
+</ol>
+
+
+
+
+</dl>
+<li>
+<dl>
+<dt class=type><b>LoseFocus
+</b>
+<dd class=data>This field allows the method text of the focus release method
+to be edited using the
+standard application text editor.
+
+
+
+
+</dl>
+</ul><li>
+<dl>
+<dt class=type><b>OnHide
+</b>
+<dd class=data>This page presents the text and properties of the widget method
+<b>OnHide</b>. 
+<p>This
+method will be generated and activated,
+if text has been defined, 
+from the forms
+event method of the same name.                  
+<p><img src="vwidget7.gif">
+<p>
+
+
+
+
+</dl>
+<ul><li>
+<dl>
+<dt class=type><b>HideOptions
+</b>
+<dd class=data>This combo selection field offers control of :
+<ol>
+<li>
+<p>Method Instance Type :
+<b>Function</b> or <b>Inline</b>
+<p>Inline methods are generated to the source region
+of their
+activation whilst function methods allow event method invocation
+from within
+methods of other widgets. 
+</ol>
+
+
+
+
+
+
+
+
+
+
+
+
+</dl>
+<li>
+<dl>
+<dt class=type><b>Hide
+</b>
+<dd class=data>This field allows the method text of this event method 
+to be edited using the standard
+application text editor.
+
+
+
+
+</dl>
+</ul><li>
+<dl>
+<dt class=type><b>OnRemove
+</b>
+<dd class=data>This page presents the text and properties of the widget method
+<b>OnRemove</b>. 
+<p>This
+method will be generated and activated, 
+if text has been defined, 
+directly before
+the outbound parameter transfer mechanisms
+and liberation. 
+<p>It provides for application
+specific preliminaries
+of the destruction phase for the widget.
+<p><img src="vwidget8.gif">
+<p>
+
+
+
+
+</dl>
+<ul><li>
+<dl>
+<dt class=type><b>RemoveOptions
+</b>
+<dd class=data>This combo selection field offers control of :
+<ol>
+<li>
+<p>Method Instance Type :
+<b>Function</b> or <b>Inline</b>
+<p>Inline methods are generated to the source region
+of their
+activation whilst function methods allow event method invocation
+from within
+methods of other widgets. 
+</ol>
+
+
+
+
+</dl>
+<li>
+<dl>
+<dt class=type><b>Remove
+</b>
+<dd class=data>This field allows the method text of the destruction method
+to be edited using the
+standard application text editor.
+
+
+
+
+</dl>
+</ul></ol>
+
+</td>
+</table></div><p>
+<a name="veditor">
+
+<p>
+<div align="center">
+<table class="DS">
+<tr><th><h2 align="center">
+visual text editor
+</h2>
+
+<tr><td><p><div align="center"><img src="veditor.gif">
+</div><p>
+<tr><td>
+This visual form is a temporary text editor that will be eventually
+   replaced by
+a more sophisticated mechanism.
+
+<p>
+
+<dl>
+<dt class=type><b>Accept
+</b>
+<dd class=data>By pressing the ACCEPT button the text of the main edit field will
+   be returned
+to the called to be stored as the value of the corre
+sponding entity.
+
+
+<dt class=type><b>Cancel
+</b>
+<dd class=data>By pressing the CANCEL button any modifications performed will be
+   cancelled and
+the previous value of the calling entity will be
+      preserved.
+
+
+<dt class=type><b>Body
+</b>
+<dd class=data>The main edit field provides a basic text entry function supporting
+   insert and
+overwrite modes. The standard curser keys perform the
+ir    usual functions as do
+HOME and END.
+         The key sequence Ctrl A allows the entire zone to be reset
+.
+
+
+
+
+</dl>
+
+</td>
+</table></div><p>
+<a name="vfload">
+
+<p>
+<div align="center">
+<table class="DS">
+<tr><th><h2 align="center">
+accept fontload
+</h2>
+
+<tr><td><p><div align="center"><img src="vfload.gif">
+</div><p>
+<tr><td>
+This visual form will be activated in response to the generic menu option
+<b>File
+Open</b> being selected whilst the <a href="singfont.htm">Font Editor</b> is active
+
+and allows the name of a font file to be specified or selected prior to being loaded
+into the 
+corrsponding font slot ofthe font editor and font management mechanisms.
+
+
+
+<p>
+
+<dl>
+<dt class=type><b>FileName
+</b>
+<dd class=data>This edit field allows the font filename to be specified.
+
+
+
+<dt class=type><b>Accept
+</b>
+<dd class=data>By pressing the ACCEPT button the indicated font file will
+ be loaded into the current
+font slot.
+
+
+<dt class=type><b>Cancel
+</b>
+<dd class=data>By pressing the CANCEL button the font load operation will be abandoned.
+
+
+<dt class=type><b>Select
+</b>
+<dd class=data>The Select button provides access  to the
+<a href="vfselect.htm">file selection</a>
+dialog frame allowing
+prompted selection of the filename of the font to be loaded.
+
+
+
+
+</dl>
+
+</td>
+</table></div><p>
+<a name="vfsave">
+
+<p>
+<div align="center">
+<table class="DS">
+<tr><th><h2 align="center">
+accept fontsave
+</h2>
+
+<tr><td><p><div align="center"><img src="vfsave.gif">
+</div><p>
+<tr><td>
+This visual form will be presented as a result of the selection of the generic menu
+option
+<b>File Save</b> whilst the <a href="singfont.htm">Font Editor</b> is active
+
+allowing inspection and modification of the file name to which the current font save
+
+operation will apply.
+
+
+
+<p>
+
+<dl>
+<dt class=type><b>FileName
+</b>
+<dd class=data>This edit field allows the name of the font file to be specified.
+
+
+
+<dt class=type><b>Accept
+</b>
+<dd class=data>By pressing the ACCEPT button the indicated file name will be used
+   as the target
+for the font save operation.
+
+
+<dt class=type><b>Select
+</b>
+<dd class=data>The Select button provides access  to the
+<a href="vfselect.htm">file selection</a>
+dialog frame allowing
+prompted selection of the font filename.
+
+
+<dt class=type><b>Cancel
+</b>
+<dd class=data>By pressing the CANCEL button the font save operation will be
+   abandoned.
+
+
+
+
+</dl>
+
+</td>
+</table></div><p>
+<a name="vaprod">
+
+<p>
+<div align="center">
+<table class="DS">
+<tr><th><h2 align="center">
+accept abal production
+</h2>
+
+<tr><td><p><div align="center"><img src="vaprod.gif">
+</div><p>
+<tr><td>
+This visual form will be presented as a result of the selection of the generic menu
+option
+<b>File Production</b> whilst the <a href="singform.htm">Visual Forms Editor</a>
+is active for
+an ABAL forms model.
+<p>It allows the various parameters and values
+involved in Abal Source Production and compilation
+to be inspected and modified. Abal
+Source Production will be performed for forms models where  the 
+language type has
+been set to ABAL or ABAL++.
+
+
+<p>
+<ol><li>
+<dl>
+<dt class=type><b>Production
+</b>
+<dd class=data>This page presents the general production parameters.
+
+
+
+
+</dl>
+<ul><li>
+<dl>
+<dt class=type><b>FileName
+</b>
+<dd class=data>The ABAL++ Production Filename field identifies the full path and filename of the
+target to which 
+the production of source will be generated.
+
+
+
+
+</dl>
+<li>
+<dl>
+<dt class=type><b>Identity
+</b>
+<dd class=data>This usage of this edit field value depends on both the production language and the
+production
+packaging. 
+<p>For ABAL++ production ir provides the class name.
+<p>For
+the production of an ABAL module it provides the stub or root name of the module interface
+and
+support procedures.
+<p>For ABAL PROGRAM production packages it will be used un the
+generation of the PROGRAM statement.
+<p>In all cases it will be used as the title
+and identification of the model in html document production.
+
+
+
+
+</dl>
+<li>
+<dl>
+<dt class=type><b>Packaging
+</b>
+<dd class=data>This control allows selection of the ABAL production packaging model from the following
+list
+<p>
+<table>
+<tr><th>Model<th>Description
+<tr><th>Program<td>Production packages
+of this type are intended to fulfil the requirements of application
+root scenarios
+to which modules may be linked, sources included and to which overlays may be attached.
+<tr><th>Module<td>These
+production packages are suitable for the implementation of resident application 
+services
+for use from various application platforms.Modular production includes the generation
+of the
+corresponding external reference description file.
+<tr><th>Overlay<td>These
+production packages are intended for the implementation of transient
+application services
+again to be shared amongst applications.
+<tr><th>Include<td>Rudimentary packaging
+where other forms are unsuitable.
+</table>
+
+
+
+
+
+</dl>
+<li>
+<dl>
+<dt class=type><b>IsAutoTrad
+</b>
+<dd class=data>When this control is checked secondary production phases will be performed without
+prior user confirmation.
+Secondary production involves source translation and eventual
+object linking as described by the 
+various production parameters.
+
+
+
+
+
+</dl>
+<li>
+<dl>
+<dt class=type><b>Accept
+</b>
+<dd class=data>By pressing the ACCEPT button the Abal Production operation will be performed to the
+indicated target file.
+Secondary production will also be scheduled as required by
+the production parameters.
+
+
+
+
+</dl>
+<li>
+<dl>
+<dt class=type><b>Cancel
+</b>
+<dd class=data>By pressing this button the Abal Production operation will be abandoned.
+
+
+
+</dl>
+<li>
+<dl>
+<dt class=type><b>auto33039
+</b>
+<dd class=data>
+
+
+
+</dl>
+<li>
+<dl>
+<dt class=type><b>Dimensions
+</b>
+<dd class=data>This control allows selection of the target graphics resolutions required for the
+production of program
+packaging. The optimal value will be calculated prior to presentation
+of this dialog frame. It may be
+increased as needed to encompass the requirements
+of secondary components.
+
+
+
+
+</dl>
+<li>
+<dl>
+<dt class=type><b>UseAtr
+</b>
+<dd class=data>This button provides direct access to the secondary production or translation phase
+required for
+all ABAL production packing models except inclusions. 
+The filename indicated
+in the Target filename field will be submited for translation
+via the <a href="vtrad.htm">Abal
+Translator</a> dialog frame.
+
+
+
+
+</dl>
+<li>
+<dl>
+<dt class=type><b>Link
+</b>
+<dd class=data>This button provides a short cut to the final phase of secondary production for ABAL
+program and 
+overlay packaging models for which module linking is required.
+
+
+
+
+</dl>
+<li>
+<dl>
+<dt class=type><b>UseEdit
+</b>
+<dd class=data>By pressing the EDIT button the filename indicated in the Target filename field will
+be opened 
+for inspection using the standard <a href="singedit.htm">Text Editor</a>.
+
+
+
+
+</dl>
+<li>
+<dl>
+<dt class=type><b>Select
+</b>
+<dd class=data>The Select button allows access  to the <a href="vfselect.htm">file selection</a>
+dialog frame allowing
+prompted selection of the production target filename.
+
+
+
+
+</dl>
+</ul><li>
+<dl>
+<dt class=type><b>Inclusion
+</b>
+<dd class=data>This page allows the names of the various files required to be included to be specified.
+The names may be
+specified in any order and will be sorted in terms of their extension
+to be included as follows :
+<p>
+<table>
+<tr><th>EXTENSION<th>Description
+<tr><th>DEF<td>Library
+definition files will be included prior to the generation of their packaging statement.
+<tr><th>DCL<td>Files
+bearing this extension will be included after the production of the model data section.
+<tr><th>OTHER<td>
+All other file extensions will the be included prior to the generation of forward,
+extern
+and procedure statements.
+</table>
+
+
+
+
+</dl>
+<ul><li>
+<dl>
+<dt class=type><b>Dependance
+</b>
+<dd class=data>The LIBRARIES edit field allows the list of dynamic library file na
+mesto be specified.
+These will be used for PROGRAM and MODULE type
+generation.
+
+
+
+</dl>
+</ul><li>
+<dl>
+<dt class=type><b>Modules
+</b>
+<dd class=data>This page allows the list of modules to which the program or overlay is to be linked
+to be specified.
+Modules for which a corresponding visual model file is detected will
+give rise to the generation of the
+corresponding external description inclusion.
+<p>Models
+for which modules are declared will be scheduled for the secondary production module
+linkage 
+phase.
+
+
+
+
+</dl>
+<ul></ul><li>
+<dl>
+<dt class=type><b>PragmaPage
+</b>
+<dd class=data>This page provides a collection of translation pragmas and definitions allowing fine
+control over
+the production and runtime context.
+
+
+
+
+</dl>
+<ul><li>
+<dl>
+<dt class=type><b>UseDiezeMem
+</b>
+<dd class=data>This control may be checked to permit generation of the corresponding <b>#MEM</b>
+statement.
+
+
+
+
+</dl>
+<li>
+<dl>
+<dt class=type><b>UseDiezeStack
+</b>
+<dd class=data>This control may be checked to allow generation of the corresponding <b>#STACK</b>
+statement.
+
+
+
+
+</dl>
+<li>
+<dl>
+<dt class=type><b>UseDiezeFiles
+</b>
+<dd class=data>This control may be check to allow generation of the corresponding <b>#FILES</b> statement.
+
+
+
+
+</dl>
+<li>
+<dl>
+<dt class=type><b>UseDiezeHeap
+</b>
+<dd class=data>This control may be checked to allow generation of the corresponding <b>#HEAP</b>
+statement.
+
+
+
+
+</dl>
+<li>
+<dl>
+<dt class=type><b>DiezeMem
+</b>
+<dd class=data>This edit field provides the value to be used for the <b>#MEM</b> statement which
+determines the amount
+or temporary storage memory to be preallocated by the ABAL RunTime
+for use in calculations and 
+procedure nesting. 
+<p>It should be at least twice as
+large as the largest temporary string operation.
+ 
+
+
+
+</dl>
+<li>
+<dl>
+<dt class=type><b>DiezeStack
+</b>
+<dd class=data>This edit field provides the value to be used for the <b>#STACK</b> statement which
+determines the 
+depth of gosub,segment and procedure nesting. As a general rule segments
+and gosubs use one entry
+eacj whilst procedures may require between 12 and 16 items
+depending on the nature of the call.
+
+
+
+
+</dl>
+<li>
+<dl>
+<dt class=type><b>DiezeFiles
+</b>
+<dd class=data>This edit field provides the value to be used for the <b>#FILES</b> statement which
+determines the total
+number of files that may be assigned at any one time by the ABAL
+runtime. The number of files which may
+actually be opened is not controlled by this
+value being rather a function of the host operating system.
+ 
+
+
+
+
+</dl>
+<li>
+<dl>
+<dt class=type><b>DiezeHeap
+</b>
+<dd class=data>This edit field provides the value to be used for the <b>#HEAP</b> statement. This
+construction
+is of little use in modern operating system environments but may improve
+performance in memory critical
+situations. The value may be calculated as the total
+amount of nested local memory.
+
+
+
+
+</dl>
+<li>
+<dl>
+<dt class=type><b>IgnoreCase
+</b>
+<dd class=data>This control may be check forcing the translator to ignore differences in case when
+translating 
+variabel, constant and procedure names.
+When this control is unchecked
+then names of different case will refer to different objects.
+
+
+
+
+</dl>
+<li>
+<dl>
+<dt class=type><b>OptimiseTables
+</b>
+<dd class=data>This control when checked signals that the translator is to perform variable table
+optimisation for the
+elimination of unused variable identifiers. This option is not
+to be used for modules.
+
+
+
+
+</dl>
+<li>
+<dl>
+<dt class=type><b>UseTokenSize
+</b>
+<dd class=data>This control may be checked to allow generation of the corresponding token size statement.
+
+
+
+
+</dl>
+<li>
+<dl>
+<dt class=type><b>UseLabelSize
+</b>
+<dd class=data>This control may be check allowing generation of the corresponding label size statement.
+
+
+
+
+</dl>
+<li>
+<dl>
+<dt class=type><b>TokenSize
+</b>
+<dd class=data>This edit field provides the value to be used for the token size pragma statement.
+By default tokens
+are 16 bytes long. They may be increased or reduced to any reasonable
+value between 8 and 64 bytes.
+
+
+
+
+</dl>
+<li>
+<dl>
+<dt class=type><b>LabelSize
+</b>
+<dd class=data>This edit field provides the value for the label size pragma statement. As for the
+token size pragma
+this may take any reasonable value between 8 and 64 bytes.
+
+
+
+
+</dl>
+</ul></ol>
+
+</td>
+</table></div><p>
+<a name="vcprod">
+
+<p>
+<div align="center">
+<table class="DS">
+<tr><th><h2 align="center">
+accept c production
+</h2>
+
+<tr><td><p><div align="center"><img src="vcprod.gif">
+</div><p>
+<tr><td>
+This visual form will be presented for the inspection and modificat
+ion of the various
+parameters required for the generation of C lang
+uage  source when the forms model
+language flag is set to C or C++.
+
+<p>
+
+<dl>
+<dt class=type><b>FileName
+</b>
+<dd class=data>The C Target Filename edit field allows the full path and file name
+   of the production
+target to be specified.
+
+
+<dt class=type><b>auto53
+</b>
+<dd class=data>The IDENTIFIER edit field allows the class name for C++ production
+or the function
+name for C generation to be specified.
+
+
+<dt class=type><b>IsProgram
+</b>
+<dd class=data>When the PROGRAM check box has been checked then C program startup
+   code will be
+generated to the production target. Otherwise, when
+      unchecked, only the forms
+related functions or class code wil
+l be     generated.
+
+
+<dt class=type><b>Accept
+</b>
+<dd class=data>By pressing the ACCEPT button the C production operation will be
+   performed to the
+indicated production target.
+
+
+<dt class=type><b>Cancel
+</b>
+<dd class=data>By pressing the CANCEL button the C production operation will be
+   abandoned.
+
+
+<dt class=type><b>Inclusions
+</b>
+<dd class=data>The INCLUSIONS edit field allows the list of files required to be
+   included for
+the correct compilation of the production target.
+
+
+<dt class=type><b>Edit
+</b>
+<dd class=data>By pressing the EDIT button the production target file will be made
+   available for
+inspection via the Standard Abal Text Editor mecha
+nism.
+
+
+<dt class=type><b>Select
+</b>
+<dd class=data>The Select button allows access  to the
+<a href="vfselect.htm">file selection</a>
+dialog frame allowing
+prompted selection of the filename.
+
+
+
+
+</dl>
+
+</td>
+</table></div><p>
+<a name="visave">
+
+<p>
+<div align="center">
+<table class="DS">
+<tr><th><h2 align="center">
+accept imagesave
+</h2>
+
+<tr><td><p><div align="center"><img src="visave.gif">
+</div><p>
+<tr><td>
+This visual form will be present to allow the full path and file na
+me of the file
+to which the current image save operation will apply
+.
+
+<p>
+
+<dl>
+<dt class=type><b>Accept
+</b>
+<dd class=data>By pressing the ACCEPT button the indicated filename will be used a
+s the target for
+the image save operation of the indicated format.
+
+
+<dt class=type><b>Cancel
+</b>
+<dd class=data>By clicking the CANCEL button the image save operation will be
+   abandoned.
+
+
+<dt class=type><b>Select
+</b>
+<dd class=data>The <b>Select</b> button allows access yto the file selection
+dialog frame allowing
+proimpted selection of the filename.
+
+
+
+
+</dl>
+
+</td>
+</table></div><p>
+<a name="viload">
+
+<p>
+<div align="center">
+<table class="DS">
+<tr><th><h2 align="center">
+accept imageload
+</h2>
+
+<tr><td><p><div align="center"><img src="viload.gif">
+</div><p>
+<tr><td>
+This visual form will be presented to allow inspection and modifica
+tion of the name
+of the image file to be loaded.
+
+<p>
+
+<dl>
+<dt class=type><b>Accept
+</b>
+<dd class=data>By pressing the ACCEPT button the indicated image file will be load
+ed.
+
+
+<dt class=type><b>Cancel
+</b>
+<dd class=data>By pressing the CANCEL button the image load operation will be
+   abandoned.
+
+
+
+
+</dl>
+
+</td>
+</table></div><p>
+<a name="vcube">
+
+<p>
+<div align="center">
+<table class="DS">
+<tr><th><h2 align="center">
+accept cube properties
+</h2>
+
+<tr><td><p><div align="center"><img src="vcube.gif">
+</div><p>
+<tr><td>
+This visual form will be presented to allow the application model
+   entity properties
+to be inspected and modified.
+
+<p>
+
+<dl>
+<dt class=type><b>Identity
+</b>
+<dd class=data>The NAME edit field allows the generic name of the model entity to
+   be specified.
+This name token will be postfixed by .GIF to form
+the   image filename, and by .SNG,
+.MEN or .CLS to form the relevan
+t        entity model description filename.
+
+
+<dt class=type><b>tlx
+</b>
+<dd class=data>The POSITION X, Y, and Z edit fields allow the position within the
+    application
+model 3d space of the top left hand corner to be
+      defined.
+
+
+<dt class=type><b>brx
+</b>
+<dd class=data>The VECTOR X, Y and Z edit fields provide the dimensions of the cub
+e  allong the
+relevant AXIS in a posative direction from the top le
+ft    corner.
+
+
+<dt class=type><b>Accept
+</b>
+<dd class=data>By pressing the ACCEPT button the various parameters will take effe
+ct.
+
+
+<dt class=type><b>Cancel
+</b>
+<dd class=data>By pressing the CANCEL button any modifications performed to these
+   parameters will
+be discarded.
+
+
+<dt class=type><b>Class
+</b>
+<dd class=data>The CLASS edit field provides the name of the application entity
+   class, either
+MENU, FORM or CLASS.
+
+
+<dt class=type><b>AutoSize
+</b>
+<dd class=data>if the AUTOSIZE check box is checked the VECTOR information will be
+   adjusted to
+the size of the image used to represent the applicat
+ion   modcel entity.
+       
+ When uncheck the values provided above will be respected.
+
+
+
+
+</dl>
+
+</td>
+</table></div><p>
+<a name="vcamera">
+
+<p>
+<div align="center">
+<table class="DS">
+<tr><th><h2 align="center">
+accept camera properties
+</h2>
+
+<tr><td><p><div align="center"><img src="vcamera.gif">
+</div><p>
+<tr><td>
+This visual form will be presented to allow inspection and modifica
+tion of the various
+application model parameters. These include the
+      camera view parameters and the
+various default settings used
+by       the application model entities.
+
+<p>
+
+<dl>
+<dt class=type><b>AtX
+</b>
+<dd class=data>The POSITION X,Y and Z edit fields give access to the coordinates o
+f  the current
+application camera position for inspection and modif
+ication.
+
+
+<dt class=type><b>ToX
+</b>
+<dd class=data>The FOCUS X and Y edit fields offer the application camera focus fo
+r  inspection
+and modification. The Camera Focus implies the deplac
+ment  from the 0,0 center position
+of the application view.
+
+
+<dt class=type><b>Direction
+</b>
+<dd class=data>The DIRECTION edit field shows the current camera direction taken
+   from the following
+: FORWARD, BACKWARD,UP,DOWN LEFT or RIGHT.
+      Whilst in the Application Viewer
+the direction may be changed
+ by      simply pressing the first letter of the required
+direction
+ name.
+
+
+<dt class=type><b>Timer
+</b>
+<dd class=data>The TIMER edit field allows a value to be specified for the
+   automation of the application
+camera which when used in conjunct
+ion   with the STEP field value allows automised
+deplacement of the
+         camera view.
+
+
+<dt class=type><b>Step
+</b>
+<dd class=data>Thre STEP edit field allows the camera movement step value to be
+    modified for
+automatic displacment.
+
+
+<dt class=type><b>Accept
+</b>
+<dd class=data>By pressing the ACCEPT button any changes made to the various
+   parameters will take
+effect.
+
+
+<dt class=type><b>Cancel
+</b>
+<dd class=data>By pressing the CANCEL button any modifications performed will be
+   discarded.
+
+
+<dt class=type><b>StepX
+</b>
+<dd class=data>The DISTANCE X,Y and Z edit fields provide access to the current
+   camera movement
+step values when a camera movement key is action
+ed.   The camera action keys are
+the PAGEUP and PAGEDOWN keys which
+         move in the current direction which may
+be toggle by the s
+pace bar    amongst the following values : X,Y or Z direction.
+
+
+<dt class=type><b>DynamicSize
+</b>
+<dd class=data>The AUTOSIZE check box provides the default value to be used when
+   creating new
+application model entities.
+
+
+<dt class=type><b>SaveForms
+</b>
+<dd class=data>The SAVEIMAGES check box and SAVEFORMS check box provide the defaul
+t beahvious to
+be used by the application model save operation. The
+y may me overidden by hand in
+the corresponding visual form.
+
+
+<dt class=type><b>ImageName
+</b>
+<dd class=data>The IMAGE edit field allows the full path and filename of an image
+   to used as the
+application model background over which the 3d ca
+mera  entities will be projected.
+
+
+<dt class=type><b>Auto3394
+</b>
+<dd class=data>This combo selection field allows a value to be chosen 
+from a widget specific list
+of options.
+<p>The semantics of the options vary depending on the 
+actual class of
+the widget as shown in the following table.
+<p>
+<table>
+<tr><td>WIDGET<td>Behaviour
+
+<tr><td>WINDOW<td>The
+alignment value applies to the window itself
+within the parent graphical output screen.
+
+<tr><td>TEXT
+<td><dl><dt>None<dd>no
+alignment is applied and the text will be 
+displayed with automatic line wrap within
+the zone defined by the
+position and dimension values. This alignment value is not
+
+intended for use with proportional fonts.
+<dt>Right,Left,Center<dd>These values will
+cause the text to be 
+displayed aligned in a single line centered in a vertical direction
+within
+the zone.
+<dt>Justify<dd>The text will be space padded displayed such that 
+it touches
+both left and right edges of its zone</dl>
+<tr><td>FRAMES<td>For the various frame
+components, namely
+<b>INSET</b>,<b>OUTSET</b>,<b>GROOVE</b> and<b>RIDGE</b>,
+The alignment
+value applies to the payload which , when provided, 
+will be displayed as a textual
+title for the frame. 
+The alignment value of <b>none</b> inhibits title display.
+
+<tr><td>IMAGE<td>The
+following image options are available.
+<dl><dt>None<dd>no alignment is applied to
+the image.
+<dt>Right<dd>The image will be right aligned in the widget zone.
+<dt>Left<dd>The
+image will be left aligned in the widget zone.
+<dt>Center<dd>The image will be centered
+within the widget zone.
+<dt>Tile<dd>This option causes the images, smaller than their
+
+widget zone, to be <b>tiled</b> or repeated, to fill the entire 
+zone.
+<dt>Makefit<dd>causes
+images to be stretched or squashed to fit
+the entire widget zone.
+<dt>Bestfit<dd>causes
+images to stretched and squashed respecting
+the image proportions. The result may
+stil be smaller than the 
+widget zone in which case it will be centered.
+</dl>
+<tr><td>SCROLLBAR<td>This
+option controls the composition of the
+scroll bar. In all cases, when the zone width
+is found to be
+greater than the zone height a horizontal bar will be displayed.
+Otherwise,
+when the width is less than the height, a vertical bar
+will be displayed.
+
+<dl><dt>None<dd>The
+scroll bar <i>trough</i> will occupy the entire
+widget zone. No butons will be displayed.
+<dt>Right<dd>A
+<b>down</b> or <b>right</b> button will be displayed
+at the appropriate extremity.
+The scroll bar trough will occupy
+the remaining zone.
+<dt>Left<dd>A <b>up</b> or <b>left</b>
+button will be displayed
+at the appropriate extremity. The scroll bar trough will
+occupy
+the remaining zone.
+<dt>Both<dd>Both <b>up</b> and <b>down</b> or <b>left</b>
+and <b>right</b>
+buttons will be displayed at each end of the bar.
+The scroll bar
+trough will occupy the remaining zone.
+<dt>Slider<dd>No buttons will be displayed
+and the slider bar will
+be displayed as a rounded slider in a grooved trough, occupying
+the
+entire widget zone.
+</dl>
+
+<tr><td>OTHER<td>No semantic is currently defined for
+other widget types.
+</table>
+
+
+
+
+<dt class=type><b>Colour
+</b>
+<dd class=data>The COLOUR edit field allows the current default application model
+   background colour
+value. This will be used if no background imag
+e has been specified of found to unavailable.
+
+        The background colour us affected by dynamic selection fro
+m the       palette
+bar with the right button of the mouse whilst i
+n the          application model editor.
+
+
+<dt class=type><b>Auto3395
+</b>
+<dd class=data>The <b>Select</b> button allows access yto the file selection
+dialog frame allowing
+proimpted selection of the filename.
+
+
+
+
+</dl>
+
+</td>
+</table></div><p>
+<a name="vmprod">
+
+<p>
+<div align="center">
+<table class="DS">
+<tr><th><h2 align="center">
+accept production properties
+</h2>
+
+<tr><td><p><div align="center"><img src="vmprod.gif">
+</div><p>
+<tr><td>
+This visual form will be presented to allow inspection and modifica
+tion of application
+model production parameters prior to the activa
+tion of the corresponding production
+operation.
+
+<p>
+
+<dl>
+<dt class=type><b>UseAed
+</b>
+<dd class=data>By pressing on the EDIT button the document source will be presente
+d  for inspection
+via the Standard Text Editor mechanisms.
+
+
+<dt class=type><b>View
+</b>
+<dd class=data>By pressing on the VIEW button the system navigator will be activat
+ed allowing the
+finalised version of the production document to be
+      consulted. Under Twin Server
+NV will be used. Under UseIT NET
+SCAPE    will be activated.
+
+
+<dt class=type><b>ModelName
+</b>
+<dd class=data>The MODELNAME edit field presents the name of the application model
+   for inspection.
+
+
+<dt class=type><b>TargetFile
+</b>
+<dd class=data>The PRODUCTION filename edit field presents the production target f
+ilename for modification
+or inspection.
+
+
+<dt class=type><b>NoConfirm
+</b>
+<dd class=data>The AUTOMATIC check box when checked alleviates the need to validat
+e  the various
+stages involved in the production of the target and
+its   documentation. When unchecked
+each stage will present the
+         corresponding visual frame for validation or
+cancellation.
+
+
+<dt class=type><b>Build
+</b>
+<dd class=data>The FORCE BUILD check box when checked performs production of all
+   partial products
+in a systematic manner. When unchecked only the
+      entities which are out of date
+will be produced.
+
+
+<dt class=type><b>Accept
+</b>
+<dd class=data>By pressing the ACCEPT button the production operation defined by t
+he associated
+switchs and values will be activated.
+
+
+<dt class=type><b>Cancel
+</b>
+<dd class=data>By clicking on the CANCEL button the production operation will be
+   abandoned.
+
+
+<dt class=type><b>Verbose
+</b>
+<dd class=data>The VERBOSE check box controls the visualisation of the various
+   application components
+as they are presented for effective produ
+ction.
+
+
+<dt class=type><b>TargetType
+</b>
+<dd class=data>When the PROGRAM checkbox is checked the production target will be
+   a complete program
+making use of its sub-component entities.
+
+
+<dt class=type><b>IsDocument
+</b>
+<dd class=data>The DOCUMENT check box when checked allows the production of an HTM
+L  document containing
+all Application model Images and documentary
+ text from the sub-components. This will
+be generated to the Docume
+nt       Filename target if one has been specified.
+
+
+<dt class=type><b>AdFn
+</b>
+<dd class=data>The DOCUMENT filename edit field allows the full path and filename
+of the file into
+which the production document is to be generated w
+hen   this has been selected by
+the DOCUMENT checkbox.
+
+
+<dt class=type><b>DocumentFile
+</b>
+<dd class=data>The PRODUCTION FILENAME edit field allows the full path and filenam
+e  of the production
+target into which the Program or Module produc
+tion  stream will be generated.
+
+
+<dt class=type><b>Makefile
+</b>
+<dd class=data>When this control has been checked the production mechanism will
+generate a description
+of the entire project to a standard
+<b>makefile</b>.
+
+
+
+<dt class=type><b>MakefileName
+</b>
+<dd class=data>This edit field allows the full path and filename of the file
+to which the project
+make file will be generated if the 
+corresponding check control has been activated.
+
+
+
+
+
+</dl>
+
+</td>
+</table></div><p>
+<a name="vabout">
+
+<p>
+<div align="center">
+<table class="DS">
+<tr><th><h2 align="center">
+inform about
+</h2>
+
+<tr><td><p><div align="center"><img src="vabout.gif">
+</div><p>
+<tr><td>
+
+<dl>
+
+
+</dl>
+
+</td>
+</table></div><p>
+<a name="vmenu">
+
+<p>
+<div align="center">
+<table class="DS">
+<tr><th><h2 align="center">
+accept menu properties
+</h2>
+
+<tr><td><p><div align="center"><img src="vmenu.gif">
+</div><p>
+<tr><td>
+This visual form is presented as a result of selecting the EDIT
+   PROPERTIES option
+of the menu system whilst the MENU EDITOR is a
+ctive.It allows the menu level parameters
+to be modified or inspect
+ed.
+
+<p>
+
+<dl>
+<dt class=type><b>LoadName
+</b>
+<dd class=data>The FILENAME edit field presents the full path and name of the file
+   to which the
+menu is to be saved and from which it was loaded.
+
+
+<dt class=type><b>Identifier
+</b>
+<dd class=data>The IDENTIFIER edit field allows inspection and modification of the
+   menu identification
+within the generated source. In the case of
+      object language generation this
+will be the class name. For n
+on object languages this will be the method or function
+name.
+
+
+<dt class=type><b>AtX
+</b>
+<dd class=data>The POSITION X and Y edit fields comprise the visual coordinate at
+   which the menu
+is displayed.
+
+
+<dt class=type><b>Accept
+</b>
+<dd class=data>By pressing the ACCEPT button, modifications performed to the
+   values of this form
+will be affected to the menu item.
+
+
+<dt class=type><b>Cancel
+</b>
+<dd class=data>IF the CANCEL button is pressed any modifications performed will be
+   discarded.
+
+
+<dt class=type><b>Method
+</b>
+<dd class=data>The METHOD edit field allows a generic method to be specifed as the
+   target method
+to be activated when menu options are selected.
+
+
+<dt class=type><b>Popup
+</b>
+<dd class=data>The POPUP check box controls whether the menu is a permenant menu o
+r if it will appear
+in a pop-up fashion.
+
+
+<dt class=type><b>Hint
+</b>
+<dd class=data>The HINT edit field allows a generic menu level hint message to be
+specified. This
+HINT will be displayed in the status bar if it is a
+ctive when no option specific
+hint is available.
+
+
+<dt class=type><b>Font
+</b>
+<dd class=data>The FONT edit field allows the font in which the menu is to be draw
+n  to be specified.
+
+
+<dt class=type><b>Style
+</b>
+<dd class=data>The STYLE edit field allows a specific menu style to be selected.
+   This is not yet
+available.
+
+
+
+
+</dl>
+
+</td>
+</table></div><p>
+<a name="voption">
+
+<p>
+<div align="center">
+<table class="DS">
+<tr><th><h2 align="center">
+option properties
+</h2>
+
+<tr><td><p><div align="center"><img src="voption.gif">
+</div><p>
+<tr><td>
+
+<dl>
+
+
+</dl>
+
+</td>
+</table></div><p>
+<a name="vtrad">
+
+<p>
+<div align="center">
+<table class="DS">
+<tr><th><h2 align="center">
+accept traduction
+</h2>
+
+<tr><td><p><div align="center"><img src="vtrad.gif">
+</div><p>
+<tr><td>
+This dialog box will be presented in response to one of the following events :
+<p>
+<ul>
+<li>After
+the primary source production phase of <a href="vaprod.htm">ABAL mode production</a>
+for which the
+auto translation option has not been selected.
+<li>By clicking on the
+corresponding tool icon button of the menu bar of any one of the various model editors.
+</ul>
+<p>
+allowing
+confirmation and modification of the various translation control parameters
+prior
+to an actual source to tcode translation operation.<p>
+This dialog box will be presented
+as the second phase of the forms model production operation for
+ABAL 3 production
+packages other than the <b>Include</b> package.<p>
+For detailed information concerning
+the ABAL 3 Object Translator, its command line options and error codes
+please consult
+one of the following documents.
+<p>
+<table width="90%">
+<tr><td><ol><a href="otrcmd.htm">Command
+Line Options</a>
+<tr><td><ol><a href="otrerr.htm">Language  Syntax Error Codes</a>
+<tr><td><ol><a
+href="otrint.htm">Translator Error Codes</a>
+<tr><td><ol><a href="otrwarn.htm">Warning
+Codes</a>
+<tr><td><ol><a href="otrprag.htm">Translator Pragmas</a>
+</table>
+<p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>
+
+<dl>
+<dt class=type><b>FileName
+</b>
+<dd class=data>The SOURCE edit field presents the full path and filename of the
+   source file to
+be translated.
+
+
+<dt class=type><b>Translator
+</b>
+<dd class=data>The TRANSLATOR edit field presents the full path and file name of t
+he ABAL Translator
+to be used to translate the source.
+
+
+<dt class=type><b>Debug
+</b>
+<dd class=data>The DEBUG check box, when checked, activates translation with gener
+ation of a list
+for an eventual debug operation.
+
+
+<dt class=type><b>Trace
+</b>
+<dd class=data>The TRACE checkbox activates the collection of errors encountered
+   during translation
+for use by the standard ABAL trace mechanism.
+
+
+<dt class=type><b>Verbose
+</b>
+<dd class=data>When the VERBOSE checkbox is checked the translation operation will
+   display textual
+information abouts its progression to the releve
+nt    text screen output device or
+window.
+
+
+<dt class=type><b>Optimise
+</b>
+<dd class=data>The OPTIMISATION check box activates the translator optimisation
+   mechanisms.
+
+
+<dt class=type><b>Accept
+</b>
+<dd class=data>By pressing the ACCEPT button the translation operation will be act
+ivated with the
+indicated parameters.
+
+
+<dt class=type><b>Cancel
+</b>
+<dd class=data>The CANCEL button allows the translation operation to be abandoned.
+
+
+<dt class=type><b>Inclusion
+</b>
+<dd class=data>The INCLUDE PATHS edit field presents the various include paths to
+   be used for
+the resolution of the various include files required
+      for the translation of
+the source. The command line switch of
+ -I or   /I is not to be included as it will
+be added by the transl
+ation       mechanism prior to the activation of the translator.
+
+
+<dt class=type><b>Edit
+</b>
+<dd class=data>By pressingthe EDIT button the SOURCE file name will be made
+   available for inspection
+by the Standard Text Editor Mechanisms
+
+
+<dt class=type><b>Select
+</b>
+<dd class=data>The Select button allows access  to the
+<a href="vfselect.htm">file selection</a>
+dialog frame allowing
+prompted selection of the filename.
+
+
+
+
+</dl>
+
+</td>
+</table></div><p>
+<a name="vmsave">
+
+<p>
+<div align="center">
+<table class="DS">
+<tr><th><h2 align="center">
+accept modelsave
+</h2>
+
+<tr><td><p><div align="center"><img src="vmsave.gif">
+</div><p>
+<tr><td>
+This visual form will be presented to allow inspection and modifica
+tion of the various
+parameters associated with the Application Mode
+l Save operation.
+
+<p>
+
+<dl>
+<dt class=type><b>FileName
+</b>
+<dd class=data>The APPLICATION NAME edit field presents the full path and file nam
+e of the file
+to which the application model is to be saved.
+
+
+<dt class=type><b>Accept
+</b>
+<dd class=data>The ACCEPT button, when pressed, allows the Application Model save
+   operation to
+proceed.
+
+
+<dt class=type><b>Cancel
+</b>
+<dd class=data>By pressing on the CACNEL button the Application Model save operati
+on will be abandoned.
+
+
+<dt class=type><b>SaveImages
+</b>
+<dd class=data>If the SAVE IMAGES check box has been checked then out-of-date mode
+l  images will
+be saved to the corresponding image file.
+
+
+<dt class=type><b>SaveForms
+</b>
+<dd class=data>If the SAVE FORMS check box has been selected then out-of-date form
+s  data will be
+written to the corresponding disk file during the m
+odel  save operation.
+
+
+<dt class=type><b>SaveAll
+</b>
+<dd class=data>If the SAVE ALL check box has been selected then all form data and
+image data will
+be considered to be out-of-date consequently allowi
+ng    them to be rewritten to
+disk if the corresponding check box c
+ontrols  have been selected.
+
+
+
+
+</dl>
+
+</td>
+</table></div><p>
+<a name="vclass">
+
+<p>
+<div align="center">
+<table class="DS">
+<tr><th><h2 align="center">
+accept class
+</h2>
+
+<tr><td><p><div align="center"><img src="vclass.gif">
+</div><p>
+<tr><td>
+
+<dl>
+
+
+</dl>
+
+</td>
+</table></div><p>
+<a name="vconst">
+
+<p>
+<div align="center">
+<table class="DS">
+<tr><th><h2 align="center">
+accept constant
+</h2>
+
+<tr><td><p><div align="center"><img src="vconst.gif">
+</div><p>
+<tr><td>
+
+<dl>
+
+
+</dl>
+
+</td>
+</table></div><p>
+<a name="vdata">
+
+<p>
+<div align="center">
+<table class="DS">
+<tr><th><h2 align="center">
+accept data
+</h2>
+
+<tr><td><p><div align="center"><img src="vdata.gif">
+</div><p>
+<tr><td>
+
+<dl>
+
+
+</dl>
+
+</td>
+</table></div><p>
+<a name="vmethod">
+
+<p>
+<div align="center">
+<table class="DS">
+<tr><th><h2 align="center">
+accept method
+</h2>
+
+<tr><td><p><div align="center"><img src="vmethod.gif">
+</div><p>
+<tr><td>
+<ol><ul></ul><ul></ul><ul></ul></ol>
+
+</td>
+</table></div><p>
+<a name="verror">
+
+<p>
+<div align="center">
+<table class="DS">
+<tr><th><h2 align="center">
+accept error
+</h2>
+
+<tr><td><p><div align="center"><img src="verror.gif">
+</div><p>
+<tr><td>
+This visual form will presented to report unexpected errors encount
+ered during production,
+loading or save operations to the user.
+
+<p>
+
+<dl>
+<dt class=type><b>Retry
+</b>
+<dd class=data>If the RETRY button is pressed then the operation will be retried
+   and if succesful
+the corresponding operations will proceed as th
+ough  no error had occured.
+
+
+<dt class=type><b>Cancel
+</b>
+<dd class=data>The CANCEL button, if pressed will signal that the failing operatio
+n is to be abandoned,
+though subsequent operations may proceed.
+
+
+
+
+</dl>
+
+</td>
+</table></div><p>
+<a name="vaed">
+
+<p>
+<div align="center">
+<table class="DS">
+<tr><th><h2 align="center">
+accept editor
+</h2>
+
+<tr><td><p><div align="center"><img src="vaed.gif">
+</div><p>
+<tr><td>
+This visual frame will be presented, if it has not been inhibited b
+y  the corresponding
+check box, whenever an EDIT button is pressed
+in    a relevent visual frame requiring
+a source or text for to be
+         presented for inspection or modification.
+
+<p>
+
+<dl>
+<dt class=type><b>FileName
+</b>
+<dd class=data>The FILENAME edit field presents the name of the file to be edited.
+
+
+<dt class=type><b>EditorName
+</b>
+<dd class=data>The EDITOR NAME edit field presents the full path and filename of the program to be
+
+used for the editing of all source and text files. If this string is prefixed by
+the <b>!</b> 
+character then the internal standard text editor will be used.
+
+
+
+<dt class=type><b>RazColour
+</b>
+<dd class=data>This colour selection control allows the standard text colour to be selected for the
+new 
+syntaxical colouration mechansims for ABAL, C and HTML source files.
+
+
+
+<dt class=type><b>QuoteColour
+</b>
+<dd class=data>This colour selection control allows the colour to be used to display string litteral
+values
+to be selected for use by the new syntaxical colouration mechansims.
+
+
+
+<dt class=type><b>KeyWordColour
+</b>
+<dd class=data>This colour selection control allows the colour to be used for the display of language
+keywords 
+to be chosen for the syntaxical colouration mechansims of the standard text
+editor..
+
+
+
+<dt class=type><b>CommentColour
+</b>
+<dd class=data>This colour selection control allows selection of the colour to be used for the display
+of comments.
+
+
+
+<dt class=type><b>Accept
+</b>
+<dd class=data>When the ACCEPT button is pressed the specified parameters will be returned to the
+caller for storage.
+When this frame is called from an <b>Edit</b> button actual source
+editing will be initiated.
+
+
+
+<dt class=type><b>Cancel
+</b>
+<dd class=data>if the CANCEL button is pressed any modifications to the various editor parameters
+will be
+discarded and any pending editing operation will be abandoned.
+
+
+<dt class=type><b>FrameInhibit
+</b>
+<dd class=data>If this checkbox is checked then this dialog box will no longer be presented for validation
+
+prior to editing text or source files. 
+The Editor will be simply activated without
+confirmation.
+
+
+
+<dt class=type><b>TextFont
+</b>
+<dd class=data>This select control allows the editor text font to be chosen. Proportional spacing
+fonts are not
+recommended as the internal editor is built around aed which has a strong
+character orientation.
+
+
+
+
+
+</dl>
+
+</td>
+</table></div><p>
+<a name="vmload">
+
+<p>
+<div align="center">
+<table class="DS">
+<tr><th><h2 align="center">
+accept modelfilename
+</h2>
+
+<tr><td><p><div align="center"><img src="vmload.gif">
+</div><p>
+<tr><td>
+This visual form will be presented for the confirmation or modifica
+tion of the application
+model file name to be loaded.
+
+<p>
+
+<dl>
+<dt class=type><b>FileName
+</b>
+<dd class=data>The APPLICATION NAME edit field presents the full path and file nam
+e of the application
+model to be loaded.
+
+
+<dt class=type><b>Accept
+</b>
+<dd class=data>On pressing the ACCEPT button the application model load operation
+   will proceed.
+
+
+<dt class=type><b>Cancel
+</b>
+<dd class=data>The application model load operation may be abandoned by pressing t
+he CANCEL button.
+
+
+
+
+</dl>
+
+</td>
+</table></div><p>
+<a name="vintro">
+
+<p>
+<div align="center">
+<table class="DS">
+<tr><th><h2 align="center">
+accept introduction
+</h2>
+
+<tr><td><p><div align="center"><img src="vintro.gif">
+</div><p>
+<tr><td>
+This visual frame is displayed during the start up phase of the
+   software factory
+to provide visual indication of the tool versio
+n     information.
+
+<p>
+
+<dl>
+
+
+</dl>
+
+</td>
+</table></div><p>
+<a name="vimport">
+
+<p>
+<div align="center">
+<table class="DS">
+<tr><th><h2 align="center">
+accept font import
+</h2>
+
+<tr><td><p><div align="center"><img src="vimport.gif">
+</div><p>
+<tr><td>
+This visual form will be presented for the confirmation or modifica
+tion of the font
+dimensions during the font import operation.
+
+<p>
+
+<dl>
+<dt class=type><b>CellWidth
+</b>
+<dd class=data>The CELL WIDTH edit field provides the value calculated by dividing
+ the overall image
+width by 16, the number of character cells wide
+the   image is assumed to be. This
+may not be an appropriate width
+to be    used as the default base character width
+and may need to b
+e modified.
+
+
+<dt class=type><b>CellHeight
+</b>
+<dd class=data>The CELL Height edit field presents the character cell height as ca
+lculated by the
+overall image height divided by 16, the number of r
+ows of characters assumed to constitute
+the image. This value may n
+eed to bemodified to provide a realistic base character
+cell height
+.
+
+
+<dt class=type><b>Auto4868
+</b>
+<dd class=data>If neither the CELL WIDTH nor CELL HEIGHT fields have been modified
+   and their default
+values correspond to the dimensions of the
+      characters then the AUTOMATIC button
+may be pressed to activa
+te       the auto importation of the entire font from the
+image.
+
+
+<dt class=type><b>Prompted
+</b>
+<dd class=data>If either of the font dimension edit fields have been modified it i
+s  recomended
+to press the ASSISTED button to be presented with the
+      individual matrix data
+items in order to be able to decide as
+ to whichfont entry the correspond, by pressing
+the appropriate cha
+racter key  on the keyboard.
+
+
+<dt class=type><b>Cancel
+</b>
+<dd class=data>If the CANCEL button is pressed the font import operation will be
+   abandoned.
+
+
+
+
+</dl>
+
+</td>
+</table></div><p>
+<a name="vhtml">
+
+<p>
+<div align="center">
+<table class="DS">
+<tr><th><h2 align="center">
+accept document parameters
+</h2>
+
+<tr><td><p><div align="center"><img src="vhtml.gif">
+</div><p>
+<tr><td>
+This visual form is presented to allow the user the chance to defin
+e   various document
+specific parameters prior to the generation of
+ the  HTML user guide.
+
+<p>
+
+<dl>
+<dt class=type><b>TitleHeading
+</b>
+<dd class=data>The TITLE edit field will be used in the TITLE of the Document HEAD
+section and in
+the initial HEADING of the document BODY.
+
+
+<dt class=type><b>ScreenStyle
+</b>
+<dd class=data>The SCREEN STYLE edit field allows the name of an external style sh
+eet to be specified.<p>
+This style sheet will be used for Screen fo
+rmating of the document or document suite
+and should contain style
+instrections for TABLE,TH,TD and HEADING items.
+
+
+<dt class=type><b>PrintStyle
+</b>
+<dd class=data>The PRINT STYLE ezdit field allows an external style sheet url to b
+e  specified for
+document printing operations.
+
+
+<dt class=type><b>Logo
+</b>
+<dd class=data>The LOGO edit field allows an url for a logo file name to be specif
+ied. The image
+logo will be displayed to the right of the title tex
+t at  the top of all relevant
+pages.
+
+
+<dt class=type><b>FooterCopyright
+</b>
+<dd class=data>The FOOTER edit field allows copyright or other information to be
+   included at the
+ens of the document to be specified.
+
+
+<dt class=type><b>IsSeparate
+</b>
+<dd class=data>The SEPARATE PAGES check box controls the way in which the document
+   is generated.
+If this control is checked then the document will
+be    generated as a collection
+of HTML pages, one per subcomponent
+, the    master document comprising simply a header
+section and Tab
+le of Contents.
+
+
+<dt class=type><b>IsReport
+</b>
+<dd class=data>The PARTS LIST check box when selected directs the HTML generation
+mechanisms to include
+component listings providing the detail of
+each component. When unchecked the document
+will include only the
+user guide documentation texts and images.
+
+
+<dt class=type><b>Accept
+</b>
+<dd class=data>As a result of clicking on the ACCEPT button the user guide documen
+t  of the current
+application model will be generated using the spe
+cified parameters.
+
+
+<dt class=type><b>Cancel
+</b>
+<dd class=data>USer guide document generation may be cancelled at this stage by
+   clicking on the
+CANCEL button of this visual form.
+
+
+
+
+</dl>
+
+</td>
+</table></div><p>
+<a name="vimage">
+
+<p>
+<div align="center">
+<table class="DS">
+<tr><th><h2 align="center">
+accept image dimensions
+</h2>
+
+<tr><td><p><div align="center"><img src="vimage.gif">
+</div><p>
+<tr><td>
+This visual form presents the current image dimensions for modifica
+tion.
+
+<p>
+
+<dl>
+<dt class=type><b>Width
+</b>
+<dd class=data>The Width edit field allows the new image width in pixels to be
+   specified.
+
+
+<dt class=type><b>Height
+</b>
+<dd class=data>The Height edit field allows the image height in pixels to be speci
+fied.
+
+
+<dt class=type><b>Accept
+</b>
+<dd class=data>The Accept button allows the image dimension parameters to be appli
+ed to the current
+image which will be transformed as required by th
+e     make fit check box value.
+
+
+<dt class=type><b>Cancel
+</b>
+<dd class=data>If the Cancel button is activated then the Image redimensioning
+   operation will
+be abandoned.
+
+
+<dt class=type><b>MakeFit
+</b>
+<dd class=data>If the MakeFit check box is checked then the image data will be
+   resized, either
+stretched or squashed, to fit the new dimensions
+.<p>  If it is not checked then the
+image will be clipped or backgr
+ound colour filled where appropriate.
+
+
+
+
+</dl>
+
+</td>
+</table></div><p>
+<a name="vconfig">
+
+<p>
+<div align="center">
+<table class="DS">
+<tr><th><h2 align="center">
+accept configuration
+</h2>
+
+<tr><td><p><div align="center"><img src="vconfig.gif">
+</div><p>
+<tr><td>
+This visual frame will be activated when the Menu option : OPTIONS
+   CONFIGURE is
+selected and presents the various system dependant
+      configuration variable values.
+
+<p>
+
+<dl>
+<dt class=type><b>FontPath
+</b>
+<dd class=data>The FONTPATH variable defines the full path name of the directory
+   to and from which
+all fonts will be saved and loaded.
+
+
+<dt class=type><b>ImagePath
+</b>
+<dd class=data>The IMAGEPATH variable defines the full path name of the directory
+   to and from
+which images will saved and loaded.
+
+
+<dt class=type><b>Palette
+</b>
+<dd class=data>The PALETTE variable defines the full path and filename of the
+   colourmap palette
+file to be loaded by the application.
+
+
+<dt class=type><b>BaseFont
+</b>
+<dd class=data>The BASEFONT variable defines the default base font used by the
+   development tool
+for its various hardware needs.
+
+
+<dt class=type><b>BiosMode
+</b>
+<dd class=data>The BIOSMODE variable provides the default graphics mode for the
+   development tool.
+This may be overridden by system dependant mea
+ns.
+
+
+<dt class=type><b>FileName
+</b>
+<dd class=data>The FILENAME edit field shows the name of the file from which the
+   configuration
+information was loaded.
+
+
+<dt class=type><b>Update
+</b>
+<dd class=data>The UPDATE checkbox when selected causes the configuration values t
+o  be written
+to the configuration file.
+
+
+<dt class=type><b>Accept
+</b>
+<dd class=data>By pressing the ACCEPT button, with the UPDATE option chosen the
+   configuration
+values will be written to the file.
+
+
+<dt class=type><b>Cancel
+</b>
+<dd class=data>By pressing ther CANCEL button any modifications will be discarded.
+
+
+
+
+</dl>
+
+</td>
+</table></div><p>
+<a name="vrecrep">
+
+<p>
+<div align="center">
+<table class="DS">
+<tr><th><h2 align="center">
+accept animation parameters
+</h2>
+
+<tr><td><p><div align="center"><img src="vrecrep.gif">
+</div><p>
+<tr><td>
+
+<dl>
+
+
+</dl>
+
+</td>
+</table></div><p>
+<a name="vparam">
+
+<p>
+<div align="center">
+<table class="DS">
+<tr><th><h2 align="center">
+accept general options
+</h2>
+
+<tr><td><p><div align="center"><img src="vparam.gif">
+</div><p>
+<tr><td>
+
+<dl>
+
+
+</dl>
+
+</td>
+</table></div><p>
+<a name="vfile">
+
+<p>
+<div align="center">
+<table class="DS">
+<tr><th><h2 align="center">
+accept file properties
+</h2>
+
+<tr><td><p><div align="center"><img src="vfile.gif">
+</div><p>
+<tr><td>
+<ol><ul></ul><ul></ul><ul><li>
+<dl>
+<dt class=type><b>Edit
+</b>
+<dd class=data>In the event that the main edit field indicates a file inclusion,
+   by pressing the
+AED buttoon the corresponding file named will be
+      opened using the standard ABAL
+editor mechansim.
+
+
+
+</dl>
+</ul></ol>
+
+</td>
+</table></div><p>
+<a name="vheader">
+
+<p>
+<div align="center">
+<table class="DS">
+<tr><th><h2 align="center">
+class header
+</h2>
+
+<tr><td><p><div align="center"><img src="vheader.gif">
+</div><p>
+<tr><td>
+
+<dl>
+
+
+</dl>
+
+</td>
+</table></div><p>
+<a name="vtimport">
+
+<p>
+<div align="center">
+<table class="DS">
+<tr><th><h2 align="center">
+text import
+</h2>
+
+<tr><td><p><div align="center"><img src="vtimport.gif">
+</div><p>
+<tr><td>
+
+<dl>
+<dt class=type><b>UseEdit
+</b>
+<dd class=data>By pressing the EDIT button the filename indicated in the Target
+   filename field
+will be opened for inspection using the standard
+Abal  Text Editor mechanism.
+
+
+<dt class=type><b>Accept
+</b>
+<dd class=data>By pressing the ACCEPT button the indicated font file will be loade
+d.
+
+
+<dt class=type><b>Cancel
+</b>
+<dd class=data>By pressing the CANCEL button the font load operation will be
+   abandoned.
+
+
+
+
+</dl>
+
+</td>
+</table></div><p>
+<a name="vtexport">
+
+<p>
+<div align="center">
+<table class="DS">
+<tr><th><h2 align="center">
+text export
+</h2>
+
+<tr><td><p><div align="center"><img src="vtexport.gif">
+</div><p>
+<tr><td>
+
+<dl>
+<dt class=type><b>UseEdit
+</b>
+<dd class=data>By pressing the EDIT button the filename indicated in the Target
+   filename field
+will be opened for inspection using the standard
+Abal  Text Editor mechanism.
+
+
+<dt class=type><b>Accept
+</b>
+<dd class=data>By pressing the ACCEPT button the indicated font file will be loade
+d.
+
+
+<dt class=type><b>Cancel
+</b>
+<dd class=data>By pressing the CANCEL button the font load operation will be
+   abandoned.
+
+
+
+
+</dl>
+
+</td>
+</table></div><p>
+<a name="vfselect">
+
+<p>
+<div align="center">
+<table class="DS">
+<tr><th><h2 align="center">
+file selector
+</h2>
+
+<tr><td><p><div align="center"><img src="vfselect.gif">
+</div><p>
+<tr><td>
+This dialog frame provides a centralised file selection mechanism
+for all dialog frames
+requiring filenames. 
+An individual path storage zone is associated with each of the
+
+file types to be maintained and presented across succesive file 
+selection operations
+of the same file type.
+
+
+<p>
+
+<dl>
+<dt class=type><b>Result
+</b>
+<dd class=data>This edit field displays the current result value of the file
+selection dialog frame.
+
+
+
+<dt class=type><b>Accept
+</b>
+<dd class=data>By pressing this button the current value of the result edit field will be
+returned
+to the caller of the file selection mechanism.
+
+
+
+<dt class=type><b>Find
+</b>
+<dd class=data>By pressing on this button the combined path and file type criteria
+will be combined
+and displayed in the file seclection value.
+This resulting search pattern will be
+used to perform the
+search operation whose results will be displayed in the main 
+output
+table.
+
+
+
+<dt class=type><b>Delete
+</b>
+<dd class=data>By pressing the delete button the file represented by the 
+current result edit field
+may be deleted.
+
+
+
+<dt class=type><b>Cancel
+</b>
+<dd class=data>By pressing this button the file selection operation will be
+abandoned.
+
+
+
+<dt class=type><b>FileType
+</b>
+<dd class=data>This select control provides a list of file types extensions.
+
+
+
+<dt class=type><b>Path
+</b>
+<dd class=data>This edit field allows a path name to be specified. The path will
+be used in conjunction
+with the file type value giving rise to the
+file search pattern.
+
+
+
+
+<dt class=type><b>FileSelection
+</b>
+<dd class=data>This edit filed displays the current search pattern comprising the
+path field and
+the file type extension.
+It may be modified by hand prior to pressing the find button
+to
+perform the search operation.
+
+
+<dt class=type><b>FileNames
+</b>
+<dd class=data>This table field displayes the results of the most recent file
+selection operation.
+By clicking on a filename it will be
+copied into the result field.
+
+
+
+
+</dl>
+
+</td>
+</table></div><p>
+<a name="vform">
+
+<p>
+<div align="center">
+<table class="DS">
+<tr><th><h2 align="center">
+accept form control
+</h2>
+
+<tr><td><p><div align="center"><img src="vform.gif">
+</div><p>
+<tr><td>
+<ol><ul></ul><ul></ul><ul></ul></ol>
+
+</td>
+</table></div><p>
+<a name="vaccess">
+
+<p>
+<div align="center">
+<table class="DS">
+<tr><th><h2 align="center">
+visual access
+</h2>
+
+<tr><td><p><div align="center"><img src="vaccess.gif">
+</div><p>
+<tr><td>
+
+<dl>
+
+
+</dl>
+
+</td>
+</table></div><p>
+<a name="vaccess">
+
+<p>
+<div align="center">
+<table class="DS">
+<tr><th><h2 align="center">
+visual access
+</h2>
+
+<tr><td><p><div align="center"><img src="vaccess.gif">
+</div><p>
+<tr><td>
+
+<dl>
+
+
+</dl>
+
+</td>
+</table></div><p>
+<a name="vmprod">
+
+<p>
+<div align="center">
+<table class="DS">
+<tr><th><h2 align="center">
+accept production properties
+</h2>
+
+<tr><td><p><div align="center"><img src="vmprod.gif">
+</div><p>
+<tr><td>
+This visual form will be presented to allow inspection and modifica
+tion of application
+model production parameters prior to the activa
+tion of the corresponding production
+operation.
+
+<p>
+
+<dl>
+<dt class=type><b>UseAed
+</b>
+<dd class=data>By pressing on the EDIT button the document source will be presente
+d  for inspection
+via the Standard Text Editor mechanisms.
+
+
+<dt class=type><b>View
+</b>
+<dd class=data>By pressing on the VIEW button the system navigator will be activat
+ed allowing the
+finalised version of the production document to be
+      consulted. Under Twin Server
+NV will be used. Under UseIT NET
+SCAPE    will be activated.
+
+
+<dt class=type><b>ModelName
+</b>
+<dd class=data>The MODELNAME edit field presents the name of the application model
+   for inspection.
+
+
+<dt class=type><b>TargetFile
+</b>
+<dd class=data>The PRODUCTION filename edit field presents the production target f
+ilename for modification
+or inspection.
+
+
+<dt class=type><b>NoConfirm
+</b>
+<dd class=data>The AUTOMATIC check box when checked alleviates the need to validat
+e  the various
+stages involved in the production of the target and
+its   documentation. When unchecked
+each stage will present the
+         corresponding visual frame for validation or
+cancellation.
+
+
+<dt class=type><b>Build
+</b>
+<dd class=data>The FORCE BUILD check box when checked performs production of all
+   partial products
+in a systematic manner. When unchecked only the
+      entities which are out of date
+will be produced.
+
+
+<dt class=type><b>Accept
+</b>
+<dd class=data>By pressing the ACCEPT button the production operation defined by t
+he associated
+switchs and values will be activated.
+
+
+<dt class=type><b>Cancel
+</b>
+<dd class=data>By clicking on the CANCEL button the production operation will be
+   abandoned.
+
+
+<dt class=type><b>Verbose
+</b>
+<dd class=data>The VERBOSE check box controls the visualisation of the various
+   application components
+as they are presented for effective produ
+ction.
+
+
+<dt class=type><b>TargetType
+</b>
+<dd class=data>When the PROGRAM checkbox is checked the production target will be
+   a complete program
+making use of its sub-component entities.
+
+
+<dt class=type><b>IsDocument
+</b>
+<dd class=data>The DOCUMENT check box when checked allows the production of an HTM
+L  document containing
+all Application model Images and documentary
+ text from the sub-components. This will
+be generated to the Docume
+nt       Filename target if one has been specified.
+
+
+<dt class=type><b>AdFn
+</b>
+<dd class=data>The DOCUMENT filename edit field allows the full path and filename
+of the file into
+which the production document is to be generated w
+hen   this has been selected by
+the DOCUMENT checkbox.
+
+
+<dt class=type><b>DocumentFile
+</b>
+<dd class=data>The PRODUCTION FILENAME edit field allows the full path and filenam
+e  of the production
+target into which the Program or Module produc
+tion  stream will be generated.
+
+
+<dt class=type><b>Makefile
+</b>
+<dd class=data>When this control has been checked the production mechanism will
+generate a description
+of the entire project to a standard
+<b>makefile</b>.
+
+
+
+<dt class=type><b>MakefileName
+</b>
+<dd class=data>This edit field allows the full path and filename of the file
+to which the project
+make file will be generated if the 
+corresponding check control has been activated.
+
+
+
+
+
+</dl>
+
+</td>
+</table></div><p>
+<a name="vpragma">
+
+<p>
+<div align="center">
+<table class="DS">
+<tr><th><h2 align="center">
+accept pragmas
+</h2>
+
+<tr><td><p><div align="center"><img src="vpragma.gif">
+</div><p>
+<tr><td>
+
+<dl>
+
+
+</dl>
+
+</td>
+</table></div><p>
+<a name="vsearch">
+
+<p>
+<div align="center">
+<table class="DS">
+<tr><th><h2 align="center">
+accept search
+</h2>
+
+<tr><td><p><div align="center"><img src="vsearch.gif">
+</div><p>
+<tr><td>
+
+<dl>
+
+
+</dl>
+
+</td>
+</table></div><p>
+<a name="vexit">
+
+<p>
+<div align="center">
+<table class="DS">
+<tr><th><h2 align="center">
+accept exit
+</h2>
+
+<tr><td><p><div align="center"><img src="vexit.gif">
+</div><p>
+<tr><td>
+This visual form will be displayed to notify the potential loss
+of modifications to
+the current project.
+
+<p>
+
+<dl>
+<dt class=type><b>JustQuit
+</b>
+<dd class=data>By clicking on this button the project model and all unsaved 
+modifications will be
+abandoned and consequently lost.
+
+
+
+<dt class=type><b>AbandonExit
+</b>
+<dd class=data>By clicking on this button the current operation will be abandoned
+and control will
+be returned to the model editor preserving any
+unsaved modifications.
+
+
+
+<dt class=type><b>SaveOnExit
+</b>
+<dd class=data>By pressing on this button the unsaved modifications will be save to disk
+and then
+the project model will be released.
+
+
+
+
+
+</dl>
+
+</td>
+</table></div><p>
+<a name="vlink">
+
+<p>
+<div align="center">
+<table class="DS">
+<tr><th><h2 align="center">
+accept linker parameters
+</h2>
+
+<tr><td><p><div align="center"><img src="vlink.gif">
+</div><p>
+<tr><td>
+This dialog frame will be activated is response to one of the following events :
+<p>
+<ul>
+<li>After
+the translation phase of <a href="vaprod.htm">ABAL model production</a> for which
+auto translation
+and linking has not been selected.
+<li>By clicking on the corresponding
+tool button of the menu bar of any one of the various model editors.
+</ul>
+<p>
+allowing
+consultation and modification of parameters which control the
+ABAL 3 Link phase of
+the ABAL Production Cycle for production packages which declare modules for
+linkage.<p>
+Precise
+information pertaining to the ABAL 3 <a href="old.htm">Object Linker</a> may be found
+in the corresponding 
+document.<p>
+
+
+
+<p>
+
+<dl>
+
+
+</dl>
+
+</td>
+</table></div><p>
+<a name="vdebug">
+
+<p>
+<div align="center">
+<table class="DS">
+<tr><th><h2 align="center">
+accept debug parameters
+</h2>
+
+<tr><td><p><div align="center"><img src="vdebug.gif">
+</div><p>
+<tr><td>
+This dialog box will be activated in response to one of the following events :
+<p>
+<ul>
+<li>The
+<b>View Run</b> menu option from one of the following model editors :
+<ol>
+<li><a
+href="singproj.htm">Application Project Editor</a>
+<li><a href="singproj.htm">Visual
+Forms Editor</a>
+<li><a href="singproj.htm">Tree View Editor</a>
+</ol>
+<li>By clicking
+on the corresponding tool button from any one of the various model editors.
+</ul>
+allowing
+the runtime and debug operational parameters to be specified before activation
+of
+the corresponding mode of operation.
+<p>
+
+
+<p>
+
+<dl>
+<dt class=type><b>FileName
+</b>
+<dd class=data>This edit field allows modification or selection of the name of the ABAL 3 program
+to be run or debugged.  
+
+
+<dt class=type><b>CommandLine
+</b>
+<dd class=data>This edit field allows any eventual command line parameters to be specified prior
+to launching the
+program.
+
+
+
+<dt class=type><b>Select
+</b>
+<dd class=data>The Select button provides access  to the
+<a href="vfselect.htm">file selection</a>
+dialog frame allowing
+prompted selection of the filename of the ABAL3 program to be
+run or debugged.
+
+
+
+<dt class=type><b>IsDebug
+</b>
+<dd class=data>This check control switchs the operational mode between debug and runtime.
+When checked
+the debug utility will be lauched otherwise the standard runtime module will be used
+to
+run the program.
+
+
+
+<dt class=type><b>Debugger
+</b>
+<dd class=data>This constant edit field presents the name of the ABAL 3 debug utility as defined
+by the <b>Options Configure Exadb</b> parameter
+of the <a href="vrefer.htm">Configuration
+Options</a> dialog box.
+
+
+
+<dt class=type><b>DebugRoot
+</b>
+<dd class=data>This edit field allows the debug root path to be specified. This value may be required
+if the source
+files of the program to debugged have been translated without explicite
+path information and are not
+present in the current working directory.
+
+
+
+<dt class=type><b>Runtime
+</b>
+<dd class=data>This constant edit field presents the name of the ABAL 3 runtime utility as defined
+by the <b>Options Configure Exa</b> parameter
+of the <a href="vrefer.htm">Configuration
+Options</a> dialog box.
+
+
+
+<dt class=type><b>Accept
+</b>
+<dd class=data>By clicking on this button the requested operation will be launched.
+
+
+
+<dt class=type><b>Cancel
+</b>
+<dd class=data>By clicking on this button the operation will be abandoned and control will be returned
+to the
+parent editor or work environment.
+
+
+
+
+
+</dl>
+
+</td>
+</table></div><p>
+<a name="vexadb">
+
+<p>
+<div align="center">
+<table class="DS">
+<tr><th><h2 align="center">
+visual debug
+</h2>
+
+<tr><td><p><div align="center"><img src="vexadb.gif">
+</div><p>
+<tr><td>
+<ol><ul></ul><ul></ul><ul></ul></ol>
+
+</td>
+</table></div><p>
+<a name="vrefer">
+
+<p>
+<div align="center">
+<table class="DS">
+<tr><th><h2 align="center">
+accept configuration
+</h2>
+
+<tr><td><p><div align="center"><img src="vrefer.gif">
+</div><p>
+<tr><td>
+<ol><ul></ul><ul></ul><ul></ul><ul></ul><ul></ul><ul></ul><ul></ul></ol>
+
+</td>
+</table></div><p>
+<a name="vfextr">
+
+<p>
+<div align="center">
+<table class="DS">
+<tr><th><h2 align="center">
+accept extraction
+</h2>
+
+<tr><td><p><div align="center"><img src="vfextr.gif">
+</div><p>
+<tr><td>
+
+<dl>
+<dt class=type><b>SourceFont
+</b>
+<dd class=data>The TEXT FONT edit field allows the font used by the widget, when
+displaying text,
+to be selected. 
+The initial value of this field will be taken from the current 
+value
+of the general parameter <b>Current Font</b> or the 
+<b>Options.Parameters</b> menu.
+<p>This
+field is of conseqence to all widgets for which the 
+payload represents a text to
+be displayed.
+<br>This field should reference a fixed font for <b>Edit</b>
+widgets.
+In other case proportional fonts are also possible.
+<p>The numeric value of the field
+may be referenced in method text
+by the term :
+<p><b>this.FONT</b>
+<p>Information
+relating to the font dimensions may be refered to
+by the terms :
+<p><b>this.FONTWIDTH</b>
+: the widht of the font in pixels.
+<p><b>this.FONTHEIGHT</b> : the height of the font
+in pixels.
+
+
+
+
+
+
+</dl>
+
+</td>
+</table></div><p>
+<a name="vedcmd">
+
+<p>
+<div align="center">
+<table class="DS">
+<tr><th><h2 align="center">
+accept editor command
+</h2>
+
+<tr><td><p><div align="center"><img src="vedcmd.gif">
+</div><p>
+<tr><td>
+
+<dl>
+
+
+</dl>
+
+</td>
+</table></div><p>
+<a name="vreplace">
+
+<p>
+<div align="center">
+<table class="DS">
+<tr><th><h2 align="center">
+accept replace
+</h2>
+
+<tr><td><p><div align="center"><img src="vreplace.gif">
+</div><p>
+<tr><td>
+
+<dl>
+
+
+</dl>
+
+</td>
+</table></div><p>
+<a name="vpagenew">
+
+<p>
+<div align="center">
+<table class="DS">
+<tr><th><h2 align="center">
+accept visual page
+</h2>
+
+<tr><td><p><div align="center"><img src="vpagenew.gif">
+</div><p>
+<tr><td>
+
+<dl>
+
+
+</dl>
+
+</td>
+</table></div><p>
+<a name="vcompose">
+
+<p>
+<div align="center">
+<table class="DS">
+<tr><th><h2 align="center">
+accept form syntax
+</h2>
+
+<tr><td><p><div align="center"><img src="vcompose.gif">
+</div><p>
+<tr><td>
+This dialog box allows the composition of widget method text expressions using class,
+widget and
+method selection lists. The widget list will be drawn from the current
+active visual forms model
+in conjunction will the widget class selection filter.
+The
+resulting expression when accepted will be directly injected into the current editor
+text, method
+source or document.
+
+
+<p>
+
+<dl>
+<dt class=type><b>ClassList
+</b>
+<dd class=data>This selection control provides the widget class list allowing selection of widget
+types.
+
+
+
+<dt class=type><b>WidgetList
+</b>
+<dd class=data>This select control provides the list of widgets which match the current widget class
+selection.
+
+
+
+<dt class=type><b>MethodList
+</b>
+<dd class=data>This select control provides the list of methods or atributs available for the current
+widget selection.
+
+
+<dt class=type><b>Concatenate
+</b>
+<dd class=data>When this check control is active the compose button will concatenate the new syntax
+expression with 
+the current result contents. This switch is disabled by default but
+activated by the first composition
+operation as a result of clicking the compose button.
+If the expression is to be reset and rebuilt
+rest this check control prior to pressing
+the compose button.
+
+
+
+<dt class=type><b>Accept
+</b>
+<dd class=data>By clicking on this button the current contents ofthe result field will be accepted
+and returned
+as the result of the operation.
+
+
+
+<dt class=type><b>Compose
+</b>
+<dd class=data>By clicking on this button the current selections will be applied to compose the result
+field.
+
+
+<dt class=type><b>Cancel
+</b>
+<dd class=data>By clicking on this button the widget syntax composition operation will be abandoned.
+
+
+
+
+
+
+</dl>
+
+</td>
+</table></div><p>
+
+<p><div align="center">
+<table class="CRT">
+<tr><th><h3 align="center">
+Copyright (c) 2002 Prologue Software
+</h3>
+</table></div><p>
+</body></html>

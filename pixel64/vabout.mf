@@ -1,0 +1,5 @@
+
+$(POBJ)vabout$(OBJ):  $(SP01)vabout.c $(SP01)visual.h /home/Dev/abal32/src/pixel/allocate.h /home/Dev/abal32/src/pixel/guimouse.h $(SP01)vframe.h $(SP01)vwidget.h
+$(POBJ)vintro$(OBJ):  $(SP01)vintro.c $(SP01)visual.h /home/Dev/abal32/src/pixel/allocate.h /home/Dev/abal32/src/pixel/guimouse.h $(SP01)vframe.h $(SP01)vwidget.h
+$(POBJ)verror$(OBJ):  $(SP01)verror.c $(SP01)visual.h /home/Dev/abal32/src/pixel/allocate.h /home/Dev/abal32/src/pixel/guimouse.h $(SP01)vframe.h $(SP01)vwidget.h
+

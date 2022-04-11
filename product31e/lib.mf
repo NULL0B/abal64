@@ -1,0 +1,46 @@
+# generated makefile : lib.mf 
+# ------------------------------------
+/home/Dev/abal32/product31e/lib/allocate32.so: /home/Dev/abal32/lib/allocate32.so
+	cp $* $@ 
+/home/Dev/abal32/product31e/lib/asfun32.so: /home/Dev/abal32/lib/asfun32.so
+	cp $* $@ 
+/home/Dev/abal32/product31e/lib/audio32.so: /home/Dev/abal32/lib/audio32.so
+	cp $* $@ 
+#home/Dev/abal32/product31e/lib/bdamail32.so: /home/Dev/abal32/lib/bdamail32.so
+#cp $* $@ 
+/home/Dev/abal32/product31e/lib/bibmath32.so: /home/Dev/abal32/lib/bibmath32.so
+	cp $* $@ 
+/home/Dev/abal32/product31e/lib/dassv132.so: /home/Dev/abal32/lib/dassv132.so
+	cp $* $@ 
+/home/Dev/abal32/product31e/lib/fac32.so: /home/Dev/abal32/lib/fac32.so
+	cp $* $@ 
+/home/Dev/abal32/product31e/lib/libaccess32.so: /home/Dev/abal32/lib/libaccess32.so
+	cp $* $@ 
+/home/Dev/abal32/product31e/lib/libedit32.so: /home/Dev/abal32/lib/libedit32.so
+	cp $* $@ 
+/home/Dev/abal32/product31e/lib/libflfile32.so: /home/Dev/abal32/lib/libflfile32.so
+	cp $* $@ 
+/home/Dev/abal32/product31e/lib/libimage32.so: /home/Dev/abal32/lib/libimage32.so
+	cp $* $@ 
+/home/Dev/abal32/product31e/lib/libjpeg32.so: /home/Dev/abal32/lib/libjpeg32.so
+	cp $* $@ 
+/home/Dev/abal32/product31e/lib/libprint32.so: /home/Dev/abal32/lib/libprint32.so
+	cp $* $@ 
+/home/Dev/abal32/product31e/lib/ljii32.so: /home/Dev/abal32/lib/ljii32.so
+	cp $* $@ 
+/home/Dev/abal32/product31e/lib/ljiv32.so: /home/Dev/abal32/lib/ljiv32.so
+	cp $* $@ 
+/home/Dev/abal32/product31e/lib/psiii32.so: /home/Dev/abal32/lib/psiii32.so
+	cp $* $@ 
+/home/Dev/abal32/product31e/lib/psiiit32.so: /home/Dev/abal32/lib/psiiit32.so
+	cp $* $@ 
+/home/Dev/abal32/product31e/lib/bj30033032.so: /home/Dev/abal32/lib/bj30033032.so
+	cp $* $@ 
+/home/Dev/abal32/product31e/lib/tty32.so: /home/Dev/abal32/lib/tty32.so
+	cp $* $@ 
+/home/Dev/abal32/product31e/lib/visual32.so: /home/Dev/abal32/lib/visual32.so
+	cp $* $@ 
+/home/Dev/abal32/product31e/lib/z32.so: /home/Dev/abal32/lib/z32.so
+	cp $* $@ 
+/home/Dev/abal32/product31e/lib/zgr32.so: /home/Dev/abal32/lib/zgr32.so
+	cp $* $@ 

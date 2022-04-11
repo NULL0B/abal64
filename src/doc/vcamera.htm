@@ -1,0 +1,335 @@
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="generator" content="Prologue Sing Html Version 1.0a">
+<meta name="version" content="*PRL@INFO*#11a040">
+<link href="style.css" type="text/css" rel="stylesheet" media="screen">
+<link href="style.css" type="text/css" rel="stylesheet" media="print">
+<title>Sing Version 1.0a
+</title>
+</head><body>
+<div align="center">
+<table class="DOC">
+<tr><th><h1 align="center">
+Sing Version 1.0a
+</h1>
+<td><div align="center"><img src="logo.jpg">
+</div></table></div><p>
+<a name="vcamera.xml">
+
+<p>
+<div align="center">
+<table class="DS">
+<tr><th><h2 align="center">
+accept camera properties
+</h2>
+
+<tr><td><p><div align="center"><img src="vcamera.gif" usemap="#accept_camera_properties" >
+</div><p>
+<tr><td>
+
+<map name="accept_camera_properties">
+<area type=rect href="#AtX" coords="130,90,210,106">
+<area type=rect href="#ToX" coords="130,120,210,136">
+<area type=rect href="#Direction" coords="130,150,330,169">
+<area type=rect href="#Configuration" coords="130,180,330,196">
+<area type=rect href="#DataBase" coords="370,180,586,196">
+<area type=rect href="#Step" coords="500,210,588,226">
+<area type=rect href="#Accept" coords="20,380,140,410">
+<area type=rect href="#Cancel" coords="470,380,590,410">
+<area type=rect href="#StepX" coords="130,240,210,256">
+<area type=rect href="#ImageFormat" coords="500,240,588,259">
+<area type=rect href="#AutoSize" coords="370,110,482,126">
+<area type=rect href="#Save Forms" coords="370,130,496,146">
+<area type=rect href="#ImageName" coords="130,270,586,286">
+<area type=rect href="#PaletteName" coords="130,300,586,316">
+<area type=rect href="#ImageType" coords="130,330,270,349">
+<area type=rect href="#Colour" coords="500,330,580,350">
+<area type=rect href="#Select" coords="360,380,460,410">
+</map>
+This visual form will be presented to allow inspection and modifica
+tion of the various
+application model parameters. These include the
+      camera view parameters and the
+various default settings used
+by       the application model entities.
+
+<p>
+
+<dl>
+<dt class=type><a name="AtX">
+<b>AtX
+</b></a>
+<dd class=data>The POSITION X,Y and Z edit fields give access to the coordinates o
+f  the current
+application camera position for inspection and modif
+ication.
+
+<p>
+<dt class=type><a name="ToX">
+<b>ToX
+</b></a>
+<dd class=data>The FOCUS X and Y edit fields offer the application camera focus fo
+r  inspection
+and modification. The Camera Focus implies the deplac
+ment  from the 0,0 center position
+of the application view.
+
+<p>
+<dt class=type><a name="Direction">
+<b>Direction
+</b></a>
+<dd class=data>The DIRECTION edit field shows the current camera direction taken
+   from the following
+: FORWARD, BACKWARD,UP,DOWN LEFT or RIGHT.
+      Whilst in the Application Viewer
+the direction may be changed
+ by      simply pressing the first letter of the required
+direction
+ name.
+
+<p>
+<dt class=type><a name="Configuration">
+<b>Configuration
+</b></a>
+<dd class=data>The TIMER edit field allows a value to be specified for the
+   automation of the application
+camera which when used in conjunct
+ion   with the STEP field value allows automised
+deplacement of the
+         camera view.
+
+<p>
+<dt class=type><a name="DataBase">
+<b>DataBase
+</b></a>
+<dd class=data>The TIMER edit field allows a value to be specified for the
+   automation of the application
+camera which when used in conjunct
+ion   with the STEP field value allows automised
+deplacement of the
+         camera view.
+
+<p>
+<dt class=type><a name="Step">
+<b>Step
+</b></a>
+<dd class=data>Thre STEP edit field allows the camera movement step value to be
+    modified for
+automatic displacment.
+
+<p>
+<dt class=type><a name="Accept">
+<b><u>A</u>ccept
+</b></a>
+<dd class=data>By pressing the ACCEPT button any changes made to the various
+   parameters will take
+effect.
+
+<p>
+<dt class=type><a name="Cancel">
+<b><u>C</u>ancel
+</b></a>
+<dd class=data>By pressing the CANCEL button any modifications performed will be
+   discarded.
+
+<p>
+<dt class=type><a name="StepX">
+<b>StepX
+</b></a>
+<dd class=data>The DISTANCE X,Y and Z edit fields provide access to the current
+   camera movement
+step values when a camera movement key is action
+ed.   The camera action keys are
+the PAGEUP and PAGEDOWN keys which
+         move in the current direction which may
+be toggle by the s
+pace bar    amongst the following values : X,Y or Z direction.
+
+<p>
+<dt class=type><a name="ImageFormat">
+<b>ImageFormat
+</b></a>
+<dd class=data>This select control allows the image format to be specified. Currently the only 
+formats
+that may be produced are <b>BMP</b> and <b>GIF</b>.
+The later producing mush smaller
+files but may require longer image save times.
+
+
+<p>
+<dt class=type><a name="AutoSize">
+<b>Au<u>t</u>oSize
+</b></a>
+<dd class=data>The AUTOSIZE check box provides the default value to be used when
+   creating new
+application model entities.
+
+<p>
+<dt class=type><a name="Save Forms">
+<b>Save <u>F</u>orms
+</b></a>
+<dd class=data>The SAVEIMAGES check box and SAVEFORMS check box provide the defaul
+t beahvious to
+be used by the application model save operation. The
+y may me overidden by hand in
+the corresponding visual form.
+
+<p>
+<dt class=type><a name="ImageName">
+<b>ImageName
+</b></a>
+<dd class=data>The IMAGE edit field allows the full path and filename of an image
+   to used as the
+application model background over which the 3d ca
+mera  entities will be projected.
+
+<p>
+<dt class=type><a name="PaletteName">
+<b>PaletteName
+</b></a>
+<dd class=data>This edit field allows the file name of a palette file to be specified. This palette
+will
+be loaded and used for all subsequent project models.
+
+<p>
+<dt class=type><a name="ImageType">
+<b>ImageType
+</b></a>
+<dd class=data>This combo selection field allows a value to be chosen 
+from a widget specific list
+of options.
+<p>The semantics of the options vary depending on the 
+actual class of
+the widget as shown in the following table.
+<p>
+<table>
+<tr><td>WIDGET<td>Behaviour
+
+<tr><td>WINDOW<td>The
+alignment value applies to the window itself
+within the parent graphical output screen.
+
+<tr><td>TEXT
+<td><dl><dt>None<dd>no
+alignment is applied and the text will be 
+displayed with automatic line wrap within
+the zone defined by the
+position and dimension values. This alignment value is not
+
+intended for use with proportional fonts.
+<dt>Right,Left,Center<dd>These values will
+cause the text to be 
+displayed aligned in a single line centered in a vertical direction
+within
+the zone.
+<dt>Justify<dd>The text will be space padded displayed such that 
+it touches
+both left and right edges of its zone</dl>
+<tr><td>FRAMES<td>For the various frame
+components, namely
+<b>INSET</b>,<b>OUTSET</b>,<b>GROOVE</b> and<b>RIDGE</b>,
+The alignment
+value applies to the payload which , when provided, 
+will be displayed as a textual
+title for the frame. 
+The alignment value of <b>none</b> inhibits title display.
+
+<tr><td>IMAGE<td>The
+following image options are available.
+<dl><dt>None<dd>no alignment is applied to
+the image.
+<dt>Right<dd>The image will be right aligned in the widget zone.
+<dt>Left<dd>The
+image will be left aligned in the widget zone.
+<dt>Center<dd>The image will be centered
+within the widget zone.
+<dt>Tile<dd>This option causes the images, smaller than their
+
+widget zone, to be <b>tiled</b> or repeated, to fill the entire 
+zone.
+<dt>Makefit<dd>causes
+images to be stretched or squashed to fit
+the entire widget zone.
+<dt>Bestfit<dd>causes
+images to stretched and squashed respecting
+the image proportions. The result may
+stil be smaller than the 
+widget zone in which case it will be centered.
+</dl>
+<tr><td>SCROLLBAR<td>This
+option controls the composition of the
+scroll bar. In all cases, when the zone width
+is found to be
+greater than the zone height a horizontal bar will be displayed.
+Otherwise,
+when the width is less than the height, a vertical bar
+will be displayed.
+
+<dl><dt>None<dd>The
+scroll bar <i>trough</i> will occupy the entire
+widget zone. No butons will be displayed.
+<dt>Right<dd>A
+<b>down</b> or <b>right</b> button will be displayed
+at the appropriate extremity.
+The scroll bar trough will occupy
+the remaining zone.
+<dt>Left<dd>A <b>up</b> or <b>left</b>
+button will be displayed
+at the appropriate extremity. The scroll bar trough will
+occupy
+the remaining zone.
+<dt>Both<dd>Both <b>up</b> and <b>down</b> or <b>left</b>
+and <b>right</b>
+buttons will be displayed at each end of the bar.
+The scroll bar
+trough will occupy the remaining zone.
+<dt>Slider<dd>No buttons will be displayed
+and the slider bar will
+be displayed as a rounded slider in a grooved trough, occupying
+the
+entire widget zone.
+</dl>
+
+<tr><td>OTHER<td>No semantic is currently defined for
+other widget types.
+</table>
+
+
+
+<p>
+<dt class=type><a name="Colour">
+<b>Colour
+</b></a>
+<dd class=data>The COLOUR edit field allows the current default application model
+   background colour
+value. This will be used if no background imag
+e has been specified of found to unavailable.
+
+        The background colour us affected by dynamic selection fro
+m the       palette
+bar with the right button of the mouse whilst i
+n the          application model editor.
+
+<p>
+<dt class=type><a name="Select">
+<b><u>S</u>elect
+</b></a>
+<dd class=data>The <b>Select</b> button allows access yto the file selection
+dialog frame allowing
+proimpted selection of the filename.
+
+<p>
+
+
+</dl>
+
+</td>
+</table></div><p>
+
+<p><div align="center">
+<table class="CRT">
+<tr><th><h3 align="center">
+Copyright (c) 2002,2006 Prologue
+</h3>
+</table></div><p>
+</body></html>

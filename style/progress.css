@@ -1,0 +1,33 @@
+/* ------------------------------------ */
+/* Default Visual Library  Frame Styles */
+/* ------------------------------------ */
+
+progresstray 	{
+		border-style: inset;	
+		}
+progressframe 	{
+		margin: 1px;
+		border-style: ridge;	
+		}
+progressfill  	{
+		margin: 3px;
+		border-style: none;	
+		background-colour: red;
+		}
+
+progresswipe  	{
+		margin: 3px;
+		border-style: none;	
+		background-colour: green;
+		}
+
+progresslabel	{
+		class: proportional;
+		text-colour: white;
+		text-align: center;
+		}
+
+/* ----------- */
+/* End of File */
+/* ----------- */
+

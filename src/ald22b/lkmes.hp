@@ -1,0 +1,35 @@
+#ifndef _LKMES_HP
+
+/********************************/
+
+#ifdef _LKMES
+#undef PRIMITIVE
+#define PRIMITIVE
+#endif
+
+/********************************/
+
+#ifdef LINT_ARGS
+
+PRIMITIVE VOID MesInitTab( VOID );
+PRIMITIVE VOID MesVerifTcode( Entete XPTR );
+PRIMITIVE VOID Banniere ( VOID );
+
+#else 	/* LINT_ARGS */
+
+PRIMITIVE VOID MesInitTab();
+PRIMITIVE VOID MesVerifTcode();
+PRIMITIVE VOID Banniere();
+
+#endif  /* LINT_ARGS */
+
+/********************************/
+
+#define _LKMES_HP
+
+#else	/* _LKMES_HP */
+#endif  /* _LKMES_HP */
+
+
+
+

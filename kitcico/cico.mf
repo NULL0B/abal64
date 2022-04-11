@@ -1,0 +1,13 @@
+! echo building cico parameter files linxvt linuxvtm useit and xcico
+.c.run:
+	@cc -c $(*B).c
+	@cc -c mkp.c
+	@cc -o $@ $(*B).o mkp.o
+	@./$@
+	cp $(*B) /opt/prologue/lib/cico
+
+truc.run: truc.c
+
+
+
+

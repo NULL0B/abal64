@@ -1,0 +1,8 @@
+
+!make
+APLUS1 =  $(POBJ)aplus$(OBJ) $(POBJ)define$(OBJ)
+$(POBJ)aplus$(OBJ):  $(SP01)aplus.c $(SP01)aplus.h $(SP01)stdtypes.h $(SP01)hosts.h $(SP01)truser.h $(SP01)buffers.h $(SP01)value.h $(SP01)status.h $(SP01)options.h $(SP01)pragma.h $(SP01)friend.h $(SP01)world.h $(SP01)memory.h $(SP01)exrdef.h $(SP01)general.h $(SP01)files.h $(SP01)messages.h '
+$(SP01)french.h $(SP01)english.h $(SP01)aplus21x.h $(SP01)dispatch.c
+$(POBJ)define$(OBJ):  $(SP01)define.c $(SP01)aplus.h $(SP01)stdtypes.h $(SP01)hosts.h $(SP01)truser.h $(SP01)buffers.h $(SP01)value.h $(SP01)syntax.h $(SP01)status.h $(SP01)general.h $(SP01)struct.h $(SP01)relation.h $(SP01)friend.h $(SP01)trapping.h $(SP01)abal.h $(SP01)options.h $(SP01)pragma.h '
+$(SP01)friend.h $(SP01)world.h $(SP01)allocate.h $(SP01)memory.h $(SP01)exrdef.h $(SP01)style.h
+

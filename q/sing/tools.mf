@@ -1,0 +1,12 @@
+tools.tgz:  '
+        stfstyle.at '
+        stfcadre.at '
+        stfcolor.at '
+        /home/abal3/images/load.png '
+        stfedit.at '
+        /home/abal3/images/close.png '
+        /home/abal3/images/save.png '
+        stf.css '
+        stf.at
+	tar -czvf $@ $?
+!make

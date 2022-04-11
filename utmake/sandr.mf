@@ -1,0 +1,16 @@
+
+! include $(ABAL)/common/common.def
+
+SP01 = $(ABAL)/src/amake/
+
+sandr.o: $(SP01)sandr.c
+	-$(GCC) -c -g $(GDB) -DUNIX $* 1> pipo1 2> pipo2
+	cat pipo1 pipo2 > pipo
+	agr -apipo
+! make
+
+$(ABAL)/bin/sandr: sandr.o 
+	$(GCC) -g $(GDB) -o $@ $? 
+
+! make
+

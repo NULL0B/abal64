@@ -1,0 +1,16 @@
+
+
+/home/Dev/abal32/product31e/tools/boitemess1.xml: /home/Dev/abal32/src/tools31e/boitemess1.xml
+	cp $* $@
+/home/Dev/abal32/product31e/tools/boitemess2.xml: /home/Dev/abal32/src/tools31e/boitemess2.xml
+	cp $* $@
+/home/Dev/abal32/product31e/tools/boitemess3.xml: /home/Dev/abal32/src/tools31e/boitemess3.xml
+	cp $* $@
+/home/Dev/abal32/product31e/tools/statusbar.xml: /home/Dev/abal32/src/tools31e/statusbar.xml
+	cp $* $@
+/home/Dev/abal32/product31e/tools/tools.xml: /home/Dev/abal32/src/tools31e/tools.xml
+	cp $* $@
+
+! make
+
+

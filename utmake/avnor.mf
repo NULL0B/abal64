@@ -1,0 +1,24 @@
+
+! include $(ABAL)/common/common.def
+
+SP01 = $(ABAL)/src/amake/
+IP01 = $(ABAL)/include
+INCLUDE = -I$(IP01)
+
+avnfile.o: $(SP01)avnfile.c
+	-$(GCC) -c -g $(GDB) -DUNIX $(INCLUDE) $(SP01)avnfile.c 1> pipo1 2> pipo2
+	cat pipo1 pipo2 > pipo
+	agr -apipo
+	echo AVNFILE = $(ABAL)/utmake/$@ > $(ABAL)/common/avnfile.def
+
+avnor.o: $(SP01)avnor.c 
+	-$(GCC) -c -g $(GDB) -DUNIX $(SP01)avnor.c 1> pipo1 2> pipo2
+	cat pipo1 pipo2 > pipo
+	agr -apipo
+! make
+
+$(ABAL)/bin/avnor: avnor.o avnfile.o
+	$(GCC) -g $(GDB) -o $@ $? $(ALLOCATE) 
+
+! make
+

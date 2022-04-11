@@ -1,0 +1,5 @@
+
+!make
+ATRE =  $(POBJ)trjvmsg$(OBJ)
+$(POBJ)trjvmsg$(OBJ):  $(SP01)trjvmsg.c $(SP01)stdtypes.h $(SP01)hosts.h $(SP01)trmsg.h $(SP01)otr21x.h
+

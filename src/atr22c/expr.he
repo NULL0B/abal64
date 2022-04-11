@@ -1,0 +1,169 @@
+/*
+ *      Projet  : ABAL                  Copyright Prologue s.a. (c) 1990, 1995
+ *      Module  : ATR
+ *      Fichier : EXPR.HE
+ *      Version : 2.1f
+ *      Date    : 21/11/95
+ *      Systeme : DOS / PRL / UNIX / VMS
+ *
+ *      Traducteur ABAL
+ *
+ *      [Definitions du traitement des expressions]
+ *
+ */
+/*
+ * Mises a jour :
+ * ------------
+ *
+ * 20/04/99 : (#AT) Enhancement ATR 24: Check of types into procedure header 
+ *            (forward, implementation and call)
+ *
+ * 13/09/99 : (#AT) Bug ATR 6 fixed: Prohibit to pass integer parameters to 
+ *            procedure if formal parameters has type ptr.
+ *
+ * 22/11/99 : (#AT) Enhancement ATR: BINARY function.
+ *
+ * -------------------------------------------------------------------------
+ * 29/02/00 : (#AT) Amelioration EXA-57 - LOAD.GO modifications for ABAL v.2.2a
+ * -------------------------------------------------------------------------
+ */
+
+#ifdef _EXPR
+#define EXT_EXPR
+#else
+#define EXT_EXPR extern
+#endif /* _EXPR */
+
+/* PUBLIC */
+/* ------ */
+
+/*	Listes de suivi de registre	*/
+/*	---------------------------	*/
+
+#define RegList struct _R_List  /* liste de suivi de registre */
+RegList {
+        BINAIRE reg;
+        RegList *suiv;
+};
+
+#define All_RegList() (RegList *) XNmalloc("RegList",sizeof(RegList))
+#define Free_RegList(c) Xfree((char *) c)
+
+/* PUBLIC VARIABLES */
+/* ---------------- */
+
+EXT_EXPR BOOL not_a_call_var;   /* Pas de conversion BCD dans ce cas */
+EXT_EXPR BOOL adr_verrue;   /* signal adresse exigee si binaire */
+EXT_EXPR BOOL simplexp;     /* resultat = expression simple oui/non */
+EXT_EXPR BOOL argexp;       /* signal si expression est un argument */
+                                /* pour l'appel d'une procedure */
+EXT_EXPR BYTE *pdop;        /* pointeur sur description operande, si */
+                                /* expression simple */
+/* #AT: 20/04/99 (begin)*/
+/* TRUE if function expression(....) was called from callproc(....) */
+#ifdef __ATR22__
+BOOL gboolIsCallProc;
+#endif
+/* #AT: 20/04/99 (end)*/
+
+/* #AT: 13/09/99 (begin)*/
+#ifdef __ATR22__
+BOOL gboolIsActParAdmissible;
+#endif
+/* #AT: 13/09/99 (end)*/
+
+/* #AT: 22/11/99 (begin)*/
+#ifdef __ATR22__
+BINAIRE gwSign;
+#endif
+/* #AT: 22/11/99 (end)*/
+
+/* #AT: 29/02/00, EXA-57 (begin)*/
+#ifdef __ATR22__
+BOOL gboolIsPushBack;
+void SET_PUSHBACK(char * sProcName);
+#define RESET_PUSHBACK  gboolIsPushBack = FALSE
+#define WAS_PUSHBACK  gboolIsPushBack
+#endif
+/* #AT: 29/02/00, EXA-57 (end)*/
+
+BOOL adrref_verrue;		/* registre <- adresse .vs. valeur */
+
+/* Listes des registres utilisés (donc suceptibles d'etre pushés) */
+EXT_EXPR RegList *lreg_used;
+
+/* Listes des registres pushés */
+EXT_EXPR RegList *lreg_pushed;
+
+
+/* PUBLIC FONCTIONS */
+/* ---------------- */
+
+#ifdef LINT_ARGS
+
+EXT_EXPR void initexp (void);
+EXT_EXPR BOOL exitexpr (BYTE);
+EXT_EXPR BOOL affectation (BYTE *, BINAIRE);
+EXT_EXPR BOOL reference (BINAIRE, BYTE **, BINAIRE *, BYTE *, BYTE *);
+EXT_EXPR BOOL expression (BYTE *, BYTE *, BINAIRE *);
+EXT_EXPR CdMemb *tr_cond (void);
+EXT_EXPR CdMemb *tr_relat (void);
+EXT_EXPR CdMemb *expcond (void);
+EXT_EXPR void evalcond (BOOL, CdMemb *,char *);
+EXT_EXPR  void libcond (CdMemb *);
+
+EXT_EXPR void init_suivi_registre(void);
+EXT_EXPR void init_contexte_registre(BINAIRE* psav_libreg, RegList** psav_lreg_used, RegList** psav_lreg_pushed);
+EXT_EXPR void restitue_contexte_registre(BINAIRE sav_libreg, RegList* sav_lreg_used, RegList* sav_lreg_pushed);
+EXT_EXPR void genpopreg(BINAIRE);
+EXT_EXPR void genpopall(void);
+EXT_EXPR BOOL find_lreg(RegList *, BINAIRE);
+EXT_EXPR void ins_lreg(RegList **, BINAIRE);
+EXT_EXPR void oter_lreg(RegList **, BINAIRE);
+EXT_EXPR void Nettoyer_multi_lreg_used(BINAIRE nbargs, BYTE top[], BINAIRE vop[]);
+EXT_EXPR void Nettoyer_lreg_used(BYTE top, BINAIRE vop);
+EXT_EXPR void Inserrer_lreg_used(BYTE top, BINAIRE vop);
+EXT_EXPR void Transferer_lreg_used_to_puhed(BINAIRE nbargs, BYTE top[], BINAIRE vop[]);
+#ifdef VERSION_XX
+EXT_EXPR BINAIRE ev_indirection(BINAIRE, BINAIRE);
+#endif
+
+#else
+
+EXT_EXPR void initexp ();
+EXT_EXPR BOOL exitexpr ();
+EXT_EXPR BOOL affectation ();
+EXT_EXPR BOOL reference ();
+EXT_EXPR BOOL expression ();
+EXT_EXPR CdMemb *tr_cond ();
+EXT_EXPR CdMemb *tr_relat ();
+EXT_EXPR CdMemb *expcond ();
+EXT_EXPR void evalcond ();
+EXT_EXPR void libcond ();
+
+EXT_EXPR void init_suivi_registre();
+EXT_EXPR void init_contexte_registre();
+EXT_EXPR void restitue_contexte_registre();
+EXT_EXPR void genpopreg();
+EXT_EXPR void genpopall();
+EXT_EXPR BOOL find_lreg();
+EXT_EXPR void ins_lreg();
+EXT_EXPR void oter_lreg();
+EXT_EXPR void Nettoyer_multi_lreg_used();
+EXT_EXPR void Nettoyer_lreg_used();
+EXT_EXPR void Inserrer_lreg_used();
+EXT_EXPR void Transferer_lreg_used_to_puhed();
+#ifdef VERSION_XX
+EXT_EXPR BINAIRE ev_indirection();
+#endif
+
+#endif /* LINT_ARGS */
+
+/* PUBLIC END */
+/* ---------- */
+
+/* FIN DEFINITIONS INTERNES */
+/* ------------------------ */
+
+/* ---------------- FIN expr.he -----------------------------------------*/
+

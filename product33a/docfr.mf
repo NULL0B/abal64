@@ -1,0 +1,547 @@
+# generated makefile : docfr.mf 
+# ------------------------------------
+
+$(ABAL)/product33a/doc/fr/methods1.png: $(ABAL)/src/doc/fr/methods1.png
+	ls -tl $* >> $(ABAL)/product33a/doc/files.text; cp $* $@ 
+$(ABAL)/product33a/doc/fr/methods2.png: $(ABAL)/src/doc/fr/methods2.png
+	ls -tl $* >> $(ABAL)/product33a/doc/files.text; cp $* $@ 
+$(ABAL)/product33a/doc/fr/methods3.png: $(ABAL)/src/doc/fr/methods3.png
+	ls -tl $* >> $(ABAL)/product33a/doc/files.text; cp $* $@ 
+$(ABAL)/product33a/doc/fr/methods4.png: $(ABAL)/src/doc/fr/methods4.png
+	ls -tl $* >> $(ABAL)/product33a/doc/files.text; cp $* $@ 
+$(ABAL)/product33a/doc/fr/methods5.png: $(ABAL)/src/doc/fr/methods5.png
+	ls -tl $* >> $(ABAL)/product33a/doc/files.text; cp $* $@ 
+$(ABAL)/product33a/doc/fr/methods6.png: $(ABAL)/src/doc/fr/methods6.png
+	ls -tl $* >> $(ABAL)/product33a/doc/files.text; cp $* $@ 
+
+$(ABAL)/product33a/doc/fr/methods.htm: $(ABAL)/src/doc/fr/methods.htm
+	ls -tl $* >> $(ABAL)/product33a/doc/files.text; cp $* $@ 
+
+$(ABAL)/product33a/doc/fr/bdatty.htm: $(ABAL)/src/doc/fr/bdatty.htm
+	ls -tl $* >> $(ABAL)/product33a/doc/files.text; cp $* $@ 
+
+
+$(ABAL)/product33a/doc/fr/cstyleman.htm: $(ABAL)/src/doc/fr/cstyleman.htm
+	ls -tl $* >> $(ABAL)/product33a/doc/files.text; cp $* $@ 
+$(ABAL)/product33a/doc/fr/cstyleman1.png: $(ABAL)/src/doc/fr/cstyleman1.png
+	ls -tl $* >> $(ABAL)/product33a/doc/files.text; cp $* $@ 
+$(ABAL)/product33a/doc/fr/cstyleman2.png: $(ABAL)/src/doc/fr/cstyleman2.png
+	ls -tl $* >> $(ABAL)/product33a/doc/files.text; cp $* $@ 
+$(ABAL)/product33a/doc/fr/cstyleman3.png: $(ABAL)/src/doc/fr/cstyleman3.png
+	ls -tl $* >> $(ABAL)/product33a/doc/files.text; cp $* $@ 
+$(ABAL)/product33a/doc/fr/cstyleman4.png: $(ABAL)/src/doc/fr/cstyleman4.png
+	ls -tl $* >> $(ABAL)/product33a/doc/files.text; cp $* $@ 
+$(ABAL)/product33a/doc/fr/cstyleman5.png: $(ABAL)/src/doc/fr/cstyleman5.png
+	ls -tl $* >> $(ABAL)/product33a/doc/files.text; cp $* $@ 
+$(ABAL)/product33a/doc/fr/cstyleman6.png: $(ABAL)/src/doc/fr/cstyleman6.png
+	ls -tl $* >> $(ABAL)/product33a/doc/files.text; cp $* $@ 
+$(ABAL)/product33a/doc/fr/cstyleman7.png: $(ABAL)/src/doc/fr/cstyleman7.png
+	ls -tl $* >> $(ABAL)/product33a/doc/files.text; cp $* $@ 
+$(ABAL)/product33a/doc/fr/cstyleman8.png: $(ABAL)/src/doc/fr/cstyleman8.png
+	ls -tl $* >> $(ABAL)/product33a/doc/files.text; cp $* $@ 
+$(ABAL)/product33a/doc/fr/cstyleman9.png: $(ABAL)/src/doc/fr/cstyleman9.png
+	ls -tl $* >> $(ABAL)/product33a/doc/files.text; cp $* $@ 
+
+$(ABAL)/product33a/doc/fr/trash.gif: $(ABAL)/images/trash.gif
+	ls -tl $* >> $(ABAL)/product33a/doc/files.text; cp $* $@ 
+$(ABAL)/product33a/doc/fr/cancel.gif: $(ABAL)/images/cancel.gif
+	ls -tl $* >> $(ABAL)/product33a/doc/files.text; cp $* $@ 
+$(ABAL)/product33a/doc/fr/load.png: $(ABAL)/images/load.png
+	ls -tl $* >> $(ABAL)/product33a/doc/files.text; cp $* $@ 
+$(ABAL)/product33a/doc/fr/floppy.png: $(ABAL)/images/floppy.png
+	ls -tl $* >> $(ABAL)/product33a/doc/files.text; cp $* $@ 
+$(ABAL)/product33a/doc/fr/screen.gif: $(ABAL)/images/screen.gif
+	ls -tl $* >> $(ABAL)/product33a/doc/files.text; cp $* $@ 
+
+
+
+
+
+
+
+
+
+
+
+$(ABAL)/product33a/doc/fr/abal3.htm: $(ABAL)/src/doc/fr/abal3.htm
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/abalprod.htm: $(ABAL)/src/doc/fr/abalprod.htm
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/aed.htm: $(ABAL)/src/doc/fr/aed.htm
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/env.htm: $(ABAL)/src/doc/fr/env.htm
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/esc.htm: $(ABAL)/src/doc/fr/esc.htm
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/pointers.htm: $(ABAL)/src/doc/fr/pointers.htm
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/pointers.png: $(ABAL)/src/doc/fr/pointers.png
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/abqtop.htm: $(ABAL)/src/doc/fr/abqtop.htm
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/singfail.htm: $(ABAL)/src/doc/fr/singfail.htm
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/event.htm: $(ABAL)/src/doc/fr/event.htm
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/index.htm: $(ABAL)/src/doc/fr/index.htm
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/install.htm: $(ABAL)/src/doc/fr/install.htm
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/ldap.htm: $(ABAL)/src/doc/fr/ldap.htm
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/limits.htm: $(ABAL)/src/doc/fr/limits.htm
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/logo.jpg: $(ABAL)/src/doc/fr/logo.jpg
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/Logo_Prologue.gif: $(ABAL)/src/doc/fr/Logo_Prologue.gif
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/newclf.htm: $(ABAL)/src/doc/fr/newclf.htm
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/old.htm: $(ABAL)/src/doc/fr/old.htm
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/otrcmd.htm: $(ABAL)/src/doc/fr/otrcmd.htm
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/otrerr.htm: $(ABAL)/src/doc/fr/otrerr.htm
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/otr.htm: $(ABAL)/src/doc/fr/otr.htm
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/otrint.htm: $(ABAL)/src/doc/fr/otrint.htm
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/otrprag.htm: $(ABAL)/src/doc/fr/otrprag.htm
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/otrwarn.htm: $(ABAL)/src/doc/fr/otrwarn.htm
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/print.css: $(ABAL)/src/doc/fr/print.css
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/printer.htm: $(ABAL)/src/doc/fr/printer.htm
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/sing4nul.htm: $(ABAL)/src/doc/fr/sing4nul.htm
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/Sing4nulFig1.jpg: $(ABAL)/src/doc/fr/Sing4nulFig1.jpg
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/Sing4nulFig2.jpg: $(ABAL)/src/doc/fr/Sing4nulFig2.jpg
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/Sing4nulFig3.jpg: $(ABAL)/src/doc/fr/Sing4nulFig3.jpg
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/Sing4nulFig4.jpg: $(ABAL)/src/doc/fr/Sing4nulFig4.jpg
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/Sing4nulFig5.jpg: $(ABAL)/src/doc/fr/Sing4nulFig5.jpg
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/Sing4nulFig6.jpg: $(ABAL)/src/doc/fr/Sing4nulFig6.jpg
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/Sing4nulFig7.jpg: $(ABAL)/src/doc/fr/Sing4nulFig7.jpg
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/Sing4nulFig8.jpg: $(ABAL)/src/doc/fr/Sing4nulFig8.jpg
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/Sing4nulFig9.jpg: $(ABAL)/src/doc/fr/Sing4nulFig9.jpg
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/Sing4nulFig10.jpg: $(ABAL)/src/doc/fr/Sing4nulFig10.jpg
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/glossary.htm: $(ABAL)/src/doc/fr/glossary.htm
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/singbmap.png: $(ABAL)/src/doc/fr/singbmap.png
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/singbmap.htm: $(ABAL)/src/doc/fr/singbmap.htm
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/singedit.png: $(ABAL)/src/doc/fr/singedit.png
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/singedit.htm: $(ABAL)/src/doc/fr/singedit.htm
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/singform.png: $(ABAL)/src/doc/fr/singform.png
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/singform.htm: $(ABAL)/src/doc/fr/singform.htm
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/singproj.png: $(ABAL)/src/doc/fr/singproj.png
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/singproj.htm: $(ABAL)/src/doc/fr/singproj.htm
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/singtree.png: $(ABAL)/src/doc/fr/singtree.png
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/singtree.htm: $(ABAL)/src/doc/fr/singtree.htm
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/style.css: $(ABAL)/src/doc/fr/style32b.css
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/style.gif: $(ABAL)/src/doc/fr/style.gif
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/timer.htm: $(ABAL)/src/doc/fr/timer.htm
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/vaed.png: $(ABAL)/src/doc/fr/vaed.png
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/vaed.htm: $(ABAL)/src/doc/fr/vaed.htm
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/vamake.png: $(ABAL)/src/doc/fr/vamake.png
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/vamake.htm: $(ABAL)/src/doc/fr/vamake.htm
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/vaprod1.png: $(ABAL)/src/doc/fr/vaprod1.png
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/vaprod2.png: $(ABAL)/src/doc/fr/vaprod2.png
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/vaprod3.png: $(ABAL)/src/doc/fr/vaprod3.png
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/vaprod4.png: $(ABAL)/src/doc/fr/vaprod4.png
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/vaprod.htm: $(ABAL)/src/doc/fr/vaprod.htm
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/vatb.htm: $(ABAL)/src/doc/fr/vatb.htm
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/vcamera.png: $(ABAL)/src/doc/fr/vcamera.png
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/vcamera.htm: $(ABAL)/src/doc/fr/vcamera.htm
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/vcolours.png: $(ABAL)/src/doc/fr/vcolours.png
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/vcolours.htm: $(ABAL)/src/doc/fr/vcolours.htm
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/vcompare1.png: $(ABAL)/src/doc/fr/vcompare1.png
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/vcompare2.png: $(ABAL)/src/doc/fr/vcompare2.png
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/vcompare.htm: $(ABAL)/src/doc/fr/vcompare.htm
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/vcompose.png: $(ABAL)/src/doc/fr/vcompose.png
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/vcompose.htm: $(ABAL)/src/doc/fr/vcompose.htm
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/vcprod.png: $(ABAL)/src/doc/fr/vcprod.png
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/vcprod.htm: $(ABAL)/src/doc/fr/vcprod.htm
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/vcube.png: $(ABAL)/src/doc/fr/vcube.png
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/vcube.htm: $(ABAL)/src/doc/fr/vcube.htm
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/vcursor.png: $(ABAL)/src/doc/fr/vcursor.png
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/vcursor.htm: $(ABAL)/src/doc/fr/vcursor.htm
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/vdebug.png: $(ABAL)/src/doc/fr/vdebug.png
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/vdebug.htm: $(ABAL)/src/doc/fr/vdebug.htm
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/vedcmd.png: $(ABAL)/src/doc/fr/vedcmd.png
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/vedcmd.htm: $(ABAL)/src/doc/fr/vedcmd.htm
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/vexadb1.png: $(ABAL)/src/doc/fr/vexadb1.png
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/vexadb2.png: $(ABAL)/src/doc/fr/vexadb2.png
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/vexadb3.png: $(ABAL)/src/doc/fr/vexadb3.png
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/vexadb4.png: $(ABAL)/src/doc/fr/vexadb4.png
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/vexadb.htm: $(ABAL)/src/doc/fr/vexadb.htm
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/vexit.png: $(ABAL)/src/doc/fr/vexit.png
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/vexit.htm: $(ABAL)/src/doc/fr/vexit.htm
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/vfextr.png: $(ABAL)/src/doc/fr/vfextr.png
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/vfextr.htm: $(ABAL)/src/doc/fr/vfextr.htm
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/vfile1.png: $(ABAL)/src/doc/fr/vfile1.png
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/vfile2.png: $(ABAL)/src/doc/fr/vfile2.png
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/vfile3.png: $(ABAL)/src/doc/fr/vfile3.png
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/vfile.htm: $(ABAL)/src/doc/fr/vfile.htm
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/vfload.png: $(ABAL)/src/doc/fr/vfload.png
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/vfload.htm: $(ABAL)/src/doc/fr/vfload.htm
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/vform1.png: $(ABAL)/src/doc/fr/vform1.png
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/vform2.png: $(ABAL)/src/doc/fr/vform2.png
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/vform3.png: $(ABAL)/src/doc/fr/vform3.png
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/vform4.png: $(ABAL)/src/doc/fr/vform4.png
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/vform.htm: $(ABAL)/src/doc/fr/vform.htm
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/vfsave.png: $(ABAL)/src/doc/fr/vfsave.png
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/vfsave.htm: $(ABAL)/src/doc/fr/vfsave.htm
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/vfselect.png: $(ABAL)/src/doc/fr/vfselect.png
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/vfselect.htm: $(ABAL)/src/doc/fr/vfselect.htm
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/vhelper1.png: $(ABAL)/src/doc/fr/vhelper1.png
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/vhelper2.png: $(ABAL)/src/doc/fr/vhelper2.png
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/vhelper3.png: $(ABAL)/src/doc/fr/vhelper3.png
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/vhelper4.png: $(ABAL)/src/doc/fr/vhelper4.png
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/vhelper5.png: $(ABAL)/src/doc/fr/vhelper5.png
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/vhelper6.png: $(ABAL)/src/doc/fr/vhelper6.png
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/vhelper7.png: $(ABAL)/src/doc/fr/vhelper7.png
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/vhelper8.png: $(ABAL)/src/doc/fr/vhelper8.png
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/vhelper.htm: $(ABAL)/src/doc/fr/vhelper.htm
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/vhtml.png: $(ABAL)/src/doc/fr/vhtml.png
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/vhtml.htm: $(ABAL)/src/doc/fr/vhtml.htm
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/viload.png: $(ABAL)/src/doc/fr/viload.png
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/viload.htm: $(ABAL)/src/doc/fr/viload.htm
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/vimage.png: $(ABAL)/src/doc/fr/vimage.png
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/vimage.htm: $(ABAL)/src/doc/fr/vimage.htm
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/vimport.png: $(ABAL)/src/doc/fr/vimport.png
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/vimport.htm: $(ABAL)/src/doc/fr/vimport.htm
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/visave.png: $(ABAL)/src/doc/fr/visave.png
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/visave.htm: $(ABAL)/src/doc/fr/visave.htm
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/visual.htm: $(ABAL)/src/doc/fr/visual.htm
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/vlink1.png: $(ABAL)/src/doc/fr/vlink1.png
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/vlink2.png: $(ABAL)/src/doc/fr/vlink2.png
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/vlink3.png: $(ABAL)/src/doc/fr/vlink3.png
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/vlink.htm: $(ABAL)/src/doc/fr/vlink.htm
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/vload.png: $(ABAL)/src/doc/fr/vload.png
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/vload.htm: $(ABAL)/src/doc/fr/vload.htm
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/vlocate.png: $(ABAL)/src/doc/fr/vlocate.png
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/vlocate.htm: $(ABAL)/src/doc/fr/vlocate.htm
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/vfileref.png: $(ABAL)/src/doc/fr/vfileref.png
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/vfileref.htm: $(ABAL)/src/doc/fr/vfileref.htm
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/vmethod1.png: $(ABAL)/src/doc/fr/vmethod1.png
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/vmethod2.png: $(ABAL)/src/doc/fr/vmethod2.png
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/vmethod.htm: $(ABAL)/src/doc/fr/vmethod.htm
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/vmload.png: $(ABAL)/src/doc/fr/vmload.png
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/vmload.htm: $(ABAL)/src/doc/fr/vmload.htm
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/vmprod.png: $(ABAL)/src/doc/fr/vmprod.png
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/vmprod.htm: $(ABAL)/src/doc/fr/vmprod.htm
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/vmsave.png: $(ABAL)/src/doc/fr/vmsave.png
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/vmsave.htm: $(ABAL)/src/doc/fr/vmsave.htm
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/vnation1.png: $(ABAL)/src/doc/fr/vnation1.png
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/vnation2.png: $(ABAL)/src/doc/fr/vnation2.png
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/vnation3.png: $(ABAL)/src/doc/fr/vnation3.png
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/vnation4.png: $(ABAL)/src/doc/fr/vnation4.png
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/vnation5.png: $(ABAL)/src/doc/fr/vnation5.png
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/vnation6.png: $(ABAL)/src/doc/fr/vnation6.png
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/vnation7.png: $(ABAL)/src/doc/fr/vnation7.png
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/vnation8.png: $(ABAL)/src/doc/fr/vnation8.png
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/vnation.htm: $(ABAL)/src/doc/fr/vnation.htm
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/vorder.png: $(ABAL)/src/doc/fr/vorder.png
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/vorder.htm: $(ABAL)/src/doc/fr/vorder.htm
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/vpage.png: $(ABAL)/src/doc/fr/vpage.png
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/vpage.htm: $(ABAL)/src/doc/fr/vpage.htm
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/vparam.png: $(ABAL)/src/doc/fr/vparam.png
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/vparam.htm: $(ABAL)/src/doc/fr/vparam.htm
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/vrecrep.png: $(ABAL)/src/doc/fr/vrecrep.png
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/vrecrep.htm: $(ABAL)/src/doc/fr/vrecrep.htm
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/vrefer1.png: $(ABAL)/src/doc/fr/vrefer1.png
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/vrefer2.png: $(ABAL)/src/doc/fr/vrefer2.png
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/vrefer3.png: $(ABAL)/src/doc/fr/vrefer3.png
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/vrefer4.png: $(ABAL)/src/doc/fr/vrefer4.png
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/vrefer5.png: $(ABAL)/src/doc/fr/vrefer5.png
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/vrefer6.png: $(ABAL)/src/doc/fr/vrefer6.png
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/vrefer7.png: $(ABAL)/src/doc/fr/vrefer7.png
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/vrefer8.png: $(ABAL)/src/doc/fr/vrefer8.png
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/vrefer.htm: $(ABAL)/src/doc/fr/vrefer.htm
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/vreplace.png: $(ABAL)/src/doc/fr/vreplace.png
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/vreplace.htm: $(ABAL)/src/doc/fr/vreplace.htm
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/vsave.png: $(ABAL)/src/doc/fr/vsave.png
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/vsave.htm: $(ABAL)/src/doc/fr/vsave.htm
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/vsearch.png: $(ABAL)/src/doc/fr/vsearch.png
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/vsearch.htm: $(ABAL)/src/doc/fr/vsearch.htm
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/vshow.png: $(ABAL)/src/doc/fr/vshow.png
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/vshow.htm: $(ABAL)/src/doc/fr/vshow.htm
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/vstdfont.png: $(ABAL)/src/doc/fr/vstdfont.png
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/vstdfont.htm: $(ABAL)/src/doc/fr/vstdfont.htm
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/vsysfont1.png: $(ABAL)/src/doc/fr/vsysfont1.png
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/vsysfont2.png: $(ABAL)/src/doc/fr/vsysfont2.png
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/vsysfont.htm: $(ABAL)/src/doc/fr/vsysfont.htm
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/vtrad.png: $(ABAL)/src/doc/fr/vtrad.png
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/vtrad.htm: $(ABAL)/src/doc/fr/vtrad.htm
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/vtree.png: $(ABAL)/src/doc/fr/vtree.png
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/vtree.htm: $(ABAL)/src/doc/fr/vtree.htm
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/vwatch.png: $(ABAL)/src/doc/fr/vwatch.png
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/vwatch.htm: $(ABAL)/src/doc/fr/vwatch.htm
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/vwidget1.png: $(ABAL)/src/doc/fr/vwidget1.png
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/vwidget2.png: $(ABAL)/src/doc/fr/vwidget2.png
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/vwidget3.png: $(ABAL)/src/doc/fr/vwidget3.png
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/vwidget4.png: $(ABAL)/src/doc/fr/vwidget4.png
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/vwidget5.png: $(ABAL)/src/doc/fr/vwidget5.png
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/vwidget6.png: $(ABAL)/src/doc/fr/vwidget6.png
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/vwidget7.png: $(ABAL)/src/doc/fr/vwidget7.png
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/vwidget8.png: $(ABAL)/src/doc/fr/vwidget8.png
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/vwidget.htm: $(ABAL)/src/doc/fr/vwidget.htm
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/yabal.htm: $(ABAL)/src/doc/fr/yabal.htm
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/vcss.htm: $(ABAL)/src/doc/fr/vcss.htm
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/vcss.png: $(ABAL)/src/doc/fr/vcss.png
+	cp $* $@ 
+
+! make
+
+$(ABAL)/product33a/doc/fr/vwall.htm: $(ABAL)/src/doc/fr/vwall.htm     
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/vwimage.htm: $(ABAL)/src/doc/fr/vwimage.htm
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/vwbutton.htm: $(ABAL)/src/doc/fr/vwbutton.htm  
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/vwline.htm: $(ABAL)/src/doc/fr/vwline.htm
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/vwcheck.htm: $(ABAL)/src/doc/fr/vwcheck.htm  
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/vwprogress.htm: $(ABAL)/src/doc/fr/vwprogress.htm
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/vwdata.htm: $(ABAL)/src/doc/fr/vwdata.htm    
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/vwradio.htm: $(ABAL)/src/doc/fr/vwradio.htm
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/vwscroll.htm: $(ABAL)/src/doc/fr/vwscroll.htm
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/vwedit.htm: $(ABAL)/src/doc/fr/vwedit.htm    
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/vwselect.htm: $(ABAL)/src/doc/fr/vwselect.htm
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/vwfill.htm: $(ABAL)/src/doc/fr/vwfill.htm    
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/vwswitch.htm: $(ABAL)/src/doc/fr/vwswitch.htm
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/vwform.htm: $(ABAL)/src/doc/fr/vwform.htm    
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/vwtabpage.htm: $(ABAL)/src/doc/fr/vwtabpage.htm
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/vwframe.htm: $(ABAL)/src/doc/fr/vwframe.htm   
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/vwtext.htm: $(ABAL)/src/doc/fr/vwtext.htm
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/vwgraph.htm: $(ABAL)/src/doc/fr/vwgraph.htm   
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/vwwindow.htm: $(ABAL)/src/doc/fr/vwwindow.htm
+	cp $* $@ 
+
+$(ABAL)/product33a/doc/fr/vwall.png: $(ABAL)/src/doc/fr/vwall.png     
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/vwimage.png: $(ABAL)/src/doc/fr/vwimage.png
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/vwbutton.png: $(ABAL)/src/doc/fr/vwbutton.png  
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/vwline.png: $(ABAL)/src/doc/fr/vwline.png
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/vwcheck.png: $(ABAL)/src/doc/fr/vwcheck.png  
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/vwprogress.png: $(ABAL)/src/doc/fr/vwprogress.png
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/vwdata.png: $(ABAL)/src/doc/fr/vwdata.png    
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/vwradio.png: $(ABAL)/src/doc/fr/vwradio.png
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/vwscroll.png: $(ABAL)/src/doc/fr/vwscroll.png
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/vwedit.png: $(ABAL)/src/doc/fr/vwedit.png    
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/vwselect.png: $(ABAL)/src/doc/fr/vwselect.png
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/vwfill.png: $(ABAL)/src/doc/fr/vwfill.png    
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/vwswitch.png: $(ABAL)/src/doc/fr/vwswitch.png
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/vwform.png: $(ABAL)/src/doc/fr/vwform.png    
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/vwtabpage.png: $(ABAL)/src/doc/fr/vwtabpage.png
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/vwframe.png: $(ABAL)/src/doc/fr/vwframe.png   
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/vwtext.png: $(ABAL)/src/doc/fr/vwtext.png
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/vwgraph.png: $(ABAL)/src/doc/fr/vwgraph.png   
+	cp $* $@ 
+$(ABAL)/product33a/doc/fr/vwwindow.png: $(ABAL)/src/doc/fr/vwwindow.png
+	cp $* $@ 
+! make
+

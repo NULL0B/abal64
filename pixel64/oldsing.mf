@@ -1,0 +1,100 @@
+! include $(ABAL)/common/common.def
+! include $(ABAL)/common/editor.def
+! include $(ABAL)/common/libaccess.def
+! include $(ABAL)/common/ixmisc.def 
+! include $(ABAL)/common/repmisc.def 
+! include $(ABAL)/common/dirmisc.def 
+! include $(ABAL)/common/misc.def 
+
+
+C    = .c
+H    = .h
+O    = .o
+OBJ  = .o
+CC      = $(GCC) -c -g $(GDB)
+LD      = $(GCC) -o 
+
+INCLUSION = -I$(ABAL)/src/pixel
+
+COMPILE   = $(CC) $(HOST) $(INCLUSION) -DP3D32 
+
+SP01 = $(ABAL)/src/sing/
+
+DIRSEEK = $(ABAL)/exa/exllfind.o
+PIPO =  2>> pipo
+
+
+
+.c.mf:
+	genmake -m$@ $(INCLUSION) -x $?
+
+# --------------------------------------
+#          Generate Make files 
+# --------------------------------------
+singmain.mf: $(SP01)sing.c     $(SP01)singdesk.c $(SP01)vexit.c
+vabout.mf:   $(SP01)vabout.c   $(SP01)vintro.c   $(SP01)verror.c 
+vconfig.mf:  $(SP01)vrecrep.c  $(SP01)vparam.c $(SP01)vrefer.c
+singfile.mf: $(SP01)singfile.c $(SP01)vfile.c    
+singfont.mf: $(SP01)singfont.c $(SP01)vfload.c   $(SP01)vfsave.c   $(SP01)vimport.c
+singform.mf: $(SP01)singform.c $(SP01)vload.c    $(SP01)vsave.c    $(SP01)vmerge.c
+vtimport.mf: $(SP01)vtimport.c $(SP01)vtexport.c $(SP01)vfselect.c $(SP01)veditor.c $(SP01)vaed.c $(SP01)vedcmd.c
+vwidget.mf:  $(SP01)vwidget.c  $(SP01)vform.c    $(SP01)vpage.c 
+singcam.mf:  $(SP01)singcam.c  $(SP01)vcube.c    $(SP01)vcamera.c  $(SP01)ctest.c
+vmsave.mf:   $(SP01)vmsave.c   $(SP01)vmload.c   $(SP01)vmprod.c   $(SP01)vexadb.c
+singexpo.mf: $(SP01)singexpo.c $(SP01)vhtml.c    $(SP01)vheader.c   
+singabal.mf: $(SP01)singabal.c $(SP01)abalmenu.c $(SP01)vaprod.c   $(SP01)vtrad.c   $(SP01)vlink.c $(SP01)vdebug.c
+singplus.mf: $(SP01)singplus.c $(SP01)vcprod.c   $(SP01)vpragma.c  $(SP01)vsearch.c $(SP01)vreplace.c
+singclas.mf: $(SP01)singclas.c $(SP01)vclass.c   $(SP01)vconst.c   $(SP01)vdata.c   $(SP01)vmethod.c 
+viload.mf: $(SP01)viload.c     $(SP01)visave.c   $(SP01)vimage.c $(SP01)vfextr.c
+vmenu.mf: $(SP01)vmenu.c       $(SP01)voption.c
+! make
+
+# --------------------------------------
+# Inclusion of Makefile to Build Objects
+# --------------------------------------
+
+.c.o:
+	-$(COMPILE) $* 1>pipo1 2>pipo2
+	cat pipo1 pipo2 > pipo
+	agr -apipo
+
+! include singmain.mf
+! include vabout.mf
+! include vconfig.mf
+! include singfile.mf
+! include singfont.mf
+! include singform.mf
+! include vtimport.mf
+! include vwidget.mf
+! include singcam.mf
+! include vmsave.mf
+! include singexpo.mf
+! include singabal.mf
+! include singplus.mf
+! include singclas.mf
+! include viload.mf
+! include vmenu.mf
+! make
+! include threed.mf
+
+# --------------------------------------
+# Link phase
+# --------------------------------------
+SINGOBJ = sing.o singdesk.o vabout.o verror.o vintro.o vrecrep.o vrefer.o
+VIMAGE  = viload.o visave.o vimage.o vfselect.o vtexport.o vtimport.o vfextr.o
+VFONT   = singfont.o vfload.o vfsave.o vimport.o $(DIRSEEK) $(FNPARSER)
+VMENU   = vmenu.o voption.o vparam.o 
+VFILE   = singfile.o vfile.o
+VPROD   = singexpo.o singabal.o vcprod.o vaprod.o vtrad.o vlink.o vdebug.o vaed.o vhtml.o singplus.o abalmenu.o 
+VFORM   = singform.o vload.o vsave.o veditor.o vwidget.o vmerge.o vform.o vpage.o vsearch.o vreplace.o
+VMODEL  = singcam.o vcube.o vcamera.o vmprod.o vmsave.o threed.o vmload.o vexit.o vedcmd.o
+VCLASS  = singclas.o vclass.o vconst.o vdata.o vmethod.o vheader.o vpragma.o
+VOBJECT = $(VIMAGE) $(VFONT) $(VMENU) $(VPROD) $(VFORM) $(VMODEL) $(VCLASS)
+
+$(ABAL)/bin/sing: $(SINGOBJ) $(VOBJECT) $(PIXILIB) $(LIBACCESS) $(GRAPIL) $(ALLOCATE) $(EDILIB) $(LIBREP)
+	-$(LD) $@ $(SINGOBJ) $(VOBJECT) $(PIXILIB) $(IXCICONR) $(XLIB) $(LIBACCESS) $(GRAPIL) $(ALLOCATE) $(EDILIB) $(LIBREP) 2> pipo2 1> pipo1
+	-cat pipo1 pipo2 > pipo
+	agr -apipo
+	cp $@ $(EXABIN)
+! make
+

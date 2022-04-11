@@ -1,0 +1,18 @@
+# -------------------------------------------------------------------
+# class files for sing form, database and project resource generation
+# -------------------------------------------------------------------
+$(ABAL)/product33a/class/sing/makefile: $(ABAL)/src/class/sing/makefile
+	cp $* $@
+$(ABAL)/product33a/class/sing/sing.as: $(ABAL)/src/class/sing/sing.as
+	cp $* $@
+$(ABAL)/product33a/class/sing/singbase.cls: $(ABAL)/src/class/sing/singbase.cls
+	cp $* $@
+$(ABAL)/product33a/class/sing/singform.cls: $(ABAL)/src/class/sing/singform.cls
+	cp $* $@
+$(ABAL)/product33a/class/sing/singproj.cls: $(ABAL)/src/class/sing/singproj.cls
+	cp $* $@
+! make
+# -----------
+# end of file
+# -----------
+

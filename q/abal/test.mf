@@ -1,0 +1,44 @@
+
+#  definition  
+OBJ = .o
+EXE = .at
+POBJ =  
+PBIN =  
+RABAL = 
+ATR = $(RABAL)otr32 
+ALD = $(RABAL)old32 
+GMAKE = $(RABAL)genmake 
+
+#  outils  
+ATROPT =  -mb -ss 
+SP01 = 
+ 
+GMOPT = 
+MOD00 = 
+
+#  dependances par defaut  
+
+.s.gm:
+	$(GMAKE) $(GMOPT) -b -x -m$@ $* 
+
+.s.at:
+	$(ATR) $(ATROPT) -e$(*R).err -d$@ $* 
+
+.s.o: 
+	$(ATR) $(ATROPT) -e$(*R).err -d$@ $* 
+
+.o.at: 
+	$(ALD) -r$(POBJ) -d$(PBIN) $(MOD00) 
+
+!MAKE 
+
+#  dependances explicites  
+
+$(SP01)$(MOD00).gm: 
+
+!MAKE 
+!INCLUDE $(SP01)$(MOD00).gm 
+!MAKE 
+
+#  Fin  
+

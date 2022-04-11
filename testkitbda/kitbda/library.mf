@@ -1,0 +1,33 @@
+# ---------------------------------------------------------------------
+# Exemple de production de biblotheque dynamique pour abal 3 sous useit
+# ---------------------------------------------------------------------
+HOST = -Dunix -DUNIX -DVERSION666
+OTR  = otr32
+
+library.c: library.def
+	linbda library
+! make
+
+library.o: library.c
+	gcc -c $(HOST) library.c
+! make
+
+interface.o: interface.c
+	gcc -c $(HOST) interface.c
+! make
+
+functions.o: functions.c
+	gcc -c $(HOST) functions.c
+! make
+
+library32.so: library.o interface.o functions.o
+	gcc -shared -o $@ $?
+	cp $@ /lib
+	bdatester32 library
+! make
+
+library.at: library.as
+	$(OTR) -m library.as
+
+! make
+

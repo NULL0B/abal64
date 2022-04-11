@@ -1,0 +1,4 @@
+
+$(POBJ)zgraphic$(OBJ):  $(SP01)zgraphic.c /home/abal64/include/bdas/wdef.h /home/abal64/include/bdas/bda.h /home/abal64/include/bdas/oldbda.h /home/abal64/include/bdas/pubsbda.h /home/abal64/include/bdas/pubwbda.h $(SP01)zext.h $(SP01)zint.h $(SP01)zintctx.h $(SP01)jimage.h $(SP01)jstdpsu.h '
+$(SP01)jguipix.h $(SP01)ztrace.h /home/abal64/include/trace.h $(SP01)zglobal.h $(SP01)zglobctx.h $(SP01)zsys.h $(SP01)ztools.h $(SP01)zgraphic.h $(SP01)vthobbmp.h $(SP01)vthologi.h $(SP01)jguimou.h $(SP01)zgraglob.c $(SP01)zgraimg.c $(SP01)zgradraw.c
+

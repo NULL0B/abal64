@@ -1,0 +1,47 @@
+
+OTR   = otr64
+otr   = $(EXABIN)/$(OTR)
+OTR   = $(ABAL)/bin/otr64
+
+POBJ  =
+OBJ   = .o
+
+SP01  = $(ABAL)/src/otr/
+PATHMF = $(ABAL)/otr64/mf/
+SP02 = $(ABAL)/src/cico/
+SP03 = $(ABAL)/include/
+
+.c.o:
+! ifdef AGR
+	-$(GCC) -c $(GDB) -DUNIX -I$(SP01) -I$(SP02) -I$(SP03) $(VABAL) -DUBUNTU20 -Dotr64 -Dotr32 $* $(PIPO)
+	cat pipo1 pipo2 > pipo
+	$(AGR) -w -apipo
+! else
+	$(GCC) -c $(GDB) -DUNIX -I$(SP01) -I$(SP02) -I$(SP03) $(VABAL) -DUBUNTU20 -Dotr64 -Dotr32 $* 
+
+! endif
+
+! include $(PATHMF)atr1.mf
+! include $(PATHMF)atr2.mf
+! include $(PATHMF)atr3.mf
+! include $(PATHMF)atr4.mf
+! include $(PATHMF)atr5.mf
+! include $(PATHMF)atr6.mf
+! include $(PATHMF)atr7.mf
+! include $(PATHMF)atr8.mf
+! include $(PATHMF)atr9.mf
+! include $(PATHMF)atra.mf
+! include $(PATHMF)atrb.mf
+! include $(PATHMF)atrc.mf
+! include $(PATHMF)atrd.mf
+! include $(PATHMF)atre.mf
+! include $(PATHMF)atrf.mf
+# include $(PATHMF)atrn.mf
+# include $(PATHMF)atrx.mf
+! make
+! include $(PATHMF)atc5.mf
+! make
+! include $(PATHMF)otr.mf
+! make
+
+

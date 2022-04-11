@@ -1,0 +1,30 @@
+/* ------------------------------------ */
+/* Default Visual Library  Frame Styles */
+/* ------------------------------------ */
+
+switchframe	{ border-style: inset; 	}
+
+switchlabel	{
+		class: proportional;
+		margin: 1px;
+		border-style: inset;
+		padding: 1px;
+		text-align: center;
+		text-colour: ihm(11);
+		background-colour: ihm(12);
+		}
+
+switchtrue	{
+		class: switchlabel;
+		text-colour: ihm(12);
+		background-colour: ihm(11);
+		}
+switchfocus	{
+		content: none;
+		border-style: double;
+		}
+
+/* ----------- */
+/* End of File */
+/* ----------- */
+

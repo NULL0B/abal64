@@ -1,0 +1,45 @@
+# ---------------------------------------------------------------------
+# this makefile is included by class.mf
+# ---------------------------------------------------------------------
+# generated makefile : files.mf 
+# ------------------------------------
+
+$(TP01)files/errors.cls: $(SP01)files/errors.cls
+	cp $* $@
+$(TP01)files/faci.cls: $(SP01)files/faci.cls
+	cp $* $@
+$(TP01)files/facdef.cls: $(SP01)files/facdef.cls
+	cp $* $@
+$(TP01)files/facfile.cls: $(SP01)files/facfile.cls
+	cp $* $@
+$(TP01)files/facstream.cls: $(SP01)files/facstream.cls
+	cp $* $@
+$(TP01)files/fstream.cls: $(SP01)files/fstream.cls
+	cp $* $@
+$(TP01)files/handle.cls: $(SP01)files/handle.cls
+	cp $* $@
+$(TP01)files/mcfile.cls: $(SP01)files/mcfile.cls
+	cp $* $@
+$(TP01)files/sifile.cls: $(SP01)files/sifile.cls
+	cp $* $@
+$(TP01)files/stdfile.cls: $(SP01)files/stdfile.cls
+	cp $* $@
+! make
+
+$(TP01)files/files.as: $(SP01)files/files32b.as
+	cp $* $@
+$(TP01)files/makefile: $(SP01)files/makefile
+	cp $* $@
+! make
+
+# -----------
+# end of file
+# -----------
+
+
+
+
+
+
+
+

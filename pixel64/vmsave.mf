@@ -1,0 +1,6 @@
+
+$(POBJ)vmsave$(OBJ):  $(SP01)vmsave.c $(SP01)visual.h /home/Dev/abal32/src/pixel/allocate.h /home/Dev/abal32/src/pixel/guimouse.h $(SP01)vframe.h $(SP01)vwidget.h
+$(POBJ)vmload$(OBJ):  $(SP01)vmload.c $(SP01)visual.h /home/Dev/abal32/src/pixel/allocate.h /home/Dev/abal32/src/pixel/guimouse.h $(SP01)vframe.h $(SP01)vwidget.h
+$(POBJ)vmprod$(OBJ):  $(SP01)vmprod.c $(SP01)visual.h /home/Dev/abal32/src/pixel/allocate.h /home/Dev/abal32/src/pixel/guimouse.h $(SP01)vframe.h $(SP01)vwidget.h
+$(POBJ)vexadb$(OBJ):  $(SP01)vexadb.c $(SP01)visual.h /home/Dev/abal32/src/pixel/allocate.h /home/Dev/abal32/src/pixel/guimouse.h $(SP01)vframe.h $(SP01)vwidget.h
+

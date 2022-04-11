@@ -1,0 +1,24 @@
+
+/*
+	Desc :	clClient.hg
+	Proj :	June
+	Copyright (c) 1998 Prologue Software
+
+		Check Licence - Client side
+		
+		Client Request
+
+	BEWARE : THIS FILE IS GENERATED - DO NOT MODIFY MANUALLY !
+
+	Generated on:  -  26/01/98 -  14:26 - by GenLic
+
+*/
+
+extern clRequestPtr Request_ModuleWABAL;
+extern clRequestPtr Request_ModuleWATR;
+extern clRequestPtr Request_ModuleWAMAKE;
+extern clRequestPtr Request_ModuleWEXADB;
+extern clRequestPtr Request_ModulePAINTER;
+extern clRequestPtr Request_ModuleLIBRARY;
+extern clRequestPtr Request_ModuleWOOKEE;
+

@@ -1,0 +1,198 @@
+# generated makefile : nv.mf 
+# ------------------------------------
+IP01 = $(ABAL)/include/
+SP01 = $(ABAL)/src/nv/
+INCLUDE = -I$(IP01)
+
+.cpp.o:
+	-gcc -c -DUNX -DUNIX -Dunix $(INCLUDE) $* 1> pipo1 2> pipo2
+	-cat pipo1 pipo2 > pipo
+	agr -apipo
+.c.o:
+	-gcc -c -DUNX -DUNIX -Dunix $(INCLUDE) $* 1> pipo1 2> pipo2
+	-cat pipo1 pipo2 > pipo
+	agr -apipo
+
+config.o: $(SP01)config.cpp
+bdactrl.o: $(SP01)bdactrl.cpp
+scroll.o: $(SP01)scroll.cpp
+parser.o: $(SP01)parser.cpp
+das.o: $(SP01)das.cpp
+syntax.o: $(SP01)syntax.cpp
+vga.o: $(SP01)vga.cpp
+url.o: $(SP01)url.cpp
+css1.o: $(SP01)css1.cpp
+http.o: $(SP01)http.cpp
+ftp.o: $(SP01)ftp.cpp
+html4.o: $(SP01)html4.cpp
+contain.o: $(SP01)contain.cpp
+
+scripts.o: $(SP01)scripts.cpp
+basic.o: $(SP01)basic.cpp
+complex.o: $(SP01)complex.cpp
+
+cachtoke.o: $(SP01)cachtoke.cpp
+cacheman.o: $(SP01)cacheman.cpp
+
+document.o: $(SP01)document.cpp
+browser.o: $(SP01)browser.cpp
+navigate.o: $(SP01)navigate.cpp
+
+language.o: $(SP01)language.c
+string.o: $(SP01)string.cpp
+active.o: $(SP01)active.cpp
+
+output.o: $(SP01)output.cpp
+fprinter.o: $(SP01)fprinter.cpp
+pprinter.o: $(SP01)pprinter.cpp
+printer.o: $(SP01)printer.cpp
+
+align.o: $(SP01)align.cpp
+entity.o: $(SP01)entity.cpp
+jpeg.o: $(SP01)jpeg.cpp
+cico.o: $(SP01)cico.cpp
+
+! make
+WEB    = http.o url.o entity.o vga.o das.o parser.o ftp.o
+TYPES  = basic.o complex.o css1.o string.o html4.o align.o active.o scripts.o syntax.o contain.o 
+CACHE  = cacheman.o cachtoke.o scroll.o bdactrl.o config.o
+OUTPUT = output.o printer.o pprinter.o fprinter.o cico.o 
+JPEG   = jpeg.o
+
+$(ABAL)/bin/nv: navigate.o browser.o document.o language.o $(CACHE) $(WEB) $(TYPES) $(OUTPUT) $(JPEG) 
+	-gcc -g -ggdb -o $@ $? 1> pipo1 2> pipo2
+	-cat pipo1 pipo2 > pipo
+	agr -apipo
+
+
+
+! error ok
+
+abalscri.o: $(SP01)abalscri.cpp
+adi.o: $(SP01)adi.cpp
+anchor.o: $(SP01)anchor.cpp
+animate.o: $(SP01)animate.cpp
+ansi.o: $(SP01)ansi.cpp
+applet.o: $(SP01)applet.cpp
+area.o: $(SP01)area.cpp
+arrow.o: $(SP01)arrow.cpp
+ask.o: $(SP01)ask.cpp
+attribut.o: $(SP01)attribut.cpp
+backgr.o: $(SP01)backgr.cpp
+base.o: $(SP01)base.cpp
+based.o: $(SP01)based.cpp
+bmp.o: $(SP01)bmp.cpp
+body.o: $(SP01)body.cpp
+border.o: $(SP01)border.cpp
+buffer.o: $(SP01)buffer.cpp
+cachtest.o: $(SP01)cachtest.cpp
+cachtoke.o: $(SP01)cachtoke.cpp
+cell.o: $(SP01)cell.cpp
+celwidth.o: $(SP01)celwidth.cpp
+colour.o: $(SP01)colour.cpp
+column.o: $(SP01)column.cpp
+context.o: $(SP01)context.cpp
+dascfg.o: $(SP01)dascfg.cpp
+dasman.o: $(SP01)dasman.cpp
+dexa.o: $(SP01)dexa.cpp
+division.o: $(SP01)division.cpp
+download.o: $(SP01)download.cpp
+element.o: $(SP01)element.cpp
+feedwrap.o: $(SP01)feedwrap.cpp
+field.o: $(SP01)field.cpp
+files.o: $(SP01)files.cpp
+filter.o: $(SP01)filter.cpp
+font.o: $(SP01)font.cpp
+fonting.o: $(SP01)fonting.cpp
+form.o: $(SP01)form.cpp
+frame.o: $(SP01)frame.cpp
+frameset.o: $(SP01)frameset.cpp
+ftpurl.o: $(SP01)ftpurl.cpp
+fuck.o: $(SP01)fuck.cpp
+garbage.o: $(SP01)garbage.cpp
+gif.o: $(SP01)gif.cpp
+gifload.o: $(SP01)gifload.cpp
+glo.o: $(SP01)glo.cpp
+gprinter.o: $(SP01)gprinter.cpp
+head.o: $(SP01)head.cpp
+heading.o: $(SP01)heading.cpp
+hostfile.o: $(SP01)hostfile.cpp
+httpmsg.o: $(SP01)httpmsg.cpp
+image.o: $(SP01)image.cpp
+initcfg.o: $(SP01)initcfg.cpp
+input.o: $(SP01)input.cpp
+internet.o: $(SP01)internet.cpp
+isam.o: $(SP01)isam.cpp
+item.o: $(SP01)item.cpp
+javascri.o: $(SP01)javascri.cpp
+jscript.o: $(SP01)jscript.cpp
+konnekt.o: $(SP01)konnekt.cpp
+layalloc.o: $(SP01)layalloc.cpp
+laybmp.o: $(SP01)laybmp.cpp
+laybody.o: $(SP01)laybody.cpp
+laybord.o: $(SP01)laybord.cpp
+laybyte.o: $(SP01)laybyte.cpp
+laybytes.o: $(SP01)laybytes.cpp
+laycolor.o: $(SP01)laycolor.cpp
+layfont.o: $(SP01)layfont.cpp
+layfset.o: $(SP01)layfset.cpp
+layimage.o: $(SP01)layimage.cpp
+layinput.o: $(SP01)layinput.cpp
+layitem.o: $(SP01)layitem.cpp
+layliber.o: $(SP01)layliber.cpp
+layline.o: $(SP01)layline.cpp
+laylink.o: $(SP01)laylink.cpp
+layman.o: $(SP01)layman.cpp
+layout.o: $(SP01)layout.cpp
+laypix.o: $(SP01)laypix.cpp
+layprn.o: $(SP01)layprn.cpp
+laytable.o: $(SP01)laytable.cpp
+laytext.o: $(SP01)laytext.cpp
+layzone.o: $(SP01)layzone.cpp
+link.o: $(SP01)link.cpp
+list.o: $(SP01)list.cpp
+map.o: $(SP01)map.cpp
+meta.o: $(SP01)meta.cpp
+mime.o: $(SP01)mime.cpp
+navig.o: $(SP01)navig.cpp
+nv.o: $(SP01)nv.cpp
+nve.o: $(SP01)nve.cpp
+nvf.o: $(SP01)nvf.cpp
+nvvm.o: $(SP01)nvvm.cpp
+object.o: $(SP01)object.cpp
+option.o: $(SP01)option.cpp
+options.o: $(SP01)options.cpp
+palette.o: $(SP01)palette.cpp
+param.o: $(SP01)param.cpp
+proxy.o: $(SP01)proxy.cpp
+quote.o: $(SP01)quote.cpp
+redirect.o: $(SP01)redirect.cpp
+rexa.o: $(SP01)rexa.cpp
+roman.o: $(SP01)roman.cpp
+row.o: $(SP01)row.cpp
+rule.o: $(SP01)rule.cpp
+script.o: $(SP01)script.cpp
+section.o: $(SP01)section.cpp
+select.o: $(SP01)select.cpp
+sheet.o: $(SP01)sheet.cpp
+skroll.o: $(SP01)skroll.cpp
+ssi.o: $(SP01)ssi.cpp
+stats.o: $(SP01)stats.cpp
+stdscri.o: $(SP01)stdscri.cpp
+streams.o: $(SP01)streams.cpp
+style.o: $(SP01)style.cpp
+table.o: $(SP01)table.cpp
+textarea.o: $(SP01)textarea.cpp
+text.o: $(SP01)text.cpp
+title.o: $(SP01)title.cpp
+tokens.o: $(SP01)tokens.cpp
+trace.o: $(SP01)trace.cpp
+twinhtml.o: $(SP01)twinhtml.cpp
+types.o: $(SP01)types.cpp
+version.o: $(SP01)version.cpp
+wait.o: $(SP01)wait.cpp
+waitkey.o: $(SP01)waitkey.cpp
+www.o: $(SP01)www.cpp
+xlayzone.o: $(SP01)xlayzone.cpp
+xvga.o: $(SP01)xvga.cpp
+zone.o: $(SP01)zone.cpp

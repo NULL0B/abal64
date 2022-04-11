@@ -1,0 +1,5 @@
+#path d:\msdev\include
+#path d:\msdev\mfc\include
+#path c:\refagr\global
+#include "tr.c"
+

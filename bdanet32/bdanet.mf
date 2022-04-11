@@ -1,0 +1,121 @@
+! include $(ABAL)/common/host.def
+! include $(ABAL)/common/agr.def
+! include $(ABAL)/common/common.def
+! include $(ABAL)/common/linbda.def
+! include $(ABAL)/common/libssl.def
+
+$1 = true
+
+PROTLIB = $2
+
+! ifdef client
+option = client
+model = .client
+func = clientfunc
+! else
+! ifdef demo
+option = demo
+model = .demo
+func  = demofunc
+! else
+! ifdef mono
+option = mono
+model = .mono
+func  = monofunc
+! else
+option = multi
+model = .multi
+func  = httpfunc
+! endif
+! endif
+! endif
+
+SP01 = $(ABAL)/src/bdanet/
+SP02 = $(ABAL)/include/bdas/ $(INCSSL)
+SP03 = $(ABAL)/src/sing/
+
+VERSION666 = -g -DVERSION666 -DUSEIT $(SYSSSL)
+
+$(ABAL)/lib/bdanet.a$(model): connect.o url.o global.o files.o httpabal.o $(func).o http.o
+	ar r $@ $?
+
+$(ABAL)/lib/bdanet32.so$(model): connect.o url.o global.o files.o httpabal.o $(func).o http.o bdanet.o 
+	-$(GCC) $(VERSION666) $(LD_SHARED) -o $@ connect.o url.o global.o files.o httpabal.o $(func).o http.o bdanet.o $(LIBSSL) $(PROTLIB)
+! ifdef BDATESTER
+	cp $@ $(EXALIB)/checkbdanet32.so
+	$(BDATESTER32) checkbdanet
+	rm $(EXALIB)/checkbdanet32.so
+! endif
+	$(LIBREF) $@ $(EXALIB)/bdanet32.so
+
+$(SP01)bdanet.c: $(SP01)bdanet.def $(LINBDA)
+	$(LINBDA) -bBd@Net32.$(MASTER3)$(model) $(SP01)bdanet
+
+bdanet.o: $(SP01)bdanet.c
+	-$(GCC) -c $(CC_SHARED) $(VERSION666)  -I$(SP02) $(HOST) $(SYSSSL)  -Dunix $* $(PIPO)
+! ifdef AGR
+	cat pipo1 pipo2 > pipo
+	$(AGR) -apipo
+! endif
+
+http.o: $(SP01)http.c
+	-$(GCC) -c $(CC_SHARED) $(VERSION666)  -I$(SP02) $(HOST) $(SYSSSL)  -Dunix  $* $(PIPO) 
+! ifdef AGR
+	cat pipo1 pipo2 > pipo
+	$(AGR) -apipo
+! endif
+
+
+httpabal.o: $(SP01)httpabal.c
+	-$(GCC) -c $(CC_SHARED) $(VERSION666)  -I$(SP02) -I$(SP03) $(HOST) $(SYSSSL)  -Dunix  $* $(PIPO) 
+! ifdef AGR
+	cat pipo1 pipo2 > pipo
+	$(AGR) -apipo
+! endif
+
+$(func).o: $(SP01)$(func).c
+	-$(GCC) -c $(CC_SHARED) $(VERSION666)  -I$(SP02) $(HOST) $(SYSSSL)  -Dunix  $* $(PIPO) 
+! ifdef AGR
+	cat pipo1 pipo2 > pipo
+	$(AGR) -apipo
+! endif
+
+connect.o: $(SP01)connect.c
+	-$(GCC) -c $(CC_SHARED) $(VERSION666)  -I$(SP02) $(HOST) $(SYSSSL)  -Dunix  $* $(PIPO) 
+! ifdef AGR
+	cat pipo1 pipo2 > pipo
+	$(AGR) -apipo
+! endif
+
+url.o: $(SP01)url.c
+	-$(GCC) -c $(CC_SHARED) $(VERSION666)  -I$(SP02) $(HOST) $(SYSSSL)  -Dunix  $* $(PIPO) 
+! ifdef AGR
+	cat pipo1 pipo2 > pipo
+	$(AGR) -apipo
+! endif
+
+global.o: $(SP01)global.c
+	-$(GCC) -c $(CC_SHARED) $(VERSION666)  -I$(SP02) $(HOST) $(SYSSSL)  -Dunix  $* $(PIPO) 
+! ifdef AGR
+	cat pipo1 pipo2 > pipo
+	$(AGR) -apipo
+! endif
+
+files.o: $(SP01)files.c
+	-$(GCC) -c $(CC_SHARED) $(VERSION666)  -I$(SP02) $(HOST) $(SYSSSL)  -Dunix  $* $(PIPO) 
+! ifdef AGR
+	cat pipo1 pipo2 > pipo
+	$(AGR) -apipo
+! endif
+
+! make
+
+$(ABAL)/bin/bdanetadm$(model): $(SP01)bdanetadm.c
+	-$(GCC) -o $@ $(VERSION666) -D$(option) -I$(SP02) $(HOST) $(SYSSSL)  -Dunix $* $(PIPO)
+! ifdef AGR
+	cat pipo1 pipo2 > pipo
+	$(AGR) -apipo
+! endif
+
+! make
+

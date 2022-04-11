@@ -1,0 +1,247 @@
+# Sing Tools Abal 3.2a
+# --------------------
+TOOLTGT = $(ABAL)/product33a/tools/
+DATATGT = $(ABAL)/product33a/data/
+
+$(DATATGT)insee.csv: $(ABAL)/src/data/insee.csv
+	cp $* $@
+$(TOOLTGT)boitemess1.xml: $(ABAL)/src/tools32b/boitemess1.xml
+	cp $* $@
+$(TOOLTGT)boitemess2.xml: $(ABAL)/src/tools32b/boitemess2.xml
+	cp $* $@
+$(TOOLTGT)boitemess3.xml: $(ABAL)/src/tools32b/boitemess3.xml
+	cp $* $@
+$(TOOLTGT)statusbar.xml: $(ABAL)/src/tools32b/statusbar.xml
+	cp $* $@
+$(TOOLTGT)tools.xml: $(ABAL)/src/tools32b/tools.xml
+	cp $* $@
+$(TOOLTGT)tooldata.xml: $(ABAL)/src/tools32b/tooldata.xml
+	cp $* $@
+$(TOOLTGT)tools.css: $(ABAL)/src/tools32b/tools.css
+	cp $* $@
+$(TOOLTGT)bluetools.css: $(ABAL)/src/tools32b/bluetools.css
+	cp $* $@
+$(TOOLTGT)blueframe.css: $(ABAL)/src/tools32b/blueframe.css
+	cp $* $@
+$(TOOLTGT)greyframe.css: $(ABAL)/src/tools32b/greyframe.css
+	cp $* $@
+$(TOOLTGT)menus.css: $(ABAL)/src/tools32b/menus.css
+	cp $* $@
+$(TOOLTGT)calculator.xml: $(ABAL)/src/tools32b/calculator.xml
+	cp $* $@
+$(TOOLTGT)calendar.xml: $(ABAL)/src/tools32b/calendar.xml
+	cp $* $@
+$(TOOLTGT)copyfile.xml: $(ABAL)/src/tools32b/copyfile.xml
+	cp $* $@
+$(TOOLTGT)date.xml: $(ABAL)/src/tools32b/date.xml
+	cp $* $@
+$(TOOLTGT)datum.xml: $(ABAL)/src/tools32b/datum.xml
+	cp $* $@
+$(TOOLTGT)delfile.xml: $(ABAL)/src/tools32b/delfile.xml
+	cp $* $@
+$(TOOLTGT)fichier.xml: $(ABAL)/src/tools32b/fichier.xml
+	cp $* $@
+$(TOOLTGT)filefinder.xml: $(ABAL)/src/tools32b/filefinder.xml
+	cp $* $@
+$(TOOLTGT)fileinfo.xml: $(ABAL)/src/tools32b/fileinfo.xml
+	cp $* $@
+$(TOOLTGT)filemenu.xml: $(ABAL)/src/tools32b/filemenu.xml
+	cp $* $@
+$(TOOLTGT)money.xml: $(ABAL)/src/tools32b/money.xml
+	cp $* $@
+$(TOOLTGT)montant.xml: $(ABAL)/src/tools32b/montant.xml
+	cp $* $@
+$(TOOLTGT)program.xml: $(ABAL)/src/tools32b/program.xml
+	cp $* $@
+$(TOOLTGT)menutest.xml: $(ABAL)/src/tools32b/menutest.xml
+	cp $* $@
+$(TOOLTGT)renfile.xml: $(ABAL)/src/tools32b/renfile.xml
+	cp $* $@
+$(TOOLTGT)toolman.xml: $(ABAL)/src/tools32b/toolman.xml
+	cp $* $@
+$(TOOLTGT)villecp.xml: $(ABAL)/src/tools32b/villecp.xml
+	cp $* $@
+$(TOOLTGT)insee.xml: $(ABAL)/src/tools32b/insee.xml
+	cp $* $@
+$(TOOLTGT)directory.xml: $(ABAL)/src/tools32b/directory.xml
+	cp $* $@
+$(TOOLTGT)telephone.xml: $(ABAL)/src/tools32b/telephone.xml
+	cp $* $@
+$(TOOLTGT)tierces.xml: $(ABAL)/src/tools32b/tierces.xml
+	cp $* $@
+$(TOOLTGT)toolbase.xml: $(ABAL)/src/tools32b/toolbase.xml
+	cp $* $@
+$(TOOLTGT)palette.xml: $(ABAL)/src/tools32b/palette.xml
+	cp $* $@
+$(TOOLTGT)character.xml: $(ABAL)/src/tools32b/character.xml
+	cp $* $@
+
+$(TOOLTGT)hmenu.xml: $(ABAL)/src/tools32b/hmenu.xml
+	cp $* $@
+$(TOOLTGT)toolbar.xml: $(ABAL)/src/tools32b/toolbar.xml
+	cp $* $@
+$(TOOLTGT)vmenu.xml: $(ABAL)/src/tools32b/vmenu.xml
+	cp $* $@
+$(TOOLTGT)pincode.xml: $(ABAL)/src/tools32b/pincode.xml
+	cp $* $@
+$(TOOLTGT)hexcode.xml: $(ABAL)/src/tools32b/hexcode.xml
+	cp $* $@
+$(TOOLTGT)alphacode.xml: $(ABAL)/src/tools32b/alphacode.xml
+	cp $* $@
+$(TOOLTGT)alphanum.xml: $(ABAL)/src/tools32b/alphanum.xml
+	cp $* $@
+$(TOOLTGT)keyboard.xml: $(ABAL)/src/tools32b/keyboard.xml
+	cp $* $@
+$(TOOLTGT)clavier.xml: $(ABAL)/src/tools32b/clavier.xml
+	cp $* $@
+$(TOOLTGT)playwave.xml: $(ABAL)/src/tools32b/playwave.xml
+	cp $* $@
+
+$(TOOLTGT)printout.xml: $(ABAL)/src/tools32b/printout.xml
+	cp $* $@
+$(TOOLTGT)hardcopy.xml: $(ABAL)/src/tools32b/hardcopy.xml
+	cp $* $@
+$(TOOLTGT)previewer.xml: $(ABAL)/src/tools32b/previewer.xml
+	cp $* $@
+$(TOOLTGT)editor.xml: $(ABAL)/src/tools32b/editor.xml
+	cp $* $@
+
+! make
+$(TOOLTGT)editor.png: $(ABAL)/src/tools32b/editor.png
+	cp $* $@
+$(TOOLTGT)boitemess1.png: $(ABAL)/src/tools32b/boitemess1.png
+	cp $* $@
+$(TOOLTGT)boitemess2.png: $(ABAL)/src/tools32b/boitemess2.png
+	cp $* $@
+$(TOOLTGT)boitemess3.png: $(ABAL)/src/tools32b/boitemess3.png
+	cp $* $@
+$(TOOLTGT)statusbar.png: $(ABAL)/src/tools32b/statusbar.png
+	cp $* $@
+$(TOOLTGT)calculator.png: $(ABAL)/src/tools32b/calculator.png
+	cp $* $@
+$(TOOLTGT)calendar.png: $(ABAL)/src/tools32b/calendar.png
+	cp $* $@
+$(TOOLTGT)copyfile.png: $(ABAL)/src/tools32b/copyfile.png
+	cp $* $@
+$(TOOLTGT)date.png: $(ABAL)/src/tools32b/date.png
+	cp $* $@
+$(TOOLTGT)datum.png: $(ABAL)/src/tools32b/datum.png
+	cp $* $@
+$(TOOLTGT)delfile.png: $(ABAL)/src/tools32b/delfile.png
+	cp $* $@
+$(TOOLTGT)fichier.png: $(ABAL)/src/tools32b/fichier.png
+	cp $* $@
+$(TOOLTGT)filefinder.png: $(ABAL)/src/tools32b/filefinder.png
+	cp $* $@
+$(TOOLTGT)fileinfo.png: $(ABAL)/src/tools32b/fileinfo.png
+	cp $* $@
+$(TOOLTGT)filemenu.png: $(ABAL)/src/tools32b/filemenu.png
+	cp $* $@
+$(TOOLTGT)money.png: $(ABAL)/src/tools32b/money.png
+	cp $* $@
+$(TOOLTGT)montant.png: $(ABAL)/src/tools32b/montant.png
+	cp $* $@
+$(TOOLTGT)program.png: $(ABAL)/src/tools32b/program.png
+	cp $* $@
+$(TOOLTGT)menutest.png: $(ABAL)/src/tools32b/menutest.png
+	cp $* $@
+$(TOOLTGT)renfile.png: $(ABAL)/src/tools32b/renfile.png
+	cp $* $@
+$(TOOLTGT)toolman.png: $(ABAL)/src/tools32b/toolman.png
+	cp $* $@
+$(TOOLTGT)villecp.png: $(ABAL)/src/tools32b/villecp.png
+	cp $* $@
+$(TOOLTGT)insee.png: $(ABAL)/src/tools32b/insee.png
+	cp $* $@
+$(TOOLTGT)directory.png: $(ABAL)/src/tools32b/directory.png
+	cp $* $@
+$(TOOLTGT)telephone.png: $(ABAL)/src/tools32b/telephone.png
+	cp $* $@
+$(TOOLTGT)tierces.png: $(ABAL)/src/tools32b/tierces.png
+	cp $* $@
+$(TOOLTGT)palette.png: $(ABAL)/src/tools32b/palette.png
+	cp $* $@
+$(TOOLTGT)character.png: $(ABAL)/src/tools32b/character.png
+	cp $* $@
+$(TOOLTGT)hmenu.png: $(ABAL)/src/tools32b/hmenu.png
+	cp $* $@
+$(TOOLTGT)vmenu.png: $(ABAL)/src/tools32b/vmenu.png
+	cp $* $@
+$(TOOLTGT)toolbar.png: $(ABAL)/src/tools32b/toolbar.png
+	cp $* $@
+$(TOOLTGT)pincode.png: $(ABAL)/src/tools32b/pincode.png
+	cp $* $@
+$(TOOLTGT)alphacode.png: $(ABAL)/src/tools32b/alphacode.png
+	cp $* $@
+$(TOOLTGT)hexcode.png: $(ABAL)/src/tools32b/hexcode.png
+	cp $* $@
+$(TOOLTGT)alphanum.png: $(ABAL)/src/tools32b/alphanum.png
+	cp $* $@
+$(TOOLTGT)keyboard.png: $(ABAL)/src/tools32b/keyboard.png
+	cp $* $@
+$(TOOLTGT)clavier.png: $(ABAL)/src/tools32b/clavier.png
+	cp $* $@
+$(TOOLTGT)tooldata.png: $(ABAL)/src/tools32b/tooldata.png
+	cp $* $@
+$(TOOLTGT)printout.png: $(ABAL)/src/tools32b/printout.png
+	cp $* $@
+$(TOOLTGT)hardcopy.png: $(ABAL)/src/tools32b/hardcopy.png
+	cp $* $@
+$(TOOLTGT)previewer.png: $(ABAL)/src/tools32b/previewer.png
+	cp $* $@
+$(TOOLTGT)style.css: $(ABAL)/src/tools32b/style.css
+	cp $* $@
+$(TOOLTGT)print.css: $(ABAL)/src/tools32b/print.css
+	cp $* $@
+$(TOOLTGT)tools.htm: $(ABAL)/src/tools32b/tools.htm
+	cp $* $@
+
+! make
+
+$(TOOLTGT)alphacode.ext: $(ABAL)/src/tools32b/alphacode.ext
+	cp $* $@
+$(TOOLTGT)delfile.ext: $(ABAL)/src/tools32b/delfile.ext
+	cp $* $@
+$(TOOLTGT)keyboard.ext: $(ABAL)/src/tools32b/keyboard.ext
+	cp $* $@
+$(TOOLTGT)alphanum.ext: $(ABAL)/src/tools32b/alphanum.ext    
+	cp $* $@
+$(TOOLTGT)directory.ext: $(ABAL)/src/tools32b/directory.ext   
+	cp $* $@
+$(TOOLTGT)palette.ext: $(ABAL)/src/tools32b/palette.ext
+	cp $* $@
+$(TOOLTGT)calculator.ext: $(ABAL)/src/tools32b/calculator.ext  
+	cp $* $@
+$(TOOLTGT)filefinder.ext: $(ABAL)/src/tools32b/filefinder.ext  
+	cp $* $@
+$(TOOLTGT)pincode.ext: $(ABAL)/src/tools32b/pincode.ext
+	cp $* $@
+$(TOOLTGT)calendar.ext: $(ABAL)/src/tools32b/calendar.ext    
+	cp $* $@
+$(TOOLTGT)fileinfo.ext: $(ABAL)/src/tools32b/fileinfo.ext    
+	cp $* $@
+$(TOOLTGT)renfile.ext: $(ABAL)/src/tools32b/renfile.ext
+	cp $* $@
+$(TOOLTGT)character.ext: $(ABAL)/src/tools32b/character.ext   
+	cp $* $@
+$(TOOLTGT)filemenu.ext: $(ABAL)/src/tools32b/filemenu.ext    
+	cp $* $@
+$(TOOLTGT)statusbar.ext: $(ABAL)/src/tools32b/statusbar.ext
+	cp $* $@
+$(TOOLTGT)clavier.ext: $(ABAL)/src/tools32b/clavier.ext     
+	cp $* $@
+$(TOOLTGT)hexcode.ext: $(ABAL)/src/tools32b/hexcode.ext     
+	cp $* $@
+$(TOOLTGT)tierces.ext: $(ABAL)/src/tools32b/tierces.ext
+	cp $* $@
+$(TOOLTGT)copyfile.ext: $(ABAL)/src/tools32b/copyfile.ext    
+	cp $* $@
+$(TOOLTGT)insee.ext: $(ABAL)/src/tools32b/insee.ext
+	cp $* $@
+$(TOOLTGT)toolman.ext: $(ABAL)/src/tools32b/toolman.ext
+	cp $* $@
+$(TOOLTGT)previewer.ext: $(ABAL)/src/tools32b/previewer.ext
+	cp $* $@
+! make
+
+

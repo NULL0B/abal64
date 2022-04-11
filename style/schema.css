@@ -1,0 +1,231 @@
+@domain sing;
+
+database_editor_frame	{
+	background-colour: white;
+	border-style: none;
+	background-image: url(singbg.jpg);
+	background-align: tile;
+	content: none;
+	}
+
+database_member_margin {
+	margin: 		1mm;
+	height: 		8mm;
+	}
+
+database_editor_title	{
+	text-font: url(arial1.fmf);
+	text-align: center;
+	text-colour: black;
+	background-image: url(singbg.jpg);
+	background-align: tile;
+	border-style: solid;
+	border-colour: black;
+	height: 8mm;
+	}
+
+database_editor_header	{
+	class:	database_member_margin;
+	height: 10mm;
+	text-font: url(arial1.fmf);
+	text-align: center;
+	text-colour: black;
+	background-colour: yellow;
+	border-style: solid;
+	border-colour: green;
+	}
+
+database_editor_focus	{
+	class: database_editor_header;
+	background-colour: red;
+	text-colour: yellow;
+	border-style: double;
+	}
+
+database_model_tray	{
+	margin-top: 2mm;
+	margin-left: 2mm;
+	border-colour: grey;
+	border-style: shade;
+	border-width: 0px;
+	width: 2mm+;
+	height: 2mm+;
+	}
+
+database_model_frame	{
+	background-colour: white;
+	border-colour: black;
+	border-style: solid;
+	text-font: url(arial1.fmf);
+	text-align: center;
+	border-style: vconcave;
+	border-colour: grey;
+	}
+
+database_model_focus	{
+	background-colour: white;
+	border-colour: blue;
+	border-style: solid;
+	}
+
+database_member_frame	{
+	class:	database_member_margin;
+	text-font: 		url(arial1.fmf);
+	text-align: 		center;
+	text-colour: 		yellow;
+	background-colour: 	green;
+	border-colour: 		black;
+	border-style: 		solid;
+	margin-top: 		0.5mm;
+	margin-bottom: 		0.5mm;
+	}
+
+database_member_focus	{
+	class:	database_member_frame;
+	border-colour: 		red;
+	border-style: 		double;
+	text-colour: 		white;
+	}
+
+database_index_frame	{
+	class: database_member_frame;
+	text-colour: 		yellow;
+	background-colour: 	blue;
+	}
+
+database_index_focus	{
+	class:	database_index_frame;
+	border-colour: 		red;
+	border-style: 		double;
+	text-colour: 		white;
+	}
+
+/* ----------------------------------- */
+/* Database Interfile Relation Tracing */
+/* ----------------------------------- */
+database_relation_source {
+	content: text;
+	text-colour: white;
+	text-align: center;
+	text-font: url(arial1.fmf);
+	background-colour: blue;
+	border-colour: white;
+	border-style: solid;
+	}
+
+database_file_relation {
+	class: database_relation_source;
+	background-image: url(database.png);
+	content: none;
+	border-style: none;
+	background-colour: transparent;
+	background-align: transparent;
+	background-align: makefit;
+	}
+
+database_relation_extern {
+	class: database_file_relation;
+	background-image: url(database.png);
+	}
+
+database_source_file {
+	class: database_file_relation;
+	background-image: url(database.png);
+	}
+
+database_target_file {
+	class: database_file_relation;
+	background-image: url(datafile.png);
+	}
+
+database_relation_source_left	{
+	class:	database_relation_source;
+	}
+database_relation_source_right	{
+	class:	database_relation_source;
+	}
+
+database_relation_target {
+	class: database_relation_source;
+	background-colour: green;
+	}
+
+database_relation_target_left	{
+	class:	database_relation_target;
+	}
+database_relation_target_right	{
+	class:	database_relation_target;
+	}
+
+database_trace_north	{
+	content: none;
+	background-colour: red;
+	border-style: hconvex;
+	width: 1mm;
+	}
+
+database_trace_south	{
+	class: database_trace_north;
+	background-colour: pink;
+	}
+
+database_trace_east	{
+	content: none;
+	background-colour: navy;
+	border-style: vconvex;
+	height: 1mm;
+	}
+
+database_trace_west	{
+	class: database_trace_east;
+	background-colour: blue;
+	}
+
+database_trace_point	{
+	content: none;
+	border-style: vconvex;
+	background-colour: green;
+	width: 1mm;
+	height: 1mm;
+	}
+
+/* -------------------------------------------- */
+/* General Classes : Help Bubbles and Hyperview */
+/* -------------------------------------------- */
+database_help_bubble	{
+	background-colour: white;
+	border-colour: green;
+	text-colour: red;
+	border-style: double;
+	text-align: justify;
+	padding: 2mm;
+	content: text;
+	text-font: url(times2.fmf);
+	}
+
+database_hyperview_tray {
+	border-style:  outset;
+	content: none;
+	}
+
+database_hyperview_frame {
+	border-style:  inset;
+	margin: 1mm;
+	content: none;
+	}
+
+
+database_hyperview_cursor {
+	border-style:  solid;
+	border-colour: black;
+	content: none;
+	}
+
+database_hyperview_zoom {
+	border-style:  vconcave;
+	border-colour: transparent;
+	content: none;
+	}
+
+@domain null;
+

@@ -1,0 +1,444 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd" >
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta name="generator" content="Prologue Sing Html Version 1.0a">
+<meta name="version" content="*PRL@INFO*$621a023">
+<link href="style.css" type="text/css" rel="stylesheet" media="screen">
+<link href="print.css" type="text/css" rel="stylesheet" media="print">
+<title>Sing Version 2.1a</title>
+</head><body>
+<p>
+<a href="http://validator.w3.org/check?uri=referer">
+<img src="valid-html401.png" alt="Valid HTML 4.01 Transitional" height="31" width="88">
+</a></p>
+<div align="center">
+<table class="DOC">
+<tr><th><h1 align="center">
+Sing Version 2.1a</h1>
+<td><div align="center"><img src="sing.png" alt="sing.png">
+</div></table></div><p>
+<a name="accept_production_properties"></a>
+
+<p>
+<div align="center">
+<table class="DS">
+<tr><th><h2 align="center">
+Accept Production Properties</h2>
+
+<tr><td><p><div align="center"><img src="vmprod.jpg" usemap="#accept_production_properties"  alt="vmprod.jpg">
+</div><p>
+<tr><td>
+
+<map name="accept_production_properties">
+<area shape="rect" alt="ModelName" href="#ModelName" coords="20,60,580,76">
+<area shape="rect" alt="TargetFile" href="#TargetFile" coords="130,110,562,126">
+<area shape="rect" alt="TargetType" href="#TargetType" coords="130,140,250,159">
+<area shape="rect" alt="ProdLang" href="#ProdLang" coords="400,140,560,159">
+<area shape="rect" alt="IsDocument" href="#Document" coords="30,200,142,216">
+<area shape="rect" alt="DocumentFile" href="#DocumentFile" coords="230,200,566,216">
+<area shape="rect" alt="Makefile" href="#Makefile" coords="30,230,128,246">
+<area shape="rect" alt="MakefileName" href="#MakefileName" coords="230,230,566,246">
+<area shape="rect" alt="Verbose" href="#Visualise" coords="100,280,212,296">
+<area shape="rect" alt="NoConfirm" href="#Automatic" coords="240,280,380,296">
+<area shape="rect" alt="Build" href="#Force Build" coords="380,280,534,296">
+<area shape="rect" alt="Accept" href="#ok.gif" coords="20,330,76,378">
+<area shape="rect" alt="UseAed" href="#Edit" coords="100,340,212,372">
+<area shape="rect" alt="Html" href="#Html" coords="240,340,352,372">
+<area shape="rect" alt="View" href="#View" coords="380,340,492,372">
+<area shape="rect" alt="Cancel" href="#cancel.gif" coords="520,330,576,378">
+</map>
+This visual form will be presented to allow inspection and modifica
+tion of application model production parameters prior to the activa
+tion of the corresponding production operation.
+<p>
+
+<dl>
+<dt class="type"><a name="ModelName">
+<b>ModelName
+</b></a>
+<dd class="data">The MODELNAME edit field presents the name of the application model
+   for inspection.
+<p>
+<dt class="type"><a name="TargetFile">
+<b>TargetFile
+</b></a>
+<dd class="data">The PRODUCTION filename edit field presents the production target filename for 
+modification or inspection. The value of this edit field will be used as required
+by the project production nature control to provide the name of the file to
+which global production will be sent.
+
+<p>
+<dt class="type"><a name="TargetType">
+<b>TargetType
+</b></a>
+<dd class="data">This control allows selection of the project production nature.
+A value may be taken from the following list :
+<dl>
+<dt>none<dd>no production is performed other than that required for 
+the individual model components.
+<dt>program<dd>the project model is a program source, all text items will
+be generated as inclusions.
+<dt>module<dd>the project model is a module source, all text items will
+be generated as inclusions.
+<dt>overlay<dd>the project model is an overlay source, all text items will
+be generated as inclusions.
+<dt>library<dd>the project model is a class library  source, all text items will
+be generated as inclusions.
+<dt>package<dd>the project model is a product package and will generate a makefile
+describing the various components of the product.
+</dl>
+<p>All application model types other than none will perform the corresponding
+post production operation as required by the specific model type.
+<p>
+<p>
+<dt class="type"><a name="ProdLang">
+<b>ProdLang
+</b></a>
+<dd class="data">This check box allows selection of the production language associated with
+the project production model nature defined by the preceeding select control.
+
+<p>
+<dt class="type"><a name="Document">
+<b><u>D</u>ocument
+</b></a>
+<dd class="data">The DOCUMENT check box when checked allows the production of an HTML
+document containing all Application model Images and documentary
+text from the sub-components. This will be generated to the Document
+Filename target if one has been specified.
+<p>
+<dt class="type"><a name="DocumentFile">
+<b>DocumentFile
+</b></a>
+<dd class="data">This edit field allows a full path and filename to be specified for the
+top level HTML document to be produced in response to the activation
+of document production by the corresponding check box.
+
+<p>
+<dt class="type"><a name="Makefile">
+<b><u>M</u>akefile
+</b></a>
+<dd class="data">When this control has been checked the production mechanism will
+generate a description of the entire project to a standard
+<b>makefile</b>.
+
+<p>
+<dt class="type"><a name="MakefileName">
+<b>MakefileName
+</b></a>
+<dd class="data">This edit field allows the full path and filename of the file
+to which the project make file will be generated if the 
+corresponding check control has been activated.
+
+<p>
+<dt class="type"><a name="Visualise">
+<b>V<u>i</u>sualise
+</b></a>
+<dd class="data">The VERBOSE check box controls the visualisation of the various
+application components as they are presented for effective production.
+<p>
+<dt class="type"><a name="Automatic">
+<b>A<u>u</u>tomatic
+</b></a>
+<dd class="data">The AUTOMATIC check box when checked alleviates the need to validate
+the various stages involved in the production of the target and
+its  documentation. When unchecked each stage will present the
+corresponding visual frame for validation or cancellation.
+<p>
+<dt class="type"><a name="Force Build">
+<b><u>F</u>orce Build
+</b></a>
+<dd class="data">The FORCE BUILD check box when checked performs production of all
+partial products in a systematic manner. When unchecked only the
+entities which are out of date will be produced.
+<p>
+<dt class="type"><a name="ok.gif">
+<img src="ok.gif" alt="ok.gif">
+</a>
+<dd class="data">By pressing the ACCEPT button any changes made to the various
+parameters will take effect.
+<p>
+<dt class="type"><a name="Edit">
+<b><u>E</u>dit
+</b></a>
+<dd class="data">By pressing on the EDIT button the document source will be presented
+for inspection via the Standard Text Editor mechanisms.
+<p>
+<dt class="type"><a name="Html">
+<b><u>H</u>tml
+</b></a>
+<dd class="data">By pressing on this button you will gain access to the Html Document Generation
+parameters for inspection and eventual modification.
+
+<p>
+<dt class="type"><a name="View">
+<b><u>V</u>iew
+</b></a>
+<dd class="data">By pressing on the VIEW button the system navigator will be activated
+allowing the finalised version of the production document to be
+consulted. Under UseIT NETSCAPE will be activated.
+
+<p>
+<dt class="type"><a name="cancel.gif">
+<img src="cancel.gif" alt="cancel.gif">
+</a>
+<dd class="data">By pressing the CANCEL button any modifications performed will be
+discarded.
+<p>
+
+
+</dl>
+
+</td>
+</table></div><p>
+
+<p><div align="center">
+<table class="CRT">
+<tr><th><h3 align="center">
+Copyright (c) 2007 Prologue</h3>
+</table></div><p>
+</body></html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

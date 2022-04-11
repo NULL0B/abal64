@@ -1,0 +1,8 @@
+PRODUCT = /home/Dev/abal32/product/abal3src.tgz
+
+abal32.tgz: makefile             '
+        /home/Dev/abal32/src     '
+	tar -czf $@ /home/Dev/abal32/makefile /home/Dev/abal32/src /home/Dev/abal32/include /home/Dev/abal32/*/makefile* /home/Dev/abal32/*/*.mf /home/Dev/abal32/*/mf/*.mf /home/Dev/abal32/*/*.def 
+! make
+
+

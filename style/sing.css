@@ -1,0 +1,68 @@
+@domain sing;
+
+singfont	{
+	text-font: url(arial2.fmf);
+	text-colour: navy;
+	}
+
+widget_cursor_frame {
+	border-style: double;
+	border-colour: pink;
+	content: none;
+	}
+
+locked_cursor_frame {
+	border-style: double;
+	border-colour: lime;
+	content: none;
+	}
+
+widget_help_frame	{
+	border-style: double;
+	background-colour: ihm(12);
+	}
+
+widget_help_text	{
+	class: singfont;
+	text-align: center;
+	text-colour: blue;
+	}
+
+widget_frame	{
+	class: singfont;
+	margin: 1.5mm;
+	margin-top: 0mm;
+	border-style: solid;
+	text-align: left;
+	text-colour: black;
+	text-decoration: bold;
+	padding: 2px;
+	height: 8mm;
+	}
+
+national_flag	{
+	background-image: url(flag);
+	content: none;
+	width: 5mm;
+	height: 3.5mm;
+	}
+	
+
+@import url(/home/abal3/style/singbar.css);
+@import url(/home/abal3/style/singtree.css);
+@import url(/home/abal3/style/singmenu.css);
+@import url(/home/abal3/style/singwind.css);
+@import url(/home/abal3/style/singfmed.css);
+@import url(/home/abal3/style/schema.css);
+@import url(/home/abal3/style/singsmed.css);
+@import url(/home/abal3/style/singctrl.css);
+
+@domain null;
+
+
+
+
+
+
+
+

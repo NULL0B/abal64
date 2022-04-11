@@ -1,0 +1,26 @@
+
+JTR   = otr16
+otr   = $(EXABIN)/$(OTR)
+JTR   = $(ABAL)/bin/jtr16
+
+POBJ  =
+OBJ   = .o
+
+SP01  = $(ABAL)/src/otr/
+PATHMF = $(ABAL)/otr32/mf/
+
+.c.o:
+	-$(GCC) -c $(GDB) -DUNIX -I$(SP01) -Dotr16 $* 1> pipo1 2> pipo2
+	cat pipo1 pipo2 > pipo
+	agr -apipo
+
+! include $(PATHMF)jtr3.mf
+! include $(PATHMF)jtr6.mf
+! include $(PATHMF)atrj.mf
+! include $(PATHMF)atrk.mf
+! make
+! include $(PATHMF)jtr.mf
+! make
+
+
+

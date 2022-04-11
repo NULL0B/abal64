@@ -1,0 +1,579 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>ABAL++  Object Translator : Pragma Directives </title>
+<META NAME="VERSION" CONTENT="*PRL@INFO*$6:31a001">
+<link href="style.css" rel="STYLESHEET" type="text/css" media="SCREEN">
+</head>
+<body>
+<div align=center>
+<table border=1 width="90%">
+<tr><th><h1 align=center>ABAL 3 : Object Translator </h1>
+<tr><th><h2>Pragma Directives</h2>
+</table>
+<p>
+<table width="90%">
+<tr>
+<th>P 1</th>
+<td><b>Pragma Directive ENHANCED</b>
+<tr><td>
+<td>This pragma directive allows the selective activation or
+inhibition of new enhanced OTR features.
+<p>Syntax :<p>
+
+<table width="90%">
+<tr><td>#PRAGMA ENHANCED<td> AFFECTATION<td> ON / OFF 
+<tr><td>		<td> COMPARE 	<td> ON / OFF 
+<tr><td>		<td> AUTOCONV 	<td> ON / OFF 
+<tr><td>		<td> ASSIGN 	<td>ON / OFF 
+<tr><td>		<td> LABEL 	<td>ON / OFF 
+<tr><td>		<td> LOCAL 	<td>ON / OFF 
+<tr><td>		<td> INLINE 	<td>ON / OFF 
+<tr><td>		<td> INDIRECT 	<td>ON / OFF 
+<tr><td>		<td> OPERATORS 	<td>ON / OFF 
+<tr><td>		<td> PARAMETERS <td>ON / OFF 
+<tr><td>		<td> STRICT	<td>ON / OFF 
+<tr><td>		<td> DEBUG 	<td>ON / OFF 
+</table>
+
+<p><dl>
+<dt>COMPARE <dd><br> Controls the translation of conditional expressions
+for which no conditional operator is provided.
+When this feature is active, then the conditional
+expression will be assumed to be of "NOT EQUAL TO 0"
+type, otherwise a syntax error diagnostic will be
+generated.
+<dt>STRICT<dd><br> allows strict methods to receive objects of different
+class to that described by their parameter type in
+the same was as APLUS. In fact only the basic type
+%#$ etc is taken into consideration during strict
+function selection.
+<dt>PARAMETERS <dd><br> When set to ON parameters must indicate POINTER to be
+declared as pointer type. When set OFF then all
+instance parameters are of implicite pointer type
+compatible with APLUS.
+<dt>AFFECTATION <dd><br> Allows use of 'C' like += -= /= *= %= != affectation
+operator statements.
+<dt>OPERATORS <dd><br> Allows the definition of OPERATOR methods using the
+OPERATOR keyword.
+<dt>LOCAL <dd><br> Allows correct interpretation and instancing of LOCAL
+member expressions as would be expected as oposed to
+the mechanism provided by APLUS.
+<dt>INLINE <dd><br> Allows INLINE methods to return values via EXIT
+statements.
+<dt>INDIRECT <dd><br> Allows usage of VIRTUAL and OVERLOAD keywords and the
+possibillity of ENHANCED overlay structures
+<dt>DEBUG <dd><br> EXADB Version 2.1 allows debug using the original
+source files rather than via the translator list file,
+as was the case in previous versions. The source file
+cross references were of "file offset" type which
+renders the ".DBG" symbolic information file
+unportable between different host systemes. When this
+enhancement is activated then symbolic cross
+references are of "file line" type, and are
+consequently portable and compatible with class method
+text blocks.
+</dl><p>
+<p>
+
+All enhancement features are active by default.
+
+<p><dl><dt>Example :<dd><br>#PRAGMA ENHANCED INDIRECT OFF, LOCAL ON </dl><p>
+<p>
+
+<tr>
+<th>P 2</th>
+
+<td>
+<b>Pragma Directive OPTIMISE</b>
+<tr><td>
+<td>This pragma directive allows individual optimisation features
+to be activated or inhibited as required.
+<p>Syntax :<p>
+
+<table width="90%">
+<tr><td>#PRAGMA OPTIMISE <td> LOAD 	 <td> ON / OFF
+<tr><td>		 <td> STORE 	 <td> ON / OFF
+<tr><td>		 <td> TABLES 	 <td> ON / OFF
+<tr><td>		 <td> INCREMENT  <td> ON / OFF
+<tr><td>		 <td> PARAMETERS <td> ON / OFF
+<tr><td>		 <td> NEWLINE  	 <td> ON / OFF
+<tr><td>		 <td> ALL 	 <td> ON / OFF
+</table>
+
+<p><dl>
+<dt>LOAD <dd><br> Controls the generation of optimised
+variable load instructions.
+<dt>STORE <dd><br> Controls the generation of optimised
+variable store instructions.
+<dt>TABLES <dd><br> Controls the optimisation of variable
+table size, and elimination of un-used
+variable descriptors.
+<dt>INCREMENT <dd><br> Controls the generation of incrementation
+and decrementation instructions in the
+place of addition or subtraction of '1'.
+<dt>PARAMETERS <dd><br>
+<dt>NEWLINE <dd><br> Controls the action of the ABAL++ soft new
+line punctuation '::'.
+The OFF condition implies that the ABAL++
+instructions which follow soft new line
+punctuation will be individual instructions
+for which debug correspondance information
+will be generated.
+The ON condition implies that the ABAL++
+instructions will be considered as part of
+the preceeding new line block.
+</dl><p>
+
+Initially, upon translator startup, all optimisation features are
+active, unless the command line option 'O' is received in
+which case all optimisation features are disabled.
+
+<p><dl><dt>Examples<dd><br>#PRAGMA OPTIMISE TABLES OFF
+<dd>#PRAGMA OPTIMISE NEWLINE ON 
+</dl><p>
+
+<tr>
+<th>P 3</th>
+
+<td>
+<b>Pragma Directive APLUS</b>
+
+
+
+<tr>
+<td>
+
+<td>This pragma directive provides global activation and disactivation
+of translator enhancements and optimisation features.
+
+<p>Syntax :<p>
+
+#PRAGMA APLUS | ON / OFF
+
+
+<p><dl><dt>Example <dd><br>#PRAGMA APLUS ON</dl><p>
+
+This pragma disables all translator enhancement and optimisation
+features and indicates that the object translator must operate in
+APLUS compatible mode.
+
+<p><dl><dt>Example <dd><br>#PRAGMA APLUS OFF</dl><p>
+
+This pragma enables all translator enhancement and optimisation
+features. 
+<p>
+
+<tr><th>P 4</th><td><b>Pragma Directive LOCAL_CONSTANT</b>
+
+<tr><td>
+<td>This pragma directive activates or inhibits the local constant
+management mechanism.
+
+<p>Syntax :
+<p>#PRAGMA LOCAL_CONSTANT ON / OFF
+<p><dl><dt>Example <dd><br>#PRAGMA LOCAL_CONSTANT ON</dl><p>
+When activated all implicite constants encountered in segmental
+and procedural code blocks will be stored in local constant
+tables associated with the parent code block. Only explicite
+constant declarations will be stored in the global constant
+table.
+
+<p><p><dl><dt>Example <dd><br>#PRAGMA LOCAL_CONSTANT OFF</dl><p><p>
+When inhibited all constants, implicite and explicite, will
+be stored in the unique global constant table. 
+
+<tr>
+<th>P 5</th>
+
+<td>
+<b>Pragma Directive SWAP_BUFFERS</b>
+
+
+
+<tr>
+<td>
+
+<td>This pragma allows the swap buffers limit to be specified.
+
+If the limit is encountered then swapping will be activated.
+
+If memory allocation failure is encountered prior to the
+
+specified limit then the mechanism will be auto limited and
+
+swapping will be activated.
+
+
+
+<p>Syntax :<p>
+#PRAGMA SWAP_BUFFERS
+
+<p><p><dl><dt>Example<dd><br>#PRAGMA SWAP_BUFFERS 500
+<dd><br>#PRAGMA SWAP_BUFFERS 50000
+</dl><p><p>
+The swap mechanism manages terminal text blocks only. These
+are used to store method text, construction text, and parameter
+text values.
+<p>
+The generic error message : Allocation Failure will be returned
+only when the swapping mechanism can no longer swap out text to
+provide live memory for structural requirements. If this occurs
+try reducing the swap buffer limit since memory fragmentation
+may impeed allocation of large structural blocks. If this does
+not correct the problem then more memory must be added to the
+computer hardware configuration before the translation may be
+successful. 
+
+
+
+<tr>
+<th>P 6</th>
+
+<td>
+<b>Pragma Directive ANNOUNCE</b>
+
+
+
+<tr>
+<td>
+
+<td>This pragma directive allows a means of providing method
+activation announcement during program execution. This is
+performed by the generation of a PAUSE instruction providing
+the information each time a method is executed.
+
+
+<p>Syntax :<p>
+
+<table width="90%">
+<tr><td>#PRAGMA ANNOUNCE <td> INLINE 	<td> ON / OFF 
+<tr><td>		 <td> ROUNTINE 	<td> ON / OFF 
+<tr><td>		 <td> FUNCTION 	<td> ON / OFF 
+<tr><td>		 <td> OVERLAY 	<td> ON / OFF 
+<tr><td>		 <td> CONSTRUCTOR<td> ON / OFF 
+<tr><td>		 <td> DESTRUCTOR <td> ON / OFF 
+</table>
+
+<p><p><dl><dt>Example<dd><br>#PRAGMA ANNOUNCE FUNCTION ON, INLINE OFF, ROUTINE ON </dl><p><p>
+
+
+<tr>
+<th>P 7</th>
+
+<td>
+<b>Pragma Directive WARNINGS</b>
+
+
+
+<tr>
+<td>
+
+<td>This pragma directive allow fine tuning of the warning diagnostics
+
+mechanism. Warning diagnostic messages must have been activated by
+
+the relevant command line option otherwise this pragma directly
+
+will be simply ignored.
+
+
+
+<p>Syntax :<p>
+
+<table><tr><td>#PRAGMA WARNINGS <td> ALL <td> ON / OFF</table>
+
+
+
+<p><dl><dt>Example<dd><br>
+#PRAGMA WARNINGS OFF 3, 4, 7, 9
+</dl><p>
+Each of the individual warning messages may be activated or
+inhibited as are required. In the default state all warnings
+are active. 
+
+
+
+<tr>
+<th>P 8</th>
+
+<td>
+<b>Pragma Directive EDITOR</b>
+
+
+
+<tr>
+<td>
+
+<td>This pragma directive allows the editor to be used for error tracing
+
+to be specified.
+
+
+
+<p>Syntax :<p>
+
+
+
+#PRAGMA EDITOR
+
+
+
+
+<p><dl><dt>Example<dd><br>
+#PRAGMA EDITOR MD2.AED
+</dl><p>
+
+The default value is simply "aed" and will be loaded by the host
+
+system respecting standard system path information. 
+
+
+
+<tr>
+<th>P 9</th>
+
+<td>
+<b>Pragma Directive IGNORE_CASE</b>
+
+
+
+<tr>
+<td>
+
+<td>This pragma allows the token collection and compare mechanisms
+
+to respect or ignore case (uppercase/lowercase).
+
+
+
+<p>Syntax :<p>
+
+
+
+#PRAGMA IGNORE_CASE  ON / OFF
+
+
+<p><dl><dt>Example<dd><br>#PRAGMA IGNORE_CASE OFF</dl><p>
+This establishs case sensitive mode for all tokens other
+than language keywords.
+
+<p><dl><dt>Example<dd><br>#PRAGMA IGNORE_CASE ON</dl><p>
+In this condition all tokens are converted to upper case
+during input parsing. 
+
+
+<tr>
+<th>P 10</th>
+
+<td>
+<b>Pragma Directive TOKENSIZE</b>
+
+
+
+<tr>
+<td>
+
+<td>This pragma directive allows the useful length of naming tokens
+to be set.
+<p>Syntax :<p>
+#PRAGMA TOKENSIZE
+
+<p><dl><dt>Example<dd><br>#PRAGMA TOKENSIZE 16</dl><p>
+
+Default values :
+<p>
+<table>
+<tr><td>TR <td> 8
+<tr><td>ATR Version 1 <td> 8
+<tr><td>ATR Version 2 <td> 16
+<tr><td>OTR <td> 16
+</table>
+<p>
+
+
+<tr>
+<th>P 11</th>
+
+<td>
+<b>Pragma Directive KEYWORD</b>
+
+
+
+<tr>
+<td>
+
+<td>This pragma allows reserved keywords of ABAL++ to be disabled.
+Disabled keywords may consequently be redefined by dynamic library
+functions, macros, or class methods.
+
+<p>Syntax :<p>
+#PRAGMA KEYWORD &lt;KEYWORD&gt; OFF
+
+
+<p><dl><dt>Examples<dd><br>
+#PRAGMA KEYWORD PROCESS OFF 
+</dl><p>
+
+
+<tr>
+<th>P 12</th>
+
+<td>
+<b>Pragma Directive ERRORS</b>
+
+
+
+<tr>
+<td>
+
+<td>This pragma directive allows the limit to the number of errors
+
+that may be encountered in trace mode before translation will be
+
+abandoned to be established.
+
+
+
+<p>Syntax :<p>
+
+
+
+#PRAGMA ERRORS
+
+
+
+
+
+
+<p><dl><dt>Example<dd><br>
+#PRAGMA ERRORS 10
+</dl><p>
+
+If more than ten errors are encountered in error tracing mode then
+translation will be abandoned and error tracing will be activated. 
+
+<tr>
+<th>P 13</th>
+
+<td>
+<b>Pragma Directive THROW</b>
+
+
+
+<tr>
+<td>
+
+<td>This pragma directive allows the global implicite value to be
+
+established for the instructions RAISE and THROW which do not
+
+provide an explicite value.
+
+<p>Syntax :<p>
+
+#PRAGMA THROW &lt;integer&gt;
+
+<p><dl><dt>Example<dd><br>#PRAGMA THROW 7</dl><p>
+
+Please refer to the relevant section concerning RAISE and THROW
+for further information. 
+
+<tr><th>P 14</th>
+<td><b>Pragma Directive SWAPSIZE</b>
+
+<tr>
+<td>
+
+<td>This pragma directive allows the number of swap buffers to be
+
+established in the tcode program for use by the AbAL++ program
+
+executer, EXA.
+
+
+
+<p>Syntax :<p>
+#PRAGMA SWAPSIZE &lt;integer&gt;
+
+<p><dl><dt>Example<dd><br>#PRAGMA SWAPSIZE 7</dl><p>
+
+The swap mechanism is only used for the management of extended
+memory variables, ie those declared in FIELD=E.
+Extended memory is managed in pages whose size may be established
+by the pragma directive PAGESIZE. The number of pages which may
+be present at any one time is limited to the value provided by
+the SWAPSIZE pragma which may not be less than 10. 
+<p>
+
+<tr>
+<th>P 15</th>
+
+<td>
+<b>Pragma Directive PAGESIZE</b>
+
+
+
+<tr>
+<td>
+
+<td>This pragma directive allows the size of extended memory pages
+to be established in the tcode program for use by the ABAL++
+program executer, EXA.
+<p>Syntax :<p>
+#PRAGMA PAGESIZE &lt;integer&gt;
+
+The operand represents a number of paragraphs which will
+be multiplied by 16 to establish the byte count.
+<p>
+<table>
+<tr><td>
+Minimum value <td> /0010 16
+<tr><td>
+Maximum value <td> /0FFF (64Kb - 16)
+<tr><td>
+Default value <td> /0800 32Kb
+</table>
+<p><dl><dt>Example<dd><br>#PRAGMA PAGESIZE /0400 </dl><p>
+
+<tr>
+<th>P 99</th>
+
+<td>
+<b>Default Pragma Conditions</b>
+<tr><td>
+<td>The default, startup, values of the translator paragma directives
+
+are equivalant to the translation of the following pragma directives.
+<p>
+<table>
+<tr><td>#PRAGMA ENHANCED ALL ON
+<tr><td>#PRAGMA OPTIMISE ALL ON
+<tr><td>#PRAGMA ANNOUNCE ALL OFF
+<tr><td>#PRAGMA WARNINGS ALL OFF
+<tr><td>#PRAGMA LOCAL_CONSTANT OFF
+<tr><td>#PRAGMA IGNORE_CASE OFF
+<tr><td>#PRAGMA APLUS OFF
+<tr><td>#PRAGMA MEM 2048
+<tr><td>#PRAGMA STACK 256
+<tr><td>#PRAGMA FILES 64
+<tr><td>#PRAGMA HEAP 2048
+<tr><td>#PRAGMA THROW -1
+<tr><td>#PRAGMA ERRORS 256
+<tr><td>#PRAGMA SEMAPHORES 64
+<tr><td>#PRAGMA SWAP_BUFFERS 3500
+<tr><td>#PRAGMA SWAPSIZE 16
+<tr><td>#PRAGMA PAGESIZE 32768
+<tr><td>#PRAGMA TOKENSIZE 32
+<tr><td>#PRAGMA EDITOR aed 
+</table>
+</table>
+<p>
+<table >
+<tr><th><h3 align=center>Copyright &copy; 2003 <a href="http://www.prologue-software.fr">Prologue Software</a></h3>
+<tr><th><h3 align=center>Version Fran&ccedil;aise <a href="fr/otrprag.htm"<img src="tricolor.gif"></a>
+</table>
+</div>
+</body>
+</html>
+

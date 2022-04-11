@@ -1,0 +1,12 @@
+Version = 1
+Runtime = "editor"
+% editorOnCreate($)
+% editorOnRemove(%)
+% editorOnShow(%)
+% editorOnHide(%)
+% editorOnGetFocus(%)
+% editorOnLoseFocus(%)
+% editorOnUseEvent(%)
+% editorOnExec(%)
+End
+

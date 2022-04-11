@@ -1,0 +1,23 @@
+CTR   = ctr16
+ctr   = $(EXABIN)/$(CTR)
+CTR   = $(ABAL)/bin/ctr16
+
+POBJ  =
+OBJ   = .o
+
+SP01  = $(ABAL)/src/otr/
+PATHMF = $(ABAL)/otr16/mf/
+
+.c.o:
+	$(GCC) -c -g $(GDB) -DUNIX -I$(SP01) -Dotr16 $* > pipo1 2> pipo2
+	cat pipo1 pipo2 > pipo
+        agr -w -apipo
+
+! include $(PATHMF)ctr2.mf
+! include $(PATHMF)ctrb.mf
+! include $(PATHMF)ctrc.mf
+! include $(PATHMF)ctrd.mf
+! make
+! include $(PATHMF)ctr.mf
+! make
+

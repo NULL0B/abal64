@@ -1,0 +1,38 @@
+! include $(ABAL)/common/common.def
+! include $(ABAL)/common/ixciconr.def
+! include $(ABAL)/common/editor.def
+! include $(ABAL)/common/allocate.def
+! include $(ABAL)/common/libaccess.def
+! include $(ABAL)/common/ixmisc.def 
+! include $(ABAL)/common/repmisc.def 
+! include $(ABAL)/common/dirmisc.def 
+! include $(ABAL)/common/misc.def 
+! include $(ABAL)/common/jpeg.def 
+! include $(ABAL)/common/ldap.def 
+! include $(ABAL)/common/stdprod.def 
+! include $(ABAL)/common/libimage.def 
+! include $(ABAL)/common/pixilib.def
+
+! ifdef can_build_anabal
+
+IP01 = $(ABAL)/src/pixel/
+IP02 = $(ABAL)/src/sing/
+INCLUDE = -I$(IP01) -I$(IP02)
+SP01 = $(ABAL)/src/amake/
+THREED = $(ABAL)/pixel/threed.o
+
+annie.o: $(SP01)annie.c $(SP01)anabal.c $(SP01)anabal.h
+	-$(GCC) -c -g $(GDB) -DUNIX $(INCLUDE) -DP3D32  $* 1> pipo1 2> pipo2
+	cat pipo1 pipo2 > pipo
+	agr -apipo
+! make
+
+$(ABAL)/bin/anabal: annie.o $(STDPROD) $(PIXILIB) $(XLIB) $(IXCICONR) $(LIBACCESS) $(LIBIMAGE) $(ALLOCATE) $(LIBREP) $(LIBJPEG) $(THREED)
+	-$(GCC) -g $(GDB) -o $@ $?  1> pipo1 2> pipo2
+	cat pipo1 pipo2 > pipo
+	agr -apipo
+
+! make
+
+! endif
+

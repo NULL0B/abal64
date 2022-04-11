@@ -1,0 +1,3 @@
+
+$(POBJ)jlinuxmouse$(OBJ):  $(SP01)jlinuxmouse.c /home/abal64/include/bdas/wdef.h /home/abal64/include/bdas/bda.h /home/abal64/include/bdas/oldbda.h /home/abal64/include/bdas/pubsbda.h /home/abal64/include/bdas/pubwbda.h $(SP01)zglobal.h /home/abal64/include/mouse.h
+

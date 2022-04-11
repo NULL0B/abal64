@@ -1,0 +1,90 @@
+! include $(ABAL)/common/host.def
+! include $(ABAL)/common/agr.def
+! include $(ABAL)/common/pixilib.def
+
+SRC     = $(ABAL)/src/pixel/
+SRC2    = $(ABAL)/src/exa/
+SRC3    = $(ABAL)/include
+INCLUDE = -I$(SRC) -I$(SRC3)
+
+! ifdef	SHARED_PIXELS
+
+.c.o:
+! ifdef AGR
+	-$(COMPILE) $(V666) $(INCLUDE) $* $(PIPO)
+	cat pipo1 pipo2 > pipo
+	$(AGR) -apipo
+! else
+	$(COMPILE) $(V666) $(INCLUDE) $* 
+! endif
+
+! else
+
+REMOVE  = -ar d $(PIXILIB)
+ARCHIVE = ar q $(PIXILIB)
+
+.c.o:
+! ifdef AGR
+	-$(COMPILE) $(V666) $(INCLUDE) $* $(PIPO)
+	cat pipo1 pipo2 > pipo
+	$(AGR) -apipo
+! else
+	$(COMPILE) $(V666) $(INCLUDE) $*
+! endif
+	echo $(PIXILIB)
+	$(REMOVE)  $@
+	$(ARCHIVE) $@
+
+console$(O):  $(SRC)console$(C) $(SRC)pixel$(H)
+stdgigo$(O):  $(SRC)stdgigo$(C) $(SRC)stdgigo$(H)  $(SRC)stdmimo$(C) $(SRC)pixelco$(C) 
+stdevent$(O): $(SRC)stdevent$(C) $(SRC)xkeysym$(C) $(SRC)xpixel$(H)
+inipixel$(O): $(SRC)inipixel$(C) $(SRC)xpixel$(H)  $(SRC)fallback$(C)
+filzone$(O):  $(SRC)filzone$(C) $(SRC)xpixel$(H)
+xorzone$(O):  $(SRC)xorzone$(C) $(SRC)xpixel$(H)
+putzone$(O):  $(SRC)putzone$(C) $(SRC)xpixel$(H)
+mixzone$(O):  $(SRC)mixzone$(C) $(SRC)xpixel$(H)
+movezone$(O): $(SRC)movezone$(C) $(SRC)xpixel$(H)
+shadzone$(O): $(SRC)shadzone$(C) $(SRC)xpixel$(H)
+putch$(O):    $(SRC)putch$(C) $(SRC)xpixel$(H)
+mixch$(O):    $(SRC)mixch$(C) $(SRC)xpixel$(H)
+getzone$(O):  $(SRC)getzone$(C) $(SRC)xpixel$(H)
+setmouse$(O): $(SRC)setmouse$(C)
+stdpsu$(O):   $(SRC)stdpsu$(C)
+relief$(O):   $(SRC)relief$(C) $(SRC)xpixel$(H)
+xgraph$(O):   $(SRC)xgraph$(C) $(SRC)xgraph$(H)
+drawline$(O): $(SRC)drawline$(C) 
+circle$(O): $(SRC)circle$(C) 
+rounded$(O): $(SRC)rounded$(C) 
+image$(O): $(SRC)image$(C) 
+! make
+#vga$(O):      $(SRC)vga$(C) $(SRC)palet$(H)
+
+rgraph$(O): $(SRC)rgraph$(C) $(SRC)xgraph$(H)
+! ifdef AGR
+	-$(COMPILE) $(V666) $* > pipo1 2> pipo2
+	cat pipo1 pipo2 > pipo
+	$(AGR) -apipo
+! else
+	$(COMPILE) $(V666) $*
+! endif
+
+! make
+
+! ifdef SHARED_PIXELS
+
+
+$(PIXILIB): console$(O) stdgigo$(O) stdevent$(O) inipixel$(O) image$(O) '
+            filzone$(O) xorzone$(O) putzone$(O) mixzone$(O) circle$(O) rounded$(O) '
+            movezone$(O) putch$(O) mixch$(O) getzone$(O) drawline$(O) '
+            setmouse$(O) stdpsu$(O) vga$(O) relief$(O) xgraph$(O)
+	$(GCC) -g $(GDB) -o $@ -shared $? $(XLIB)
+
+! endif
+! make
+
+$(ABAL)/common/console.def: $(ABAL)/pixel64/console.o
+	echo CONSOLE = $* > $@
+
+! make
+
+

@@ -1,0 +1,236 @@
+# generated makefile : images.mf 
+# ------------------------------------
+/home/Dev/abal32/product31e/images/prologue.gif: /home/Dev/abal32/images/prologue.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/images/prologue.jpg: /home/Dev/abal32/images/prologue.jpg
+	cp $* $@ 
+/home/Dev/abal32/product31e/images/abal3d.gif: /home/Dev/abal32/images/abal3d.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/images/abal3.gif: /home/Dev/abal32/images/abal3.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/images/singbg.jpg: /home/Dev/abal32/images/singbg.jpg 
+	cp $* $@ 
+/home/Dev/abal32/product31e/images/singbar.jpg: /home/Dev/abal32/images/singbar.jpg 
+	cp $* $@ 
+/home/Dev/abal32/product31e/images/sing.png: /home/Dev/abal32/images/sing.png 
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/sing.png: /home/Dev/abal32/images/sing.png 
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/sing.png: /home/Dev/abal32/images/sing.png 
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/fr/sing.png: /home/Dev/abal32/images/sing.png 
+	cp $* $@ 
+/home/Dev/abal32/product31e/images/abal3.jpg: /home/Dev/abal32/images/abal3.jpg
+	cp $* $@ 
+/home/Dev/abal32/product31e/images/abal.gif: /home/Dev/abal32/images/abal.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/images/abalicon.gif: /home/Dev/abal32/images/abalicon.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/images/aedicon.gif: /home/Dev/abal32/images/aedicon.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/images/aqua.rgb: /home/Dev/abal32/images/aqua.rgb
+	cp $* $@ 
+/home/Dev/abal32/product31e/images/bleu.rgb: /home/Dev/abal32/images/bleu.rgb
+	cp $* $@ 
+/home/Dev/abal32/product31e/images/bombicon.gif: /home/Dev/abal32/images/bombicon.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/images/bonbon.rgb: /home/Dev/abal32/images/bonbon.rgb
+	cp $* $@ 
+/home/Dev/abal32/product31e/images/brail.gif: /home/Dev/abal32/images/brail.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/images/break.gif: /home/Dev/abal32/images/break.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/images/cancel.gif: /home/Dev/abal32/images/cancel.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/images/ccicon.gif: /home/Dev/abal32/images/ccicon.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/images/cicon.gif: /home/Dev/abal32/images/cicon.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/images/clear.gif: /home/Dev/abal32/images/clear.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/images/consicon.gif: /home/Dev/abal32/images/consicon.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/images/dataicon.gif: /home/Dev/abal32/images/dataicon.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/images/debug.gif: /home/Dev/abal32/images/debug.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/images/de.gif: /home/Dev/abal32/images/de.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/images/desert.rgb: /home/Dev/abal32/images/desert.rgb
+	cp $* $@ 
+/home/Dev/abal32/product31e/images/downicon.gif: /home/Dev/abal32/images/downicon.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/images/en.gif: /home/Dev/abal32/images/en.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/images/es.gif: /home/Dev/abal32/images/es.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/images/exaicon.gif: /home/Dev/abal32/images/exaicon.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/images/exit.gif: /home/Dev/abal32/images/exit.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/images/fileicon.gif: /home/Dev/abal32/images/fileicon.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/images/foret.rgb: /home/Dev/abal32/images/foret.rgb
+	cp $* $@ 
+/home/Dev/abal32/product31e/images/formicon.gif: /home/Dev/abal32/images/formicon.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/images/formtool.gif: /home/Dev/abal32/images/formtool.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/images/fr.gif: /home/Dev/abal32/images/fr.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/images/goto.gif: /home/Dev/abal32/images/goto.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/images/gridicon.gif: /home/Dev/abal32/images/gridicon.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/images/grisstd.rgb: /home/Dev/abal32/images/grisstd.rgb
+	cp $* $@ 
+/home/Dev/abal32/product31e/images/htmlicon.gif: /home/Dev/abal32/images/htmlicon.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/images/imgicon.gif: /home/Dev/abal32/images/imgicon.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/images/imgtool.gif: /home/Dev/abal32/images/imgtool.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/images/it.gif: /home/Dev/abal32/images/it.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/images/lefticon.gif: /home/Dev/abal32/images/lefticon.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/images/lockicon.gif: /home/Dev/abal32/images/lockicon.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/images/logo.jpg: /home/Dev/abal32/images/logo.jpg
+	cp $* $@ 
+/home/Dev/abal32/product31e/images/methicon.gif: /home/Dev/abal32/images/methicon.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/images/moveicon.gif: /home/Dev/abal32/images/moveicon.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/images/nl.gif: /home/Dev/abal32/images/nl.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/images/natlang.png: /home/Dev/abal32/images/natlang.png
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/natlang.png: /home/Dev/abal32/images/natlang.png
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/fr/natlang.png: /home/Dev/abal32/images/natlang.png
+	cp $* $@ 
+/home/Dev/abal32/product31e/images/natlang.gif: /home/Dev/abal32/images/natlang.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/natlang.gif: /home/Dev/abal32/images/natlang.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/fr/natlang.gif: /home/Dev/abal32/images/natlang.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/images/ok.gif: /home/Dev/abal32/images/ok.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/ok.gif: /home/Dev/abal32/images/ok.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/fr/ok.gif: /home/Dev/abal32/images/ok.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/cancel.gif: /home/Dev/abal32/images/cancel.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/fr/cancel.gif: /home/Dev/abal32/images/cancel.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/screen.gif: /home/Dev/abal32/images/screen.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/fr/screen.gif: /home/Dev/abal32/images/screen.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/images/oldicon.gif: /home/Dev/abal32/images/oldicon.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/images/otricon.gif: /home/Dev/abal32/images/otricon.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/images/paper.gif: /home/Dev/abal32/images/paper.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/images/penicon.gif: /home/Dev/abal32/images/penicon.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/images/pipicon.gif: /home/Dev/abal32/images/pipicon.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/images/plusicon.gif: /home/Dev/abal32/images/plusicon.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/images/pouricon.gif: /home/Dev/abal32/images/pouricon.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/images/printer.gif: /home/Dev/abal32/images/printer.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/images/projicon.gif: /home/Dev/abal32/images/projicon.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/images/pt.gif: /home/Dev/abal32/images/pt.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/images/riteicon.gif: /home/Dev/abal32/images/riteicon.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/images/rooticon.gif: /home/Dev/abal32/images/rooticon.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/images/run.gif: /home/Dev/abal32/images/run.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/images/sable.rgb: /home/Dev/abal32/images/sable.rgb
+	cp $* $@ 
+/home/Dev/abal32/product31e/images/screen.gif: /home/Dev/abal32/images/screen.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/images/sing.gif: /home/Dev/abal32/images/sing.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/images/skin.gif: /home/Dev/abal32/images/skin.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/images/standard.rgb: /home/Dev/abal32/images/standard.rgb
+	cp $* $@ 
+/home/Dev/abal32/product31e/images/staricon.gif: /home/Dev/abal32/images/staricon.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/images/startwo.gif: /home/Dev/abal32/images/startwo.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/images/step.gif: /home/Dev/abal32/images/step.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/images/texticon.gif: /home/Dev/abal32/images/texticon.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/images/trap.gif: /home/Dev/abal32/images/trap.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/images/trash.gif: /home/Dev/abal32/images/trash.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/images/treeicon.gif: /home/Dev/abal32/images/treeicon.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/images/treetool.gif: /home/Dev/abal32/images/treetool.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/images/upicon.gif: /home/Dev/abal32/images/upicon.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/images/vdbicon.gif: /home/Dev/abal32/images/vdbicon.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/images/vert.rgb: /home/Dev/abal32/images/vert.rgb
+	cp $* $@ 
+/home/Dev/abal32/product31e/images/view.gif: /home/Dev/abal32/images/view.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/images/widgicon.gif: /home/Dev/abal32/images/widgicon.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/images/wood.gif: /home/Dev/abal32/images/wood.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/images/xx.gif: /home/Dev/abal32/images/xx.gif
+	cp $* $@ 
+
+# ------------------------------------------
+# New Visual Exadb Button Icons : 01/06/2006
+# ------------------------------------------
+
+/home/Dev/abal32/product31e/images/dbtexture.png: /home/Dev/abal32/images/dbtexture.png
+	cp $* $@ 
+/home/Dev/abal32/product31e/images/dbstep.png: /home/Dev/abal32/images/dbstep.png
+	cp $* $@ 
+/home/Dev/abal32/product31e/images/dbgoto.png: /home/Dev/abal32/images/dbgoto.png
+	cp $* $@ 
+/home/Dev/abal32/product31e/images/dbrun.png: /home/Dev/abal32/images/dbrun.png
+	cp $* $@ 
+/home/Dev/abal32/product31e/images/dbexit.png: /home/Dev/abal32/images/dbexit.png
+	cp $* $@ 
+/home/Dev/abal32/product31e/images/dbbreak.png: /home/Dev/abal32/images/dbbreak.png
+	cp $* $@ 
+/home/Dev/abal32/product31e/images/dbclear.png: /home/Dev/abal32/images/dbclear.png
+	cp $* $@ 
+/home/Dev/abal32/product31e/images/dbview.png: /home/Dev/abal32/images/dbview.png
+	cp $* $@ 
+/home/Dev/abal32/product31e/images/dbhelp.png: /home/Dev/abal32/images/dbhelp.png
+	cp $* $@ 
+/home/Dev/abal32/product31e/images/dbcursor.png: /home/Dev/abal32/images/dbcursor.png
+	cp $* $@ 
+/home/Dev/abal32/product31e/images/dbsave.png: /home/Dev/abal32/images/dbsave.png
+	cp $* $@ 
+/home/Dev/abal32/product31e/images/dbtrap.png: /home/Dev/abal32/images/dbtrap.png
+	cp $* $@ 
+/home/Dev/abal32/product31e/images/dbgrid.png: /home/Dev/abal32/images/dbgrid.png
+	cp $* $@ 
+/home/Dev/abal32/product31e/images/dbexec.png: /home/Dev/abal32/images/dbexec.png
+	cp $* $@ 
+
+! make
+! shell chmod uog+r images/*
+! make
+

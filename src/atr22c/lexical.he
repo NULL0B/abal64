@@ -1,0 +1,128 @@
+/*
+ *      Projet  : ABAL                  Copyright Prologue s.a. (c) 1990, 1996
+ *      Module  : ATR
+ *      Fichier : LEXICAL.HE
+ *      Version : 2.1f
+ *      Date    : 15/01/96
+ *      Systeme : DOS / PRL / UNIX / VMS
+ *
+ *      Traducteur ABAL
+ *
+ *      [Definitions de l'analyseur lexical]
+ *
+ * --------------------------------------------------------------------------
+ *      27/10/92 : Debut revision 1.5
+ *              Insertion des nouveaux mots cles :
+ *              ALIAS (fct), ANY (syn), AS (syn), ASKATB (ins), ASKCOLOR (ins)
+ *              CREATE (ins), FORGET (ins), FORWARD (syn), IN (syn), INITGLOBAL (mac)
+ *              INITLOCAL (mac), LANG (fct), LIKE (syn), NAME (ins), PARSE (fct)
+ *              POWER (fct), CODE (syn), PTR (syn), REAL (fct), REMOVE (ins)
+ *              STDFORM (fct)
+ *
+ * 10/05/00 : (#OK) Enhancement ATR 19: Commentaires multilignes.
+ * -------------------------------------------------------------------------
+ */
+
+#ifdef _LEXICAL
+#define EXT_LEXICAL
+#else
+#define EXT_LEXICAL extern
+#endif /* _LEXICAL */
+
+/* PUBLIC */
+/* ------ */
+
+/* PUBLIC VARIABLES */
+/* ---------------- */
+
+EXT_LEXICAL char tabsymb [MAXSYMB] [LGIDENT];
+EXT_LEXICAL /* global */ BOOL div_verrue;   /* indicateur : operateur DIV attendu */
+                                /* cette verrue permet de lever l'ambiguite */
+                                /* entre division et constante hexadecimale */
+EXT_LEXICAL /* global */ BOOL cstbcd_verrue; /* indicateur : constante BCD attendue */
+                                /* cette verrue permet de lever l'ambiguite */
+                                /* binaire <-> BCD pour const. numeriques */
+EXT_LEXICAL /* global */ BOOL fmt_verrue;   /* indicateur : format attendu */
+                                /* cette verrue impose au lexical le retour */
+                                /* d'une constante chaine == le format */
+EXT_LEXICAL /* global */ BOOL verrue_user;  /* indicateur : on est en train de traiter */
+                                /* un #USER -> interdit les #... */
+EXT_LEXICAL /* global */ BOOL bcd_priority;
+				/* indicateur : conversion cst bin en bcd actif */
+
+
+EXT_LEXICAL /* global */ BINAIRE nortusr;   /* No/Nb de runtimes externes */
+
+/* #OK: 10/05/00 (begin) */
+#ifdef __ATR22__
+EXT_LEXICAL /* global */ unsigned int levelCommentary;    
+#endif
+/* #OK: 10/05/00 (end) */
+
+EXT_LEXICAL char *lptr;		/* pointeur courant sur ligne en cours */
+EXT_LEXICAL char *ligne;     	/* et buffer de traitement de cette ligne */
+EXT_LEXICAL long seekcur;
+EXT_LEXICAL long int posinsce;
+EXT_LEXICAL int poslgn;
+
+EXT_LEXICAL FILE *input,             /* fichier source courant */
+            *hinput[MAXINCL];   /* pile des fichiers sources si inclusion */
+
+
+/* PUBLIC FONCTIONS */
+/* ---------------- */
+
+#ifdef LINT_ARGS
+
+EXT_LEXICAL void standardlex ( void );
+EXT_LEXICAL void memolex ( void );
+EXT_LEXICAL void resumelex ( void );
+EXT_LEXICAL void lexical ( void );
+EXT_LEXICAL void initlex ( char * , int );
+EXT_LEXICAL void finlex ( BOOL );
+EXT_LEXICAL void postick ( FILE * );
+EXT_LEXICAL void tfdln ( void );
+EXT_LEXICAL void sfdln ( void );
+EXT_LEXICAL void jmpfdln ( void );
+
+/* #OK: 10/05/00 (begin) */
+#ifdef __ATR22__
+EXT_LEXICAL void jmpcomment( void );
+#endif
+/* #OK: 10/05/00 (end) */
+
+EXT_LEXICAL BOOL lookexpstr( void );
+EXT_LEXICAL int fn_parser(char *, char *, int );
+
+#else
+
+EXT_LEXICAL void standardlex ();
+EXT_LEXICAL void memolex ();
+EXT_LEXICAL void resumelex ();
+EXT_LEXICAL void lexical ();
+EXT_LEXICAL void initlex ();
+EXT_LEXICAL void finlex ();
+EXT_LEXICAL void postick ();
+EXT_LEXICAL void tfdln ();
+EXT_LEXICAL void sfdln ();
+EXT_LEXICAL void jmpfdln ();
+
+/* #OK: 10/05/00 (begin) */
+#ifdef __ATR22__
+EXT_LEXICAL void jmpcomment();
+#endif
+/* #OK: 10/05/00 (end) */
+
+EXT_LEXICAL BOOL lookexpstr();
+EXT_LEXICAL int fn_parser();
+
+#endif /* LINT_ARGS */
+
+/* PUBLIC END */
+/* ---------- */
+
+/* FIN DEFINITIONS INTERNES */
+/* ------------------------ */
+
+/* ---------------- FIN lexical.he -----------------------------------------*/
+

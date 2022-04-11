@@ -1,0 +1,994 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>ABAL 3 : Visual Library </title>
+<META NAME="VERSION" CONTENT="*PRL@INFO*$6:31a003">
+<link href="style.css" rel="STYLESHEET" type="text/css" media="SCREEN">
+</head>
+<body>
+<div align=center>
+<table>
+<tr><th><h1>ABAL 3 : Visual Library </h1><td>
+<tr><th><h2>Programmer Reference Manual</h2><td>
+<tr><th><h3>Table of Contents</h3><td>
+<tr><td>
+<p>
+<ol>
+<li><a href="#intro">Introduction and Overview</a>
+<li>Library Functions
+<ol>
+<li><a href="#f001">VisualZone(x%,y%,w%,h%,style%)</a>
+<li><a href="#f002">VisualLine(x%,y%,w%,h%,thickness%,colour%)</a>
+<li><a href="#f003">VisualFont(filename$,length%)</a>
+<li><a href="#f004">VisualText(x%,y%,w%,h%,font%, fg%,bg%, message$,length%,align%)</a>
+<li><a href="#f005">VisualEdit(x%,y%,w%,h%,font%,buffer$?,length%)</a>
+<li><a href="#f006">VisualWindow(x%,y%,w%,h%,font%,title$,length%,align%)</a>
+<li><a href="#f007">VisualButton(x%,y%,w%,h%,font%,fg%,bg%, title$,length%,option%)</a>
+<li><a href="#f008">VisualCheck (x%,y%,w%,h%,font%, fg%,bg%, message$,length%,state%)</a>
+<li><a href="#f009">VisualRadio (x%,y%,w%,h%,font%, fg%,bg%, message$,length%, number%,value%)</a>
+<li><a href="#f010">VisualImage(x%,y%,w%,h%,filename$,length%,align%)</a>
+<li><a href="#f011">VisualTabPage(x%,y%,w%,h%,font%,title$,length%,offset%,option%)</a>
+<li><a href="#f012">VisualSelect(x%,y%,w%,h%,font%, fg%,bg%, liste$,length%, value%?,state%)</a>
+<li><a href="#f013">VisualScroll(x%,y%,w%,h%,font%, fg%,bg%, value%,limit%,max%, style%)</a>
+<li><a href="#f014">VisualPalette(filename$,length%)</a>
+<li><a href="#f015">VisualInitialise(mode%)</a>
+<li><a href="#f016">VisualLiberate()</a>
+<li><a href="#f017">VisualFreeze()</a>
+<li><a href="#f018">VisualThaw(x%,y%,w%,h%)</a>
+<li><a href="#f019">VisualEvent(buffer$?)</a>
+<li><a href="#f020">VisualFill(x%,y%,w%,h%,pixel%,mode%)</a>
+<li><a href="#f021">VisualKey(mode%)</a>
+<li><a href="#f022">VisualControl(function%,buffer$?,length%)</a>
+<li><a href="#f023">VisualProgress(x%,y%,w%,h%,font%, fg%,bg%, limit%,value%, option%)</a>
+<li><a href="#f024">VisualTable(x%,y%,w%,h%,font%, fg%,bg%, titles$,tlength%, buffer$, blength%, option%, format$,flength%)</a>
+<li><a href="#f025">VisualColour(function%,buffer$?,param1%,param2%)</a>
+<li><a href="#f026">VisualBuffer(w%,h%)</a>
+<li><a href="#f027">VisualPage(n%)</a>
+<li><a href="#f028">VisualGet(n%,x%,y%)</a>
+<li><a href="#f029">VisualGetRow(r%,buffer$?,length%)</a>
+<li><a href="#f030">VisualPutRow(r%,buffer$,length%)</a>
+<li><a href="#f031">VisualPut(n%,x%,y%)</a>
+<li><a href="#f032">VisualDrop(n%)</a>
+<li><a href="#f033">VisualTransform(n%,function%,p1%,p2%)</a>
+<li><a href="#f034">VisualPutZone(x%,y%,w%,h%,buffer$)</a>
+<li><a href="#f035">VisualSwitch(x%,y%,w%,h%,font%, fg%,bg%, message$,length%,state%)</a>
+<li><a href="#f036">VisualGraph(x%,y%,w%,h%,font%, fg%,bg%, buffer$,count%,type%)</a>
+<li><a href="#f037">VisualActivate(w%,h%,s%)</a>
+<li><a href="#f038">VisualViewPort(x%,y%,w%,h%,font%)</a>
+</ol>
+<li><a href="example">Simple Application Example</a>
+</ol>
+<p>
+</table>
+<p>
+<a name ="intro">
+<table>
+<tr><th><h3>Introduction and Overview</h3>
+<tr><td>
+<p>The ABAL 3 Visual Library provides a collection of functions primarily intended for 
+use by the ABAL 3 development environment visual forms production tools.
+<p>These library functions cover the various aspects involved in the design of modern 
+graphical user interfaces with an strong orientation towards the needs of ABAL.
+<p>The individual library function definitions may be found in the dynamic library 
+definition file <b>visual.def</b> or in the ABAL ++ class definiton file <b>visuali.as</b>
+<p>Each of the library functions will be discussed individually in as much detail as is 
+required in the remainder of this document.
+<p>For demonstrative examples of their use it is recomended that the source produced 
+by the visual forms editor for both dialog box and draft document models be carefully
+inspected.
+</table>
+<p>
+<table>
+<tr><th><h3>Library Functions</h3></table>
+<p><table>
+<tr><th><h4><a name="f001">VisualZone(x%,y%,w%,h%,style%)</h4>
+<tr><td><h5>Parameters</h5><p><dl>
+<dt>x%<dd>An integer value representing the x coordinate of the top left corner of the widget.
+<dt>y%<dd>An integer value representing the y coordinate of the top left corner of the widget.
+<dt>w%<dd>An integer value representing the width in pixels of the widget zone.
+<dt>h%<dd>An integer value representing the height in pixels of the widget zone.
+<dt>style%<dd>An integer value representing the style of the frame chosen from the following list.
+<ol>
+<li>Outset relief Frame
+<li>Inset relief Frame
+<li>Ridged relief Frame
+<li>Grooved relief Frame
+<li>Black bordered white edit frame.
+</ol>
+</dl><p><h5>Description</h5>
+<p> This library function will draw the required frame style around the zone defined by the coordinates and
+dimensions. Visual zones are drawn using the standard <b>GUI</b> colours of the colourmap or palette.
+The colours of which may vary from palette to palette.
+<p>
+</table>
+<p><table><tr><th><h4><a name="f002">VisualLine(x1%,y1%,x2%,y2%,thickness%,colour%)</h4>
+<tr><td><h5>Parameters</h5><p><dl>
+<dt>x1%<dd>An integer value representing the initial x coordinate of the top left corner of the widget.
+<dt>y1%<dd>An integer value representing the initial y coordinate of the top left corner of the widget.
+<dt>x2%<dd>An integer value representing the final x coordinate.
+<dt>y2%<dd>An integer value representing the final y coordinate.
+<dt>thickness<dd>An Integer value representing the thickness of the line to be drawn, in pixels.
+<dt>colour<dd>An Integer value providing the colour map, or palette, entry, to provides the colour of the line.
+</dl><p><h5>Description</h5>
+<p> This library function draws a line of the indicated thickness between the
+two points using the provided colour. The points may be defined in any
+order and will be re-arranged by the fonction to suit its internal 
+algorithms.
+<p>
+</table>
+<p><table><tr><th><h4><a name="f003">VisualFont(filename$,length%)</h4>
+<tr><td><h5>Parameters</h5><p><dl>
+<dt>filename$<dd>A string value providing the filename of the font to be loaded
+<dt>length%<dd>An integer value indicating the length of the filename string to use.
+</dl><p><h5>Description</h5>
+<p>  This library function causes the indicated font file to be loaded from disk
+and converted to the internal pixel mapped format for use by text drawing functions.
+The configuration variable <b>FONTPATH</b>, when defined, will be used 
+to localise font files for which no path information has been explicitly provided.
+<p> Currently only Font files conforming with the Twin Server 2.4 font file format
+may be loaded by this function.
+<p>
+</table>
+
+<p><table><tr><th><h4><a name="f004">VisualText(x%,y%,w%,h%,font%, fg%,bg%, message$,length%,align%)</h4>
+<tr><td><h5>Parameters</h5><p><dl>
+<dt>x%<dd>An integer value representing the x coordinate of the top left corner of the widget.
+<dt>y%<dd>An integer value representing the y coordinate of the top left corner of the widget.
+<dt>w%<dd>An integer value representing the width in pixels of the widget zone.
+<dt>h%<dd>An integer value representing the height in pixels of the widget zone.
+<dt>font%<dd>An Integer value identifying the text font to be used.
+<dt>fg%<dd>An Integer value providing the colour map, or palette, entry, to be used as the foreground or character colour.
+<dt>bg%<dd>An Integer value providing the colour map, or palette, entry, providing the background or wash colour.
+<dt>message$<dd>A string value providing the characters of the text to be displayed.
+<dt>length%<dd>An Integer value providing the length of the preceeding message string value.
+<dt>align%<dd>An Integer value providing the text alignment taken from the following list.
+<table>
+<tr><td>0<td>None
+<tr><td>1<td>Right aligned
+<tr><td>2<td>Left aligned
+<tr><td>3<td>Centered
+<tr><td>4<td>Justified between left and right edges of the zone.
+</table>
+</dl><p><h5>Description</h5>
+<p> This library function will display the text message within the defined zone
+using the indicated font, colour and alignment information. Multiple lines
+of text may be displayed when the alignment is set to none, otherwise a
+ single line of text will be displayed aligned within the zone.
+<p>
+</table>
+
+<p><table><tr><th><h4><a name="f005">VisualEdit(x%,y%,w%,h%,font%,buffer$?,length%)</h4>
+<tr><td><h5>Parameters</h5><p><dl>
+<dt>x%<dd>An integer value representing the x coordinate of the top left corner of the widget.
+<dt>y%<dd>An integer value representing the y coordinate of the top left corner of the widget.
+<dt>w%<dd>An integer value representing the width in pixels of the widget zone.
+<dt>h%<dd>An integer value representing the height in pixels of the widget zone.
+<dt>font%<dd>An Integer value identifying the text font to be used.
+<dt>buffer$<dd>A string value providing the buffer to be used for the edit operation.
+<dt>length%<dd>An Integer value providing the length of the preceeding buffer parameter. 
+</dl><p><h5>Description</h5>
+<p> This library function allows multiline editing of a buffer of text 
+within a defined zone. The following table outlines the various special keys that are
+available for use during the editor operation.
+<table>
+<tr><td>CTRL A<td>Resets the entire buffer to space.
+<tr><td>CTRL B<td>Seek to end/start of buffer
+<tr><td>ESCAPE<td>Cancel editor operation and return this keycode.
+<tr><td>CR<td>Move down one line if this is possible, otherwise 
+Validate editor operation and leave function returning this keycode..
+<tr><td>CTRL W<td>The key combination performs a dual purpose :
+<ol><li>
+Copies all characters from the current cursor position up to the end of the buffer
+into the internal editor cut buffer.
+<li>Characters from the current cursor position are also made available to external applications
+via the system selection or cut buffer mechanisms. This selection is limited to the
+last non-whaite space character.
+</ol>
+<tr><td>CTRL X<td>Copies all characters from the internal editor cut 
+buffer into the current edit buffer at the current cursor position.
+<tr><td>ALT INS<td>Copies all characters from the external selection or cut 
+buffer into the current edit buffer at the current cursor position.
+<tr><td>CTRL Z<td>Reset from the current cursor position up to the 
+end of the buffer.
+<tr><td>LEFT ARROW<td>Move one character left.
+<tr><td>RIGHT ARROW<td>Move one characters right
+<tr><td>DOWN ARROW<td>Move one line down if this is possible, otherwise
+leave edit function returning this keycode.
+<tr><td>UP ARROW<td>Move one line up if this is possible, otherwise
+leave edit function returning this keycode.
+<tr><td>INSERT<td>Toggle the state of the editor insert/overwrite mechanism.
+<tr><td>DELETE<td>Delete character under the cursor..
+</table>
+<p>
+All other key codes greater than /001F will be input directly to the 
+buffer at the current cursor position and the cursor will be moved right
+by one character.
+All other key codes less than /0020 will cause exit from the function returning the 
+corresponding keycode.
+<p>The mouse is active during this library function allowing positioning
+within the edit buffer by clicking on the required buffer position.
+Mouse events outside of the editor zone will cause exit from the function
+return the standard key code 256, <b>event available</b>
+<p>
+</table>
+<p><table><tr><th><h4><a name="f006">VisualWindow(x%,y%,w%,h%,font%,title$,length%,align%)</h4>
+<tr><td><h5>Parameters</h5><p><dl>
+<dt>x%<dd>An integer value representing the x coordinate of the top left corner of the widget.
+<dt>y%<dd>An integer value representing the y coordinate of the top left corner of the widget.
+<dt>w%<dd>An integer value representing the width in pixels of the widget zone.
+<dt>h%<dd>An integer value representing the height in pixels of the widget zone.
+<dt>font%<dd>An Integer value identifying the text font to be used.
+<dt>title$<dd>A string value providing the text to be used as the window title.
+<dt>length%<dd>An Integer value providing the length of the preceeding title string value.
+<dt>option%<dd>An Integer value providing the window button configuration options.
+<table>
+<tr><td>0<td>None
+<tr><td>1<td>Exit Button
+<tr><td>2<td>Help Button 
+<tr><td>3<td>Both Help and Exit Buttons
+</table>
+</dl><p><h5>Description</h5>
+<p> This library function draws a titled window frame of the indicated dimensions
+and with the required window buttons.
+<p> The window buttons are simply drawn by this function. Their actual
+linkage and triggering of their behaviour is the responsibillity of the 
+calling code.
+<p>
+</table>
+<p><table><tr><th><h4><a name="f007">VisualButton(x%,y%,w%,h%,font%, fg%,bg%, message$,length%,options%)</h4>
+<tr><td><h5>Parameters</h5><p><dl>
+<dt>x%<dd>An integer value representing the x coordinate of the top left corner of the widget.
+<dt>y%<dd>An integer value representing the y coordinate of the top left corner of the widget.
+<dt>w%<dd>An integer value representing the width in pixels of the widget zone.
+<dt>h%<dd>An integer value representing the height in pixels of the widget zone.
+<dt>font%<dd>An Integer value identifying the text font to be used.
+<dt>fg%<dd>An Integer value providing the colour map, or palette, entry, to be used as the foreground or character colour.
+<dt>bg%<dd>An Integer value providing the colour map, or palette, entry, providing the background or wash colour.
+<dt>title$<dd>A string value providing the button label or the filename to be loaded as the button image.
+<dt>length%<dd>An Integer value providing the length of the preceeding string label or filename value.
+<dt>option%<dd>An Integer value describing the nature and state of the button comprising the following bitfields.
+<table>
+<tr><td>2<td>Focus<td>The button message will be drawn using the standard text focus colour, otherwise it will be drawn using the standard text colour.
+<tr><td>4<td>Depressed<td>When this bitfield is set framed buttons will be displayed 
+with a depressed concave relief frame otherwise, when reset, they will be displayed with a standard convex relief frame.
+<tr><td>16<td>Image<td>When this bit is set the title parameter will be used as the name of an image file
+to be displayed in the button zone, Otherwise the title text will be displayed.
+<tr><td>32<td>Unframed<td>When this bit is set the button frame will be inhibited, only the text or image 
+being displayed.
+<tr><td>256<td>MakeFit/Bold<td>This action of this option depends upon the nature of the button. When applied to image buttons and when set the image will be stretched or squashed to
+fit the button zone. When applied to a textual button it indicates that an eventual <b>Trigger</b> character is to be displayed 
+with the <b>BOLD</b> attribut.
+<tr><td>512<td>Underline<td>This option applies to textual buttons only and specifies that an eventual 
+ALT trigger character is to be displayed <u>underlined</u>.
+</table>
+</dl><p><h5>Description</h5>
+<p> This library function draws a push button type component, the trigger
+activity of which being the responsibillity of the calling code.
+<p>The labels of push buttons may define a hot key or trigger character by
+preceeding the desired character by the <b>&</b> character.Hotkey trigger
+characters will be displayed <u>u</b>nderlined, in <b>bold</b> in a different colour to 
+the other text of the label, respecting the above option parameter.
+
+<p>
+</table>
+<p><table><tr><th><h4><a name="f008">VisualCheck (x%,y%,w%,h%,font%, fg%,bg%, message$,length%,value%)</h4>
+<tr><td><h5>Parameters</h5><p><dl>
+<dt>x%<dd>An integer value representing the x coordinate of the top left corner of the widget.
+<dt>y%<dd>An integer value representing the y coordinate of the top left corner of the widget.
+<dt>w%<dd>An integer value representing the width in pixels of the widget zone.
+<dt>h%<dd>An integer value representing the height in pixels of the widget zone.
+<dt>font%<dd>An Integer value identifying the text font to be used.
+<dt>fg%<dd>An Integer value providing the colour map, or palette, entry, to be used as the foreground or character colour.
+<dt>bg%<dd>An Integer value providing the colour map, or palette, entry, providing the background or wash colour.
+<dt>title$<dd>A string value providing the label to be displayed to the right of the check box.
+<dt>length%<dd>An Integer value providing the length of the preceeding label value.
+<dt>value%<dd>An Integer value describing the checkbox value and state as follows 
+<table>
+<tr><td>1<td>VALUE<td>When this bit is set the check box is true, otherwise its value is false.
+<tr><td>2<td>Focus<td>The checkbox will be drawn using the standard text focus colour, 
+otherwise it will be drawn using the standard text colour.
+<tr><td>256<td>Bold<td>This option indicates that an eventual <b>Trigger</b> character is to be displayed 
+with the <b>BOLD</b> attribut.
+<tr><td>512<td>Underline<td>This option specifies that an eventual 
+ALT trigger character is to be displayed <u>underlined</u>.
+</table>
+</dl><p><h5>Description</h5>
+<p> This library function simply draws a check box component comprising
+a rectangular check frame with the title message displayed to its right.
+<p>The labels of check boxs may define a hot key or trigger character by
+preceeding the desired character by the <b>&</b> character.Hotkey trigger
+characters will be displayed <u>u</u>nderlined, <b>bold</b> or with a trigger colour.
+<p>
+</table>
+<p><table><tr><th><h4><a name="f009">VisualRadio (x%,y%,w%,h%,font%, fg%,bg%, message$,length%, value%,state%)</h4>
+<tr><td><h5>Parameters</h5><p><dl>
+<dt>x%<dd>An integer value representing the x coordinate of the top left corner of the widget.
+<dt>y%<dd>An integer value representing the y coordinate of the top left corner of the widget.
+<dt>w%<dd>An integer value representing the width in pixels of the widget zone.
+<dt>h%<dd>An integer value representing the height in pixels of the widget zone.
+<dt>font%<dd>An Integer value identifying the text font to be used.
+<dt>fg%<dd>An Integer value providing the colour map, or palette, entry, to be used as the foreground or character colour.
+<dt>bg%<dd>An Integer value providing the colour map, or palette, entry, providing the background or wash colour.
+<dt>title$<dd>A string value providing the label to be displayed to the right of the radio button.
+<dt>length%<dd>An Integer value providing the length of the preceeding label value.
+<dt>value%<dd>An Integer value providing the value of this member of the radio group.
+<dt>state%<dd>An Integer value providing the current value of the radio group.
+</dl><p><h5>Description</h5>
+<p> This library function displays a radio button control. The radio will
+be drawn active if the value parameter is equal to the state parameter value,
+otherwise it will be drawn as disactive.
+<p>
+</table>
+<p><table><tr><th><h4><a name="f010">VisualImage(x%,y%,w%,h%,filename$,length%,options%)</h4>
+<tr><td><h5>Parameters</h5><p><dl>
+<dt>x%<dd>An integer value representing the x coordinate of the top left corner of the widget.
+<dt>y%<dd>An integer value representing the y coordinate of the top left corner of the widget.
+<dt>w%<dd>An integer value representing the width in pixels of the widget zone.
+<dt>h%<dd>An integer value representing the height in pixels of the widget zone.
+<dt>filename$<dd>A string value providing the filename of the font to be loaded
+<dt>length%<dd>An integer value indicating the length of the filename string to use.
+<dt>options%<dd>An Integer value providing image alignment options 
+<table>
+<tr><td>0<td>None
+<tr><td>1<td>Right Aligned
+<tr><td>2<td>Left Aligned
+<tr><td>3<td>Centered
+<tr><td>4<td>Tiled to cover the entire zone
+<tr><td>5<td>Makefit : Stretched or squashed to fit the entire zone
+<tr><td>6<td>BestFit : Stretched or squashed to the nearest proportional fit.
+</table>
+</dl><p><h5>Description</h5>
+<p> This library function allows a specified image file to loaded and displayed within
+the defined zone respecting the specified alignment.
+<p> Loaded Image files are managed in an internal list by the library
+allowing multiple display of images without them requiring to be reloaded.
+<p>Currently the library supports the loading and display of the 
+following image file formats on the various systems.
+<table>
+<tr><td>      <th>TWIN SERVER<th>USE IT<th>WINDOWS
+<tr><th>ICO<td>YES<td>YES<td>YES
+<tr><th>BMP<td>YES<td>YES<td>YES
+<tr><th>GIF<td>YES<td>YES<td>NO
+<tr><th>JPG<td>YES<td>YES<td>NO
+<tr><th>PNG<td>NO<td>YES<td>NO
+</table>
+<p>
+</table>
+<p><table><tr><th><h4><a name="f011">VisualTabPage(x%,y%,w%,h%,font%,title$,length%,indent%,state%)</h4>
+<tr><td><h5>Parameters</h5><p><dl>
+<dt>x%<dd>An integer value representing the x coordinate of the top left corner of the widget.
+<dt>y%<dd>An integer value representing the y coordinate of the top left corner of the widget.
+<dt>w%<dd>An integer value representing the width in pixels of the widget zone.
+<dt>h%<dd>An integer value representing the height in pixels of the widget zone.
+<dt>font%<dd>An Integer value identifying the text font to be used.
+<dt>title$<dd>A string value providing the label to be displayed on the tab page button.
+<dt>length%<dd>An Integer value providing the length of the preceeding label value.
+<dt>offset%<dd>An Integer value providing the pixel offset of the tab button from its left edge.
+<dt>option%<dd>An Integer value providing the style of the tab page comprising the following bitfields.
+<table>
+<tr><td>2<td>FOCUS
+<tr><td>/100<td>Bold atribut for the label or the trigger character of the label.
+<tr><td>/200<td>Underline atribut for the label or the trigger character of the label.
+<tr><td>/400<td>Shadowed label, but only when no trigger charactere present.
+</table>
+</dl><p><h5>Description</h5>
+<p> This library function displays a full tab frame component of the specified dimensions
+when the option parameter bit field <b>FOCUS</b> has been set. 
+<p>When the <b>FOCUS</b> bit is reset only the tab page action tag and
+label will be drawn.
+<p>The labels of tab pages may define a hot key or trigger character by
+preceeding the desired character by the <b>&</b> character.Hotkey trigger
+characters will be displayed respecting the trigger display options.
+<p>
+</table>
+<p><table><tr><th><h4><a name="f012">VisualSelect(x%,y%,w%,h%,font%, fg%,bg%, lists$,length%, value%?,state%)</h4>
+<tr><td><h5>Parameters</h5><p><dl>
+<dt>x%<dd>An integer value representing the x coordinate of the top left corner of the widget.
+<dt>y%<dd>An integer value representing the y coordinate of the top left corner of the widget.
+<dt>w%<dd>An integer value representing the width in pixels of the widget zone.
+<dt>h%<dd>An integer value representing the height in pixels of the widget zone.
+<dt>font%<dd>An Integer value identifying the text font to be used.
+<dt>fg%<dd>An Integer value providing the colour map, or palette, entry, to be used as the foreground or character colour.
+<dt>bg%<dd>An Integer value providing the colour map, or palette, entry, providing the background or wash colour.
+<dt>list$<dd>A String value providing the selection list comprising a <b>+</b> or <b>|</b> separated collection 
+of messages or string values.
+<dt>length%<dd>An Integer value providing the length of the preceeding list value.
+<dt>value%<dd>An Integer pointer providing the current value, and to which the result will be stored.
+<dt>state%<dd>An Integer value describing the state of the selection widget, either open and active or closed.
+</dl><p><h5>Description</h5>
+<p> When the state value but field <b>FOCUS</b> is ste this library function offers the list of <b>|</b> or <b>+</b> separated
+text items for selection within a select frame of the indicated dimensions. Otherwise the currently selected
+element is displayed within an edit type frame with a select activation 
+down arrow button.
+<p>Switching between the two states is the responsibility of the calling code.
+<p>When the selection frame is active the mouse allows standard usage of the
+scroll bar slider bar and step buttons and also allows items selection.
+<p>The up and down arrows of the keyboard allow the selection contents to be scrolled
+up and down.
+<p>Nearest fit selection is available by typing the first characters of the
+required item and the selection mechanims will position to the first element
+matching the current input. The backspace key may also be used to correct
+invalid characters .
+<p>  
+</table>
+<p><table><tr><th><h4><a name="f013">VisualScroll(x%,y%,w%,h%,font%, fg%,bg%,value%, limit%, max%, style%)</h4>
+<tr><td><h5>Parameters</h5><p><dl>
+<dt>x%<dd>An integer value representing the x coordinate of the top left corner of the widget.
+<dt>y%<dd>An integer value representing the y coordinate of the top left corner of the widget.
+<dt>w%<dd>An integer value representing the width in pixels of the widget zone.
+<dt>h%<dd>An integer value representing the height in pixels of the widget zone.
+<dt>font%<dd>An Integer value identifying the text font to be used.
+<dt>fg%<dd>An Integer value providing the colour map, or palette, entry, to be used as the foreground or character colour.
+<dt>bg%<dd>An Integer value providing the colour map, or palette, entry, providing the background or wash colour.
+<dt>value%<dd>An Integer value providing the current value or offset of the scroll bar slider.
+<dt>limit%<dd>An Integer value providing the visual limit of the scroll bar slider.
+<dt>max%<dd>An Integer value providing the maximum value possible for the slider position.
+<dt>style%<dd>An Integer value describing the style of the scroll bar taken from the following list.
+<table>
+<tr><td>0<td>standard relief with no buttons
+<tr><td>1<td>standard relief with bottom or right button
+<tr><td>2<td>standard relief with top or left button.
+<tr><td>3<td>standard relief with both top and bottom or left and right buttons.
+<tr><td>4<td>convex slider with no buttons
+<tr><td>5<td>convex slider with bottom or right button
+<tr><td>6<td>convex slider with top or left button.
+<tr><td>7<td>convex slider with both top and bottom or left and right buttons.
+</table>
+In addition to the above style codes the bit value /0100 or 256 when set indicates that the scroll bar
+is to be drawn indicating that it has the focus.
+</dl><p><h5>Description</h5>
+<p> This library function draws a scrollbar within the specified zone. If the zone is wider than it is
+high then the scroll bar drawn will be horizontal direction otherwise it will be vertical.
+The scroll bar element comprises a slider trough, a slider bar and two optional step buttons.
+The existance of the step buttons is controlled by the style parameter as described above.
+The actual scroll bar trigger and operation is to be managed by the calling code. This 
+function is responsible for the calculation and display of the scroll bar slider 
+within the scrollbar trough respecting the proportions determined by the value, max, limit and zone dimensions.
+<p>
+</table>
+<p><table><tr><th><h4><a name="f014">VisualPalette(filename$,length%)</h4>
+<tr><td><h5>Parameters</h5><p><dl>
+<dt>filename$<dd>A string value providing the filename of the palette or colourmap to be loaded
+<dt>length%<dd>An integer value indicating the length of the filename string to use.
+</dl><p><h5>Description</h5>
+<p> This library function allows the colour map or palette indicated by the file name 
+parameter to be loaded and established as the current colour conversion table.
+<p>All graphical functions and pixels of the visual library operate using 8 bit
+colour codes or colour map indexes. The palette is required for their conversion to
+8 bit, 16 bit, 24 bit, 32 bit true colour mode for use by the underlying graphical hardware.
+<p>
+</table>
+<p><table><tr><th><h4><a name="f015">VisualInitialise(mode%)</h4>
+<tr><td><h5>Parameters</h5><p><dl>
+<dt>mode%<dd>An Integer value providing the graphics mode required to be activated taken from the following list 
+<table>
+<tr><td>0<td>320x200x256
+<tr><td>1<td>640x400x256
+<tr><td>2<td>640x480x256
+<tr><td>3<td>800x600x256
+<tr><td>4<td>1024x786x256
+<tr><td>5<td>1280x1024x256
+</table>
+</dl>
+<p><h5>Description</h5>
+<p> This library function will activate the indicated graphical mode if the current 
+graphical state is inactive or if the current resolution is inferieur to that requested.
+<p>Graphical initialisation requires the activation of the hardware graphical system 
+and the allocation of the initial virtual bitmap for the output shadowing mechanisms.
+<p>This function will return <b>-1</b> if the requested graphics mode cannot be activated.
+<p>Calling other library functions, after reception of an error from either <b>VisualInitialise</b> or 
+<b>VisualActivate</b>, will lead to unpredictable results.
+<p>Failure may due to one of the following reasons :
+<ul>
+<li>The activation of graphics has been inhibited by the environment
+variable GRAPHOFF being set to 1
+<li>The activation of graphics has been inhibited by the environment
+variable GRAPHON being set to 0
+<li>The underlying graphical subsytem has refused the requested mode
+of operation.
+<li>No graphical hardware is available.
+</ul>
+<p>
+</table>
+<p><table><tr><th><h4><a name="f016">VisualLiberate()</h4>
+<tr><td>
+<p><h5>Description</h5>
+<p> This library function will release the graphical context only when the total
+number of calls to this function matches the number of calls to the <b>VisualInitialise</b> or <b>VisualActivate</b>
+functions.
+<p>The graphical hardware will be released and the virtual bitmap, palettes fonts and 
+image lists will be liberated.
+<p>
+</table>
+<p><table><tr><th><h4><a name="f017">VisualFreeze()</h4>
+<tr><td>
+<p><h5>Description</h5>
+<p> This library function will suspend mirroring of the internal
+screen buffers to the output device. All subsequent library functions
+which modify the output screen buffer will be performed in the screen
+buffer in background mode but the effect will not be updated on the
+console screen.
+</table>
+<p><table><tr><th><h4><a name="f018">VisualThaw(%,%,%,%)</h4>
+<tr><td><h5>Parameters</h5><p><dl>
+<dt>x%<dd>An integer value representing the x coordinate of the top left corner of the widget.
+<dt>y%<dd>An integer value representing the y coordinate of the top left corner of the widget.
+<dt>w%<dd>An integer value representing the width in pixels of the widget zone.
+<dt>h%<dd>An integer value representing the height in pixels of the widget zone.
+</dl><p><h5>Description</h5>
+<p>  This library function allows reactivation of the mirroring of 
+the internal screen buffers on the output device. All modifications
+performed to the screen buffer prior to calling this function will 
+become visible on the console screen. All subsequent function calls which
+modify the screen buffers will be immediatly visible on the output device.
+<p>
+</table>
+<p><table><tr><th><h4><a name="f019">VisualEvent(buffer$?)</h4>
+<tr><td><h5>Parameters</h5><p><dl>
+<dt>x%<dd>An string variable of at least 8 bytes in length for the reception of the 
+following four event integer values :
+<ul>
+<li>Event type : decribes the nature of the event with the following bit definitions
+<table>
+<tr><td>/0002<td>Keyboard event <td>the Event parameter provides the key code value
+<tr><td>/0010<td>Mouse Down<td>For all mouse events the event parameter identifies the mouse button involved.
+<tr><td>/0020<td>Mouse Up  <td>
+<tr><td>/0040<td>Mouse Click  <td> Mouse click and Mouse Double click are redundant.
+<tr><td>/0080<td>Mouse Double <td>
+<tr><td>/0100<td>Mouse Move<td>
+<tr><td>/0200<td>Mouse Move while down<td> the mouse moves whilst a button is depressed.
+<tr><td>/0400<td>Mouse Is Down<td>Not supported.
+<tr><td>/0800<td>Alt Key Trigger<td>Indicates an ALT KEY value available in the 
+Event Parameter Field
+</table>
+<li>Event parameter : provides a suplementary value depending on the event type.
+<li>Event Row : the graphical row position at which the event occured.
+<li>Event Column : the graphical column position at which the event occured.
+</ul>
+</dl><p><h5>Description</h5>
+<p> This library function allows the supplementary event information to be retrieved
+as a result of a keycode 256 being returned by the function <b>VisualKey</b>.
+</table>
+
+<p><table><tr><th><h4><a name="f020">VisualFill(x%,y%,w%,h%,pixel%,mode%)</h4>
+<tr><td><h5>Parameters</h5><p><dl>
+<dt>x%<dd>An integer value representing the x coordinate of the top left corner of the widget.
+<dt>y%<dd>An integer value representing the y coordinate of the top left corner of the widget.
+<dt>w%<dd>An integer value representing the width in pixels of the widget zone.
+<dt>h%<dd>An integer value representing the height in pixels of the widget zone.
+<dt>pixel%<dd>An Integer value providing the colour map, or palette, entry, to be used as the fill colour.
+<dt>mode%<dd>An integer value describing the nature of fill operation to be performed taken from the following list :
+<table>
+<tr><td>0<td>Colour Filled Rectangle
+<tr><td>1<td>Rectangular Coloured Outline Frame
+<tr><td>2<td>Circular Coloured Outline Frame
+<tr><td>3<td>Filled Circular Disc
+<tr><td>4<td>Horizontal convex standard colour fill
+<tr><td>5<td>Vertical convex standard colour fill
+<tr><td>6<td>Horizontal concave standard colour fill
+<tr><td>7<td>Vertical concave standard colour fill
+<tr><td>8<td>Rectangular colour framed and filled zone
+<tr><td>9<td>Circular colour framed and filled zone
+<tr><td>10<td>Framed Convex Zone
+<tr><td>11<td>Framed Concave Zone
+<tr><td>12<td>Colour cross hatch or shadowing.
+<tr><td>13<td>A framed rectangle with rounded coreners.
+</table>
+</dl><p><h5>Description</h5>
+<p> This library function performs the fill operation described by the mode parameter using the
+pixel colour where applicable for the specified zone.
+<p>
+</table>
+
+<p><table><tr><th><h4><a name="f021">VisualKey(mode%)<h4>
+<tr><td><h5>Parameters</h5><p><dl>
+<dt>mode%<dd>An Intger value providing the nature of the operation to be performed as shown in the following table
+<table>
+<tr><td>0<td>Test Event<td>returns false if no event waiting otherwise returns true
+<tr><td>1<td>Wait Event<td>Awaits and returns event or keycode. A keycode of 256 indicates event information may be read.
+<tr><td>2<td>Read Event<td>returns -1 if no event waiting otherwise returns event or keycode.
+</table>
+</dl><p><h5>Description</h5>
+<p> This library function allows interaction with the library event input channels
+as described by its mode parameter.
+<p>
+</table>
+
+<p><table><tr><th><h4><a name="f022">VisualControl(function%,parameter1$?,parameter2%)</h4>
+<tr><td><h5>Parameters</h5><p><dl>
+<dt>function%<dd>An Integer value describing the control function to be performed and taken from 
+the following list.
+<table>
+<tr><th>0<td>VISUAL_VERSION<td>Returns the library version information in the provided buffer defined by  the string parameter 1 and its length parameter 2.
+<tr><th>1<td>VISUAL_CONFIG<td>Performs configuration information loading from the file identified by the buffer defined by  the string parameter 1 and its length parameter 2.
+<tr><th>2<td>VISUAL_RECORD<td>Activates event recording to the file name provided by the buffer defined by  the string parameter 1 and its length parameter 2.
+<tr><th>3<td>VISUAL_REPLAY<td>Activates event replay from the file named by the buffer defined by  the string parameter 1 and its length parameter 2.
+<tr><th>4<td>VISUAL_FONTWIDTH<td>Returns the font width of the ascii font number taken from the buffer defined by  the string parameter 1 and its length parameter 2.
+<tr><th>5<td>VISUAL_FONTHEIGHT<td>Returns the font height of the ascii font number taken from the buffer defined by  the string parameter 1 and its length parameter 2.
+<tr><th>6<td>VISUAL_TRACE<td>Outputs a text trace message taken from the buffer parameter over the stdio channel.
+<tr><th>7<td>VISUAL_TITLE<td>Sets the system Window Manager title for the current application to the string value provided by the buffer 
+and length parameters.(X/11 based systems only)
+<tr><th>8<td>VISUAL_ICON<td>Sets the system Window Manager icon name for the current application to the string value provided by the buffer and length parameters.(X/11 based systems only)
+<tr><th>9<td>VISUAL_HELP<td>Runs the system HTML browser for the help page defined by the string buffer parameter.
+<tr><th>10<td>VISUAL_HOTKEY<td>Sets the collection of active hotkeys for the <b>VisualEdit</b> function. Active hotkeys are tested prior to
+all other standard edit key behaviour consequently allowing all edit keys to be overloaded.
+The buffer length parameter determines the number of characters to be used in the in the buffer.
+<tr><th>11<td>VISUAL_LANGUAGE<td>Allows the internal national language code of the visual library to 
+be inspected when parameter 2 is <b>-1</b> and to be set when parameter 2 provides a legal language code value between <b>1</b> and <b>8</b> inclusive.
+<tr><th>12<td>VISUAL_TRIGGER<td>Performs analysis of the string parameter up to the specified length and returns a detected trigger character.
+Trigger characters are to be preceeded by the standard <b>ampersand</b> or <b>&amp;</b> character.
+Zero will be returned if no trigger character is detected. This function is required for the
+dynamic detection of triggers in national language message strings.
+<tr><th>13<td>VISUAL_PUSHVIEWPORT<td>Saves the current viewport description to the buffer described by
+parameter 1 and parameter 2. This information comprises the X and Y position, the width and height and the
+font identifier.
+The buffer must be at least 16 bytes long otherwise an error <b>62</b> will be returned.
+<tr><th>14<td>VISUAL_POPVIEWPORT<td>Restores the current viewport description from the buffer described by
+parameter 1 and parameter 2 and renders it active.
+The buffer must contain a valid viewport description as returned by the preceeding PUSH VIEWPORT
+function.
+<tr><th>15<td>VISUAL_		<td>
+<tr><th>16<td>VISUAL_		<td>
+<tr><th>17<td>VISUAL_		<td>
+<tr><th>18<td>VISUAL_		<td>
+<tr><th>19<td>VISUAL_		<td>
+<tr><th>20<td>VISUAL_		<td>
+<tr><th>21<td>VISUAL_		<td>
+<tr><th>22<td>VISUAL_		<td>
+<tr><th>23<td>VISUAL_		<td>
+<tr><th>24<td>VISUAL_		<td>
+<tr><th>25<td>VISUAL_		<td>
+<tr><th>26<td>VISUAL_		<td>
+<tr><th>27<td>VISUAL_		<td>
+<tr><th>28<td>VISUAL_		<td>
+<tr><th>29<td>VISUAL_		<td>
+<tr><th>30<td>VISUAL_		<td>
+<tr><th>31<td>VISUAL_		<td>
+<tr><th>32<td>VISUAL_		<td>
+<tr><th>33<td>VISUAL_		<td>
+<tr><th>34<td>VISUAL_		<td>
+<tr><th>35<td>VISUAL_		<td>
+<tr><th>36<td>VISUAL_		<td>
+<tr><th>37<td>VISUAL_		<td>
+<tr><th>40<td>VISUAL_		<td>
+<tr><th>41<td>VISUAL_		<td>
+<tr><th>42<td>VISUAL_		<td>
+<tr><th>43<td>VISUAL_		<td>
+<tr><th>44<td>VISUAL_		<td>
+<tr><th>45<td>VISUAL_		<td>
+<tr><th>46<td>VISUAL_		<td>
+<tr><th>47<td>VISUAL_		<td>
+<tr><th>48<td>VISUAL_		<td>
+<tr><th>49<td>VISUAL_		<td>
+<tr><th>50<td>VISUAL_		<td>
+</table>
+<p>The include file <b>visidef.as</b> provides abal constants declarations for each of the 
+above symbolic control names.
+<p>
+<dt>buffer$<dd>A string value providing the buffer to be used according to the needs of the function parameter.
+<dt>length%<dd>An Integer value providing the length of the preceeding buffer parameter. 
+</dl><p><h5>Description</h5>
+<p> This library function provides access to various functions allowing control over other
+library function behaviour or for the retrieval of general information.
+<p>
+</table>
+
+<p><table><tr><th><h4><a name="f023">VisualProgress(x%,y%,w%,h%,font%, fg%,bg%,limit%,value%, option%)</h4>
+<tr><td><h5>Parameters</h5><p><dl>
+<dt>x%<dd>An integer value representing the x coordinate of the top left corner of the widget.
+<dt>y%<dd>An integer value representing the y coordinate of the top left corner of the widget.
+<dt>w%<dd>An integer value representing the width in pixels of the widget zone.
+<dt>h%<dd>An integer value representing the height in pixels of the widget zone.
+<dt>font%<dd>An Integer value identifying the text font to be used.
+<dt>fg%<dd>An Integer value providing the colour map, or palette, entry, to be used as the foreground or character colour.
+<dt>bg%<dd>An Integer value providing the colour map, or palette, entry, providing the background or wash colour.
+<dt>limit%<dd>An Integer value providing the upper limit value of the progress operation.
+<dt>value%<dd>An Integer value providing the current value of the progress operation.
+<dt>option%<dd>An Integer value providing a currently undefined option for future use.
+</dl><p><h5>Description</h5>
+<p> This library function will draw a bi-coloured progress bay in the specified zone 
+displaying the progression percentage using the indicated font.
+<p>
+</table>
+<p><table><tr><th><h4><a name="f024">VisualTable(x%,y%,w%,h%,font%, fg%,bg%, titles$,tlength%, buffer$,blength%, option%, format$,flength%)</h4>
+<tr><td><h5>Parameters</h5><p><dl>
+<dt>x%<dd>An integer value representing the x coordinate of the top left corner of the widget.
+<dt>y%<dd>An integer value representing the y coordinate of the top left corner of the widget.
+<dt>w%<dd>An integer value representing the width in pixels of the widget zone.
+<dt>h%<dd>An integer value representing the height in pixels of the widget zone.
+<dt>font%<dd>An Integer value identifying the text font to be used.
+<dt>fg%<dd>An Integer value providing the colour map, or palette, entry, to be used as the foreground or character colour.
+<dt>bg%<dd>An Integer value providing the colour map, or palette, entry, providing the background or wash colour.
+<dt>titles$<dd>A string value providing the list of titles to be displayed in the inverse video upper line of the table or form.
+<dt>tlength%<dd>An Integer value providing the length of the preceeding titles buffer parameter. 
+<dt>buffer$<dd>A string value providing the buffer to be used to provide the row and column data of the table.
+<dt>blength%<dd>An Integer value providing the length of the preceeding buffer parameter. 
+<dt>option%<dd>An Integer value describing the various table background and title 
+options as follows
+<table>
+<tr><th colspan=3>Table Background
+<tr><td>0<td>white<td>The table data area will plain white in colour.
+<tr><td>1<td>zoned<td>The table data area will alternate line by line between white and light grey.
+<tr><td>2<td>coloured<td>The table data area will be colour filled
+<tr><td>3<td>colour zoned<td>The table data area will alternate between the colour value and the colour value minus 1.
+<tr><th colspan=3>Table Titles
+<tr><td>/0100<td>Bold Titles<td>The title messages will be drawn with the bold atribut.
+<tr><td>/0200<td>Underlined Titles<td>The title messages will be underlined.
+<tr><td>/0400<td>Relief Title Buttons<td>The title messages will be displayed on releif buttons.
+When this option is not set the titles will be displayed over the standard title background colour.
+</table>
+<dt>format$<dd>A string value providing specific column formating information in terms of standard abal format syntax
+<dt>flength%<dd>An Integer value providing the length of the preceeding format buffer parameter. 
+</dl><p><h5>Description</h5>
+<p> This library function tabulates the data provided by the buffer parameter in the
+columns described by the titles and/or format parameters over the described zone. The titles
+will be drawn in the first row, the data tabulated in the subsequent rows. The option 
+parameter allows control over the way in which the table background and labels will be
+displayed.
+<p>
+</table>
+
+<p><table><tr><th><h4><a name="f025">VisualColour(function%,buffer$?,param1%,param2%)</h4>
+<tr><td><h5>Parameters</h5><p><dl>
+<dt>function%<dd>An integer value describing the colour map function to be performed.
+<table>
+<tr><td>0<td>Get Colours
+<tr><td>1<td>Put Colours
+<tr><td>2<td>Get Red Value
+<tr><td>3<td>Get Green Value
+<tr><td>4<td>Get Blue Value
+<tr><td>5<td>Put Red Value
+<tr><td>6<td>Put Green Value
+<tr><td>7<td>Put Blue Value
+</table>
+<dt>buffer$<dd>A string parameter providing the buffer to be used for the colour 
+  transfer block operations <b>GET</b> and <b>PUT<b>. The buffer must be 4 * 256 bytes long.
+<dt>param1%<dd>An integer parameter defining the first colour map entry involved in the block transfer operations, and defining 
+the individual colour for the colour value operations.
+<dt>param2%<dd>An integer parameter defining the final colour map entry for block transfer and providing the 
+new colour value for the set colour value operations 5 through 6.
+</dl><p><h5>Description</h5>
+<p>This library function allows access to and control of the 
+internal library colour map table.
+<p>This table is loaded by the library function <b>VisualPalette</b>.
+<p>The block transfer operations, <b>get</b> and <n>put</b> allow 
+palette entries starting from the value of <b>param1<b> up to the value
+provided by <b>param2</b> to be transfered into or out from the visual
+library internal palette table.
+<p>The colour value operations allow inspection or modification of the
+various <b>red</b>,<b>green</b> and <b>blue</b> components of a specific
+colour map entry identified by the <b>param1</b> value.
+<p>
+</table>
+
+<p><table><tr><th><h4><a name="f026">VisualBuffer(w%,h%)</h4>
+<tr><td><h5>Parameters</h5><p><dl>
+<dt>w%<dd>An integer value representing the width in pixels of the required visual buffer.
+<dt>h%<dd>An integer value representing the height in pixels of the requied visual buffer
+</dl><p><h5>Description</h5>
+<p> This library function creates a virtual bitmap buffer of the required dimensions
+and returns a unique identifier that may be used to reference the newly created buffer from
+other functions.
+<p> Virtual bitmap buffers created in this way may be used for background pixel capture
+in push / pop mechanisms, for background window preparation or for graphical printing.
+<p>
+</table>
+
+<p><table><tr><th><h4><a name="f027">VisualPage(number%)</h4>
+<tr><td><h5>Parameters</h5><p><dl>
+<dt>number%<dd>An integer value providing a valid visual buffer identifier as returned by the above <b>VisualBuffer</b> function
+</dl><p><h5>Description</h5>
+<p>This library function establishes the indicated virtual bitmap as the current input
+source and current output target for all subsequent graphical input output functions.
+<p>
+
+</table>
+
+<p><table><tr><th><h4><a name="f028">VisualGet(number%,x%,y%)</h4>
+<tr><td><h5>Parameters</h5><p><dl>
+<dt>number%<dd>An integer value providing a valid visual buffer identifier as returned by the above <b>VisualBuffer</b> function
+<dt>x%<dd>An integer value representing the x coordinate of the top left corner of the zone.
+<dt>y%<dd>An integer value representing the y coordinate of the top left corner of the zone.
+</dl><p><h5>Description</h5>
+<p> This library function copies pixel values from the current input source to the
+virtual bitmap identified by the number parameter. 
+The transfer will be controlled by the width and height of the target virtual bitmap.
+<p>
+</table>
+<p><table><tr><th><h4><a name="f029">VisualGetRow(r%,buffer$?,length%)</h4>
+<tr><td><h5>Parameters</h5><p><dl>
+<dt>r%<dd>An Integer value describing the source row in the current input source..
+<dt>buffer$<dd>A string value providing the buffer to be used to receive the row of pixels
+<dt>length%<dd>An Integer value providing the length of the preceeding buffer parameter. 
+</dl><p><h5>Description</h5>
+<p> This library function will copy the specified row from the current input source
+to the provided buffer controlled by the length parameter.
+<p>
+</table>
+
+<p><table><tr><th><h4><a name="f030">VisualPutRow(r%,buffer$,length%)</h4>
+<tr><td><h5>Parameters</h5><p><dl>
+<dt>r%<dd>An Integer value describing the target row in the current output target.
+<dt>buffer$<dd>A string value providing the buffer to be used to provide row of pixels
+<dt>length%<dd>An Integer value providing the length of the preceeding buffer parameter. 
+</dl><p><h5>Description</h5>
+<p> This library function will copy the specified row from 
+from the provided buffer controlled by the length parameter.
+to the current output target.
+<p>
+</table>
+
+<p><table><tr><th><h4><a name="f031">VisualPut(number%,x%,y%)</h4>
+<tr><td><h5>Parameters</h5><p><dl>
+<dt>number%<dd>An integer value providing a valid visual buffer identifier as returned by the above <b>VisualBuffer</b> function
+<dt>x%<dd>An integer value representing the x coordinate of the top left corner of the zone.
+<dt>y%<dd>An integer value representing the y coordinate of the top left corner of the zone.
+</dl><p><h5>Description</h5>
+<p> This library function performs the complementary action to that of the <b>VisualGet</b>
+function, copying the contents of the specified virtual bitmap buffer to the output target
+starting from the specified target coordinate. The width and height of the source 
+again controlling the transfer operation.
+<p>
+</table>
+
+<p><table><tr><th><h4><a name="f032">VisualDrop(number%)</h4>
+<tr><td><h5>Parameters</h5><p><dl>
+<dt>number%<dd>An integer value providing a valid visual buffer identifier as returned by the above <b>VisualBuffer</b> function
+</dl><p><h5>Description</h5>
+<p> As a result of calling this library function the indicated virtual bitmap will be dropped and all memory 
+associated will be released for reuse.
+<p>
+</table>
+
+<p><table><tr><th><h4><a name="f033">VisualTransform(number%,function%,w%,h%)</h4>
+<tr><td><h5>Parameters</h5><p><dl>
+<dt>number%<dd>An integer value providing a valid visual buffer identifier as returned by the above <b>VisualBuffer</b> function
+<dt>function%<dd>An Integer value describing the nature of the transformation taken from the following list
+<table>
+<tr><td>0<td>Rotate<td>p1 provides the direction of the rotation 90,180,270 degrees
+<tr><td>1<td>Reflect<td>p1 provides the axis along which the reflection will occur 0: veritcal, 1: horizontal
+<tr><td>2<td>Resize<td>The buffer will be clipped or expanded to the dimensions described by p1 the width and p2 the height
+<tr><td>3<td>MakeFit<td>The buffer contents will be stretched or squashed to fit the new zone size
+defined by the p1 width and p2 height values.
+</table>
+<dt>p1%<dd>An integer value to be used as described for the individual functions above.
+<dt>p2%<dd>An integer value to be used as described for the individual functions above.
+</dl><p><h5>Description</h5>
+<p> This library function performs the transformation operation described by the 
+various  parameters on the indicated virtual bitmap.
+<p>This function may result in the dimensions of the virtual bitmap being changed.
+<p>
+</table>
+<p><table><tr><th><h4><a name="f034">VisualPutZone(x%,y%,w%,h%,buffer$)</h4>
+<tr><td><h5>Parameters</h5><p><dl>
+<dt>x%<dd>An integer value representing the x coordinate of the top left corner of the widget.
+<dt>y%<dd>An integer value representing the y coordinate of the top left corner of the widget.
+<dt>w%<dd>An integer value representing the width in pixels of the widget zone.
+<dt>h%<dd>An integer value representing the height in pixels of the widget zone.
+<dt>buffer$<dd>A string value providing the source buffer for the operation. The buffer
+must be at least width * height bytes in length.
+</dl><p><h5>Description</h5>
+<p>  This library function copies the pixel information contained in the buffer parameter
+to the output target zone. The buffer must be long enough to provide for w * h pixels.
+<p>
+</table>
+<p><table><tr><th><h4><a name="f035">VisualSwitch(x%,y%,w%,h%,font%, fg%,bg%, message$,length%,state%)</h4>
+<tr><td><h5>Parameters</h5><p><dl>
+<dt>x%<dd>An integer value representing the x coordinate of the top left corner of the widget.
+<dt>y%<dd>An integer value representing the y coordinate of the top left corner of the widget.
+<dt>w%<dd>An integer value representing the width in pixels of the widget zone.
+<dt>h%<dd>An integer value representing the height in pixels of the widget zone.
+<dt>font%<dd>An Integer value identifying the text font to be used.
+<dt>fg%<dd>An Integer value providing the colour map, or palette, entry, to be used as the foreground or character colour.
+<dt>bg%<dd>An Integer value providing the colour map, or palette, entry, providing the background or wash colour.
+<dt>message$<dd>A string value providing the characters of the text to be displayed.
+<dt>length%<dd>An Integer value providing the length of the preceeding message string value.
+<dt>state%<dd>An Integer value providing the boolean state of the switch.
+</dl><p><h5>Description</h5>
+<p>  This library function draws a coloured boolean message switch component described 
+by its parameters.
+<p>
+</table>
+<p><table><tr><th><h4><a name="f036">VisualGraph(x%,y%,w%,h%,font%, fg%,bg%, buffer$,count%,type%)</h4>
+<tr><td><h5>Parameters</h5><p><dl>
+<dt>x%<dd>An integer value representing the x coordinate of the top left corner of the widget.
+<dt>y%<dd>An integer value representing the y coordinate of the top left corner of the widget.
+<dt>w%<dd>An integer value representing the width in pixels of the widget zone.
+<dt>h%<dd>An integer value representing the height in pixels of the widget zone.
+<dt>font%<dd>An Integer value identifying the text font to be used.
+<dt>fg%<dd>An Integer value providing the colour map, or palette, entry, to be used as the foreground or character colour.
+<dt>bg%<dd>An Integer value providing the colour map, or palette, entry, providing the background or wash colour.
+<dt>buffer$<dd>A string value providing buffer matrix containg the values to be graphed.
+<dt>count%<dd>An Integer value defining the number of values in the above buffer parameter.
+<dt>type%<dd>An Integer value describing the nature of the values in the buffer as follows
+<table>
+<tr><td>0<td>8 bit Byte values
+<tr><td>1<td>16 bit Word Values
+<tr><td>2<td>32 bit Long Values
+</table>
+</dl><p><h5>Description</h5>
+<p> This library function graphs the collection of input values taken from the buffer parameter
+in conjunction with the count and type parameters over the specified zone.
+<p>The graph widths will be calculated wrt the number of input values.
+<p>
+</table>
+<p><table><tr><th><h4><a name="f037">VisualActivate(w%,h%,s%)</h4>
+<tr><td><h5>Parameters</h5><p><dl>
+<dt>w%<dd>An integer value representing the minimum width in pixels of the required screen.
+<dt>h%<dd>An integer value representing the minimum height in pixels of the requied screen.
+<dt>s%<dd>An integer value representing the style or mode of graphical activation.
+</dl><p><h5>Description</h5>
+<p> The library function operates in a similar fashion to the <b>VisualInitialise</b>
+function except that instead of the VESA graphical mode the required pixel width and height
+are to be specified.
+<p>As for <b>VisualInitialise</b> this function will also return <b>-1</b> to indicate failure.
+<p>The style parameter may be used in future version as an indication of the visual style required.
+<p>It should be currently set to zero.
+</table>
+<p><table><tr><th><h4><a name="f038">VisualViewPort(x%,y%,w%,h%,font%)</h4>
+<tr><td><h5>Parameters</h5><p><dl>
+<dt>x%<dd>An integer value representing the x coordinate of the top left corner of the widget.
+<dt>y%<dd>An integer value representing the y coordinate of the top left corner of the widget.
+<dt>w%<dd>An integer value representing the width in pixels of the widget zone.
+<dt>h%<dd>An integer value representing the height in pixels of the widget zone.
+<dt>font%<dd>An Integer value identifying the text font to be used.
+</dl><p><h5>Description</h5>
+<p> This library function allows the PRINT/ASK, console character input output channels to
+be controlled and restricted to the specified zone using the indicated text font.
+<p>The text font dimensions will be used to recalculate the number of text columns and
+text lines being made available to the ABAL program via the standard CONF instructions
+to this effect.
+<p>When the width and or height are specified as zero the actual screen dimensions
+will be taken instead effectivly releasing any previous view port clipping and restoring
+default PRINT/ASK operation.
+<p>
+</table>
+<p>
+<table><tr><th><h4 align=center>Simple Application Example</a>
+<tr><td>
+<p>
+<code>
+#user "visual"<br>
+PROGRAM "EXAMPLE"<br>
+DCL	e%,n%
+DCL	nom$=20,TEL$=20,ADR$=20<br>
+SEGMENT 0<br>
+<dl><dd>
+	e = VisualInitialise(3)<br>
+	n = VisualBuffer(800,600)<br>
+	e = VisualGet(n,0,0)<br><br>
+	e = VisualWindow(0,0,800,600,2,"TITLE",5,3)<br>
+	e = VisualZone(20,40,200,24,5)<br>
+	e = VisualZone(20,80,200,24,5)<br>
+	e = VisualZone(20,120,200,24,5)<br><br>
+	e = VisualEdit(20,40,200,24,1,NOM,20)<br>
+	e = VisualEdit(20,80,200,24,1,TEL,20)<br>
+	e = VisualEdit(20,120,200,24,1,ADR,20)<br><br>
+	e = VisualPut(n,0,0)<br>
+	e = VisualDrop(n)<br>
+	e = VisualLiberate()<br>
+	Stop<br>
+</dl>
+ESEG 0<br>
+END<br>
+</code>
+<p> Inspecting the above example the following things should be understood :
+Firstly we see the initialisation of the visual subsystem
+with the VESA resolution of 800x600 followed by the allocation of a virtual bitmap
+and capture of the entire graphical screen. This is followed by the display of
+a window component and three edit zones. Three individual edit operations follow
+in their respective zones. Finally the contents of the screen saved in the virtual
+bitmap are restored, the buffer is released and then the graphics are terminated prior
+to the end of the program.
+<p>
+</table>
+
+<p>
+<table>
+<tr><th><h3 align=center>Copyright &copy; <a href="http://www.prologue.fr">Prologue  </a></h3>
+<tr><th><h3 align=center>Version Fran&ccedil;aise <a href="fr/visual.htm"><img src="tricolor.gif"></a>
+</table>
+</div>
+</body>
+</html>
+

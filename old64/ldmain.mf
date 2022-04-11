@@ -1,0 +1,8 @@
+
+!make
+OLDOBJ =  $(POBJ)ldmain$(OBJ) $(POBJ)lderrors$(OBJ) $(POBJ)ldabmsg$(OBJ)
+$(POBJ)ldmain$(OBJ):  $(SP01)ldmain.c $(SP01)ldmain.h /home/abal64/include/allocate.h $(SP01)ldxref.h $(SP01)ldvarb.h $(SP01)ldproc.h $(SP01)ldsegm.h $(SP01)ldfile.h $(SP01)lderrors.h $(SP01)ldver.h /home/abal64/include/bankrnl.h $(SP01)ldreport.c $(SP01)ldtcode.c $(SP01)ldbuff.c $(SP01)ldhead.c '
+$(SP01)ldfile.c $(SP01)fnparser.c $(SP01)fnparser.h $(SP01)ldreloc.c $(SP01)ldname.c $(SP01)ldxref.c $(SP01)ldcons.c $(SP01)ldvarb.c $(SP01)ldproc.c $(SP01)ldsegm.c $(SP01)ldlibr.c $(SP01)ldlibmod.c $(SP01)ldmodule.c
+$(POBJ)lderrors$(OBJ):  $(SP01)lderrors.c $(SP01)ldmain.h /home/abal64/include/allocate.h $(SP01)ldxref.h $(SP01)ldvarb.h $(SP01)ldproc.h $(SP01)ldsegm.h $(SP01)lderrors.h $(SP01)ldabmsg.h $(SP01)ldtrace.h /home/abal64/include/trace.h
+$(POBJ)ldabmsg$(OBJ):  $(SP01)ldabmsg.c $(SP01)ldmain.h /home/abal64/include/allocate.h $(SP01)ldxref.h $(SP01)ldvarb.h $(SP01)ldproc.h $(SP01)ldsegm.h $(SP01)ldabmsg.h $(SP01)ldmsg.h /home/abal64/src/cico/cicolang.c
+

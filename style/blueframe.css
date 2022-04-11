@@ -1,0 +1,54 @@
+basicframe {
+	border-colour: colour(15); 
+	border-style: solid;
+	background-colour: colour(16);
+	corner-top-left-style: url(sttl.png);
+	border-top-width: 10px;
+	border-top-style: url(stt.png);
+	corner-top-right-style: url(sttr.png);
+	border-right-width: 10px;
+	border-right-style: url(str.png);
+	corner-bottom-right-style: url(stbr.png);
+	border-bottom-width: 10px;
+	border-bottom-style: url(stb.png);
+	corner-bottom-left-style: url(stbl.png);
+	border-left-width: 10px;
+	border-left-style: url(stl.png);
+	background-image: url(stm.png);
+	background-align: makefit;
+	border-align: transparent;
+	text-font: url(tahoma13.fmf);
+	text-colour: black;
+	text-align: center;
+	}
+
+
+inverseframe {
+	border-colour: colour(15); 
+	border-style: solid;
+	background-colour: colour(16);
+	corner-top-left-style: url(isttl.png);
+	border-top-width: 10px;
+	border-top-style: url(istt.png);
+	corner-top-right-style: url(isttr.png);
+	border-right-width: 10px;
+	border-right-style: url(str.png);
+	corner-bottom-right-style: url(istbr.png);
+	border-bottom-width: 10px;
+	border-bottom-style: url(istb.png);
+	corner-bottom-left-style: url(istbl.png);
+	border-left-width: 10px;
+	border-left-style: url(stl.png);
+	background-image: url(stm.png);
+	background-align: makefit;
+	border-align: transparent;
+	text-font: url(tahoma13.fmf);
+	text-colour: black;
+	text-align: center;
+	}
+
+
+
+
+
+

@@ -1,0 +1,27 @@
+
+! include $(ABAL)/common/common.def
+! include $(ABAL)/common/allocate.def
+! include $(ABAL)/common/libaccess.def
+
+SP01 = $(ABAL)/src/amake/
+
+.c.o:
+	-$(GCC) -c -g $(GDB) -DVERSION666 -DLINUX -DUNIX -Dunix -DUNX -I$(ABAL)/include -DHX -DMSG_HX $* 1> pipo1 2> pipo2
+	cat pipo1 pipo2 > pipo
+	agr -apipo
+ 
+
+gmmain.o: $(SP01)gmmain.c
+gmfile.o: $(SP01)gmfile.c
+
+! make
+
+$(ABAL)/bin/genmake: gmmain.o gmfile.o utbibunx.o $(FNPARSER) $(LIBACCESS) $(ALLOCATE) $(WILDCOMP)
+	$(GCC) -g -o $@ $?
+
+! make
+
+
+
+
+

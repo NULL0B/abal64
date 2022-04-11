@@ -1,0 +1,120 @@
+# generated makefile : class.mf 
+# ------------------------------------
+/home/Dev/abal32/product31e/class/abal3.mf: /home/Dev/abal32/src/class/abal3.mf
+	cp $* $@ 
+/home/Dev/abal32/product31e/class/asfuni.as: /home/Dev/abal32/src/class/asfuni.as
+	cp $* $@ 
+/home/Dev/abal32/product31e/class/audioi.as: /home/Dev/abal32/src/class/audioi.as
+	cp $* $@ 
+/home/Dev/abal32/product31e/class/bdaneti.as: /home/Dev/abal32/src/class/bdaneti.as
+	cp $* $@ 
+/home/Dev/abal32/product31e/class/bibmathi.as: /home/Dev/abal32/src/class/bibmathi.as
+	cp $* $@ 
+/home/Dev/abal32/product31e/class/errors.as: /home/Dev/abal32/src/class/errors.as
+	cp $* $@ 
+/home/Dev/abal32/product31e/class/filelib.as: /home/Dev/abal32/src/class/filelib.as
+	cp $* $@ 
+/home/Dev/abal32/product31e/class/files.as: /home/Dev/abal32/src/class/files.as
+	cp $* $@ 
+/home/Dev/abal32/product31e/class/files.mf: /home/Dev/abal32/src/class/files.mf
+	cp $* $@ 
+/home/Dev/abal32/product31e/class/fstream.as: /home/Dev/abal32/src/class/fstream.as
+	cp $* $@ 
+/home/Dev/abal32/product31e/class/gprinter.as: /home/Dev/abal32/src/class/gprinter.as
+	cp $* $@ 
+/home/Dev/abal32/product31e/class/handle.as: /home/Dev/abal32/src/class/handle.as
+	cp $* $@ 
+/home/Dev/abal32/product31e/class/mcfile.as: /home/Dev/abal32/src/class/mcfile.as
+	cp $* $@ 
+/home/Dev/abal32/product31e/class/pragmas.as: /home/Dev/abal32/src/class/pragmas.as
+	cp $* $@ 
+/home/Dev/abal32/product31e/class/printeri.as: /home/Dev/abal32/src/class/printeri.as
+	cp $* $@ 
+/home/Dev/abal32/product31e/class/sifile.as: /home/Dev/abal32/src/class/sifile.as
+	cp $* $@ 
+/home/Dev/abal32/product31e/class/stdfile.as: /home/Dev/abal32/src/class/stdfile.as
+	cp $* $@ 
+/home/Dev/abal32/product31e/class/ttyi.as: /home/Dev/abal32/src/class/ttyi.as
+	cp $* $@ 
+/home/Dev/abal32/product31e/class/vargv.as: /home/Dev/abal32/src/class/vargv.as
+	cp $* $@ 
+/home/Dev/abal32/product31e/class/vbuffer.as: /home/Dev/abal32/src/class/vbuffer.as
+	cp $* $@ 
+/home/Dev/abal32/product31e/class/vcall.as: /home/Dev/abal32/src/class/vcall.as
+	cp $* $@ 
+/home/Dev/abal32/product31e/class/vcheck.as: /home/Dev/abal32/src/class/vcheck.as
+	cp $* $@ 
+/home/Dev/abal32/product31e/class/vcmdline.as: /home/Dev/abal32/src/class/vcmdline.as
+	cp $* $@ 
+/home/Dev/abal32/product31e/class/vcolour.as: /home/Dev/abal32/src/class/vcolour.as
+	cp $* $@ 
+/home/Dev/abal32/product31e/class/vedit.as: /home/Dev/abal32/src/class/vedit.as
+	cp $* $@ 
+/home/Dev/abal32/product31e/class/vevent.as: /home/Dev/abal32/src/class/vevent.as
+	cp $* $@ 
+/home/Dev/abal32/product31e/class/vfill.as: /home/Dev/abal32/src/class/vfill.as
+	cp $* $@ 
+/home/Dev/abal32/product31e/class/vfname.as: /home/Dev/abal32/src/class/vfname.as
+	cp $* $@ 
+/home/Dev/abal32/product31e/class/vfont.as: /home/Dev/abal32/src/class/vfont.as
+	cp $* $@ 
+/home/Dev/abal32/product31e/class/vframe.as: /home/Dev/abal32/src/class/vframe.as
+	cp $* $@ 
+/home/Dev/abal32/product31e/class/vgraph.as: /home/Dev/abal32/src/class/vgraph.as
+	cp $* $@ 
+/home/Dev/abal32/product31e/class/vgroup.as: /home/Dev/abal32/src/class/vgroup.as
+	cp $* $@ 
+/home/Dev/abal32/product31e/class/vimage.as: /home/Dev/abal32/src/class/vimage.as
+	cp $* $@ 
+/home/Dev/abal32/product31e/class/visilib.as: /home/Dev/abal32/src/class/visilib.as
+	cp $* $@ 
+/home/Dev/abal32/product31e/class/visual.as: /home/Dev/abal32/src/class/visual.as
+	cp $* $@ 
+/home/Dev/abal32/product31e/class/visuali.as: /home/Dev/abal32/src/class/visuali.as
+	cp $* $@ 
+/home/Dev/abal32/product31e/class/visual.mf: /home/Dev/abal32/src/class/visual.mf
+	cp $* $@ 
+/home/Dev/abal32/product31e/class/vlabels.as: /home/Dev/abal32/src/class/vlabels.as
+	cp $* $@ 
+/home/Dev/abal32/product31e/class/vlibrary.as: /home/Dev/abal32/src/class/vlibrary.as
+	cp $* $@ 
+/home/Dev/abal32/product31e/class/vmessage.as: /home/Dev/abal32/src/class/vmessage.as
+	cp $* $@ 
+/home/Dev/abal32/product31e/class/voverlay.as: /home/Dev/abal32/src/class/voverlay.as
+	cp $* $@ 
+/home/Dev/abal32/product31e/class/vpage.as: /home/Dev/abal32/src/class/vpage.as
+	cp $* $@ 
+/home/Dev/abal32/product31e/class/vprinter.as: /home/Dev/abal32/src/class/vprinter.as
+	cp $* $@ 
+/home/Dev/abal32/product31e/class/vprogres.as: /home/Dev/abal32/src/class/vprogres.as
+	cp $* $@ 
+/home/Dev/abal32/product31e/class/vpush.as: /home/Dev/abal32/src/class/vpush.as
+	cp $* $@ 
+/home/Dev/abal32/product31e/class/vradio.as: /home/Dev/abal32/src/class/vradio.as
+	cp $* $@ 
+/home/Dev/abal32/product31e/class/vsaver.as: /home/Dev/abal32/src/class/vsaver.as
+	cp $* $@ 
+/home/Dev/abal32/product31e/class/vscroll.as: /home/Dev/abal32/src/class/vscroll.as
+	cp $* $@ 
+/home/Dev/abal32/product31e/class/vselect.as: /home/Dev/abal32/src/class/vselect.as
+	cp $* $@ 
+/home/Dev/abal32/product31e/class/vswitch.as: /home/Dev/abal32/src/class/vswitch.as
+	cp $* $@ 
+/home/Dev/abal32/product31e/class/vtable.as: /home/Dev/abal32/src/class/vtable.as
+	cp $* $@ 
+/home/Dev/abal32/product31e/class/vtabpage.as: /home/Dev/abal32/src/class/vtabpage.as
+	cp $* $@ 
+/home/Dev/abal32/product31e/class/vtext.as: /home/Dev/abal32/src/class/vtext.as
+	cp $* $@ 
+/home/Dev/abal32/product31e/class/vtrigger.as: /home/Dev/abal32/src/class/vtrigger.as
+	cp $* $@ 
+/home/Dev/abal32/product31e/class/vtypes.as: /home/Dev/abal32/src/class/vtypes.as
+	cp $* $@ 
+/home/Dev/abal32/product31e/class/vwidget.as: /home/Dev/abal32/src/class/vwidget.as
+	cp $* $@ 
+/home/Dev/abal32/product31e/class/vwindow.as: /home/Dev/abal32/src/class/vwindow.as
+	cp $* $@ 
+! make
+! shell chmod uog+r class/*
+! make
+

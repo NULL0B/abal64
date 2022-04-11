@@ -1,0 +1,167 @@
+# ------------------------------------------------------------------------- 
+# Warning : this file has been generated and should not be modified by hand 
+# ------------------------------------------------------------------------- 
+# Sing Version   : 1.1a.0.01  
+# Production     : MAKE  
+# Project        : singform.htm  
+# Target         : singform.mf  
+# Identification : 0.0-1051749554-6318.6317 
+# ------------------------------------------------------------------------- 
+
+
+vsave.o: vsave.sng
+	sing -cc $*
+
+vload.o: vload.sng
+	sing -cc $*
+
+vwidget.o: vwidget.sng
+	sing -cc $*
+
+veditor.o: veditor.sng
+	sing -cc $*
+
+vfload.o: vfload.sng
+	sing -cc $*
+
+vfsave.o: vfsave.sng
+	sing -cc $*
+
+vaprod.o: vaprod.sng
+	sing -cc $*
+
+vcprod.o: vcprod.sng
+	sing -cc $*
+
+visave.o: visave.sng
+	sing -cc $*
+
+viload.o: viload.sng
+	sing -cc $*
+
+vcube.o: vcube.sng
+	sing -cc $*
+
+vcamera.o: vcamera.sng
+	sing -cc $*
+
+vmprod.o: vmprod.sng
+	sing -cc $*
+
+vabout.o: vabout.sng
+	sing -cc $*
+
+vmenu.o: vmenu.sng
+	sing -cc $*
+
+voption.o: voption.sng
+	sing -cc $*
+
+vtrad.o: vtrad.sng
+	sing -cc $*
+
+vmsave.o: vmsave.sng
+	sing -cc $*
+
+vclass.o: vclass.sng
+	sing -cc $*
+
+vconst.o: vconst.sng
+	sing -cc $*
+
+vdata.o: vdata.sng
+	sing -cc $*
+
+vmethod.o: vmethod.sng
+	sing -cc $*
+
+verror.o: verror.sng
+	sing -cc $*
+
+vaed.o: vaed.sng
+	sing -cc $*
+
+vmload.o: vmload.sng
+	sing -cc $*
+
+vintro.o: vintro.sng
+	sing -cc $*
+
+vimport.o: vimport.sng
+	sing -cc $*
+
+vhtml.o: vhtml.sng
+	sing -cc $*
+
+vimage.o: vimage.sng
+	sing -cc $*
+
+vconfig.o: vconfig.sng
+	sing -cc $*
+
+vrecrep.o: vrecrep.sng
+	sing -cc $*
+
+vparam.o: vparam.sng
+	sing -cc $*
+
+vfile.o: vfile.sng
+	sing -cc $*
+
+vheader.o: vheader.sng
+	sing -cc $*
+
+vtimport.o: vtimport.sng
+	sing -cc $*
+
+vtexport.o: vtexport.sng
+	sing -cc $*
+
+vfselect.o: vfselect.sng
+	sing -cc $*
+
+vform.o: vform.sng
+	sing -cc $*
+
+vpage.o: vpage.sng
+	sing -cc $*
+
+vaccess.o: vaccess.sng
+	sing -cc $*
+
+vaccess.o: vaccess.sng
+	sing -cc $*
+
+vmprod.o: vmprod.sng
+	sing -cc $*
+
+vpragma.o: vpragma.sng
+	sing -cc $*
+
+new.at: vicons.sng
+	sing -ca $*
+
+new.at: overview.sng
+	sing -ca $*
+
+new.at: abalform.sng
+	sing -ca $*
+
+vsearch.o: vsearch.sng
+	sing -cc $*
+
+vexit.o: vexit.sng
+	sing -cc $*
+
+vlink.o: vlink.sng
+	sing -cc $*
+
+vdebug.o: vdebug.sng
+	sing -cc $*
+
+vexadb.o: vexadb.sng
+	sing -cc $*
+
+! make 
+
+/* End of file */

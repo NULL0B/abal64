@@ -1,0 +1,1047 @@
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="generator" content="Prologue Sing Html Version 1.0a">
+<meta name="version" content="*PRL@INFO*#11a003">
+<link href="style.css" type="text/css" rel="stylesheet" media="screen">
+<link href="style.css" type="text/css" rel="stylesheet" media="print">
+<title>Sing Version 1.0a
+</title>
+</head><body>
+<div align="center">
+<table class="DOC">
+<tr><th><h1 align="center">
+Sing Version 1.0a
+</h1>
+<td><div align="center"><img src="singlogo.gif">
+</div></table></div><p>
+<a name="singform.sng">
+
+<p>
+<div align="center">
+<table class="DS">
+<tr><th><h2 align="center">
+Forms Editor
+</h2>
+
+<tr><td><p><div align="center"><img src="singform.gif" usemap="#Forms_Editor" >
+</div><p>
+<tr><td>
+
+<map name="Forms_Editor">
+<area type=rect href="#ToolBarControl" coords="19,2,44,27">
+<area type=rect href="#FormTools" coords="4,40,55,554">
+<area type=rect href="#PaletteControl" coords="840,4,864,29">
+<area type=rect href="#Palette" coords="827,39,873,620">
+<area type=rect href="#File" coords="70,8,160,28">
+<area type=rect href="#New" coords="70,40,160,58">
+<area type=rect href="#Save" coords="70,56,138,74">
+<area type=rect href="#SaveAs" coords="70,72,162,92">
+<area type=rect href="#Open" coords="70,90,122,108">
+<area type=rect href="#Production" coords="70,106,150,125">
+<area type=rect href="#Drop" coords="70,126,144,144">
+<area type=rect href="#Quit" coords="70,142,141,162">
+<area type=rect href="#View" coords="170,8,250,28">
+<area type=rect href="#Run" coords="170,40,254,59">
+<area type=rect href="#Text" coords="170,56,249,76">
+<area type=rect href="#Image" coords="170,74,225,92">
+<area type=rect href="#FontEditor" coords="170,92,222,110">
+<area type=rect href="#Properties" coords="170,110,250,129">
+<area type=rect href="#Visual" coords="170,128,231,146">
+<area type=rect href="#TreeView" coords="170,144,242,164">
+<area type=rect href="#Application" coords="170,162,255,180">
+<area type=rect href="#Event" coords="280,8,370,28">
+<area type=rect href="#OnCreate" coords="270,40,349,60">
+<area type=rect href="#OnRemove" coords="270,54,350,74">
+<area type=rect href="#OnShow" coords="270,70,330,90">
+<area type=rect href="#ItemDocument" coords="270,154,369,176">
+<area type=rect href="#FormDocument" coords="270,170,376,192">
+<area type=rect href="#Options" coords="390,8,480,28">
+<area type=rect href="#Parameters" coords="390,40,475,58">
+<area type=rect href="#Refresh" coords="390,56,460,78">
+<area type=rect href="#Configure" coords="390,74,459,93">
+<area type=rect href="#ScreenCapture" coords="390,92,494,111">
+<area type=rect href="#Animate" coords="390,108,462,128">
+<area type=rect href="#Form" coords="500,8,600,28">
+<area type=rect href="#FormProperties" coords="500,38,577,56">
+<area type=rect href="#Document" coords="500,54,575,77">
+<area type=rect href="#ReNumerate" coords="500,74,593,93">
+<area type=rect href="#Triggers" coords="500,92,600,110">
+<area type=rect href="#Interface" coords="500,110,575,127">
+<area type=rect href="#Widget" coords="610,8,680,28">
+<area type=rect href="#Font" coords="620,38,691,63">
+<area type=rect href="#Align" coords="620,54,710,80">
+<area type=rect href="#Bold" coords="620,72,691,95">
+<area type=rect href="#Shadow" coords="620,90,691,115">
+<area type=rect href="#Underline" coords="620,110,687,132">
+<area type=rect href="#Copy" coords="620,126,689,150">
+<area type=rect href="#Paste" coords="620,146,690,168">
+<area type=rect href="#Lock" coords="620,164,710,186">
+<area type=rect href="#Unlock" coords="620,182,710,204">
+<area type=rect href="#Automatic" coords="620,200,715,224">
+<area type=rect href="#Conditional" coords="620,220,710,242">
+<area type=rect href="#Foreground" coords="620,236,715,260">
+<area type=rect href="#Background" coords="620,254,715,278">
+<area type=rect href="#Executer" coords="694,7,712,22">
+<area type=rect href="#Editor" coords="713,7,731,22">
+<area type=rect href="#Translate" coords="732,7,750,22">
+<area type=rect href="#Linker" coords="751,7,769,22">
+</map>
+The visual forms and document modelling tool of the ABAL 3 development environment
+allows the development of 
+application programs on a visual basis.<p>
+Application
+forms and document models are described in terms of their visual components here after
+refered to as <b>widgets</b>.
+The application may be considered an object <b>scenario</b>
+in which the various widget component <b>actors</b>
+interoperate to achieve the applications
+global purpose or objectives.<p>
+The application model may be generated to produce
+one of the following four application packages :
+<p>
+<dl>
+	<dt>Program
+	<dd>Program
+components provide applications with their underlying base scenarios in much the same
+way as was 
+	    performed by
+	    by segments in bal and abal. Program packages are
+responsible for configuration of the application
+	    environment in terms of the
+graphical resolution, fonts, palettes and paths to mention but a few.
+	<dt>Overlay
+	<dd>Overlay
+components provide complete external service packages for use in application scenarios
+
+	through dynamic linkage mechanisms. Packages of this type are intended primarily
+for use with ABAL 3 programs
+	but provide also for the needs of other application
+developement clients.
+	<dt>Module
+	<dd>Module components provide incomplete external
+services designed for static linking to program or overlay compoents.
+	Again, these
+packages are intended for use by ABAL 3 Programs and Overlays but also provide for
+the needs of
+	third party application architectures.
+	<dt>Inclusion
+	<dd>These components
+are seldom used in homogenous ABAL 3 applications, but are made available for use
+during 
+	the transition period for hetrogenous application design.
+</dl>
+<p>
+For the
+construction of these forms and document models the visual forms editor provides the
+widgets, tools 
+and menu operations described in the remainder of this document.
+<p>
+
+
+
+
+
+
+
+
+
+
+
+<p>
+
+<dl>
+<dt class=type><a name="ToolBarControl">
+<b>ToolBarControl
+</b></a>
+<dd class=data>The display of the various model editor tools bars is controlled by this
+button. When
+the arrow points upwards a click will cause the display of the
+tool bar to be inhibited.
+The arrow button will then point downwards in which
+case a click will cause the tool
+bar to be redisplayed.
+
+
+<p>
+<dt class=type><a name="FormTools">
+<b>FormTools
+</b></a>
+<dd class=data>The Visual Forms editor is the main application design tool of the ABAL 3 development
+environment.<p>
+It offers a collection of widget tools for the elaboration of the
+visual forms or document model scenario.<p>
+A widget tool may be selected by clicking
+over its image on the tool bar at the left of the desktop area.<p>
+The icon of the
+currently selected widget tool can be seen at the foot of the forms editor tool bar.<p>
+The
+behaviour of the various widgets will now be described in terms of the following basic
+categories
+<p>
+<ol>
+<li>Decorative  Widgets<p>
+Widgets which fall into this category
+are visible and contribute to overall appearance of the forms or 
+document model.
+Widgets outside of this category are invisible and consequently do not contribute
+to
+the models appearance.<p>
+<li>Declarative Widgets<p>
+Widgets of this category instance
+variables providing for data input / output and storage.<p>
+<li>Active Widgets<p>
+These
+widgets are capable of performing various actions such as the collection, separation
+or presentation
+of other widgets, atributs or data.<p>
+</ol>
+<p>
+Each of the various
+widget tools will be examined in detail, particularily in terms of the three above
+defined categories.
+<p>
+<table>
+<tr><td><b>Widget Type</b><td><b>Decoration</b><td><b>Declaration</b><td><b>Action</b>
+<tr><td>Zone
+Fill<td>YES<td>NO<td>NO
+<tr><td colspan=4>
+<tr><td>OutSet Frame<td>YES<td>NO<td>NO<td>
+<tr><td
+colspan=4>
+<tr><td>Inset Frame<td>YES<td>NO<td>NO<td>
+<tr><td colspan=4>
+<tr><td>Ridge
+Frame<td>YES<td>NO<td>NO<td>
+<tr><td colspan=4>
+<tr><td>Groove Frame<td>YES<td>NO<td>NO<td>
+<tr><td
+colspan=4>
+<tr><td>Edit Field<td>YES<td>NO<td>NO<td>
+<tr><td colspan=4>
+<tr><td>Text
+Message<td>YES<td>NO<td>NO<td>
+<tr><td colspan=4>
+<tr><td>Image<td>YES<td>NO<td>NO<td>
+<tr><td
+colspan=4>
+<tr><td>Line<td>YES<td>NO<td>NO<td>
+<tr><td colspan=4>
+<tr><td>PushButton<td>YES<td>NO<td>NO<td>
+<tr><td
+colspan=4>
+<tr><td>Window<td>YES<td>NO<td>NO<td>
+<tr><td colspan=4>
+<tr><td>TabPage<td>YES<td>NO<td>NO<td>
+<tr><td
+colspan=4>
+<tr><td>Check Box<td>YES<td>NO<td>NO<td>
+<tr><td colspan=4>
+<tr><td>Radio
+Button<td>YES<td>NO<td>NO<td>
+<tr><td colspan=4>
+<tr><td>Selection<td>YES<td>NO<td>NO<td>
+<tr><td
+colspan=4>
+<tr><td>Table<td>YES<td>NO<td>NO<td>
+<tr><td colspan=4>
+<tr><td>ScrollBar<td>YES<td>NO<td>NO<td>
+<tr><td
+colspan=4>
+<tr><td>ProgressBar<td>YES<td>NO<td>NO<td>
+<tr><td colspan=4>
+<tr><td>Switch<td>YES<td>NO<td>NO<td>
+<tr><td
+colspan=4>
+<tr><td>Graph<td>YES<td>NO<td>NO<td>
+<tr><td colspan=4>
+<tr><td>Instance<td>YES<td>NO<td>NO<td>
+<tr><td
+colspan=4>
+<tr><td>Collection<td>YES<td>NO<td>NO<td>
+<tr><td colspan=4>
+<tr><td>Pointer<td>YES<td>NO<td>NO<td>
+<tr><td
+colspan=4>
+</table>
+<p>
+
+
+
+
+<p>
+<dt class=type><a name="PaletteControl">
+<b>PaletteControl
+</b></a>
+<dd class=data>The display of the colour palette bar to the right of the  screen is controlled by
+this
+button. When the arrow points upwards a click will cause the display of the
+palette
+bar to be inhibited. The arrow button will then point downwards in which
+case a click
+will cause the palette bar to be redisplayed.
+
+
+<p>
+<dt class=type><a name="Palette">
+<b>Palette
+</b></a>
+<dd class=data>The Palette bar displays all colours of the currently loaded palette and allows colour
+selection 
+by a simple click on the required colour.
+A click with the left button
+will set the current foreground colour whilst a click with the right button
+will set
+the current background colour.
+Selection of a colour for the project model background
+is possible in this way, The effect will be 
+visible at one unless a full screen background
+image has already been affected to the project modeler
+background.
+
+
+<p>
+<dt class=type><a name="File">
+<b>File
+</b></a>
+<dd class=data>Selection of this menu options gives access to the generic file operations 
+menu whose
+options are described here below.
+<p><dl><dd>
+
+
+
+<p>
+<dt class=type><a name="New">
+<b>New
+</b></a>
+<dd class=data>Selection of this menu option causes the contents of the current forms model to
+be
+reset to empty. All components will be liberated though the basic forms properties
+remain unchanged.
+
+
+<p>
+<dt class=type><a name="Save">
+<b>Save
+</b></a>
+<dd class=data>This menu options performs a quick save of the current forms model to disk 
+without
+prompting the user for confirmation.
+
+
+<p>
+<dt class=type><a name="SaveAs">
+<b>SaveAs
+</b></a>
+<dd class=data>Activation of this menu option gives access to the <a href="vsave.htm">model save</a>
+
+dialog box allowing user confirmation prior to the eventual forms model save operation.
+
+
+<p>
+<dt class=type><a name="Open">
+<b>Open
+</b></a>
+<dd class=data>This menu operation gives access to the corresponding <a href="vload.htm">model load</a>
+
+dialog box for the identification or selection of the forms model to be opened.
+The
+resulting forms model will replace the current model in the parent application project
+model.
+
+
+<p>
+<dt class=type><a name="Production">
+<b>Production
+</b></a>
+<dd class=data>Selection of this menu option gives access to the <a href="vaprod.htm">abal production</a>
+parameter
+input dialog box allowing control of the abal production process.
+This production
+process involves the following three stages :<p>
+<ol>
+<li>Production of the Model
+Source 
+<li>Translation of the source to its corresponding package type.
+<li>Linking
+of the package with its component modules.
+</ol>
+<p>
+
+
+<p>
+<dt class=type><a name="Drop">
+<b>Drop
+</b></a>
+<dd class=data>This menu option has no effect whilst the forms editor is active.
+
+
+<p>
+<dt class=type><a name="Quit">
+<b>Quit
+</b></a>
+<dd class=data>This menu option should be selected if you wish to leave the ABAL 3
+development tool.
+If unsaved modifications are detected amongst any of
+the open project models you will
+be prompted via the 
+<a href="vexit.htm"> exit check </a> dialog box for the appropriate
+action
+required to be taken prior to return to the host operating
+system or calling process.
+</dl>
+
+
+
+
+<p>
+<dt class=type><a name="View">
+<b>View
+</b></a>
+<dd class=data>Selection of this menu option of the main menu gives access to the 
+view or tool operations
+menu whose options are described below.
+<p><dl><dd>
+
+
+
+<p>
+<dt class=type><a name="Run">
+<b>Run
+</b></a>
+<dd class=data>Select this option in order to gain access to the <a href="vdebug.htm">debug and runtime
+control</a> dialog
+box allowing abal applications to be run, tested and debugged from
+within the development tool.
+
+
+<p>
+<dt class=type><a name="Text">
+<b>Text
+</b></a>
+<dd class=data>Selection of this menu option gives explicite access to the 
+<a href="singedit.htm">standard
+text editor </a>
+for the current model component.
+
+
+
+<p>
+<dt class=type><a name="Image">
+<b>Image
+</b></a>
+<dd class=data>Activation of this menu option gives explicite access to the <a href="singbmap.htm">bitmap
+editor</a>.
+allowing inspection and modification of the model image. 
+
+
+<p>
+<dt class=type><a name="FontEditor">
+<b>FontEditor
+</b></a>
+<dd class=data>Select this menu option to gain access to the <a href="singfont.htm">font editor</a>.
+
+
+
+<p>
+<dt class=type><a name="Properties">
+<b>Properties
+</b></a>
+<dd class=data>Selection of the properties menu option gives access to the 
+<a href="vwidget.htm">Widget
+Properties</a> dialog box
+allowing the various properties and scenario interaction
+methods of the current forms widget
+to be inspected and eventually modified.
+
+
+<p>
+<dt class=type><a name="Visual">
+<b>Visual
+</b></a>
+<dd class=data>Selection of this menu option gives access to the component specific visual model
+editor.
+For forms and document models this will be the <a href="singform.htm">visual
+forms editor</a>.
+For Image components
+this will be the <a href="singbmap.htm">bitmap
+editor</a>
+ and for Source components this will be the <a href="singtext.htm">standard
+text editor</a>.
+
+
+<p>
+<dt class=type><a name="TreeView">
+<b>TreeView
+</b></a>
+<dd class=data>Selection of the treeview menu option toggles the <a href="singtree.htm">treeview</a>
+
+mechanism between visible and hidden states.
+
+
+<p>
+<dt class=type><a name="Application">
+<b>Application
+</b></a>
+<dd class=data>Selection of this menu option returns control to this project model editor from the
+vrious other
+model editor views.
+</dl>
+
+
+<p>
+<dt class=type><a name="Event">
+<b>Event
+</b></a>
+<dd class=data>Selection of this menu option gives access to the menu of widget component
+methods
+and documentation.
+<p><dl><dd>
+
+
+<p>
+<dt class=type><a name="OnCreate">
+<b>OnCreate
+</b></a>
+<dd class=data>Selection of this menu option causes the corresponding method text of the current
+forms widget to be made
+available via the standard text editor for consultation and
+eventual modification.
+The instructions provided in this way will be invoked during
+the construction phase of the 
+parent form thus allowing the widget the opertunity
+to perform all actions necessary for its 
+correct initialisation.<p>
+These methods
+are called in the order that the widgets are instanced or declared in the parent form.<p>
+Forward
+referencing of widgets and their as yet un-initialised parameters from construction
+method text
+is not at all recomended and may give unpredictable results.
+
+
+
+
+<p>
+<dt class=type><a name="OnRemove">
+<b>OnRemove
+</b></a>
+<dd class=data>Selection of this menu option causes the corresponding method text of the current
+forms widget to be made
+available via the standard text editor for consultation and
+eventual modification.
+The instructions declared here will be invoked during the destruction
+phase of the parent forms model allowing the
+widget to perform all actions required
+for the completion of its operation.<p>
+The destruction methods will be invoked in
+the inverse of the widget instance order to ensure perfect complementary action
+to
+the construction phase.<p>
+Again forward, or rather reverse, referencing of widgets
+and their properties from destruction method text is
+extremly bad practice.
+ 
+
+<p>
+<dt class=type><a name="OnShow">
+<b>OnShow
+</b></a>
+<dd class=data>Selection of this menu option causes the corresponding method text of the current
+forms widget to be made
+available via the standard text editor for consultation and
+eventual modification.
+
+
+<p>
+<dt class=type><a name="ItemDocument">
+<b>ItemDocument
+</b></a>
+<dd class=data>Selection of this menu option gives access to the <a href="singhtml.htm">Html Editor</a>
+allowing
+inspection modification of the documentation associated with the current
+active widget
+of the current forms model.
+<p>Documentation and Information provided in this way
+will be collected together
+along with the information provided at the forms compoent
+level,
+to build the forms documentation during the 
+<a href="vmprod.htm">project model</a>
+production operation.
+
+
+
+<p>
+<dt class=type><a name="FormDocument">
+<b>FormDocument
+</b></a>
+<dd class=data>Selection of this menu option gives access to the <a href="singhtml.htm">Html Editor</a>
+allowing
+inspection and modification of the form level documentation for the
+current form or
+document component of the current project model.
+</dl>
+
+
+<p>
+<dt class=type><a name="Options">
+<b>Options
+</b></a>
+<dd class=data>Selection of this menu options gives access to the general operations 
+menu the options
+of which are described here below.
+<p><dl><dd>
+
+
+<p>
+<dt class=type><a name="Parameters">
+<b>Parameters
+</b></a>
+<dd class=data>Selection of this menu option gives access to the <a href="vparam.htm">General Parameters</a>
+dialog
+box allowing the various editor parameters to be inspected and modified.
+These parameters
+will be used as default values for all subsequent new widget 
+and other model components
+as they are created.
+
+
+<p>
+<dt class=type><a name="Refresh">
+<b>Refresh
+</b></a>
+<dd class=data>Selection of this menu option simply causes the development screen to be redraw
+for
+any particular reason.
+
+
+<p>
+<dt class=type><a name="Configure">
+<b>Configure
+</b></a>
+<dd class=data>Activation of this menu option gices access to the <a href="vrefer.htm">Configuration
+Parameters</a>
+of the ABAL 3 development tool.
+These configuration values are read
+from the configuration file, normally <b>sing.cfg</b>,
+during the start up and construction
+phase of the development environment.
+
+
+
+<p>
+<dt class=type><a name="ScreenCapture">
+<b>ScreenCapture
+</b></a>
+<dd class=data>This menu option may be activated  in order to perform a screen capture operation.
+The entire screen will 
+be captured to a virtual bitmap then the <a href="visave.htm">
+image save</a> dialog box will be presented
+allowing the target image type and file
+name to be specified.
+
+
+
+<p>
+<dt class=type><a name="Animate">
+<b>Animate
+</b></a>
+<dd class=data>Selection of this menu operation gives access to the 
+<a href="vrecrep.htm">Animation
+Record and Replay</a>
+control dialog box.
+Animation recording allows  user input events,
+equally keyboard and mouse events,
+to the development environment to be recorded to
+an animation script file.
+Animation replay allows a recorded script to be re-enacted
+performing the
+identical sequence of input events.
+These features may be used to create
+input macros or for tutorial purposes.
+</dl>
+
+
+<p>
+<dt class=type><a name="Form">
+<b>Form
+</b></a>
+<dd class=data>Selection of the form menu option gives access to the following 
+forms model specific
+menu functions.
+<p><dl><dd>
+
+
+<p>
+<dt class=type><a name="FormProperties">
+<b>FormProperties
+</b></a>
+<dd class=data>Selction of this menu option gives access to the <a href="vform.htm">Forms Properties</a>
+dialog
+box allowing inspection and modification of the forms or document model 
+operational
+parameters.
+
+
+<p>
+<dt class=type><a name="Document">
+<b>Document
+</b></a>
+<dd class=data>Selection of this menu option presents the <a href="vpage.htm">Document Parameters</a>
+dialog
+box allowing the various page parameters of printed documents to be specified..
+
+
+<p>
+<dt class=type><a name="ReNumerate">
+<b>ReNumerate
+</b></a>
+<dd class=data>Forms model components, or widgets, are atributed default names as they are added
+to the parent form.
+These default names are usually, for important components, changed
+to used defined names.
+In certain cases new components may be given duplicate names.
+In this case this menu options allows
+the auto named widgets to be renumbered and
+consequently renamed with unique auto names.
+
+
+<p>
+<dt class=type><a name="Triggers">
+<b>Triggers
+</b></a>
+<dd class=data>Selection of this menu option allows the calculation and affectation of widget trigger
+<b>ALT</b>
+keycodes for all valid active widget types. The <b>Hotkey Triggers</b>
+check control of the 
+<a href="vform.htm">Forms Parameters</a> dialog box must have
+been activated to allow this operation 
+to proceed.<p>
+To be considered valid for
+inclusion in the calculation of widget triggers, a control widget must have
+a valid
+user provided name and not have the <b>Lock</b> atribut set.
+<p>
+This operation is
+performed as follows :
+<p>
+<ul><li>
+All locked widget triggers are collected for the
+form and used to initialise the trigger distribution map.<p>
+<li>
+All unlocked widget
+triggers are reset to zero, inactive.<p>
+<li>
+New and unique widget triggers are calculated
+and affected where possible.<p>
+<li>
+When no more widget triggers are available the
+standard error/ warning dialog box will be displayed
+for user notification.
+</ul>
+<p>
+Widgets
+may be triggered by pressing the and holding the <b>ALT</b> key then pressing the
+underlined
+trigger key. 
+<br>This causes a special trigger event type to be returned
+through the mouse and keyboard event channel.
+<br>
+The following collection of event
+bit fields will be set  :
+<p>
+<ul>
+<li><b>MIMO KEY</b> : indicates a keyboard type
+event.
+<li><b>MIMO DOWN</b> : this and the following are raised to indicate a click
+type event.
+<li><b>MIMO UP</b>
+<li><b>MIMO ALT</b> : formalises the trigger type event.
+</ul>
+<p>
+When
+received through the keyboard channel, widget trigger events will return the standard
+MOUSE EVENT
+code, 256, indicating that the event information is to be read through
+the event channel functions.
+<p>
+<ul>
+<li><b>Event(1)</b> returns the event type bit
+field as decribed above.
+<li><b>Event(2)</b> returns the alt code code value formed
+by combining the keycode value with the hexadecimal flag <b>/800</b>.
+ For example
+the character <b>A</b> whose keycode is <b>/41</b> would return the value of <b>/841</b>
+in this way.
+<li>Values returned by the other event functions are undefined.
+</ul>
+<p>
+</dl>
+
+
+
+
+
+
+
+<p>
+<dt class=type><a name="Interface">
+<b>Interface
+</b></a>
+<dd class=data>Selection of this menu option causes all default interface widget types, that have
+not
+been locked, to contribute to the interface of the forms model component.
+<p>This
+is of great importance for <b>MODULE</b> type packages which may need to 
+receive
+certain values as parameters for their correct operation.
+<p>The following widget
+types are chosen by default to contribute to this
+interface
+<p>
+<table>
+<tr><th>Widget
+Type<th>Parameters
+<tr><th>EDIT<td>a <b>stringvalue$,stringlength%</b> pair for each
+edit widget
+<tr><th>CHECK<td>one <b>value%</b> per check widget
+<tr><th>RADIO<td>one
+<b>value%</b> per named group of radio widgets
+<tr><th>SWITCH<td>one <b>value%</b>
+per switch widget
+<tr><th>SELECT<td>one <b>value%</b> per select widget
+</table>
+<p>
+Individual
+widgets may be removed from the interface collection by unchecking the
+corresponding
+control in the <a href="vwidget.htm">Widget Properties</b> dialog
+box of the concerned
+widget.
+<p>Locked widgets will not be included in the interface collection created
+by
+this menu option.
+
+
+
+<p>
+<dt class=type><a name="Widget">
+<b>Widget
+</b></a>
+<dd class=data>Selection of this menu option gives access to the following popup menu of widget specific
+functions and
+operations. In all cases the operation may equally apply to either the
+single current widget, or, in the case of 
+the current widget being a selection or
+cut frame, the collection of widgets completly encompassed by
+its position and dimensions.
+ 
+<p><dl><dt>
+
+
+
+<p>
+<dt class=type><a name="Font">
+<b>Font
+</b></a>
+<dd class=data>Selection of this menu option causes the value of the global parameter 
+<b>Options
+Parameters Font</b>
+of the <a href="vparam.htm"> Global Parameters</a> dialog box
+to be used as the 
+text font for the current widget or selection of widgets.
+
+
+<p>
+<dt class=type><a name="Align">
+<b>Align
+</b></a>
+<dd class=data>Selection of this menu option causes the value of the global parameter <b>Options
+Parameters Align</b>
+of the <a href="vparam.htm"> Global Parameters</a> dialog box
+to be used as the alignement or option 
+field of the current widget or selection of
+widgets.
+
+
+<p>
+<dt class=type><a name="Bold">
+<b>Bold
+</b></a>
+<dd class=data>Selection of this menu option toggles the value of the <b>Bold</b> parameter of the
+current widget or 
+collection of widgets.
+
+
+<p>
+<dt class=type><a name="Shadow">
+<b>Shadow
+</b></a>
+<dd class=data>Selection of this menu option toggles the value of the <b>Shadow</b> parameter of
+the current widget or 
+collection of widgets.
+
+
+<p>
+<dt class=type><a name="Underline">
+<b>Underline
+</b></a>
+<dd class=data>Selection of this menu option toggles the value of the <b>Underline</b> parameter
+of the current widget or 
+collection of widgets.
+
+
+<p>
+<dt class=type><a name="Copy">
+<b>Copy
+</b></a>
+<dd class=data>Selection of this menu option causes the current widget or collection of widgets to
+be copied to the forms
+editor clipboard.
+
+
+<p>
+<dt class=type><a name="Paste">
+<b>Paste
+</b></a>
+<dd class=data>Selection of this menu option causes the widget or widgets currently copied to the
+forms editor clipboard
+to be pasted into the form <b>after</b> the current widget.
+All method texts and properties will be 
+duplicated and widgets with automatic names
+will be renamed during this operation.
+The clipboard will still contain copies of
+the source widgets after the operation is complete.
+
+
+
+<p>
+<dt class=type><a name="Lock">
+<b>Lock
+</b></a>
+<dd class=data>Activation of this menu option causes the property value <b>Lock</b> of the current
+widget or selection of
+widgets to be set or locked. Widgets locked in this way may
+not be moved or redimensions, 
+nor may their widget trigger value be recalculated
+using the global menu option <b>Triggers</b>. 
+
+
+
+<p>
+<dt class=type><a name="Unlock">
+<b>Unlock
+</b></a>
+<dd class=data>Activation of this menu option causes the property value <b>Lock</b> of the current
+widget or selection of
+widgets to be reset or unlocked.
+
+
+<p>
+<dt class=type><a name="Automatic">
+<b>Automatic
+</b></a>
+<dd class=data>Activation of this menu option causes the property value of the <b>Show</b> method
+of the current widget or 
+selection of widgets to be set to <b>Automatic</b>. This
+is the default value for this parameter and it
+implies that the code required for
+the display of the widget will be generated to the global forms display
+method </b>OnShow</b>.
+
+
+
+<p>
+<dt class=type><a name="Conditional">
+<b>Conditional
+</b></a>
+<dd class=data>Activation of this menu option causes the property value of the <b>Show</b> method
+of the current widget or 
+selection of widgets to be set to <b>Conditional</b>. In
+this case the code required for the display of 
+the widget will not be generated to
+the global forms display method </b>OnShow</b>. 
+Instead it will be generated when
+and where invoked by other co-operating widgets from their scenario integration methods.
+
+
+
+
+
+
+
+
+
+<p>
+<dt class=type><a name="Foreground">
+<b>Foreground
+</b></a>
+<dd class=data>Selection of this menu option causes the current foreground colour of the global palette
+mechanisms
+to be used for the current widget or collection of widgets.
+
+
+<p>
+<dt class=type><a name="Background">
+<b>Background
+</b></a>
+<dd class=data>Selection of this menu option causes the current background colour of the global palette
+mechanisms
+to be used for the current widget or collection of widgets.
+</dl>
+
+
+<p>
+<dt class=type><a name="Executer">
+<b>Executer
+</b></a>
+<dd class=data>This icon button provides access to the ABAL 3 <a href="vdebug.htm">Runtime and Debug
+Parameters</a> dialog
+box allowing execution and debug of ABAL 3 programs from within
+the ABAL 3 development environment.
+
+
+<p>
+<dt class=type><a name="Editor">
+<b>Editor
+</b></a>
+<dd class=data>This icon button provides access to the <a href="vaed.htm">Editor Configuration</a>
+dialog box for
+modification of editor parameters.
+
+
+<p>
+<dt class=type><a name="Translate">
+<b>Translate
+</b></a>
+<dd class=data>This icon button provides access to the ABAL 3 <a href="vtrad.htm">Translator Parameters</a>
+dialog box
+allowing specification of translation parameters prior to the translation
+operation.
+
+
+<p>
+<dt class=type><a name="Linker">
+<b>Linker
+</b></a>
+<dd class=data>This icon button gives access to the ABAL 3 <a href="vlink.htm">Linker Configuration</a>
+dialog box for
+the configuration and activation of ABAL module linking.
+
+
+<p>
+
+
+</dl>
+
+</td>
+</table></div><p>
+
+<p><div align="center">
+<table class="CRT">
+<tr><th><h3 align="center">
+Copyright (c) 2002 Prologue Software
+</h3>
+</table></div><p>
+</body></html>

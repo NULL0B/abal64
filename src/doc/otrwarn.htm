@@ -1,0 +1,122 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>ABAL++  Object Translator </title>
+<META NAME="VERSION" CONTENT="*PRL@INFO*$6:31a001">
+<link href="style.css" rel="STYLESHEET" type="text/css" media="SCREEN">
+</head>
+<body>
+<div align=center>
+<table border=1 width="90%">
+<tr><th><h1 align=center>ABAL 3 : Object Translator </h1>
+<tr><th><h2>Warning Conditions</h2>
+</table>
+<p>
+
+<table width="90%">
+<tr><th>W 1</th><td><b>Ambiguous return type</b>
+<tr><td><td>ABAL++ Procedure Pointers do not provide for explicite return
+type information and their usage in expressions will give rise
+to this warning since their return type is unknown. 
+
+<tr><th>W 2</th><td><b>Implicite type conversion</b>
+<tr><td><td>An implicite type conversion has been generated as a result of the
+ACTIVE state of the ENHANCED AUTOCONV pragma directive. 
+
+<tr><th>W 3</th><td><b>Symbol already undefined</b>
+<tr><td><td>An attempt to undefine a conditional symbol using the directive
+#UNDEF has been encountered when the symbol is already undefined 
+
+<tr><th>W 4</th><td><b>Unrecognised pragma</b>
+<tr><td><td>Unrecognised pragma statements are simply ignored. These may
+be ATR or APLUS pragma statements which have no effect for
+the object translator OTR. 
+
+<tr><th>W 5</th><td><b>routine converted to inline</b>
+<tr><td><td>An explicite ROUTINE METHOD has been converted to INLINE
+METHOD due to the presence of a RETURN TYPE or formal parameter
+declarations. 
+
+<tr><th>W 6</th><td><b>overlay converted to function</b>
+<tr><td><td>An explicite OVERLAY METHOD has been converted to FUNCTION
+METHOD due to the presence of a RETURN TYPE or formal parameter
+declarations. 
+
+<tr><th>W 7</th><td><b>No strict alternative</b>
+<tr><td><td>No alternative method, matching the provided parameter values,
+has been found for the activation of a STRICT METHOD. The
+message has been consequently ignored by OTR. 
+
+<tr><th>W 8</th><td><b>SELECT constant expression</b>
+<tr><td><td>A constant expression has been detected as the operand for the
+ABAL++ SELECT instruction. 
+
+<tr><th>W 9</th><td><b>Implicite ESEG or ENDPROC assumed</b>
+<tr><td><td>The keyword END has been encountered whilst a SEGMENT or PROCEDURE
+code block is still open. The corresponding implicite closure has
+been assumed prior to the activation of target termination. 
+
+<tr><th>W 10</th><td><b>Implicite DCL or PTR assumed for method parameter instance</b>
+<tr><td><td>When the pragma ENHANCED PARAMETERS is active then instance
+parameters will be of type DCL unless specified to be type
+PTR.
+When the pragma ENHANCED PARAMETERS is not active then all
+instance parameters will be of type PTR (APLUS compatible) 
+
+<tr><th>W 11</th><td><b>Recursive CLASS/STRUCT/UNION pointer instance</b>
+<tr><td><td>A recursive pointer to instance has been encountered and member
+generation has consequently been inhibited. The pointer member
+may not be used to access its instance members since they have
+not been recursivly generated. 
+
+<tr><th>W 12</th><td><b>Protected member prevents overloading</b>
+<tr><td><td>An inherited or defined member has not been added to the
+current class definition since a pre-defined protected member of identical 
+signature exists an prevents overloading. 
+
+<tr><th>W 13</th><td><b>Overloaded class member</b>
+<tr><td><td>The current member definition has replaced an existing member
+definition in the current class definition. 
+
+<tr><th>W 14</th><td><b>Keyword DATA expected</b>
+<tr><td><td>Usage of DATA has been detected in the current code block
+via the instructions READ=0 and/or RESTORE, however no DATA has been provided . 
+<tr><th>W 15</th><td><b>Alias result stored to non-pointer variable</b>
+
+<tr><th>W 16</th><td><b>Forward Proc with no procedure definition.</b>
+<tr><td><td>This is quite a serious condition if the program is to be used as an
+overlay object.It is usually representative of a spelling mistake.
+
+<tr><th>W 17</th><td><b>Inconsistant Procedure Parameter Sizes.</b>
+<tr><td><td>This condition is raised when dimensional differences are detected between the parameters
+declared in a forward proc signature and the actuial procedure instance signature.
+
+<tr><th>W 18</th><td><b>Incorrect Variable type for CREATE/REMOVE/FORGET </b>
+<tr><td><td>This condition is raised when a DCL type variable is detected as 
+the parameter for a CREATE, REMOVE or FORGET instruction. 
+<p>
+These instructions require variables or type PTR as parameters. 
+<p>
+When this warning is raised the eventual instruction
+is eliminated since it would give rise to an ERROR 118 during execution.
+
+<tr><th>W 19</th><td><b>Ambiguous Boolean Compare Expression </b>
+<tr><td><td>Boolean operators of different types used at the same level in comparison 
+expressions of <b>IF</b>, <b>WHILE</b> or <b>UNTIL</b> statements are ambiguous.
+<p>Examples:
+<p> if ( a = 1 ) and ( b = 2 ) or ( c = 3 )
+<p> should be replaced by either
+<p> if (( a = 1 ) and ( b = 2 )) or ( c = 3 )
+<p> or
+<p> if ( a = 1 ) and (( b = 2 ) or ( c = 3 ))
+<p> which ever may be appriopriate for the correct expression of the logic. 
+</table>
+
+<p>
+<table>
+<tr><th><h3 align=center>Copyright &copy; <a href="http://www.prologue.fr">Prologue</a></h3>
+<tr><th><h3 align=center>Version Fran&ccedil;aise <a href="fr/otrwarn.htm"><img src="tricolor.gif"></a>
+</table>
+</div>
+</body>
+</html>

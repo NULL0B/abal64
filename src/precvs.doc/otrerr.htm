@@ -1,0 +1,4486 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>ABAL++  Object Translator </title>
+<META NAME="VERSION" CONTENT="*PRL@INFO*$6:31a001">
+<link href="style.css" rel="STYLESHEET" type="text/css" media="SCREEN">
+</head>
+<body>
+<div align=center>
+<table border=1 width="90%">
+<tr><th><h1 align=center>ABAL 3 : Object Translator </h1>
+<tr><th><h2>Error Codes</h2>
+</table>
+<p>
+<table width="90%">
+<tr>
+<th>A 1</th>
+<td>
+<b>Error writing to target file : Disk Full</b>
+<tr>
+<th>A 2</th>
+<td>
+<b>Explicite Label has already been defined</b>
+<tr>
+<th>A 4</th>
+<td>
+<b>Expected member identifier in
+&lt;OBJECT&gt;.
+expression
+</b>
+<tr>
+<th>A 5</th>
+<td>
+<b>No dynamic library for dynamic library function</b>
+<tr>
+<th>A 6</th>
+<td>
+<b>Expected integer expression for function numeration</b>
+<tr>
+<th>A 7</th>
+<td>
+<b>Expected DLL function indentifier</b>
+<tr>
+<th>A 8</th>
+<td>
+<b>Incorrect type for DLL function parameter</b>
+<tr>
+<th>A 9</th>
+<td>
+<b>Syntax error in RUNTIME = "runtime", missing tokens or '='</b>
+<tr>
+<th>A 10</th>
+<td>
+<b>Incorrect mnemonic in DLL description, expected NUM</b>
+<tr>
+<th>A 11</th>
+<td>
+<b>Syntax error in VERSION =
+, missing token, '=' or
+</b>
+<tr>
+<th>A 12</th>
+<td>
+<b>Parameter error for DLL activation</b>
+<tr>
+<th>A 13</th>
+<td>
+<b>Error generating DLL function parameters</b>
+<tr>
+<th>A 15</th>
+<td>
+<b>Not enough parameters for DLL function activation</b>
+<tr>
+<th>A 16</th>
+<td>
+<b>Incorrect iteration context</b>
+<tr>
+<th>A 17</th>
+<td>
+<b>ON EVENT not started for EVENT DO</b>
+<tr>
+<th>A 18</th>
+<td>
+<b>ON EVENT not started for EVENT THEN</b>
+<tr>
+<th>A 19</th>
+<td>
+<b>No current iteration for BREAK</b>
+<tr>
+<th>A 20</th>
+<td>
+<b>No current iteration for explicite BREAK</b>
+<tr>
+<th>A 21</th>
+<td>
+<b>Expected symbol identifier for #DEFINE directive</b>
+<tr>
+<th>A 22</th>
+<td>
+<b>Expected symbol identifier for EOFIFDEF/EOFIFNDEF directive</b>
+<tr>
+<th>A 23</th>
+<td>
+<b>Expected Symbol identifier for IFNDEF directive</b>
+<tr>
+<th>A 24</th>
+<td>
+<b>Expected Symbol identifier for UNDEF directive</b>
+<tr>
+<th>A 25</th>
+
+<td>
+<b>Expected filename token for INCLUDE or USE directive</b>
+
+
+
+<tr>
+<th>A 26</th>
+
+<td>
+<b>Expected keyword ON or OFF</b>
+
+
+
+<tr>
+<th>A 27</th>
+
+<td>
+<b>Incorrect option for #PRAGMA OPTIMISE directive</b>
+
+
+
+<tr>
+<th>A 28</th>
+
+<td>
+<b>Incorrect option for #PRAGMA ENHANCED directive</b>
+
+
+
+<tr>
+<th>A 29</th>
+
+<td>
+<b>Expected token for #PRAGMA directive</b>
+
+
+
+<tr>
+<th>A 30</th>
+
+<td>
+<b>Expected integer expression</b>
+
+
+
+<tr>
+<th>A 31</th>
+
+<td>
+<b>Expected Explicite Label Token</b>
+
+
+
+<tr>
+<th>A 32</th>
+
+<td>
+<b>End of line encountered in format string</b>
+
+
+
+<tr>
+<th>A 56</th>
+
+<td>
+<b>Unexpected OVERLAY in MODULE directive</b>
+
+
+
+<tr>
+<th>A 77</th>
+
+<td>
+<b>Expected token for #PRAGMA ANNOUNCE directive</b>
+
+
+
+<tr>
+<th>A 78</th>
+
+<td>
+<b>Incorrect option for #PRAGMA ANNOUNCE directive</b>
+
+
+
+<tr>
+<th>A 100</th>
+
+<td>
+<b>Incorrect parameter for NGF instruction</b>
+
+
+
+<tr>
+<th>A 101</th>
+
+<td>
+<b>Incorrect parameter for NGF instruction</b>
+
+
+
+<tr>
+<th>A 102</th>
+
+<td>
+<b>Error generating NGF parameters</b>
+
+
+
+<tr>
+<th>A 103</th>
+
+<td>
+<b>Unknown NGF instruction</b>
+
+
+
+<tr>
+<th>A 104</th>
+
+<td>
+<b>Incorrect NGF handle expression, expected equals or error</b>
+
+
+
+<tr>
+<th>A 105</th>
+
+<td>
+<b>Incorrect or expected NGF filename expression</b>
+
+
+
+<tr>
+<th>A 106</th>
+
+<td>
+<b>Incorrect parameter for CHAIN instruction</b>
+
+
+
+<tr>
+<th>A 107</th>
+
+<td>
+<b>Incorrect options mnemonic for ASSIGN instruction</b>
+
+
+
+<tr>
+<th>A 108</th>
+
+<td>
+<b>Error translating ASSIGN options</b>
+
+
+
+<tr>
+<th>A 109</th>
+
+<td>
+<b>Error translating READ/WRITE operation code</b>
+
+
+
+<tr>
+<th>A 110</th>
+
+<td>
+<b>Expected explicite label in NGF instruction</b>
+
+
+
+<tr>
+<th>A 111</th>
+
+<td>
+<b>Expected implicite label in NGF instruction</b>
+
+
+
+<tr>
+<th>A 112</th>
+
+<td>
+<b>Error translating explicite NGF label</b>
+
+
+
+<tr>
+<th>A 113</th>
+
+<td>
+<b>Error translating implicite label in NGF instruction</b>
+
+
+
+<tr>
+<th>A 114</th>
+
+<td>
+<b>Incorrect Error Variable Expression in NGF instruction</b>
+
+
+
+<tr>
+<th>A 115</th>
+
+<td>
+<b>Incorrect Primary Index Mnemonic for CFILE instruction</b>
+
+
+
+<tr>
+<th>A 116</th>
+
+<td>
+<b>Expected Length expression in NGF instruction</b>
+
+
+
+<tr>
+<th>A 117</th>
+
+<td>
+<b>Incorrect option Mnemonic for LOAD.GO instruction</b>
+
+
+
+<tr>
+<th>A 118</th>
+
+<td>
+<b>Expected '(' in LOAD.GO option expression</b>
+
+
+
+<tr>
+<th>A 119</th>
+
+<td>
+<b>Error translating FIND option expression</b>
+
+
+
+<tr>
+<th>A 120</th>
+
+<td>
+<b>Error translating FIND option</b>
+
+
+
+<tr>
+<th>A 121</th>
+
+<td>
+<b>Expected '(' for FIND option</b>
+
+
+
+<tr>
+<th>A 122</th>
+
+<td>
+<b>Expected '(' for DFILE option</b>
+
+
+
+<tr>
+<th>A 123</th>
+
+<td>
+<b>Incorrect mnemonic for dfile option</b>
+
+
+
+<tr>
+<th>A 124</th>
+
+<td>
+<b>Postfix mnemonic for DOWN must be .M , .L, or .ML</b>
+
+
+
+<tr>
+<th>A 125</th>
+
+<td>
+<b>Postfix mnemonic for SEARCH must be .M, .L or .ML</b>
+
+
+
+<tr>
+<th>A 126</th>
+
+<td>
+<b>Expected Primary index expression in ISAM instruction</b>
+
+
+
+<tr>
+<th>A 127</th>
+
+<td>
+<b>Expected Data Record Buffer expression for ISAM instruction</b>
+
+
+
+<tr>
+<th>A 128</th>
+
+<td>
+<b>Expected expression for KEY name</b>
+
+
+
+<tr>
+<th>A 129</th>
+
+<td>
+<b>Expected expression for KEY length</b>
+
+
+
+<tr>
+<th>A 130</th>
+
+<td>
+<b>Error encountered translating KEY type</b>
+
+
+
+<tr>
+<th>A 131</th>
+
+<td>
+<b>Expected expression for NKEY name</b>
+
+
+
+<tr>
+<th>A 132</th>
+
+<td>
+<b>Expected expression for NKEY new name</b>
+
+
+
+<tr>
+<th>A 133</th>
+
+<td>
+<b>Incorrect MISAM instruction</b>
+
+
+
+<tr>
+<th>A 134</th>
+
+<td>
+<b>Expected expression for RJOIN name</b>
+
+
+
+<tr>
+<th>A 135</th>
+
+<td>
+<b>Incorrect DBAM instruction</b>
+
+
+
+<tr>
+<th>A 136</th>
+
+<td>
+<b>Incorrect link option Mnemonic, should be A or D</b>
+
+
+
+<tr>
+<th>A 137</th>
+
+<td>
+<b>Postfix mnemonic for POSIT and COUNT should be "D"</b>
+
+
+
+<tr>
+<th>A 138</th>
+
+<td>
+<b>Incorrect ATB option mnemonic, should be EX or C</b>
+
+
+
+<tr>
+<th>A 139</th>
+
+<td>
+<b>Expected "GO" in LOAD. instruction</b>
+
+
+
+<tr>
+<th>A 140</th>
+
+<td>
+<b>Constant definition requires "=" and value</b>
+
+
+
+<tr>
+<th>A 141</th>
+
+<td>
+<b>Constant definition requires value</b>
+
+
+
+<tr>
+<th>A 142</th>
+
+<td>
+<b>unexpected "=" in # declaration</b>
+
+
+
+<tr>
+<th>A 143</th>
+
+<td>
+<b>unexpected "=" in % declaration</b>
+
+
+
+<tr>
+<th>A 144</th>
+
+<td>
+<b>basic code pointers may not be typed</b>
+
+
+
+<tr>
+<th>A 145</th>
+
+<td>
+<b>illegal usage of FILLER with CONST</b>
+
+
+
+<tr>
+<th>A 146</th>
+
+<td>
+<b>Illegal usage of SEGM/PROC/USER/CODE with CONST</b>
+
+
+
+<tr>
+<th>A 147</th>
+
+<td>
+<b>Conflicting keywords SEGMENT / CONST</b>
+
+
+
+<tr>
+<th>A 148</th>
+
+<td>
+<b>Class definition is not active and end of line reached</b>
+
+
+
+<tr>
+<th>A 149</th>
+
+<td>
+<b>Empty implicite UNION definition</b>
+
+
+
+<tr>
+<th>A 150</th>
+
+<td>
+<b>Unexpected end of line in FIELD instruction</b>
+
+
+
+<tr>
+<th>A 151</th>
+
+<td>
+<b>Expected variable identifier in FIELD redefinition</b>
+
+
+
+<tr>
+<th>A 152</th>
+
+<td>
+<b>Expected "=" in FIELD instruction</b>
+
+
+
+<tr>
+<th>A 153</th>
+
+<td>
+<b>ENDPROC encountered PROC not active</b>
+
+
+
+<tr>
+<th>A 154</th>
+
+<td>
+<b>Incorrect explicite ENDPROC identifier</b>
+
+
+
+<tr>
+<th>A 155</th>
+
+<td>
+<b>Expected identifier in ESEG directive</b>
+
+
+
+<tr>
+<th>A 156</th>
+
+<td>
+<b>Incorrect option for ENDLOC instruction, must be "S"</b>
+
+
+
+<tr>
+<th>A 157</th>
+
+<td>
+<b>Expected option for ENDLOC instruction</b>
+
+
+
+<tr>
+<th>A 158</th>
+
+<td>
+<b>Incorrect RET.SEG instruction</b>
+
+
+
+<tr>
+<th>A 159</th>
+
+<td>
+<b>Expected label identifier for GOSUB instruction</b>
+
+
+
+<tr>
+<th>A 160</th>
+
+<td>
+<b>Expected label identifier for GOTO instruction</b>
+
+
+
+<tr>
+<th>A 161</th>
+
+<td>
+<b>Unexpected ENDIF</b>
+
+
+
+<tr>
+<th>A 162</th>
+
+<td>
+<b>Requires ENHANCED COMPARE</b>
+
+
+
+<tr>
+<th>A 163</th>
+
+<td>
+<b>Incorrect keyword, expected AND, OR, AX</b>
+
+
+
+<tr>
+<th>A 164</th>
+
+<td>
+<b>Error generating IF</b>
+
+
+
+<tr>
+<th>A 165</th>
+
+<td>
+<b>Error generating ELSE</b>
+
+
+
+<tr>
+<th>A 166</th>
+
+<td>
+<b>Error starting WHILE</b>
+
+
+
+<tr>
+<th>A 167</th>
+
+<td>
+<b>Unexpected WEND</b>
+
+
+
+<tr>
+<th>A 168</th>
+
+<td>
+<b>Unexpected LOOP</b>
+
+
+
+<tr>
+<th>A 169</th>
+
+<td>
+<b>Error generating REPEAT</b>
+
+
+
+<tr>
+<th>A 170</th>
+
+<td>
+<b>Unexpected UNTIL</b>
+
+
+
+<tr>
+<th>A 171</th>
+
+<td>
+<b>Error translating TO expression</b>
+
+
+
+<tr>
+<th>A 172</th>
+
+<td>
+<b>Error translating STEP expression</b>
+
+
+
+<tr>
+<th>A 173</th>
+
+<td>
+<b>Expected identifier for FOR instruction</b>
+
+
+
+<tr>
+<th>A 174</th>
+
+<td>
+<b>Variable expected for FOR instruction</b>
+
+
+
+<tr>
+<th>A 175</th>
+
+<td>
+<b>Error translating TO clause</b>
+
+
+
+<tr>
+<th>A 176</th>
+
+<td>
+<b>Error encountered in STEP clause</b>
+
+
+
+<tr>
+<th>A 177</th>
+
+<td>
+<b>Unexpected or incorrect NEXT instruction</b>
+
+
+
+<tr>
+<th>A 178</th>
+
+<td>
+<b>Incorrect indirect procedure call</b>
+
+
+
+<tr>
+<th>A 180</th>
+
+<td>
+<b>Incorrect procedure return type</b>
+
+
+
+<tr>
+<th>A 181</th>
+
+<td>
+<b>Segment 0 already present</b>
+
+
+
+<tr>
+<th>A 182</th>
+
+<td>
+<b>Cannot alias function return value</b>
+
+
+
+<tr>
+<th>A 183</th>
+
+<td>
+<b>Unexpected EXIT instruction</b>
+
+
+
+<tr>
+<th>A 184</th>
+
+<td>
+<b>Expected EXIT( expression )</b>
+
+
+
+<tr>
+<th>A 185</th>
+
+<td>
+<b>Unexpected EXIT( expression )</b>
+
+
+
+<tr>
+<th>A 186</th>
+
+<td>
+<b>Error generating SELECT instruction</b>
+
+
+
+<tr>
+<th>A 187</th>
+
+<td>
+<b>Incorrect CASE operand</b>
+
+
+
+<tr>
+<th>A 188</th>
+
+<td>
+<b>Unexpected CASE instruction</b>
+
+
+
+<tr>
+<th>A 189</th>
+
+<td>
+<b>Incorrect or unexpected DEFAULT instruction</b>
+
+
+
+<tr>
+<th>A 190</th>
+
+<td>
+<b>Unexpected ENDSEL instruction</b>
+
+
+
+<tr>
+<th>A 191</th>
+
+<td>
+<b>Unexpected keyword THEN , not in EVENT</b>
+
+
+
+<tr>
+<th>A 192</th>
+
+<td>
+<b>Error generating THEN instruction</b>
+
+
+
+<tr>
+<th>A 193</th>
+
+<td>
+<b>Error generating EVENT DO instruction</b>
+
+
+
+<tr>
+<th>A 194</th>
+
+<td>
+<b>Error generating EVENT instruction</b>
+
+
+
+<tr>
+<th>A 195</th>
+
+<td>
+<b>Expected END.SEG instruction</b>
+
+
+
+<tr>
+<th>A 196</th>
+
+<td>
+<b>Expected token for END. instruction</b>
+
+
+
+<tr>
+<th>A 197</th>
+
+<td>
+<b>Expected END EVENT instruction</b>
+
+
+
+<tr>
+<th>A 198</th>
+
+<td>
+<b>Incorrect keyword in ON EXTERN EVENT instruction</b>
+
+
+
+<tr>
+<td>
+
+<td>The instruction ON EXTERN EVENT offers the following syntax
+variations :
+<dl><dt><dd>
+- ON EXTERN EVENT GOTO &amp; label
+</dl>
+When an external event is intercepted then execution will
+continue at the adresse indicated by the label provided.
+The external events manager will be dis-activated upon event
+interception and must be re-activated by an ON EXTERN EVENT
+instruction.
+
+<dl><dt><dd>
+- ON EXTERN EVENT GOSUB &amp; label
+</dl>
+When an external event is intercepted then execution will
+continue at the adresse indicated by the label provided.
+The external events manager will remain active upon event
+interception and may be suspended explicitly by the EVENT(8)
+instruction as is required.
+
+<dl><dt><dd>
+- ON EXTERN EVENT CALL _procedure_name
+</dl>
+When an external event is intercepted then execution will
+continue at the indicated procedure. Event interception
+will be suspended before the transfer of control to the
+procedure and re-activated upon EXIT from the procedure.
+The instruction EVENT(8) may be used to re-activate external
+event reception prior to the EXIT from the procedure.
+<dl><dt><dd>
+- ON EXTERN EVENT CALL _variable_name.
+</dl>
+The provided variable name is assumed to be a procedure
+indirection variable of type PROC and will be used to
+activate an indirect CALL to the procedure to which it
+refers upon interception of an external event.
+As for the direct calling mechanism event interception
+will be suspended for the duration of the execution of the
+target procedure.
+
+<dl><dt><dd>
+- ON EXTERN EVENT [_object_name . ] _member_name
+</dl>
+This instruction will give rise to the appropriate form
+GOTO/GOSUB/CALL depending on the nature of the member operand
+<dl><dt><dd>
+- INLINE : ON EXTERN EVENT GOTO _inline_label
+<dd>
+- ROUTINE : ON EXTERN EVENT GOSUB _routine_label
+<dd>
+- FUNCTION : ON EXTERN EVENT CALL _function_procedure
+<dd>
+- FUNCTION POINTER
+<dd>
+: ON EXTERN EVENT CALL _function_variable 
+</dl>
+
+<tr>
+<th>A 199</th>
+
+<td>
+<b>Incorrect ON EXTERN EVENT</b>
+
+
+
+<tr>
+<th>A 200</th>
+
+<td>
+<b>Expected token for ON ERROR instruction</b>
+
+
+
+<tr>
+<th>A 201</th>
+
+<td>
+<b>Incorrect expression operand for ERROR( expression )</b>
+
+
+
+<tr>
+<th>A 202</th>
+
+<td>
+<b>Expected GOTO or GOSUB for ON TIMER instruction</b>
+
+
+
+<tr>
+<th>A 203</th>
+
+<td>
+<b>Incorrect ON TIMER instruction</b>
+
+
+
+<tr>
+<th>A 204</th>
+
+<td>
+<b>Expected expression for ON instruction</b>
+
+
+
+<tr>
+<th>A 205</th>
+
+<td>
+<b>Expected Variable for ON instruction</b>
+
+
+
+<tr>
+<th>A 206</th>
+
+<td>
+<b>Incorrect ON instruction construction</b>
+
+
+
+<tr>
+<th>A 207</th>
+
+<td>
+<b>Expected GOTO or GOSUB for OF instruction</b>
+
+
+
+<tr>
+<th>A 208</th>
+
+<td>
+<b>Expected label token for OF instruction</b>
+
+
+
+<tr>
+<th>A 209</th>
+
+<td>
+<b>Incorrect OF instruction expression</b>
+
+
+
+<tr>
+<th>A 210</th>
+
+<td>
+<b>Expected keyword token for ON instruction</b>
+
+
+
+<tr>
+<th>A 211</th>
+
+<td>
+<b>Expected token in DATA statement</b>
+
+
+
+<tr>
+<th>A 212</th>
+
+<td>
+<b>Missing colon ':' in READ DATA statement</b>
+
+
+
+<tr>
+<th>A 213</th>
+
+<td>
+<b>Incorrect expression in READ DATA instruction</b>
+
+
+
+<tr>
+<th>A 214</th>
+
+<td>
+<b>Error generating READ DATA</b>
+
+
+
+<tr>
+<th>A 215</th>
+
+<td>
+<b>Expected label token for RESUME &amp; label</b>
+
+
+
+<tr>
+<th>A 216</th>
+
+<td>
+<b>unexpected keyword</b>
+
+
+
+<tr>
+<th>A 217</th>
+
+<td>
+<b>Unexpected keyword</b>
+
+
+
+<tr>
+<th>A 218</th>
+
+<td>
+<b>Expected OFF keyword for TIMER OFF statement</b>
+
+
+
+<tr>
+<th>A 219</th>
+
+<td>
+<b>Unexpected keyword</b>
+
+
+
+<tr>
+<th>A 220</th>
+
+<td>
+<b>Unexpected keyword</b>
+
+
+
+<tr>
+<th>A 221</th>
+
+<td>
+<b>Expected label token for enhanced label affectation</b>
+
+
+
+<tr>
+<th>A 222</th>
+
+<td>
+<b>Affectation "rvalue" translation error</b>
+
+
+
+<tr>
+<th>A 223</th>
+
+<td>
+<b>#PRAGMA ENHANCED AFFECTATION ON required</b>
+
+
+
+<tr>
+<th>A 224</th>
+
+<td>
+<b>Unknown token, identifier, class</b>
+
+
+
+<tr>
+<th>A 225</th>
+
+<td>
+<b>Expected segment identifier for SEGMENT directive</b>
+
+
+
+<tr>
+<th>A 226</th>
+
+<td>
+<b>Incorrect segment option, must be "R"</b>
+
+
+
+<tr>
+<th>A 227</th>
+
+<td>
+<b>Expected segment option, got end of line</b>
+
+
+
+<tr>
+<th>A 228</th>
+
+<td>
+<b>Unexpected keyword</b>
+
+
+
+<tr>
+<th>A 229</th>
+
+<td>
+<b>Expected token in LIBRARY directive</b>
+
+
+
+<tr>
+<th>A 230</th>
+
+<td>
+<b>Expected PROGRAM, LIBRARY, MODULE keyword</b>
+
+<tr>
+<th>A 231</th>
+
+<td>
+<b>Expected non zero integer value for first  dimension of a variable declaration</b>
+<tr>
+<th>A 232</th>
+
+<td>
+<b>Expected non zero integer value for second dimension of a variable declaration</b>
+
+
+
+<tr>
+<th>A 250</th>
+
+<td>
+<b>Expression too complex, no more registers</b>
+
+
+
+<tr>
+<th>A 400</th>
+
+<td>
+<b>Error converting ASCII format string to ABAL format code</b>
+
+
+
+<tr>
+<th>A 401</th>
+
+<td>
+<b>Incorrect operand nature for PRINT</b>
+
+
+
+<tr>
+<th>A 402</th>
+
+<td>
+<b>Incorrect operand nature for PRINT</b>
+
+
+
+<tr>
+<th>A 403</th>
+
+<td>
+<b>Error translating ATB operand, braces or expression</b>
+
+
+
+<tr>
+<th>A 404</th>
+
+<td>
+<b>Error translating TABV operand, braces or expression</b>
+
+
+
+<tr>
+<th>A 405</th>
+
+<td>
+<b>Expected expression for TAB column operand</b>
+
+
+
+<tr>
+<th>A 406</th>
+
+<td>
+<b>Error translating TAB line operand expression</b>
+
+
+
+<tr>
+<th>A 407</th>
+
+<td>
+<b>Expected operands for TAB instruction</b>
+
+
+
+<tr>
+<th>A 408</th>
+
+<td>
+<b>Error translating PAINT foreground operand</b>
+
+
+
+<tr>
+<th>A 409</th>
+
+<td>
+<b>Error translating PAINT background operand</b>
+
+
+
+<tr>
+<th>A 410</th>
+
+<td>
+<b>Expected operand, opening brace for PAINT instruction</b>
+
+
+
+<tr>
+<th>A 411</th>
+
+<td>
+<b>Expected opening brace in FORMAT expression</b>
+
+
+
+<tr>
+<th>A 412</th>
+
+<td>
+<b>Error converting ASCII format string in FMT instruction</b>
+
+
+
+<tr>
+<th>A 413</th>
+
+<td>
+<b>Expected expression for indirect format operand</b>
+
+
+
+<tr>
+<th>A 414</th>
+
+<td>
+<b>Indirect format expression requires closing brace</b>
+
+
+
+<tr>
+<th>A 415</th>
+
+<td>
+<b>Error converting explicite format expression</b>
+
+
+
+<tr>
+<th>A 416</th>
+
+<td>
+<b>Format expression requires closing brace ')'</b>
+
+
+
+<tr>
+<th>A 417</th>
+
+<td>
+<b>Unknown IOF instruction</b>
+
+
+
+<tr>
+<th>A 418</th>
+
+<td>
+<b>Error translating PRINT</b>
+
+
+
+<tr>
+<th>A 419</th>
+
+<td>
+<b>Unexpected '=' in PRINT expression</b>
+
+
+
+<tr>
+<th>A 420</th>
+
+<td>
+<b>Unexpected right brace in PRINT expression</b>
+
+
+
+<tr>
+<th>A 421</th>
+
+<td>
+<b>Error translating format</b>
+
+
+
+<tr>
+<th>A 422</th>
+
+<td>
+<b>Error translating ASK instruction</b>
+
+
+
+<tr>
+<th>A 423</th>
+
+<td>
+<b>Error translating ASK operand</b>
+
+
+
+<tr>
+<th>A 424</th>
+
+<td>
+<b>Error translating ASK format</b>
+
+
+
+<tr>
+<th>A 425</th>
+
+<td>
+<b>Expected "=" in ASK instruction</b>
+
+
+
+<tr>
+<th>A 426</th>
+
+<td>
+<b>Format label expected</b>
+
+
+
+<tr>
+<th>A 427</th>
+
+<td>
+<b>Error translating PRINT instruction</b>
+
+
+
+<tr>
+<th>A 428</th>
+
+<td>
+<b>Error translating CLF PRINT instruction</b>
+
+
+
+<tr>
+<th>A 429</th>
+
+<td>
+<b>Expected label token for HOTKEY instruction</b>
+
+
+
+<tr>
+<th>A 430</th>
+
+<td>
+<b>Expected closing brace for GOSUB HOTKEY instruction</b>
+
+
+
+<tr>
+<th>A 431</th>
+
+<td>
+<b>Incorrect Special Hotkey code should be I,U,D,L</b>
+
+
+
+<tr>
+<th>A 433</th>
+
+<td>
+<b>Error translating ASK instruction</b>
+
+
+
+<tr>
+<th>A 434</th>
+
+<td>
+<b>Expected variable in OP instruction</b>
+
+
+
+<tr>
+<th>A 435</th>
+
+<td>
+<b>Incorrect mnemonic for OP label, should be NEXT, BREAK</b>
+
+
+
+<tr>
+<th>A 436</th>
+
+<td>
+<b>Expected label token in OP instruction</b>
+
+
+
+<tr>
+<th>A 437</th>
+
+<td>
+<b>Error translating CLF PRINT</b>
+
+
+
+<tr>
+<th>A 599</th>
+
+<td>
+<b>End of Line Expected or Syntax Error</b>
+
+
+
+<tr>
+<td>
+
+<td>This error may occur due to one of two reasons :
+<br>
+<ul>
+<li>
+Unexpected operator or punctuation characters encountered
+during the translation of an expression.
+<li> Upon succesful completion of the translation of an instruction
+unexpected punctuation or tokens were encountered. 
+</ul>
+
+<tr>
+<th>A 665</th>
+
+<td>
+<b>No Local Data Table for Field=L instruction</b>
+
+
+
+<tr>
+<th>A 666</th>
+
+<td>
+<b>Effective DCL or PTR memory occupation size is ZERO</b>
+
+
+
+<tr>
+<th>A 667</th>
+
+<td>
+<b>Expected CLASS for OVERLAY parameter type</b>
+
+
+
+<tr>
+<th>A 668</th>
+
+<td>
+<b>Error : PROTOTYPE class used as parameter</b>
+
+
+
+<tr>
+<th>A 669</th>
+
+<td>
+<b>External procedures cannot be defined</b>
+
+
+
+<tr>
+<th>A 670</th>
+
+<td>
+<b>Expected Segment Number</b>
+
+
+
+<tr>
+<th>A 671</th>
+
+<td>
+<b>Unexpected Segment Number</b>
+
+
+
+<tr>
+<th>A 672</th>
+
+<td>
+<b>Error creating segment</b>
+
+
+
+<tr>
+<th>A 673</th>
+
+<td>
+<b>External segments must be named</b>
+
+
+
+<tr>
+<th>A 674</th>
+
+<td>
+<b>Incorrect external segment internal number</b>
+
+
+
+<tr>
+<th>A 675</th>
+
+<td>
+<b>Incorrect LIBRARY,PROGRAM keyword, Context already started</b>
+
+
+
+<tr>
+<th>A 701</th>
+
+<td>
+<b>Incorrect parameter during CLF generation</b>
+
+
+
+<tr>
+<th>A 702</th>
+
+<td>
+<b>Invalid parameter in CLF generation</b>
+
+
+
+<tr>
+<th>A 703</th>
+
+<td>
+<b>Error creating CLF target</b>
+
+
+
+<tr>
+<th>A 704</th>
+
+<td>
+<b>Expected string operand in CLF instruction</b>
+
+
+
+<tr>
+<th>A 705</th>
+
+<td>
+<b>Expected integer operand in CLF instruction</b>
+
+
+
+<tr>
+<th>A 706</th>
+
+<td>
+<b>Expected numeric operand in CLF instruction</b>
+
+
+
+<tr>
+<th>A 707</th>
+
+<td>
+<b>Expected operand in CLF instruction</b>
+
+
+
+<tr>
+<th>A 708</th>
+
+<td>
+<b>Error translating CLF operand expression</b>
+
+
+
+<tr>
+<th>A 709</th>
+
+<td>
+<b>Incorrect CLF operand expression</b>
+
+
+
+<tr>
+<th>A 710</th>
+
+<td>
+<b>Friend statement outside of class illegal</b>
+
+
+
+<tr>
+<th>A 711</th>
+
+<td>
+<b>Expected FRIEND identifier</b>
+
+
+
+<tr>
+<th>A 712</th>
+
+<td>
+<b>Incorrect operand for pseudo affectation</b>
+
+
+
+<tr>
+<th>A 713</th>
+
+<td>
+<b>Expected keyword OFF in EVENT expression</b>
+
+
+
+<tr>
+<th>A 714</th>
+
+<td>
+<b>Expected left brace '(' in FM instruction</b>
+
+
+
+<tr>
+<th>A 715</th>
+
+<td>
+<b>Incorrect FM operand</b>
+
+
+
+<tr>
+<th>A 716</th>
+
+<td>
+<b>Incorrect FM format</b>
+
+
+
+<tr>
+<th>A 717</th>
+
+<td>
+<b>unmatched braces in code pointer affectation</b>
+
+
+
+<tr>
+<th>A 718</th>
+
+<td>
+<b>Expected keyword PTR</b>
+
+
+
+<tr>
+<th>A 722</th>
+
+<td>
+<b>Incorrect operand type for CREATE/REMOVE ETC</b>
+
+
+
+<tr>
+<th>A 731</th>
+
+<td>
+<b>Class prototype instance illegal</b>
+
+
+
+<tr>
+<th>A 732</th>
+
+<td>
+<b>Member object of unknown class/union or structure</b>
+
+
+
+<tr>
+<th>A 733</th>
+
+<td>
+<b>Expected token for instance identifier</b>
+
+
+
+<tr>
+<th>A 734</th>
+
+<td>
+<b>ENDCLASS/STRUCT/UNION outside of definition</b>
+
+
+
+<tr>
+<th>A 735</th>
+
+<td>
+<b>Incorrect explicite closure identifier CLASS/UNION/STRUCT</b>
+
+
+
+<tr>
+<th>A 736</th>
+
+<td>
+<b>Expected identifier for instance</b>
+
+
+
+<tr>
+<th>A 737</th>
+
+<td>
+<b>Expected instance identifier</b>
+
+
+
+<tr>
+<th>A 738</th>
+
+<td>
+<b>Instance type / Class type mismatch</b>
+
+
+
+<tr>
+<th>A 739</th>
+
+<td>
+<b>Instance / Class type mismatch</b>
+
+
+
+<tr>
+<th>A 741</th>
+
+<td>
+<b>Strict/Relax overload mismatch, must be identical types</b>
+
+
+
+<tr>
+<th>A 750</th>
+
+<td>
+<b>Unknown class for parameter instance</b>
+
+
+
+<tr>
+<th>A 751</th>
+
+<td>
+<b>Illegal class prototype (empty) instance</b>
+
+
+
+<tr>
+<th>A 752</th>
+
+<td>
+<b>Common member object of unknown class</b>
+
+
+
+<tr>
+<th>A 753</th>
+
+<td>
+<b>
+should be STRUCT/UNION or CLASS
+</b>
+
+
+
+<tr>
+<th>A 754</th>
+
+<td>
+<b>Incorrect STRUCT/UNION/CLASS match for
+token
+</b>
+
+
+
+<tr>
+<th>A 755</th>
+
+<td>
+<b>Unknown
+for INHERIT operation or no host class
+</b>
+
+
+
+<tr>
+<th>A 756</th>
+
+<td>
+<b>Error translating instance options</b>
+
+
+
+<tr>
+<th>A 757</th>
+
+<td>
+<b>Base instance expression outside of class definition</b>
+
+
+
+<tr>
+<th>A 758</th>
+
+<td>
+<b>Missing token "M" in O.M expression (during)</b>
+
+
+
+<tr>
+<th>A 759</th>
+
+<td>
+<b>Error translating O.M expression (during)</b>
+
+
+
+<tr>
+<th>A 760</th>
+
+<td>
+<b>Error translating O.M expression (final)</b>
+
+
+
+<tr>
+<th>A 761</th>
+
+<td>
+<b>Missing token "M" in O.M statement (during)</b>
+
+
+
+<tr>
+<th>A 762</th>
+
+<td>
+<b>Expected identifier in
+.
+expression
+
+</b>
+
+
+
+<tr>
+<th>A 763</th>
+
+<td>
+<b>Error translating O.M statement (during)</b>
+
+
+
+<tr>
+<th>A 764</th>
+
+<td>
+<b>Missing token "M" in O.M statement (initial)</b>
+
+
+
+<tr>
+<th>A 765</th>
+
+<td>
+<b>Error translating O.M statement (final)</b>
+
+
+
+<tr>
+<th>A 777</th>
+
+<td>
+<b>Illegal CONSTANT "lvalue" in O.M statement</b>
+
+
+
+<tr>
+<th>A 788</th>
+
+<td>
+<b>Effective parameter size is zero</b>
+
+
+
+<tr>
+<td>
+
+<td>The size of a string or bcd parameter variable for a method or
+<br>
+a procedure has evaluated to zero. This is probably due to an
+<br>
+incorrect size expression or an in-accessible member constant. 
+
+
+<tr>
+<th>A 800</th>
+
+<td>
+<b>Expected class identifier in INHERIT instruction</b>
+
+
+
+<tr>
+<th>A 801</th>
+
+<td>
+<b>Expected terminal data expression</b>
+
+
+
+<tr>
+<th>A 802</th>
+
+<td>
+<b>Implicite members cannot be a method</b>
+
+
+
+<tr>
+<th>A 803</th>
+
+<td>
+<b>Incorrect type for implicite member</b>
+
+
+
+<tr>
+<th>A 804</th>
+
+<td>
+<b>Expected identifier for base class expression</b>
+
+
+
+<tr>
+<th>A 808</th>
+
+<td>
+<b>Error encountered during Strict parameter expression evaluation</b>
+
+
+
+<tr>
+<th>A 810</th>
+
+<td>
+<b>Error translating base class componant</b>
+
+
+
+<tr>
+<th>A 811</th>
+
+<td>
+<b>Unexpected keyword in base class expression</b>
+
+
+
+<tr>
+<th>A 812</th>
+
+<td>
+<b>Expected base class expression</b>
+
+
+
+<tr>
+<th>A 813</th>
+
+<td>
+<b>Method return type has already been defined</b>
+
+
+
+<tr>
+<th>A 814</th>
+
+<td>
+<b>Double usage/conflict : class keywords OVERLOAD/VIRTUAL</b>
+
+
+
+<tr>
+<th>A 815</th>
+
+<td>
+<b>Illegal usage of POINTER, already DCL or PTR</b>
+
+
+
+<tr>
+<th>A 816</th>
+
+<td>
+<b>Double usage of PROTECT keyword</b>
+
+
+
+<tr>
+<th>A 817</th>
+
+<td>
+<b>Double usage/conflict : class keywords STRICT/RELAX</b>
+
+
+
+<tr>
+<th>A 818</th>
+
+<td>
+<b>Double usage of COMMON keyword</b>
+
+
+
+<tr>
+<th>A 819</th>
+
+<td>
+<b>Double usage of EXTERN keyword</b>
+
+
+
+<tr>
+<th>A 820</th>
+
+<td>
+<b>Unexpected class keyword INHIBIT</b>
+
+
+
+<tr>
+<th>A 821</th>
+
+<td>
+<b>Unexpected class keyword CLASS/UNION</b>
+
+
+
+<tr>
+<th>A 822</th>
+
+<td>
+<b>Declarative class keyword conflict CONST/DCL/ARGUMENT</b>
+
+
+
+<tr>
+<th>A 823</th>
+
+<td>
+<b>Double usage/conflict : class keywords STATIC/DYNAMIC</b>
+
+
+
+<tr>
+<th>A 824</th>
+
+<td>
+<b>Double usage/conflict : class keywords INDIRECT/DIRECT</b>
+
+
+
+<tr>
+<th>A 825</th>
+
+<td>
+<b>Keyword conflict : CONSTRUCTOR/DESTRUCTOR/EXCEPTION/INVARIANT</b>
+
+
+
+<tr>
+<th>A 826</th>
+
+<td>
+<b>Double usage of keyword RESIDENT</b>
+
+
+
+<tr>
+<th>A 827</th>
+
+<td>
+<b>Return type already defined</b>
+
+
+
+<tr>
+<th>A 828</th>
+
+<td>
+<b>Expected class identifier in class return statement</b>
+
+
+
+<tr>
+<th>A 829</th>
+
+<td>
+<b>Unknown class in class return statement</b>
+
+
+
+<tr>
+<th>A 830</th>
+
+<td>
+<b>Instance option error in class return statement</b>
+
+
+
+<tr>
+<th>A 833</th>
+
+<td>
+<b>Expected token, unexpected end of line</b>
+
+
+
+<tr>
+<th>A 850</th>
+
+<td>
+<b>End of line encountered while collecting construction values</b>
+
+
+
+<tr>
+<th>A 851</th>
+
+<td>
+<b>Double usage of METHOD keyword</b>
+
+
+
+<tr>
+<th>A 852</th>
+
+<td>
+<b>Method type keyword clash FUNCTION/OVERLAY/ROUTINE/INLINE</b>
+
+
+
+<tr>
+<th>A 853</th>
+
+<td>
+<b>Method requires identifier</b>
+
+
+
+<tr>
+<th>A 854</th>
+
+<td>
+<b>Method pointer type is undefined</b>
+
+
+
+<tr>
+<th>A 855</th>
+
+<td>
+<b>Incorrect method pointer type</b>
+
+
+
+<tr>
+<th>A 856</th>
+
+<td>
+<b>Incorrect operator type for OPERATOR method</b>
+
+
+
+<tr>
+<th>A 857</th>
+
+<td>
+<b>Method should not provided parameters</b>
+
+
+
+<tr>
+<th>A 858</th>
+
+<td>
+<b>Incorrect expression as parameter value for method activation</b>
+
+
+
+<tr>
+<th>A 859</th>
+
+<td>
+<b>ROUTINE methods may not receive parameters</b>
+
+
+
+<tr>
+<th>A 860</th>
+
+<td>
+<b>Object of method has no defined CLASS</b>
+
+
+
+<tr>
+<th>A 862</th>
+
+<td>
+<b>OVERLAY methods may not receive parameters</b>
+
+
+
+<tr>
+<th>A 863</th>
+
+<td>
+<b>Incorrect evaluation of INLINE METHOD, must be MACRO INLINE</b>
+
+
+
+<tr>
+<th>A 864</th>
+
+<td>
+<b>Error building operator parameters</b>
+
+
+
+<tr>
+<th>A 865</th>
+
+<td>
+<b>Operator method has no return type</b>
+
+
+
+<tr>
+<th>A 866</th>
+
+<td>
+<b>Error building parameters for Affectation method</b>
+
+
+
+<tr>
+<th>A 867</th>
+
+<td>
+<b>Error aliasing inline function return value</b>
+
+
+
+<tr>
+<th>A 868</th>
+
+<td>
+<b>Error copying inline function return value</b>
+
+
+
+<tr>
+<th>A 869</th>
+
+<td>
+<b>Error translating EXIT for inline function</b>
+
+
+
+<tr>
+<th>A 877</th>
+
+<td>
+<b>Expected identifier for special co-method name</b>
+
+
+
+<tr>
+<th>A 878</th>
+
+<td>
+<b>Semi colon encountered whilst braces still open</b>
+
+
+
+<tr>
+<th>A 888</th>
+
+<td>
+<b>OVERLAY method activated from FUNCTION method</b>
+
+
+
+<tr>
+<th>A 889</th>
+
+<td>
+<b>Parameter must be variable to receive return value</b>
+
+
+
+<tr>
+<th>A 890</th>
+
+<td>
+<b>Illegal POINTER variable in FIELD=E</b>
+
+
+
+<tr>
+<th>A 891</th>
+
+<td>
+<b>Illegal POINTER variable in FIELD=
+
+</b>
+
+
+
+<tr>
+<th>A 981</th>
+
+<td>
+<b>Expected NOCLR option</b>
+
+
+
+<tr>
+<th>A 1000</th>
+
+<td>
+<b>Access violation : private member access refused</b>
+
+
+
+<tr>
+<th>A 1001</th>
+
+<td>
+<b>Expected token, got end of line</b>
+
+
+
+<tr>
+<th>A 1002</th>
+
+<td>
+<b>Unknown class for PROGRAM/OVERLAY/MODULE instance</b>
+
+
+
+<tr>
+<th>A 1003</th>
+
+<td>
+<b>Expected instance identifier for PROGRAM/OVERLAY instance</b>
+
+
+
+<tr>
+<th>A 1004</th>
+
+<td>
+<b>Keyword PUBLIC or PRIVATE should preceed keyword PROTECT</b>
+
+
+
+<tr>
+<th>A 1005</th>
+
+<td>
+<b>Incorrect common member token</b>
+
+
+
+<tr>
+<th>A 1006</th>
+
+<td>
+<b>The keywords PUBLIC or PRIVATE should preceed keyword COMMON</b>
+
+
+
+<tr>
+<th>A 1010</th>
+
+<td>
+<b>Error encountered during ROUTINE expansion</b>
+
+
+
+<tr>
+<th>A 1020</th>
+
+<td>
+<b>Object of dynamic function method has no class</b>
+
+
+
+<tr>
+<th>A 1030</th>
+
+<td>
+<b>Illegal instance of VIRTUAL class</b>
+
+
+
+<tr>
+<td>
+
+<td>The keyword VIRTUAL when used as a class qualifier prohibits
+<br>
+the instantiation of the class since it is considered to be
+<br>
+incomplete. It must undergo derivation by inheritance before
+<br>
+it may participate in an instance expression. 
+
+
+<tr>
+<th>A 1040</th>
+
+<td>
+<b>Too many parameters for Procedure or Function</b>
+
+
+
+<tr>
+<th>A 1050</th>
+
+<td>
+<b>Not enough parameters for Procedure or Function</b>
+
+
+
+<tr>
+<th>A 1060</th>
+
+<td>
+<b>Unmatched braces</b>
+
+
+
+<tr>
+<th>A 1070</th>
+
+<td>
+<b>Method return type declaration must preceed method keywords</b>
+
+
+
+<tr>
+<th>A 1080</th>
+
+<td>
+<b></b>
+
+
+
+<tr>
+<th>A 1090</th>
+
+<td>
+<b>Invalid operand for CLF instruction</b>
+
+
+
+<tr>
+<th>A 1194</th>
+
+<td>
+<b>Illegal procedure for ON EXTERN EVENT CALL</b>
+
+
+
+<tr>
+<td>
+
+<td>The ON EXTERN EVENT CALL mechanism does not allow the activation
+<br>
+of procedures for which formal parameters have been declared since
+<br>
+no values will be available when an external event is intercepted.
+<br>
+
+<br>
+Example :
+<br>
+
+<br>
+PROGRAM "A1194"
+<br>
+PROC _error:( a% ) :: ENDPROC
+<br>
+SEGMENT 0
+<br>
+ON EXTERN EVENT CALL _error
+<br>
+ESEG 0
+<br>
+END
+<br>
+
+<br>
+This error may occur due to the activation of an object method
+<br>
+function via an external event for which the effective object
+<br>
+container size is not zero and is consequently presented as an
+<br>
+implicite parameter.
+<br>
+
+<br>
+Example :
+<br>
+
+<br>
+#CLASS example
+<br>
+s$
+<br>
+PUBLIC FUNCTION f:
+<br>
+#ENDCLASS
+<br>
+
+<br>
+PROGRAM "A1194b"
+<br>
+example e
+<br>
+SEGMENT 0 :: ON EXTERN EVENT e.f :: ESEG 0
+<br>
+END 
+
+
+<tr>
+<th>A 1195</th>
+
+<td>
+<b>Illegal procedure for ON EXTERN EVENT CALL</b>
+
+
+
+<tr>
+<td>
+
+<td>The ON EXTERN EVENT CALL mechanism does not allow the activation
+<br>
+of procedures for which return values have been declared since no
+<br>
+reception operand will be available when the external event is
+<br>
+intercepted.
+<br>
+
+<br>
+Example :
+<br>
+
+<br>
+PROGRAM "A1195"
+<br>
+PROC _error:() : % :: ENDPROC
+<br>
+SEGMENT 0
+<br>
+ON EXTERN EVENT CALL _error
+<br>
+ESEG 0
+<br>
+END 
+
+
+<tr>
+<th>A 1196</th>
+
+<td>
+<b>Illegal variable for ON EXTERN EVENT CALL</b>
+
+
+
+<tr>
+<td>
+
+<td>The variable should be a PROC type variable, either DCL or PTR.
+<br>
+all other variable types excepting pseudo PROC variables will
+<br>
+give rise to this error condition.
+<br>
+
+<br>
+Examples of errors :
+<br>
+
+<br>
+DCL a% :: ON EXTERN EVENT CALL a
+<br>
+DCL b :: ON EXTERN EVENT CALL b
+<br>
+DCL c$ :: ON EXTERN EVENT CALL c
+<br>
+
+<br>
+Correct Examples :
+<br>
+
+<br>
+DCL PROC a :: ON EXTERN EVENT CALL a
+<br>
+PTR PROC b :: ON EXTERN EVENT CALL b
+<br>
+DCL c$=5 :: ON EXTERN EVENT CALL c
+<br>
+
+<br>
+In the last example the string variable "c" of length 5 bytes is
+<br>
+a pseudo PROC variable. 
+
+
+<tr>
+<th>A 1197</th>
+
+<td>
+<b>Illegal variable for ON EXTERN EVENT CALL</b>
+
+
+
+<tr>
+<td>
+
+<td>Dimensioned PROC variables may not be used as operands for the
+<br>
+ON EXTERN EVENT CALL instruction since dimensions will not be
+<br>
+available when the event is intercepted.
+<br>
+
+<br>
+Example :
+<br>
+
+<br>
+DCL PROC a(10) :: ON EXTERN EVENT CALL a 
+
+
+<tr>
+<th>A 1198</th>
+
+<td>
+<b>Expected variable or procedure for ON EXTERN EVENT CALL</b>
+
+
+
+<tr>
+<th>A 1199</th>
+
+<td>
+<b>Expected token in ON EXTERN EVENT CALL instruction</b>
+
+
+
+<tr>
+<th>A 1329</th>
+
+<td>
+<b>Expected METHOD pointer member</b>
+
+
+
+<tr>
+<th>A 1330</th>
+
+<td>
+<b>CREATE
+outside of class/method scope
+</b>
+
+
+
+<tr>
+<th>A 1331</th>
+
+<td>
+<b>Expected method identifier</b>
+
+
+
+<tr>
+<th>A 1332</th>
+
+<td>
+<b>Incorrect member linkage</b>
+
+
+
+<tr>
+<th>A 1333</th>
+
+<td>
+<b>Incorrect member nature, must be method</b>
+
+
+
+<tr>
+<th>A 1334</th>
+
+<td>
+<b>Cannot locate strict alternative</b>
+
+
+
+<tr>
+<td>
+
+<td>The creation of a METHOD POINTER is unable to determine the
+<br>
+actual METHOD since no method signature matching the METHOD
+<br>
+POINTER can be found.
+<br>
+
+<br>
+Example :
+<br>
+
+<br>
+#CLASS error_1334
+<br>
+
+<br>
+PRIVATE VIRTUAL FUNCTION test:( a% )
+<br>
+
+<br>
+PUBLIC VIRTUAL FUNCTION POINTER operation ( a$ )
+<br>
+
+<br>
+PUBLIC CONSTRUCTOR init:
+<br>
+CREATE operation ( test )
+<br>
+
+<br>
+#ENDCLASS
+<br>
+
+<br>
+The above example will return the error diagnostic 1334
+<br>
+upon expansion of the construction method since the
+<br>
+method pointer requires a string parameter and the
+<br>
+provided method requires an integer parameter. 
+
+
+<tr>
+<th>A 1335</th>
+
+<td>
+<b>Unexpected comma in CREATE METHOD POINTER</b>
+
+
+
+<tr>
+<th>A 1336</th>
+
+<td>
+<b>VIRTUAL/OVERLOAD clash between method and Pointer</b>
+
+
+
+<tr>
+<th>A 1490</th>
+
+<td>
+<b>Expected "=" and size for FILLER</b>
+
+
+
+<tr>
+<th>A 1755</th>
+
+<td>
+<b>Unknown class for inheritance instruction</b>
+
+
+
+<tr>
+<th>A 1877</th>
+
+<td>
+<b>Method does not allow parameters</b>
+
+
+
+<tr>
+<td>
+
+<td>During METHOD signature translation the declaration of formal
+<br>
+parameters has been detected for a method type which does not
+<br>
+support parameter reception.
+<br>
+
+<br>
+EXCEPTION , INVARIANT , PRECONDITION and POSTCONDITION methods
+<br>
+do not allow the declaration of formal parameters.
+<br>
+This is a limitation which may be relieved in future versions.
+<br>
+
+<br>
+The following represents an example of this error :
+<br>
+
+<br>
+#CLASS error_1877
+<br>
+
+<br>
+PRIVATE EXCEPTION catcher:( a% )
+<br>
+
+<br>
+#ENDCLASS 
+
+
+<tr>
+<th>A 1878</th>
+
+<td>
+<b>Method requires parameters</b>
+
+
+
+<tr>
+<td>
+
+<td>During METHOD signature translation an absence of formal parameters
+<br>
+has been detected for a method type which requires the declaration
+<br>
+of formal parameters.
+<br>
+
+<br>
+OPERATOR methods require one formal parameter to be declared which
+<br>
+indicates the type of operand with which it will operate.
+<br>
+
+<br>
+The following represents an example of this error :
+<br>
+
+<br>
+#CLASS error_1878
+<br>
+PUBLIC FUNCTION OPERATOR =
+<br>
+#ENDCLASS 
+
+
+<tr>
+<th>A 2000</th>
+
+<td>
+<b>Access violation : constant parameter affectation refused</b>
+
+
+
+<tr>
+<td>
+
+<td>Formal parameters of methods and procedures may be declared to be
+<br>
+CONSTANT, in that the value or the value pointed to by the parameter
+<br>
+may not be modified by the method or procedure.
+<br>
+
+<br>
+The following is an example of this error :
+<br>
+
+<br>
+PROC error_2000( Const a% )
+<br>
+a = 1
+<br>
+ENDPROC 
+
+
+<tr>
+<th>A 2021</th>
+
+<td>
+<b>Argument variable has already been defined/declared</b>
+
+
+
+<tr>
+<th>A 2121</th>
+
+<td>
+<b>VIRTUAL or OVERLOAD requires INDIRECT or FUNCTION keyword</b>
+
+
+
+<tr>
+<th>A 2323</th>
+
+<td>
+<b>Target member for OVERLOAD operation must be VIRTUAL or OVERLOAD</b>
+
+
+
+<tr>
+<th>A 2877</th>
+
+<td>
+<b>EXCEPTION/INVARIANT/CONDITION may only be INLINE</b>
+
+
+
+<tr>
+<th>A 2878</th>
+
+<td>
+<b>Illegal COMMON not METHOD POINTER</b>
+
+
+
+<tr>
+<td>
+
+<td>The keyword COMMON may not be used in METHOD definitions
+<br>
+it may only be used in METHOD POINTER definitions.
+<br>
+
+<br>
+Example :
+<br>
+
+<br>
+Public Common Function f: ;*** ERROR
+<br>
+
+<br>
+Public Common Function Pointer f ;*** OK 
+
+
+<tr>
+<th>A 2879</th>
+
+<td>
+<b>Illegal INDIRECT/VIRTUAL/OVERLOAD INLINE/ROUTINE</b>
+
+
+
+<tr>
+<td>
+
+<td>INLINE and ROUTINE methods do not offer indirection, consequently
+<br>
+the keywords INDIRECT, VIRTUAL and OVERLOAD may not be used in
+<br>
+method declarations of these types. 
+
+
+<tr>
+<th>A 2880</th>
+
+<td>
+<b>Illegal ROUTINE/OVERLAY OPERATOR</b>
+
+
+
+<tr>
+<td>
+
+<td>OPERATOR methods require parameters and must return values, except
+<br>
+for the affectation operator. Since neither routines nor overlays
+<br>
+provide for neither parameter reception nor result return they may
+<br>
+not be defined as OPERATOR methods. 
+
+
+<tr>
+<th>A 2881</th>
+
+<td>
+<b>Illegal RESIDENT INLINE/ROUTINE/USER</b>
+
+
+
+<tr>
+<td>
+
+<td>The usage of the keyword RESIDENT in INLINE, ROUTINE and USER
+<br>
+method declarations has no defined semantics and is consequently
+<br>
+reserved. 
+
+
+<tr>
+<th>A 2882</th>
+
+<td>
+<b></b>
+
+
+
+<tr>
+<th>A 2883</th>
+
+<td>
+<b>Illegal INLINE/ROUTINE POINTER</b>
+
+
+
+<tr>
+<td>
+
+<td>The keyword POINTER may not be used in conjunction with the
+<br>
+keywords INLINE or ROUTINE since these method types do not
+<br>
+offer indirection. 
+
+
+<tr>
+<th>A 2884</th>
+
+<td>
+<b>Illegal POINTER OPERATOR/CONSTRUCTOR/DESTRUCTOR</b>
+
+
+
+<tr>
+<td>
+
+<td>Pointers to methods may not be defined as CONSTRUCTOR or DESTRUCTOR
+<br>
+types since construction and destruction depend upon implicite
+<br>
+initialisation of the relevent member, and pointers to methods
+<br>
+are of explicite initialisation type.
+<br>
+
+<br>
+Pointers to operator methods are currently un-supported by OTR.
+<br>
+This restriction may be alleviated in future versions. 
+
+
+<tr>
+<th>A 2886</th>
+
+<td>
+<b>Illegal COMMON PRIVATE STATIC/DYNAMIC OVERLOAD</b>
+
+
+
+<tr>
+<td>
+
+<td>The declaration of PRIVATE COMMON STATIC or DYNAMIC OVERLOAD
+<br>
+method pointers is currently prohibited. This is a known
+<br>
+limitation which may be aleviated in future versions of OTR. 
+
+
+<tr>
+<th>A 2887</th>
+
+<td>
+<b>USER/OPERATOR method must be STRICT</b>
+
+
+
+<tr>
+<td>
+
+<td>USER methods and OPERATOR methods must be STRICT. 
+
+
+<tr>
+<th>A 2888</th>
+
+<td>
+<b>Illegal INLINE OPERATOR</b>
+
+
+
+<tr>
+<td>
+
+<td>The combination of the keywords INLINE and OPERATOR is currently
+<br>
+prohibited and will be available in future versions. Only FUNCTION
+<br>
+members may be declared as operators in order to ensure that
+<br>
+the received and returned parameters are not polluted. 
+
+
+<tr>
+<th>A 3330</th>
+
+<td>
+<b>Illegal CREATE with OVERLAY instance</b>
+
+
+
+<tr>
+<td>
+
+<td>OVERLAY instances require explicite attachement prior to
+<br>
+their usage. This is provided for by the ATTACH instruction.
+<br>
+
+<br>
+The keyword CREATE must not be used for an OVERLAY instance. 
+
+
+<tr>
+<th>A 3331</th>
+
+<td>
+<b>Illegal ATTACH with non-OVERLAY instance</b>
+
+
+
+<tr>
+<td>
+
+<td>The instruction ATTACH is only to be used for the explicite
+<br>
+attachement initialisation of OVERLAY instances. Non-overlay
+<br>
+instances must be initialised or re-initialised using the
+<br>
+CREATE instruction. 
+
+
+<tr>
+<th>A 3332</th>
+
+<td>
+<b>Illegal REMOVE with OVERLAY instance</b>
+
+
+
+<tr>
+<td>
+
+<td>The instruction REMOVE must not be used for the explicite
+<br>
+liberation of attached OVERLAY instances. This is provided
+<br>
+for by the instruction DETACH. 
+
+
+<tr>
+<th>A 3333</th>
+
+<td>
+<b>Illegal DETACH with non-OVERLAY instance</b>
+
+
+
+<tr>
+<td>
+
+<td>The instruction DETACH is to be used for the explicite liberation
+<br>
+of OVERLAY instances only. Non-overlay instances must use the
+<br>
+instruction REMOVE for their explicite liberation. 
+
+
+<tr>
+<th>A 3334</th>
+
+<td>
+<b>Procedure is VOID, cannot be operand in expression</b>
+
+
+
+<tr>
+<td>
+
+<td>The activation of a procedure or function method has been detected
+<br>
+during the evaluation of an expression, which being void returns no
+<br>
+legal operand. 
+
+
+<tr>
+<th>A 3335</th>
+
+<td>
+<b>Error activating Function Procedure</b>
+
+
+
+<tr>
+<th>A 3336</th>
+
+<td>
+<b>Unexpected keyword encountered in expression</b>
+
+
+
+<tr>
+<th>A 3337</th>
+
+<td>
+<b>Required #pragma ENHANCED CONVERSION for auto type conversion</b>
+
+
+
+<tr>
+<th>A 3338</th>
+
+<td>
+<b>Error during auto conversion generation</b>
+
+
+
+<tr>
+<th>A 3339</th>
+
+<td>
+<b>Operand for Incrementation is not a variable</b>
+
+
+
+<tr>
+<th>A 3340</th>
+
+<td>
+<b>Expected identifier for structure/class/union member</b>
+
+
+
+<tr>
+<th>A 3341</th>
+
+<td>
+<b>Error translating affectation expression</b>
+
+
+
+<tr>
+<th>A 3342</th>
+
+<td>
+<b>Incorrect EVENT type, expected THEN, or DO</b>
+
+
+
+<tr>
+<th>A 3343</th>
+
+<td>
+<b>Procedure parameter generation failure</b>
+
+
+
+<tr>
+<th>A 3344</th>
+
+<td>
+<b>Incorrect operand for procedure parameter</b>
+
+
+
+<tr>
+<th>A 3345</th>
+
+<td>
+<b>To many procedure parameter values</b>
+
+
+
+<tr>
+<th>A 3346</th>
+
+<td>
+<b>Error translating procedure parameter value</b>
+
+
+
+<tr>
+<th>A 3347</th>
+
+<td>
+<b>Not enough parameter values for procedure</b>
+
+
+
+<tr>
+<th>A 3348</th>
+
+<td>
+<b>Too many parameter values for procedure</b>
+
+
+
+<tr>
+<th>A 3349</th>
+
+<td>
+<b>Incorrect label Mnemonic, expected NEXT or BREAK</b>
+
+
+
+<tr>
+<th>A 3350</th>
+
+<td>
+<b>Incorrect HOTKEY operand, requires label</b>
+
+
+
+<tr>
+<th>A 3351</th>
+
+<td>
+<b>Error evaluating first dimension expression</b>
+
+
+
+<tr>
+<th>A 3352</th>
+
+<td>
+<b>Error evaluating second dimension expression</b>
+
+
+
+<tr>
+<th>A 3353</th>
+
+<td>
+<b>Negation operand should be a variable</b>
+
+
+
+<tr>
+<th>A 3354</th>
+
+<td>
+<b>Unexpected CONSTANT for LDGO.SEG instruction</b>
+
+
+
+<tr>
+<th>A 3355</th>
+
+<td>
+<b>Incorrect operand for LDGO.SEG</b>
+
+
+
+<tr>
+<th>A 3360</th>
+
+<td>
+<b>Enhanced affectation statement requires a variable
+
+</b>
+
+
+
+<tr>
+<th>A 3361</th>
+
+<td>
+<b>Incorrect operator for enhanced affectation statement</b>
+
+
+
+<tr>
+<td>
+
+<td>This error may be due to an incorrect operator for an enhanced
+<br>
+affectation statement. Legal operators are :
+<br>
+
+<br>
++= , -= , *= , /= , %= , !=
+<br>
+
+<br>
+
+
+
+
+<br>
+
+<br>
+This may also be an error due to other problems .... 
+
+
+
+
+
+<tr>
+<th>A 3362</th>
+
+<td>
+<b>Missing affectation operator '=' in enhanced affectation</b>
+
+
+
+<tr>
+<th>A 3363</th>
+
+<td>
+<b>Error evaluating initial
+in enhanced affectation
+</b>
+
+
+
+<tr>
+<th>A 3364</th>
+
+<td>
+<b></b>
+
+
+
+<tr>
+<th>A 3733</th>
+
+<td>
+<b>Error creating string constant operand</b>
+
+
+
+<tr>
+<th>A 3734</th>
+
+<td>
+<b>Error creating Numeric constant operand</b>
+
+
+
+<tr>
+<th>A 3877</th>
+
+<td>
+<b>End of line inside parameter value</b>
+
+
+
+<tr>
+<th>A 4000</th>
+
+<td>
+<b>Forward/Proc parameter type mismatch</b>
+
+
+
+<tr>
+<th>A 4001</th>
+
+<td>
+<b>Forward/Proc parameter count mismatch</b>
+
+
+
+<tr>
+<th>A 4002</th>
+
+<td>
+<b>Expected identifier for procedure/method parameter</b>
+
+
+
+<tr>
+<th>A 4004</th>
+
+<td>
+<b>Parameter type syntax error, unknown keyword</b>
+
+
+
+<tr>
+<th>A 4005</th>
+
+<td>
+<b>Parameter type syntax error, unexpected keyword</b>
+
+
+
+<tr>
+<th>A 4006</th>
+
+<td>
+<b>Incorrect parameter name</b>
+
+
+
+<tr>
+<th>A 4007</th>
+
+<td>
+<b>Incorrect size expression in parameter type</b>
+
+
+
+<tr>
+<th>A 4008</th>
+
+<td>
+<b>Parameters may not be dimensioned</b>
+
+
+
+<tr>
+<th>A 4009</th>
+
+<td>
+<b>Expected parameter type, end of line encountered</b>
+
+
+
+<tr>
+<th>A 4010</th>
+
+<td>
+<b>Expected qualifier for parameter type</b>
+
+
+
+<tr>
+<th>A 4011</th>
+
+<td>
+<b>Expected class identifier for CLASS,UNION,STRUCT parameter</b>
+
+
+
+<tr>
+<th>A 4012</th>
+
+<td>
+<b>Unexpected keyword in parameter definition</b>
+
+
+
+<tr>
+<th>A 4014</th>
+
+<td>
+<b>Unexpected option mnemonic for Procedure, should be "D"</b>
+
+
+
+<tr>
+<th>A 4015</th>
+
+<td>
+<b>Unexpected keyword "IN"</b>
+
+
+
+<tr>
+<th>A 4016</th>
+
+<td>
+<b>Expected module identifier token in external procedure statement</b>
+
+
+
+<tr>
+<th>A 4017</th>
+
+<td>
+<b>Expected procedure identifier token</b>
+
+
+
+<tr>
+<th>A 4018</th>
+
+<td>
+<b>Expected segment identifier token</b>
+
+
+
+<tr>
+<th>A 4019</th>
+
+<td>
+<b>Expected module identifier in EXTERN SEGMENT statement</b>
+
+
+
+<tr>
+<th>A 4020</th>
+
+<td>
+<b>Incorrect field mnemonic for EXTERN FIELD, should be M,A,O,I,E</b>
+
+
+
+<tr>
+<th>A 4021</th>
+
+<td>
+<b>Expected variable identifier in EXTERN FIELD redefinition</b>
+
+
+
+<tr>
+<th>A 4022</th>
+
+<td>
+<b>Expected module identifier in EXTERN FIELD statement</b>
+
+
+
+<tr>
+<th>A 4023</th>
+
+<td>
+<b>Unexpected END of EXTERN FIELD, not active</b>
+
+
+
+<tr>
+<th>A 4024</th>
+
+<td>
+<b>Expected qualifier for EXTERN keyword</b>
+
+
+
+<tr>
+<th>A 4025</th>
+
+<td>
+<b>Expected token for FORWARD instruction</b>
+
+
+
+<tr>
+<th>A 4026</th>
+
+<td>
+<b>PROC,SEGM,USER,CODE forbiden usage</b>
+
+
+
+<tr>
+<th>A 4028</th>
+
+<td>
+<b>CLASS,UNION,STRUCT forbidden usage</b>
+
+
+
+<tr>
+<th>A 4029</th>
+
+<td>
+<b>Incorrect FORWARD PROC instruction</b>
+
+
+
+<tr>
+<th>A 4030</th>
+
+<td>
+<b>Illegal keyword for FORWARD instruction</b>
+
+
+
+<tr>
+<td>
+
+<td>The instruction FORWARD provides for the forward definition of
+<br>
+procedures, classes and unions as can be seen below :
+<br>
+
+<br>
+
+<br>
+FORWARD | PROC
+|
+<br>
+| CLASS
+|
+<br>
+| UNION
+|
+<br>
+A 
+
+
+
+
+
+<tr>
+<th>A 4507</th>
+
+<td>
+<b>Expected Parameter Variable : got expression or constant</b>
+
+
+
+<tr>
+<th>A 4508</th>
+
+<td>
+<b>Parameter used as 'lvalue' must resolve to a variable</b>
+
+
+
+<tr>
+<th>A 4994</th>
+
+<td>
+<b>Unknown class for base class componant</b>
+
+
+
+<tr>
+<th>A 5000</th>
+
+<td>
+<b>Error declaring or redefining overlay object variable</b>
+
+
+
+<tr>
+<th>A 5005</th>
+
+<td>
+<b>Incorrect conditional expression operand</b>
+
+
+
+<tr>
+<th>A 5116</th>
+
+<td>
+<b>Unresolved common member in common linkage</b>
+
+
+
+<tr>
+<th>A 5117</th>
+
+<td>
+<b>Cannot locate common member variable during common linkage</b>
+
+
+
+<tr>
+<th>A 5118</th>
+
+<td>
+<b>Error creating label during common linkage</b>
+
+
+
+<tr>
+<th>A 5119</th>
+
+<td>
+<b>Error generating VALIDPTR during common linkage</b>
+
+
+
+<tr>
+<th>A 5200</th>
+
+<td>
+<b>Prototype class used during instance size calculation</b>
+
+
+
+<tr>
+<th>A 5201</th>
+
+<td>
+<b>Illegal recursive member instance</b>
+
+
+
+<tr>
+<th>A 5300</th>
+
+<td>
+<b>Error instancing Destruction Router Variable</b>
+
+
+
+<tr>
+<th>A 5301</th>
+
+<td>
+<b>Error Instancing Exception Catcher Variable</b>
+
+
+
+<tr>
+<th>A 5302</th>
+
+<td>
+<b>Error Instancing Exception Catcher</b>
+
+
+
+<tr>
+<th>A 5303</th>
+
+<td>
+<b>Error Instancing Exception Catcher Label</b>
+
+
+
+<tr>
+<th>A 5304</th>
+
+<td>
+<b>Error Instancing Destruction Router Label</b>
+
+
+
+<tr>
+<th>A 5305</th>
+
+<td>
+<b>Error Instancing Destruction Router</b>
+
+
+
+<tr>
+<th>A 5558</th>
+
+<td>
+<b>Incorrect segment number for ESEG instruction</b>
+
+
+
+<tr>
+<th>A 5559</th>
+
+<td>
+<b>Incorrect segment name for ESEG instruction</b>
+
+
+
+<tr>
+<th>A 5669</th>
+
+<td>
+<b>Illegal usage of LOCAL outside of method text</b>
+
+
+
+<tr>
+<th>A 5671</th>
+
+<td>
+<b>Expected
+token in local statement
+</b>
+
+
+
+<tr>
+<th>A 5672</th>
+
+<td>
+<b>Illegal usage of ARGUMENT in local member expression</b>
+
+
+
+<tr>
+<th>A 5673</th>
+
+<td>
+<b>Expected
+during local member translation
+</b>
+
+
+
+<tr>
+<th>A 5674</th>
+
+<td>
+<b>Requires #PRAGMA ENHANCED LOCAL ON</b>
+
+
+
+<tr>
+<th>A 5676</th>
+
+<td>
+<b>Usage of VIRTUAL or OVERLOAD requires ENHANCED INDIRECT</b>
+
+
+
+<tr>
+<th>A 5677</th>
+
+<td>
+<b>Inline Function requires ENHANCED INLINE</b>
+
+
+
+<tr>
+<th>A 5678</th>
+
+<td>
+<b>OPERATOR methods require ENHANCED OPERATORS</b>
+
+
+
+<tr>
+<th>A 5885</th>
+
+<td>
+<b>Cannot resolve EIMT for reallocation</b>
+
+
+
+<tr>
+<th>A 6001</th>
+
+<td>
+<b>Expected symbol identifier for IFEXIST / IFNEXIST directive</b>
+
+
+
+<tr>
+<th>A 6006</th>
+
+<td>
+<b>Unknown keyword, class name or identifier</b>
+
+
+
+<tr>
+<th>A 6008</th>
+
+<td>
+<b>Error declaring IMT holder variable</b>
+
+
+
+<tr>
+<th>A 6200</th>
+
+<td>
+<b>No current class to add user function</b>
+
+
+
+<tr>
+<th>A 6201</th>
+
+<td>
+<b>LIBRARY already defined for CLASS</b>
+
+
+
+<tr>
+<th>A 6202</th>
+
+<td>
+<b>Expected identifier for LIBRARY instruction</b>
+
+
+
+<tr>
+<th>A 6203</th>
+
+<td>
+<b>Error adding dynamic library for class library definition</b>
+
+
+
+<tr>
+<th>A 6204</th>
+
+<td>
+<b>Unresolved USER METHOD, no LIBRARY specification</b>
+
+
+
+<tr>
+<th>A 6205</th>
+
+<td>
+<b>Error activating USER METHOD DLL function</b>
+
+
+
+<tr>
+<th>A 6208</th>
+
+<td>
+<b>Unexpected parameters for DLL function</b>
+
+
+
+<tr>
+<th>A 6224</th>
+
+<td>
+<b>Unresolved USER METHOD, requires LIBRARY statement</b>
+
+
+
+<tr>
+<th>A 6225</th>
+
+<td>
+<b>Error activating USER METHOD DLL function call</b>
+
+
+
+<tr>
+<th>A 6244</th>
+
+<td>
+<b>DLL has already be defined by a #USER instruction</b>
+
+
+
+<tr>
+<th>A 6477</th>
+
+<td>
+<b>LIBRARY clash : inherited and inheriting classes have library</b>
+
+
+
+<tr>
+<th>A 6601</th>
+
+<td>
+<b>Expected closing brace to close filename macro name $(NAME)etc</b>
+
+
+
+<tr>
+<th>A 6666</th>
+
+<td>
+<b>#error directive activation encountered (not yet available)</b>
+
+
+
+<tr>
+<th>A 7004</th>
+
+<td>
+<b>Incorrect APL signature</b>
+
+
+
+<tr>
+<th>A 7005</th>
+
+<td>
+<b>APL filename syntax error</b>
+
+
+
+<tr>
+<th>A 7007</th>
+
+<td>
+<b>Incorrect member record in class library ( APL )</b>
+
+
+
+<tr>
+<th>A 7008</th>
+
+<td>
+<b>Error encountered in APL DLL record</b>
+
+
+
+<tr>
+<th>A 7010</th>
+
+<td>
+<b>Incorrect class record in class library (APL)</b>
+
+
+
+<tr>
+<th>A 7171</th>
+
+<td>
+<b>CLASS/UNION/STRUCT Prototype / Definition mismatch</b>
+
+
+
+<tr>
+<th>A 7448</th>
+
+<td>
+<b>Missing base class member for OVERLOAD method</b>
+
+
+
+<tr>
+<td>
+
+<td>During the generation of an instance for which an OVERLOAD METHOD
+<br>
+has been declared, the base class member target cannot be resolved.
+<br>
+
+<br>
+The mechanism by which VIRTUAL methods of base class componants may
+<br>
+be overloaded by OVERLOAD methods of the derivation class depends
+<br>
+upon the existance of a PUBLIC VIRTUAL method in a base class
+<br>
+componant of a derived class of identical signature to that of the
+<br>
+OVERLOAD method of the derived class. 
+
+
+<tr>
+<th>A 7700</th>
+
+<td>
+<b>Expected identifier in MACRO definition</b>
+
+
+
+<tr>
+<th>A 7833</th>
+
+<td>
+<b>Unresolved method pointer for indirect method</b>
+
+
+
+<tr>
+<th>A 7861</th>
+
+<td>
+<b>Unresolved standard overlay indirect method pointer</b>
+
+
+
+<tr>
+<th>A 7862</th>
+
+<td>
+<b>Unresolved indirect method of overlay instance</b>
+
+
+
+<tr>
+<th>A 7863</th>
+
+<td>
+<b>Unresolve strict indirect method</b>
+
+
+
+<tr>
+<th>A 8991</th>
+
+<td>
+<b>Member data control structure missing in O.M expanssion</b>
+
+
+
+<tr>
+<th>A 8993</th>
+
+<td>
+<b>Missing token "M" in O.M expansion</b>
+
+
+
+<tr>
+<th>A 8994</th>
+
+<td>
+<b>Member is not a constant in O.M expansion</b>
+<tr>
+<th>A 8995</th>
+<td>
+<b>Missing
+in "sizeof" expansion
+</b>
+<tr>
+<th>A 8996</th>
+
+<td>
+<b>Unknown
+in "sizeof" expansion
+</b>
+<tr><th>A 8997</th><td><b>Depth error in O.M expansion</b>
+<tr><th> A 9021	</th><td><b>	general error parsing nested component of a conditional expression</b>
+<tr><th> A 9022	</th><td><b>	unexpected right brace while parsing conditional expression</b>
+<tr><th> A 9023	</th><td><b>	unexpected or incorrect comparison operator</b>
+<tr><th> A 9024	</th><td><b>	incorrect arithmetical operator in conditional expression</b>
+<tr><th> A 9025	</th><td><b>	unexpected arithmetical operator in conditional expression</b>
+<tr><th> A 9026	</th><td><b>	expected token, slash or minus sign in conditional expression</b>
+<tr><th> A 9027	</th><td><b>	incorrect numeric term  in conditional expression</b>
+<tr><th> A 9028	</th><td><b>	incorrect or unexpected term in conditional expression</b>
+<tr><th> A 9029	</th><td><b>	unexpected logical combination operator AND</b>
+<tr><th> A 9030	</th><td><b>	unexpected logical combination operator OR</b>
+<tr><th> A 9031	</th><td><b>	unexpected logical combination operator OX</b>
+<tr><th> A 9032	</th><td><b>	unexpected operand in conditional expression</b>
+<tr><th> A 9033	</th><td><b>	expected right brace closure of nested conditional expression</b>
+<tr><th>A 9402</th><td><b>Unknown class identifier in Library Generation Phase</b>
+<tr><th>A 9797</th><td><b>Null class or method for pseudo object</b>
+<tr><th>A 9878</th><td><b>Undefined object class for DYNAMIC member</b>
+<tr><th>A 10001</th><td><b>Expected END keyword</b>
+<tr><th>A 13131</th><td><b>Expected OBJECT for resolve member term</b>
+<tr><th>A 62205</th><td><b>Error generation DLL function</b>
+</table>
+<p>
+<table>
+<tr><th><h3 align=center>Copyright &copy; <a href="http://www.prologue-software.fr">Prologue Software</a></h3>
+<tr><th><h3 align=center>Version Fran&ccedil;aise <a href="fr/otrerr.htm"><img src="tricolor.gif"></a>
+</table>
+</div>
+</body>
+</html>
+

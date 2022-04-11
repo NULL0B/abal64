@@ -1,0 +1,356 @@
+/*
+ *      Projet  : ABAL                  Copyright Prologue s.a. (c) 1990, 1995
+ *      Module  : ATR
+ *      Fichier : TRNOY.HE
+ *      Version : 2.1f
+ *      Date    : 10/08/96
+ *      Systeme : DOS / PRL / UNIX / VMS
+ *
+ *      Traducteur ABAL
+ *
+ *      [Definitions du noyau du traducteur]
+ *
+ */
+ 
+/*
+ * Mises a jour :
+ * ------------
+ * 27/10/99 : (#OK) Enhancement ATR-9: Option -to, -ta.
+ * 09/03/00 : (#OK) Bug ATR-48 fixed: Procedure return code in array variable.
+ * 02/04/01 : (#OK) Bug ATR-68 fixed. Label in the beginning of the procedure or segment.
+ * 18/06/02 : (#OK) Bug ATR 71 fixed. Incorrect format in function PRINT.
+ */
+
+#ifdef _TRNOY
+#define EXT_TRNOY
+#else
+#define EXT_TRNOY extern
+#endif /* _TRNOY */
+
+/* PUBLIC */
+/* ------ */
+
+/* PUBLIC VARIABLES */
+/* ---------------- */
+
+EXT_TRNOY BYTE *cst_tdesc[MAXCDESC]; /* table descripteurs const chaines / BCD */
+EXT_TRNOY BYTE *lcst_tdesc[MAXCDESC];/* Table des descripteurs constante chaines et BCD en local (segment, procedure) */
+EXT_TRNOY BYTE *glb_tdesc[MAXTDESC]; /* table descripteurs dcl globales */
+EXT_TRNOY BYTE *lcl_tdesc[MAXTDESC]; /* table descripteurs dcl locales */
+EXT_TRNOY BYTE *ext_tdesc[MAXTDESC]; /* table descripteurs dcl externes */
+EXT_TRNOY BYTE *pr_tdesc[MAXTDESC];  /* table descripteurs procedures */
+EXT_TRNOY BYTE *seg_tdesc[MAXTDESC];  /* table descripteurs segments */
+
+EXT_TRNOY long int adrimpl;          /* adresse implantation courante */
+EXT_TRNOY long int adrimpl_instr;   /* adresse implantation courante des instructions */
+EXT_TRNOY BINAIRE size_dcl; /* taille variables qui viennent d'etre declarees */
+EXT_TRNOY BINAIRE size_dcl_glb; /* taille variables globales */
+EXT_TRNOY long int size_xtm; /* taille variables declarees en memoire etendue */
+EXT_TRNOY BINAIRE adsdcl; /* adresse relative descripteur courant de variable */
+EXT_TRNOY BINAIRE adsdcl_glb; /* adresse relative descripteur courant de variable globale */
+EXT_TRNOY BINAIRE adsproc; /* adresse relative descripteur courant de procedure */
+EXT_TRNOY BINAIRE adsGlobalVarImage; /* adresse relative descripteur courant d' image de variable globale */
+EXT_TRNOY BINAIRE adsdclextcr;       /* adresse courante des externes */
+EXT_TRNOY BYTE declext;      /* 0 si DCL memoire, ou nl fichier associe */
+
+EXT_TRNOY long int numlgn; /* numero de ligne sur fichier liste */
+
+/*      Extensions par defaut des fichiers en fonction du systeme hote  */
+/*      --------------------------------------------------------------  */
+
+#ifdef prologue
+
+#define pretty_printing
+
+#ifdef _TRNOY
+EXT_TRNOY char EXTO[4]={'O',EOSTR,' ',' ' }; /* ext. par defaut si edition de liens */
+EXT_TRNOY char EXTDBO[4]={'D','B','O',EOSTR}; /* ext. par defaut si edition de liens */
+EXT_TRNOY char EXTDBG[4]={'D','B','G',EOSTR}; /* ext. par defaut si edition de liens */
+EXT_TRNOY char EXTTMPA[4]={'T','A','T',EOSTR }; /* ext. pour fichier temporaire at  */
+EXT_TRNOY char EXTTMPD[4]={'T','D','B',EOSTR }; /* ext. pour fichier temporaire dbg */
+EXT_TRNOY char EXTTMPDW[4]={'T','W','B',EOSTR }; /* ext. pour fichier temporaire wdb */
+EXT_TRNOY char EXTWDO[4]={'W','D','O',EOSTR}; /* ext. par defaut si edition de liens */
+EXT_TRNOY char EXTWDB[4]={'W','D','G',EOSTR}; /* ext. par defaut si edition de liens */
+
+#else
+EXT_TRNOY char EXTO[4];
+EXT_TRNOY char EXTDBO[4];
+EXT_TRNOY char EXTDBG[4];
+EXT_TRNOY char EXTTMPA[4];
+EXT_TRNOY char EXTTMPD[4];
+EXT_TRNOY char EXTTMPDW[4];
+EXT_TRNOY char EXTWDO[4];
+EXT_TRNOY char EXTWDB[4];
+#endif /* _TRNOY */
+
+#define MODMAP
+
+#endif /* prologue */
+
+#ifdef msdos
+
+#define pretty_printing
+
+#ifdef _TRNOY
+EXT_TRNOY char EXTO[4]={'o',EOSTR,' ',' ' }; /* ext. par defaut si edition de liens */
+EXT_TRNOY char EXTDBO[4]={'d','b','o',EOSTR}; /* ext. par defaut si edition de liens */
+EXT_TRNOY char EXTDBG[4]={'d','b','g',EOSTR}; /* ext. par defaut si edition de liens */
+EXT_TRNOY char EXTTMPA[4]={'t','a','t',EOSTR }; /* ext. pour fichier temporaire at   */
+EXT_TRNOY char EXTTMPD[4]={'t','d','b',EOSTR }; /* ext. pour fichier temporaire dbg  */
+EXT_TRNOY char EXTTMPDW[4]={'t','w','b',EOSTR }; /* ext. pour fichier temporaire wdb */
+EXT_TRNOY char EXTWDO[4]={'w','d','o',EOSTR}; /* ext. par defaut si edition de liens */
+EXT_TRNOY char EXTWDB[4]={'w','d','g',EOSTR}; /* ext. par defaut si edition de liens */
+#else
+EXT_TRNOY char EXTO[4];
+EXT_TRNOY char EXTDBO[4];
+EXT_TRNOY char EXTDBG[4];
+EXT_TRNOY char EXTTMPA[4];
+EXT_TRNOY char EXTTMPD[4];
+EXT_TRNOY char EXTTMPDW[4];
+EXT_TRNOY char EXTWDO[4];
+EXT_TRNOY char EXTWDB[4];
+#endif /* _TRNOY */
+
+#define MODMAP
+
+#endif /* msdos */
+
+#ifdef unix
+
+#ifdef _TRNOY
+EXT_TRNOY char EXTO[4]={'o',EOSTR,' ',' ' }; /* ext. par defaut si edition de liens */
+EXT_TRNOY char EXTDBO[4]={'d','b','o',EOSTR}; /* ext. par defaut si edition de liens */
+EXT_TRNOY char EXTDBG[4]={'d','b','g',EOSTR}; /* ext. par defaut si edition de liens */
+EXT_TRNOY char EXTTMPA[4]={'t','a','t',EOSTR }; /* ext. pour fichier temporaire at */
+EXT_TRNOY char EXTTMPD[4]={'t','d','b',EOSTR }; /* ext. pour fichier temporaire o  */
+EXT_TRNOY char EXTTMPDW[4]={'t','w','b',EOSTR }; /* ext. pour fichier temporaire wdb */
+EXT_TRNOY char EXTWDO[4]={'w','d','o',EOSTR}; /* ext. par defaut si edition de liens */
+EXT_TRNOY char EXTWDB[4]={'w','d','g',EOSTR}; /* ext. par defaut si edition de liens */
+#else
+EXT_TRNOY char EXTO[4];
+EXT_TRNOY char EXTDBO[4];
+EXT_TRNOY char EXTDBG[4];
+EXT_TRNOY char EXTTMPA[4];
+EXT_TRNOY char EXTTMPD[4];
+EXT_TRNOY char EXTTMPDW[4];
+EXT_TRNOY char EXTWDO[4];
+EXT_TRNOY char EXTWDB[4];
+#endif /* _TRNOY */
+
+#undef MODMAP
+
+#endif /* unix */
+
+#ifdef vms
+
+#ifdef _TRNOY
+EXT_TRNOY char EXTO[4]={'O',EOSTR,' ',' ' }; /* ext. par defaut si edition de liens */
+EXT_TRNOY char EXTDBO[4]={'D','B','O',EOSTR}; /* ext. par defaut si edition de liens */
+EXT_TRNOY char EXTDBG[4]={'D','B','G',EOSTR}; /* ext. par defaut si edition de liens */
+EXT_TRNOY char EXTTMPA[4]={'T','A','T',EOSTR }; /* ext. pour fichier temporaire at */
+EXT_TRNOY char EXTTMPD[4]={'T','D','B',EOSTR }; /* ext. pour fichier temporaire o  */
+EXT_TRNOY char EXTTMPDW[4]={'T','W','B',EOSTR }; /* ext. pour fichier temporaire wdb */
+EXT_TRNOY char EXTWDO[4]={'W','D','O',EOSTR}; /* ext. par defaut si edition de liens */
+EXT_TRNOY char EXTWDB[4]={'W','D','G',EOSTR}; /* ext. par defaut si edition de liens */
+
+
+#else
+EXT_TRNOY char EXTO[4];
+EXT_TRNOY char EXTDBO[4];
+EXT_TRNOY char EXTDBG[4];
+EXT_TRNOY char EXTTMPA[4];
+EXT_TRNOY char EXTTMPD[4];
+EXT_TRNOY char EXTTMPDW[4];
+EXT_TRNOY char EXTWDO[4];
+EXT_TRNOY char EXTWDB[4];
+
+#endif /* _TRNOY */
+
+#undef MODMAP
+
+#endif /* vms */
+
+
+/*      gestion de la "map" de mise au point    */
+/*      ------------------------------------    */
+
+EXT_TRNOY int RetCode;
+EXT_TRNOY BOOL outmap;
+EXT_TRNOY MapRef *map;
+EXT_TRNOY long int Mcurposlst;
+EXT_TRNOY long int ALadrimpl;
+EXT_TRNOY BOOL ALputimpl;
+
+
+/*      Variables globales pour la gestion du fichier liste     */
+/*      ----------------------------------------------------    */
+
+EXT_TRNOY BOOL liste;                /* indicateur liste oui/non */
+EXT_TRNOY BOOL orglst;               /* avec sauvegarde eventuelle */
+EXT_TRNOY FILE *fliste;              /* reference au fichier liste */
+
+EXT_TRNOY BINAIRE DIMPGLST;              /* nb max lignes/page impr. */
+EXT_TRNOY BINAIRE DIMPCLST;              /* nb max colonnes/ligne impr. */
+EXT_TRNOY BINAIRE nblstln;               /* compteur ligne impr. */
+
+EXT_TRNOY BOOL outerr;       /* fichier d'erreurs (oui/non) */
+EXT_TRNOY FILE *ferr;        /* et reference a ce fichier */
+
+
+EXT_TRNOY BOOL Optintegre;   /* indique appel depuis l'ensemble integre */
+
+EXT_TRNOY BOOL OptIdra;		 /* indique appel depuis Idra (June...);*/
+
+
+EXT_TRNOY BINAIRE prndest;
+EXT_TRNOY BINAIRE prnfid;
+EXT_TRNOY BINAIRE prnleng;
+EXT_TRNOY BINAIRE err_val;
+EXT_TRNOY char    *prnptr;
+
+#define LstInc struct _LstI
+LstInc {
+        char *rep;
+        LstInc  *suiv;
+};
+
+EXT_TRNOY LstInc *lstincl;     /* liste des chemins d'acces des includes */
+
+EXT_TRNOY BOOL ignore_BL;    /* indique ignorer mots-cles fonctions math */
+
+EXT_TRNOY long lgnfic;        /* numero de ligne courant dans source */
+EXT_TRNOY int clncur;        /* et posit caractere dans cette ligne */
+EXT_TRNOY char ncurfic[LGMXNOM]; /* nom du fichier source courant */
+EXT_TRNOY BINAIRE ncursrc;   /* numero du fichier source courant */	
+
+EXT_TRNOY jmp_buf Tr_Exit;   /* sortie "brutale" du traducteur */
+EXT_TRNOY BOOL lexinit;      /* lexical initialise */
+EXT_TRNOY BOOL parsinit;     /* parser initialise */
+EXT_TRNOY BOOL symbinit;     /* gestion symboles initialisee */
+EXT_TRNOY BOOL gestinit;     /* gestion traduit initialisee */
+
+EXT_TRNOY BOOL flg_opt;      /* traduction optimisee oui/non */
+EXT_TRNOY BOOL flg_reg;      /* variables "registres" oui/non */
+EXT_TRNOY BOOL flg_alias;    /* detection de alias oui/non */
+
+/* #OK: 27/10/99 (begin) */
+EXT_TRNOY BOOL optionTO;      /* traduction -to option oui/non */
+EXT_TRNOY BOOL optionTA;      /* traduction -ta option oui/non */
+/* #OK: 27/10/99 (end) */
+
+/* #OK: 09/03/00 (begin) */
+EXT_TRNOY BOOL nextArray;    
+/* #OK: 09/03/00 (end) */
+
+/* #OK: 02/04/01 (begin)*/	
+EXT_TRNOY BOOL beginProcOrSegm;
+/* #OK: 02/04/01 (end)*/	
+
+/* #OK: 18/06/02 (begin) */
+EXT_TRNOY BOOL printToVariable;
+/* #OK: 18/06/02 (end) */
+
+EXT_TRNOY char *NomFicDep;   /* nom du fichier de depart */
+EXT_TRNOY char *NomFicErr;   /* nom du fichier d'erreurs */
+EXT_TRNOY char *NomFicInfoList; /* nom du fichier contenant la liste des noms de procedure */
+
+
+/* Variable pour la generation des tables de correspondance */
+
+EXT_TRNOY TabProc *pdescor;	/* Pointeur sur le desc de la proc courante */
+EXT_TRNOY TabSeg *sdescor;	/* Pointeur sur le desc du seg courant  */
+
+
+/* PUBLIC FONCTIONS */
+/* ---------------- */
+
+#ifdef LINT_ARGS
+
+#ifndef WIN1632
+EXT_TRNOY int main(int,char **);
+#else
+EXT_TRNOY int majn(int,char **);
+#endif
+EXT_TRNOY void echolst ( char * );           /* gestion fichier liste */
+EXT_TRNOY void purgelst ( void );            /* gestion fichier liste */
+EXT_TRNOY void sautpage ( void );    /* saut de page dans la liste */
+EXT_TRNOY void suplst ( BOOL ); /* suppression temporaire de la liste */
+EXT_TRNOY void retlst ( char * ); /* retour a l'option liste initiale */
+
+EXT_TRNOY void newmap (char,BINAIRE);
+EXT_TRNOY void endmap ( void );
+EXT_TRNOY void newtabcor(BOOL, void *);
+EXT_TRNOY void endtabcor (BOOL);
+EXT_TRNOY void instabcor (BOOL);
+
+EXT_TRNOY char *newfics ( char * , char * ); /* nouveau fichier source */
+EXT_TRNOY char *newficdef ( char * , char * ); /* nouveau fic. definition */
+
+EXT_TRNOY int bincmp ( BINAIRE , BINAIRE );
+EXT_TRNOY BYTE *bintobyte ( BYTE * , BINAIRE );
+EXT_TRNOY BINAIRE bytetobin ( BYTE * );
+EXT_TRNOY long int bintolong ( BINAIRE );
+
+EXT_TRNOY void tstpause ( void );
+EXT_TRNOY void liberfin(void);
+
+EXT_TRNOY int asyncab(int);
+EXT_TRNOY char *forceext(char *,char *,char *);
+
+/*      fonctions utilisees seulement dans la version interne           */
+/*      -----------------------------------------------------           */
+
+#ifndef tcodeasm
+EXT_TRNOY void masm ( BOOL );
+#endif
+
+#else
+
+#ifndef WIN1632
+EXT_TRNOY int main();
+#else
+EXT_TRNOY int majn();
+#endif
+EXT_TRNOY void echolst ();           /* gestion fichier liste */
+EXT_TRNOY void purgelst ();            /* gestion fichier liste */
+EXT_TRNOY void sautpage ();    /* saut de page dans la liste */
+EXT_TRNOY void suplst (); /* suppression temporaire de la liste */
+EXT_TRNOY void retlst (); /* retour a l'option liste initiale */
+
+EXT_TRNOY void newmap ();
+EXT_TRNOY void endmap ();
+EXT_TRNOY void newtabcor();
+EXT_TRNOY void endtabcor ();
+EXT_TRNOY void instabcor ();
+
+EXT_TRNOY char *newfics (); /* nouveau fichier source */
+EXT_TRNOY char *newficdef (); /* nouveau fic. definition */
+
+EXT_TRNOY int bincmp ();
+EXT_TRNOY BYTE *bintobyte ();
+EXT_TRNOY BINAIRE bytetobin ();
+EXT_TRNOY long int bintolong ();
+
+EXT_TRNOY void tstpause ();
+EXT_TRNOY void liberfin();
+
+EXT_TRNOY int asyncab();
+EXT_TRNOY char *forceext();
+
+/*      fonctions utilisees seulement dans la version interne           */
+/*      -----------------------------------------------------           */
+
+#ifndef tcodeasm
+void masm ();
+#endif
+
+#endif /* LINT_ARGS */
+
+/* PUBLIC END */
+/* ---------- */
+
+/* FIN DEFINITIONS INTERNES */
+/* ------------------------ */
+
+/* ---------------- FIN trnoy.he -----------------------------------------*/
+

@@ -1,0 +1,151 @@
+/*
+ *      Projet  : ABAL                  Copyright Prologue s.a. (c) 1990, 1995
+ *      Module  : ATR
+ *      Fichier : GESTFIC.H
+ *      Version : 2.1f
+ *      Date    : 22/11/95
+ *      Systeme : DOS / PRL / UNIX / VMS
+ *
+ *      Traducteur ABAL
+ *
+ *      [Definitions relatives a la gestion du fichier traduit]
+ *
+ */
+
+/*      ---------- Debut 1.5 --------------------------------------
+ *      23/11/92 : restructuration du .h
+ *                 Modification de la gestion de fichier
+ *                 table localisee et non plus en global
+ */
+
+#ifdef _GESTFIC
+#define EXT_GESTFIC
+#else
+#define EXT_GESTFIC extern
+#endif /* _GESTFIC */
+
+/* PUBLIC */
+/* ------ */
+
+#define All_Ref() (ExtRef *) XNmalloc("Ref",sizeof(ExtRef))
+#define Free_Ref(p) Xfree((char *) p)
+
+/*      Macro pour l'allocation d'un descripteur de variables externes */
+/*      -------------------------------------------------------------- */
+
+#define All_Xvar() (LstXvar *) XNmalloc("Xvar",sizeof(LstXvar))
+#define Free_Xvar(p) Xfree((char *) p)
+
+/*      Macro pour l'allocation d'un descripteur de point d'ancrage   */
+/*      -----------------------------------------------------------   */
+
+#define All_Ancr() (LstAncr *) XNmalloc("Ancr",sizeof(LstAncr))
+#define Free_Ancr(p) Xfree((char *) p)
+
+#define NOAT   0                /* Numero du fichier temporaire .AT  */
+#define NODBG  1                /* Numero du fichier temporaire .DBG */
+#define NOWDB  2				/* Numero du fichier temporaire .WDB*/
+
+#define StFic struct _StFic
+StFic {
+        char name[LGMXNOM];     /* nom du fichier */
+        T_FILE fcode;           /* numero logique fichier */
+        BYTE tampon[LGBLOC];    /* bloc courant du fichier */
+        BINAIRE cur_bloc;       /* bloc courant dans le fichier */
+        BINAIRE cur_ofst;       /* offset courant dans le bloc courant */
+};
+#define NBFIC  3                /* Nombre de fichier utilises par le traducteur */
+
+/* Vidage de la table des noms de cst bin et bcd pour debug */
+
+#define vid_tncstbcd(no,tbs) vid_tnoms (no, tbs)
+#define vid_tncstbin(no,tbs) vid_tnoms (no, tbs)
+
+/* PUBLIC VARIABLES */
+/* ---------------- */
+EXT_GESTFIC StFic fic[NBFIC];    /* Fichier .at, .dbg, .wdb */
+
+/* PUBLIC FONCTIONS */
+/* ---------------- */
+
+#ifdef LINT_ARGS
+
+EXT_GESTFIC void initgest ( BOOL, char * );
+EXT_GESTFIC void fingest ( BOOL , int );
+EXT_GESTFIC void putentete ( BINAIRE );
+EXT_GESTFIC BINAIRE vid_tusr(BINAIRE,BINAIRE *);
+EXT_GESTFIC BINAIRE vid_xuref(BINAIRE,TabuRef *);
+EXT_GESTFIC BINAIRE vid_lien(BINAIRE, BOOL, LienRef *);
+EXT_GESTFIC BINAIRE vid_tcst (BINAIRE, BINAIRE , BYTE **);
+EXT_GESTFIC BINAIRE vid_tvar (BINAIRE, BINAIRE , BOOL , BINAIRE , BINAIRE , BYTE **);
+EXT_GESTFIC BINAIRE vid_tnoms (BINAIRE, TabSymb *);
+EXT_GESTFIC BINAIRE vid_tproc(BINAIRE, BINAIRE , BYTE ** );
+EXT_GESTFIC BINAIRE vid_tseg(BINAIRE, BINAIRE* , BYTE ** );
+EXT_GESTFIC BINAIRE vid_nomspr (BINAIRE, BINAIRE , TabProc * );
+EXT_GESTFIC BINAIRE vid_xproc (BINAIRE, BINAIRE , TabProc * );
+EXT_GESTFIC BINAIRE vid_xobj (BINAIRE, RelRef * );
+EXT_GESTFIC BINAIRE vid_nomseg (BINAIRE, BINAIRE , TabSeg * );
+EXT_GESTFIC BINAIRE vid_xseg (BINAIRE, BINAIRE , TabSeg * );
+EXT_GESTFIC BINAIRE vid_tnmod(BINAIRE, TabMod * );
+EXT_GESTFIC BINAIRE vid_tnsrc (BINAIRE, TabSrc *);
+EXT_GESTFIC BINAIRE vid_tInitGlobalVariable (BINAIRE, BINAIRE, BYTE**);
+EXT_GESTFIC void vidmap (BINAIRE, char *);
+EXT_GESTFIC void pbyte (BINAIRE, BYTE );
+EXT_GESTFIC void pbin (BINAIRE,BINAIRE );
+EXT_GESTFIC void plong (BINAIRE,long );
+EXT_GESTFIC void pstrzero (BINAIRE, char * );
+EXT_GESTFIC void pstr (BINAIRE, char * , int );
+EXT_GESTFIC BINAIRE getbloc (BINAIRE );
+EXT_GESTFIC void backres ( BINAIRE,BINAIRE, BINAIRE, BINAIRE );
+EXT_GESTFIC BINAIRE vid_etv (BINAIRE, BINAIRE , LstEtiqvar * );
+EXT_GESTFIC BINAIRE vid_xvar (BINAIRE, BINAIRE , LstAncr * );
+EXT_GESTFIC BINAIRE vid_lxvar (BINAIRE, BINAIRE , LstXvar * );
+EXT_GESTFIC void initcode (void);
+EXT_GESTFIC void videcode(BINAIRE);
+
+#else
+
+EXT_GESTFIC void initgest ();
+EXT_GESTFIC void fingest ();
+EXT_GESTFIC void putentete ();
+EXT_GESTFIC BINAIRE vid_tusr();
+EXT_GESTFIC BINAIRE vid_xuref();
+EXT_GESTFIC BINAIRE vid_lien();
+EXT_GESTFIC BINAIRE vid_tcst ();
+EXT_GESTFIC BINAIRE vid_tvar ();
+EXT_GESTFIC BINAIRE vid_tnoms ();
+EXT_GESTFIC BINAIRE vid_tproc ();
+EXT_GESTFIC BINAIRE vid_tseg ();
+EXT_GESTFIC BINAIRE vid_nomspr ();
+EXT_GESTFIC BINAIRE vid_xproc ();
+EXT_GESTFIC BINAIRE vid_xobj ();
+EXT_GESTFIC BINAIRE vid_nomseg ();
+EXT_GESTFIC BINAIRE vid_xseg ();
+EXT_GESTFIC BINAIRE vid_tnmod ();
+EXT_GESTFIC BINAIRE vid_tnsrc ();
+EXT_GESTFIC BINAIRE vid_tInitGlobalVariable ();
+
+EXT_GESTFIC void vidmap ();
+EXT_GESTFIC void pbyte ();
+EXT_GESTFIC void pbin ();
+EXT_GESTFIC void plong ();
+EXT_GESTFIC void pstrzero ();
+EXT_GESTFIC void pstr ();
+EXT_GESTFIC BINAIRE getbloc ();
+EXT_GESTFIC void backres ();
+EXT_GESTFIC BINAIRE vid_etv ();
+EXT_GESTFIC BINAIRE vid_xvar ();
+EXT_GESTFIC BINAIRE vid_lxvar ();
+EXT_GESTFIC void initcode ();
+EXT_GESTFIC void videcode ();
+
+#endif /* LINT_ARGS */
+
+/* PUBLIC END */
+/* ---------- */
+
+/* FIN DEFINITIONS INTERNES */
+/* ------------------------ */
+
+/* ---------------- FIN gestfic.he -----------------------------------------*/
+

@@ -1,0 +1,246 @@
+/*
+ *      Projet  : ABAL                  Copyright Prologue s.a. (c) 1990, 1995
+ *      Module  : ATR
+ *      Fichier : GENCODE.H
+ *      Version : 2.1f
+ *      Date    : 21/11/95
+ *      Systeme : DOS / PRL / UNIX / VMS
+ *
+ *      Traducteur ABAL
+ *
+ *      [Definitions de la generation du T-code]
+ *
+ */
+
+/* --------------------------------------------------------------------------
+ *      27/10/92 : Debut version 1.5
+ *              Insertion des nouvelles fonctions CLF et  NGF 1.5
+ *              CLF : CREATE (06), REMOVE (16), FORGET (26), ALIAS (36),
+ *                    ASKCOLOR (57), ASKATB (67), SETHOTKEY (77), SETLANG (87),
+ *                    INITDATA (97), LIBUSER (A7), LIBPROC (B7), LIBSEGM (C7),
+ *                    PARSE (5C), POWER (AB), STDFORM (5E), REAL (6E)
+ *              NGF : NAME (29)
+ *	27/04/97 : Insertion EVENTDONE
+ * --------------------------------------------------------------------------
+ */
+
+#ifdef _GENCODE
+#define EXT_GENCODE
+#else
+#define EXT_GENCODE extern
+#endif /* _GENCODE */
+
+/* DEFINITION GLOBALE  */
+/* ------------------ */
+
+/* PUBLIC */
+/* ------ */
+/*      Longueur max du code produit par un ASK ou un PRINT     */
+/*      ---------------------------------------------------     */
+#define MAXNBETQ        256
+
+#define MXARGPRN        2048
+
+#define geneds() 	genesc0(F_EDS)
+#define genedp()	genesc0(F_EDP)
+#define genrets() 	genesc0(F_RTS)
+#define genretp() 	genesc0(F_RTP)
+#define genstop()	genesc0(F_STP)
+#define genevdone()	genesc0(F_ESC)
+
+#define genret()	gen1tc(F_RET)
+#define putsgn()	gen1tc(F_SGN)
+#define geneab()	gen1tc(F_ERA)
+
+#define gengoto(c)	gengtogsb(F_JMP,c)
+#define gengosb(c)	gengtogsb(F_GSB,c)
+
+#define genpause(t,v)	genesc1(F_PSE,t,v)
+#define generror(t,v)	genesc1(F_RTE,t,v)
+
+/* PUBLIC VARIABLES */
+/* ---------------- */
+/*      Codage d'une instruction PRINT ou ASK   */
+/*      -------------------------------------   */
+
+EXT_GENCODE int        ltabio; /* lg code produit pour PRINT ou ASK courant */
+EXT_GENCODE BYTE       tab_iof[MXARGPRN]; /* buffer code produit ......... */
+EXT_GENCODE char       tabetq[MAXNBETQ][LGIDENT];
+
+/*      definition du registre courant libre    */
+/*      ------------------------------------    */
+
+EXT_GENCODE BINAIRE libreg;
+
+EXT_GENCODE BYTE opt_oper;     /* 0 : genoper "normal" */
+                                /* 1 : OP #x , .. , #x */
+                                /* 2 : OP #x , .. , #0 */
+
+/* PUBLIC FONCTIONS */
+/* ---------------- */
+
+#ifdef LINT_ARGS
+
+EXT_GENCODE void genesc0(BYTE);
+EXT_GENCODE void genesc1(BYTE,BYTE,BINAIRE);
+EXT_GENCODE void gen1tc(BYTE);
+EXT_GENCODE void gengtogsb(BYTE,char *);
+
+EXT_GENCODE void refrt( BYTE , BINAIRE , BINAIRE );
+EXT_GENCODE void genfuser(Tbusr *,BYTE ,BINAIRE ,BYTE [],BINAIRE [],BINAIRE);
+EXT_GENCODE void gennew(void);
+EXT_GENCODE void gensgt(TabSeg *,BYTE,BINAIRE);
+EXT_GENCODE void generreur(BYTE,BINAIRE);
+EXT_GENCODE void gendebjmr(BINAIRE,BINAIRE,char *);
+EXT_GENCODE void genetqjmr(char *);
+
+EXT_GENCODE void genclp(TabProc *,BINAIRE,BYTE [],BINAIRE [],char *);
+EXT_GENCODE void genclsuc(BINAIRE,BYTE [],BINAIRE [],char *);
+EXT_GENCODE void genlibproc(TabProc *,BYTE,BINAIRE);
+EXT_GENCODE void genlibseg(TabSeg *,BYTE,BINAIRE);
+EXT_GENCODE void genlibuser(BYTE);
+EXT_GENCODE void genaffectptsegnum(BYTE,BINAIRE,BINAIRE);
+EXT_GENCODE void genaffectptfct(BYTE *,BINAIRE,BINAIRE,BINAIRE,BINAIRE);
+EXT_GENCODE void genaffn(int,BYTE,BYTE,BINAIRE,BINAIRE);
+EXT_GENCODE void genffm(BINAIRE,BYTE,BINAIRE,char *);
+EXT_GENCODE void genop(BYTE,BINAIRE,char *);
+EXT_GENCODE void generg(BOOL,BYTE,BINAIRE,char *);
+EXT_GENCODE void genres(BOOL,char *);
+EXT_GENCODE void gentim(int,BYTE,BINAIRE,char *);
+EXT_GENCODE void genwhen(BINAIRE,int,char *);
+EXT_GENCODE void genclf(BOOL,BINAIRE,BINAIRE,BYTE,BINAIRE,BYTE [],BINAIRE [],BYTE *);
+EXT_GENCODE void genngf(int,char *,int,BYTE,BYTE [],BINAIRE[]);
+EXT_GENCODE void gencreate(int,char *,int,BINAIRE[],BYTE[20][4],BINAIRE[20][4],BYTE,BINAIRE);
+EXT_GENCODE BINAIRE genconv(BYTE,BYTE,BINAIRE);
+EXT_GENCODE void geniof(BYTE,BINAIRE);
+EXT_GENCODE void genfio(void);
+EXT_GENCODE void libiof(void);
+
+EXT_GENCODE void genhome(void);
+EXT_GENCODE void genbell(void);
+EXT_GENCODE void genclear(void);
+EXT_GENCODE void genctab(BYTE,BINAIRE);
+EXT_GENCODE void genltab(BYTE,BINAIRE);
+EXT_GENCODE void genvtab(BYTE,BINAIRE);
+EXT_GENCODE void genfor(BYTE,BINAIRE);
+EXT_GENCODE void genbak(BYTE,BINAIRE);
+EXT_GENCODE void genatb(BYTE,BINAIRE);
+EXT_GENCODE void genprn(BYTE,BINAIRE);
+EXT_GENCODE void geniprn(char *);
+EXT_GENCODE void genask(BYTE,BINAIRE);
+EXT_GENCODE void genbranch(BOOL,BYTE,BINAIRE,char *);
+EXT_GENCODE void genfmt(int,char *);
+EXT_GENCODE void genrefmt(int,char *,BYTE,BINAIRE);
+
+EXT_GENCODE void genreadmem(BYTE,BINAIRE);
+EXT_GENCODE void gendata(BINAIRE,char *,BYTE *);
+
+EXT_GENCODE BINAIRE getreg (void);
+EXT_GENCODE void ungetreg (void);
+
+EXT_GENCODE void increg (BINAIRE);
+EXT_GENCODE void decreg (BINAIRE);
+
+EXT_GENCODE void pushreg (BINAIRE);
+EXT_GENCODE void popreg (BINAIRE);
+
+EXT_GENCODE void putreg (BINAIRE,BINAIRE,BINAIRE);
+EXT_GENCODE void storeg (BINAIRE,BINAIRE,BINAIRE);
+EXT_GENCODE void putbin (int,BINAIRE,BINAIRE,BINAIRE);
+EXT_GENCODE void putadr (BINAIRE,BINAIRE);
+EXT_GENCODE void putrix (BINAIRE,BINAIRE,BINAIRE,BYTE);
+EXT_GENCODE void putrax (BINAIRE,BINAIRE,BINAIRE,BYTE);
+EXT_GENCODE void putvar (BYTE,BINAIRE,BINAIRE);
+EXT_GENCODE void stobin (int,BINAIRE,BINAIRE,BINAIRE);
+
+EXT_GENCODE BINAIRE negvar (BINAIRE);
+EXT_GENCODE void negreg (BINAIRE);
+
+EXT_GENCODE BINAIRE genoper (BINAIRE,BYTE,BINAIRE,BYTE,BINAIRE,BYTE);
+
+EXT_GENCODE void genrelat (BOOL,BINAIRE,BYTE,BINAIRE,BYTE,BINAIRE,char *);
+
+EXT_GENCODE void genfincode (BOOL,BINAIRE,BINAIRE);
+
+#else
+EXT_GENCODE void genesc0();
+EXT_GENCODE void genesc1();
+EXT_GENCODE void gen1tc();
+EXT_GENCODE void gengtogsb();
+
+EXT_GENCODE void refrt();
+EXT_GENCODE void genfuser();
+EXT_GENCODE void gennew();
+EXT_GENCODE void gensgt();
+EXT_GENCODE void generreur();
+EXT_GENCODE void gendebjmr();
+EXT_GENCODE void genetqjmr();
+
+EXT_GENCODE void genclp();
+EXT_GENCODE void genclsuc();
+EXT_GENCODE void genlibproc();
+EXT_GENCODE void genlibseg();
+EXT_GENCODE void genlibuser();
+EXT_GENCODE void genaffectptsegnum();
+EXT_GENCODE void genaffectptfct();
+EXT_GENCODE void genaffn();
+EXT_GENCODE void genffm();
+EXT_GENCODE void genop();
+EXT_GENCODE void generg();
+EXT_GENCODE void genres();
+EXT_GENCODE void gentim();
+EXT_GENCODE void genwhen();
+EXT_GENCODE void genclf();
+EXT_GENCODE void genngf();
+EXT_GENCODE void gencreate();
+EXT_GENCODE BINAIRE genconv();
+EXT_GENCODE void geniof();
+EXT_GENCODE void genfio();
+EXT_GENCODE void libiof();
+EXT_GENCODE void genhome();
+EXT_GENCODE void genbell();
+EXT_GENCODE void genclear();
+EXT_GENCODE void genctab();
+EXT_GENCODE void genltab();
+EXT_GENCODE void genvtab();
+EXT_GENCODE void genfor();
+EXT_GENCODE void genbak();
+EXT_GENCODE void genatb();
+EXT_GENCODE void genprn();
+EXT_GENCODE void geniprn();
+EXT_GENCODE void genask();
+EXT_GENCODE void genbranch();
+EXT_GENCODE void genfmt();
+EXT_GENCODE void genrefmt();
+EXT_GENCODE void genreadmem();
+EXT_GENCODE void gendata();
+EXT_GENCODE BINAIRE getreg ();
+EXT_GENCODE void ungetreg ();
+EXT_GENCODE void increg ();
+EXT_GENCODE void decreg ();
+EXT_GENCODE void pushreg ();
+EXT_GENCODE void popreg ();
+EXT_GENCODE void putreg ();
+EXT_GENCODE void storeg ();
+EXT_GENCODE void putbin ();
+EXT_GENCODE void putadr ();
+EXT_GENCODE void putrix ();
+EXT_GENCODE void putrax ();
+EXT_GENCODE void putvar ();
+EXT_GENCODE void stobin ();
+EXT_GENCODE BINAIRE negvar ();
+EXT_GENCODE void negreg ();
+EXT_GENCODE BINAIRE genoper ();
+EXT_GENCODE void genrelat ();
+EXT_GENCODE void genfincode ();
+
+#endif /* LINT_ARGS */
+
+/* PUBLIC END */
+/* ---------- */
+
+/* FIN DEFINITIONS INTERNES */
+/* ------------------------ */
+
+/*------------------------- FIN gencode.he ----------------------------*/
+

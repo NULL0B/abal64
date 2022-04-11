@@ -1,0 +1,23 @@
+# --------------------------------------------------------
+# production of the abal 3 dynamic library development kit
+# --------------------------------------------------------
+/home/Dev/abal32/product31e/kitbda/bda.h: /home/Dev/abal32/include/bdas/bda.h
+	cp $* $@
+/home/Dev/abal32/product31e/kitbda/ldfbda.h: /home/Dev/abal32/include/bdas/ldfbda.h
+	cp $* $@
+/home/Dev/abal32/product31e/kitbda/oldbda.h: /home/Dev/abal32/include/bdas/oldbda.h
+	cp $* $@
+/home/Dev/abal32/product31e/kitbda/pubsbda.h: /home/Dev/abal32/include/bdas/pubsbda.h
+	cp $* $@
+/home/Dev/abal32/product31e/kitbda/pubwbda.h: /home/Dev/abal32/include/bdas/pubwbda.h
+	cp $* $@
+/home/Dev/abal32/product31e/kitbda/wdef.h: /home/Dev/abal32/include/bdas/wdef.h
+	cp $* $@
+
+! make
+
+
+
+
+
+

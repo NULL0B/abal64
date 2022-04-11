@@ -1,0 +1,595 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>ABAL 3 : Event Functions </title>
+<META NAME="VERSION" CONTENT="*PRL@INFO*$6:31a001">
+<link href="style.css" rel="STYLESHEET" type="text/css" media="SCREEN">
+</head>
+<body>
+<div align=center>
+<table>
+<tr><th><h1>ABAL 3 : Event Functions </h1><td>
+<tr><th><h2>Programmer Reference Manual</h2><td>
+<tr><th><h3>Table of Contents</h3><td>
+<tr><td>
+<p>
+<ol>
+<li><a href="#intro">Introduction and Overview</a>
+<li><a href="#get">Get Events</a>
+<li><a href="#set">Set Events</a>
+</ol>
+</table>
+
+<p>
+<a name="get">
+<table>
+<tr><th><h3>Get Events</h3></table>
+
+<p><table>
+<tr><th width="15%"><h4><a name="f001">Event(0)</h4><th>Activate Mouse
+<tr><td colspan=2>
+<p> This function will activate the mouse subsystem if this has not already been performed.
+<p> The function will return <b>0</b> to indicate success and other values to indicate failure.
+<p>
+</table>
+
+<p><table>
+<tr><th width="15%"><h4><a name="f001">Event(1)</h4><th>Mouse Event Type
+<tr><td colspan=2>
+<p> This function will returns the <b>Mouse Event Type </b> field of the current mouse event 
+descriptor. The value returned describes the nature of the most recent event
+in terms of its various bitfields :
+<p>
+<table>
+<tr><th>Value<th>Description
+<tr><td>/0002<td>Keyboard event
+<tr><td>/0010<td>Mouse Button Down
+<tr><td>/0020<td>Mouse Button Up
+<tr><td>/0040<td>Mouse Button Down then Up 
+<tr><td>/0080<td>Mouse Button Down then Up : Twice
+<tr><td>/0100<td>Mouse Movement 
+<tr><td>/0200<td>Mouse Move whilst button pressed
+<tr><td>/0400<td>Mouse button is still down
+<tr><td>/0800<td>Keyboard Alt Key Event
+</table>
+<p>Multiple bitfields may be present.
+<p>
+</table>
+
+<p><table>
+<tr><th width="15%"><h4><a name="f001">Event(2)</h4><th>Mouse Event Parameter
+<tr><td colspan=2>
+<p> This function returns the <b>Mouse Event Parameter</b> field of the current mouse event 
+descriptor. The interpretation of this value will depend on the value
+of the current <b>Event Type</b> field as described above.
+<p>For keyboard events this function returns the keycode.
+<p>For Al Key events this function returns the alt keycode comprising the
+alt flag /0800 added to the actual key code value.
+<p>For mouse events this function will return the button identifier.
+<p>
+<table>
+<tr><td>1<td>LEFT BUTTON
+<tr><td>2<td>RIGHT BUTTON
+<tr><td>4<td>OTHER BUTTON
+</table>
+<p>
+</table>
+
+<p><table>
+<tr><th width="15%"><h4><a name="f001">Event(3)</h4><th>Mouse Line Position
+<tr><td colspan=2>
+<p> This function returns the <b>Mouse Event Line</b> field of the current
+mouse event descriptor. This value represents the text line on which
+the mouse event occured.
+<p>
+</table>
+
+<p><table>
+<tr><th width="15%"><h4><a name="f001">Event(4)</h4><th>Mouse Column Position
+<tr><td colspan=2>
+<p> This function returns the <b>Mouse Event Column</b> field of the current
+mouse event descriptor. This value represents the text column at which
+the mouse event occured.
+<p>
+</table>
+
+<p><table>
+<tr><th width="15%"><h4><a name="f001">Event(5)</h4><th>Mouse Event Mask
+<tr><td colspan=2>
+<p> This function returns the current value of the mouse event mask.
+<p> The mouse event mask is composed of the following bitfields
+<p>
+<table>
+<tr><th>Value<th>Description
+<tr><td>/0002<td>Keyboard event
+<tr><td>/0010<td>Mouse Button Down
+<tr><td>/0020<td>Mouse Button Up
+<tr><td>/0040<td>Mouse Button Down then Up 
+<tr><td>/0080<td>Mouse Button Down then Up : Twice
+<tr><td>/0100<td>Mouse Movement 
+<tr><td>/0200<td>Mouse Move whilst button pressed
+<tr><td>/0400<td>Mouse button is still down
+<tr><td>/0800<td>Keyboard Alt Key Event
+<tr><td>/1000<td>Send Left Button
+<tr><td>/2000<td>Send Right Button
+<tr><td>/4000<td>Send Other Button
+</table>
+<p> When a particular bit value is set then the corresponding event type
+will be returned to the application as they are received.
+<p> When a particular bit is clear then the corresponding type of event
+will be inhibited.
+<p>
+</table>
+
+<p><table>
+<tr><th width="15%"><h4><a name="f001">Event(6)</h4><th>Mouse Event Flush
+<tr><td colspan=2>
+<p> This function will flush the low level event collection mechanism.
+<p> All pending events will be silently discarded.
+</table>
+
+<p><table>
+<tr><th width="15%"><h4><a name="f001">Event(6)</h4><th>Inhibit Mouse
+<tr><td colspan=2>
+<p> This function will disactivate or inhibit the mouse and event mechanisms if they are active.
+<p> The event channels may be reactivated by calling the function <b>Event(0)</b> described above.
+<p>
+</table>
+
+<p><table>
+<tr><th width="15%"><h4><a name="f001">Event(8)</h4><th>Mouse Event Row
+<tr><td colspan=2>
+<p> This function returns the <b>Mouse Event Row</b> field of the current event descriptor.
+<p> The value returned represents the graphical pixel row position at which the
+event occured.
+<p>
+</table>
+
+<p><table>
+<tr><th width="15%"><h4><a name="f001">Event(9)</h4><th>Mouse Event Column
+<tr><td colspan=2>
+<p> This function returns the <b>Mouse Event Column</b> field of the current event descriptor.
+<p> The value returned represents the graphical pixel column position at which the
+event occured.
+<p>
+</table>
+
+<p><table>
+<tr><th width="15%"><h4><a name="f001">Event(10)</h4><th>Spawn Task
+<tr><td colspan=2>
+<p> Sucessful completion of this function is only possible running under a multitasking 
+operating system.
+<p> The function will return zero to the child process and a non-zero value to the
+parent process.
+<p> The behaviour of this function is system dependant. Under twin server a thread 
+is created 
+event occured.
+<p>
+</table>
+
+<p>
+<table>
+<tr><th width="15%"><h4>Event( 11) <th> PARENT IDENTITY
+<tr><td colspan=2>
+<p>This function returns the ABAL task number of the parent process of the calling child
+process. 
+<p>If the calling process is the initial application thread this function will return <b>0</b>.
+</table>
+<p>
+<table>
+<tr><th width="15%"><h4>Event( 20) <th> PID
+<tr><td colspan=2>
+<p>Returns the system process identitifier, (unix based systems only).
+<p>
+</table>
+<p>
+<table>
+<tr><th width="15%"><h4>Event( 21) <th> PPID
+<tr><td colspan=2>
+<p>Returns the system parent process identitifier, (unix based systems only).
+<p>
+</table>
+<p>
+<table>
+<tr><th width="15%"><h4>Event( 22) <th> UID
+<tr><td colspan=2>
+<p>Returns the system user identitifier, (unix based systems only).
+<p>
+</table>
+<p>
+<table>
+<tr><th width="15%"><h4>Event( 23) <th> GID
+<tr><td colspan=2>
+<p>Returns the system group identitifier, (unix based systems only).
+<p>
+</table>
+<p>
+<table>
+<tr><th width="15%"><h4>Event( 24) <th> TIME LOW WORD
+<tr><td colspan=2>
+<p>Returns the lower 16 bits of the current time value in seconds since 1st January 1970.
+<p>
+</table>
+<p>
+<table>
+<tr><th width="15%"><h4>Event( 25) <th> TIME HIGH WORD
+<tr><td colspan=2>
+<p>Returns the upper16 bits of the current time value in seconds since 1st January 1970.
+<p>
+</table>
+<p>
+<table>
+<tr><th width="15%"><h4>Event( 26) <th> TERM
+<tr><td colspan=2>
+<p>Returns the current state of the SIGTERM signal catching mechanism (unix based systems only).
+</table>
+<p>
+<table>
+<tr><th width="15%"><h4>Event( 27) <th> KBHIT
+<tr><td colspan=2>
+<p>This function test for pending keyboard or mouse activity and returns <b>1</b> if true
+or <b>0</b> if false.
+<p>
+</table>
+<p>
+<table>
+<tr><th width="15%"><h4>Event( 28) <th> GETCH
+<tr><td colspan=2>
+<p>This function awaits and returns a keycode. The key code 256 indicates an event has 
+occured in which case the event fields may be read in order to determine its nature.
+<p>
+</table>
+<p>
+<table>
+<tr><th width="15%"><h4>Event( 29) <th> ACTIVATE OP CURSER
+<tr><td colspan=2>
+<p> This function will activate the use of the text curser during tests for keyboard events.
+<p>
+</table>
+<p>
+<table>
+<tr><th width="15%"><h4>Event( 30) <th> INHIBIT OP CURSER
+<tr><td colspan=2>
+<p> This function will disable the use of the text curser during tests for keyboard events.
+<p>
+</table>
+<p>
+<table>
+<tr><th width="15%"><h4>Event( 31) <th> ACTIVATE ALT EVENTS
+<tr><td colspan=2>
+<p> This function activates the ALT KEY reception channel allowing these event types to be
+returned via the mouse event mechanisms.
+<p>
+</table>
+<p>
+<table>
+<tr><th width="15%"><h4>Event( 32) <th> INHIBIT ALT EVENTS
+<tr><td colspan=2>
+<p> This function disables the ALT KEY reception channel inhibiting reception of these key events.
+<p>
+</table>
+<p>
+<table>
+<tr><th width="15%"><h4>Event( 33) <th> ALTERNATIVE MOUSE CURSOR
+<tr><td colspan=2>
+<p> This function switchs the mouse cursor to the shape defined to be used as the alternative mouse cursor.
+<p> This may be called to signal computational intensive sections of applications so that the user does not worry.
+<p>
+</table>
+<p>
+<table>
+<tr><th width="15%"><h4>Event( 34) <th> STANDARD MOUSE CURSOR
+<tr><td colspan=2>
+<p> This function restores the mouse cursor to the shape defined to be used as the standard mouse cursor.
+<p> This may be called on return from computational intensive sections of applications.
+<p>
+</table>
+<p>
+<table>
+<tr><th width="15%"><h4>Event( 50 ) <th> ASK COLUMN
+<tr><td colspan=2>
+<p>Returns the final column position of the most recent ASK instruction.
+</table>
+<p>
+<table>
+<tr><th width="15%"><h4>Event( 51 ) <th> ASK TEXT COLOUR
+<tr><td colspan=2>
+<p>Returns the current value of the colour to be used as the text colour during 
+Ask Instructions.
+<p>
+</table>
+<p>
+<table>
+<tr><th width="15%"><h4>Event( 52 ) <th> ASK BACKGROUND COLOUR
+<tr><td colspan=2>
+<p>Returns the current value of the colour to be used as the background colour during 
+Ask Instructions.
+<p>
+</table>
+<p>
+<table>
+<tr><th width="15%"><h4>Event( 53 ) <th> ASK ATB
+<tr><td colspan=2>
+<p>Returns the current value of the colour to be used as the text atribut for the ASK instruction when colour is not possible.
+<p>
+</table>
+<p>
+<table>
+<tr><th width="15%"><h4>Event( 54 ) <th> ASK FONT
+<tr><td colspan=2>
+<p>This function returns the font identifier of the font to be used by the ASK mechanisms.
+<p>
+</table>
+<p>
+<table>
+<tr><th width="15%"><h4>Event( 55 ) <th> PRINT FONT
+<tr><td colspan=2>
+<p>This function returns the font identifier of the font to be used by the PRINT mechansims.
+<p>
+</table>
+<p>
+
+<table>
+<tr><th width="15%"><h4>Event( 56 ) <th> FOREGROUND MASK 
+<tr><td colspan=2>
+<p> This function returns the current value of the text colour limiting mask.
+<p> The default value is 15 which limits text colours to the range 0 to 15
+<p>
+</table>
+<p>
+<table>
+<tr><th width="15%"><h4>Event( 57 ) <th> BACKGROUND MASK 
+<tr><td colspan=2>
+<p> This function returns the current value of the background colour limiting mask.
+<p> The default value is 7 which limits text colours to the range 0 to 7
+<p>
+</table>
+<p>
+<table>
+<tr><th width="15%"><h4>Event( 60 ) <th> ASSIGN EVENT
+<tr><td colspan=2>
+<p> Returns the current value of the filename conversion flags used by the ASSIGN instruction.
+<p>
+</table>
+<p>
+<table>
+<tr><th width="15%"><h4>Event( 61 ) <th> OP EVENT
+<tr><td colspan=2>
+<p> Returns the current value of the OP ABQT flag used by the OP instruction.
+<p>
+</table>
+<p>
+<table>
+<tr><th width="15%"><h4>Event( 74) <th> ERROR 74
+<tr><td colspan=2>
+<p>This function returns the current value of the ERROR 74 sleep value (unix based systems only).
+<p>This value will be used, when nonzero, to perform a short process sleep each time an error 74
+is encountered by the corresponding SI and MC read functions.
+<p>
+</table>
+<p>
+<table>
+<tr><th width="15%"><h4>Event( 75) <th> GRAPHICAL CURSOR
+<tr><td colspan=2>
+<p>This function will return the current value of the graphical cursor.
+<p>The X/11 graphical cursor may be set to one of the following forms 
+<p>
+<ol>
+<li>BLOCK
+<li>VERTICAL LINE
+<li>HORIZONTAL LINE
+<li>FRAME
+</ol>
+<p>
+</table>
+<p>
+<table>
+<tr><th width="15%"><h4>Event( 77 ) <th> ASSIGN HANDLE
+<tr><td colspan=2>
+<p>This function returns the number of the first free entry in the ASSIGN table.
+<p>This functiondoes not reserve the table entry. It must be assigned to perform this.
+</table>
+<p>
+<p>
+<a name="set">
+<table>
+<tr><th><h3>Set Events</h3></table>
+
+<p><table>
+<tr><th width="15%"><h4><a name="f001">Event(0)</h4><th>Set Mouse Mask
+<tr><td colspan=2>
+<p> This function sets the mouse and event susbsystem event filtering mask to the provided value.
+<p>
+</table>
+
+<p><table>
+<tr><th width="15%"><h4><a name="s002">Event(1)</h4><th>Set Time Factor
+<tr><td colspan=2>
+<p> This function allows the WAIT and TIMER instruction multiplier to be set to the
+provided value.
+<p> The default value of 10 implies that each unit of time for represents 1/10 th of a second.
+<p> When set to 1 the WAIT 1 will signify WAIT one tenth of a second.
+<p>
+</table>
+
+<p><table>
+<tr><th width="15%"><h4><a name="s002">Event(4)</h4><th>Raise Semaphore
+<tr><td colspan=2>
+<p> This function allows the indicated semaphore to be raised if is currently free.
+<p>
+</table>
+
+<p><table>
+<tr><th width="15%"><h4><a name="s002">Event(5)</h4><th>Drop Semaphore
+<tr><td colspan=2>
+<p> This function causes the indicated semaphore to be dropped or freed .
+<p>
+</table>
+<p><table>
+<tr><th width="15%"><h4><a name="s002">Event(6)</h4><th>Synch Semaphore
+<tr><td colspan=2>
+<p> This function causes the calling process to wait until the indicated semaphore 
+is dropped or freed. The call will return immediatly if the semaphore is already free.
+<p> The semaphore will remain free at the end of the function.
+<p>
+</table>
+
+<p><table>
+<tr><th width="15%"><h4><a name="s002">Event(7)</h4><th>Loudspeeaker
+<tr><td colspan=2>
+<p> This function causes the provided hertz or frequency value to be used to activate
+the system loudspeaker on Twin Server Systems.
+<p> The value of zero will disactivate the speaker.
+<p>
+</table>
+
+<p><table>
+<tr><th width="15%"><h4><a name="s002">Event(8)</h4><th>INTERRUPT STATE
+<tr><td colspan=2>
+<p> This function affects the boolean value provided to the state of the process interrupt mask.
+<p> When the process interrupt mask is set the process may receive software interrupt 
+events from parent or child processes of the same application process group.
+<p> Otherwise reception of interrupt events will be inhibited.
+<p>
+</table>
+
+<p><table>
+<tr><th width="15%"><h4><a name="s002">Event(9)</h4><th>Increment Semaphore
+<tr><td colspan=2>
+<p> This function causes the indicated semaphore to be unconditionally incremented.
+<p> It allows the management of multiple entry to section of code by application
+processes spawned by the <b>EVENT(10)</b> function.
+<p>
+</table>
+
+<p><table>
+<tr><th width="15%"><h4><a name="s002">Event(10)</h4><th>TERMINATE PROCESS
+<tr><td colspan=2>
+<p> This function causes the requested application process to be terminated.
+<p> A value of zero represents the calling process.
+<p>
+</table>
+
+
+<p><table>
+<tr><th width="15%"><h4><a name="s002">Event(11)</h4><th>INTERRUPT PROCESS
+<tr><td colspan=2>
+<p> This function causes a software interrupt event to be sent to the indicated 
+application process.
+<p>
+</table>
+
+
+
+<p><table>
+<tr><th width="15%"><h4><a name="s002">Event(12)</h4><th>Decrement Semaphore
+<tr><td colspan=2>
+<p> This function causes the indicated semaphore to be unconditionally decremented.
+<p> It allows the management of multiple exit from sections of code by application
+processes spawned by the <b>EVENT(10)</b> function.
+<p>
+</table>
+
+<p><table>
+<tr><th width="15%"><h4><a name="s002">Event(26)</h4><th>TERM
+<tr><td colspan=2>
+<p> This function affects the state of the SIGTERM mechanism. (unix based systems only)
+<p> When set it allows reception of SIGTERM signals, otherwise they will be ignored.
+<p>
+</table>
+<p>
+<table>
+<tr><th width="15%"><h4>Event( 50 ) <th> ASK COLUMN
+<tr><td colspan=2>
+<p>This function sets the value of the initial column to be used by the next ASK instruction.
+</table>
+<p>
+<table>
+<tr><th width="15%"><h4>Event( 51 ) <th> ASK TEXT COLOUR
+<tr><td colspan=2>
+<p>This function sets the value of the colour to be used as the text colour during 
+Ask Instructions.
+<p>
+</table>
+<p>
+<table>
+<tr><th width="15%"><h4>Event( 52 ) <th> ASK BACKGROUND COLOUR
+<tr><td colspan=2>
+<p>This function sets the value of the colour to be used as the background colour during 
+Ask Instructions.
+<p>
+</table>
+<p>
+<table>
+<tr><th width="15%"><h4>Event( 53 ) <th> ASK ATB
+<tr><td colspan=2>
+<p>This function sets the value to be used as the text atribut for the ASK instruction when colour is not possible.
+<p>
+</table>
+<p>
+<table>
+<tr><th width="15%"><h4>Event( 54 ) <th> ASK FONT
+<tr><td colspan=2>
+<p>This function sets the font identifier of the font to be used by the ASK mechanisms.
+<p>If a font identifier is specified via this function the character cell dimensions
+will be used in conjunction with the standard grid font cell dimensions to calculate
+an offset from the grid top left corner at which all ask input characters will be 
+echoed.
+<p>The font specified in this way should present a smaller character cell matrix by at
+least 2 pixels in both dimensions in which case the ask characters will be indented
+by 1 pixel in the x direction and 1 pixel in the y direction.
+</table>
+<p>
+<table>
+<tr><th width="15%"><h4>Event( 55 ) <th> PRINT FONT
+<tr><td colspan=2>
+<p>This function sets the font identifier of the font to be used by the PRINT mechanisms in
+the same way as that used by the ASK mechanisms described above.
+<p>
+</table>
+<p>
+
+<table>
+<tr><th width="15%"><h4>Event( 56 ) <th> FOREGROUND MASK 
+<tr><td colspan=2>
+<p> This function sets the value of the text colour limiting mask.
+<p> The default value is 15 which limits text colours to the range 0 to 15
+<p>
+</table>
+<p>
+<table>
+<tr><th width="15%"><h4>Event( 57 ) <th> BACKGROUND MASK 
+<tr><td colspan=2>
+<p> This function sets the value of the background colour limiting mask.
+<p> The default value is 7 which limits text colours to the range 0 to 7
+<p>
+</table>
+
+<p>
+<table>
+<tr><th width="15%"><h4>Event( 60 ) <th> ASSIGN EVENT
+<tr><td colspan=2>
+<p> Sets the current value of the filename conversion flags used by the ASSIGN instruction.
+<p>
+</table>
+<p>
+<table>
+<tr><th width="15%"><h4>Event( 77 ) <th> ASSIGN HANDLE
+<tr><td colspan=2>
+<p>This function releases the indicated ASSIGN table entry. 
+<p>The file will be closed if it is open.
+<p>All memory allocated for the ASSIGN will be released.
+<p>The file handle will be come available for return by the <b>GET ASSIGN HANDLE</b>
+function.
+<p>
+</table>
+<p>
+
+<table>
+<tr><th><h3 align=center>Copyright &copy; <a href="http://www.prologue.fr">Prologue</a></h3>
+<tr><th><h3 align=center>Version Fran&ccedil;aise <a href="fr/event.htm"><img src="tricolor.gif"></a>
+</table>
+</div>
+</body>
+</html>
+

@@ -1,0 +1,33 @@
+# generated makefile : style.mf 
+# ------------------------------------
+/home/Dev/abal32/product31e/style/button.css: /home/Dev/abal32/src/style/button.css
+	cp $* $@ 
+/home/Dev/abal32/product31e/style/check.css: /home/Dev/abal32/src/style/check.css
+	cp $* $@ 
+/home/Dev/abal32/product31e/style/frame.css: /home/Dev/abal32/src/style/frame.css
+	cp $* $@ 
+/home/Dev/abal32/product31e/style/icon.css: /home/Dev/abal32/src/style/icon.css
+	cp $* $@ 
+/home/Dev/abal32/product31e/style/progress.css: /home/Dev/abal32/src/style/progress.css
+	cp $* $@ 
+/home/Dev/abal32/product31e/style/radio.css: /home/Dev/abal32/src/style/radio.css
+	cp $* $@ 
+/home/Dev/abal32/product31e/style/scroll.css: /home/Dev/abal32/src/style/scroll.css
+	cp $* $@ 
+/home/Dev/abal32/product31e/style/select.css: /home/Dev/abal32/src/style/select.css
+	cp $* $@ 
+/home/Dev/abal32/product31e/style/switch.css: /home/Dev/abal32/src/style/switch.css
+	cp $* $@ 
+/home/Dev/abal32/product31e/style/table.css: /home/Dev/abal32/src/style/table.css
+	cp $* $@ 
+/home/Dev/abal32/product31e/style/tabpage.css: /home/Dev/abal32/src/style/tabpage.css
+	cp $* $@ 
+/home/Dev/abal32/product31e/style/textfont.css: /home/Dev/abal32/src/style/textfont.css
+	cp $* $@ 
+/home/Dev/abal32/product31e/style/visual.css: /home/Dev/abal32/src/style/visual.css
+	cp $* $@ 
+/home/Dev/abal32/product31e/style/window.css: /home/Dev/abal32/src/style/window.css
+	cp $* $@ 
+/home/Dev/abal32/product31e/style/sing.css: /home/Dev/abal32/src/style/sing31e.css
+	cp $* $@ 
+

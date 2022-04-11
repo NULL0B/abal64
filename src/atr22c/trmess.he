@@ -1,0 +1,139 @@
+/*
+ *      Projet  : ABAL                  Copyright Prologue s.a. (c) 1990, 1995
+ *      Module  : ATR
+ *      Fichier : TRMESS.HE
+ *      Version : 2.1f
+ *      Date    : 22/11/95
+ *      Systeme : DOS / PRL / UNIX / VMS
+ *
+ *      Traducteur ABAL
+ *
+ *      [Definitions de la gestion des messages]
+ *      04/12/97 : Refonte de la gestion des messages, fichiers trmess.hg, message.hg
+ *              générés.
+ */
+
+#ifdef _TRMESS
+#define EXT_TRMESS
+#else
+#define EXT_TRMESS extern
+#endif /* _TRMESS */
+
+/* PUBLIC */
+/* ------ */
+
+/* PUBLIC VARIABLES */
+/* ---------------- */
+
+/*      --------------------------------------------------------        */
+/*      Designation des messages pour les modules utilisateurs          */
+/*      chaque message etant pointe par un indice dans la table         */
+/*      --------------------------------------------------------        */
+
+/*      Banniere du traducteur                  */
+/*      ----------------------                  */
+
+#ifdef _TRMESS
+// #FC 21/01/2003 nouvelle gestion de la table des messages
+// ancien code EXT_TRMESS char *imptitre= (char *) &m00003[0];
+EXT_TRMESS char *imptitre= (char *) &messages[0];
+#else
+EXT_TRMESS char *imptitre;
+#endif /* _TRMESS */
+
+//SG041297 inclusion du fichier généré
+#include "trmess.hg"
+
+        /* Fin des messages */
+        /* ---------------- */
+
+/*      Variables globales              */
+/*      ------------------              */
+
+EXT_TRMESS long int LgCRLF;
+
+EXT_TRMESS BOOL nowarn;       /* signaler les Warnings oui/non */
+EXT_TRMESS int maximumWarningLevel;  /* Compris entre 0 et 9 , indique le niveau max des warnigs edites*/
+EXT_TRMESS int nberr;         /* nombre d'erreur(s) signalees */
+EXT_TRMESS int nbwarn;        /* nombre de warning(s) signales */
+EXT_TRMESS char *yesno;       /* ptr vers Oui/Non dans toutes les langues */
+EXT_TRMESS BOOL isFrench;   /* pour Windows TRUE : watr francais, FALSE : watr anglais*/
+
+        /* definition des caracteres semi graphiques (norme Prologue) */
+#ifndef vms
+
+#define C_CHG  (BYTE) 0x00DA  /* coin haut et gauche */
+#define C_LNH  (BYTE) 0x00C4  /* ligne horizontale */
+#define C_CHD  (BYTE) 0x00BF  /* coin haut et droit */
+#define C_CBG  (BYTE) 0x00C0  /* coin bas et gauche */
+#define C_CBD  (BYTE) 0x00D9  /* coin bas et droit */
+#define C_LNV  (BYTE) 0x00B3  /* ligne verticale */
+
+#else /* vms */
+
+#define C_CHG  (BYTE) 0x00F0  /* coin haut et gauche */
+#define C_LNH  (BYTE) 0x00BE  /* ligne horizontale */
+#define C_CHD  (BYTE) 0x00A4  /* coin haut et droit */
+#define C_CBG  (BYTE) 0x00AD  /* coin bas et gauche */
+#define C_CBD  (BYTE) 0x00DE  /* coin bas et droit */
+#define C_LNV  (BYTE) 0x00A6  /* ligne verticale */
+
+#endif /* ! vms */
+
+/* PUBLIC FONCTIONS */
+/* ---------------- */
+
+#ifdef LINT_ARGS
+
+EXT_TRMESS void MessFichier(char *);
+EXT_TRMESS void initabmes (void);
+EXT_TRMESS void initmes (BOOL, long int);
+EXT_TRMESS void erreur (BYTE, int);
+EXT_TRMESS void err2 (BYTE, int, char *);
+EXT_TRMESS void mesg (int,char *);
+EXT_TRMESS void messch (int,char *);
+EXT_TRMESS void messint (int,BINAIRE);
+EXT_TRMESS void messlong (int,long int);
+EXT_TRMESS void statistiques (void);
+EXT_TRMESS void banniere (void);
+EXT_TRMESS void help (void);
+EXT_TRMESS void affsce(char *,int);
+EXT_TRMESS void outbin(int,int,int);
+EXT_TRMESS void outlong(int,int,long int);
+EXT_TRMESS void prepdlig(void);
+EXT_TRMESS const char* GetUserMessage(int);
+EXT_TRMESS void EditFileName(void);
+EXT_TRMESS void FreeProtection(void);
+
+#else
+
+EXT_TRMESS void MessFichier();
+EXT_TRMESS void initabmes ();
+EXT_TRMESS void initmes ();
+EXT_TRMESS void erreur ();
+EXT_TRMESS void err2 ();
+EXT_TRMESS void mesg ();
+EXT_TRMESS void messch ();
+EXT_TRMESS void messint ();
+EXT_TRMESS void messlong ();
+EXT_TRMESS void statistiques ();
+EXT_TRMESS void banniere ();
+EXT_TRMESS void help ();
+EXT_TRMESS void affsce();
+EXT_TRMESS void outbin();
+EXT_TRMESS void outlong();
+EXT_TRMESS void prepdlig();
+EXT_TRMESS const char* GetUserMessage();
+EXT_TRMESS void EditFileName();
+EXT_TRMESS void FreeProtection();
+
+#endif /* LINT_ARGS */
+
+/* PUBLIC END */
+/* ---------- */
+
+/* FIN DEFINITIONS INTERNES */
+/* ------------------------ */
+
+/* ---------------- FIN trmess.he -----------------------------------------*/
+

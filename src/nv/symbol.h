@@ -1,0 +1,109 @@
+//	------------------------------------------------------------------
+//	Project		Web Navigator/Browser	for Amenesik / Sologic / Twin Server
+//	------------------------------------------------------------------
+#ifndef	_html_symbols_h
+#define _html_symbols_h
+
+#define	_GUI_RULE_SHADE		0x51CD
+#define	_GUI_RULE_NOSHADE	0x51C4
+
+#define	_GUI_PUSH_TOP_LEFT	0x11DA
+#define	_GUI_PUSH_TOP		0x11C4
+#define	_GUI_PUSH_TOP_RIGHT	0x11BF
+#define	_GUI_PUSH_LEFT		0x11B3
+#define	_GUI_PUSH_RIGHT		0x12B3
+#define	_GUI_PUSH_BOT_LEFT	0x11C0
+#define	_GUI_PUSH_BOTTOM	0x12C4
+#define	_GUI_PUSH_BOT_RIGHT	0x11D9
+
+#define	_GUI_EDIT_TOP_CROSS	0x24C2
+#define	_GUI_EDIT_LEFT_CROSS	0x24C3
+#define	_GUI_EDIT_RIGHT_CROSS	0x24B4
+#define	_GUI_EDIT_BOT_CROSS	0x24C1
+
+#define	_GUI_RADIO_TOP_LEFT	0x51DA
+#define	_GUI_RADIO_TOP_RIGHT	0x51BF
+#define	_GUI_RADIO_BOT_LEFT	0x51C0
+#define	_GUI_RADIO_BOT_RIGHT	0x51D9
+
+#define	_GUI_EDIT_TOP_LEFT	0x21DA
+#define	_GUI_EDIT_TOP		0x21C4
+#define	_GUI_EDIT_TOP_RIGHT	0x21BF
+#define	_GUI_EDIT_LEFT		0x21B3
+#define	_GUI_EDIT_RIGHT		0x22B3
+#define	_GUI_EDIT_BOT_LEFT	0x21C0
+#define	_GUI_EDIT_BOTTOM	0x22C4
+#define	_GUI_EDIT_BOT_RIGHT	0x21D9
+
+#define	_GUI_TOP_OUT_LEFT	0x07DA
+#define	_GUI_TOP_OUT_MID	0x07C4
+#define	_GUI_TOP_OUT_RIGHT	0x07BF
+#define	_GUI_MID_OUT_LEFT	0x07B3
+#define	_GUI_TOP_IN_LEFT	0x01DA
+#define	_GUI_TOP_IN_MID		0x01C4
+#define	_GUI_TOP_IN_RIGHT	0x01BF
+#define	_GUI_MID_IN_LEFT	0x01B3
+#define	_GUI_MID_IN_RIGHT	0x02B3
+#define	_GUI_BOT_IN_LEFT	0x01C0
+#define	_GUI_BOT_IN_MID		0x02C4
+#define	_GUI_BOT_IN_RIGHT	0x01D9
+#define	_GUI_MID_OUT_RIGHT	0x03B3
+#define	_GUI_BOT_OUT_LEFT	0x07C0
+#define	_GUI_BOT_OUT_MID	0x03C4
+#define	_GUI_BOT_OUT_RIGHT	0x07D9
+
+#define	_GUI_TOP_CROSS		0x4C2
+#define	_GUI_LEFT_CROSS		0x4C3
+#define	_GUI_BOTH_HORIZ		0x4C4
+#define	_GUI_MID_CROSS		0x4C5
+#define	_GUI_BOTH_VERT		0x4B3
+#define	_GUI_RIGHT_CROSS	0x4B4
+#define	_GUI_BOT_CROSS		0x4C1
+
+#define	_GUI_PLUS		'+'
+#define	_GUI_LESS		'-'
+
+#define	_GUI_TOP_GROOVE_LEFT	0x05DA
+#define	_GUI_TOP_GROOVE_MID	0x05C4
+#define	_GUI_TOP_GROOVE_RIGHT	0x05BF
+#define	_GUI_MID_GROOVE_LEFT	0x05B3
+#define	_GUI_MID_GROOVE_RIGHT	0x15B3
+#define	_GUI_BOT_GROOVE_LEFT	0x05C0
+#define	_GUI_BOT_GROOVE_MID	0x15C4
+#define	_GUI_BOT_GROOVE_RIGHT	0x05D9
+
+#define	_GUI_TOP_RIDGE_LEFT	0x06DA
+#define	_GUI_TOP_RIDGE_MID	0x06C4
+#define	_GUI_TOP_RIDGE_RIGHT	0x06BF
+#define	_GUI_MID_RIDGE_LEFT	0x06B3
+#define	_GUI_MID_RIDGE_RIGHT	0x16B3
+#define	_GUI_BOT_RIDGE_LEFT	0x06C0
+#define	_GUI_BOT_RIDGE_MID	0x16C4
+#define	_GUI_BOT_RIDGE_RIGHT	0x06D9
+
+#define	_GUI_TOP_DOUBLE_LEFT	0x08DA
+#define	_GUI_TOP_DOUBLE_MID	0x08C4
+#define	_GUI_TOP_DOUBLE_RIGHT	0x08BF
+#define	_GUI_MID_DOUBLE_LEFT	0x08B3
+#define	_GUI_MID_DOUBLE_RIGHT	0x18B3
+#define	_GUI_BOT_DOUBLE_LEFT	0x08C0
+#define	_GUI_BOT_DOUBLE_MID	0x18C4
+#define	_GUI_BOT_DOUBLE_RIGHT	0x08D9
+
+#define	_GUI_TOP_SOLID_LEFT	0x09DA
+#define	_GUI_TOP_SOLID_MID	0x09C4
+#define	_GUI_TOP_SOLID_RIGHT	0x09BF
+#define	_GUI_MID_SOLID_LEFT	0x09B3
+#define	_GUI_MID_SOLID_RIGHT	0x19B3
+#define	_GUI_BOT_SOLID_LEFT	0x09C0
+#define	_GUI_BOT_SOLID_MID	0x19C4
+#define	_GUI_BOT_SOLID_RIGHT	0x09D9
+
+#define	_GUI_LOWLITE	24
+#define	_GUI_HIGHLITE	30
+#define	_GUI_DARKLITE	18
+
+#endif	// _html_symbols_h
+
+
+

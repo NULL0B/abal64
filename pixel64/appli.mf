@@ -1,0 +1,23 @@
+sss.o: sss.c
+	$(COMPILE) sss.c
+! make
+bin/sss: sss.o
+	$(LD) bin/sss -g sss.o vobject.o zbmp.o zgif.o $(PIXLIB) $(XCICO) $(XLIB)
+
+!make
+manu.o: manu.c
+	$(COMPILE) manu.c
+! make
+bin/manu: manu.o
+	$(LD) bin/manu -g manu.o vobject.o zbmp.o zgif.o $(PIXLIB) $(XCICO) $(XLIB)
+
+!make
+
+text.o: text.c
+	$(COMPILE) text.c
+! make
+bin/text: text.o
+	$(LD) bin/text -g text.o vobject.o zbmp.o zgif.o $(PIXLIB) $(XCICO) $(XLIB)
+
+!make
+

@@ -1,0 +1,118 @@
+<html>
+<head>
+<title>ABAL 3 : Conf Functions </title>
+<META NAME="VERSION" CONTENT="*PRL@INFO*$6:31a001">
+<link href="style.css" rel="STYLESHEET" type="text/css" media="SCREEN">
+</head>
+<body>
+<div align=center>
+<table>
+<tr><th><h1>ABAL 3 : Conf Functions </h1><td>
+<tr><th><h2>Programmer Reference Manual</h2><td>
+</table>
+<p>
+<table>
+<tr><th>  1 <td>Current screen height in characters or lines. 
+This value is recalculated when either the graphical resolution, the current base font, or the
+	cico view port is changed.
+<tr><th>  2 <td>Current screen width in characters or columns.
+As for the screen line count value this value is also recalculated when either the graphical resolution, the current base font, or the
+cico view port is changed.
+<tr><th>  3 <td>Printed page line count.
+<tr><th>  4 <td>Printed page column count.
+<tr><th>  5 <td>Current national language code
+<table><tr><th>Value<th>Language
+<tr><td>0<td>French
+<tr><td>1<td>English
+<tr><td>2<td>German
+<tr><td>3<td>Spanish
+<tr><td>4<td>Italien
+<tr><td>5<td>Norvegan
+<tr><td>6<td>Swedish
+<tr><td>7<td>Danish
+<tr><td>8<td>Dutch
+<tr><td>9<td>Finish
+<tr><td>10<td>Portugeese
+<tr><td>11<td>Greek
+</table>
+<tr><th>  6 <td>Prologue version number.
+<tr><th>  7 <td>Prologue version index.
+<tr><th>  8 <td>Prologue protection flags
+<tr><th>  9 <td>Number of usable function keys.
+This value does not indicate which function keys are present, it simply indicated how many.
+Care should be taken when reading and setting function key values to ensure that an ON ERROR construction
+is active to catch any eventual error 111 conditions that may be raised.
+<tr><th> 10 <td> Host system type code
+<table><tr><th>Value<th>System
+<tr><td> 0<td>PROLOGUE/TWIN SERVER
+<tr><td> 1<td>MSDOS/WINDOWS
+<tr><td> 2<td>VMS
+<tr><td> 3<td>UNIX/LINUX
+</table>
+<tr><th> 11 <td>indicates the presence of optional cursor characteristics
+<tr><th> 12 <td>indicates the presence of optional black and white text atributs
+<tr><th> 13 <td>indicates the number of columns of the system status line.
+<tr><th> 14 <td>console colour flag (0 or 1)
+<tr><th> 15 <td>System subclass or OS id
+<table><tr><th>Value<th>System
+<tr><td> 0<td>PROLOGUE/TWIN SERVER
+<tr><td> 1<td>MSDOS/WINDOWS
+<tr><td> 6<td>VMS
+<tr><td> 256<td>WINDOWS
+<tr><td>other<td>UNIX variations
+</table>
+<tr><th> 16 <td>current screen atribut
+<tr><th> 17 <td>current foreground colour
+<tr><th> 18 <td>current background colour
+<tr><th> 19 <td>current ask atribut
+<tr><th> 20 <td>current ask foreground colour
+<tr><th> 21 <td>current ask background colour
+<tr><th> 22 <td>abal version * 10 + abal index
+<tr><th> 23 <td>current error trapping status
+<tr><th> 24 <td>current code block type 1:proc, 0:segm
+<tr><th> 25 <td>current segment identity
+<tr><th> 26 <td>current procedure identity or -1
+<tr><th> 27 <td>last file operation handle.
+<tr><th> 50 <td> tcode constant #files
+<tr><th> 51 <td> tcode constant #mem
+<tr><th> 52 <td> tcode constant #stack
+<tr><th> 53 <td> tcode constant #heap
+<tr><th> 54 <td> register count (54)
+<tr><th> 55 <td> translator version code
+<tr><th> 56 <td> translator version index
+<tr><th> 57 <td> translator type
+<tr><th> 58 <td> tcode constant #pagesize (redundant with abal 3)
+<tr><th> 59 <td> tcode constant #swapsize (redundant with abal 3)
+<tr><th> 60 <td> tcode constant extended option (redundant with abal 3)
+<tr><th> 61 <td> extended memory page count 
+<tr><th> 62 <td> number of loaded procedures
+<tr><th> 63 <td> criteria file conversion mode
+<tr><th> 64 <td> ABAL Windows MAIN WINDOW HANDLE
+<tr><th> 65 <td> ABAL Windows EXA INSTANCE HANDLE
+<tr><th> 66 <td> application graphics are available
+<tr><th> 67 <td> system is graphic
+<tr><th> 68 <td> graphical screen height in pixel rows
+<tr><th> 69 <td> graphical screen width in pixel columns
+<tr><th> 200 <td> error trap count
+<tr><th> 201 <td> trace allocations
+<tr><th> 202 <td> allocation count
+<tr><th> 203 <td> liberation count
+<tr><th> 205 <td> version number
+<tr><th> 206 <td> version index
+<tr><th> 207 <td> version letter
+<tr><th> 208 <td> version sub version
+<tr><th> 209 <td> version sub index 1st digit
+<tr><th> 210 <td> version sub index 2nd digit
+<tr><th> 211 <td> tcode local variable management mode ( 3 or 4 )
+<tr><th> 212 <td> tcode logical word size in bytes ( 2 or 4 )
+</table>
+<p>
+
+<table>
+<tr><th><h3 align=center>Copyright &copy; <a href="http://www.prologue-software.fr">Prologue Software</a></h3>
+<tr><th><h3 align=center>Version Fran&ccedil;aise <a href="fr/event.htm"><img src="tricolor.gif"></a>
+</table>
+</div>
+</body>
+</html>
+

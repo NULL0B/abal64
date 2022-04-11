@@ -1,0 +1,4 @@
+
+$(POBJ)styleman$(OBJ):  $(SP01)styleman.c $(SP01)vimage.h $(SP01)strucpsu.h /home/abal64/src/pixel/stdpsu.h /home/abal64/src/pixel/stdtypes.h /home/abal64/src/pixel/sysfile.h /home/abal64/src/pixel/stdimage.h $(SP01)vstyle.h $(SP01)velement.c $(SP01)singprot.h $(SP01)vobject.h $(SP01)vobjapi.h '
+$(SP01)pixelgui.h $(SP01)pubmanagercico.h $(SP01)process.h $(SP01)vcamera.h $(SP01)vclass.h $(SP01)choixrepfic.h /home/abal64/include/allocate.h $(SP01)vstylist.c $(SP01)vstyle.c $(SP01)vresolve.c $(SP01)styleobj.h $(SP01)varrow.h $(SP01)vtstyle.c $(SP01)vvstyle.c $(SP01)genstyle.c $(SP01)gencss.c
+

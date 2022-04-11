@@ -1,0 +1,156 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>ABAL++  Object Linker </title>
+<META NAME="VERSION" CONTENT="*PRL@INFO*$6:31a001">
+<link href="style.css" rel="STYLESHEET" type="text/css" media="SCREEN">
+</head>
+<body>
+<div align=center>
+<table border=1 width="90%">
+<tr><th><h1 align=center>ABAL 3 : Object Linker </h1>
+<tr><th><h2><h2>Command Line Options</h2>
+</table>
+<p>
+<table width="80%">
+<tr><th><b>-f</b><i>filename</i><td> read command line options from the specified filename.
+<tr><th><b>-zt</b><td> activate target trace, prints target sector data during program building phase.
+<tr><th><b>-zs</b><td> activate source trace, prints information during source module loading and resolution phases.
+<tr><th><b>-p</b><td>program or module object type check only.
+<tr><th><b>-v</b><td>display information during various phases.
+<tr><th><b>-d</b><i>filename</i><td>specify target filename.
+<tr><th><b>-r</b><i>filename</i><td>activate report production to html filename
+<tr><th><b>-m</b><td>preserve debug symbolic information.
+</table>
+
+<p>
+<table border=1 width="90%">
+<tr><th><h2>Error Code Reference</h2>
+</table>
+<p>
+<table border=1 width = "80%">
+<tr><th>Code<th>Description
+<tr><th>27<td>Low Level Memory Allocation Failure
+<tr><th>40<td>File not found or other failure when opening file.
+<tr><th>46<td>Error writing to file, disk or catalog full.
+<tr><th>53<td>Error reading from file, incorrect block address or end of file.
+<tr><th>100<td>Top Level Error in <b>EXTERN</b> <b>FIELD</b> resolution mechanism.
+<tr><th>101<td>Error encountered when adding a <b>MODULE</b> for the resolution of an <b>EXTERN</b> <b>FIELD</b>.
+<tr><th>102<td>Top Level Error in <b>EXTERN</b> <b>PROCEDURE</b> resolution mechanism.
+<tr><th>103<td>Error encountered when adding a <b>MODULE</b> for the resolution of an <b>EXTERN</b> <b>PROCEDURE</b>.
+<tr><th>104<td>Error encountered during relocation of an <b>EXTERN</b> <b>PROCEDURE</b>.
+<tr><th>105<td>Top Level Error in <b>EXTERN</b> <b>SEGMENT</b> resolution mechanism.
+<tr><th>106<td>Error encountered when adding a <b>MODULE</b> for the resolution of an <b>EXTERN</b> <b>SEGMENT</b>.
+<tr><th>107<td>Error encountered during relocation of an <b>EXTERN</b> <b>SEGMENT</b>.
+<tr><th>108<td>Error encountered during relocation of an <b>EXTERN</b> <b>FIELD</b>.
+<tr><th>109<td>Missing root name for target <b>PROGRAM</b>.
+<tr><th>110<td>Memory Allocation Error during allocation of a <b>MODULE</b> control structure.
+<tr><th>111<td>Error encountered during the creation of target <b>PROGRAM</b> tcode file.
+<tr><th>112<td>Error encountered during the creation of target <b>PROGRAM</b> debug file.
+<tr><th>113<td>Top Level Error encountered when adding initial <b>PROGRAM</b> object.
+<tr><th>114<td>Unresolved <b>EXTERN</b> item.
+<tr><th>115<td>Error Building Target <b>PROGRAM</b>.
+<tr><th>116<td>Error encountered during closure of the <b>PROGRAM</b> Target.
+<tr><th>117<td>Expected <b>PROGRAM</b> object, found only <b>MODULE</b> objects.
+<tr><th>118<td>Error encountered opening source <b>MODULE</b> tcode file.
+<tr><th>119<td>Error encountered opening source <b>MODULE</b> debug file.
+<tr><th>120<td>Top Level Error during loading of <b>MODULE</b> tables.
+<tr><th>121<td>Incorrect command line option.
+<tr><th>122<td>Error encountered whilst trying to open the command line option file provided by the <b>-F</b> indicator.
+<tr><th>123<td><b>MODULE NAME</b> not found for <b>EXTERN SEGMENT IN </b> record.
+<tr><th>124<td><b>EXTERN SEGMENT</b> relocation internal failure.
+<tr><th>125<td>Error encountered loading the <b>SEGMENT</b> table of a <b>MODULE</b>.
+<tr><th>126<td>Error encountered during the activation of the source buffer mechanism prior to loading of <b>SEGMENT NAMES</b> table of a <b>MODULE</b>.
+<tr><th>127<td>Memory Allocation Error during allocation of a <b>SEGMENT</b> control structure.
+<tr><th>128<td>Error encountered loading a <b>SEGMENT</b> record.
+<tr><th>129<td>Memory Allocation Error during allocation of a <b>EXTERN SEGMENT</b> control structure.
+<tr><th>130<td>Unknown <b>MODULE NAME</b> for <b>EXTERN SEGMENT</b> record.
+<tr><th>131<td><b>EXTERN SEGMENT</b> relocation internal failure.
+<tr><th>132<td>Error encountered transfering <b>SEGMENT</b> instructions to the target <b>PROGRAM</b>.
+<tr><th>133<td>Error encountered transfering <b>SEGMENT</b> <b>LOCAL VARIABLES</b> to the target <b>PROGRAM</b>.
+<tr><th>134<td>Error encountered transfering <b>SEGMENT</b> <b>LOCAL CONSTANTS</b> to the target <b>PROGRAM</b>.
+<tr><th>135<td>Memory Allocation Error during allocation of a <b>PROCEDURE</b> control structure.
+<tr><th>136<td>Error encountered loading a <b>PROCEDURE</b> record.
+<tr><th>137<td><b>MODULE NAME</b> not found for <b>EXTERN PROC IN </b> record.
+<tr><th>138<td><b>EXTERN PROC</b> relocation internal failure.
+<tr><th>139<td>Memory Allocation Error during allocation of a <b>EXTERN PROC</b> control structure.
+<tr><th>140<td>Unknown <b>MODULE NAME</b> for <b>EXTERN PROC</b> record.
+<tr><th>141<td><b>EXTERN PROC</b> signature Memory Allocation Failure.
+<tr><th>142<td>Unresolved <b>EXTERN PROC</b>
+<tr><th>143<td>Error encountered transfering <b>PROCEDURE</b> instructions to the target <b>PROGRAM</b>.
+<tr><th>144<td>Error encountered transfering <b>PROCEDURE</b> <b>LOCAL VARIABLES</b> to the target <b>PROGRAM</b>.
+<tr><th>145<td>Error encountered transfering <b>PROCEDURE</b> <b>LOCAL CONSTANTS</b> to the target <b>PROGRAM</b>.
+<tr><th>146<td>Memory Allocation Error when allocating <B>LIBRARY</b> control structure during <b>DYNAMIC</b> <B>LIBRARY</b> loading phase.
+<tr><th>147<td>Memory Allocation Error when allocating <B>LIBRARY</b> names storage during <b>DYNAMIC</b> <B>LIBRARY</b> loading phase.
+<tr><th>148<td>Multiple definition of the <b>PROGRAM</b> command line reception <b>ARG</b> <b>VARIABLE</b>.
+<tr><th>149<td>Top Level Error when adding component <b>MODULE</b> to the target <b>PROGRAM</b>.
+<tr><th>150<td>Error encountered when copying a component source filename item to the target <b>PROGRAM</b>
+<tr><th>151<td>Error encountered when copying a component <b>DYNAMIC LIBRARY</b>to the target <b>PROGRAM</b>
+<tr><th>152<td>Error encountered when copying a component <b>GLOBAL VARIABLE</b>to the target <b>PROGRAM</b>
+<tr><th>153<td>Error encountered when copying a component <b>PROCEDURE</b>to the target <b>PROGRAM</b>
+<tr><th>154<td>Error encountered when copying a component <b>SEGMENT</b>to the target <b>PROGRAM</b>
+<tr><th>155<td>Error encountered when copying a component <b>EXTERN FIELD</b>to the target <b>PROGRAM</b>
+<tr><th>156<td>Error encountered when copying a component <b>EXTERN PROC</b>to the target <b>PROGRAM</b>
+<tr><th>157<td>Error encountered when copying a component <b>EXTERN SEGMENT</b>to the target <b>PROGRAM</b>
+<tr><th>158<td>Memory Allocation Error during allocation of a <b>MODULE NAME</b> control structure.
+<tr><th>159<td>Incorrect tcode/debug file <b>MODULE NAME</b> record.
+<tr><th>160<td>Memory Allocation Error during allocation of a <b>SOURCE FILENAME</b> control structure.
+<tr><th>161<td>Incorrect tcode/debug file <b>SOURCE FILENAME</b> record.
+<tr><th>162<td>Memory Allocation Error during relocation information duplication.
+<tr><th>163<td>Memory Allocation Error during allocation of an <b>RELOCATION</b> control structure.
+<tr><th>164<td>Error encountered during the activation of the source buffer mechanism prior to loading of  the <b>RELOCATION</b> information for a <b>PROCEDURE</b> or <b>SEGMENT</b> of a <b>MODULE</b>.
+<tr><th>165<td>Error encountered during the activation of the source buffer mechanism prior to loading of <b>LOCAL VARIABLES NAMES</b> table of a <b>PROCEDURE</b> or a <b>SEGMENT</b> of a <b>MODULE</b>.
+<tr><th>166<td>Error encountered during the activation of the target buffer mechanism prior to copying the <b>LOCAL VARIABLES NAMES</b> table of a <b>PROCEDURE</b> or a <b>SEGMENT</b> to the <b>PROGRAM</b>.
+<tr><th>167<td>Error encountered during the activation of the source buffer mechanism prior to loading of the <b>SOURCE FILE<b> corrspondance information of a <b>PROCEDURE</b> or a <b>SEGMENT</b> of a <b>MODULE</b>.
+<tr><th>168<td>Error encountered during the activation of the target buffer mechanism prior to copying the <b>SOURCE FILE<b> corrspondance information of a <b>PROCEDURE</b> or a <b>SEGMENT</b> to the <b>PROGRAM</b>.
+<tr><th>169<td>Error encountered when loading source buffer during transfer of <b>LOCAL</b> <b>CONSTANTS</b> to the target <b>PROGRAM</b>.
+<tr><th>170<td>Error encountered when starting target buffer during transfer of <b>LOCAL</b> <b>CONSTANTS</b> to the target <b>PROGRAM</b>.
+<tr><th>171<td>Error encountered during the activation of the source buffer mechanism prior to loading of <b>DATA FIELD LABELS</b> table of a <b>MODULE</b>.
+<tr><th>172<td>Memory Allocation Error during allocation of a <b>DATA FIELD LABEL</b> control structure.
+<tr><th>173<td>Incorrect <b>DATA FIELD LABEL</b> record structure.
+<tr><th>174<td>Error encountered during the activation of the source buffer mechanism prior to loading of  the <b>GLOBAL VARIABLES NAMES</b> table of a <b>MODULE</b>.
+<tr><th>175<td>Memory Allocation Error during allocation of a <b>GLOBAL VARIABLE</b> control structure.
+<tr><th>176<td>Incorrect <b>GLOBAL VARIABLE NAME</b> record structure.
+<tr><th>177<td>Error encountered during the activation of the source buffer mechanism prior to loading of  the <b>EXTERN VARIABLES NAMES</b> table of a <b>MODULE</b>.
+<tr><th>178<td>Memory Allocation Error during allocation of an <b>EXTERN VARIABLE</b> control structure.
+<tr><th>179<td>Incorrect <b>EXTERN VARIABLE NAME</b> record structure.
+<tr><th>180<td>Error encountered whilst adding a possible <b>VARIABLE</b> solution to the resolution of an <b>EXTERN FIELD</b>.
+<tr><th>181<td><b>MODULE NAME</b> not found for <b>EXTERN FIELD IN </b> record.
+<tr><th>182<td><b>EXTERN FIELD</b> relocation internal failure.
+<tr><th>183<td>Missing <b>MODULE</b> in solution component of an <b>EXTERN FIELD</b>
+<tr><th>184<td>Missing <b>VARIABLE</b> in solution component of an <b>EXTERN FIELD</b>
+<tr><th>185<td>Error encountered during the activation of the source buffer mechanism prior to loading of  the <b>EXTERN FIELD</b> table of a <b>MODULE</b>.
+<tr><th>186<td>Memory Allocation Error during allocation of an <b>EXTERN FIELD</b> control structure.
+<tr><th>187<td>Unknown <b>MODULE NAME</b> for <b>EXTERN FIELD</b> record.
+<tr><th>188<td>Error encountered during the activation of the source buffer mechanism prior to loading of  the <b>EXTERN FIELD MEMBER</b> table of a <b>MODULE</b>.
+<tr><th>189<td>Memory Allocation Error during allocation of an <b>EXTERN MEMBER</b> control structure.
+<tr><th>190<td>Memory Allocation Error during allocation of the <b>GLOBAL VARIABLE</b>  table.
+<tr><th>191<td>Memory Allocation Error during allocation of the <b>EXTERN VARIABLE</b>  table.
+<tr><th>192<td>Memory Allocation Error during allocation of an <b>EXTERN MEMBER</b> solution control structure.
+<tr><th>193<td>Memory Allocation Error during <b>VARIABLE</b> copy operation.
+<tr><th>194<td>Memory Allocation Error during <b>EXTERN FIELD</b> copy operation.
+<tr><th>195<td>Memory Allocation Error loading <b>GLOBAL CONSTANTS</b>of a <b>MODULE</b>.
+<tr><th>196<td>Memory Allocation Error during <b>DYNAMIC LIBRARY</b> copy operation.
+<tr><th>197<td>Memory Allocation Error during <b>MODULE NAMES</b> copy operation.
+<tr><th>198<td>Memory Allocation Error loading <b>PROCEDURE</b> table of a <b>MODULE</b>.
+<tr><th>199<td>Memory Allocation Error during <b>PROCEDURE</b> copy operation.
+<tr><th>200<td>Memory Allocation Error during <b>EXTERN PROC</b> copy operation.
+<tr><th>201<td>Memory Allocation Error during <b>SEGMENT</b> copy operation.
+<tr><th>202<td>Memory Allocation Error during <b>EXTERN SEGM</b> copy operation.
+<tr><th>203<td>Incorrect cross reference offset value.
+<tr><th>204<td>Incorrect <b>WORDSIZE</b> detected when adding component <b>module</b> to a <b>PROGRAM</b>
+<tr><th>205<td><b>PROGRAM MODULE</b> must provide <b>SEGMENT 0</b>
+<tr><th>206<td>No solution for <b>EXTERN DCL</b>
+<tr><th>207<td>Variable identifier too big for <b>EXTERN DCL</b>. Retranslate the module or program with option <b>-o</b>
+</table>
+<p>
+<table>
+<tr><th><h3 align=center>Copyright &copy; <a href="http://www.prologue-software.fr">Prologue Software</a></h3>
+<tr><th><h3 align=center>Version Fran&ccedil;aise <a href="fr/old.htm"><img src="tricolor.gif"></a>
+</table>
+</div>
+</body>
+</html>
+
+
+

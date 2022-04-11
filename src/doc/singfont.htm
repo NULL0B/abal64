@@ -1,0 +1,775 @@
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="generator" content="Prologue Sing Html Version 1.0a">
+<meta name="version" content="*PRL@INFO*#11a040">
+<link href="style.css" type="text/css" rel="stylesheet" media="screen">
+<link href="style.css" type="text/css" rel="stylesheet" media="print">
+<title>Sing Version 1.0a
+</title>
+</head><body>
+<div align="center">
+<table class="DOC">
+<tr><th><h1 align="center">
+Sing Version 1.0a
+</h1>
+<td><div align="center"><img src="logo.jpg">
+</div></table></div><p>
+<a name="singfont.xml">
+
+<p>
+<div align="center">
+<table class="DS">
+<tr><th><h2 align="center">
+Font Editor
+</h2>
+
+<tr><td><p><div align="center"><img src="singfont.gif" usemap="#Font_Editor" >
+</div><p>
+<tr><td>
+
+<map name="Font_Editor">
+<area type=rect href="#upicon.gif" coords="19,2,44,27">
+<area type=rect href="#Character" coords="349,275,357,291">
+<area type=rect href="#DecimalValue" coords="363,275,388,291">
+<area type=rect href="#HexValue" coords="395,275,427,291">
+<area type=rect href="#CharacterWidth" coords="395,295,427,311">
+<area type=rect href="#FontHeight" coords="604,317,636,333">
+<area type=rect href="#FontWidth" coords="604,297,636,313">
+<area type=rect href="#CharacterHeight" coords="395,315,427,331">
+<area type=rect href="#FontBytes" coords="248,348,430,492">
+<area type=rect href="#>>" coords="388,504,430,536">
+<area type=rect href="#FontPage" coords="460,348,642,492">
+<area type=rect href="#>>" coords="600,504,642,536">
+<area type=rect href="#FontName" coords="356,552,544,570">
+<area type=rect href="#upicon.gif" coords="840,4,864,29">
+<area type=rect href="#Palette" coords="827,40,872,617">
+<area type=rect href="#File" coords="64,7,140,27">
+<area type=rect href="#New" coords="68,40,176,60">
+<area type=rect href="#Save" coords="68,56,158,76">
+<area type=rect href="#Save As" coords="68,72,180,92">
+<area type=rect href="#Open" coords="68,88,120,106">
+<area type=rect href="#Production" coords="68,104,156,124">
+<area type=rect href="#Drop" coords="68,120,148,140">
+<area type=rect href="#Quit" coords="68,136,158,156">
+<area type=rect href="#View" coords="169,6,249,26">
+<area type=rect href="#Run" coords="192,40,268,60">
+<area type=rect href="#Text" coords="192,56,272,76">
+<area type=rect href="#Image" coords="192,72,264,92">
+<area type=rect href="#Font" coords="192,88,244,106">
+<area type=rect href="#Properties" coords="192,104,272,123">
+<area type=rect href="#Visual" coords="192,120,253,138">
+<area type=rect href="#TreeView" coords="192,132,288,160">
+<area type=rect href="#Application" coords="192,152,277,170">
+<area type=rect href="#Event" coords="271,6,363,26">
+<area type=rect href="#Options" coords="376,6,447,26">
+<area type=rect href="#Parameters" coords="380,36,480,56">
+<area type=rect href="#Refresh" coords="380,52,472,72">
+<area type=rect href="#Configure" coords="380,68,480,88">
+<area type=rect href="#Screen Capture" coords="380,84,484,103">
+<area type=rect href="#Animate" coords="380,96,452,116">
+<area type=rect href="#Font" coords="492,2,562,31">
+<area type=rect href="#Copy" coords="500,40,592,60">
+<area type=rect href="#Paste" coords="500,56,600,76">
+<area type=rect href="#Recalculate" coords="500,72,608,92">
+<area type=rect href="#SemiGraphics" coords="500,88,608,108">
+<area type=rect href="#Clear" coords="500,104,600,124">
+<area type=rect href="#Fill" coords="500,120,608,140">
+<area type=rect href="#Import" coords="500,132,608,156">
+<area type=rect href="#Export" coords="500,152,600,172">
+<area type=rect href="#Extract" coords="500,168,600,188">
+<area type=rect href="#Invert" coords="500,184,600,204">
+<area type=rect href="#Paper" coords="500,200,604,220">
+<area type=rect href="#Executer" coords="694,7,712,22">
+<area type=rect href="#Editor" coords="713,7,731,22">
+<area type=rect href="#Translate" coords="733,7,751,22">
+<area type=rect href="#Linker" coords="751,7,769,22">
+</map>
+The font editor of the ABAL 3 development environment gives access to the character
+font data of the 
+nine text fonts available for use in the design of application forms
+and document models.
+The font to be edited may be chosen by clicking on the font tool
+button in the tool bar on the right of
+the screen. This will cause the font data to
+be made accesible to the font editor mechanisms.
+The font editor window, in the desktop
+area of the screen, comprises two data inspection frames
+several edit fields and a
+collection push buttons. An font specific menu option will also appear on the
+main
+menu bar.
+These interface widgets allow complete control over the various tasks involved
+in font design and
+maintanance.
+
+
+
+
+
+
+<p>
+
+<dl>
+<dt class=type><a name="upicon.gif">
+<b>upicon.gif
+</b></a>
+<dd class=data>The display of the various model editor tools bars is controlled by this
+button. When
+the arrow points upwards a click on this button will cause the display of the
+font
+selection tool bar to be inhibited. The arrow button will then point downwards in
+which
+case a click will cause the font selection tool bar to be redisplayed.
+
+
+<p>
+<dt class=type><a name="Character">
+<b>Character
+</b></a>
+<dd class=data>This edit field displays the real textual representation of the character currently
+accessible in the
+font character data frame.
+
+
+<p>
+<dt class=type><a name="DecimalValue">
+<b>DecimalValue
+</b></a>
+<dd class=data>This edit field displays the decimal value of the character in the font data frame.
+
+
+<p>
+<dt class=type><a name="HexValue">
+<b>HexValue
+</b></a>
+<dd class=data>This edit field displays the hexadecimal value of the current character .
+
+
+<p>
+<dt class=type><a name="CharacterWidth">
+<b>CharacterWidth
+</b></a>
+<dd class=data>This edit field displays the actual pixel width of the character currently being edited
+in the 
+character data frame. For proportional fonts this value will vary from character
+to character.
+For fixed fonts all font widths will be the same value.
+
+
+<p>
+<dt class=type><a name="FontHeight">
+<b>FontHeight
+</b></a>
+<dd class=data>This edit field displays the overall font character matrix height and is in most cases
+equal to
+the individual character matrix height.<br>
+By clicking in this edit field
+keyboard focus will be received by this edit field allowing modification
+of the font
+height value.
+
+
+<p>
+<dt class=type><a name="FontWidth">
+<b>FontWidth
+</b></a>
+<dd class=data>This edit field displays the overall character width of characters in the font. For
+fixed fonts
+individual characters will all be the same width as the font width. <br>
+For
+proportional fonts all character width values will be not greater than this value.<br>
+A
+mouse click in this edit field, will transfer the keyboard focus allowing manual modification
+of the font
+width.
+ 
+
+
+<p>
+<dt class=type><a name="CharacterHeight">
+<b>CharacterHeight
+</b></a>
+<dd class=data>This edit field displays the height of the character matrix in pixels.
+
+
+<p>
+<dt class=type><a name="FontBytes">
+<b>FontBytes
+</b></a>
+<dd class=data>This edit field displays the individual pixels which make up the currently selected
+character of the
+font. Individual pixels states may be changed allowing the final
+form of the character to be modified.
+This edit frame is the active focus area of
+the font editor and reacts to keyboard and mouse events
+as described in the following
+table.<p>
+<table>
+<tr><td>Left<td>moves the pixel cursor leftwards one pixel in a
+cyclic fashion with line wrap around 
+over the left edge.
+<tr><td>Right<td>moves the
+pixel cursor rightwards one pixel in a cyclic fashion with line wrap around 
+over
+the right edge.
+<tr><td>Down<td>moves the pixel cursor downwards one pixel in a cyclic
+fashion with column wrap around
+over the bottom edge.
+<tr><td>Up<td>move upwards one
+pixel in a cyclic fashion with column wrap around over the top edge.
+<tr><td>Insert<td>Inserts
+a blank column of pixels at the current pixel column position pushing all pixel data
+towards
+the right edge with destructive overspill of pixels comprising the right edge column.
+<tr><td>Delete<td>Deletes
+the column of pixels at the current pixel column position dragging all pixels 
+columns,
+up to the right edge, one column leftwards and inserting a blank column of pixels
+at the right edge.
+<tr><td>Ctrl N<td>Insert a blank row of pixels at the current pixel
+row position pushing all pixels rows
+downwards towards the bottom edge with destructive
+overspill of all pixels comprising the bottom edge row.
+<tr><td>Ctrl Y<td>Deletes
+the row of pixels at the current pixel row position dragging all pixels rows
+below
+upwards and inserting a blank row of pixels at the bottom edge.
+<tr><td>PageDown<td>Saves
+the current character pixel data to the font memory and loads the next character
+position
+from the font table into the pixel data frame for modification.
+<tr><td>PageUp<td>Saves
+the current character pixel data to the font memory and loads the previous character
+position
+from the font table into the pixel data frame for modification.
+</table>
+<p>
+In addition
+to the above keyboard events, the pixel cursor may be positioned directly using the
+mouse.
+A left button click event will activate a pixel in foreground colour whilst
+the right button will
+clear the pixel value to the background colour.
+
+
+<p>
+<dt class=type><a name=">>">
+<b>>>
+</b></a>
+<dd class=data>Clicking on this button is equivalent to the page down keyboard operation, saving
+the pixel matrix to the 
+font table and reloading the next character from the table
+to the pixel matrix frame for modification.
+
+
+<p>
+<dt class=type><a name="FontPage">
+<b>FontPage
+</b></a>
+<dd class=data>This edit frame displays the current page of characters comprising the current font.
+Characters
+are displayed in ascending numerical order up to the end of the ascii table.
+Clicking
+on a character in this frame allows its pixel data to  be made available in the
+pixel
+data frame for modification. The current contents of the pixel data frame will be
+overwritten
+and lost if they have been modified since being loaded from font memory into 
+the
+data matrix.
+
+
+
+<p>
+<dt class=type><a name=">>">
+<b>>>
+</b></a>
+<dd class=data>By clicking on this button the Font page display may be moved forward by half a page
+of characters.
+
+
+<p>
+<dt class=type><a name="FontName">
+<b>FontName
+</b></a>
+<dd class=data>This edit field displays an identification string of fifteen characters in length
+that identifies
+the actual nature of the font. For example Arial 18, Times 24 etc.
+
+
+<p>
+<dt class=type><a name="upicon.gif">
+<b>upicon.gif
+</b></a>
+<dd class=data>The display of the colour palette bar to the right of the  screen is controlled by
+this
+button. When the arrow points upwards a click will cause the display of the
+palette
+bar to be inhibited. The arrow button will then point downwards in which
+case a click
+will cause the palette bar to be redisplayed.
+
+
+<p>
+<dt class=type><a name="Palette">
+<b>Palette
+</b></a>
+<dd class=data>The Palette bar displays all colours of the currently loaded palette and allows colour
+selection 
+by a simple click on the required colour.
+A click with the left button
+will set the current foreground colour used to represent pixels which
+contribute to
+the form of the character in the font data pixel matrix.
+A click with the right button
+will set the current background colour used to represent transparent
+areas of the
+character data pixel matrix. 
+The effect of changing either colour will take effect
+when the pixel matrix is reloaded as a result
+of a page up or page down keyboard event.
+
+
+<p>
+<dt class=type><a name="File">
+<b><u>F</u>ile
+</b></a>
+<dd class=data>Selection of this menu options gives access to the generic file operations 
+menu whose
+options are described here below.
+<dl><dd>
+
+
+
+<p>
+<dt class=type><a name="New">
+<b><u>N</u>ew
+</b></a>
+<dd class=data>This menu option has no effect whilst the font editor is active.
+
+
+<p>
+<dt class=type><a name="Save">
+<b><u>S</u>ave
+</b></a>
+<dd class=data>This menu options performs a quick save of the current font memory buffers back to
+the 
+font file without prompting for user confirmation.
+
+
+
+<p>
+<dt class=type><a name="Save As">
+<b>Sa<u>v</u>e As
+</b></a>
+<dd class=data>Activation of this menu option gives access to the corresponding 
+<a href="vfsave.htm">font
+save</a> parameter input dialog box prior to the eventual 
+font save operation.
+
+
+<p>
+<dt class=type><a name="Open">
+<b><u>O</u>pen
+</b></a>
+<dd class=data>This menu operation gives access to the corresponding <a href="vfload.htm">font load</a>
+
+parameter input dialog box allowing a new font file to be loaded into the current
+font memory buffer.
+
+
+
+<p>
+<dt class=type><a name="Production">
+<b><u>P</u>roduction
+</b></a>
+<dd class=data>This menu option is an alternative and identical access to the font image file export
+routines
+giving access to the <a href="visave.htm">font export</a> dialog frame prior
+to the operation.
+
+
+<p>
+<dt class=type><a name="Drop">
+<b><u>D</u>rop
+</b></a>
+<dd class=data>This menu option has no effect whilst the font editor is active.
+
+
+<p>
+<dt class=type><a name="Quit">
+<b><u>Q</u>uit
+</b></a>
+<dd class=data>This menu option should be selected if you wish to leave the ABAL 3
+development tool.
+If unsaved modifications are detected amongst any of
+the open project models you will
+be prompted via the 
+<a href="vexit.htm"> exit check </a> dialog box for the appropriate
+action
+required to be taken prior to return to the host operating
+system or calling process.
+</dl>
+
+
+
+
+<p>
+<dt class=type><a name="View">
+<b><u>V</u>iew
+</b></a>
+<dd class=data>Selection of this menu option of the main menu gives access to the 
+view or tool operations
+menu whose options are described below.
+<dl><dd>
+
+
+
+<p>
+<dt class=type><a name="Run">
+<b><u>R</u>un
+</b></a>
+<dd class=data>Select this option in order to gain access to the <a href="vdebug.htm">debug and runtime
+control</a> dialog
+box allowing abal applications to be run, tested and debugged from
+within the development tool.
+
+
+<p>
+<dt class=type><a name="Text">
+<b>Te<u>x</u>t
+</b></a>
+<dd class=data>Selection of this menu option gives explicite access to the 
+<a href="singedit.htm">standard
+text editor </a>
+for the current model component.
+
+
+
+<p>
+<dt class=type><a name="Image">
+<b><u>I</u>mage
+</b></a>
+<dd class=data>Activation of this menu option gives explicite access to the <a href="singbmap.htm">bitmap
+editor</a>.
+allowing inspection and modification of the model image. 
+
+
+<p>
+<dt class=type><a name="Font">
+<b>Fo<u>n</u>t
+</b></a>
+<dd class=data>Select this menu option to gain access to the <a href="singfont.htm">font editor</a>.
+
+
+
+<p>
+<dt class=type><a name="Properties">
+<b><u>P</u>roperties
+</b></a>
+<dd class=data>Selection of the properties menu option gives access to the 
+<a href="vcube.htm">3D
+component</a> properties dialog box
+allowing the various properties to be inspected
+and eventually modified.
+
+
+<p>
+<dt class=type><a name="Visual">
+<b><u>V</u>isual
+</b></a>
+<dd class=data>Selection of this menu option gives access to the component specific visual model
+editor.
+For forms and document models this will be the <a href="singform.htm">visual
+forms editor</a>.
+For Image components
+this will be the <a href="singbmap.htm">bitmap
+editor</a>
+ and for Source components this will be the <a href="singtext.htm">standard
+text editor</a>.
+
+
+<p>
+<dt class=type><a name="TreeView">
+<b>Tr<u>e</u>eView
+</b></a>
+<dd class=data>Selection of the treeview menu option toggles the <a href="singtree.htm">treeview</a>
+
+mechanism between visible and hidden states.
+
+
+<p>
+<dt class=type><a name="Application">
+<b><u>A</u>pplication
+</b></a>
+<dd class=data>Selection of this menu option returns control to this project model editor from the
+vrious other
+model editor views.
+</dl>
+
+
+<p>
+<dt class=type><a name="Event">
+<b><u>E</u>vent
+</b></a>
+<dd class=data>Whilst the font editor is active the popup menu controlled by this option is inhibited.
+
+
+<p>
+<dt class=type><a name="Options">
+<b><u>O</u>ptions
+</b></a>
+<dd class=data>Selection of this menu options gives access to the general operations 
+menu the options
+of which are described here below.
+<dl><dd>
+
+
+<p>
+<dt class=type><a name="Parameters">
+<b><u>P</u>arameters
+</b></a>
+<dd class=data>Selection of this menu option gives access to the <a href="vparam.htm">General Parameters</a>
+dialog
+box allowing the various editor parameters to be inspected and modified.
+These parameters
+will be used as default values for all subsequent new widget 
+and other model components
+as they are created.
+
+
+<p>
+<dt class=type><a name="Refresh">
+<b><u>R</u>efresh
+</b></a>
+<dd class=data>Selection of this menu option simply causes the development screen to be redraw
+for
+any particular reason.
+
+
+<p>
+<dt class=type><a name="Configure">
+<b><u>C</u>onfigure
+</b></a>
+<dd class=data>Activation of this menu option gices access to the <a href="vrefer.htm">Configuration
+Parameters</a>
+of the ABAL 3 development tool.
+These configuration values are read
+from the configuration file, normally <b>sing.cfg</b>,
+during the start up and construction
+phase of the development environment.
+
+
+
+<p>
+<dt class=type><a name="Screen Capture">
+<b><u>S</u>creen Capture
+</b></a>
+<dd class=data>This menu option may be activated  in order to perform a screen capture operation.
+The entire screen will 
+be captured to a virtual bitmap then the <a href="visave.htm">
+image save</a> dialog box will be presented
+allowing the target image type and file
+name to be specified.
+
+
+
+<p>
+<dt class=type><a name="Animate">
+<b><u>A</u>nimate
+</b></a>
+<dd class=data>Selection of this menu operation gives access to the 
+<a href="vrecrep.htm">Animation
+Record and Replay</a>
+control dialog box.
+Animation recording allows  user input events,
+equally keyboard and mouse events,
+to the development environment to be recorded to
+an animation script file.
+Animation replay allows a recorded script to be re-enacted
+performing the
+identical sequence of input events.
+These features may be used to create
+input macros or for tutorial purposes.
+</dl>
+
+
+<p>
+<dt class=type><a name="Font">
+<b><u>F</u>ont
+</b></a>
+<dd class=data>Selection of the font option of the main menu gives access to the following 
+popup
+menu of font editor specific functions.
+<dl><dd>
+
+
+<p>
+<dt class=type><a name="Copy">
+<b><u>C</u>opy
+</b></a>
+<dd class=data>Selction of this menu option copies pixel data of the character currently in the pixel
+data frame
+to clipboard memory.
+
+
+<p>
+<dt class=type><a name="Paste">
+<b>Pas<u>t</u>e
+</b></a>
+<dd class=data>Selection of this menu option copies pixel data stored to the font clipboard back
+into the pixel
+data frame overwriting the contents of the frame.
+
+
+<p>
+<dt class=type><a name="Recalculate">
+<b><u>R</u>ecalculate
+</b></a>
+<dd class=data>Selection of this menu option performs recalculation of minimum column widths for
+all characters
+comprising the font resulting in a font of type proportional spacing.
+
+
+
+
+<p>
+<dt class=type><a name="SemiGraphics">
+<b><u>S</u>emiGraphics
+</b></a>
+<dd class=data>Selection of this menu option performs regeneration of the semigraphic characters
+of the font.
+These character forms are preprogrammed and will be generated to fint
+the current font dimensions.
+This is important if the overall font dimensions have
+been changed either increasing or decreasing
+sizes to ensure that semigraphical characters
+are well formed and consistent.
+
+
+<p>
+<dt class=type><a name="Clear">
+<b>C<u>l</u>ear
+</b></a>
+<dd class=data>Selection of this menu option causes the pixel data matrix to cleared from the current
+pixel cursor
+position downwards to the bottom right corner. All pixels above and to
+the left will remain unchanged.
+
+
+<p>
+<dt class=type><a name="Fill">
+<b><u>F</u>ill
+</b></a>
+<dd class=data>Selection of this menu option causes pixels data matrix to be foreground colour filled
+down from the 
+current pixel cursor position to the bottom right corner of the pixel
+matrix. 
+All pixels above and to the left will remain unchanged.
+
+
+<p>
+<dt class=type><a name="Import">
+<b>I<u>m</u>port
+</b></a>
+<dd class=data>Selection of this menu option gives access to the <a href="vimport.htm">font import</a>
+dialog box
+allowing specification of an image filename to be used as the source for
+the font import operation.
+
+
+<p>
+<dt class=type><a name="Export">
+<b>E<u>x</u>port
+</b></a>
+<dd class=data>Selection of this menu option gives access to the <a href="visave.htm">font export</a>
+dialog box
+allowing export of an entire character font to an image file.
+
+
+<p>
+<dt class=type><a name="Extract">
+<b>Ex<u>t</u>ract
+</b></a>
+<dd class=data>This menu option allows groups of characters to extracted from other font files and
+copied into the
+current target font. Selection of this menu option will give access
+to the <a href="vextract.htm">
+Font extraction </a> dialog box allowing definition
+of the parameters controlling this operation.
+
+
+<p>
+<dt class=type><a name="Invert">
+<b><u>I</u>nvert
+</b></a>
+<dd class=data>Selection of this menu causes the pixel values of the pixel data matrix to be inverted.
+Active,
+foreground pixels becoming background pixels and vica versa.
+
+
+<p>
+<dt class=type><a name="Paper">
+<b><u>P</u>aper
+</b></a>
+<dd class=data>Selection of this menu option causes the nature and colour of the background of the
+font character page
+to be toggled between plain white and shadowed grey allowing the
+font characters to be tested in the
+two different conditions.
+</dl>
+
+
+<p>
+<dt class=type><a name="Executer">
+<b>Executer
+</b></a>
+<dd class=data>This icon button provides access to the ABAL 3 <a href="vdebug.htm">Runtime and Debug
+Parameters</a> dialog
+box allowing execution and debug of ABAL 3 programs from within
+the ABAL 3 development environment.
+
+
+<p>
+<dt class=type><a name="Editor">
+<b>Editor
+</b></a>
+<dd class=data>This icon button provides access to the <a href="vaed.htm">Editor Configuration</a>
+dialog box for
+modification of editor parameters.
+
+
+<p>
+<dt class=type><a name="Translate">
+<b>Translate
+</b></a>
+<dd class=data>This icon button provides access to the ABAL 3 <a href="vtrad.htm">Translator Parameters</a>
+dialog box
+allowing specification of translation parameters prior to the translation
+operation.
+
+
+<p>
+<dt class=type><a name="Linker">
+<b>Linker
+</b></a>
+<dd class=data>This icon button gives access to the ABAL 3 <a href="vlink.htm">Linker Configuration</a>
+dialog box for
+the configuration and activation of ABAL module linking.
+
+
+<p>
+
+
+</dl>
+
+</td>
+</table></div><p>
+
+<p><div align="center">
+<table class="CRT">
+<tr><th><h3 align="center">
+Copyright (c) 2002,2006 Prologue
+</h3>
+</table></div><p>
+</body></html>

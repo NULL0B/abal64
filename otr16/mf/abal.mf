@@ -1,0 +1,78 @@
+$(SPMF)ATRN$(MF): $(SP01)trdll$(C)
+	genmake -m$@ -x -y$(@B) $?
+$(SPMF)ATRX$(MF): $(SP01)trxdll$(C)
+	genmake -m$@ -x -y$(@B) $?
+$(SPMF)ATR1$(MF):  $(SP01)trmain$(C)
+	genmake -m$@ -x -y$(@B) $?
+$(SPMF)ATR2$(MF): $(SP01)trbuffer$(C) $(SP01)trparser$(C)
+	genmake -m$@ -x -y$(@B) $?
+$(SPMF)ATR3$(MF): $(SP01)trsyntax$(C) $(SP01)trerrors$(C)
+	genmake -m$@ -x -y$(@B) $?
+$(SPMF)ATR4$(MF): $(SP01)trtables$(C) $(SP01)trsymbol$(C)
+	genmake -m$@ -x -y$(@B) $?
+$(SPMF)ATR5$(MF): $(SP01)trinput$(C) $(SP01)trproc$(C)
+	genmake -m$@ -x -y$(@B) $?
+$(SPMF)ATR6$(MF): $(SP01)trexpres$(C) $(SP01)trmethod$(C)
+	genmake -m$@ -x -y$(@B) $?
+$(SPMF)ATR7$(MF): $(SP01)trshadow$(C) $(SP01)triter$(C)
+	genmake -m$@ -x -y$(@B) $?
+$(SPMF)ATR8$(MF): $(SP01)trngf$(C) $(SP01)trclf$(C)
+	genmake -m$@ -x -y$(@B) $?
+$(SPMF)ATR9$(MF): $(SP01)triof$(C) $(SP01)trldf$(C)
+	genmake -m$@ -x -y$(@B) $?
+$(SPMF)ATRA$(MF): $(SP01)trdirect$(C) $(SP01)trapl$(C)
+	genmake -m$@ -x -y$(@B) $?
+$(SPMF)ATRB$(MF): $(SP01)trabal$(C) $(SP01)trstdc$(C)
+	genmake -m$@ -x -y$(@B) $?
+$(SPMF)ATRE$(MF): $(SP01)trabmsg$(C)
+	genmake -m$@ -x -y$(@B) $?
+$(SPMF)ATRC$(MF): $(SP01)trstruct$(C) $(SP01)trclass$(C)
+	genmake -m$@ -x -y$(@B) $?
+$(SPMF)ATRD$(MF): $(SP01)troutput$(C) $(SP01)trlabels$(C)
+	genmake -m$@ -x -y$(@B) $?
+$(SPMF)JBC1$(MF): $(SP01)jvoutput$(C) $(SP01)trlabels$(C)
+	genmake -m$@ -x -y$(@B) $?
+$(SPMF)ATRF$(MF): $(SP01)trnurone$(C)
+	genmake -m$@ -x -y$(@B) $?
+
+! ifdef BUILD_ATC
+$(SPMF)ATC1$(MF): $(SP01)trgenc$(C) $(SP01)trgenrtl$(C)
+	genmake -m$@ -x -y$(@B) $?
+$(SPMF)ATC2$(MF): $(SP01)tracmsg$(C) $(SP01)trabc$(C)
+	genmake -m$@ -x -y$(@B) $?
+$(SPMF)ATC3$(MF): $(SP01)trrtlngf$(C) $(SP01)trrtlclf$(C)
+	genmake -m$@ -x -y$(@B) $?
+$(SPMF)ATC4$(MF): $(SP01)trrtliof$(C) $(SP01)trrtlldf$(C)
+	genmake -m$@ -x -y$(@B) $?
+$(SPMF)ATC5$(MF): $(SP01)tratoc$(C) 
+	genmake -m$@ -x -y$(@B) $?
+! endif
+! MAKE
+! INCLUDE $(SPMF)ATRN
+! INCLUDE $(SPMF)ATR1
+! INCLUDE $(SPMF)ATR2
+! INCLUDE $(SPMF)ATR3
+! INCLUDE $(SPMF)ATR4
+! INCLUDE $(SPMF)ATR5
+! INCLUDE $(SPMF)ATR6
+! INCLUDE $(SPMF)ATR7
+! INCLUDE $(SPMF)ATR8
+! INCLUDE $(SPMF)ATR9
+! INCLUDE $(SPMF)ATRA
+! INCLUDE $(SPMF)ATRB
+! INCLUDE $(SPMF)ATRC
+! INCLUDE $(SPMF)ATRD
+! INCLUDE $(SPMF)JBC1
+! INCLUDE $(SPMF)ATRE
+! INCLUDE $(SPMF)ATRF
+! ifdef BUILD_ATC
+! INCLUDE $(SPMF)ATC1
+! INCLUDE $(SPMF)ATC2
+! INCLUDE $(SPMF)ATC3
+! INCLUDE $(SPMF)ATC4
+! INCLUDE $(SPMF)ATC5
+! endif
+! MAKE
+
+
+

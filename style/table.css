@@ -1,0 +1,36 @@
+/* ------------------------------------ */
+/* Default Visual Library  Table Style */
+/* ------------------------------------ */
+
+tableframe 	{	border-style: inset;	}
+tableinner 	{	border-style: none;	}
+
+tablerow 	{	
+		border-style: none;	
+		background-colour: ihm(6);
+		}
+tablecell 	{	border-style: none;	}
+
+tablecolumn 	{	
+	border-style: solid;
+	border-colour: white;
+	}
+
+tableheader 	{	
+	class: proportional;
+	border-style: outset;
+	text-align: center;
+	}
+
+tabledata {
+	class: fixed;
+	text-align: left;
+	text-colour: black;
+	background-colour: transparent;
+	}
+
+/* ----------- */
+/* End of File */
+/* ----------- */
+
+

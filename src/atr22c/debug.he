@@ -1,0 +1,53 @@
+/*
+ *      Projet  : ABAL                  Copyright Prologue s.a. (c) 1990, 1995
+ *      Module  : ATR
+ *      Fichier : DEBUG.HE
+ *      Version : 2.1f
+ *      Date    : 22/11/95
+ *      Systeme : DOS / PRL / UNIX / VMS
+ *
+ *      Traducteur ABAL
+ *
+ *      [Communication pour debug APLUS]
+ *
+ * 
+ */
+
+ /*
+ * Mises a jour :
+ * ------------
+ */
+#ifdef _DEBUG2
+#define EXT_DEBUG
+#else
+#define EXT_DEBUG extern
+#endif /* _DEBUG2 */
+
+/*		Structure de debug APLUS	*/
+/*		------------------------	*/
+#define ApsOf struct _ApOf
+ApsOf {
+	BYTE type;		/* type : (P,p)rocedure (S,s)egments */
+	char ident[LGIDENT];		/* identificateur ( nom ou numero ) */
+	BINAIRE offset;		/* Ofset T-CODE */
+	BINAIRE noligne;	/* numero de ligne */
+	char fichier[LGMXNOM];	/* fichier */
+};
+
+EXT_DEBUG BOOL aplus_debug;
+EXT_DEBUG ApsOf aplus_info;
+
+#ifdef LINT_ARGS
+EXT_DEBUG BINAIRE connect(char *);
+EXT_DEBUG BINAIRE send(ApsOf *);
+EXT_DEBUG BINAIRE commit(void);
+EXT_DEBUG BINAIRE release(void);
+#else
+EXT_DEBUG BINAIRE connect();
+EXT_DEBUG BINAIRE send();
+EXT_DEBUG BINAIRE commit();
+EXT_DEBUG BINAIRE release();
+#endif /* LINT_ARGS */
+
+/* -------------------- Fichier : debug.he -----------------------*/
+

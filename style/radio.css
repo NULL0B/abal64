@@ -1,0 +1,38 @@
+/* ------------------------------------ */
+/* Default Visual Library  Frame Styles */
+/* ------------------------------------ */
+
+radioframe	{	
+		text-font: none;
+		border-style: disk;
+		background-colour: white;
+		border-colour: black;
+		width: 5mm;
+		height:5mm;
+		}
+
+radiotrue	{
+		width: 5mm;
+		height: 5mm;
+		padding: 1mm;
+		border-style: disk;
+		background-colour: black;
+		}
+
+radiolabel	{	
+		class: proportional;
+		margin-left: 8mm;
+		text-colour: ihm(11);
+		background-colour: ihm(5);
+		content: trigger;
+		border-style: none;
+		text-align: left;
+		}
+
+/* ----------- */
+/* End of File */
+/* ----------- */
+
+
+
+

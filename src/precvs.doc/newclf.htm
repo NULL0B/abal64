@@ -1,0 +1,92 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>ABAL 3 : New Common Library Functions </title>
+<META NAME="VERSION" CONTENT="*PRL@INFO*$6:31a001">
+<link href="style.css" rel="STYLESHEET" type="text/css" media="SCREEN">
+</head>
+<body>
+<div align=center>
+<table>
+<tr><th><h1>ABAL 3 : New Common Library Functions </h1><td>
+<tr><th><h2>Programmer Reference Manual</h2><td>
+<tr><th><h3>Table of Contents</h3><td>
+<tr><td>
+<p>
+<ol>
+<li><a href="#days"   > DAYS    : date information</a>
+<li><a href="#runtime"> RUNTIME : dynamic library name to number</a>
+<li><a href="#loadgo" > LOADGO  : systam command with return code function</a>
+<li><a href="#abalanfc">ABALANFC : File name conversions</a>
+</ol>
+</table>
+
+<p>
+
+<table>
+<tr><th width="40%"><h4><a name="days">result=DAYS(day,month,year)</h4><th>Date Information
+<tr><td colspan=2>
+<p> This function will return an integer value representing : 
+<p><ol><li>The day of the week from 1, sunday to 7, saturday, when a full and valid date value is represented
+by the day, month and year integer parameters.
+<li>The number of days in the month, when the day parameter is set to zero with valid month and year values.
+<li>The number of days in the year, when the day and and month parameters are set to zero and a valid year
+value parameter is present.
+</ol>
+<p> Valid years are years after the zero time point of 1970.
+<p> Valid months are values between 1 and 12 inclusive.
+<p> Valid day values depend on the month and year values.
+</table>
+
+<p>
+<table>
+<tr><th width="40%"><h4><a name="runtime">number=RUNTIME(name)</h4><th>Dynamic library Resolution
+<tr><td colspan=2>
+<p>This instruction returns the internal number of the dynamic library identified by the string value
+passed as the name parameter.
+<p>This number may be used as the parameter to the <b>UserName</b> instruction allowing a new library name
+to be set for a logical dynamic library.
+<p>
+</table>
+
+<p>
+<table>
+<tr><th width="40%"><h4><a name="abalanfc">result=ABALANFC(source,option)</h4><th>Filename conversions
+<tr><td colspan=2>
+<p>This instruction is the recommended alternative to the soon to be redundant environment variable
+of the same name.
+<p>The function will return the conversion of the source parameter filename string using the option
+parameter values.
+<p>Legal values are
+<table border=1>
+<tr><th>VALUE<th>EFFECT
+<tr><th>0<td>no conversion, source is returned as result.
+<tr><th>1<td>upper case conversion
+<tr><th>2<td>lower case conversion
+<tr><th>8<td>conversion of mnemonics using environment variable values 
+<tr><th>9<td>upper case conversion and mnemonic conversion.
+<tr><th>10<td>lower case conversion and mnemonic conversion.
+</table>
+<p>
+</table>
+
+<p>
+<table>
+<tr><th width="40%"><h4><a name="loadgo">result=LOADGO(handle,command)</h4><th>System command 
+<tr><td colspan=2>
+<p>This function will perform the same action as the equivalent instruction <b>LOAD.GO=handle,command</b>
+except that an eventual return code from the executed program will be returned in the result variable or register.
+<p>Any error encountered by the execution of this instruction may be trapped by an <b>on error goto</b> mechanism.
+<p>
+</table>
+
+
+<p>
+<table>
+<tr><th><h3 align=center>Copyright &copy; <a href="http://www.prologue-software.fr">Prologue Software</a></h3>
+<tr><th><h3 align=center>Version Fran&ccedil;aise <a href="fr/event.htm"><img src="tricolor.gif"></a>
+</table>
+</div>
+</body>
+</html>
+

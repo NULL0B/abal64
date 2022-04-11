@@ -1,0 +1,886 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>ABAL++  Object Translator </title>
+<META NAME="VERSION" CONTENT="*PRL@INFO*$6:31a001">
+<link href="style.css" rel="STYLESHEET" type="text/css" media="SCREEN">
+</head>
+<body>
+<div align=center>
+<table border=1 width="90%">
+<tr><th><h1 align=center>ABAL 3 : Object Translator </h1>
+<tr><th><h2>Translator Error Codes</h2>
+</table>
+<p>
+<table width="90%">
+<tr><th>I 1</th><td><b>CLF/LDF operand release failure</b>
+<tr><td>
+<td>An error has been encountered during the release of a protected
+operand for a CLF or LDF expression. 
+<p><tr><th>I 2</th><td><b>PROC operand release failure</b>
+<tr><td><td>An error has been encountered during the release of a protected
+operand in a procedure call instruction. 
+<p><tr><th>I 3</th><td><b>IOF operand release failure</b>
+<tr><td><td>IOF operand release failure, as for I63 but general for all
+IOF instruction operands. Operands are protected prior to
+the generation of the IOF instruction code, and must be
+released during code generation. This error indicates that
+the operand release mechanism has failed. 
+<p><tr><th>I 4</th><td><b>IOF Device operand release failure</b>
+<tr><td><td>As for I3 and I63 the operand release mechanism has failed
+in this case it applies to the PRINT device operand. 
+<p><tr><th>I 5</th><td><b>NGF error operand release failure</b>
+<tr><td><td>An error has been encountered during the release of the error
+operand of an NGF instruction. 
+<p><tr><th>I 6</th><td><b>NGF operand release failure</b>
+<tr><td><td>An error has been encountered during the release of a protected
+operand for an NGF instruction 
+<p><tr><th>I 7</th><td><b>SELECT/CASE operand release failure</b>
+<tr><td><td>An error has been encountered during the release of the protected
+operand provided by the SELECT instruction and required for use
+in a CASE instruction. 
+<p><tr><th>I 8</th>
+<td><b>Pause operand release failure</b>
+<tr><td><td>An error has been encountered during the release of the protected
+operand for a PAUSE instruction. 
+<p><tr><th>I 9</th><td><b>TIMER operand release failure</b>
+<tr><td><td>An error has been encountered during the release of the
+protected operand of a TIMER instruction 
+<p><tr><th>I 10</th><td><b>2nd Dimension operand release failure</b>
+<tr><td><td>An error has been encountered during the release of a protected
+operand providing the auxilliary dimension information of a
+dimensioned variable. 
+<p><tr><th>I 11</th><td><b>Left hand compare operand release failure</b>
+<tr><td><td>An error has been encountered during the release of the
+protected left hand operand of a conditional expression. 
+<p><tr><th>I 12</th>
+<td><b>Right hand conditional operand release failure</b>
+<tr><td><td>An error has been detected during the release of the right hand
+protected operand of a conditional expression. 
+<p><tr><th>I 13</th><td><b>Arithmetic operand release failure</b>
+<tr><td><td>An error has been encountered during the release of a protected
+operand in an arithmetical expression. 
+<p><tr><th>I 14</th>
+<td><b>Affectation operand release failure</b>
+<tr><td><td>An error has been encountered during the release of the protected
+operand of an affectation instruction. 
+<p><tr><th>I 15</th>
+<td><b>LDGO.SEG or ENDSEG operand release failure</b>
+<tr><td><td>An error has been encountered during the release of the protected
+operand of a LDGO.SEG or ENDSEG instruction 
+<p><tr><th>I 20</th><td><b>Error encountered during generation of OF instruction</b>
+<tr><td><td>An error has been encountered during the generation of tcode
+for the OF instruction. The resulting label is invalid. 
+<p><tr><th>I 63</th><td><b>IOF TAB operand release failure</b>
+<tr><td><td>During release of operands for the IOF TAB instruction
+an invalid result has been encountered. This occurs for
+the TABL operand which must be generated prior to the
+TABC operand for correct executer screen positioning. 
+<p><tr><th>I 99</th><td><b>Cannot resolve host variable</b>
+<tr><td><td>Failure to resolve the HOST variable for a variable indicating
+redefinition of a pointer or pointer member. 
+<p><tr><th>I 111</th><td><b>No class for member</b>
+<tr><td><td>An attempt to add a member to a class when no class definition
+is active has been encountered. 
+<p><tr><th>I 119</th><td><b>Nurone does not provided type</b>
+<tr><td><td>During the generation of the nurone class table a nurone
+without type has been detected. 
+<p><tr><th>I 313</th><td><b>Incorrect member instance</b>
+<tr><td><td>The member instance provides no type or structural information. 
+<p><tr><th>I 323</th><td><b>Cannot resolve object variable for construction</b>
+<tr><td><td>The object variable cannot be resolved for use by the construction
+destruction detection mechanism. 
+<p><tr><th>I 333</th><td><b>Object of unknown class</b>
+<tr><td><td>Class information is invalid for the resolved object variable
+required for construction/destruction method detection. 
+<p><tr><th>I 343</th><td>
+<b>Object instance of prototype class</b>
+<tr><td>
+<td>The class of a resolved object variable has not been defined
+
+other than as a prototype with no members and no size. 
+
+
+<p><tr><th>I 666</th>
+
+<td>
+<b>Cannot push operation pointer ( too many levels )</b>
+
+
+
+<p><tr><th>I 676</th>
+
+<td>
+<b>Invalid data member structure</b>
+
+
+
+<tr>
+<td>
+
+<td>A terminal or composite data member has been encountered
+
+during occupation calculation, for which no structural
+
+information is available. 
+
+
+<p><tr><th>I 696</th>
+
+<td>
+<b>Method text target output failure</b>
+
+
+
+<tr>
+<td>
+
+<td>An error has been encountered during the transmission of a
+
+byte to a method text collection block. This is usually due
+
+to a memory allocation failure which cannot be resolved by
+
+the swap mechanism. 
+
+
+<p><tr><th>I 757</th>
+
+<td>
+<b>RMV failure in translate object data</b>
+
+
+
+<tr>
+<td>
+
+<td>Cannot resolve object variable, or incorrect member structure 
+
+
+<p><tr><th>I 767</th>
+
+<td>
+<b>Incorrect Method Structure</b>
+
+
+
+<tr>
+<td>
+
+<td>Failure to activate an object method due to the lack of
+
+the method description control structure. 
+
+
+<p><tr><th>I 768</th>
+
+<td>
+<b>Invalid method structure</b>
+
+
+
+<tr>
+<td>
+
+<td>An invalid method control structure has been passed for evaluation
+
+as an expression. 
+
+
+<p><tr><th>I 777</th>
+
+<td>
+<b>Integer expression NULL token conversion</b>
+
+
+
+<tr>
+<td>
+
+<td>A NULL pointer has been passed to the "convert_int_token"
+
+function during integer expression evaluation. 
+
+
+<p><tr><th>I 877</th>
+
+<td>
+<b>No method for Co-Method</b>
+
+
+
+<tr>
+<td>
+
+<td>A Local exception, invariant, post-condition, pre-condition
+
+expression has been detected outside of a method definition block. 
+
+
+<p><tr><th>I 919</th>
+
+<td>
+<b>RMV failure in O.M statement</b>
+
+
+
+<p><tr><th>I 929</th>
+
+<td>
+<b>Incorrect member componant</b>
+
+
+
+<tr>
+<td>
+
+<td>Generic failure when the resolved member componant has been
+
+found to be of incorrect or unspecified structure. 
+
+
+<p><tr><th>I 1328</th>
+
+<td>
+<b>Cannot resolve member componant for method pointer</b>
+
+
+
+<tr>
+<td>
+
+<td>Error resolving the member componant variable for a method pointer 
+
+
+<p><tr><th>I 1329</th>
+
+<td>
+<b>Cannot resolve parent object</b>
+
+
+
+<tr>
+<td>
+
+<td>Failure to resolve the parent object componant variable required
+
+in the explicite initialisation of a method pointer via the
+
+CREATE instruction. 
+
+
+<p><tr><th>I 1330</th>
+
+<td>
+<b>Cannot resolve method member</b>
+
+
+
+<tr>
+<td>
+
+<td>Failure to resolve the parent member of a method pointer required
+
+during construction of a method pointer via CREATE. 
+
+
+<p><tr><th>I 1515</th><td><b>Error building pseudo object for object overlay</b>
+<tr><td><td>An error has been encountered during the preparation of
+either the pre-construction or post-destruction functions
+of an program overlay object which require construction of
+a pseudo object reception variable. 
+
+<tr><th>I 1516</th>
+<td><b>Unknown class encountered in Overlay common linkage</b>
+<tr><td>
+<td>During the collection of common members required by the overlay
+
+common linkage mechanism, the specified class of a common
+
+instance has not been defined. 
+
+
+<p><tr><th>I 1919</th>
+
+<td>
+<b>Cannot resolve member componant</b>
+
+
+
+<tr>
+<td>
+
+<td>Generic error when a member variable componant cannot be resolved
+
+by the general purpose function "resolve_member_term()". 
+
+
+<p><tr><th>I 2002</th>
+
+<td>
+<b>Cannot resolve Strict Method Pointer</b>
+
+
+
+<tr>
+<td>
+
+<td>Failure to resolve the strict alternative prcoedure pointer
+
+required during the initialisation of an indirect function
+
+method pointer. 
+
+
+<p><tr><th>I 2929</th>
+
+<td>
+<b>Cannot resolve member componant</b>
+
+
+
+<tr>
+<td>
+
+<td>Generic error when failure to resolve member componant variable
+
+for function "translate_object_member()" 
+
+
+<p><tr><th>I 4455</th>
+
+<td>
+<b>Method activation failure</b>
+
+
+
+<tr>
+<td>
+
+<td>Method text translation startup has detected a low level failure 
+
+
+<p><tr><th>I 4733</th>
+
+<td>
+<b>Incorrect nature for protected result</b>
+
+
+
+<tr>
+<td>
+
+<td>An incorrect operand type has been detected for a protected
+
+operand. Valid types are :
+
+
+
+INTEGER, CONSTANT, VARIABLE, EXPRESSION, ALIAS 
+
+
+<p><tr><th>I 4800</th>
+
+<td>
+<b>Variable Table Overflow</b>
+
+
+
+<tr>
+<td>
+
+<td>The variable table limit has been exceeded by the most recently
+
+used variable. 
+
+
+<p><tr><th>I 4801</th>
+
+<td>
+<b>Constant Table Overflow</b>
+
+
+
+<tr>
+<td>
+
+<td>The Constant table limit has been exceeded by the most recent
+
+Implicite or Explicite Constant 
+
+
+<p><tr><th>I 4802</th>
+
+<td>
+<b>Procedure Table Overflow</b>
+
+
+
+<tr>
+<td>
+
+<td>The procedure table limit of 4000 procedures has been exceeded
+
+by the most recent procedure, forward procedure or function
+
+method definition.
+
+To remedy this problem the program must be cut up into smaller
+
+units which may be implemented by attachement. 
+
+
+<p><tr><th>I 4803</th>
+
+<td>
+<b>Segment Table Overflow</b>
+
+
+
+<tr>
+<td>
+
+<td>The Segment Table Limit of 2048 segments has been exceeded by
+
+the most recent segment or forward segment definition.
+
+To remedy this the program must be cut up into smaller programs
+
+communicating via CHAIN, LOAD.GO or ATTACH 
+
+
+<p><tr><th>I 5000</th>
+
+<td>
+<b>Cannot resolve base class member componant variable</b>
+
+
+
+<tr>
+<td>
+
+<td>The base class object componant variable cannot be resolved, or
+
+has been found to have no size ! 
+
+
+<p><tr><th>I 5300</th>
+
+<td>
+<b>Invalid Enhanced Construction Instance Manager</b>
+
+
+
+<tr>
+<td>
+
+<td>The Enhanced Construction Auto Context has been found to be
+
+invalid upon the termination of an instance. 
+
+
+<p><tr><th>I 5301</th>
+
+<td>
+<b>Invalid Enhanced Construction instance Manager</b>
+
+
+
+<tr>
+<td>
+
+<td>The Enhanced Construction Auto Context has been found to be
+
+invalid upon receipt of a member instance. 
+
+
+<p><tr><th>I 5555</th>
+
+<td>
+<b>Error encountered whilst duplicating type</b>
+
+
+
+<tr>
+<td>
+
+<td>Either the source or target type pointer provided for type
+
+duplication is NULL. 
+
+
+<p><tr><th>I 5656</th>
+
+<td>
+<b>Incorrect Method Nature</b>
+
+
+
+<tr>
+<td>
+
+<td>An incorrect method nature code has been encountered during
+
+method activation. The method nature code must indicate :
+
+
+
+INLINE, ROUTINE, OVERLAY, FUNCTION or USER 
+
+
+<p><tr><th>I 6007</th>
+
+<td>
+<b>No current union definition</b>
+
+
+
+<tr>
+<td>
+
+<td>Termination of an explicite union has been requested but no
+
+UNION is actually under definition. 
+
+
+<p><tr><th>I 6587</th>
+
+<td>
+<b>Invalid Indirect Function Activation</b>
+
+
+
+<tr>
+<td>
+
+<td>An attempt to activate an invalid procedure pointer as an
+
+indirect call to a procedure has been detected 
+
+
+<p><tr><th>I 7002</th>
+
+<td>
+<b>Cannot open APL file</b>
+
+
+
+<tr>
+<td>
+
+<td>An error has been encountered during the open of an APL prior
+
+to signature verification. This may be due to an inexistant file
+
+or due to an undefined path definition. The error may also
+
+occur during the loading of an implicite APL required by an
+
+explicite APL. 
+
+
+<p><tr><th>I 7447</th>
+
+<td>
+<b>Cannot Resolve Master Object</b>
+
+
+
+<tr>
+<td>
+
+<td>Failure to resolve the current object componant variable
+
+during overload function declaration 
+
+
+<p><tr><th>I 7448</th>
+<td>
+<b>Cannot resolve Base Class for Virtual method Overload</b>
+<tr>
+<td>
+<td>Failure to resolve a base class componant which offers a
+
+virtual function method required as the target during the
+
+declaration of an OVERLOAD function method pointer. 
+
+
+<p><tr><th>I 7450</th>
+
+<td>
+<b>Cannot resolve Base Class Componant</b>
+
+
+
+<tr>
+<td>
+
+<td>Failure to resolve the object componant variable of the
+
+base class member offering the virtual function to be
+
+overloaded during OVERLOAD declaration. 
+
+
+<p><tr><th>I 7451</th>
+
+<td>
+<b>Cannot resolve Strict Base Componant</b>
+
+
+
+<tr>
+<td>
+
+<td>Failure as in I7450 but concerning the secondary resolution
+
+of a strict alternative componant. 
+
+
+<p><tr><th>I 8744</th>
+
+<td>
+<b>Unknown
+for common instance
+</b>
+
+
+
+<tr>
+<td>
+
+<td>Error encountered during declaration of a COMMON/WORLD
+
+instance. The specified class is currently undefined. 
+
+
+<p><tr><th>I 8992</th>
+
+<td>
+<b>RMV failure for "O" in O.M expansion</b>
+
+
+
+<p><tr><th>I 9200</th>
+
+<td>
+<b>Error resolving variable symbol</b>
+
+
+
+<tr>
+<td>
+
+<td>An error has been encountered whilst resolving a variable
+
+symbol for expression use. This may be due to :
+
+
+
+Allocation failure
+
+Incorrect dimensional information
+
+Corruption of the symbol management tables. 
+
+
+<p><tr><th>I 9201</th>
+
+<td>
+<b>Error resolving constant symbol</b>
+
+
+
+<tr>
+<td>
+
+<td>An error has been encountered whilst resolving a symbolic
+
+constant. This may be due to
+
+
+
+Allocation failure,
+
+Incorrect type
+
+Symbol table corruption. 
+
+
+<p><tr><th>I 9202</th>
+
+<td>
+<b>Error resolving Procedure Symbol</b>
+
+
+
+<tr>
+<td>
+
+<td>An error has been encountered whilst resolving a symbolic procedure 
+
+
+<p><tr><th>I 9203</th>
+
+<td>
+<b>Error resolving DLL function symbol</b>
+
+
+
+<tr>
+<td>
+
+<td>An error has been encountered whilst resolving a DLL function symbol. 
+
+
+<p><tr><th>I 9204</th>
+
+<td>
+<b>Error resolving symbol</b>
+
+
+
+<tr>
+<td>
+
+<td>The
+has been found to be a symbol but its type is
+
+unexpected or not known 
+
+
+
+<p><tr><th>I 9877</th>
+
+<td>
+<b>Unknown class for indirect function</b>
+
+
+
+<tr>
+<td>
+
+<td>During the implicite construction of an indirect function
+
+an unknown or invalid class has been encountered. 
+
+
+<p><tr><th>I 9879</th>
+
+<td>
+<b>Cannot resolve static object componant</b>
+
+
+
+<tr>
+<td>
+
+<td>The object componant for the initialisation of an indirect
+
+static function cannot be resolved. 
+
+
+<p><tr><th>I 19877</th>
+
+<td>
+<b>Function Member has no Class</b>
+
+
+
+<tr>
+<td>
+
+<td>Undefined of invalid function member class information. 
+
+
+<p><tr><th>I 19879</th>
+
+<td>
+<b>Cannot resolve Static Container</b>
+
+
+
+<tr>
+<td>
+
+<td>Failure to resolve the object componant required as the static
+
+instance container during the activation of a static function
+
+method. 
+
+
+<p><tr><th>I 22001</th>
+
+<td>
+<b>Cannot resolve procptr for EIMT vector initialisation</b>
+
+
+
+<tr>
+<td>
+
+<td>The virtual/overload/indirect function cannot be resolved
+
+to it's procedure pointer for the initialisation of the EIMT
+
+vector during the pre-construction of a program overlay. 
+
+
+<p><tr><th>I 22002</th>
+
+<td>
+<b>Cannot resolve STRICT procptr for EIMT vector</b>
+
+
+
+<tr>
+<td>
+
+<td>As for I2201, but concerning the STRICT alternative procedure
+
+pointer, which cannot be resolved. 
+
+
+<p><tr><th>I 22003</th>
+
+<td>
+<b>Cannot resolve procptr for object initialisation</b>
+
+
+
+<tr>
+<td>
+
+<td>As for I2201, during pre-construction error resolving procedure
+
+pointer for an indirect/virtual/overload function, but wrt the
+
+object container rather than the EIMT. 
+
+
+<p><tr><th>I 22004</th>
+
+<td>
+<b>Cannot resolve STRICT procptr for object initialisation</b>
+
+
+
+<tr>
+<td>
+
+<td>As for I22002 and I22003, concerning strict function vectors in
+
+in the object container. 
+</table>
+<p>
+<table>
+<tr><th><h3 align=center>Copyright &copy; <a href="http://www.prologue-software.fr">Prologue Software</a></h3>
+<tr><th><h3 align=center>Version Fran&ccedil;aise <a href="fr/otrint.htm"><img src="tricolor.gif"></a>
+</table>
+</div>
+</body>
+</html>
+
+

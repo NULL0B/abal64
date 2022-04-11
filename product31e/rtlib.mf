@@ -1,0 +1,38 @@
+# generated makefile : rtlib.mf 
+# ------------------------------------
+/home/Dev/abal32/product31e/rtlib/allocate32.so: /home/Dev/abal32/lib/allocate32.so
+	cp $* $@ 
+/home/Dev/abal32/product31e/rtlib/asfun32.so: /home/Dev/abal32/lib/asfun32.so
+	cp $* $@ 
+/home/Dev/abal32/product31e/rtlib/audio32.so: /home/Dev/abal32/lib/audio32.so
+	cp $* $@ 
+/home/Dev/abal32/product31e/rtlib/bibmath32.so: /home/Dev/abal32/lib/bibmath32.so
+	cp $* $@ 
+/home/Dev/abal32/product31e/rtlib/fac32.so: /home/Dev/abal32/lib/fac32.so
+	cp $* $@ 
+/home/Dev/abal32/product31e/rtlib/libaccess32.so: /home/Dev/abal32/lib/libaccess32.so
+	cp $* $@ 
+/home/Dev/abal32/product31e/rtlib/libedit32.so: /home/Dev/abal32/lib/libedit32.so
+	cp $* $@ 
+/home/Dev/abal32/product31e/rtlib/libflfile32.so: /home/Dev/abal32/lib/libflfile32.so
+	cp $* $@ 
+/home/Dev/abal32/product31e/rtlib/libimage32.so: /home/Dev/abal32/lib/libimage32.so
+	cp $* $@ 
+/home/Dev/abal32/product31e/rtlib/libjpeg32.so: /home/Dev/abal32/lib/libjpeg32.so
+	cp $* $@ 
+/home/Dev/abal32/product31e/rtlib/libprint32.so: /home/Dev/abal32/lib/libprint32.so
+	cp $* $@ 
+/home/Dev/abal32/product31e/rtlib/ljii32.so: /home/Dev/abal32/lib/ljii32.so
+	cp $* $@ 
+/home/Dev/abal32/product31e/rtlib/ljiv32.so: /home/Dev/abal32/lib/ljiv32.so
+	cp $* $@ 
+/home/Dev/abal32/product31e/rtlib/psiii32.so: /home/Dev/abal32/lib/psiii32.so
+	cp $* $@ 
+/home/Dev/abal32/product31e/rtlib/tty32.so: /home/Dev/abal32/lib/tty32.so
+	cp $* $@ 
+/home/Dev/abal32/product31e/rtlib/visual32.so: /home/Dev/abal32/lib/visual32.so
+	cp $* $@ 
+/home/Dev/abal32/product31e/rtlib/z32.so: /home/Dev/abal32/lib/z32.so
+	cp $* $@ 
+/home/Dev/abal32/product31e/rtlib/zgr32.so: /home/Dev/abal32/lib/zgr32.so
+	cp $* $@ 

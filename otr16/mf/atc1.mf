@@ -1,0 +1,9 @@
+
+!make
+ATC1 =  $(POBJ)trgenc$(OBJ) $(POBJ)trgenrtl$(OBJ)
+$(POBJ)trgenc$(OBJ):  $(SP01)trgenc.c $(SP01)stdtypes.h $(SP01)hosts.h $(SP01)translat.h $(SP01)trsystem.h $(SP01)trtype.h $(SP01)buffers.h $(SP01)trstruct.h $(SP01)trtext.h $(SP01)trmalloc.h $(SP01)trtree.h $(SP01)trdefine.h $(SP01)trworld.h $(SP01)troption.h $(SP01)trexpres.h $(SP01)troutput.h '
+$(SP01)trsyntax.h $(SP01)trtcngf.h $(SP01)trtciof.h $(SP01)triof.h $(SP01)trclf.h $(SP01)trarg.h $(SP01)trproc.h $(SP01)trdebug.h $(SP01)trgenc.h $(SP01)trgenrtl.h $(SP01)trtnode.c $(SP01)trtnode.h
+$(POBJ)trgenrtl$(OBJ):  $(SP01)trgenrtl.c $(SP01)stdtypes.h $(SP01)hosts.h $(SP01)translat.h $(SP01)trsystem.h $(SP01)trtype.h $(SP01)buffers.h $(SP01)trstruct.h $(SP01)trtext.h $(SP01)trmalloc.h $(SP01)trtree.h $(SP01)trdefine.h $(SP01)trworld.h $(SP01)troption.h $(SP01)trexpres.h $(SP01)troutput.h '
+$(SP01)trsyntax.h $(SP01)trtcngf.h $(SP01)trtciof.h $(SP01)triof.h $(SP01)trclf.h $(SP01)trarg.h $(SP01)trproc.h $(SP01)trdebug.h $(SP01)trgenc.h $(SP01)trgenrtl.h $(SP01)trtnode.h
+
+

@@ -1,0 +1,83 @@
+! include zlibrary.def
+# Project : zlibrary.jrp
+# ----------------------
+# Target : zw.at
+# --------------
+$(PATH0)zw.at: '
+ $(PATH1)zw.s
+
+# Target : zlib.at
+# ----------------
+$(PATH0)zlib.at: '
+ $(PATH1)zlib.s
+
+# Target : zwasf.at
+# -----------------
+$(PATH0)zwasf.at: '
+ $(PATH1)zwasf.s
+
+# Target : zmenu.at
+# -----------------
+$(PATH0)zmenu.at: '
+ $(PATH1)zmenu.s
+
+# Target : zwwin.at
+# -----------------
+$(PATH0)zwwin.at: '
+ $(PATH1)zwwin.s
+
+# Target : zbars.at
+# -----------------
+$(PATH0)zbars.at: '
+ $(PATH1)zbars.s
+
+# Target : zlibmeen.at
+# --------------------
+$(PATH0)zlibmeen.at: '
+ $(PATH1)zlibmes.s
+
+# Target : z.o
+# ------------
+$(PATH2)z.o: '
+ $(PATH1)z.s
+
+# Target : zfilegen.at
+# --------------------
+$(PATH0)zfilegen.at: '
+ $(PATH1)zfileges.s
+
+# Target : zlc.o
+# --------------
+$(PATH2)zlc.o: '
+ $(PATH1)zlc.s
+
+# Target : zlibmefr.at
+# --------------------
+$(PATH0)zlibmefr.at: '
+ $(PATH1)zlibmes.s
+
+# Target : zfilegfr.at
+# --------------------
+$(PATH0)zfilegfr.at: '
+ $(PATH1)zfileges.s
+
+# Target : zat.at
+# ---------------
+$(PATH0)zat.at: '
+ $(PATH1)zatprl.s
+
+# Target : zmess.at
+# -----------------
+$(PATH0)zmess.at: '
+ $(PATH1)zmess.s
+
+# Target : zversion.at
+# --------------------
+$(PATH0)zversion.at: '
+ $(PATH1)zversion.s
+
+! make
+
+
+# end of file
+

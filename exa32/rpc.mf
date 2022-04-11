@@ -1,0 +1,12 @@
+exdll.o: $(SP01)exdll.c
+exrps.o: $(SP01)exrps.c
+extcp.o: $(SP01)extcp.c
+exhttp.o: $(SP01)exhttp.c
+soapapp.o: $(SP01)soapapp.c
+! make
+
+../bin/exrps: exrps.o exdll.o extcp.o exhttp.o soapapp.o $(EXASO)
+	-$(GCC) -g $(GDB) -o $@ $*
+
+! make
+

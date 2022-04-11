@@ -1,0 +1,294 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>ABAL++  Object Translator </title>
+<META NAME="VERSION" CONTENT="*PRL@INFO*$6:31a001">
+<link href="style.css" rel="STYLESHEET" type="text/css" media="SCREEN">
+</head>
+<body>
+<div align=center>
+<table border=1 width="90%">
+<tr><th><h1 align=center>ABAL 3 : Object Translator </h1>
+<tr><th><h2>Command Line Options</h2>
+</table>
+<p>
+<table width="90%">
+<tr><th>C 1</th><td><b>COMMAND LINE OPERATION</b>
+<tr><td><td>Invocation of OTR, the object translator, from the host system
+command interpreter must respect the following syntax :
+<br>
+<dl><dt>
+<dd>OTR [ options ] filename
+</dl>
+<p>
+The <b>filename</b> parameter represents the initial source file to
+be processed by the object translator and should either be present
+in the current directory or should provide explicite path information.
+<p>
+The <b>options</b>parameter represents any one or more of the following
+legal command line option switchs preceeded by a valid command line
+option indicator for the host system.
+<p>
+<ul>
+<li><a href="#OPTA">a activate constant aliasing</a>
+<li><a href="#OPTB">b mathematical function library</a>
+<li><a href="#OPTD">d production target filename</a>
+<li><a href="#OPTE">e activate error tracing</a>
+<li><a href="#OPTF">f read command line file</a>
+<li><a href="#OPTG">g inhibit code generation</a>
+<li><a href="#OPTI">i specify inclusion search path</a>
+<li><a href="#OPTL">l activate list generation</a>
+<li><a href="#OPTM">m generation of symbolic information</a>
+<li><a href="#OPTN">n definition of a conditional symbol</a>
+<li><a href="#OPTO">o inhibit optimisation</a>
+<li><a href="#OPTS">s specify default source file extension</a>
+<li><a href="#OPTV">v activate generation of informational messages</a>
+<li><a href="#OPTW">w activate warning messages</a>
+<li><a href="#OPTX">x activate error tracing using editor</a>
+</ul>
+<dl><dt>Examples :
+<dd>
+<p>otr -sas -m -v example.as
+<p>
+otr -sas -mv example.as 
+</dl>
+<p>Options switchs may be combined wherever the option requires no
+suplementary information.
+<p>
+<a name="OPTA">
+<tr><th>C 2</th><td><b>ACTIVATION OF CONSTANT ALIASING</b>
+<tr><td><td>This option activates the redundant constant elimination mechanism.
+Redundant constants are those whose values match exactly the values
+of other constants, either implicite, or explicite, which have already
+been encountered. This mechanism impairs translator performance but
+may be essential in order to avoid constant table overflow error
+diagnostic conditions.
+<dl>
+<dt>
+<p>Example :<p>
+<dd>
+otr -a example.as 
+</dl>
+<p>
+<a name="OPTB">
+<tr><th>C 3</th><td><b>MATHEMATICAL FUNCTION LIBRARY</b>
+<tr><td><td>This option is recognised by the object translator in order to be
+compatible with the ATR command line syntax. It is no longer really
+necessary since mathematical functions are available only via
+dynamic libraries.
+<dl>
+<dt>
+<p>Example :<p>
+<dd>
+otr -b example.as 
+</dl>
+<p>
+<a name="OPTD">
+<tr><th>C 4</th><td><b>PRODUCTION TARGET FILENAME</b>
+<tr><td><td>This option allows the production target filename to be specified
+and consequently expects supplementary information. The provided
+pathname and filename componants must not be separated from this
+option switch by white space.
+<dl><dt><p>Example:<p>
+<dd>
+otr -dtarget source.as
+</dl>
+<p>
+The file name extension will be ignored if provided since it will
+be provided by the translator respecting the nature of the production
+target as can be seen below :
+<p>
+<table class=withborder><tr><td>Target Type<td>Tcode<td>Symbolic
+<tr><td>PROGRAM <td>.at<td>.dbg
+<tr><td>MODULE <td>.o<td>.dbo
+<tr><td>LIBRARY<td>.apl<td>N/A
+</table>
+<p>
+Note: Symbolic information is stored in the library APL file. 
+<p>
+<a name="OPTE">
+<tr><th>C 5</th><td><b>ACTIVATION OF ERROR TRACING</b>
+<tr><td><td>Normally the translation operation will cease when an error is
+encountered. This option, like the option 'X', indicates that
+all errors , and warnings, encountered must be logged into an
+error tracing file compatible with the error trace format
+required by the ABAL++ editor AED.
+<p>The error file name may be specified also by this option which
+may provide supplementary information. If the error file name is
+not provided then the current generation target filename will be
+used. In both case the error file extension will be host system
+value as expected by the trace editor.
+<dl>
+<dt><p>Example : <p>
+<dd>
+otr -e example.as<p>
+otr -eerrors example.as
+</dl>
+<p>
+<a name="OPTF">
+<tr><th>C 6</th><td><b>READ COMMAND LINE FILE</b>
+<tr><td><td>This option indicates that command line switchs and information
+are to be read from the file named by the supplementary filename.
+<p>
+All command line switchs including this option 'F' may be present
+in the file. The switchs must be prefixed by a valid option switch
+prefix character. The source file name to be processed may also
+be provided in this file.
+<dl>
+<dt><p>Example :<p>
+<dd>otr -fcmdfile
+</dl>
+<p>
+Where 'cmdfile' contains :
+<dl>
+<dt>
+<dd>-sas -v -m example.as
+</dl>
+or
+<dl>
+<dt>
+<dd>-sas<br>-v<br>-m<br>example.as
+</dl>
+<p>
+White space encountered in the file will be eliminated and will
+delimit option and filename tokens. 
+<p>
+
+<a name="OPTG">
+<tr><th>C 7</th><td><b>INHIBIT CODE GENERATION</b>
+<tr><td><td>This option allows translation to be performed without generating
+any physical production target since file creation and update is
+inhibited. This may be used for syntax verification , error trace
+generation, etc without the risk of corrupting an existing target.
+<dl>
+<dt><p>Example :<p>
+<dd>otr -g example.as 
+</dl>
+<p>
+
+<a name="OPTI">
+<tr><th>C 8</th><td><b>INCLUSION SEARCH PATH</b>
+<tr><td><td>This option allows the specification of a search path that must be
+used when an included source file is not found in the current
+directory and provides no explicite path information. Multiple
+search paths may be defined by multiple usage of this option
+in which case the search order will be that in which the options
+are received.
+<dl>
+<dt><p>Example :
+<p><dd>
+otr -isources\ -iinclude\ -imaster\ example.as
+</dl>
+<p>
+The directories sources, include and master will be searched in the specified order to localise 
+include files. 
+<p>
+<a name="OPTL">
+<tr><th>C 9</th><td><b>LIST FILE GENERATION</b>
+<tr><td><td>This option allows the activation of the translation list file
+indicated by its suplementary information, which if ommited will
+be the name of the original source file with the extension LST.
+<dl><dt><p>Examples : <p>
+<dd>otr -sas -l example.as
+<br>otr -sas -lanother example.as
+</dl>
+<p>
+The translation list file is the OTR equivalant of the ".APS" file
+generated by APLUS. It is no longer essential for the generation
+of the program or module target, and its production will impair
+translation performance. 
+<p>
+
+<a name="OPTM">
+<tr><th>C 10</th><td><b>SYMBOLIC INFORMATION</b>
+<tr><td><td>This option allows the inclusion of symbolic information in the
+production target. Symbolic information is necessary in order to
+be able to debug the production target. Program symbolic information
+and library symbolic information files will be inhibited if this
+option is not activated, however modular symbolic information will
+always be generated since it is required for the link phase.
+<p>Library symbolic information is required to be present in order to
+trace errors which are encountered due to or during library class
+method expansion. If no symbolic information is present then no
+error tracing information may be generated for library class methods.
+<dl><dt><p>Example :<p>
+<dd>
+otr -m example.as
+</dl>
+<p>
+When this option is combined with the LIST GENERATION option then
+the translation list file will be used for all cross referencing
+information. In this case no object symbolic information will be
+available during debug, only pure ABAL source instructions. 
+<p>
+<a name="OPTN">
+<tr><th>C 11</th><td><b>CONDITIONAL SYMBOL DEFINITION</b>
+<tr><td><td>This option allows the definition of a conditional control symbol
+from the command line invocation of the object translator.
+<dl>
+<dt><p>Example :<p>
+<dd>otr -nNODEBG example.as </dl>
+<p>
+<a name="OPTO">
+<tr><th>C 12</th><td><b>INHIBIT OPTIMISATION</b>
+<tr><td><td>During normal operation the object translator performs all
+optimisation operations in accordance with the requirements
+specified by the pragma directive concerning optimisation.
+This option allows all optimisation features to be dissabled
+or inhibited as is required on a global basis.
+<dl><dt><p>Example :<p>
+<dd>otr -o example.as </dl>
+<p>
+<a name="OPTS">
+<tr><th>C 13</th><td><b>SOURCE FILE EXTENSION</b>
+<tr><td><td>This option allows the default source file extension provided by
+it's supplementary information to be established. This extension
+will be used whenever an explicite extension is missing from a
+source file inclusion file specification. The default value is "s".
+<dl><dt><p>Example :<p>
+<dd> otr -sas example </dl>
+<p>
+The extension "as" will be used for the original file "example" as
+well as any included files with no extension. 
+<p>
+<a name="OPTV">
+<tr><th>C 14</th><td><b>INFORMATION MESSAGES</b>
+<tr><td><td>This option allows the activation of informational messages which
+will be produced during the translator operation to inform of the
+progression of the operation.
+<dl><dt><p>Example :<p><dd>otr -v example.as </dl>
+<p>
+<a name="OPTW">
+<tr><th>C 15</th><td><b>WARNING MESSAGES</b>
+<tr><td><td>This option allows the activation of the warning message mechanism
+and may establish an explicite warning diagnostic level.
+<dl><dt><p>Example :<p><dd>otr -sas -w7 example</dl>
+<p>Activates the generation of warning messages level 7.
+<dl><dt><p>Example :<p><dd>otr -sas -w example</dl>
+<p>Activates the generation of warning messages of all levels.
+<p>
+This option should be used in conjunction with the relevant pragma
+directive for fine control over the warning mechanism. 
+<p>
+<a name="OPTX">
+<tr><th>C 16</th><td><b>AUTOMATIC ERROR TRACING</b>
+<tr><td><td>This option is identical to the option 'E' in that all errors
+encountered during translator operation are logged to an error
+tracing file. This option indicates that the trace editor, normally
+AED, must be invoked upon completion of the translation operation
+if any errors or warnings have occured.
+<dl><dt><p>Example :<p><dd>otr -x example.as</dl>
+<p>
+The trace editor may be specified by the pragma directive EDITOR. 
+<p>
+</table>
+<p>
+<table>
+<tr><th><h3 align=center>Copyright &copy; <a href="http://www.prologue.fr">Prologue</a></h3>
+<tr><th><h3 align=center>Version Fran&ccedil;aise <a href="fr/otrcmd.htm"><img src="tricolor.gif"></a>
+</table>
+</div>
+</body>
+</html>
+
+

@@ -1,0 +1,14 @@
+PATHLIB = /usr/lib/abal3
+LIBEXA = $(PATHLIB)/libexa41.so
+LIBABALPHP = $(PATHLIB)/libabalphp.so
+
+exphp.o: exphp.c exphp.h
+	gcc -c -g -ggdb -DUNIX $*
+
+! make
+
+$(LIBABALPHP): exphp.o $(LIBEXA)
+	gcc -g -ggdb -shared -o $@ $?
+
+! make
+

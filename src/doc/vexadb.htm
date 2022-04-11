@@ -1,0 +1,983 @@
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="generator" content="Prologue Sing Html Version 1.0a">
+<meta name="version" content="*PRL@INFO*#11a040">
+<link href="style.css" type="text/css" rel="stylesheet" media="screen">
+<link href="style.css" type="text/css" rel="stylesheet" media="print">
+<title>Sing Version 1.0a
+</title>
+</head><body>
+<div align="center">
+<table class="DOC">
+<tr><th><h1 align="center">
+Sing Version 1.0a
+</h1>
+<td><div align="center"><img src="logo.jpg">
+</div></table></div><p>
+<a name="vexadb.xml">
+
+<p>
+<div align="center">
+<table class="DS">
+<tr><th><h2 align="center">
+visual debug
+</h2>
+
+<tr><td><p><tr><td>
+
+<map name="ProgramSource">
+<area type=rect href="#Program Source" coords="20,30,153,54">
+<area type=rect href="#exit.gif" coords="934,594,982,642">
+<area type=rect href="#step.gif" coords="934,80,982,128">
+<area type=rect href="#goto.gif" coords="934,130,982,178">
+<area type=rect href="#trap.gif" coords="934,180,982,228">
+<area type=rect href="#clear.gif" coords="934,330,982,378">
+<area type=rect href="#run.gif" coords="934,230,982,278">
+<area type=rect href="#view.gif" coords="934,280,982,328">
+<area type=rect href="#Program Output" coords="153,30,285,54">
+<area type=rect href="#Debug Control" coords="285,30,412,54">
+<area type=rect href="#BreakKey" coords="940,410,980,426">
+<area type=rect href="#AsmList" coords="940,430,980,446">
+<area type=rect href="#HexaView" coords="940,390,980,406">
+<area type=rect href="#Variables" coords="412,30,506,54">
+</map>
+
+<map name="ProgramOutput">
+<area type=rect href="#Program Source" coords="20,30,153,54">
+<area type=rect href="#exit.gif" coords="934,594,982,642">
+<area type=rect href="#step.gif" coords="934,80,982,128">
+<area type=rect href="#goto.gif" coords="934,130,982,178">
+<area type=rect href="#trap.gif" coords="934,180,982,228">
+<area type=rect href="#clear.gif" coords="934,330,982,378">
+<area type=rect href="#run.gif" coords="934,230,982,278">
+<area type=rect href="#view.gif" coords="934,280,982,328">
+<area type=rect href="#Program Output" coords="153,30,285,54">
+<area type=rect href="#Debug Control" coords="285,30,412,54">
+<area type=rect href="#BreakKey" coords="940,410,980,426">
+<area type=rect href="#AsmList" coords="940,430,980,446">
+<area type=rect href="#HexaView" coords="940,390,980,406">
+<area type=rect href="#Variables" coords="412,30,506,54">
+</map>
+
+<map name="DebugControl">
+<area type=rect href="#Program Source" coords="20,30,153,54">
+<area type=rect href="#exit.gif" coords="934,594,982,642">
+<area type=rect href="#step.gif" coords="934,80,982,128">
+<area type=rect href="#goto.gif" coords="934,130,982,178">
+<area type=rect href="#trap.gif" coords="934,180,982,228">
+<area type=rect href="#clear.gif" coords="934,330,982,378">
+<area type=rect href="#run.gif" coords="934,230,982,278">
+<area type=rect href="#view.gif" coords="934,280,982,328">
+<area type=rect href="#Program Output" coords="153,30,285,54">
+<area type=rect href="#Debug Control" coords="285,30,412,54">
+<area type=rect href="#ProcName" coords="40,130,280,149">
+<area type=rect href="#SegmName" coords="290,130,460,149">
+<area type=rect href="#GlobNames" coords="470,130,670,149">
+<area type=rect href="#LocalNames" coords="700,130,900,149">
+<area type=rect href="#AssignList" coords="40,180,460,199">
+<area type=rect href="#RegisterList" coords="470,180,899,199">
+<area type=rect href="#AttachList" coords="40,230,460,249">
+<area type=rect href="#StackList" coords="470,230,899,249">
+<area type=rect href="#LibraryList" coords="40,280,460,299">
+<area type=rect href="#ObserveList" coords="470,280,873,299">
+<area type=rect href="#-" coords="874,280,894,299">
+<area type=rect href="#BreakList" coords="40,330,440,349">
+<area type=rect href="#-" coords="440,330,460,349">
+<area type=rect href="#WatchList" coords="470,330,874,349">
+<area type=rect href="#-" coords="876,330,896,349">
+<area type=rect href="#SourceList" coords="40,380,440,399">
+<area type=rect href="#>" coords="440,380,460,399">
+<area type=rect href="#Syntax" coords="44,504,892,568">
+<area type=rect href="#AED_NORMAL" coords="50,460,170,479">
+<area type=rect href="#AED_QUOTE" coords="200,460,320,479">
+<area type=rect href="#AED_KEYWORD" coords="340,460,452,479">
+<area type=rect href="#AED_COMMENT" coords="470,460,582,479">
+<area type=rect href="#AED_PUNCTUATE" coords="610,460,730,479">
+<area type=rect href="#Multiple" coords="44,600,114,632">
+<area type=rect href="#One Shot" coords="116,600,186,632">
+<area type=rect href="#Multiple" coords="220,600,290,632">
+<area type=rect href="#One Shot" coords="292,600,362,632">
+<area type=rect href="#Multiple" coords="396,600,466,632">
+<area type=rect href="#One Shot" coords="468,600,538,632">
+<area type=rect href="#Observe" coords="572,600,642,632">
+<area type=rect href="#Inspect" coords="644,600,714,632">
+<area type=rect href="#Observe" coords="748,600,818,632">
+<area type=rect href="#Inspect" coords="820,600,890,632">
+<area type=rect href="#BreakKey" coords="940,410,980,426">
+<area type=rect href="#AsmList" coords="940,430,980,446">
+<area type=rect href="#HexaView" coords="940,390,980,406">
+<area type=rect href="#Variables" coords="412,30,506,54">
+</map>
+
+<map name="VariableControl">
+<area type=rect href="#Program Source" coords="20,30,153,54">
+<area type=rect href="#exit.gif" coords="934,594,982,642">
+<area type=rect href="#step.gif" coords="934,80,982,128">
+<area type=rect href="#goto.gif" coords="934,130,982,178">
+<area type=rect href="#trap.gif" coords="934,180,982,228">
+<area type=rect href="#clear.gif" coords="934,330,982,378">
+<area type=rect href="#run.gif" coords="934,230,982,278">
+<area type=rect href="#view.gif" coords="934,280,982,328">
+<area type=rect href="#Program Output" coords="153,30,285,54">
+<area type=rect href="#Debug Control" coords="285,30,412,54">
+<area type=rect href="#BreakKey" coords="940,410,980,426">
+<area type=rect href="#AsmList" coords="940,430,980,446">
+<area type=rect href="#HexaView" coords="940,390,980,406">
+<area type=rect href="#Variables" coords="412,30,506,54">
+<area type=rect href="#vListe" coords="30,80,890,640">
+</map>
+This document describes the new visual user interface mechanisms that have been added
+to
+the standard ABAL Debug Utility <b>exadb</b>.
+<p>The new user interface has been entiry
+redesigned using the ABAL Visual Design tools.
+<p>The environment variable <b>VEXADB</b>
+must be set indicating the name of a valid configuration
+file or LDAP entry, depending
+on the state of the <b>ABALHOST</b> environment variable.
+<p>If the <b>VEXADB</b>
+variable is not set then <b>exadb</b> will operate in standard
+text mode, either enhanced
+X/11 text mode using the <b>GIGO</b> variable, or the standard
+<b>CICO</b> default
+text mode mechanisms.
+<p>
+
+
+<p>
+<ol><li>
+<dl>
+<dt class=type><a name="Program Source">
+<b>Program <u>S</u>ource
+</b></a>
+<dd class=data>This tab page displays the current position in the current source of the program under
+debug 
+control using the new dynamic library form of the abal editor <b>aed</b>.
+<p>All
+standard editor positioning keys and mouse events are accepted, other than page up
+and
+page down which will be interpreted by the visual user interface as debug window
+tab page
+commands.
+
+
+<p>
+
+</dl>
+<img src="vexadb1.gif" usemap="#ProgramSource" >
+<ul><li>
+<dl>
+<dt class=type><a name="exit.gif">
+<b>exit.gif
+</b></a>
+<dd class=data>If this push button is activated the current debug context will be abandoned and control
+will 
+be returned to the calling process or environment.
+
+
+<p>
+
+</dl>
+<li>
+<dl>
+<dt class=type><a name="step.gif">
+<b>step.gif
+</b></a>
+<dd class=data>By pressing this button the program execution will step to the next logical new line.
+
+
+<p>
+
+</dl>
+<li>
+<dl>
+<dt class=type><a name="goto.gif">
+<b>goto.gif
+</b></a>
+<dd class=data>This button may be pressed to cause program execution to be continued up to the line
+indicated
+by the current source editor window cursor position. The source editor window
+cursor may be
+positioned by simply clicking on the desired line in the program source
+window.
+
+
+<p>
+
+</dl>
+<li>
+<dl>
+<dt class=type><a name="trap.gif">
+<b>trap.gif
+</b></a>
+<dd class=data>This button may be pressed to add break points at each occurance of the source line
+indicated
+by the current source editor window cursor position. The source editor window
+cursor may be
+positioned by simply clicking on the desired line in the program source
+window.
+
+
+<p>
+
+</dl>
+<li>
+<dl>
+<dt class=type><a name="clear.gif">
+<b>clear.gif
+</b></a>
+<dd class=data>This button may be pressed to remove all break points defined for the line indicated
+by
+the current source editor window cursor position. The source editor window cursor
+may be
+positioned by simply clicking on the desired line in the program source window.
+
+
+<p>
+
+</dl>
+<li>
+<dl>
+<dt class=type><a name="run.gif">
+<b>run.gif
+</b></a>
+<dd class=data>If this push button is activated then program execution will continue until one of
+the various
+break conditions is encountered or program execution is terminated due
+to an instruction <b>STOP</b>.
+
+
+<p>
+
+</dl>
+<li>
+<dl>
+<dt class=type><a name="view.gif">
+<b>view.gif
+</b></a>
+<dd class=data>This button may be pressed to cause the variable name under 
+the current source editor
+window cursor position to be displayed in the status window to this 
+effect at the
+bottom of the screen. The right button of the mouse will perform the same 
+effect
+over a variable name in the source window.
+The source editor window cursor may be
+positioned
+by simply clicking on the desired line in the program source window.
+
+
+<p>
+
+</dl>
+</ul><li>
+<dl>
+<dt class=type><a name="Program Output">
+<b>Program <u>O</u>utput
+</b></a>
+<dd class=data>This tab page presents the current image of the visual application output screen.
+<p>It
+is captured during program instruction execution by the visual buffering mechanisms
+of 
+the visual library and redisplayed when this page is active.
+<p>
+
+
+<p>
+
+</dl>
+<img src="vexadb2.gif" usemap="#ProgramOutput" >
+<ul></ul><li>
+<dl>
+<dt class=type><a name="Debug Control">
+<b><u>D</u>ebug Control
+</b></a>
+<dd class=data>This tab page presents the various debug controls allowing break point management,
+variable,
+file, code section and source management functions to name but a few.
+<p>
+
+
+
+
+
+<p>
+
+</dl>
+<img src="vexadb3.gif" usemap="#DebugControl" >
+<ul><li>
+<dl>
+<dt class=type><a name="ProcName">
+<b>ProcName
+</b></a>
+<dd class=data>This select control presents the list of all procedures in the current active tcode
+program.
+<p>As debug control is passed between overlays the corresponding list of
+procedures will be
+loaded into this list.
+<p>The list is opened by a simple click
+on the button of the edit zone.
+<p>As for all select controls, of the <a href="visual.htm">
+visual library</a>, 
+list scrolling may be performed by standard keyboard and mouse
+operations.
+
+
+
+<p>
+
+</dl>
+<li>
+<dl>
+<dt class=type><a name="SegmName">
+<b>SegmName
+</b></a>
+<dd class=data>This select control presents the list of all segments in the current active tcode
+program.
+<p>As debug control is passed between overlays the corresponding list of
+segments
+ will be loaded into this list.
+<p>The list is opened by a simple click on
+the button of the edit zone.
+<p>As for all select controls, of the <a href="visual.htm">
+visual library</a>, 
+list scrolling may be performed by standard keyboard and mouse
+operations.
+
+
+<p>
+
+</dl>
+<li>
+<dl>
+<dt class=type><a name="GlobNames">
+<b>GlobNames
+</b></a>
+<dd class=data>his select control presents the list of all global variables in the current active
+
+tcode program.
+<p>As debug control is passed between overlays the corresponding list
+of global 
+variables will be loaded into this list.
+<p>The list is opened by a simple
+click on the button of the edit zone.
+<p>As for all select controls, of the <a href="visual.htm">
+visual library</a>, 
+list scrolling may be performed by standard keyboard and mouse
+operations.
+
+
+<p>
+
+</dl>
+<li>
+<dl>
+<dt class=type><a name="LocalNames">
+<b>LocalNames
+</b></a>
+<dd class=data>This select control presents the list of all local variables of the current active
+
+tcode procedure or segment of the current program.
+<p>As debug control is passed
+between different procedures and segments the 
+corresponding list of local variable
+will be made available.
+<p>The list is opened by a simple click on the button of the
+edit zone.
+<p>As for all select controls, of the <a href="visual.htm"> visual library</a>,
+
+list scrolling may be performed by standard keyboard and mouse operations.
+
+
+<p>
+
+</dl>
+<li>
+<dl>
+<dt class=type><a name="AssignList">
+<b>AssignList
+</b></a>
+<dd class=data>This select control presents the list of assign table entries for the current tcode
+execution
+context.
+<p>Information will be added to this list as files are assigned by the instruction
+<b>ASSIGN</b>.
+<p>The
+list is opened by a simple click on the button of the edit zone.
+<p>As for all select
+controls, of the <a href="visual.htm"> visual library</a>, 
+list scrolling may be
+performed by standard keyboard and mouse operations.
+
+
+<p>
+
+</dl>
+<li>
+<dl>
+<dt class=type><a name="RegisterList">
+<b>RegisterList
+</b></a>
+<dd class=data>This select control displays the current contents of all registers of the ABAL virtual
+machine.
+<p>The values of the various registers will be changed in response to the
+execution of the 
+various tcode instructions of the tcode context.
+<p>The list is
+opened by a simple click on the button of the edit zone.
+<p>As for all select controls,
+of the <a href="visual.htm"> visual library</a>, 
+list scrolling may be performed
+by standard keyboard and mouse operations.
+
+
+<p>
+
+</dl>
+<li>
+<dl>
+<dt class=type><a name="AttachList">
+<b>AttachList
+</b></a>
+<dd class=data>This select control presents the list of program overlays attached to the current
+tcode
+execution context.
+<p>Items will be added to this list as a result of the instruction
+<b>ATTACH</b> and
+removed from the list in response to the instruction <b>DETACH</b>.
+<p>The
+list is opened by a simple click on the button of the edit zone.
+<p>As for all select
+controls, of the <a href="visual.htm"> visual library</a>, 
+list scrolling may be
+performed by standard keyboard and mouse operations.
+
+
+<p>
+
+</dl>
+<li>
+<dl>
+<dt class=type><a name="StackList">
+<b>StackList
+</b></a>
+<dd class=data>This select control displays the stack trace of calls leading to the 
+current execution
+point of the current tcode execution context.
+<p>Entries will be added for each level
+of nesting of <b>GOSUB</b>, <b>LDGO.SEG</b>
+and <b>CALL</b> as control is passed between
+overlays,procedures and overlays .
+<p>The list is opened by a simple click on the
+button of the edit zone.
+<p>As for all select controls, of the <a href="visual.htm">
+visual library</a>, 
+list scrolling may be performed by standard keyboard and mouse
+operations.
+
+
+<p>
+
+</dl>
+<li>
+<dl>
+<dt class=type><a name="LibraryList">
+<b>LibraryList
+</b></a>
+<dd class=data>This select control presents the list of libraries declared by the current active
+
+tcode program.
+<p>As debug control is passed between overlays the corresponding list
+of libraries 
+will be loaded into this list.
+<p>The list is opened by a simple click
+on the button of the edit zone.
+<p>As for all select controls, of the <a href="visual.htm">
+visual library</a>, 
+list scrolling may be performed by standard keyboard and mouse
+operations.
+
+
+
+<p>
+
+</dl>
+<li>
+<dl>
+<dt class=type><a name="ObserveList">
+<b>ObserveList
+</b></a>
+<dd class=data>This select control presents the list of active variable observation requests.
+<p>Itsm
+will be added and removed from list list in response to the various 
+command and controls
+events to this effect.
+<p>The list is opened by a simple click on the button of the
+edit zone.
+<p>As for all select controls, of the <a href="visual.htm"> visual library</a>,
+
+list scrolling may be performed by standard keyboard and mouse operations.
+
+
+<p>
+
+</dl>
+<li>
+<dl>
+<dt class=type><a name="-">
+<b>-
+</b></a>
+<dd class=data>By clicking on this button the current selected value of the <i>active observations</i>
+list will 
+be disactivated, deleted and removed from the list.
+
+
+<p>
+
+</dl>
+<li>
+<dl>
+<dt class=type><a name="BreakList">
+<b>BreakList
+</b></a>
+<dd class=data>This select control presents the list of all active break points in the current 
+tcode
+debug context.
+<p>Items will be added to this list in response to the various <i>set
+break point</i>
+commands and controls.
+<p>Items will be removed from this list in
+response to the various <i>clear break point</i>
+commands and controls.
+<p>The list
+is opened by a simple click on the button of the edit zone.
+<p>As for all select controls,
+of the <a href="visual.htm"> visual library</a>, 
+list scrolling may be performed
+by standard keyboard and mouse operations.
+
+
+<p>
+
+</dl>
+<li>
+<dl>
+<dt class=type><a name="-">
+<b>-
+</b></a>
+<dd class=data>By clicking on this button the current selected value of the <i>active break points</i>
+list will 
+be disactivated, deleted and removed from the list.
+
+
+<p>
+
+</dl>
+<li>
+<dl>
+<dt class=type><a name="WatchList">
+<b>WatchList
+</b></a>
+<dd class=data>This select control presents the list of active memory watch requests.
+<p>Items will
+be added and removed from this list in response to the various
+command and control
+events provided to this effect.
+<p>The list is opened by a simple click on the button
+of the edit zone.
+<p>As for all select controls, of the <a href="visual.htm"> visual
+library</a>, 
+list scrolling may be performed by standard keyboard and mouse operations.
+
+
+<p>
+
+</dl>
+<li>
+<dl>
+<dt class=type><a name="-">
+<b>-
+</b></a>
+<dd class=data>By clicking on this button the current selected value of the <i>active watch points</i>
+list 
+will be disactivated, deleted and removed from the list.
+
+
+<p>
+
+</dl>
+<li>
+<dl>
+<dt class=type><a name="SourceList">
+<b>SourceList
+</b></a>
+<dd class=data>This select control presents the list of all source files which contributed to the
+construction
+of the current active tcode program.
+<p>As debug control is passed between overlays
+the corresponding list of files will be
+loaded into this list.
+<p>The list is opened
+by a simple click on the button of the edit zone.
+<p>As for all select controls, of
+the <a href="visual.htm"> visual library</a>, 
+list scrolling may be performed by
+standard keyboard and mouse operations.
+
+
+<p>
+
+</dl>
+<li>
+<dl>
+<dt class=type><a name=">">
+<b>>
+</b></a>
+<dd class=data>By clicking on this button the current selected value of the <i>source files</i> list
+will 
+be opened and displayed in the program source window. 
+<p> The visual focus
+will then be transfered to the program source tab page.
+
+
+<p>
+
+</dl>
+<li>
+<dl>
+<dt class=type><a name="Syntax">
+<b>Syntax
+</b></a>
+<dd class=data>This edit field is used for output of results from variable display control events
+and for
+the manual input of standard exadb command expressions.
+
+
+<p>
+
+</dl>
+<li>
+<dl>
+<dt class=type><a name="AED_NORMAL">
+<b>AED_NORMAL
+</b></a>
+<dd class=data>This select control allows selection of the colour to be used by the internal ABAL
+text editor
+to represent normal text, user defined naming tokens for variables, procedures
+and functions.
+
+
+<p>
+
+</dl>
+<li>
+<dl>
+<dt class=type><a name="AED_QUOTE">
+<b>AED_QUOTE
+</b></a>
+<dd class=data>This select control defines the colour to be used to represent quoted string literal
+values.
+
+<p>
+
+</dl>
+<li>
+<dl>
+<dt class=type><a name="AED_KEYWORD">
+<b>AED_KEYWORD
+</b></a>
+<dd class=data>This select control defines the colour to be used to represent language keywords.<p>
+The
+internal ABAL text editor may operate with syntaxical colouration for the following
+source
+languages :
+<p><ul><li>ABAL and ABAL++
+<li>C and C++
+<li>HTML
+</ul>
+<p>
+
+<p>
+
+</dl>
+<li>
+<dl>
+<dt class=type><a name="AED_COMMENT">
+<b>AED_COMMENT
+</b></a>
+<dd class=data>This select control defines the value to be used to represent language dependant commentary
+blocks.
+
+
+<p>
+
+</dl>
+<li>
+<dl>
+<dt class=type><a name="AED_PUNCTUATE">
+<b>AED_PUNCTUATE
+</b></a>
+<dd class=data>This select control defines the colourto be used to represent standard punctuation
+characters,arithmetical
+and comparision operators.
+
+
+<p>
+
+</dl>
+<li>
+<dl>
+<dt class=type><a name="Multiple">
+<b>Multiple
+</b></a>
+<dd class=data>By clicking on this button, a multiple hit break point will be defined for the procedure
+currently
+selected by the procedure selection control.
+<p>This is equivalent to the standard
+<b>exadb</b> command syntax <b>APprocname</b>
+
+
+<p>
+
+</dl>
+<li>
+<dl>
+<dt class=type><a name="One Shot">
+<b>One Shot
+</b></a>
+<dd class=data>By clicking on this button, a one shot break point will be defined for the procedure
+currently
+selected by the procedure selection control.
+<p>This is equivalent to the standard
+<b>exadb</b> command syntax <b>BPprocname</b>
+
+
+<p>
+
+</dl>
+<li>
+<dl>
+<dt class=type><a name="Multiple">
+<b>Multiple
+</b></a>
+<dd class=data>By clicking on this button, a multiple hit break point will be defined for the segment
+
+currently selected by the segment selection control.
+<p>This is equivalent to the
+standard <b>exadb</b> command syntax <b>ASsegment</b>
+
+
+<p>
+
+</dl>
+<li>
+<dl>
+<dt class=type><a name="One Shot">
+<b>One Shot
+</b></a>
+<dd class=data>By clicking on this button, a one shot break point will be defined for the segment
+currently
+selected by the segment selection control.
+<p>This is equivalent to the standard <b>exadb</b>
+command syntax <b>BSsegment</b>
+
+
+<p>
+
+</dl>
+<li>
+<dl>
+<dt class=type><a name="Multiple">
+<b>Multiple
+</b></a>
+<dd class=data>By clicking on this button, a multiple hit variable watch request will be added to
+the watch 
+list for the variable currently selected by the global variable selection
+control.
+<p>This is equivalent to the standard <b>exadb</b> command syntax <b>AVvariable</b>
+
+
+<p>
+
+</dl>
+<li>
+<dl>
+<dt class=type><a name="One Shot">
+<b>One Shot
+</b></a>
+<dd class=data>By clicking on this button, a one shot variable watch request will be added to the
+watch 
+list for the variable currently selected by the global variable selection control.
+<p>This
+is equivalent to the standard <b>exadb</b> command syntax <b>BVvariable</b>
+
+
+<p>
+
+</dl>
+<li>
+<dl>
+<dt class=type><a name="Observe">
+<b>Observe
+</b></a>
+<dd class=data>By clicking on this button, a variable observation request will be added to the variable
+observation
+list for the variable currently selected by the global variable selection
+control.
+<p>This is equivalent to the standard <b>exadb</b> command syntax <b>OAvariable</b>
+
+
+<p>
+
+</dl>
+<li>
+<dl>
+<dt class=type><a name="Inspect">
+<b>Inspect
+</b></a>
+<dd class=data>By clicking on this button the current value of the 
+variable currently selected by
+the global variable selection control will be displayed in the
+command and display
+zone of the debug control page.
+<p>This is equivalent to the standard <b>exadb</b>
+command syntax <b>Dvariable</b> or <b>DHvariable</b>
+depending on the state of the
+debug control <b>HexaDecimal</b>.
+
+
+
+<p>
+
+</dl>
+<li>
+<dl>
+<dt class=type><a name="Observe">
+<b>Observe
+</b></a>
+<dd class=data>By clicking on this button, a variable observation request will be added to the 
+variable
+observation list for the variable currently selected by the local variable selection
+
+control.
+<p>This is equivalent to the standard <b>exadb</b> command syntax <b>OAvariable</b>
+
+
+<p>
+
+</dl>
+<li>
+<dl>
+<dt class=type><a name="Inspect">
+<b>Inspect
+</b></a>
+<dd class=data>By clicking on this button the current value of the 
+variable currently selected by
+the local variable selection control will be displayed in the
+command and display
+zone of the debug control page.
+<p>This is equivalent to the standard <b>exadb</b>
+command syntax <b>Dvariable</b> or <b>DHvariable</b>
+depending on the state of the
+debug control <b>HexaDecimal</b>.
+
+
+<p>
+
+</dl>
+<li>
+<dl>
+<dt class=type><a name="BreakKey">
+<b>BreakKey
+</b></a>
+<dd class=data>This control switch controls the state of the execution interrupt mechanism. When
+active, 
+execution may be interrupted by pressing the escape key. Otherwise execution
+will continue
+un-interrubted till break point or <b>STOP</b>.
+
+
+<p>
+
+</dl>
+<li>
+<dl>
+<dt class=type><a name="AsmList">
+<b>AsmList
+</b></a>
+<dd class=data>This control switch controls the state of the execution interrupt mechanism. When
+active, 
+execution may be interrupted by pressing the escape key. Otherwise execution
+will continue
+un-interrubted till break point or <b>STOP</b>.
+
+
+<p>
+
+</dl>
+<li>
+<dl>
+<dt class=type><a name="HexaView">
+<b>HexaView
+</b></a>
+<dd class=data>The state of this switch controls the way in which variable inspection operations
+are performed.
+When <b>hexa</b> is active the variable value will be displayed as
+a string of hex bytes, otherwise
+the value will be displayed using its standard print
+format.
+
+
+<p>
+
+</dl>
+</ul><li>
+<dl>
+<dt class=type><a name="Variables">
+<b><u>V</u>ariables
+</b></a>
+<dd class=data>This tab page presents the various debug controls allowing break point management,
+variable,
+file, code section and source management functions to name but a few.
+<p>
+
+
+
+
+
+<p>
+
+</dl>
+<img src="vexadb4.gif" usemap="#VariableControl" >
+<ul><li>
+<dl>
+<dt class=type><a name="vListe">
+<b>vListe
+</b></a>
+<dd class=data>This table display the list of all global variables in a convenient form for 
+viewing.
+A variable value may be sent tothe memory dump mechanism by clicking on
+the corresponding
+line of this table.
+Virtual file variables for which an assign has not been performed
+will be signaled
+by the standard ERROR 116 .
+Pointer variables which are invalid are
+indicated by the standard ERROR 118.
+
+
+<p>
+
+</dl>
+</ul></ol>
+
+</td>
+</table></div><p>
+
+<p><div align="center">
+<table class="CRT">
+<tr><th><h3 align="center">
+Copyright (c) 2002 Prologue  
+</h3>
+</table></div><p>
+</body></html>

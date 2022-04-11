@@ -1,0 +1,29 @@
+VERSION = 1
+RUNTIME = "bdamail"
+
+  mail_debug(#)
+% smtp_connect($, %, $, %)
+% smtp_send(#, $, %, $, %, $, %, $, %, $, %)
+% smtp_disconnect()
+% smtp_reset()
+% dns_request($, %, $)
+% mime_code($, %, $, %, $, %, $, %, $, %, $, %, $, %, #, $, %)
+% mime_add($, %, $, %, #, $, %)
+% mime_remove($, %, $, %)
+% pop3_connect($, %, $, %, $, %)
+% pop3_box_status(%, %?, %?)
+% pop3_get_msg_buf(%, $, %?, %)
+% pop3_get_msg(%, $, %, %)
+% pop3_top_msg(%, $, %, %)
+% pop3_delete_msg(%)
+% pop3_reset()
+% pop3_disconnect()
+% mime_decode($, %, $, %, $, %?, $, %?, $, %?, $, %?, $, %?, $, %?, %?, %?)
+% mime_attachment_info($, %, %, %?, %?, %?, %?, $, %?, $, %?)
+% mime_extract($, %, %, $, %, %?)
+% mime_field($, %, $, %, %, $, %?)
+  mail_conf(%)
+% smtp_connect_with_auth($, %, $, %, $, %, $, %, %)
+
+END
+

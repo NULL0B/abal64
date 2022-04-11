@@ -1,0 +1,13 @@
+
+ABAL = /home/Dev/abal32
+BIN  = $(ABAL)/bin
+SRC  = $(ABAL)/src/sing
+! error th	ats all
+$(BIN)/xsdp: $(SRC)/xmlp.c $(SRC)/xmlparse.c $(SRC)/xmlparse.h $(SRC)/xsd.c $(SRC)/xsd.h 
+	-$(GCC) -g $(GDB) -o $@ $(SRC)/xmlp.c 1> pipo1 2> pipo2
+	cat pipo1 pipo2 > pipo
+	agr -apipo
+	cp $@ $(EXABIN)
+
+! make
+

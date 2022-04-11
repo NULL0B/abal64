@@ -1,0 +1,28 @@
+
+JTR   = otr33
+otr   = $(EXABIN)/$(OTR)
+JTR   = $(ABAL)/bin/jtr33
+
+POBJ  =
+OBJ   = .o
+
+SP01  = $(ABAL)/src/otr/
+PATHMF = $(ABAL)/otr33/mf/
+
+.c.o:
+	-$(GCC) -c $(GDB) -DUNIX -I$(SP01) -Dotr32 $*  $(PIPO)
+! ifdef AGR
+	cat pipo1 pipo2 > pipo
+	$(AGR) -w -apipo
+! endif
+
+! include $(PATHMF)jtr3
+! include $(PATHMF)jtr6
+! include $(PATHMF)atrj
+! include $(PATHMF)atrk
+! make
+! include $(PATHMF)jtr.mf
+! make
+
+
+

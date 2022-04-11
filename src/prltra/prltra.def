@@ -1,0 +1,10 @@
+version = 1
+runtime = "prltra"
+
+PrlTraMsg (%,%,%,$,$)
+PrlTraDump(%,%,%,$,$,$,%)
+% PrlTraInit(%,%,%,$,$)
+PrlTraEnd (%)
+
+end
+

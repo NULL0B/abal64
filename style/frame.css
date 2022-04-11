@@ -1,0 +1,14 @@
+/* ------------------------------------ */
+/* Default Visual Library  Frame Styles */
+/* ------------------------------------ */
+
+insetframe  {	border-style: inset;  	}
+outsetframe {	border-style: outset; 	}
+ridgeframe  {	border-style: ridge;  	}
+grooveframe {	border-style: groove; 	}
+editframe   {   border-style: edit;	}
+
+/* ----------- */
+/* End of File */
+/* ----------- */
+

@@ -1,0 +1,279 @@
+<html>
+<head>
+<title>ABAL 3 : Abal Source Production</title>
+<META NAME="VERSION" CONTENT="*PRL@INFO*$6:31a001">
+<link href="style.css" rel="STYLESHEET" type="text/css" media="SCREEN">
+</head>
+<body>
+<div align=center>
+<table border=1 width="90%">
+<tr><th><h1 align=center>ABAL 3 : Abal Source Production</h1>
+</table>
+<p>
+<table border=1 width="90%">
+<tr><td><p>
+<ol>
+<li><h2>Introduction</h2><p>
+The production of efficient and reliable graphical application source code, 
+using either standard ABAL instructions, or object oriented language,
+are the primary objectives of the ABAL 3 visual forms editor.<p>
+In the current version of the product, application modelling and 
+subsequent source production is offered to cater for the requirements of 
+two fundemental application scenarios, namely, 
+Graphical User Interfaces and Graphical Printed Documents.<p>
+Source production of these application scenarios being possible
+to give rise to any one of the four different packaging types :
+<ol>
+<li>Program Source
+<li>Module Source
+<li>Overlay Source
+<li>Inclusion Source
+</ol>
+<p>
+giving rise in all to the following, sixteen, different production types.
+<p>
+<table>
+<tr>	<td rowspan=8>Standard Abal
+	<td rowspan=4>Graphical User Interface
+	<td>Program
+<tr>	<td>Module
+<tr>	<td>Overlay
+<tr>	<td>Inclusion
+
+<tr>	<td rowspan=4>Graphical Printed Document
+	<td>Program
+<tr>	<td>Module
+<tr>	<td>Overlay
+<tr>	<td>Inclusion
+<tr>	<td rowspan=8>Object Oriented
+	<td rowspan=4>Graphical User Interface
+	<td>Program
+<tr>	<td>Module
+<tr>	<td>Overlay
+<tr>	<td>Inclusion
+
+<tr>	<td rowspan=4>Graphical Printed Document
+	<td>Program
+<tr>	<td>Module
+<tr>	<td>Overlay
+<tr>	<td>Inclusion
+</table>
+<p> The remainder of this document will be dedicated to the description 
+of these different production and packaging models for each of the 
+target languages and application scenarios.
+<p>
+
+<li><h2>Architecture</h2><p>
+In all of above mentioned cases the source production will exhibit 
+a flat model, object scenario, type architecture comprising a 
+variety of specialised application member objects, or components, each 
+accompanied by their individual scenario integration methods, or functions,
+affording the highest possible degree of freedom for interaction for 
+the benefit of the overall application scenario.
+
+<p>In object oriented terms, the application scenario, itself a derivation
+ of the visual base class, instances a collection of components equally
+derived from the same visual base class.
+
+<p>In both object oriented and standard language production versions, 
+the various object methods, or functions, describe and implement the 
+different phases in the life cycle of the application scenario and its
+individual component parts.
+
+<p>This collection of methods, or functions, may equally well be 
+considered the interface of the scenario object as the expression of 
+its operational contract.
+
+<p>The visual base class provides the following collection of virtual 
+methods, or generic functions, for each of the phases in the object
+or component life cycle.
+
+<ol>
+<li><h3>OnCreate</h3><p>
+This method, or function, often refered to as the constructor,
+will be invoked, or activated, for the application scenario when 
+it is first created and comprises the various operations required 
+for the correct initialisation of the scenario and its component
+widgets.
+<p>
+<table>
+<tr><th>Operation<th>Program<th>Overlay<th>Module<th>Include
+<tr><td>Graphical Initialisation<td>YES<td><td><td>
+<tr><td>Palette Loading<td>YES<td><td><td>
+<tr><td>Font preparation<td colspan=4>YES
+<tr><td>Widget Construction<td colspan=4>YES
+</table>
+<p> Individual scenario components, often refered to as <b>Widgets</b>
+or Window Objects, will be constructed and initialised in the order in
+which they are declared in the scenario.
+<p>They may legally interact with widgets declared and constructed 
+before themselves.
+<p>Interaction with other member widgets, prior to completion of their 
+individual construction, is bad practice and will probably give rise to 
+undesirable and unpredictable side effects of an inconsistant nature.
+<p>
+<li><h3>OnShow</h3><p>
+This method, or function, will be invoked whenever the scenario is
+to become visible or to be redisplayed or refreshed. It comprises the
+various display methods of its component widgets and their support
+routines.
+<p>
+<li><h3>OnGetFocus</h3><p>
+This method or function will be invoked when the scenario receives the
+visual focus and becomes the active component. 
+<p>The overall behaviour of this method will differ depending on the
+application nature, either user interface or printed document.
+<p>In the former case the visual focus will be distributed amongst the various candidate
+widgets for the reception of both keyboard and mouse events through the various 
+event channels.
+<p>This method is the most complex of all scenario methods comprising
+two distinct operational sections, the pre-event, operational focus switch and
+the post-event, focus distribution switch.
+<p>Each section comprising the various member widgets defined for
+contribution in terms of their GetFocus and Event optional parameters.
+<p>
+In the later case focus will be distributed in a round robin fashion to all
+candidate widgets for contribution to the printed page until no
+further contribution is detected.
+<p>The end of each cycle through the collection of candidates will 
+result in the ejection of the resulting page image to the corresponding 
+output device.
+<p>
+<li><h3>OnEvent</h3><p>
+This method will be invoked for the interpretation of pointer events
+in order to elucidate the component widget most suited for reception
+of the scenario sub focus.
+<p>Event methods of individual widgets may be invoked as a result of 
+implicite scenario production or in response to explicte method
+invocation from within other member widget methods.
+<p>
+<li><h3>OnLoseFocus</h3><p>
+As the event focus switchs between the various application scenario 
+components this method will be invoked as required allowing member 
+objects to react prior to relinquishing focus control.
+<p>
+<li><h3>OnHide</h3><p>
+This method will be invoked prior to scenario termination allowing 
+for the disappearance and or restitutional behaviour to be performed.
+<p>
+<li><h3>OnRemove</h3><p>
+This method, often refered to as the destructor, will be invoked 
+prior to the destruction of, or final exit  from and application scenario
+allowing member objects to perform any relevant liberation and clean up
+operations prior to the ultimate scenario termination or completion.
+<p>Individual Widget destruction will be performed in the reverse order of
+their declaration.
+<p>Interaction with other member widgets, after completion of their 
+destruction is extremly bad practice and wiil produce
+undesirable, unpredictable and unsupportable side effects.
+<p>
+</ol>
+<p>
+In addition to the above mentioned widget and scenario methods, the
+following scenario level methods are provided for ease of integration 
+and co-operation in hybrid application configurations.
+<p>
+<ol>
+<li><h3>OnAttach</h3><p>
+This method provides the various visual scenario start up operations
+comprising graphical resolution determination, palette loading and 
+font management for visual initialisation for integration of the scenarion
+into applications design using standard ABAL, ASFUN or Screener.
+<p>
+<li><h3>OnDetach</h3><p>
+This method provides the complementary behaviour to the preceeding
+<b>OnAttach</b> method performing the necessary release of visual 
+resources when working from and in conjunction with other application 
+design platforms.
+<p>
+<li><h3>OnExec</h3><p>
+This method provides for coherent and comprehensive operation of the  
+correctly constructed scenario invoking in order the different phases 
+of the application life cycle namely, display : OnShow, control : OnGetFocus, relinquish : OnLoseFocus 
+and  restitution : OnHide.
+<p>
+</ol>
+<p>
+Inspection of any one of the various production streams types will 
+allow confirmation of the above described application architecture.
+<p>
+<li><h2>Packaging</h2><p>
+As mentioned at the begining of this document, four different 
+source packaging models are available for production as required
+by the specific requirements of the target application.
+<p>Each of the individual package types is suited to a particular 
+purpose and exhibits specific interfacing requirements and constraints.
+<p>
+
+<ol>
+<li><h3>Program</h3>
+<p>This source packaging allows for the creation of autonomous application platform or 
+startup components and application chain or loadgo targets.
+<p>The component is animated from segment zero following the standard construction,display,
+focus and destruction sequence.
+<p>The construction and destruction methods, or procedures, providing the necessary code
+enabling correct graphical operation, namely, graphical resolution setting, colour map loading 
+and font loading.<p>
+
+<li><h3>Overlay</h3><p>
+<p>This source packaging allows for the creation of autonomous application overlay components 
+to be used by application platforms for visual extensions.
+<p>This packaging type is intended for use from ABAL 3 conforming visual applications.
+<p>Alternative graphical environment construction or management methods are provided
+via the <b>OnAttach</b> and <b>OnDetach</b> methods whivh implement the standard 
+visual initialisation and termination generted to the <b>OnCreate</b> and </b>OnRemove</b>
+methods of <b>PROGRAM</b> packaging.
+<p>These methods must be invoked to ensure graphical environment integrity when <b>OVERLAY</b>
+packaged components are to be used from screener, asfun or third party application
+architectures.
+<p>Overlay packages provide an animation method in the form of the <b>OnExec</b> method
+normally used when the overlay is to be triggered to perform its payload, usually in the
+form of a printed document or an independant application sub-section.
+<p>The standard forms model scenario event methods are naturally present for cooperative
+integration as a standard visual component.
+<p>The overlay construction method <b>OnCreate</b> is generated to provide a buffer,length 
+parameter couple forming a generic construction parameter reception mechanism.
+<p>The parameter buffer is parsed by the standard overlay method <b>Main</b> into the
+overlay parameter matrix from which the various values may be retrieved using the string
+matrix variable <b>ArgV$</b> to this effect.
+<p>
+<li><h3>Module</h3><p>
+<p>This source packaging allows for the creation of modular components to be linked in for
+the completion of either type of program or overlay packaging.
+<p>Construction an Destruction concerns itself with the various widgets of the forms model
+and is based on a graphical environment that will be proved by its program packaged host.
+<p>As for the overlay packaging of components, secondary graphical environment construction and
+destruction methods are provided via the suplementary interface methods <b>OnAttach</b>
+and <b>OnDetach</b>.
+allowing for easy integration of these modules for hetrogenous application production 
+in conjunction with screener or asfun for example.
+<p>The module interface method <b>Component Named</b> and the  construction method <b>OnCreate</b> 
+are generated providing a parameter reception and function signature reflecting the 
+various forms model widgets signalling their contribution to this effect via the
+widget property <b>Interface</b>.
+<p>
+For further information on this subject please consult the relevant document
+relating to <a href="vwidget.htm">Widget Properties</a>
+<p>
+<li><h3>Include</h3>
+<p>This packaging is provided for the generation of application components to be
+included within any of the above packaging models or other application production
+architecures.
+<p>This packaging is particularily suited to the production of visual component
+class files to be included for the resolution of complex visual data types.
+<p>Total Compliancy of the inclusion package to a particular use is not guaranteed.
+<p>
+</ol>
+<p>
+
+</ol>
+
+</table>
+<table>
+<tr><th><h3 align=center>Copyright &copy; <a href="http://www.prologue.fr">Prologue</a></h3>
+<tr><th><h3 align=center>Version Fran&ccedil;aise <a href="fr/abalprod.htm"><img src="tricolor.gif"></a>
+</table>
+</div>
+</body>
+</html>
+

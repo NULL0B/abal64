@@ -1,0 +1,182 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+
+<title>ABAL 3 : New Common Library Functions </title>
+<META NAME="VERSION" CONTENT="*PRL@INFO*$6:31a002">
+<link href="style.css" rel="STYLESHEET" type="text/css" media="SCREEN">
+</head>
+<body>
+<div align=center>
+<table>
+<tr><th><h1>ABAL 3 : New Common Library Functions </h1><td>
+<tr><th><h2>Programmer Reference Manual</h2><td>
+<tr><th><h3>Table of Contents</h3><td>
+<tr><td>
+<p>
+<ol>
+<li><a href="#days"   > DAYS     : Date Information</a>
+<li><a href="#hash"   > HASH     : Calculate Hash Code</a>
+<li><a href="#runtime"> RUNTIME  : Dynamic Library Number from Name</a>
+<li><a href="#loaduser">LOADUSER : Define Dynamic Library Name</a>
+<li><a href="#loadgo" > LOADGO   : Systam Command with Return Code </a>
+<li><a href="#abalanfc">ABALANFC : File Name Conversions</a>
+<li><a href="#wildcomp">WILDCOMP : Wild Compare Function</a>
+<li><a href="#checkfmt">CHECKFMT : Format Compliance Checking</a>
+<li><a href="#asciifm"> ASCIIFM  : Format Conversion To Ascii</a>
+</ol>
+</table>
+
+<p>
+
+<table>
+<tr><th width="40%"><h4><a name="days">result=DAYS(day,month,year)</h4><th>Date Information
+<tr><td colspan=2>
+<p> This function will return an integer value representing : 
+<p><ol><li>The day of the week from 1, sunday to 7, saturday, when a full and valid date value is represented
+by the day, month and year integer parameters.
+<li>The number of days in the month, when the day parameter is set to zero with valid month and year values.
+<li>The number of days in the year, when the day and and month parameters are set to zero and a valid year
+value parameter is present.
+</ol>
+<p> Valid years are years after the zero time point of 1970.
+<p> Valid months are values between 1 and 12 inclusive.
+<p> Valid day values depend on the month and year values.
+<p> Examples
+<p><code><pre>
+	RESULT = DAYS(26,11,2003)	;** the day of the week number
+	RESULT = DAYS(0,11,2003)	;** the day count for november
+	RESULT = DAYS(0,0,2003)		;** the total day count for 2003
+</pre></code><p>
+</table>
+<p>
+<table>
+<tr><th width="40%"><h4><a name="hash">result=HASH(string,value)</h4><th>Calculate Hash Code
+<tr><td colspan=2>
+<p>This function will calculate a hash code value of the string parameter using the value parameter.
+The hash calculation is performed as the sum of the character values int the string modulus the has value.
+<p>Hash code values are best chosen from the set of prime numbers.
+<p>Example
+<p><code><pre>
+	V = HASH("string data",57)
+</pre> </code> <p>
+</table>
+<p>
+<table>
+<tr><th width="40%"><h4><a name="runtime">number=RUNTIME(name)</h4><th>Dynamic library Resolution
+<tr><td colspan=2>
+<p>This instruction returns the internal number of the dynamic library identified by the string value
+passed as the name parameter.
+<p>This number may be used as the parameter to the <b>LoadUser</b> instruction allowing a new library name
+to be set for a logical dynamic library.
+<p>
+</table>
+<p>
+<table>
+<tr><th width="40%"><h4><a name="loaduser">LOADUSER(number) = string</h4><th>Name Dynamic Library
+<tr><td colspan=2>
+<p>This function affects a name to the dynamic library represented by the number parameter.
+<p>Dynamic library definition files provide logical filenames by means of the <b>RUNTIME</b> clause.
+<p>This logical name will be used as the physical name for the resolution of the library unless
+a physical name alternative is provided by this instruction.
+<p>The logical library number may be retrived by presenting the logical library name to the
+new <a href="#runtime">RUNTIME</a> function to thiseffect.
+<p>Example
+<p><code><pre>
+	LOADUSER( RUNTIME("printer") ) = "psiii" 
+</pre> </code> <p>
+</table>
+<p>
+<table>
+<tr><th width="40%"><h4><a name="loadgo">result=LOADGO(handle,command)</h4><th>System command 
+<tr><td colspan=2>
+<p>This function will perform the same action as the equivalent instruction <b>LOAD.GO=handle,command</b>
+except that an eventual return code from the executed program will be returned in the result variable or register.
+<p>Any error encountered by the execution of this instruction may be trapped by an <b>on error goto</b> mechanism.
+<p>Example
+<p><code><pre>
+	ERROR = LOADGO(1,"PROGRAM,COMMAND")
+</pre> </code> <p>
+</table>
+<p>
+<table>
+<tr><th width="40%"><h4><a name="abalanfc">result=ABALANFC(source,option)</h4><th>Filename conversions
+<tr><td colspan=2>
+<p>This instruction is the recommended alternative to the soon to be redundant environment variable
+of the same name.
+<p>The function will return the conversion of the source parameter filename string using the option
+parameter values.
+<p>Legal values are
+<table border=1>
+<tr><th>VALUE<th>EFFECT
+<tr><th>0<td>no conversion, source is returned as result.
+<tr><th>1<td>upper case conversion
+<tr><th>2<td>lower case conversion
+<tr><th>8<td>conversion of mnemonics using environment variable values 
+<tr><th>9<td>upper case conversion and mnemonic conversion.
+<tr><th>10<td>lower case conversion and mnemonic conversion.
+</table>
+<p>Example
+<p><code><pre>
+	S = ABALANFC("MD0.FILENAME.EXT",10)
+</pre> </code> <p>
+</table>
+
+<p>
+
+
+<table>
+<tr><th width="40%"><h4><a name="wildcomp">result=WILDCOMP(string,string)</h4><th>Wild Card Compare
+<tr><td colspan=2>
+<p>This function will perform a wild card compare operation between the two string arguements.
+If the compare is true the ZERO  is returned to indicate SUCCESS. All other values represent failure.
+<p>Wild cards may be present in the right most string only.
+<p>Example
+<p><code><pre>
+	IF ( WILDCOMP("/home/dev/filename.ext","/home/dev/*") = 0 )
+		PAUSE "OK"
+	ELSE :: PAUSE "FAIL"
+	ENDIF
+</pre> </code> <p>
+</table>
+<p>
+
+<table>
+<tr><th width="40%"><h4><a name="checkfmt">result=CHECKFMT(variable,format)</h4><th>Format Compliance Check
+<tr><td colspan=2>
+<p>This function will perform a format compliance check on the variable contents.
+<p>This is the exact same operation  as performed by the <b>ASK</b> instruction during data input
+and upon data input completion.
+<p>The format may be presented as an ASCII string or by variable as the result of an <b>FM</b>
+instruction.
+<p>The function will return zero to indicate success, all other  values indicate failure.
+<p>Example
+<p><code><pre>
+	IF ( CHECKFMT(123.45,"(N4Z.Z2)") = 0 )
+		PAUSE "OK"
+	ELSE :: PAUSE "FAIL"
+	ENDIF
+</pre> </code> <p>
+</table>
+<p>
+<table>
+<tr><th width="40%"><h4><a name="asciifm">result=ASCIIFM(variable)</h4><th>Ascii Format
+<tr><td colspan=2>
+<p>This function provides the reverse conversion of binary format data to the ascii equivalent.
+It expects a variable containing valid ABAL format code and will return a string result containing the
+equivalent symbolic format.
+<p>Example
+<p><code><pre>
+	B = FM(SN5Z.ZZ)
+	S = ASCIIFM(B)
+</pre> </code> <p>
+</table>
+<p>
+<table>
+<tr><th><h3 align=center>Copyright &copy; <a href="http://www.prologue.fr">Prologue</a></h3>
+<tr><th><h3 align=center>Version Fran&ccedil;aise <a href="fr/event.htm"><img src="tricolor.gif"></a>
+</table>
+</div>
+</body>
+</html>
+

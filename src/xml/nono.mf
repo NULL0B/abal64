@@ -1,0 +1,8 @@
+nono.tgz: nono.tgz:  '
+        vdbhelp.at '
+        /home/icons/png/16/231-point_cyan.pngnono.tgz:  '
+        vdbhelp.at '
+        /home/icons/png/16/231-point_cyan.png '
+        vtools.at
+	tar -czvf $@ $?
+!make

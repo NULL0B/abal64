@@ -1,0 +1,691 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>ABAL 3 : Visual Atributs and Style </title>
+<META NAME="VERSION" CONTENT="*PRL@INFO*$6:31a001">
+<link href="style.css" rel="STYLESHEET" type="text/css" media="screen">
+<link href="print.css" rel="STYLESHEET" type="text/css" media="print">
+</head>
+<body>
+<div align=center>
+<table  >
+<tr><th><h1>ABAL 3 : Visual Atributs and Style </h1>
+<tr><th><h2>Programmer Reference Manual</h2>
+<tr><th><h3>Table of Contents</h3>
+<tr><td>
+<p>
+<ol>
+<li><a href="#intro">Introduction</a>
+<li><a href="#overview">Overview</a>
+<li><a href="#model">Visual Style Architectural Model</a>
+<ul>
+<li><a href="#viewport">Style View Port</a>
+<li><a href="#cell">Style Format Cell</a>
+</ul>
+<li><a href="#syntax">Visual Style Syntax</a>
+<ul>
+<li><a href="#comments">Style Comments</a>
+<li><a href="#include">Style Inclusion</a>
+<li><a href="#classdef">Class Definition</a>
+<li><a href="#memberdef">Class Member Expression</a>
+</ul>
+<li><a href="#types">Visual Style Types</a>
+<ul>
+<li><a href="#values">Style Values</a>
+<li><a href="#string">String Values</a>
+<li><a href="#colours">Colour Values</a>
+</ul>
+<li><a href="#keywords">Visual Style Keywords</a>
+<ul>
+<li><a href="#margin">Margin</a>
+<li><a href="#border">Border</a>
+<li><a href="#corner">Corner</a>
+<li><a href="#padding">Padding</a>
+<li><a href="#background">Background</a>
+<li><a href="#text">Text</a>
+<li><a href="#general">General</a>
+</ul>
+<li><a href="#examples">Examples of Visual Style</a>
+<ul>
+<li><a href="#example1">Border Types</a>
+<li><a href="#example2">Text Formating</a>
+<li><a href="#example3">Background Formating</a>
+<li><a href="#example4">Border Images</a>
+</ul>
+</ol>
+</table>
+<p>
+<table>
+<tr><th><h3><a name="intro">Introduction</a></h3>
+<tr><td>
+<p>This document provides a detailed description of the new style management subsystem of the abal 3 visual library.
+The style subsystem will be described in terms of its architectural model, its interface description syntax and its 
+functional behaviour. 
+<p>The visual library is a dynamic library application component distributed with version 3 of abal under <b>useit</b> 
+and <b>windows</b>.
+<p>For more detailed information pertaining to the <a href="visual.htm">visual library</a> please refer to the 
+relevent html documenation provided with the abal 3 product.
+<p>
+</table>
+<p>
+<table>
+<tr><th><h3><a name="overview">Overview</a></h3>
+<tr><td>
+<p>
+The style management subsystem, of the abal 3 visual library, allows for the activation of visual formating techniques 
+equally by means of the standard abal print/ask instruction <code>ATB</code> as through the new visual library instruction 
+<code>VisualStyle</code>.
+<p>The standard <code>ATB</code> instruction has been extended to offer 26 new atribut values ranging from 
+<code>ATB(100)</code> to <code>ATB(125)</code> inclusivly. 
+<dl><dt> The underlying escape sequences implemented for the support of these new visual atributs are as follows :<p>
+<dd><b>ESC ( a</b><p>
+<dt>through<p>
+<dd><b>ESC ( z</b><p>
+</dl>
+<p>The instruction <code>ATB(100)</code> has a reserved semantic performing the role of visual atribut packet closure.
+<p>The remaining atributs are to be defined through the <b>VISUAL_ATB</b> sub-function of the <code>VisualControl</code>
+function of the visual library 
+<p>The semantics of the various visual atributs are to be defined using a sub-set of the
+international standard <code>CSS</code> <code>Cascading Style Sheet</code> language.
+<p>Style sheet instructions may be grouped in style classes and class groups stored in standard ascii textfiles
+usually bearing the <b>.css</b> extension or suffix.
+<p>Files containing style sheet classes and instructions may be submitted to the style management subsystem for processing via the <b>VISUAL_STYLE</b>
+sub-function of the <code>VisualControl</code> function of the visual library 
+<p>The behaviour of the standard widget drawing functions of the visual library may be overloaded by the definition
+of the corresponding style classes.
+<p>
+</table>
+<p>
+<table>
+<tr><th><h3><a name="model">Visual Style Architectural Model</a><h3>
+<tr><td>
+<p>The architectural model of the style management subsystem comprises the following two layers :
+<p>
+<ol>
+<li><h4><a name="viewport">The Style Parent View Port</a></h4>
+<p>The parent view port provides default dimensions and text font information that will be refered to by the various
+ style definition instructions.
+<p>The viewport, to which style formating mechanisms will generate their output, may be either the default graphical
+screen, a graphical visual buffer, or a logical viewport activated by the <code>VisualViewPort</code> function of the
+visual library.
+<p>
+<li><h4><a name="cell">The Style Format Cell</a></h4><p>
+<p>A style formating cell will be calculated for the production of graphical output to the view port in response to
+formating requests received from either the visual atribut or visual element instructions.
+<p>The style formating cell comprises the following four distinct regions  
+	<dl>
+	<dt>Cell Margin
+	<dd>This is the space outside of the cell border.
+	<dt>Cell Border
+	<dd>The border when present surrounds the content.
+	<dt>Cell Padding
+	<dd>This is the space padding between the border and the contents.
+	<dt>Cell Content
+	<dd>This is the payload to which the visual style is to be applied and is provided by the standard
+	print output being channeled through to the style content collection mechanisms.
+	</dl>
+<p>
+<dl>
+<dt>A fifth composite region :
+<dd>Cell Background
+<dt>spans both the padding and the content regions and is strictly inside of the border region.
+</dl>
+</ol>
+<p>This may seen resumed in the following image :
+<p><div align=center><img src="style.gif"></div>
+<p>The various properties, and their atributs, of these regions may be influenced by the corresponding instructions 
+comprising the style sheet class.
+<p>
+</table>
+<p>
+<table>
+<tr><th><h3><a name="syntax">Visual Style Syntax</a></h3>
+<tr><td>
+<p>This section of the documentation presents in detail the sub-set of the <code>CSS Level 1</code> specification 
+supported by the visual style parser implemented in the current version of the ABAL 3 visual library.
+<p>The complete <code>CSS Level 1</code> specification may be found at 
+<a href="http://www.w3c.org/TR/CSS1">http://www.w3c.org/TR/CSS1</a>
+<p>Certain features of the complete specification have been ommited and new features have been added to the subset used by the 
+visual library which are not to be found in the official specifications.
+<p>Style class files are described using expressions of the following four types
+<p>
+<dl>
+<dt><h4><a name="comments">Comments</a></h4><p>
+<dd><table><tr><td> <b>/*</b><i>any amount of text </i><b>*/</b></table><p>
+<dt><h4><a name="include">Class File Inclusion</a></h4><p>
+<dd><table><tr><td> <b>@import url(</b><a href="#string">stringvalue</a> <b>)</b></table><p>
+<dt><h4><a name="classdef">Class Definition </a></h4><p>
+<dd><table><tr><td> <i>classname</i> <b>{</b> <i>class member expressions</i> <b>}</b></table><p>
+<dt><h4><a name="memberdef">Class Member Expression</a></h4><p>
+<dd><table><tr><td> <i>keyword</i> <b>:</b> <a href="#values">value</a> <b>;</b></table><p>
+</dl>
+<p>
+</table>
+<p>
+
+<table>
+<tr><th colspan=2><h3><a name="types">TYPES</a></h3>
+</table>
+<p>
+
+<table>
+<tr><th colspan=2><h4><a name="values">type : VALUE</a></h4>
+<tr><td colspan=2>
+<p>Many style properties expect an explicite <b><a href="#values">value</a></b> to be provided. 
+<p>This value may be expressed in one of the following ways.
+<p>
+<tr><th>value<td><table><tr><th>keyword<th>text mode<th>graphix
+<tr><th>auto
+<td>The precalculated or predefined cell content dimensions will be used as required.
+<td>Identical to text mode
+<tr><th>text
+<td>When the style provides a valid text font then the corresponding font dimension will be used in conjunction with the 
+textual payload to calculate the cell contents width or height. Otherwise identical to the above <b>auto</b> mode.
+<td>Identical to text mode operation
+<tr><th>0-9px
+<td colspan=2 rowspan=6>The metric dimension will be calculated during the parsing of the class and the resulting
+pixel value will be stored to the corresponding style property.
+<tr><th>0-9pt<tr><th>0-9in<tr><th>0-9cm<tr><th>0-9mm<tr><th>0-9em
+<tr><th>0-9%<td colspan=2>Percentage values are calculated in real time during the application of style. The actual source value
+depends on the nature of the style property.
+<p>
+</table>
+</table>
+<p>
+<table>
+<tr><th colspan=2><h4><a name="string">type : STRING</a></h4>
+<tr><td colspan=2>
+<p>Style properties which accept <b>url</b> values require an additional <b><i>string value</i></b> , enclosed between left and
+ right braces, providing the identity of the target url.
+<p>String values of this kind may be composed of any number of ascii characters terminated by the first
+right brace character.
+<p>
+</table>
+<p>
+<table>
+<tr><th colspan=2><h4><a name="colours">type : COLOUR</a></h4>
+<tr><td colspan=2>
+<p>Certain style properties referening to colour expect a <b><a href="#colours">colourvalue</a></b>.
+<p>Colour values may be chosen from the following list
+<p>
+<ul><li>transparent<li>rgb(RRGGBB)<li>black<li>navy<li>green<li>cyan<li>red<li>magenta<li>brown<li>grey<li>silver<li>blue<li>lime<li>sky<li>pink<li>purple<li>yellow<li>white</ul> ;
+<p>In the case of <b>rgb(RRGGBB)</b> the two digit hexadecimal colour fractions must be provided between the
+left and right braces.
+<p> 
+</table>
+<p>
+<table>
+<tr><th colspan=2><h3><a name="keywords">KEYWORDS</a></h3>
+</table>
+<p>
+
+<table>
+<tr><th colspan=2><h4><a name="margin">keyword : MARGIN</a></h4>
+<tr><td colspan=2>
+<p>This is the outermost region of the formating model and allows the border/padding/content to be deplaced from its
+default position by the specified upper and left margin dimensions.
+<p>The region is transparent. 
+<p>The four individual margin values may be set together or by separate instructions.
+<p>Margin width properties will use the corresponding viewport dimension as the source for percentage calculations.
+<p>
+<tr><th>margin:<td> <a href="#values">value</a> , <a href="#values">value</a> , <a href="#values">value</a> , <a href="#values">value;</a>
+<tr><th>margin-top:<td> <a href="#values">value;</a>
+<tr><th>margin-right:<td> <a href="#values">value;</a>
+<tr><th>margin-bottom:<td> <a href="#values">value;</a>
+<tr><th>margin-left:<td> <a href="#values">value;</a>
+<p>
+</table>
+<p>
+<table>
+<tr><th colspan=2><h4><a name="border">keyword : BORDER</a></h4>
+<tr><td colspan=2>
+<p>The cell border is generated inside of the margin region and comprises 4 components <b>top</b>,<b>right</b>,<b>bottom</b> and <b>right</b>. 
+<p>The properties <b>width</b>, <b>colour</b> and <b>style</b>, are defined for each of four the border components. 
+<p>Certain style values below will ignore the colour and or width properties since their inherent default values will be used.
+<p>Border images will be displayed using the current image quality. This depends on the activation of the graphical
+subsysteme in terms of rgb colour palette or rgb true colour modes of operation.
+<p>
+<tr><th>border-width:<td><a href="#values">value</a> , <a href="#values">value</a> , <a href="#values">value</a> , <a href="#values">value;</a>
+<tr><th>border-top-width:<td> <a href="#values">value;</a>
+<tr><th>border-right-width:<td> <a href="#values">value;</a>
+<tr><th>border-bottom-width:<td> <a href="#values">value;</a>
+<tr><th>border-left-width:<td> <a href="#values">value;</a>
+<tr><th>border-style:<td> 
+<dl>
+<dt><b>none</b><dd>the cell border is inhibited and any space that it would occupy is relinquished for use by the calculation of the other three regions.
+<dt><b>outset</b><dd>the cell border is an outset relief box, comprising upper and left highlight edges and lower and right lowlight edges.
+<dt><b>inset</b><dd>the cell border is an inset relief box, comprising upper and left lowlight edges and lower and right highlight edges.
+<dt><b>ridge</b><dd>the cell border is delimited by an outset/inset relief box pair giving the impression of a surrounding ridge.
+<dt><b>groove</b><dd>the cell border is delimited by an inset/outset relief box pair giving the impression of a surrounding groove.
+<dt><b>edit</b><dd>the cell border is a simple black line frame surrounding a white filled rectangle.
+<dt><b>url(<a href="#string">stringvalue</a>)</b><dd>the cell border component will be generated using the image provided by the indicated image and the corresponding width.
+<dt><b>convex</b><dd>the cell border will be generated as a convex rounded relief form.
+<dt><b>concave</b><dd>the cell border will be generated as a concave rounded relief form.
+<dt><b>solid</b><dd>the cell border will be generated as a simple coloured line frame of the corresponding width..
+<dt><b>double</b><dd>the cell border will be generated as a pair pair of coloured line frames of the corresponding width..
+<dt><b>dotted</b><dd>the cell border will be generated using dot symbols
+<dt><b>dashed</b><dd>the cell border will be generated using dash symbols
+<dt><b>rounded,</b><dd>the cell border will be generated with rounded corners
+<dt><b>disk</b><dd>the cell border will be a circular frame.
+</ul>;
+<tr><th>border-colour:<td>This property expects a <a href="#colours">colourvalue</a> to be used by certain frame styles when drawing the frame.
+<tr><th>border-color:<td>This is a synonym for <b>border-colour</b> described above.
+
+<tr><th>border-top-style:<td> 
+	<ul><li>none<li>outset<li>inset<li>ridge<li>groove<li>edit<li>url(<a href="#string">stringvalue</a>)
+	<li>convex<li>concave<li>solid<li>double<li>dotted<li>dashed<li>rounded,<li>disk</ul>;
+<tr><th>border-right-style:<td> 
+	<ul><li>none<li>outset<li>inset<li>ridge<li>groove<li>edit<li>url(<a href="#string">stringvalue</a>)
+	<li>convex<li>concave<li>solid<li>double<li>dotted<li>dashed<li>rounded,<li>disk</ul>;
+<tr><th>border-bottom-style:<td>
+	<ul><li>none<li>outset<li>inset<li>ridge<li>groove<li>edit<li>url(<a href="#string">stringvalue</a>)
+	<li>convex<li>concave<li>solid<li>double<li>dotted<li>dashed<li>rounded,<li>disk</ul>;
+<tr><th>border-left-style:<td> 
+	<ul><li>none<li>outset<li>inset<li>ridge<li>groove<li>edit<li>url(<a href="#string">stringvalue</a>)
+	<li>convex<li>concave<li>solid<li>double<li>dotted<li>dashed<li>rounded,<li>disk</ul>;
+<p>
+</table>
+<p>
+<table>
+<tr><th colspan=2><h4><a name="corner">keyword : CORNER</a></h4>
+<tr><td colspan=2>The following instructions allow images to be defined to be used by the border frame
+generation mechanisms for the display of the four corners of this frame.
+<p>The corresponding border widths will be used to control the display of the required corners.
+<p>When corners have not been defined then the top border frame will cover the top left and top right corner
+areas whilst the bottom border frame will cover the bottom left and bottom right corner areas.
+<p>
+<tr><th>corner-top-left-style:<td>url(<a href="#string">stringvalue</a>); 
+<tr><th>corner-top-right-style:<td>url(<a href="#string">stringvalue</a>);
+<tr><th>corner-bottom-left-style:<td>url(<a href="#string">stringvalue</a>);
+<tr><th>corner-bottom-right-style:<td>url(<a href="#string">stringvalue</a>);
+<p>
+</table>
+<p>
+<table>
+<tr><th colspan=2><h4><a name="padding">keyword : PADDING</a></h4>
+<tr><td colspan=2><p>This region is inside of an eventual border region and allows the cell contents to be drifted away from
+the frame for a lighter presentation. 
+<p>The padding value defines the width of the four standard components
+<b>top</b>,<b>right</b>,<b>bottom</b> and <b>left</b>.
+<p>
+<tr><th>padding:<td> <a href="#values">value</a> , <a href="#values">value</a> , <a href="#values">value</a> , <a href="#values">value;</a>
+<tr><th>padding-top:<td> <a href="#values">value;</a>
+<tr><th>padding-right:<td> <a href="#values">value;</a>
+<tr><th>padding-bottom:<td> <a href="#values">value;</a>
+<tr><th>padding-left:<td> <a href="#values">value;</a>
+<p>
+</table>
+<p>
+<table>
+<tr><th colspan=2><h4><a name="text">keyword : TEXT</a></h4>
+<tr><td colspan=2>
+<p>The following instructions apply to the innermost textual contents of the style formating cell and allow definition 
+of its associated atributs <b>align</b>,<b>colour</b>,<b>font</b>,<b>style</b>,<b>decoration</b> and <b>indent</b>.
+<p>Three further properties allow the actual spacing within the font font characters to be influenced.
+<p> 
+<tr><th>text-align<td><ul><li>none<li>left<li>right<li>center<li>justify<li>repeat<li>tile<li>makefit<li>bestfit<li>transparent</ul>;
+<tr><th>text-colour:<td>This property expects a <a href="#colours">colourvalue</a> to be used for the display of eventual content text.
+<tr><th>text-color:<td>This is a synonym for <b>text-colour</b> described above.
+<tr><th>text-font:<td> url(filename);
+<tr><th>text-style:<td> <ul><li>none<li>bold<li>underline<li>overline<li>line-through<li>blink<li>shadow</ul> ;
+<tr><th>text-decoration:<td> <ul><li>none<li>bold<li>underline<li>overline<li>line-through<li>blink<li>shadow</ul> ;
+<tr><th>text-indent:<td> <a href="#values">value;</a>
+<tr><th>letter-spacing:<td> <a href="#values">value;</a>
+<tr><th>line-spacing:<td> <a href="#values">value;</a>
+<tr><th>word-spacing:<td> <a href="#values">value;</a>
+<p>
+</table>
+<p>
+<table>
+<tr><th colspan=2><h4><a name="background">keyword : BACKGROUND</a></h4>
+<tr><td colspan=2>
+<p>The following instructions apply to the combined contents and padding regions of the style formating cell and allow definition 
+of the associated atributs <b>align</b>,<b>colour</b>,<b>image</b> and <b>attach</b>.
+<p> The cell background provides two distinct planes, displayed in order, the colour plane and the image plane.
+<p>
+<tr><th>background-colour:<td>This property expects a <a href="#colours">colourvalue</a> that will be used to fill the first plane of the 
+background region. 
+<tr><th>background-color:<td>This is a synonym for <b>background-colour</b> described above.
+<tr><th>background-image:<td>url(<a href="#string">stringvalue</a>);
+<tr><th>background-attach:<td><ul><li>fixed<li>scroll</ul>;
+<tr><th>background-align<td>This property, in conjunction with the preceeding property <b>background-attach</b>,
+controls the way in which an eventual background image is to be pasted to the combined <b>padding</b> and <b>content</b>
+regions.
+<p>The following list describes the various alternatives.
+<p>
+<dl><dt><b>none</b><dd>The background image will be simply paste to the region with eventual clipping as required.
+<dt><b>left</b><dd>The background image will be top left aligned in the target region.
+<dt><b>right</b><dd>The background image will be aligned to the bottom and right of the region.
+<dt><b>center</b><dd>The background image will be centered within the target region.
+<dt><b>tile</b><dd>The background image will be repeated in both x and y directions to cover or tile the target region.
+<dt><b>repeat</b><dd>This is a synonym of the justify option.
+<dt><b>makefit</b><dd>The background image will be stretched or squashed to fit the target region.
+<dt><b>bestfit</b><dd>As for the <b>makefit</b> keyword, the background image will be stretched or squashed to fit the target region.
+In addition the image propertions will be respected and with application of region centering to compensate for any excess.
+<dt><b>transparent</b><dd>For image file formats, especially GIF, which offers transparence this option allows the existing background
+to shine through for the tranparent colour value allowingthe image to used as an icon.
+</dl>;
+<p>
+</table>
+<p>
+<table>
+<tr><th colspan=2><h4><a name="general">keywords : GENERAL</a></h4>
+<tr><td colspan=2>
+<p>The following instructions allow definition of other general properties of the style formating model.
+<p>They apply to the overall style formating model allowing repositioning and dimension overloading.
+<p>
+<tr><th>class:<td> The <b>class</b> instruction allows the properties of a predefined style class to be copied or inherited
+into the style matrix. Subsequent style instructions, other than the class instruction, may then be used to complement the 
+default properties of the base class.
+<tr><th>content:<td> This instructions allows the nature and behaviour of the contents to be defined in accordance with the following list
+<p>
+<dl>
+<dt><b>text</b><dd>the contents or payload is to be formated using the text formating mechanisms.
+<dt><b>url</b><dd>the contents or payload is to be formated using the image formating mechanisms.
+<dt><b>auto</b><dd>the contents or payload will be formated depending on its detected nature.
+<dt><b>none</b><dd>no content or payload will be formated. 
+<dt><b>trigger</b><dd>the contents or payload is to be formated using the text trigger formating mechanisms.
+</dl>
+<p>
+<tr><th>width:<td> This instruction allows the width of the formatting cell to be defined in terms of its value.
+<p> A percentage value here will refer to the parent viewport dimensions.
+<tr><th>height:<td> This instruction allows the hight of the formatting cell to be defined in terms of its value.
+<p> A percentage value here will refer to the parent viewport dimensions.
+<tr><th>float:<td>This property controls the overall behaviour of the various cell position properties as described by the following list.
+<p>
+<dl><dt><b>none</b><dd>The default value allows the <b>position</b>, <b>top</b> and <b>left</b> properties to be applied
+to calculate the position of the formating cell
+<dt><b>left</b><dd>Here the formating cell will be floated to the left edge of the parent viewport.
+<dt><b>right</b><dd>Here the formating cell will be floated towards the right edge of the parent viewport 
+taking into consideration the width of the cell.
+<dt><b>top</b><dd>Here the formating cell will be floated to the top edge of the parent viewport.
+<dt><b>bottom</b><dd>Here the formating cell will be floated towards the bottom edge of the parent viewport taking 
+into consideration the height of the cell.
+<dt><b>home</b><dd>In this case the formating cell will be floated towards the upper left corner of the parent viewport.
+</dl>
+<p>
+<tr><th>position:<td>This instruction allows the position of the formating cell to be controlled depending 
+on one of the following options.
+<p>This property requires the <b>float</b> property, described above, to be set to its default of <b>none</b> otherwise
+this property will have no effect.
+<p>
+<dl>
+<dt><b>auto</b><dd>The formatting cell will be positioned as requested by the textual tabulation or the visual style
+element defined zone.
+<dt><b>home</b><dd>The formating cell will be floated to the top left corner or margins of the parent viewport.
+<dt><b>line</b><dd>The formating cell will be floated to the left edge or margin of the parent viewport.
+<dt><b>static</b><dd>This is a synonym for the <b>auto</b> keyword described above.
+<dt><b>relative</b><dd>The top left corner position of the foprmating cell will be adjusted by the values provided by the
+<b>left</b> and <b>top</b> properties. In the case of a percentage value the resulting position will be adjust with respect
+to the percentage of the parent viewport dimensions.
+<dt><b>absolute</b><dd>The top left corner of the formating cell will be set to the value provided by the <b>left</b>
+and <b>top</b> properties. In the case of a percentage value the resulting position will be calculated with respect to the parent viewport dimensions.
+<dt><b>fixed</b><dd>This is a synonym for the <b>absolute</b> keyword described above.
+</dl> ;
+<tr><th>top:<td> This instruction allows an explicite value to be defined for the top margin or position of all elements of the class.
+<p>The value provided here will be used in conjunction with the behaviour required by the <b>position</b> property defined above.
+<tr><th>left:<td> This instruction allows an explicite value to be defined for the left margin or position of all elements of the class.
+<p>The value provided here will be used in conjunction with the behaviour required by the <b>position</b> property defined above.
+<tr><th>right:<td> This instruction allows an explicite value to be defined for the right margin or position of all elements of the class.
+<tr><th>bottom:<td> This instruction allows an explicite value to be defined for the bottom margin or position of all elements of the class.
+<tr><th>vertical-align:<td>This property is parsed but has no current effect on the formating model output.
+<p> It accepts the following keyword values.
+<p>
+<ul><li>baseline<li>sub<li>super<li>middle<li>none<li>top<li>bottom<li>text</ul>
+
+</table>
+<p>
+
+<table>
+<tr><th colspan=2><h3><a name="examples">EXAMPLES of VISUAL STYLE</a></h3>
+<tr><td colspan=2>
+<p>
+
+<ul>
+<li><h4><a name="example1">Example 1 : Border Types</a></h4>
+<p>This example presents the basic techniques for the creation of a collection of rudimentary style classes
+showing different border style types. These classes are then connected to the visual atribut mechanisms and then
+activated through the standard ATB instruction.
+<p>It should be noticed that the initial visual atribut definitions simply reference the predefined classnames, whilst
+the subsequent visual atribut definitions show the possibility of extending these class definitions.
+<p>
+<table>
+<tr><th>example1.css<td>
+<code><pre>
+/* simple example of border styles */ 
+atb101 { border-style: outset; }
+atb102 { border-style: inset;  }
+atb103 { border-style: ridge;  }
+atb104 { border-style: groove; }
+/* end of file */
+</pre></code>
+<tr><th>example1.as<td>
+<code><pre>
+#user "visual.def"
+Program "example1"
+dcl	e%,fh%(2)
+dcl	buffer$=256
+Segment 0
+	e = visualinitialise(3)
+	e = visualpalette("standard.rgb",12)
+	fh(1) = visualfont("font1.fmf",9)
+	fh(2) = visualfont("font2.fmf",9)
+	e = visualcontrol(30,"example1.css",12)
+	buffer = "b{ class: atb101; }"
+	e = visualcontrol(20,buffer,len$(buffer))
+	buffer = "c{ class: atb102; }"
+	e = visualcontrol(20,buffer,len$(buffer))
+	buffer = "d{ class: atb103; }"
+	e = visualcontrol(20,buffer,len$(buffer))
+	buffer = "e{ class: atb104; }"
+	e = visualcontrol(20,buffer,len$(buffer))
+	Print=1:Tab(5,3),Atb(101)," Outset Framed ",Atb(100)
+	Print=1:Tab(5,5),Atb(102)," Inset  Framed ",Atb(100)
+	Print=1:Tab(5,7),Atb(103)," Ridge  Framed ",Atb(100)
+	Print=1:Tab(5,9),Atb(104)," Groove Framed ",Atb(100)
+	pause " "
+	buffer = "b{ class: atb101; padding: 2mm; }"
+	e = visualcontrol(20,buffer,len$(buffer))
+	buffer = "c{ class: atb102; padding: 2mm; }"
+	e = visualcontrol(20,buffer,len$(buffer))
+	buffer = "d{ class: atb103; padding: 2mm; }"
+	e = visualcontrol(20,buffer,len$(buffer))
+	buffer = "e{ class: atb104; padding: 2mm; }"
+	e = visualcontrol(20,buffer,len$(buffer))
+	Print=1:Tab(25,3),Atb(101)," Outset Framed ",Atb(100)
+	Print=1:Tab(25,5),Atb(102)," Inset  Framed ",Atb(100)
+	Print=1:Tab(25,7),Atb(103)," Ridge  Framed ",Atb(100)
+	Print=1:Tab(25,9),Atb(104)," Groove Framed ",Atb(100)
+	pause " "
+	e = visualliberate()
+Eseg 0
+End
+</pre></code>
+</table>
+<p>
+
+<li><h4><a name="example2">Example 2 : Text Formating</a></h4>
+<p>This example presents basic text formating techniques concerning colour, alignment and font.
+<p>As above the secondary visual atribut definitions show examples of class extension or overloading.
+<table>
+<tr><th>example2.css<td>
+<code><pre>
+/* simple example of text styles */ 
+text   { text-font: url(arial2.fmf); text-colour: white; background-colour: green; }
+atb101 { class: text; text-align: left; }
+atb102 { class: text; text-align: right; }
+atb103 { class: text; text-align: center; }
+atb104 { class: text; text-align: justify; }
+/* end of file */
+</pre></code>
+<tr><th>example2.as<td>
+<code><pre>
+#user "visual.def"
+Program "example2"
+dcl	e%,fh%(2)
+dcl	buffer$=256
+Segment 0
+	e = visualinitialise(3)
+	e = visualpalette("standard.rgb",12)
+	fh(1) = visualfont("font1.fmf",9)
+	fh(2) = visualfont("font2.fmf",9)
+	e = visualcontrol(30,"example2.css",12)
+	buffer = "b{ class: atb101; }"
+	e = visualcontrol(20,buffer,len$(buffer))
+	buffer = "c{ class: atb102; }"
+	e = visualcontrol(20,buffer,len$(buffer))
+	buffer = "d{ class: atb103; }"
+	e = visualcontrol(20,buffer,len$(buffer))
+	buffer = "e{ class: atb104; }"
+	e = visualcontrol(20,buffer,len$(buffer))
+	Print=1:Tab(5,3),Atb(101)," Left Aligned   ",Atb(100)
+	Print=1:Tab(5,5),Atb(102)," Right Aligned  ",Atb(100)
+	Print=1:Tab(5,7),Atb(103)," Centered Text  ",Atb(100)
+	Print=1:Tab(5,9),Atb(104)," Justified Text ",Atb(100)
+	pause " "
+	buffer = "b{ class: atb101; text-colour: lime; }"
+	e = visualcontrol(20,buffer,len$(buffer))
+	buffer = "c{ class: atb102; text-colour: lime; }"
+	e = visualcontrol(20,buffer,len$(buffer))
+	buffer = "d{ class: atb103; text-colour: lime; }"
+	e = visualcontrol(20,buffer,len$(buffer))
+	buffer = "e{ class: atb104; text-colour: lime; }"
+	e = visualcontrol(20,buffer,len$(buffer))
+	Print=1:Tab(25,3),Atb(101)," Left Aligned   ",Atb(100)
+	Print=1:Tab(25,5),Atb(102)," Right Aligned  ",Atb(100)
+	Print=1:Tab(25,7),Atb(103)," Centered Text  ",Atb(100)
+	Print=1:Tab(25,9),Atb(104)," Justified Text ",Atb(100)
+	pause " "
+	e = visualliberate()
+Eseg 0
+End
+</pre></code>
+</table>
+<p>
+
+<li><h4><a name="example3">Example 3 : Background Image Formating</a></h4>
+<p>This example demonstrates the various effects concerning the background colour and background image properties.
+<p>It should also be noticed that each style class imposes explicite cell dimensions using the <b>width</b> and <b>height</b> properties.
+<table>
+<tr><th>example3.css<td>
+<code><pre>
+<code><pre>
+/* simple example of background image styles */ 
+atb101 { background-colour: red; padding: 5px; 
+	 height: 10mm; width : 10mm; 
+	 background-image: url(/home/abal3/images/upicon.gif); 
+	 background-align: left;    }
+atb102 { background-colour: red; padding: 5px; 
+	 height: 10mm; width : 10mm; 
+	 background-image: url(/home/abal3/images/upicon.gif); 
+	 background-align: right; }
+atb103 { background-colour: red; padding: 5px; 
+	 height: 10mm; width : 10mm; 
+	 background-image: url(/home/abal3/images/upicon.gif); 
+	 background-align: tile; }
+atb104 { background-colour: red; padding: 5px; 
+ 	 height: 10mm; width : 10mm; 
+	 background-image: url(/home/abal3/images/upicon.gif); 
+	 background-align: makefit; }
+/* end of file */
+</pre></code>
+<tr><th>example3.as<td>
+<code><pre>
+#user "visual.def"
+Program "example3"
+dcl	e%,fh%(2)
+dcl	buffer$=256
+Segment 0
+	e = visualinitialise(3)
+	e = visualpalette("standard.rgb",12)
+	fh(1) = visualfont("font1.fmf",9)
+	fh(2) = visualfont("font2.fmf",9)
+	e = visualcontrol(30,"example3.css",12)
+	buffer = "b{ class: atb101; }"
+	e = visualcontrol(20,buffer,len$(buffer))
+	buffer = "c{ class: atb102; }"
+	e = visualcontrol(20,buffer,len$(buffer))
+	buffer = "d{ class: atb103; }"
+	e = visualcontrol(20,buffer,len$(buffer))
+	buffer = "e{ class: atb104; }"
+	e = visualcontrol(20,buffer,len$(buffer))
+	Print=1:Tab(5,2),Atb(101)," ",Atb(100)
+	Print=1:Tab(5,6),Atb(102)," ",Atb(100)
+	Print=1:Tab(5,10),Atb(103)," ",Atb(100)
+	Print=1:Tab(5,14),Atb(104)," ",Atb(100)
+	print=1:Tab(25,12)
+	pause " "
+	e = visualliberate()
+Eseg 0
+End
+</pre></code>
+</table>
+<p>
+
+<li><h4><a name="example4">Example 4 : Border Images</a></h4>
+<p>This is a full example to demonstrate the way in which all aspects of a border may be managed
+using customised images.
+<p>The application of the style class is performed in this case using the <b>VisualStyle</b> function for the
+sake of the example.
+<table>
+<tr><th>example4.css<td>
+<code><pre>
+atb101 { 
+	margin: 10px; 
+	padding: 4px; 
+	border-style: double; 
+	text-colour: rgb(DDFFDD);
+	background-image: url(sing.gif); 
+	border-width: 10px;
+	corner-top-left-style: url(tlc.gif);
+	corner-top-right-style: url(trc.gif);
+	corner-bottom-right-style: url(brc.gif);
+	corner-bottom-left-style: url(blc.gif);
+	border-top-style: url(top.gif);
+	border-left-style: url(left.gif);
+	border-bottom-style: url(bottom.gif);
+	border-right-style: url(right.gif);
+	background-align: tile;
+	text-align: center;
+	text-font: url(arial3.fmf);
+	}
+</pre></code>
+<tr><th>example4.as<td>
+<code><pre>
+#user "visual.def"
+Program "example4"
+dcl	e%,fh%(2)
+dcl	buffer$=256
+Segment 0
+	e = visualinitialise(3)
+	e = visualpalette("standard.rgb",12)
+	fh(1) = visualfont("font1.fmf",9)
+	fh(2) = visualfont("font2.fmf",9)
+	e = visualcontrol(30,"example4.css",12)
+	e = visualcontrol(20,buffer,len$(buffer))
+	e = visualstyle(5,5,150,150,"atb101",6,"text",4)
+	print=1:Tab(25,12)
+	pause " "
+	e = visualliberate()
+Eseg 0
+End
+</pre></code>
+</table>
+<p>
+</ul>
+<p>
+</table>
+<p>
+<p>
+<table>
+<tr><th width="30%"><h3 align=center>Copyright &copy; <a href="http://www.prologue.fr">Prologue</a></h3>
+</table>
+</div>
+</body>
+</html>
+
+
+
+
+
+

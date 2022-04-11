@@ -1,0 +1,14 @@
+
+visual$(OBJ): $(SP01)visual.as   $(SP01)pragmas.as  $(SP01)visilib.as  '
+              $(SP01)visuali.as  $(SP01)printeri.as $(SP01)vlibrary.as '
+              $(SP01)vevent.as   $(SP01)vtypes.as   $(SP01)vfont.as    '
+              $(SP01)vcolour.as  $(SP01)vbuffer.as  $(SP01)vfname.as   '
+              $(SP01)vmessage.as $(SP01)vlabels.as  $(SP01)vsaver.as   '
+              $(SP01)vwidget.as  $(SP01)voverlay.as $(SP01)vtrigger.as '
+              $(SP01)vframe.as   $(SP01)vtext.as    $(SP01)vimage.as   '
+              $(SP01)vedit.as    $(SP01)vpush.as    $(SP01)vcheck.as   '
+              $(SP01)vradio.as   $(SP01)vswitch.as  $(SP01)vselect.as  '
+              $(SP01)vtable.as   $(SP01)vprogres.as $(SP01)vscroll.as  '
+              $(SP01)vgraph.as   $(SP01)vgroup.as   $(SP01)vwindow.as  '
+              $(SP01)vprinter.as $(SP01)vpage.as
+

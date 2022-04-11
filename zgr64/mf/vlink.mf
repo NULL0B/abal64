@@ -1,0 +1,4 @@
+
+$(POBJ)vlink$(OBJ):  $(SP01)vlink.c $(SP01)vlink.h /home/abal64/include/bdas/wdef.h /home/abal64/include/bdas/bda.h /home/abal64/include/bdas/oldbda.h /home/abal64/include/bdas/pubsbda.h /home/abal64/include/bdas/pubwbda.h $(SP01)zint.h $(SP01)zglobal.h $(SP01)ztools.h $(SP01)zext.h $(SP01)ztrace.h '
+/home/abal64/include/trace.h
+

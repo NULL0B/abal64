@@ -1,0 +1,55 @@
+$(SPMF)ATRN$(MF): $(SP01)trdll$(C)
+	genmake -m$@ -x -y$(@B) $?
+$(SPMF)ATRX$(MF): $(SP01)trxdll$(C)
+	genmake -m$@ -x -y$(@B) $?
+$(SPMF)ATR1$(MF):  $(SP01)trmain$(C)
+	genmake -m$@ -x -y$(@B) $?
+$(SPMF)ATR2$(MF): $(SP01)trbuffer$(C) $(SP01)trparser$(C)
+	genmake -m$@ -x -y$(@B) $?
+$(SPMF)ATRS$(MF): $(SP01)trjvsynt$(C) $(SP01)trerrors$(C)
+	genmake -m$@ -x -y$(@B) $?
+$(SPMF)ATR4$(MF): $(SP01)trtables$(C) $(SP01)trsymbol$(C)
+	genmake -m$@ -x -y$(@B) $?
+$(SPMF)ATR5$(MF): $(SP01)trinput$(C) $(SP01)trproc$(C)
+	genmake -m$@ -x -y$(@B) $?
+$(SPMF)ATRX$(MF): $(SP01)trjvexpr$(C) $(SP01)trmethod$(C)
+	genmake -m$@ -x -y$(@B) $?
+$(SPMF)ATR7$(MF): $(SP01)trshadow$(C) $(SP01)triter$(C)
+	genmake -m$@ -x -y$(@B) $?
+$(SPMF)ATR8$(MF): $(SP01)trngf$(C) $(SP01)trclf$(C)
+	genmake -m$@ -x -y$(@B) $?
+$(SPMF)ATR9$(MF): $(SP01)triof$(C) $(SP01)trldf$(C)
+	genmake -m$@ -x -y$(@B) $?
+$(SPMF)ATRA$(MF): $(SP01)trdirect$(C) $(SP01)trapl$(C)
+	genmake -m$@ -x -y$(@B) $?
+$(SPMF)ATRJ$(MF): $(SP01)trjava$(C)
+	genmake -m$@ -x -y$(@B) $?
+$(SPMF)ATRK$(MF): $(SP01)trjvmsg$(C)
+	genmake -m$@ -x -y$(@B) $?
+$(SPMF)ATRC$(MF): $(SP01)trstruct$(C) $(SP01)trclass$(C)
+	genmake -m$@ -x -y$(@B) $?
+$(SPMF)ATRD$(MF): $(SP01)troutput$(C) $(SP01)trlabels$(C)
+	genmake -m$@ -x -y$(@B) $?
+$(SPMF)ATRF$(MF): $(SP01)trnurone$(C)
+	genmake -m$@ -x -y$(@B) $?
+! MAKE
+! INCLUDE $(SPMF)ATRN
+! INCLUDE $(SPMF)ATR1
+! INCLUDE $(SPMF)ATR2
+! INCLUDE $(SPMF)ATRS
+! INCLUDE $(SPMF)ATR4
+! INCLUDE $(SPMF)ATR5
+! INCLUDE $(SPMF)ATR6
+! INCLUDE $(SPMF)ATR7
+! INCLUDE $(SPMF)ATR8
+! INCLUDE $(SPMF)ATR9
+! INCLUDE $(SPMF)ATRA
+! INCLUDE $(SPMF)ATRJ
+! INCLUDE $(SPMF)ATRC
+! INCLUDE $(SPMF)ATRD
+! INCLUDE $(SPMF)ATRK
+! INCLUDE $(SPMF)ATRF
+! MAKE
+
+
+

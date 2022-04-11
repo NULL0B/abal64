@@ -1,0 +1,9 @@
+
+!make
+APLUS9 =  $(POBJ)class$(OBJ) $(POBJ)prototyp$(OBJ)
+$(POBJ)class$(OBJ):  $(SP01)class.c $(SP01)aplus.h $(SP01)stdtypes.h $(SP01)hosts.h $(SP01)truser.h $(SP01)buffers.h $(SP01)value.h $(SP01)class.h $(SP01)struct.h $(SP01)relation.h $(SP01)friend.h $(SP01)param.h $(SP01)macros.h $(SP01)options.h $(SP01)status.h $(SP01)syntax.h $(SP01)memory.h '
+$(SP01)exrdef.h $(SP01)member.h $(SP01)trapping.h $(SP01)abal.h $(SP01)allocate.h $(SP01)context.h $(SP01)dieze.h $(SP01)pragma.h $(SP01)world.h $(SP01)crypt.c $(SP01)crypt.h
+$(POBJ)prototyp$(OBJ):  $(SP01)prototyp.c $(SP01)aplus.h $(SP01)stdtypes.h $(SP01)hosts.h $(SP01)truser.h $(SP01)buffers.h $(SP01)value.h $(SP01)struct.h $(SP01)relation.h $(SP01)friend.h $(SP01)macros.h $(SP01)options.h $(SP01)status.h $(SP01)syntax.h $(SP01)memory.h $(SP01)exrdef.h $(SP01)member.h '
+$(SP01)context.h $(SP01)module.h $(SP01)trapping.h $(SP01)abal.h $(SP01)allocate.h $(SP01)prototyp.h
+
+

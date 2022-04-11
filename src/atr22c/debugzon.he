@@ -1,0 +1,69 @@
+/*
+ *      Projet  : ABAL                  Copyright Prologue s.a. (c) 1990, 1995
+ *      Module  : ATR
+ *      Fichier : DEBUGZON.HE
+ *      Version : 2.1f
+ *      Date    : 13/10/97
+ *      Systeme : DOS / PRL / UNIX / VMS
+ *
+ *      Traducteur ABAL
+ *
+ *      [Zone de debug pour JUNE]
+ *
+ * 
+ */
+#ifdef _DEBUGZON
+#define EXT_DEBUGZON
+#else
+#define EXT_DEBUGZON extern
+#endif /* _DEBUGZON */
+
+/* PUBLIC */
+/* ------ */
+#define DebugZone struct _DebZone
+DebugZone {
+	long ZoneCode;
+	DebugZone* next;
+};
+
+#define ZoneStackPtr DebugZone*
+
+#define All_DebugZone() (DebugZone *) XNmalloc("DebugZone",sizeof(DebugZone))
+#define Free_DebugZone(p) Xfree((char *) p)
+
+/* PUBLIC VARIABLES */
+/* ---------------- */
+EXT_DEBUGZON DebugZone*		ZoneStack;
+EXT_DEBUGZON long			CurrentZoneCode;
+/* PUBLIC FONCTIONS */
+/* ---------------- */
+#ifdef LINT_ARGS
+
+EXT_DEBUGZON BOOL ZoneInitStack(ZoneStackPtr*);
+EXT_DEBUGZON BOOL ZonePushStack(long, ZoneStackPtr*);
+EXT_DEBUGZON long ZonePopStack (ZoneStackPtr*);
+EXT_DEBUGZON long ZoneCodeLineNumber (long, long);
+EXT_DEBUGZON long ZoneDecodeLineNumber (long, long*);
+EXT_DEBUGZON BOOL ZoneStackIsEmpty(ZoneStackPtr);
+
+
+
+#else
+
+EXT_DEBUGZON BOOL ZoneInitStack();
+EXT_DEBUGZON BOOL ZonePushStack();
+EXT_DEBUGZON long ZonePopStack ();
+EXT_DEBUGZON long ZoneCodeLineNumber ();
+EXT_DEBUGZON long ZoneDecodeLineNumber ();
+EXT_DEBUGZON BOOL ZoneInitStack();
+EXT_DEBUGZON BOOL ZoneStackIsEmpty();
+
+#endif /* LINT_ARGS */
+
+/* PUBLIC END */
+/* ---------- */
+
+/* FIN DEFINITIONS INTERNES */
+/* ------------------------ */
+
+/* ---------------- FIN date.he ----------------------------------------- */

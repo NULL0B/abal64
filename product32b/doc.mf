@@ -1,0 +1,23 @@
+# generated makefile : doc.mf 
+# ------------------------------------
+$(ABAL)/product32b/doc/abal3.htm: $(ABAL)/src/doc/abal3.htm
+	cp $* $@ 
+$(ABAL)/product32b/doc/abal3.jpg: $(ABAL)/src/doc/abal3.jpg
+	cp $* $@ 
+$(ABAL)/product32b/doc/logo.jpg: $(ABAL)/src/doc/logo.jpg
+	cp $* $@ 
+$(ABAL)/product32b/doc/print.css: $(ABAL)/src/doc/print.css
+	cp $* $@ 
+$(ABAL)/product32b/doc/sing.css: $(ABAL)/src/doc/sing.css
+	cp $* $@ 
+$(ABAL)/product32b/doc/sing.dtd: $(ABAL)/src/doc/sing.dtd
+	cp $* $@ 
+$(ABAL)/product32b/doc/style.css: $(ABAL)/src/doc/style.css
+	cp $* $@ 
+$(ABAL)/product32b/tools/style.css: $(ABAL)/src/doc/style.css
+	cp $* $@ 
+
+! include docen.mf
+! include docfr.mf
+! make
+

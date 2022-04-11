@@ -1,0 +1,34 @@
+! include $(ABAL)/common/allocate.def
+! include $(ABAL)/common/common.def
+! include $(ABAL)/common/libaccess.def
+! include $(ABAL)/common/ixciconr.def
+
+SP01 =  $(ABAL)/src/atr21f/
+
+SPECIAL = -DVERSION_XX -DUNIX -D_KEYWORD_DLLNAME -D_KEYWORD_TRACE 
+CCDEF = -DUNIX -Dunix -Dver15 -DUSEIT -DLINUX -Dpilote $(SPECIAL)
+
+.c.o:
+	gcc -c -g $(CCDEF) $*
+
+date.o:     $(SP01)date.c
+debug.o:     $(SP01)debug.c
+expr.o:     $(SP01)expr.c $(SP01)expr1.c $(SP01)expr2.c
+gencode.o:  $(SP01)gencode.c
+gestfic.o:  $(SP01)gestfic.c
+iofnt.o:    $(SP01)iofnt.c
+lexical.o:  $(SP01)lexical.c
+parser.o:   $(SP01)parser.c $(SP01)parse1.c $(SP01)parse2.c
+symboles.o: $(SP01)symboles.c
+table.o:    $(SP01)table.c
+tr.o:       $(SP01)tr.c
+trmess.o:   $(SP01)trmess.c
+! make
+
+$(ABAL)/bin/atr: tr.o trmess.o table.o symboles.o parser.o lexical.o '
+        iofnt.o gestfic.o gencode.o expr.o debug.o date.o '
+        $(LIBACCESS) $(WILDCOMP) $(IXCICONR) $(ALLOCATE)
+	gcc -o $@ $?
+	cp $@ $(EXABIN)/atr16
+
+

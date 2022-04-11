@@ -1,0 +1,26 @@
+ROOT = /home/abal3/
+SP01 = $(ROOT)class/
+SP02 = $(ROOT)include/
+
+POBJ =
+
+OBJ  = .apl
+
+BN01 = /home/abal3/
+
+! make
+
+.as.apl:
+	otr32 -I$(SP01) -I$(SP02) -nSP01=$(SP01) -sas -o -m  $*
+	cp $@ /home/abal3/
+
+! include visual
+! include files 
+
+! make
+printer.at: $(SP01)gprinter.as
+	otr32 -I$(SP01) -I$(SP02) -sas -d$@ -o -m -x $*
+	cp $@ /home/abal3/
+	cp $(@B).dbg /home/abal3/
+! make
+

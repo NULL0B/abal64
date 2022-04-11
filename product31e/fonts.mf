@@ -1,0 +1,90 @@
+# generated makefile : fonts.mf 
+# ------------------------------------
+/home/Dev/abal32/product31e/fonts/arial1.fmf: /home/Dev/abal32/fonts/arial1.fmf
+	cp $* $@ 
+/home/Dev/abal32/product31e/fonts/arial2.fmf: /home/Dev/abal32/fonts/arial2.fmf
+	cp $* $@ 
+/home/Dev/abal32/product31e/fonts/arial3.fmf: /home/Dev/abal32/fonts/arial3.fmf
+	cp $* $@ 
+/home/Dev/abal32/product31e/fonts/arial4.fmf: /home/Dev/abal32/fonts/arial4.fmf
+	cp $* $@ 
+/home/Dev/abal32/product31e/fonts/arial5.fmf: /home/Dev/abal32/fonts/arial5.fmf
+	cp $* $@ 
+/home/Dev/abal32/product31e/fonts/arial6.fmf: /home/Dev/abal32/fonts/arial6.fmf
+	cp $* $@ 
+/home/Dev/abal32/product31e/fonts/ask1016.fmf: /home/Dev/abal32/fonts/ask1016.fmf
+	cp $* $@ 
+/home/Dev/abal32/product31e/fonts/bmap0408.fmf: /home/Dev/abal32/fonts/bmap0408.fmf
+	cp $* $@ 
+/home/Dev/abal32/product31e/fonts/bmap0816.fmf: /home/Dev/abal32/fonts/bmap0816.fmf
+	cp $* $@ 
+/home/Dev/abal32/product31e/fonts/bmap1024.fmf: /home/Dev/abal32/fonts/bmap1024.fmf
+	cp $* $@ 
+/home/Dev/abal32/product31e/fonts/bmap1224.fmf: /home/Dev/abal32/fonts/bmap1224.fmf
+	cp $* $@ 
+/home/Dev/abal32/product31e/fonts/bmap1226.fmf: /home/Dev/abal32/fonts/bmap1226.fmf
+	cp $* $@ 
+/home/Dev/abal32/product31e/fonts/bmap1228.fmf: /home/Dev/abal32/fonts/bmap1228.fmf
+	cp $* $@ 
+/home/Dev/abal32/product31e/fonts/bmap1230.fmf: /home/Dev/abal32/fonts/bmap1230.fmf
+	cp $* $@ 
+/home/Dev/abal32/product31e/fonts/bmap1232.fmf: /home/Dev/abal32/fonts/bmap1232.fmf
+	cp $* $@ 
+/home/Dev/abal32/product31e/fonts/book1.fmf: /home/Dev/abal32/fonts/book1.fmf
+	cp $* $@ 
+/home/Dev/abal32/product31e/fonts/cour1016.fmf: /home/Dev/abal32/fonts/cour1016.fmf
+	cp $* $@ 
+/home/Dev/abal32/product31e/fonts/cour3.fmf: /home/Dev/abal32/fonts/cour3.fmf
+	cp $* $@ 
+/home/Dev/abal32/product31e/fonts/cour4.fmf: /home/Dev/abal32/fonts/cour4.fmf
+	cp $* $@ 
+/home/Dev/abal32/product31e/fonts/cour5.fmf: /home/Dev/abal32/fonts/cour5.fmf
+	cp $* $@ 
+/home/Dev/abal32/product31e/fonts/cour6.fmf: /home/Dev/abal32/fonts/cour6.fmf
+	cp $* $@ 
+/home/Dev/abal32/product31e/fonts/font2.fmf: /home/Dev/abal32/fonts/font2.fmf
+	cp $* $@ 
+/home/Dev/abal32/product31e/fonts/font3.fmf: /home/Dev/abal32/fonts/font3.fmf
+	cp $* $@ 
+/home/Dev/abal32/product31e/fonts/font4.fmf: /home/Dev/abal32/fonts/font4.fmf
+	cp $* $@ 
+/home/Dev/abal32/product31e/fonts/font5.fmf: /home/Dev/abal32/fonts/font5.fmf
+	cp $* $@ 
+/home/Dev/abal32/product31e/fonts/font6.fmf: /home/Dev/abal32/fonts/font6.fmf
+	cp $* $@ 
+/home/Dev/abal32/product31e/fonts/font7.fmf: /home/Dev/abal32/fonts/font7.fmf
+	cp $* $@ 
+/home/Dev/abal32/product31e/fonts/font8.fmf: /home/Dev/abal32/fonts/font8.fmf
+	cp $* $@ 
+/home/Dev/abal32/product31e/fonts/font9.fmf: /home/Dev/abal32/fonts/font9.fmf
+	cp $* $@ 
+/home/Dev/abal32/product31e/fonts/hand1024.fmf: /home/Dev/abal32/fonts/hand1024.fmf
+	cp $* $@ 
+/home/Dev/abal32/product31e/fonts/real1024.fmf: /home/Dev/abal32/fonts/real1024.fmf
+	cp $* $@ 
+/home/Dev/abal32/product31e/fonts/standard.fmf: /home/Dev/abal32/fonts/standard.fmf
+	cp $* $@ 
+/home/Dev/abal32/product31e/fonts/times1.fmf: /home/Dev/abal32/fonts/times1.fmf
+	cp $* $@ 
+/home/Dev/abal32/product31e/fonts/times2.fmf: /home/Dev/abal32/fonts/times2.fmf
+	cp $* $@ 
+/home/Dev/abal32/product31e/fonts/times3.fmf: /home/Dev/abal32/fonts/times3.fmf
+	cp $* $@ 
+/home/Dev/abal32/product31e/fonts/times4.fmf: /home/Dev/abal32/fonts/times4.fmf
+	cp $* $@ 
+/home/Dev/abal32/product31e/fonts/times5.fmf: /home/Dev/abal32/fonts/times5.fmf
+	cp $* $@ 
+/home/Dev/abal32/product31e/fonts/times6.fmf: /home/Dev/abal32/fonts/times6.fmf
+	cp $* $@ 
+/home/Dev/abal32/product31e/fonts/times7.fmf: /home/Dev/abal32/fonts/times7.fmf
+	cp $* $@ 
+/home/Dev/abal32/product31e/fonts/times8.fmf: /home/Dev/abal32/fonts/times8.fmf
+	cp $* $@ 
+/home/Dev/abal32/product31e/fonts/cyrl1024.fmf: /home/Dev/abal32/fonts/cyrl1024.fmf
+	cp $* $@ 
+/home/Dev/abal32/product31e/fonts/cyrl0816.fmf: /home/Dev/abal32/fonts/cyrl0816.fmf
+	cp $* $@ 
+! make
+! shell chmod uog+r fonts/*
+! make
+

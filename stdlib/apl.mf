@@ -1,0 +1,22 @@
+STDLIB  = /home/Dev/abal32/stdlib/
+OPTIONS =  -m -nSTDLIB=$(STDLIB)
+
+.as.apl:
+	otr32 -sas -d$@ $(OPTIONS) $*
+
+$(STDLIB)otrstd.apl: $(STDLIB)otrstd.as
+$(STDLIB)otrrel.apl: $(STDLIB)otrrel.as
+$(STDLIB)otrgui.apl: $(STDLIB)otrgui.as
+$(STDLIB)otrngf.apl: $(STDLIB)otrngf.as
+
+$(STDLIB)otrprn.apl: $(STDLIB)otrprn.as
+
+$(STDLIB)otredit.apl: $(STDLIB)otredit.as
+$(STDLIB)otrasfun.apl: $(STDLIB)otrasfun.as
+! ifdef _extended_libraries
+
+
+! endif
+
+! make
+

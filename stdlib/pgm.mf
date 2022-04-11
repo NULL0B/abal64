@@ -1,0 +1,15 @@
+OPTIONS = -ml -v -a -o -nSTDLIB=$(STDLIB)
+.as.at:
+	otr32 -sas $(OPTIONS) $*
+
+
+fprintf.at: fprintf.as
+method.at: method.as
+test.at: test.as
+userconv.at: userconv.as
+zoom.at: zoom.as
+
+! make
+! error
+diagman.at: diagman.as
+

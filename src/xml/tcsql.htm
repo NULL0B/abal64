@@ -1,0 +1,132 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+<head>
+<title>Abal 3 : SQL Extensions </title>
+<META NAME="VERSION" CONTENT="*PRL@INFO*$6:31a001">
+<link href="style.css" rel="STYLESHEET" type="text/css" media="SCREEN">
+</head>
+<body>
+<div align=center>
+<table border=1 width="90%">
+<tr><th><h1 align=center>Abal 3 : SQL Extensions</h1>
+<tr><th><h1 align=center>Specifications</h1>
+and
+<h1 align=center>Technical Documentation</h1>
+<tr><th><h2>Table of Contents</h2>
+<p>
+<div align=left>
+<ol>
+<li><a href="#intro">Introduction</a><p>
+<li><a href="#tcode">Abal Instructions</a><p>
+	<ol>
+	<li><a href="#assign">ASSIGN</a><p>
+	<li><a href="#select">SELECT</a><p>
+	<li><a href="#fetch">FETCH</a><p>
+	<li><a href="#read">READ</a><p>
+	<li><a href="#prepare">PREPARE</a><p>
+	<li><a href="#write">WRITE</a><p>
+	<li><a href="#exec">EXEC</a><p>
+	<li><a href="#keytype">KEYTYPE</a><p>
+	<li><a href="#linkname">LINKNAME</a><p>
+	<li><a href="#fileuser">FILEUSER</a><p>
+	</ol><p>
+<li><a href="#tcode">Tcode Instructions</a><p>
+<li><a href="#other">Other Syntax</a><p>
+<li><a href="#iface">Interface functions</a><p>
+</ol>
+</div>
+</table>
+<p>
+<table>
+<tr><th><a name="intro"><h3>Introduction</h3></a>
+<tr><td>
+<p>This document presents a preliminary and non contractual view of certain aspects
+of the phase 2 of the project <b>Abal 3</b>.
+<p>This phase of the project pertains to the addition of functionallity allowing 
+access to SQL servers, ORACLE, MY SQL etc.
+<p>This document outlines eventual technical specifications of these new SQL 
+extensions.
+<p>The underlying file access mechanisms, of the ABAL runtime module EXA, offer
+a collection of functions which may be used as a common language base from which 
+to start.
+<p>New keywords will be required to handle new concepts available with SQL.
+</table>
+
+<p>
+<table>
+<tr><th><a name="abal"><h3>Abal Syntax</h3></a>
+<tr><td>
+<p>The following instructions will need to be modified to provide acces to these new SQL functions.
+<p>
+<div align=center>
+<table>
+<tr><th><a name="assign"><h4>ASSIGN</h4></a>
+<tr><td><p><code>ASSIGN=&lt;handle&gt;,&lt;name&gt;,SQL[&lt;error&gt;]</code>
+<tr><th><a name="read"><h4>READ</h4></a>
+<tr><td><p><code>READ=&lt;handle&gt;[&lt;error&gt;,&lt;variable&gt;]</code>
+<tr><th><a name="write"><h4>WRITE</h4></a>
+<tr><td><p><code>WRITE=&lt;handle&gt;[&lt;error&gt;,&lt;variable&gt;]</code>
+</table>
+</div>
+
+<p>The following instructions will be added to the standard ABAL syntax
+to offer acces to these new SQL functions.
+<p>
+<div align=center>
+<table>
+<tr><th><a name="select"><h4>SELECT</h4></a>
+<tr><td><p><code>SELECT=&lt;handle&gt;,&lt;expression&gt;[&lt;error&gt;]</code>
+<tr><th><a name="prepare"><h4>PREPARE</h4></a>
+<tr><td><p><code>PREPARE=&lt;handle&gt;,&lt;expression&gt;[&lt;error&gt;]</code>
+<tr><th><a name="fetch"><h4>FETCH</h4></a>
+<tr><td><p><code>FETCH=&lt;handle&gt;,&lt;expression&gt;[&lt;error&gt;]</code>
+<tr><th><a name="exec"><h4>EXEC</h4></a>
+<tr><td><p><code>EXEC=&lt;handle&gt;,&lt;expression&gt;[&lt;error&gt;]</code>
+</table>
+</div>
+<p>
+
+<p>The following instructions will be added to accomodate and normalise the
+features previously made available by the <b>MODEXT</b> interface.
+<p>
+<div align=center>
+<table>
+<tr><th><a name="keytype"><h4>KEYTYPE</h4></a>
+<tr><td><p><code>KEYTYPE=&lt;handle&gt;,&lt;expression&gt;[&lt;error&gt;]</code>
+<tr><th><a name="linkname"><h4>LINKNAME</h4></a>
+<tr><td><p><code>LINKNAME=&lt;handle&gt;,&lt;expression&gt;[&lt;error&gt;]</code>
+<tr><th><a name="fileuser"><h4>FILEUSER</h4></a>
+<tr><td><p><code>FILEUSER=&lt;handle&gt;,&lt;expression&gt;[&lt;error&gt;]</code>
+</table>
+</div>
+<p>
+</table>
+
+<p>
+<table>
+<tr><th><a name="tcode"><h3>Tcode Instructions</h3></a>
+<tr><td><p>
+</table>
+
+<p>
+<table>
+<tr><th><a name="other"><h3>Other Syntax</h3></a>
+<tr><td><p>
+</table>
+
+<p>
+<table>
+<tr><th><a name="iface"><h3>Functional Interface</h3></a>
+<tr><td><p>
+</table>
+
+
+
+
+<table>
+<tr><th><h3 align=center>Copyright &copy; <a href="http://www.prologue.fr">Prologue</a></h3>
+</table>
+</div>
+</body>
+</html>
+

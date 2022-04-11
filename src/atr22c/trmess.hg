@@ -1,0 +1,351 @@
+
+/*
+	Desc :	TrMess.hg
+	Proj :	June
+	Copyright (c) 1997 Prologue Software
+
+		Message table.
+		
+
+	BEWARE : THIS FILE IS GENERATED - DO NOT MODIFY MANUALLY !
+
+	Generated on:  -  13/12/02 -  15:28 - from AWK Script
+
+*/
+
+/*
+    Message spécifique du lexical
+*/
+
+#define msgrdef        (int)  42		/* D‚finir */
+#define errlex0        (int)  43		/* Ouverture fichier impossible */
+#define errlex0bis        (int)  44		/* Voulez-vous continuer ? */
+#define errlex1        (int)  45		/* Fin de fichier anormale */
+#define errlex2        (int)  46		/* Lecture fichier impossible */
+#define errlex3        (int)  47		/* Ligne trop longue */
+#define errlex5        (int)  48		/* Trop d'inclusions successives */
+#define errlex6        (int)  49		/* Chaine attendue */
+#define errlex7        (int)  50		/* Directive incorrecte */
+#define errlex8        (int)  51		/* Fin de ligne incorrecte */
+#define errlex9        (int)  52		/* Chaine trop longue */
+#define errlex10        (int)  53		/* CaractŠre ill‚gal */
+#define errlex11        (int)  54		/* Etiquette incorrecte */
+#define errlex12        (int)  55		/* Const. Hexa. incorrecte */
+#define errlex14        (int)  56		/* Const. BCD incorrecte */
+#define errlex15        (int)  57		/* D‚bordement de capacit‚ */
+#define errlex16        (int)  58		/* #ELSE non associe a #IFDEF */
+#define errlex17        (int)  59		/* #ENDIF non associe a #IFDEF */
+#define errlex20        (int)  60		/* Symbole d‚ja d‚fini */
+#define errlex21        (int)  61		/* Symbole d‚ja ind‚fini */
+#define errlex22        (int)  62		/* END en cours d'inclusion */
+#define errlex23        (int)  63		/* Au moins un bloc #IFDEF est reste ouvert */
+#define errlex24        (int)  64		/* Directive incoh‚rente dans ce contexte */
+#define errlex25        (int)  65		/* Fin du fichier impr‚vue dans les commentaires */
+
+/*
+    Message spécifiques de la map
+*/
+
+#define erropenmap        (int)  197		/* Ouverture du fichier de mise au point */
+#define errnomap        (int)  198		/* Pas de liste associ‚e … la mise au point */
+
+/*
+    Message du noyau
+*/
+
+#define errsynt        (int)  35		/* Syntaxe d'appel incorrecte */
+#define erropenlst        (int)  36		/* liste */
+#define errwritlst        (int)  37		/* Ecriture fichier liste */
+#define erropenerr        (int)  38		/* Ouverture fichier d'erreurs */
+#define errwriterr        (int)  39		/* Ecriture fichier d'erreurs */
+#define errtargetTO        (int)  40		/* D‚finition de la cible incompatible : .O attendu pour ce source */
+#define errtargetTA        (int)  41		/* D‚finition de la cible incompatible : .AT attendu pour ce source */
+
+/*
+    Message spécifiques de l'optimisation
+*/
+
+#define erropt1        (int)  196		/* Optimisation impossible sur un module */
+
+/*
+    Message de présentation
+*/
+
+#define msgerr        (int)  3		/* ** Erreur */
+#define msgwrg        (int)  4		/* ** Attention */
+#define msgabort        (int)  5		/* - Abandon de la traduction */
+#define mesynt0        (int)  6		/* Taille des d‚clarations globales        : */
+#define mesynt1        (int)  7		/* Nombre de variables locales declar‚es   : */
+#define mesynt2        (int)  8		/* Taille du code produit                  : */
+#define mesynt3        (int)  9		/* Proc‚dure : */
+#define mesynt4        (int)  10		/* Segment   : */
+#define mesynt5        (int)  11		/* Taille des d‚clarations locales         : */
+#define mesynt6        (int)  12		/* Nombre de constantes locales declar‚es  : */
+#define mesynt7        (int)  13		/* Taille totale des donn‚es (L + G + E)   : */
+#define mesynt8        (int)  14		/* Taille totale des constantes            : */
+#define mesynt9        (int)  15		/* Taille totale du code produit           : */
+#define mesynt10        (int)  16		/* Fin du programme : */
+#define mesynt11        (int)  17		/* Fin du module : */
+#define mesynt12        (int)  18		/* Taille des d‚clarations etendues        : */
+#define mesynt13        (int)  19		/* Proc‚dure externe : */
+#define mesynt14        (int)  20		/* Segment externe : */
+#define mesynt15        (int)  21		/* Nombre de variables globales declar‚es  : */
+#define mesynt16        (int)  22		/* Nombre de constantes globales declar‚es : */
+#define mesynt17        (int)  23		/* D‚but du programme : */
+#define mesynt18        (int)  24		/* D‚but du module : */
+#define mesynt19        (int)  25		/* Statistiques : */
+#define mesynt20        (int)  26		/* Donn‚es globales : */
+#define msgviderr        (int)  27		/* Nombre d'erreur(s) */
+#define msgvidwrg        (int)  28		/* Nombre d'avertissement(s) */
+#define msgvidseg        (int)  29		/* Nombre de segment(s)                    : */
+#define msgvidproc        (int)  30		/* Nombre de proc‚dure(s)                  : */
+
+/*
+    Message spécifiques des extensions 
+*/
+
+#define errfu1        (int)  199		/* Version non suivi de '=' */
+#define errfu2        (int)  200		/* Num‚ro de version incorrect */
+#define errfu3        (int)  201		/* ',' ou fin de ligne attendue */
+#define errfu4        (int)  202		/* Option de num‚rotation incorrecte */
+#define errfu5        (int)  203		/* Runtime non suivi de '=' */
+#define errfu6        (int)  204		/* Nom de runtime trop long */
+#define errfu7        (int)  205		/* Absence de mention de version */
+#define errfu8        (int)  206		/* Numero de fonction incorrect */
+#define errfu9        (int)  207		/* Numero de fonction non suivi de ':' */
+#define errfu10        (int)  208		/* Absence de nom de fonction */
+#define errfu11        (int)  209		/* Red‚finition de fonction */
+#define errfu12        (int)  210		/* Trop d'arguments */
+#define errfu13        (int)  211		/* Type d'argument inconnu */
+#define errfu14        (int)  212		/* D‚claration et mode d'appel incompatibles */
+#define errfu15        (int)  213		/* Argument incorrect */
+#define errfu16        (int)  214		/* Les directives #USER doivent ˆtre en tˆte */
+#define errfu17        (int)  215		/* Passage d'une expression par adresse */
+
+/*
+    Message spécifiques de l'analyseur syntaxique
+*/
+
+#define ersynt0        (int)  66		/* Programme incorrect */
+#define ersynt1        (int)  67		/* Syntaxe incorrecte */
+#define ersynt2        (int)  68		/* END attendu et non trouv‚ */
+#define ersynt3        (int)  69		/* Num. (Ident.) Segment incorrect */
+#define ersynt4        (int)  70		/* D‚claration incorrecte */
+#define ersynt5        (int)  71		/* Argument d‚ja declare */
+#define ersynt6        (int)  72		/* Variable attendue et non trouv‚e */
+#define ersynt7        (int)  73		/* Instruction non encore trait‚e */
+#define ersynt8        (int)  74		/* Usage interdit dans une proc‚dure */
+#define ersynt9        (int)  75		/* Usage interdit dans un segment */
+#define ersynt10        (int)  76		/* Etiquette attendue et non trouv‚e */
+#define ersynt11        (int)  77		/* D‚bordement espace d'instructions */
+#define ersynt12        (int)  78		/* Etiquette ind‚finie : */
+#define ersynt13        (int)  79		/* Etiquette d‚finie et inutilis‚e : */
+#define ersynt14        (int)  80		/* Segment d‚ja d‚fini */
+#define ersynt15        (int)  81		/* Proc‚dure deja d‚finie */
+#define ersynt16        (int)  82		/* Nom de proc‚dure incorrect */
+#define ersynt17        (int)  83		/* Proc‚dure inconnue : */
+#define ersynt18        (int)  84		/* Argument incorrect */
+#define ersynt19        (int)  85		/* '(' attendue et non trouv‚e */
+#define ersynt20        (int)  86		/* ')' attendue et non trouv‚e */
+#define ersynt21        (int)  87		/* ',' attendue et non trouv‚e */
+#define ersynt22        (int)  88		/* ENDIF attendu et non trouv‚ */
+#define ersynt23        (int)  89		/* ELSE non associ‚ a un IF */
+#define ersynt24        (int)  90		/* ENDIF non associ‚ a un IF */
+#define ersynt25        (int)  91		/* UNTIL non associ‚ a un REPEAT */
+#define ersynt26        (int)  92		/* WEND non associ‚ a un WHILE */
+#define ersynt27        (int)  93		/* UNTIL attendu et non trouv‚ */
+#define ersynt28        (int)  94		/* WEND attendu et non trouv‚ */
+#define ersynt29        (int)  95		/* NEXT non associ‚ a un FOR */
+#define ersynt30        (int)  96		/* NEXT attendu et non trouv‚ */
+#define ersynt31        (int)  97		/* Type de donn‚e incorrect */
+#define ersynt32        (int)  98		/* CASE non associ‚ a un SELECT */
+#define ersynt33        (int)  99		/* DEFAULT non associ‚ a un SELECT */
+#define ersynt34        (int)  100		/* ENDSEL non associ‚ a un SELECT */
+#define ersynt35        (int)  101		/* CASE, DEFAULT ou ENDSEL attendu et non trouv‚ */
+#define ersynt36        (int)  102		/* Clause DEFAULT d‚ja d‚finie */
+#define ersynt37        (int)  103		/* ':' attendu et non trouv‚ */
+#define ersynt38        (int)  104		/* Type d'op‚rande incorrect */
+#define ersynt39        (int)  105		/* Format incorrect */
+#define ersynt40        (int)  106		/* '=' attendu et non trouv‚ */
+#define ersynt41        (int)  107		/* DATA attendu et non trouv‚ */
+#define ersynt42        (int)  108		/* Constante attendue et non trouv‚e */
+#define ersynt43        (int)  109		/* DATA(s) sans exploitation associ‚e */
+#define ersynt44        (int)  110		/* Exploitation de DATA(s) sans leur d‚finition */
+#define ersynt45        (int)  111		/* BREAK interdit hors d'une it‚ration */
+#define ersynt46        (int)  112		/* LOOP non associ‚ a un DO */
+#define ersynt47        (int)  113		/* END EVENT attendu et non trouv‚ */
+#define ersynt48        (int)  114		/* LOOP attendu et non trouv‚ */
+#define ersynt49        (int)  115		/* Segment 0 non trouv‚ */
+#define ersynt50        (int)  116		/* ENDWITH non associ‚ a WITH */
+
+/*
+    Message de la gestion du traduit
+*/
+
+#define errges0        (int)  166		/* Ouverture fichier r‚sultat */
+#define errges1        (int)  167		/* Ecriture fichier r‚sultat */
+#define errges2        (int)  168		/* Lecture fichier r‚sultat */
+#define errges3        (int)  169		/* Fermeture fichier r‚sultat */
+#define errges4        (int)  170		/* Fichier r‚sultat ouvert ou en cours d'ex‚cution */
+
+/*
+    Message spécifiques de la gestion du macro-assembleur
+*/
+
+#define ermasm1        (int)  150		/* Mn‚monique attendu et non trouv‚ */
+#define ermasm2        (int)  151		/* Mn‚monique incorrect */
+#define ermasm3        (int)  152		/* Usage interdit dans un segment */
+#define ermasm4        (int)  153		/* Usage interdit dans une proc‚dure */
+#define ermasm5        (int)  154		/* Instruction non encore trait‚e */
+#define ermasm6        (int)  155		/* ',' attendue et non trouv‚e */
+#define ermasm7        (int)  156		/* D‚signation de registre incorrecte */
+#define ermasm8        (int)  157		/* Num‚ro de registre incorrect */
+#define ermasm9        (int)  158		/* Constante entiŠre attendue et non trouv‚e */
+#define ermasm10        (int)  159		/* Constante chaine ou BCD attendue et non trouv‚e */
+#define ermasm11        (int)  160		/* Variable attendue et non trouv‚e */
+#define ermasm12        (int)  161		/* Variable inconnue */
+#define ermasm13        (int)  162		/* Etiquette attendue et non trouv‚e */
+#define ermasm14        (int)  163		/* Argument incorrect */
+
+/*
+    Message spécifiques de la gestion des symboles
+*/
+
+#define ersymb1        (int)  117		/* D‚claration incorrecte */
+#define ersymb2        (int)  118		/* Identificateur d‚ja declar‚ : */
+#define ersymb3        (int)  119		/* D‚bordement de l'espace de donn‚es */
+#define ersymb4        (int)  120		/* D‚bordement table de description */
+#define ersymb5        (int)  121		/* Filler plus grand que taille des DCL */
+#define ersymb6        (int)  122		/* Etiquette d‚ja d‚finie : */
+#define ersymb7        (int)  123		/* Identificateur d‚clar‚ et inutilis‚ : */
+#define ersymb8        (int)  124		/* Structure vide, taille forc‚e a 1 */
+#define ersymb9        (int)  125		/* Constante d‚clar‚e et inutilis‚e : */
+#define ersymb10        (int)  126		/* La taille de l'argument ne peut etre verifi‚e */
+#define ersymb11        (int)  127		/* D‚bordement de la table des variables globales */
+#define ersymb12        (int)  128		/* D‚bordement de la table des variables  locales */
+#define ersymb13        (int)  129		/* D‚bordement de la table des constantes globales */
+#define ersymb14        (int)  130		/* D‚bordement de la table des proc‚dures */
+#define ersymb15        (int)  131		/* D‚bordement de la table des constantes locales */
+#define ersymb16        (int)  132		/* D‚bordement de la table des variables ‚tendues */
+#define ersymb17        (int)  133		/* D‚bordement de la table des segments */
+
+/*
+    Bannière
+*/
+
+#define titre        (int)  0		/* Traducteur ABAL */
+#define arret        (int)  1		/*   */
+#define bid001        (int)  2		/*   */
+
+/*
+    Message spécifiques de la génération de code
+*/
+
+#define ergen0        (int)  164		/* D‚bordement de capacit‚ */
+#define ergen1        (int)  165		/* Format incorrect */
+
+/*
+    Divers
+*/
+
+#define erraut        (int)  216		/* Utilisation du traducteur interdite sur le poste */
+#define errrep        (int)  217		/* Utilisation des sous-r‚pertoires interdite */
+#define banenv        (int)  218		/* Environnement */
+#define tradit        (int)  219		/* Traduction interrompue. ESC=Reprise. CR=Abandon */
+
+/*
+    Message spécifiques de la gestion des expressions
+*/
+
+#define erexp0        (int)  134		/* Expression trop complexe */
+#define erexp1        (int)  135		/* Variable attendue et non trouv‚e */
+#define erexp2        (int)  136		/* '=' attendu et non trouv‚ */
+#define erexp3        (int)  137		/* Type d'op‚rande incorrect */
+#define erexp4        (int)  138		/* Conversion de donn‚e */
+#define erexp5        (int)  139		/* Op‚rateur incorrect sur le type chaine */
+#define erexp6        (int)  140		/* Variable inconnue */
+#define erexp7        (int)  141		/* '(' attendue et non trouv‚e */
+#define erexp8        (int)  142		/* ')' attendue et non trouv‚e */
+#define erexp9        (int)  143		/* ',' attendue et non trouv‚e */
+#define erexp10        (int)  144		/* Op‚rateur incorrect sur le type BCD */
+#define erexp11        (int)  145		/* Relation interdite dans ce contexte */
+#define erexp12        (int)  146		/* Relation attendue et non trouv‚e */
+#define erexp13        (int)  147		/* Format incorrect */
+#define erexp14        (int)  148		/* Nombre trop grand */
+#define erexp99        (int)  149		/* Instruction non encore trait‚e */
+
+/*
+    Message d'erreur au niveau global
+*/
+
+#define errcible        (int)  31		/* Type de processeur non pr‚vu */
+#define errsyst        (int)  32		/* SystŠme hote non pr‚vu */
+#define errmem        (int)  33		/* D‚bordement m‚moire */
+#define errfdln        (int)  34		/* Fin de ligne incorrecte */
+
+/*
+    Message de l'aide rapide
+*/
+
+#define Help001        (int)  220		/* Syntaxe : atr [ */
+#define Help002        (int)  221		/* -a  		: Compactage de la table des constantes */
+#define Help003        (int)  222		/* -b		: Ne pas r‚server les noms de fonctions arithm‚tiques */
+#define Help004        (int)  223		/* -d<Fichier>	: Nom du fichier traduit */
+#define Help005        (int)  224		/* -e<Fichier>	: Nom du fichier d'erreurs */
+#define Help006        (int)  225		/* -f<Syntaxe>	: Groupe d'options de traduction */
+#define Help007        (int)  226		/* -g		: Simple v‚rification syntaxique */
+#define Help008        (int)  227		/* -h		: Activation du mode \"ensemble int‚gr‚\" */
+#define Help009        (int)  228		/* -i<Syntaxe>	: Chemin d'accŠs, par d‚faut, aux fichiers inclus */
+#define Help010        (int)  229		/* -l<Fichier>	: Liste de traduction */
+#define Help011        (int)  230		/* -m		: Ecriture d'informations symboliques dans le traduit */
+#define Help012        (int)  231		/* -n<Symbole>	: D‚finition d'un symbole de traduction conditionnelle */
+#define Help013        (int)  232		/* -o		: D‚sactivation optimisation (vitesse d'ex‚cution) */
+#define Help014        (int)  233		/* -s<Syntaxe>	: Suffixe par d‚faut des fichiers source */
+#define Help015        (int)  234		/* -v		: Rend le traducteur bavard */
+#define Help016        (int)  235		/* -w		: Avertissement sur anomalies */
+#define Help017        (int)  236		/* -x		: Echo des lignes qui n'ont pas ‚t‚ traduites */
+#define Help018        (int)  237		/* -to		: Cible objet (.O) attendue */
+#define Help019        (int)  238		/* -ta		: Cible executable (.AT) attendue */
+#define Help020        (int)  239		/* 		] <Fichier> */
+
+/*
+    Message spécifiques de la traduction partielle
+*/
+
+#define errtp1        (int)  192		/* Aucun segment … traduire ! */
+#define errtp2        (int)  193		/* Traduction partielle impossible sur un module */
+#define errtp3        (int)  194		/* Fichier traduit incompatible */
+#define errtp4        (int)  195		/* Traduction partielle impossible dans ce cas */
+
+/*
+    Message spécifiques de la version intégrée
+*/
+
+#define msitg1        (int)  185		/* En cours : */
+#define msitg2        (int)  186		/*   Source : */
+#define msitg3        (int)  187		/*              Lignes : */
+#define msitg4        (int)  188		/*             Erreurs : */
+#define msitg5        (int)  189		/*      Avertissements : */
+#define msitg6        (int)  190		/* D‚clarations globales */
+#define msitg7        (int)  191		/* Fusion des segments */
+
+/*
+    Message spécifiques des entrées/sorties
+*/
+
+#define eriof1        (int)  171		/* Instruction non encore trait‚e */
+#define eriof2        (int)  172		/* '=' attendu et non trouv‚ */
+#define eriof3        (int)  173		/* Type de donn‚e incorrect */
+#define eriof4        (int)  174		/* ',' attendue et non trouv‚e */
+#define eriof5        (int)  175		/* Option incorrecte pour ASSIGN */
+#define eriof6        (int)  176		/* Option invalide ou incoh‚rente */
+#define eriof7        (int)  177		/* Zone d'‚change attendue et non trouv‚e */
+#define eriof8        (int)  178		/* ':' attendu et non trouv‚ */
+#define eriof9        (int)  179		/* Variable attendue et non trouv‚e */
+#define eriof10        (int)  180		/* Zone d'‚change interdite dans ce contexte */
+#define eriof11        (int)  181		/* '(' attendue et non trouv‚e */
+#define eriof12        (int)  182		/* ')' attendue et non trouv‚e */
+#define eriof13        (int)  183		/* Variable externe interdite dans ce contexte */
+#define eriof14        (int)  184		/* Risque d'incoh‚rence du … l'optimisation */
+
+

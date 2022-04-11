@@ -1,0 +1,54 @@
+version = 1
+runtime = "audio"
+% AudioInitialise(%,%,%)
+% AudioLiberate()
+% AudioPutByte(%)
+% AudioPut(%,$)
+% AudioSend(%,$)
+% AudioStatus() 
+% AudioReset()
+% AudioTempo(%,%,%)
+% AudioReceive(%,$?)
+% AudioGet(%,$?)
+% AudioGetByte()
+% AudioSound(%)
+% AudioDmaState()
+
+% AudioAlsm($?,%)
+% AudioLbsm($?) 
+
+; get mixer register value
+% AudioGetMix(%)
+
+; put mixer register value
+% AudioPutMix(%,%)
+
+; put opl fm synth register value
+% AudioPutOpl(%,%)
+
+; set opl fm synth channel note  on or off
+% AudioOplNote(%,%,%,%)
+
+; set opl fm synth channel mode
+% AudioOplMode(%,%)
+
+; set opl fm synth channel control 9 or 5+drums
+% AudioOplCtrl(%)
+
+; play wave file filename, length, mode
+% AudioPlay($,%,%)
+
+; record direct to wave file
+% AudioRecord($,%,%,%,%)
+
+; submit track for multi track play : track,name,length,level,pan,mute
+% AudioTrack(%,$,%,%,%,%)
+
+; start multi track play
+% AudioStart(%,%)
+
+; change soft mixer settings
+% AudioControl(%,%,%,%)
+
+end
+

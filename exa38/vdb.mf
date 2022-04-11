@@ -1,0 +1,92 @@
+exadb.o: $(SP01)exadb.c $(SP01)exmain.c
+exdbio.o: $(SP01)exdbio.c
+exdbldf.o: $(SP01)exdbldf.c
+exdbcmd.o: $(SP01)exdbcmd.c
+exdbfunc.o: $(SP01)exdbfunc.c
+exdbmenu.o: $(SP01)exdbmenu.c
+exdbmoto.o: $(SP01)exdbmoto.c
+exdbcico.o: $(SP01)exdbcico.c
+exdbproc.o: $(SP01)exdbproc.c
+exdbtrap.o: $(SP01)exdbtrap.c
+exdbwtch.o: $(SP01)exdbwtch.c
+exdbafun.o: $(SP01)exdbafun.c
+exdbsymb.o: $(SP01)exdbsymb.c
+exdbstre.o: $(SP01)exdbstre.c
+exdbrdui.o: $(SP01)exdbrdui.c
+exdbtrac.o: $(SP01)exdbtrac.c
+exdbstak.o: $(SP01)exdbstak.c
+exdbobs.o: $(SP01)exdbobs.c
+exdbcode.o: $(SP01)exdbcode.c
+exdbclf.o: $(SP01)exdbclf.c
+exadbmsg.o: $(SP01)exadbmsg.c
+
+
+$(EXADB): exadb.o    '  
+       exdbio.o   '  
+       exdbldf.o  '  
+       exdbcmd.o  '  
+       exdbfunc.o '  
+       exdbmenu.o '  
+       exdbmoto.o '  
+       exdbcico.o '  
+       exdbproc.o '  
+       exdbtrap.o '  
+       exdbwtch.o '  
+       exdbafun.o '  
+       exdbsymb.o '  
+       exdbstre.o '  
+       exdbrdui.o '  
+       exdbtrac.o '  
+       exdbstak.o ' 
+       exdbobs.o  '  
+       exdbcode.o ' 
+       exdbclf.o  '  
+       extrace.o '
+       exadbmsg.o '
+       $(VEXADB) $(IDBCODE) $(LIBREP) $(LIBJPEG) $(LIBIMAGE) $(STDPROD) $(LIBCONV) '
+       $(PIXILIB) $(LIBCICO) $(LIBCRITERIA) $(LIBACCESS) $(LIBPRINT) $(ALLOCATE) $(EDILIB)
+	-$(GCC) -g $(GDB) -o $@ '
+       exadb.o    '  
+       exdbio.o   '  
+       exdbldf.o  '  
+       exdbcmd.o  '  
+       exdbfunc.o '  
+       exdbmenu.o '  
+       exdbmoto.o '  
+       exdbcico.o '  
+       exdbproc.o '  
+       exdbtrap.o '  
+       exdbwtch.o '  
+       exdbafun.o '  
+       exdbsymb.o '  
+       exdbstre.o '  
+       exdbrdui.o '  
+       exdbtrac.o '  
+       exdbstak.o ' 
+       exdbobs.o  '  
+       exdbcode.o ' 
+       exdbclf.o  '  
+       exadbmsg.o '
+       excalc.o '
+       exmath.o '
+       extvarb.o '
+       exngf.o '
+       exmc.o '
+       exbd.o '
+       extrace.o '
+       anaquest.o '
+       exllfind.o '
+       exparser.o '
+       $(VEXADB) '
+       $(SYSTEME) $(LIBCONV) '
+       $(EXMIMO)$(LIBBDA)  $(PIXILIB) $(IDBCODE)  $(XLIB)  $(ALLOCATE) $(LIBPRINT) $(LIBJPEG) $(LIBIMAGE) '
+       $(LIBCICO) $(LIBMAFL) $(LIBACCESS) $(LIBCRITERIA) $(LIBDL) $(EDILIB) $(STDPROD) $(LIBREP) $(LIBLDAP)  2> pipo2 1> pipo1
+	cat pipo1 pipo2 > pipo
+	agr -apipo
+	cp $(EXADB) $(exadb)
+
+
+
+
+
+

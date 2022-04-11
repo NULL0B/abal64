@@ -1,0 +1,20 @@
+/* ------------------------------------ */
+/* Default Visual Library  Frame Styles */
+/* ------------------------------------ */
+
+proportional 	{
+		text-font: url(arial2.fmf);
+		}
+
+fixed 		{
+		text-font: url(editfont.fmf);
+		}
+
+smallfont 	{
+		text-font: url(font8.fmf);
+		}
+
+/* ----------- */
+/* End of File */
+/* ----------- */
+

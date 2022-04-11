@@ -1,0 +1,219 @@
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="generator" content="Prologue Sing Html Version 1.0a">
+<meta name="version" content="*PRL@INFO*#11a040">
+<link href="style.css" type="text/css" rel="stylesheet" media="screen">
+<link href="style.css" type="text/css" rel="stylesheet" media="print">
+<title>Sing Version 1.0a
+</title>
+</head><body>
+<div align="center">
+<table class="DOC">
+<tr><th><h1 align="center">
+Sing Version 1.0a
+</h1>
+<td><div align="center"><img src="logo.jpg">
+</div></table></div><p>
+<a name="vtrad.xml">
+
+<p>
+<div align="center">
+<table class="DS">
+<tr><th><h2 align="center">
+accept traduction
+</h2>
+
+<tr><td><p><div align="center"><img src="vtrad.gif" usemap="#accept_traduction" >
+</div><p>
+<tr><td>
+
+<map name="accept_traduction">
+<area type=rect href="#FileName" coords="20,90,436,106">
+<area type=rect href="#Translator" coords="20,140,436,156">
+<area type=rect href="#Debug" coords="30,180,114,196">
+<area type=rect href="#Trace" coords="30,200,114,216">
+<area type=rect href="#Verbose" coords="160,180,258,196">
+<area type=rect href="#List File" coords="160,200,258,216">
+<area type=rect href="#Optimisation" coords="290,180,416,196">
+<area type=rect href="#Compact" coords="290,200,416,216">
+<area type=rect href="#Accept" coords="20,340,118,372">
+<area type=rect href="#Cancel" coords="340,340,438,372">
+<area type=rect href="#Inclusion" coords="20,260,436,324">
+<area type=rect href="#Edit" coords="120,340,218,372">
+<area type=rect href="#Select" coords="240,340,338,372">
+</map>
+This dialog box will be presented in response to one of the following events :
+<p>
+<ul>
+<li>After
+the primary source production phase of <a href="vaprod.htm">ABAL mode production</a>
+for which the
+auto translation option has not been selected.
+<li>By clicking on the
+corresponding tool icon button of the menu bar of any one of the various model editors.
+</ul>
+<p>
+allowing
+confirmation and modification of the various translation control parameters
+prior
+to an actual source to tcode translation operation.<p>
+This dialog box will be presented
+as the second phase of the forms model production operation for
+ABAL 3 production
+packages other than the <b>Include</b> package.<p>
+For detailed information concerning
+the ABAL 3 Object Translator, its command line options and error codes
+please consult
+one of the following documents.
+<p>
+<table width="90%">
+<tr><td><ol><a href="otrcmd.htm">Command
+Line Options</a>
+<tr><td><ol><a href="otrerr.htm">Language  Syntax Error Codes</a>
+<tr><td><ol><a
+href="otrint.htm">Translator Error Codes</a>
+<tr><td><ol><a href="otrwarn.htm">Warning
+Codes</a>
+<tr><td><ol><a href="otrprag.htm">Translator Pragmas</a>
+</table>
+<p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>
+
+<dl>
+<dt class=type><a name="FileName">
+<b>FileName
+</b></a>
+<dd class=data>The SOURCE edit field presents the full path and filename of the
+   source file to
+be translated.
+
+<p>
+<dt class=type><a name="Translator">
+<b>Translator
+</b></a>
+<dd class=data>The TRANSLATOR edit field presents the full path and file name of t
+he ABAL Translator
+to be used to translate the source.
+
+<p>
+<dt class=type><a name="Debug">
+<b><u>D</u>ebug
+</b></a>
+<dd class=data>The DEBUG check box, when checked, activates translation with gener
+ation of a list
+for an eventual debug operation.
+
+<p>
+<dt class=type><a name="Trace">
+<b><u>T</u>race
+</b></a>
+<dd class=data>The TRACE checkbox activates the collection of errors encountered
+   during translation
+for use by the standard ABAL trace mechanism.
+
+<p>
+<dt class=type><a name="Verbose">
+<b><u>V</u>erbose
+</b></a>
+<dd class=data>When the VERBOSE checkbox is checked the translation operation will
+   display textual
+information abouts its progression to the releve
+nt    text screen output device or
+window.
+
+<p>
+<dt class=type><a name="List File">
+<b><u>L</u>ist File
+</b></a>
+<dd class=data>When the VERBOSE checkbox is checked the translation operation will
+   display textual
+information abouts its progression to the releve
+nt    text screen output device or
+window.
+
+<p>
+<dt class=type><a name="Optimisation">
+<b><u>O</u>ptimisation
+</b></a>
+<dd class=data>The OPTIMISATION check box activates the translator optimisation
+   mechanisms.
+
+<p>
+<dt class=type><a name="Compact">
+<b><u>C</u>ompact
+</b></a>
+<dd class=data>The OPTIMISATION check box activates the translator optimisation
+   mechanisms.
+
+<p>
+<dt class=type><a name="Accept">
+<b><u>A</u>ccept
+</b></a>
+<dd class=data>By pressing the ACCEPT button the translation operation will be act
+ivated with the
+indicated parameters.
+
+<p>
+<dt class=type><a name="Cancel">
+<b><u>C</u>ancel
+</b></a>
+<dd class=data>The CANCEL button allows the translation operation to be abandoned.
+
+<p>
+<dt class=type><a name="Inclusion">
+<b>Inclusion
+</b></a>
+<dd class=data>The INCLUDE PATHS edit field presents the various include paths to
+   be used for
+the resolution of the various include files required
+      for the translation of
+the source. The command line switch of
+ -I or   /I is not to be included as it will
+be added by the transl
+ation       mechanism prior to the activation of the translator.
+
+<p>
+<dt class=type><a name="Edit">
+<b><u>E</u>dit
+</b></a>
+<dd class=data>By pressingthe EDIT button the SOURCE file name will be made
+   available for inspection
+by the Standard Text Editor Mechanisms
+
+<p>
+<dt class=type><a name="Select">
+<b><u>S</u>elect
+</b></a>
+<dd class=data>The Select button allows access  to the
+<a href="vfselect.htm">file selection</a>
+dialog frame allowing
+prompted selection of the filename.
+
+<p>
+
+
+</dl>
+
+</td>
+</table></div><p>
+
+<p><div align="center">
+<table class="CRT">
+<tr><th><h3 align="center">
+Copyright (c) 2002 Prologue  
+</h3>
+</table></div><p>
+</body></html>

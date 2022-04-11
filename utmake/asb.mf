@@ -1,0 +1,23 @@
+
+! include $(ABAL)/common/common.def
+
+SP01 = $(ABAL)/src/amake/
+
+asbcore.o: $(SP01)asbcore.c
+	-$(GCC) -c -g $(GDB) -DUNIX $* 1> pipo1 2> pipo2
+	cat pipo1 pipo2 > pipo
+	agr -apipo
+	echo ASBCORE = $(ABAL)/utmake/asbcore.o > $(ABAL)/common/asbcore.def
+
+asb.o: $(SP01)asb.c
+	-$(GCC) -c -g $(GDB) -DUNIX $* 1> pipo1 2> pipo2
+	cat pipo1 pipo2 > pipo
+	agr -apipo
+! make
+
+$(ABAL)/bin/asb: asb.o asbcore.o
+	$(GCC) -g $(GDB) -o $@ $? 
+
+! make
+
+

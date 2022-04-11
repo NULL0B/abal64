@@ -1,0 +1,9 @@
+#define	_HTML_MEDIA_MAX			0x0009
+#define	_LINK_REL_MAX		0x0011
+
+#define	_HTML_TAG_MAX		0x005D
+#define	_HTML_INPUT_MAX			0x000C
+#define	_HTML_SHAPE_MAX			0x0006
+#define	_HTML_COLOUR_MAX	0x0010
+
+

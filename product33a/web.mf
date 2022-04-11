@@ -1,0 +1,55 @@
+$(ABAL)/product33a/class/web/bdaneti.cls: $(ABAL)/src/class/web/bdaneti.cls
+	cp $* $@
+$(ABAL)/product33a/class/web/domparse.cls: $(ABAL)/src/class/web/domparse.cls
+	cp $* $@
+$(ABAL)/product33a/class/web/element.cls: $(ABAL)/src/class/web/element.cls
+	cp $* $@
+$(ABAL)/product33a/class/web/http.cls: $(ABAL)/src/class/web/http.cls
+	cp $* $@
+$(ABAL)/product33a/class/web/list.cls: $(ABAL)/src/class/web/list.cls
+	cp $* $@
+$(ABAL)/product33a/class/web/mail.as: $(ABAL)/src/class/web/mail.as
+	cp $* $@
+$(ABAL)/product33a/class/web/makefile: $(ABAL)/src/class/web/makefile
+	cp $* $@
+$(ABAL)/product33a/class/web/output.cls: $(ABAL)/src/class/web/output.cls
+	cp $* $@
+$(ABAL)/product33a/class/web/service.cls: $(ABAL)/src/class/web/service.cls
+	cp $* $@
+$(ABAL)/product33a/class/web/firewall.cls: $(ABAL)/src/class/web/firewall.cls
+	cp $* $@
+$(ABAL)/product33a/class/web/smtpcli.cls: $(ABAL)/src/class/web/smtpcli.cls
+	cp $* $@
+$(ABAL)/product33a/class/web/smtpfile.cls: $(ABAL)/src/class/web/smtpfile.cls
+	cp $* $@
+$(ABAL)/product33a/class/web/mime.cls: $(ABAL)/src/class/web/mime.cls
+	cp $* $@
+$(ABAL)/product33a/class/web/soap.as: $(ABAL)/src/class/web/soap.as
+	cp $* $@
+$(ABAL)/product33a/class/web/soap.cls: $(ABAL)/src/class/web/soap.cls
+	cp $* $@
+$(ABAL)/product33a/class/web/agent.cls: $(ABAL)/src/class/web/agent.cls
+	cp $* $@
+$(ABAL)/product33a/class/web/web.as: $(ABAL)/src/class/web/web.as
+	cp $* $@
+$(ABAL)/product33a/class/web/wsdl2.cls: $(ABAL)/src/class/web/wsdl2.cls
+	cp $* $@
+$(ABAL)/product33a/class/web/wsdl.cls: $(ABAL)/src/class/web/wsdl.cls
+	cp $* $@
+$(ABAL)/product33a/class/web/xml.as: $(ABAL)/src/class/web/xml.as
+	cp $* $@
+$(ABAL)/product33a/class/web/xmlfile.cls: $(ABAL)/src/class/web/xmlfile.cls
+	cp $* $@
+$(ABAL)/product33a/class/web/xml.cls: $(ABAL)/src/class/web/xml.cls
+	cp $* $@
+$(ABAL)/product33a/class/web/isodate.cls: $(ABAL)/src/class/web/isodate.cls
+	cp $* $@
+$(ABAL)/product33a/class/web/xmlparse.cls: $(ABAL)/src/class/web/xmlparse.cls
+	cp $* $@
+$(ABAL)/product33a/class/web/xmltypes.cls: $(ABAL)/src/class/web/xmltypes.cls
+	cp $* $@
+$(ABAL)/product33a/class/web/stddate.cls: $(ABAL)/src/class/web/stddate.cls
+	cp $* $@
+! make
+
+

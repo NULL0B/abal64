@@ -1,0 +1,25 @@
+TP01 = $(ABAL)/zlib/include
+SP01 = $(ABAL)/zlib/source
+
+$(TP01)/z.ah: $(SP01)/z.ah
+	cp $* $@
+$(TP01)/zat.ah: $(SP01)/zat.ah
+	cp $* $@
+$(TP01)/zatext.ah: $(SP01)/zatext.ah
+	cp $* $@
+$(TP01)/zatproc.ah: $(SP01)/zatproc.ah
+	cp $* $@
+$(TP01)/zatz.ah: $(SP01)/zatz.ah
+	cp $* $@
+$(TP01)/zuser.s: $(SP01)/zuser.s
+	cp $* $@
+$(TP01)/z.con: $(SP01)/z.con
+	cp $* $@
+$(TP01)/z.dcl: $(SP01)/z.dcl
+	cp $* $@
+$(TP01)/zask.dcl: $(SP01)/zask.dcl
+	cp $* $@
+
+! make
+
+

@@ -1,0 +1,8 @@
+
+!make
+APLUS2 =  $(POBJ)general$(OBJ) $(POBJ)context$(OBJ)
+$(POBJ)general$(OBJ):  $(SP01)general.c $(SP01)aplus.h $(SP01)stdtypes.h $(SP01)hosts.h $(SP01)truser.h $(SP01)buffers.h $(SP01)value.h $(SP01)status.h $(SP01)options.h $(SP01)memory.h $(SP01)exrdef.h $(SP01)macros.h $(SP01)struct.h $(SP01)relation.h $(SP01)friend.h $(SP01)pragma.h $(SP01)world.h
+$(POBJ)context$(OBJ):  $(SP01)context.c $(SP01)aplus.h $(SP01)stdtypes.h $(SP01)hosts.h $(SP01)truser.h $(SP01)buffers.h $(SP01)value.h $(SP01)status.h $(SP01)options.h $(SP01)general.h $(SP01)struct.h $(SP01)relation.h $(SP01)friend.h $(SP01)trapping.h $(SP01)abal.h $(SP01)context.h '
+$(SP01)allocate.h $(SP01)memory.h $(SP01)exrdef.h
+
+

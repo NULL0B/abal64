@@ -1,0 +1,66 @@
+/* ------------------------------------ */
+/* Default Visual Library  Frame Styles */
+/* ------------------------------------ */
+scrollframe	{
+		border-style: inset;
+		background-colour: ihm(3);
+		}
+scrollbar	{
+		border-style: outset;
+		margin: 1px;
+		}
+scrollfocus	{
+		class: scrollbar;
+		background-colour: ihm(6);
+		content: grip;
+		background-colour: green;
+		}
+scrollbutton	{
+		border-style: outset;
+		padding: 1px;
+		background-colour: ihm(7);
+		margin: 1px;
+		background-align: makefit;
+		background-align: transparent;
+		}
+
+scrollleft  	{	
+		class: scrollbutton;	
+		content: left;
+		}
+scrollright  	{
+		class: scrollbutton;	
+		content: right;
+		}
+scrollup  	{
+		class: scrollbutton;	
+		content: up;
+		}
+scrolldown  	{	
+		class: scrollbutton;	
+		content: down;
+		}
+
+hscrollbar 	{	class: scrollbar;	}
+hscrollfocus 	{	class: scrollfocus;	}
+hscrollframe 	{	class: scrollframe;	}
+vscrollbar 	{	class: scrollbar;	}
+vscrollfocus 	{	class: scrollfocus;	}
+vscrollframe 	{	class: scrollframe;	}
+
+/* ----------- */
+/* End of File */
+/* ----------- */
+
+
+
+
+
+
+
+
+
+
+
+
+

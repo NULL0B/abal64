@@ -1,0 +1,40 @@
+/* ------------------------------------ */
+/* Default Visual Library  Select Style */
+/* ------------------------------------ */
+
+selectframe {
+	border-style: edit;
+	background-colour: white;
+	content: none;
+	}
+
+selectup {
+	text-font: none;
+	content: up;
+	border-style: outset;
+	}
+
+selectdown {
+	text-font: none;
+	content: down;
+	border-style: outset;
+	}
+
+selectlabel {
+	class: proportional;
+	background-colour: white;
+	text-colour: black;
+	background-align: makefit;
+	text-align: left;
+	}
+
+selectfocus {
+	class: selectlabel;
+	background-colour: ihm(11);
+	text-colour: ihm(12);
+	}
+
+/* ----------- */
+/* End of File */
+/* ----------- */
+

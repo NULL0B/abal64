@@ -1,0 +1,8 @@
+
+!make
+ATC4 =  $(POBJ)trrtliof$(OBJ) $(POBJ)trrtlldf$(OBJ)
+$(POBJ)trrtliof$(OBJ):  $(SP01)trrtliof.c $(SP01)stdtypes.h $(SP01)hosts.h $(SP01)translat.h $(SP01)trsystem.h $(SP01)trtype.h $(SP01)buffers.h $(SP01)trstruct.h $(SP01)trtext.h $(SP01)trmalloc.h $(SP01)trtree.h $(SP01)trdefine.h $(SP01)trworld.h $(SP01)trparser.h $(SP01)trsyntax.h $(SP01)trtcngf.h '
+$(SP01)trtciof.h $(SP01)trerrors.h $(SP01)trsymbol.h $(SP01)troption.h $(SP01)trexpres.h $(SP01)trlabels.h $(SP01)triter.h $(SP01)triof.h $(SP01)trdebug.h $(SP01)trfmt.h $(SP01)trfmt.c $(SP01)trgenc.h $(SP01)trgenrtl.h $(SP01)trtnode.h
+$(POBJ)trrtlldf$(OBJ):  $(SP01)trrtlldf.c $(SP01)stdtypes.h $(SP01)hosts.h $(SP01)translat.h $(SP01)trsystem.h $(SP01)trtype.h $(SP01)buffers.h $(SP01)trstruct.h $(SP01)trtext.h $(SP01)trmalloc.h $(SP01)trtree.h $(SP01)trdefine.h $(SP01)trworld.h $(SP01)trsyntax.h $(SP01)trtcngf.h $(SP01)trtciof.h '
+$(SP01)trparser.h $(SP01)trerrors.h $(SP01)trsymbol.h $(SP01)trexpres.h $(SP01)troption.h $(SP01)trclf.h $(SP01)trarg.h $(SP01)trldf.h $(SP01)trgenc.h $(SP01)trgenrtl.h $(SP01)trdebug.h $(SP01)trtnode.h
+

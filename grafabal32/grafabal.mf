@@ -1,0 +1,37 @@
+SP01 = $(ABAL)/src/grafabal/grafabal/
+SP02 = $(ABAL)/src/grafabal/grafabal/abal/
+IP01 = $(ABAL)/include/bdas/
+IP02 = $(ABAL)/src/grafabal/include/
+IP03 = $(ABAL)/src/sing/
+IP04 = $(ABAL)/src/pixel/
+
+.c.o:
+	-$(GCC) -c -g $(GDB) -DUNIX -DLINUX -DVERSION666 -DABAL32 -I$(IP01) -I$(IP02) -I$(IP03) -I$(IP04) $* 1>pipo1 2>pipo2
+	cat pipo1 pipo2 > pipo
+	agr -apipo
+
+imp_abal.o:     $(SP02)imp_abal.c
+ygbib.o:     $(SP02)ygbib.c
+grafabal.o:  $(SP02)grafabal.c
+fonction.o:  $(SP01)fonction.c
+env.o:       $(SP01)env.c
+presentm.o:  $(SP01)presentm.c
+present.o:   $(SP01)present.c
+ms_pie.o:    $(SP01)ms_pie.c
+ms_aire.o:   $(SP01)ms_aire.c
+
+! make
+
+grafabal32.so: grabal.o grafabal.o fonction.o env.o presentm.o present.o ms_pie.o ms_aire.o ygbib.o imp_abal.o $(RGRAPH) $(STDPROD) $(LIBIMAGE) $(ALLOCATE) $(FNPARSER) $(LIBJPEG) 
+	$(GCC) -o $@ -shared -lm $? $(LIBLDAP)
+	cp $@ /lib
+	cp $@ $(ABAL)/lib
+	bdatester32 grafabal
+! make
+
+grafabal32.tgz: grafabal32.so grafabal.cfg fonts
+	tar -czvf $@ $?
+
+! make
+
+

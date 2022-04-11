@@ -1,0 +1,94 @@
+/* ----------------------- */
+/* Sing Menu Style Classes */
+/* ----------------------- */
+
+/* ------------------------ */
+/* Main Horizontal Menu Bar */
+/* ------------------------ */
+menubar_frame 	{	class:	singframe;	}
+menubar_top 	{
+		position: relative;
+		top: 0.5mm;
+		height: 1mm;
+		border-style: vconvex;
+		border-colour: transparent;
+		content: none;
+		}
+menubar_right	{
+		position: relative;
+		width: 1mm;
+		right: 1mm;
+		border-style: hconvex;
+		border-colour: transparent;
+		content: none;
+		}
+menubar_bottom	{
+		position: relative;
+		height: 1mm;
+		bottom: 1.5mm;
+		border-style: vconvex;
+		border-colour: transparent;
+		content: none;
+		}
+menubar_left	{
+		width: 1mm;
+		border-style: hconvex;
+		border-colour: transparent;
+		content: none;
+		}
+
+menubar_tray {
+	class:	singframe;
+	border-style: inset;
+	}
+
+menubar_inner {
+	border-style: vconcave;
+	border-colour: transparent;
+	content: none;
+	}
+
+menubar_label	{
+	class:	singfont;
+	text-align: center;
+	padding: 1mm;
+	content: trigger;
+	background-image: url(singbg.jpg);
+	}
+
+menubar_focus	{
+	class:	menubar_label;
+	text-colour: blue;
+	border-style: vconvex;
+	border-colour: transparent;
+	}
+
+/* ------------------------ */
+/* Popup Vertical Menu Tray */
+/* ------------------------ */
+
+menutray_frame {
+	class:	singframe;
+	border-style: outset;
+	content: none;
+	}
+
+menutray_label	{
+	class:	singfont;
+	padding-left: 2mm;
+	text-align: left;
+	content: trigger;
+	background-image: url(singbg.jpg);
+	}
+
+menutray_focus	{
+	class:	menutray_label;
+	text-colour: blue;
+	border-style: vconvex;
+	border-colour: transparent;
+	}
+
+/* ----------- */
+/* End of File */
+/* ----------- */
+

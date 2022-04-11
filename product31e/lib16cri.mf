@@ -1,0 +1,27 @@
+# generated makefile : lib16cri.mf 
+# ------------------------------------
+/home/Dev/abal32/product31e/lib16cri/asfun.so: /home/Dev/abal32/lib/asfun.so
+	cp $* $@ 
+/home/Dev/abal32/product31e/lib16cri/fac.so: /home/Dev/abal32/lib/fac.so
+	cp $* $@ 
+/home/Dev/abal32/product31e/lib16cri/libaccess.so: /home/Dev/abal32/lib/libaccess.so
+	cp $* $@ 
+/home/Dev/abal32/product31e/lib16cri/libflfile.so: /home/Dev/abal32/lib/libflfile.so
+	cp $* $@ 
+/home/Dev/abal32/product31e/lib16cri/libimage.so: /home/Dev/abal32/lib/libimage.so
+	cp $* $@ 
+/home/Dev/abal32/product31e/lib16cri/libprint.so: /home/Dev/abal32/lib/libprint.so
+	cp $* $@ 
+/home/Dev/abal32/product31e/lib16cri/tty.so: /home/Dev/abal32/lib/tty.so
+	cp $* $@ 
+/home/Dev/abal32/product31e/lib16cri/zgr.so: /home/Dev/abal32/lib/zgr.so
+	cp $* $@ 
+/home/Dev/abal32/product31e/lib16cri/z.so: /home/Dev/abal32/lib/z.so
+	cp $* $@ 
+/home/Dev/abal32/product31e/lib16cri/allocate.so: /home/Dev/abal32/lib/allocate.so
+	cp $* $@ 
+/home/Dev/abal32/product31e/lib16cri/libjpeg.so: /home/Dev/abal32/lib/libjpeg.so
+	cp $* $@ 
+/home/Dev/abal32/product31e/lib16cri/bibmath.so: /home/Dev/abal32/lib/bibmath.so
+	cp $* $@ 
+

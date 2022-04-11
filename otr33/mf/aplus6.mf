@@ -1,0 +1,9 @@
+
+!make
+APLUS6 =  $(POBJ)abal$(OBJ) $(POBJ)function$(OBJ)
+$(POBJ)abal$(OBJ):  $(SP01)abal.c $(SP01)aplus.h $(SP01)stdtypes.h $(SP01)hosts.h $(SP01)truser.h $(SP01)buffers.h $(SP01)value.h $(SP01)macros.h $(SP01)struct.h $(SP01)relation.h $(SP01)friend.h $(SP01)syntax.h $(SP01)status.h $(SP01)options.h $(SP01)general.h $(SP01)trapping.h $(SP01)abal.h '
+$(SP01)allocate.h $(SP01)variable.h $(SP01)param.h $(SP01)dieze.h
+$(POBJ)function$(OBJ):  $(SP01)function.c $(SP01)aplus.h $(SP01)stdtypes.h $(SP01)hosts.h $(SP01)truser.h $(SP01)buffers.h $(SP01)value.h $(SP01)struct.h $(SP01)relation.h $(SP01)friend.h $(SP01)param.h $(SP01)macros.h $(SP01)options.h $(SP01)status.h $(SP01)syntax.h $(SP01)memory.h $(SP01)exrdef.h '
+$(SP01)function.h $(SP01)trapping.h $(SP01)abal.h $(SP01)allocate.h $(SP01)member.h
+
+

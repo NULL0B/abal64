@@ -1,0 +1,55 @@
+! include $(ABAL)/common/host.def
+! include $(ABAL)/common/agr.def
+! include $(ABAL)/common/common.def
+! include $(ABAL)/common/linbda.def
+! include $(ABAL)/common/libssl.def
+
+$1 = true
+
+option = multi
+model = .multi
+func  = httpfunc
+
+SP01 = $(ABAL)/src/bdanet/
+SP02 = $(ABAL)/include/bdas/ $(INCSSL)
+SP03 = $(ABAL)/src/sing/
+
+VERSION666 = -g -DVERSION666 -DABAL64 -DUNIX $(SYSSSL)
+
+$(SP01)bdanet.c: $(SP01)bdanet.def $(LINBDA)
+	$(LINBDA) -bBd@Net64.$(MASTER3) $(SP01)bdanet
+
+! make
+
+.c.o:
+! ifdef AGR
+	-$(GCC) -c $(CC_SHARED) $(VERSION666)  -I$(SP02) $(HOST) $(SYSSSL)  -Dunix  $* $(PIPO) 
+	cat pipo1 pipo2 > pipo
+	$(AGR) -apipo
+! else 
+	$(GCC) -c $(CC_SHARED) $(VERSION666)  -I$(SP02) $(HOST) $(SYSSSL)  -Dunix  $* 
+! endif
+
+$(ABAL)/archive/bdanet.a: connect.o url.o global.o files.o httpabal.o httpfunc.o http.o
+	ar r $@ $?
+
+bdanet.o: $(SP01)bdanet.c
+http.o: $(SP01)http.c
+httpabal.o: $(SP01)httpabal.c
+httpfunc.o: $(SP01)httpfunc.c
+url.o: $(SP01)url.c
+global.o: $(SP01)global.c
+files.o: $(SP01)files.c
+connect.o: $(SP01)connect.c
+
+! make
+
+$(ABAL)/lib/bdanet64.so: bdanet.o $(ABAL)/archive/bdanet.a /home/webserver/build/webserver.a
+	$(GCC) $(VERSION666) $(LD_SHARED) -o $@ bdanet.o $(ABAL)/archive/bdanet.a $(LIBSSL) 
+	cp $@ $(ABAL)/lib/checkbdanet64.so
+	bdatester64 checkbdanet
+	rm $(ABAL)/lib/checkbdanet64.so
+
+! make
+
+

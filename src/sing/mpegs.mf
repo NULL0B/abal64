@@ -1,0 +1,16 @@
+exmpeg.o: exmpeg.c 
+	gcc -c -g -ggdb -DUNIX $*
+exmpegs.o: exmpegs.c exmpegs.h
+	gcc -c -g -ggdb -DUNIX $*
+exmpegcl.o: exmpegcl.c exmpegs.h
+	gcc -c -g -ggdb -DUNIX $*
+exmpegc.o: exmpegc.c exmpegs.h
+	gcc -c -g -ggdb -DUNIX $*
+
+exmpegs: exmpegs.o exmpeg.o
+	gcc -g -ggdb -o $@ $? 
+
+exmpegc: exmpegc.o exmpegcl.o
+	gcc -g -ggdb -o $@ $? 
+
+

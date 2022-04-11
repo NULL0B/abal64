@@ -1,0 +1,116 @@
+# This make file is for the generation of EXA
+# -------------------------------------------
+extrace.o: $(SP01)extrace.c 
+exa.o: $(SP01)exa.c $(SP01)exmain.c $(SP01)exi.c
+exio.o: $(SP01)exio.c
+exldf.o: $(SP01)exldf.c
+exmotor.o: $(SP01)exmotor.c
+excode.o: $(SP01)excode.c
+exclf.o: $(SP01)exclf.c $(SP01)exclf1.c $(SP01)exclf6.c $(SP01)exclf7.c  $(SP01)exclf15.c
+examsg.o: $(SP01)examsg.c
+excalc.o: $(SP01)excalc.c
+exmath.o: $(SP01)exmath.c
+extvarb.o: $(SP01)extvarb.c
+exngf.o: $(SP01)exngf.c
+exmc.o: $(SP01)exmc.c
+exbd.o: $(SP01)exbd.c
+exparser.o: $(SP01)exparser.c
+exmimo.o: $(SP01)exmimo.c
+exllfind.o: $(SP01)exllfind.c
+anaquest.o: $(SP01)anaquest.c
+exadll.o: $(SP01)exadll.c $(SP01)exdll.c $(SP01)exprog.c $(SP01)exd.c $(SP01)exi.c
+
+! make
+
+$(EXA): exa.o '
+       exio.o   '  
+       exldf.o  '  
+       exmotor.o '  
+       excode.o '  
+       exclf.o  '  
+       examsg.o '
+       excalc.o '
+       exmath.o '
+       extvarb.o '
+       exngf.o '
+       exmc.o '
+       exbd.o '
+       anaquest.o '
+       exllfind.o '
+       exparser.o '
+       extrace.o '
+       $(EXMIMO) $(LIBBDA) $(PIXILIB) $(LIBCICO) $(ALLOCATE) $(STDPROD) $(LIBCONV) '
+       $(LIBACCESS) $(LIBCRITERIA) $(LIBMAFL) $(LIBPRINT) $(LIBIMAGE) $(LIBJPEG)
+	-$(GCC) -g $(GDB) -o $@ '
+       exa.o    '  
+       exio.o   '  
+       exldf.o  '  
+       exmotor.o '  
+       excode.o ' 
+       exclf.o  '  
+       examsg.o '
+       excalc.o '
+       exmath.o '
+       extvarb.o '
+       exngf.o '
+       exmc.o '
+       exbd.o '
+       anaquest.o '
+       exllfind.o '
+       exparser.o '
+       extrace.o '
+       $(EXMIMO)  $(LIBBDA)  $(PIXILIB)   $(XLIB) $(ALLOCATE) $(LIBPRINT) $(STDPROD) $(LIBCONV) '
+       $(LIBCICO) $(LIBMAFL) $(LIBACCESS) $(LIBCRITERIA) $(LIBJPEG) $(LIBIMAGE) $(LIBDL) $(LIBLDAP)  2> pipo2 1> pipo1
+	cat pipo1 pipo2 > pipo
+	agr -apipo
+       cp $(EXA) $(exa)
+
+
+! make
+$(EXASO): exadll.o '
+       exio.o   '  
+       exldf.o  '  
+       exmotor.o '  
+       excode.o '  
+       exclf.o  '  
+       examsg.o '
+       excalc.o '
+       exmath.o '
+       extvarb.o '
+       exngf.o '
+       exmc.o '
+       exbd.o '
+       anaquest.o '
+       exllfind.o '
+       exparser.o '
+       extrace.o '
+       $(EXMIMO) $(LIBBDA) $(PIXILIB) $(LIBCICO) $(ALLOCATE) $(STDPROD) '
+       $(LIBACCESS) $(LIBCRITERIA) $(LIBMAFL) $(LIBPRINT) $(LIBIMAGE) $(LIBJPEG)
+	-$(GCC) -g $(GDB) -shared -o $@ '
+       exadll.o    '  
+       exio.o   '  
+       exldf.o  '  
+       exmotor.o '  
+       excode.o ' 
+       exclf.o  '  
+       examsg.o '
+       excalc.o '
+       exmath.o '
+       extvarb.o '
+       exngf.o '
+       exmc.o '
+       exbd.o '
+       anaquest.o '
+       exllfind.o '
+       exparser.o '
+       extrace.o '
+       $(EXMIMO)  $(LIBBDA)  $(PIXILIB)   $(XLIB) $(ALLOCATE) $(LIBPRINT) $(STDPROD) '
+       $(LIBCICO) $(LIBMAFL) $(LIBACCESS) $(LIBCRITERIA) $(LIBJPEG) $(LIBIMAGE) $(LIBDL) $(LIBLDAP)  2> pipo2 1> pipo1
+	cat pipo1 pipo2 > pipo
+	agr -apipo
+       cp $(EXA) $(exa)
+
+
+! make
+
+

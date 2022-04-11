@@ -1,0 +1,13 @@
+otr = otr$1 -a 
+plc.o: plc.as
+	$(otr) -m -v $*
+mlc.o: mlc.as
+	$(otr) -m -v $*
+m2lc.o: m2lc.as
+	$(otr) -m -v $*
+plc.at: plc.o mlc.o m2lc.o
+	old32 -m $?
+	ao32 -lplc.tc $@
+
+
+

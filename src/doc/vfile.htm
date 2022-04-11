@@ -1,0 +1,397 @@
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="generator" content="Prologue Sing Html Version 1.0a">
+<meta name="version" content="*PRL@INFO*#11a040">
+<link href="style.css" type="text/css" rel="stylesheet" media="screen">
+<link href="style.css" type="text/css" rel="stylesheet" media="print">
+<title>Sing Version 1.0a
+</title>
+</head><body>
+<div align="center">
+<table class="DOC">
+<tr><th><h1 align="center">
+Sing Version 1.0a
+</h1>
+<td><div align="center"><img src="logo.jpg">
+</div></table></div><p>
+<a name="vfile">
+
+<p>
+<div align="center">
+<table class="DS">
+<tr><th><h2 align="center">
+database editor
+</h2>
+
+<tr><td><p><tr><td>
+
+<map name="ListPage">
+<area type=rect href="#List" coords="20,40,78,64">
+<area type=rect href="#FileList" coords="30,80,740,570">
+<area type=rect href="#ScrollBar" coords="740,80,760,570">
+<area type=rect href="#File" coords="78,40,146,64">
+<area type=rect href="#Mask" coords="146,40,220,64">
+</map>
+
+<map name="FilePage">
+<area type=rect href="#List" coords="20,40,78,64">
+<area type=rect href="#File" coords="78,40,146,64">
+<area type=rect href="#ClassName" coords="110,80,438,96">
+<area type=rect href="#Instance" coords="110,100,438,116">
+<area type=rect href="#Filename" coords="110,120,438,136">
+<area type=rect href="#FileType" coords="110,140,206,159">
+<area type=rect href="#IndexType" coords="270,140,350,159">
+<area type=rect href="#IndexSize" coords="580,100,644,116">
+<area type=rect href="#-" coords="660,120,676,138">
+<area type=rect href="#NbIndex" coords="680,100,720,116">
+<area type=rect href="#+" coords="730,100,746,118">
+<area type=rect href="#VD=" coords="360,140,430,156">
+<area type=rect href="#RecordSize" coords="580,120,644,136">
+<area type=rect href="#-" coords="660,100,676,118">
+<area type=rect href="#NbData" coords="680,120,720,136">
+<area type=rect href="#+" coords="730,120,746,138">
+<area type=rect href="#Accept" coords="580,140,748,164">
+<area type=rect href="#IndexMembers" coords="40,180,740,280">
+<area type=rect href="#DataMembers" coords="40,280,740,570">
+<area type=rect href="#Mask" coords="146,40,220,64">
+</map>
+
+<map name="MaskPage">
+<area type=rect href="#List" coords="20,40,78,64">
+<area type=rect href="#File" coords="78,40,146,64">
+<area type=rect href="#Mask" coords="146,40,220,64">
+</map>
+This dialog frame gives access to the collection of data or file widgets defined
+and
+used by the various forms of the project.The various definitions are collected
+from
+all data widgets defining data or file structural aspects during project
+and form
+loading. The resulting class reference is stored back to the widget 
+allowing retrieval
+of the now centralised information. In this way all data and
+file widget information
+is unified to be made available to all of the visual 
+forms comprising the project.
+<p>The
+data base information will be stored to the project ressource file, in
+XML format,
+unless an individual database ressource name is provided by the project
+description,
+in which case the data and file widget descriptions will be stored to 
+the indicated
+external database ressource file, and may consequently be shared amongst
+different
+projects.
+
+
+<p>
+<ol><li>
+<dl>
+<dt class=type><a name="List">
+<b>List
+</b></a>
+<dd class=data>This tab page presents the list of all data base items.
+
+
+<p>
+
+</dl>
+<img src="vfile1.gif" usemap="#ListPage" >
+<ul><li>
+<dl>
+<dt class=type><a name="FileList">
+<b>FileList
+</b></a>
+<dd class=data>The item list displays the various file or data entities and a summary of their
+overall
+basic type. By clicking on a selection with the mouse it will be made
+available in
+the file data page for inpsection and modification.
+
+
+<p>
+
+</dl>
+<li>
+<dl>
+<dt class=type><a name="ScrollBar">
+<b>ScrollBar
+</b></a>
+<dd class=data>The scroll bar control may be used to scroll through data base information 
+exceeding
+the visual page size.
+
+
+
+<p>
+
+</dl>
+</ul><li>
+<dl>
+<dt class=type><a name="File">
+<b>File
+</b></a>
+<dd class=data>This tab page presents the individual information pertaining to one data or
+file item
+of the database collection.
+
+<p>
+
+</dl>
+<img src="vfile2.gif" usemap="#FilePage" >
+<ul><li>
+<dl>
+<dt class=type><a name="ClassName">
+<b>ClassName
+</b></a>
+<dd class=data>This edit field provides the public class name of the data description, by which
+it
+will be made available to the data widgets of the client forms.
+
+
+<p>
+
+</dl>
+<li>
+<dl>
+<dt class=type><a name="Instance">
+<b>Instance
+</b></a>
+<dd class=data>This edit field allows an advisory or standard instance name by which the data
+will
+be accessed.
+
+
+<p>
+
+</dl>
+<li>
+<dl>
+<dt class=type><a name="Filename">
+<b>Filename
+</b></a>
+<dd class=data>This edit field provides the advisory file name in which the data records will
+usually
+be stored. This and the instance name may be over-ridden as required by
+the corresponding
+fields of the client data widget.
+
+
+<p>
+
+</dl>
+<li>
+<dl>
+<dt class=type><a name="FileType">
+<b>FileType
+</b></a>
+<dd class=data>This selection control allows the basic data or file type to be specified.
+
+
+<p>
+
+</dl>
+<li>
+<dl>
+<dt class=type><a name="IndexType">
+<b>IndexType
+</b></a>
+<dd class=data>This selection provides the optional primary index characteristics required
+for sequential
+indexed and multiple indexed file types.
+
+
+<p>
+
+</dl>
+<li>
+<dl>
+<dt class=type><a name="IndexSize">
+<b>IndexSize
+</b></a>
+<dd class=data>This edit field allows the overall size in bytes of the primary index, of
+sequential
+indexed and multiple indexed files, to be specified.
+This field is of no importance
+to other data types.
+
+
+<p>
+
+</dl>
+<li>
+<dl>
+<dt class=type><a name="-">
+<b>-
+</b></a>
+<dd class=data>The data record member count may be decremented by clicking on this button.
+
+
+<p>
+
+</dl>
+<li>
+<dl>
+<dt class=type><a name="NbIndex">
+<b>NbIndex
+</b></a>
+<dd class=data>This edit field displays the current number of members comprising the primary index.
+
+
+
+<p>
+
+</dl>
+<li>
+<dl>
+<dt class=type><a name="+">
+<b>+
+</b></a>
+<dd class=data>The primary index member count may be incremented by clicking on this button.
+
+
+<p>
+
+</dl>
+<li>
+<dl>
+<dt class=type><a name="VD=">
+<b>VD=
+</b></a>
+<dd class=data>The data record of sequentail index and multiple indexed files may be declared
+to
+be of variable length by means of this check control.
+
+<p>
+
+</dl>
+<li>
+<dl>
+<dt class=type><a name="RecordSize">
+<b>RecordSize
+</b></a>
+<dd class=data>This edit field allows the overall size in bytes of the data record to be 
+specified
+for sequential, sequential indexed and multiple indexed files.
+<p>It will provide
+the storage handle, a number between 31 and 63, for virtual
+memory files.
+
+
+<p>
+
+</dl>
+<li>
+<dl>
+<dt class=type><a name="-">
+<b>-
+</b></a>
+<dd class=data>The primary index member count may be decremented by clicking on this button.
+
+
+<p>
+
+</dl>
+<li>
+<dl>
+<dt class=type><a name="NbData">
+<b>NbData
+</b></a>
+<dd class=data>This edit field displays the current number of members comprising the data record.
+
+
+<p>
+
+</dl>
+<li>
+<dl>
+<dt class=type><a name="+">
+<b>+
+</b></a>
+<dd class=data>The data record member count may be incremented by clicking on this button.
+
+
+<p>
+
+</dl>
+<li>
+<dl>
+<dt class=type><a name="Accept">
+<b>Accept
+</b></a>
+<dd class=data>This button may be activated allowing the current contents selected by the data 
+file
+mechanisms, to be returned as the corresponding class identifier to the
+client form
+data widget.
+
+
+<p>
+
+</dl>
+<li>
+<dl>
+<dt class=type><a name="IndexMembers">
+<b>IndexMembers
+</b></a>
+<dd class=data>This table will be displayed when the primary index member count is greater than
+zero
+indicating the presence of primary index member information.
+The various columns of
+valid member items may be modified as required.
+Clicking in the type field will make
+a selection control appear for the 
+prompted selection of the member data type.
+
+
+
+<p>
+
+</dl>
+<li>
+<dl>
+<dt class=type><a name="DataMembers">
+<b>DataMembers
+</b></a>
+<dd class=data>This table will be displayed when the data record member count is greater than
+zero
+indicating the presence of data record member information.
+As for the index member
+information, the various columns of valid member items 
+may be modified as required.
+Clicking
+in the type field will make a selection control appear for the 
+prompted selection
+of the member data type.
+
+
+
+<p>
+
+</dl>
+</ul><li>
+<dl>
+<dt class=type><a name="Mask">
+<b>Mask
+</b></a>
+<dd class=data>This tab page gives access to the data mask generation controls for this data file.
+
+
+
+<p>
+
+</dl>
+<img src="vfile3.gif" usemap="#MaskPage" >
+<ul></ul></ol>
+
+</td>
+</table></div><p>
+
+<p><div align="center">
+<table class="CRT">
+<tr><th><h3 align="center">
+Copyright (c) 2002 Prologue  
+</h3>
+</table></div><p>
+</body></html>

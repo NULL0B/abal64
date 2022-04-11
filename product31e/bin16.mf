@@ -1,0 +1,16 @@
+# generated makefile : bin16.mf 
+# ------------------------------------
+/home/Dev/abal32/product31e/bin16/abalprocess: /home/Dev/abal32/bin/abalprocess
+	cp $* $@ 
+/home/Dev/abal32/product31e/bin16/ald22c: /home/Dev/abal32/bin/ald22c
+	cp $* $@ 
+/home/Dev/abal32/product31e/bin16/atr22c: /home/Dev/abal32/bin/atr22c
+	cp $* $@ 
+/home/Dev/abal32/product31e/bin16/Bibasb.def: /home/Dev/abal32/bin/Bibasb.def
+	cp $* $@ 
+/home/Dev/abal32/product31e/bin16/Bibasb.xp: /home/Dev/abal32/bin/Bibasb.xp
+	cp $* $@ 
+/home/Dev/abal32/product31e/bin16/exa16: /home/Dev/abal32/bin/exa16
+	cp $* $@ 
+/home/Dev/abal32/product31e/bin16/exadb16: /home/Dev/abal32/bin/exadb16
+	cp $* $@ 

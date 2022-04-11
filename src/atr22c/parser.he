@@ -1,0 +1,163 @@
+/*
+ *      Projet  : ABAL                  Copyright Prologue s.a. (c) 1990, 1995
+ *      Module  : ATR
+ *      Fichier : PARSER.H
+ *      Version : 2.1f
+ *      Date    : 21/11/95
+ *      Systeme : DOS / PRL / UNIX / VMS
+ *
+ *      Traducteur ABAL
+ *
+ *      [Definitions de l'analyseur syntaxique]
+ *
+ *	------------------------ 2.1c -------------------------------------
+ *	24/05/94 : augmentation du nombre de segment nommes pour ‚viter conflit
+ *		   avec segment < 254 (2047)
+ *	------------ 2.2a -------------------------------------------------
+ * 17/02/97 : Debut revision 2.2
+ * 17/02/97 : deb_struct pour les structures d‚clar‚es
+ * 01/04/97 : deb_with pour les clause with
+ * 08/10/99 : (#OK) Bug ATR 42 fixed: "segment 0 absent in program".
+ * 11/10/99 : (#SP) Enhancement ATR 23: Local named constants.
+ * 09/12/99 : (#OK) Bug ATR 6 fixed. "Type d'operande incorrect". 
+ */
+
+#ifdef _PARSER
+#define EXT_PARSER
+#else
+#define EXT_PARSER extern
+#endif /* _PARSER */
+
+/* DEFINITIONS INTERNES */
+/* -------------------- */
+
+/* PUBLIC */
+/* ------ */
+
+#define NBMAXSEG        2047           /* nb maximum de segment nomm‚s */
+#define FIRSTSEG	256	       /* 1er segment nomm‚s */
+
+/* PUBLIC VARIABLES */
+/* ---------------- */
+
+/*      Declarations de l'analyseur syntaxique          */
+/*      --------------------------------------          */
+
+EXT_PARSER TabSymb *deb_bincst;  /* pointeur debut table constantes binaires    */
+EXT_PARSER TabSymb *deb_bcdcst;  /* pointeur debut table constantes chaines/BCD */
+/* #SP: 11/10/99 (begin) */
+#ifdef __ATR22__
+EXT_PARSER TabSymb *deb_bincst_local;  /* pointeur debut table constantes binaires */ 
+EXT_PARSER TabSymb *deb_bcdcst_local;  /* pointeur debut table constantes chaines/BCD */
+#endif
+/* #SP: 11/10/99 (end) */
+EXT_PARSER TabSymb *deb_glbsymb; /* pointeur debut table symboles niveau global */
+EXT_PARSER TabSymb *deb_lclsymb; /* pointeur debut table symboles niveau local */
+/* #OK: 09/12/99 (begin) */
+#ifdef __ATR22__
+EXT_PARSER TabSymb *new_deb_lclsymb; /* pointeur debut table symboles niveau procedure parameters */
+EXT_PARSER TabSymb *old_deb_lclsymb; /* pointeur debut table symboles niveau procedure parameters */
+#endif
+/* #OK: 09/12/99 (end)*/
+EXT_PARSER TabSymb *deb_extsymb; /* pointeur debut table symboles externes */
+EXT_PARSER TabProc *deb_tproc;   /* pointeur debut table des procedures */
+EXT_PARSER TabSeg *deb_tseg;     /* pointeur debut table des segments */
+EXT_PARSER TabEtiq *deb_tetiq;   /* pointeur debut table des etiquettes */
+EXT_PARSER TabMod *deb_tnmod;      /* pointeur debut table des noms de module */
+EXT_PARSER TabSrc *deb_tnsrc;      /* pointeur debut table des noms de source */
+EXT_PARSER TabStruct *deb_struct;  /* pointeur debut table des structures */
+EXT_PARSER TabWith *deb_with;  		/* pointeur debut table des with */
+
+/* Variables Externes */
+/* ------------------ */
+EXT_PARSER BINAIRE nbptancr;       /* nombre de points d'ancrage */
+EXT_PARSER LstAncr *deb_tptancr;   /* pointeur sur la liste des points d'ancrage */
+EXT_PARSER BINAIRE nbetiqvar;      /* nombre d'etiquette de var */
+EXT_PARSER LstEtiqvar *deb_tetiqvar;   /* pointeur sur la liste des etiquettes de var */
+EXT_PARSER RelRef  *TvarRef;  /* pointeur debut liste references aux variables */
+EXT_PARSER RelRef  *TcstRef;  /* pointeur debut liste references aux constantes */
+EXT_PARSER BOOL notaprog;          /* programme ou module ? */
+
+/* #OK: 08/10/99 (begin) */
+EXT_PARSER BOOL presentSegment0;   /* "segment 0" present in programme */
+/* #OK: 08/10/99 (end) */
+
+/* #OK: 09/12/99 (begin) */
+#ifdef __ATR22__
+EXT_PARSER BOOL bProcParam;        /* for parametrs in the procedure */
+#endif
+/* #OK: 09/12/99 (end) */
+
+EXT_PARSER BOOL debprog;           /* avant programme/module ou apres ? */
+EXT_PARSER BINAIRE adscst; /* adresse relative descripteur courant de constante */
+
+/* adresse relative descripteur courant de constante locale */
+EXT_PARSER BINAIRE ladscst;
+
+EXT_PARSER BOOL balcomp;   /* option compatibilite BAL oui/non 10/08/92 : supp du static */
+EXT_PARSER BINAIRE adsseg; /* adresse relative descripteur courant de segment */
+EXT_PARSER BINAIRE nsegc;
+
+EXT_PARSER LienRef *lienc;    /* liste des liens procedure/module */
+EXT_PARSER char gletiq[LGIDENT];      /* etiquette FOR..NEXT */
+EXT_PARSER BYTE verrue_for;   /* verrue evaluation indices FOR..NEXT */
+
+EXT_PARSER Unit_Synt usc;     /* unite syntaxique courante */
+EXT_PARSER Entete hd_tcode;   /* bloc d'entete du fichier traduit */
+EXT_PARSER Entete hd_prg;     /* bloc d'entete du fichier temporaire */
+			/* si il y a traduction partielle */
+EXT_PARSER BOOL putimpl;              /* et son edition oui/non */
+EXT_PARSER BYTE etat_tr;              /* etat courant du traducteur */
+EXT_PARSER BOOL field;        /* TRUE si FIELD en cours, FALSE sinon */
+EXT_PARSER BINAIRE firstreg;  /* 1er registre banalise */
+EXT_PARSER BINAIRE limvregs;  /* nb max variables 'registre' */
+EXT_PARSER BINAIRE maxregs;   /* nb max de registres utilisable */
+EXT_PARSER BINAIRE heapsize;  /* taille du heap */
+EXT_PARSER BINAIRE glseg;     /* numero de segment en cours d'analyse */
+EXT_PARSER BYTE *glproc;      /* ptr nom de procedure en cours d'analyse */
+EXT_PARSER BINAIRE maxfiles;  /* nb max de fichiers accessibles */
+EXT_PARSER BINAIRE lgstack;   /* taille de la pile interne */
+EXT_PARSER BINAIRE lgmem;     /* taille de la zone de memoire temporaire */
+EXT_PARSER BYTE verrue_findvar;   /* verrue double appel de findvar */
+
+
+EXT_PARSER BYTE lentokmax;   /* taille max des tokens */
+
+EXT_PARSER char *fin_itere; /* adresse de fin de l'iteration en cours */
+EXT_PARSER BOOL flg_itere;  /* signal : iteration en cours */
+
+static BOOL debug;      /* option debug oui/non */
+
+/* Pour mode verbose */
+EXT_PARSER int nbSegment;
+EXT_PARSER int nbProcedure;
+
+/* PUBLIC FONCTIONS */
+/* ---------------- */
+
+#ifdef LINT_ARGS
+EXT_PARSER void callfuser ( void );
+EXT_PARSER void parser ( void );
+EXT_PARSER int finparse ( int );
+EXT_PARSER void initparse ( char , char , BOOL );
+EXT_PARSER void cretiq ( char *);
+EXT_PARSER BOOL trfnprn ( BINAIRE );  /* fonction PRINT */
+EXT_PARSER BOOL is_var_or_seg(BOOL,TabSeg **,BYTE *,BINAIRE *);
+#else
+EXT_PARSER void callfuser ();
+EXT_PARSER void parser ();
+EXT_PARSER int finparse ();
+EXT_PARSER void initparse ();
+EXT_PARSER void cretiq ();
+EXT_PARSER BOOL trfnprn ();  /* fonction PRINT */
+EXT_PARSER BOOL is_var_or_seg();
+#endif /* LINT_ARGS */
+
+/* PUBLIC END */
+/* ---------- */
+
+/* FIN DEFINITIONS INTERNES */
+/* ------------------------ */
+
+/*-------------------- Fin de parser.he ------------------------------ */
+

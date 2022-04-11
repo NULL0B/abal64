@@ -1,0 +1,348 @@
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="generator" content="Prologue Sing Html Version 1.0a">
+<meta name="version" content="*PRL@INFO*#11a040">
+<link href="style.css" type="text/css" rel="stylesheet" media="screen">
+<link href="style.css" type="text/css" rel="stylesheet" media="print">
+<title>Sing Version 1.0a
+</title>
+</head><body>
+<div align="center">
+<table class="DOC">
+<tr><th><h1 align="center">
+Sing Version 1.0a
+</h1>
+<td><div align="center"><img src="logo.jpg">
+</div></table></div><p>
+<a name="vstdfont">
+
+<p>
+<div align="center">
+<table class="DS">
+<tr><th><h2 align="center">
+standard font editor
+</h2>
+
+<tr><td><p><div align="center"><img src="vstdfont.gif" usemap="#standard_font_editor" >
+</div><p>
+<tr><td>
+
+<map name="standard_font_editor">
+<area type=rect href="#<<" coords="20,530,48,564">
+<area type=rect href="#>>" coords="180,530,208,564">
+<area type=rect href="#Copy" coords="220,530,290,564">
+<area type=rect href="#Paste" coords="300,530,370,564">
+<area type=rect href="#Save" coords="380,530,450,564">
+<area type=rect href="#ReSize" coords="460,530,530,564">
+<area type=rect href="#Export" coords="540,530,610,564">
+<area type=rect href="#Frame" coords="620,530,690,564">
+<area type=rect href="#Load" coords="700,530,770,564">
+<area type=rect href="#Character" coords="80,40,96,56">
+<area type=rect href="#CharacterHex" coords="140,40,164,56">
+<area type=rect href="#CharacterDec" coords="220,40,252,56">
+<area type=rect href="#FontName" coords="310,40,454,59">
+<area type=rect href="#FontCellSwitch" coords="460,40,508,56">
+<area type=rect href="#FontWidth" coords="590,40,622,56">
+<area type=rect href="#FontHeight" coords="590,70,622,86">
+<area type=rect href="#FixedFont" coords="650,70,770,89">
+<area type=rect href="#CrossControl" coords="650,40,706,56">
+<area type=rect href="#Column" coords="710,40,734,56">
+<area type=rect href="#Row" coords="740,40,764,56">
+<area type=rect href="#CharacterWidth" coords="120,530,152,546">
+<area type=rect href="#CharacterHeight" coords="120,550,152,566">
+</map>
+
+<dl>
+<dt class=type><a name="<<">
+<b><<
+</b></a>
+<dd class=data>This push button allows the character preceeding the current to be loading into the
+character
+data matrix for inspection and modification.
+
+
+<p>
+<dt class=type><a name=">>">
+<b>>>
+</b></a>
+<dd class=data>This push button allows the character following the current to be loading into the
+character
+data matrix for inspection and modification.
+
+
+<p>
+<dt class=type><a name="Copy">
+<b>Copy
+</b></a>
+<dd class=data>The current character matrix will be copied for pasting by clicking on this button.
+The
+character dimensions, width and height, are saved with the character data.
+
+
+
+<p>
+<dt class=type><a name="Paste">
+<b>Paste
+</b></a>
+<dd class=data>Character matrix data, both pixel values and dimensison,
+saved by the <b>Copy</b>
+function will be pasted into the
+current character cell by pressing this button.
+
+
+<p>
+<dt class=type><a name="Save">
+<b>Save
+</b></a>
+<dd class=data>This push button gives access to the <a href="vfsave.htm">Font Save</a> dialog
+box
+allowing a target font filename to be specified and accepted.
+The currently selected
+font will then be written, in standard portable <b>FMF</b>
+format, to the file of
+the indicated name.
+
+
+<p>
+<dt class=type><a name="ReSize">
+<b>ReSize
+</b></a>
+<dd class=data>This push button allows font dimensions to be recalculated or redistributed
+depending
+on the sate of the <b>FixedFont</b> selection value.
+<p>
+When <b>FixedFont</b> indicates
+a fixed pitch font, the global font dimensions
+indicated by the <b>FontWidth</b> and
+<b>FontHeight</b> fields will be applied
+to all character cells, either expanding
+the characters or clipping them to 
+adapt.
+<p>
+When <b>FixedFont</b> indicates a proportional
+spaced font, all font character
+cells will be recalculated to their exact data useage
+size plus one.
+<p>
+
+
+<p>
+<dt class=type><a name="Export">
+<b>Export
+</b></a>
+<dd class=data>This push button gives access to the < href="visave.htm">Image Save</b>
+dialog box
+allowing an image name to be specified and accepted.
+An image name provided in this
+way will be used as the name of the image file
+to which an image of the entire font
+character set is to be written and saved.
+The font image will be organised as a standard
+256 character set table.
+
+
+
+<p>
+<dt class=type><a name="Frame">
+<b>Frame
+</b></a>
+<dd class=data>When this button is pressed the semi-graphical character of the current font will
+be
+regenerated respecting the global font dimensions.
+
+
+<p>
+<dt class=type><a name="Load">
+<b>Load
+</b></a>
+<dd class=data>This push button gives access to the <a href="vfload.htm">Font Load</a> dialog
+box
+allowing a font filename to be specified and accepted.
+The currently selected font
+will then be loading into the current entry of the
+font table and will become the
+current font.
+
+
+<p>
+<dt class=type><a name="Character">
+<b>Character
+</b></a>
+<dd class=data>This edit field displays the character currently loaded into the character
+matrix
+editor on the left.
+
+
+<p>
+<dt class=type><a name="CharacterHex">
+<b>CharacterHex
+</b></a>
+<dd class=data>This edit field displays the hexadecimal value of the character currently loaded 
+into
+the character matrix editor on the left.
+
+
+<p>
+<dt class=type><a name="CharacterDec">
+<b>CharacterDec
+</b></a>
+<dd class=data>The initial value of this edit field is passed as a parameter to the dialog box
+and
+displays the decimal value of the character currently loaded into the character
+matrix
+editor on the left. This edit field may be modified by hand or by pressing
+on either
+of the character cell forward or back buttons below. The final value
+of this field
+will be returned to the caller on completion.
+
+
+
+<p>
+<dt class=type><a name="FontName">
+<b>FontName
+</b></a>
+<dd class=data>The initial value of this field will be received as a parameter to the dialog box
+and
+will be returned to the caller on exit. The selection mechanism allows the
+font table
+entry, on which the editor is to work, to be selected.
+Each of the 256 font table
+entries may hold be loaded with an individual font.
+
+
+
+<p>
+<dt class=type><a name="FontCellSwitch">
+<b>FontCellSwitch
+</b></a>
+<dd class=data>This switch controls the behaviour of the row insert/delete and the column
+insert
+delete functions of the font data editor. When active the operation will
+be performed
+for all 256 characters cells of the font. When disabled the function
+will be performed
+on the current character only.
+
+
+<p>
+<dt class=type><a name="FontWidth">
+<b>FontWidth
+</b></a>
+<dd class=data>This edit field displays the width in pixels of the currently selected font table
+entry.
+It may be increased by clicking on the <b>+</b> button to its right or
+decreased by
+clicking on the <b>-</b> to its left.
+
+
+<p>
+<dt class=type><a name="FontHeight">
+<b>FontHeight
+</b></a>
+<dd class=data>This edit field displays the height in pixels of the currently selected font table
+entry.
+The value displayed here may be increased by clicking on the <b>+</b> button to its
+right or
+decreased by clicking on the <b>-</b> to its left.
+
+
+<p>
+<dt class=type><a name="FixedFont">
+<b>FixedFont
+</b></a>
+<dd class=data>This selection mechanism allows the nature of the font to be altered between
+fixed
+and proportional. This flag will be used by the <b>ReSize</b> function.
+
+
+<p>
+<dt class=type><a name="CrossControl">
+<b>CrossControl
+</b></a>
+<dd class=data>This switch item controls display of the font matrix editor switching the cursor
+on
+and off allowing font character data to be modified using the standard editor
+keys
+
+<p>
+<table>
+<tr><th>Key<th>Description
+<tr><td>UP ARROW<td>move up one matrix row,
+or wrap arround to bottom row.
+<tr><td>DOWN ARROW<td>move down one matrix row, or
+wrap arround to top row.
+<tr><td>LEFT ARROW<td>move left one matrix column, or wrap
+arround to right edge.
+<tr><td>RIGHT ARROW<td>move right one matrix column, or wrap
+arround to left edge.
+<tr><td>CTRL Y<td>Delete matrix row at the cursor position pulling
+up rows beneath.
+<tr><td>CTRL N<td>Insert matrix row at the cursor position pushing
+down the
+current row and all rows beneath.
+<tr><td>DELETE<td>Delete entire matrix
+column at the cursor position pulling left 
+all columns to the right.
+<tr><td>INSERT<td>Insert
+a new matrix column at the cursor position pushing all
+matrix columns to the right.
+<tr><td>SPACE<td>Toggle
+the matrix pixel value under the cursor position between.
+</table>
+<p>
+
+
+<p>
+<dt class=type><a name="Column">
+<b>Column
+</b></a>
+<dd class=data>This edit field displays the current character matrix cursor column position.
+
+
+<p>
+<dt class=type><a name="Row">
+<b>Row
+</b></a>
+<dd class=data>This edit field displays the current character matrix cursor row position.
+
+
+<p>
+<dt class=type><a name="CharacterWidth">
+<b>CharacterWidth
+</b></a>
+<dd class=data>This edit field displays the width in pixels of the current character in the 
+font
+character matrix.
+It may be increased by clicking on the <b>+</b> button to its right
+or
+decreased by clicking on the <b>-</b> to its left.
+
+
+<p>
+<dt class=type><a name="CharacterHeight">
+<b>CharacterHeight
+</b></a>
+<dd class=data>This edit field displays the height in pixels of the current character in the 
+font
+character matrix.
+It may be increased by clicking on the <b>+</b> button to its right
+or
+decreased by clicking on the <b>-</b> to its left.
+
+
+<p>
+
+
+</dl>
+
+</td>
+</table></div><p>
+
+<p><div align="center">
+<table class="CRT">
+<tr><th><h3 align="center">
+Copyright (c) 2002 Prologue  
+</h3>
+</table></div><p>
+</body></html>

@@ -1,0 +1,23 @@
+Version = 1
+Runtime = "bdamd5"
+% Md5Init()
+% Md5File($,%,%)
+% Md5String($,%)
+% Md5Result($?,%)
+End
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

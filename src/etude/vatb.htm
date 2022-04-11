@@ -1,0 +1,147 @@
+<html>
+<head>
+<title>Abal 3 : Visual Atributs</title>
+<META NAME="VERSION" CONTENT="*PRL@INFO*$6:31a003">
+<link href="style.css" rel="STYLESHEET" type="text/css" media="SCREEN">
+</head>
+<body>
+<h1>Abal 3 : Visual Atributs</h1>
+<p>
+<h3>Introduction</h3>
+
+<p>This document presents the results of the preliminary study, performed by Iain James Marshall on behalf of
+Prologue Software, into the feasability of providing simplified access to the graphical user interface functions
+of the <b>Visual Library </b> available with the version 3 of <b>Abal</b>.
+
+<h3>Historical Overview</h3>
+<p>The instructions <b>PRINT</b> and <b>ASK</b> of the <b>abal</b> language offer powerful yet simple functions 
+for use by application programmers in the description and construction of user interfaces for their applications.
+
+<p>These instructions are particularilly well suited to the needs of applications operating in text mode 
+offering full control over screens, printers, keyboards and the various pointing and other input devices 
+encountered in the modern day business management application field.
+
+<p>The radical increase in performance of modern computer hardware, in conjunction with the recent dramatic fall in cost, 
+today allows a realistic approach to be envisaged for the development and deployment of <b>multiuser</b> business 
+management applications in a fully <b>graphical</b> environment.
+
+<p>The <b>Visual Library</b> of <b>Abal 3</b>, and the associated interface modelling and code generation tool <b>Sing</b>, 
+have been designed to provide a coherent solution to the needs of applications in terms of their graphical user interface
+and this in keeping with current standard practice relating to overall application architecture and transfer of control.
+
+<h3>Visual Library</h3>
+<p>This library, packaged as a standard <b>Abal</b> dynamic library, provides a powerful yet simple collection of 
+functions for the construction of a graphical user interface for an <b>Abal</b> application.
+<p>The library has been implemented for use on the various operating systems for which the language <b>Abal</b> is
+available, namly <b>Twin Server</b>, <b>Useit(linux)</b> and is currently being ported for <b>Windows</b>.
+
+<p>The library provides functions for the activation, management and interaction with a virtual and portable, 
+graphical environment providing complete abstraction from the underlying hardware and system software implementation.
+
+<p>The hardware electronics norm <b>VESA</b> being used for <b>Twin Server</b>, the international standard <b>X/11</b>
+is employed for <b>Useit(linux)</b> and the <b>GDI</b> for <b>Windows</b> based platforms.
+
+<p>Each function of the visual library has been designed to perform as simply as possible a specific  high level graphical 
+operation.
+<p>These graphical operations fall into the following categories 
+<p>
+<ol>
+<li>Graphical Environment Control
+	<ul>
+	<li>Graphical Activation and Termination
+	<li>Colour Management Operations
+	<li>Text Font Management operations
+	<li>Graphical Buffer Management 
+	</ul>
+<li>Graphical Element Display
+	<ul>
+	<li>Window Display
+	<li>Images and Texts
+	<li>Push Buttons
+	<li>Check Boxs, Radio Buttons and Switchs
+	<li>Scroll bars and Progression Bars
+	<li>Selection lists
+	<li>Tabulated Data
+	</ul>
+<li>User Interface Event Management
+	<ul>
+	<li>Keyboard events
+	<li>Mouse Events
+	</ul>
+
+</ol>
+<p>
+
+
+
+<code>
+<pre>
+/*	------------------------------------------------------------	*/
+/*	d e f i n e _ v i s u a l _ a t r i b u t ( buffer, length )	*/
+/*	------------------------------------------------------------	*/
+/*									*/
+/*	this function allows the definition of individual visual atbs	*/
+/*	and will specify the behaviour required in terms of framing	*/
+/*	fonting, colour, alignment and bold/shadow/underline etc	*/
+/*									*/
+/*	------------------------------------------------------------	*/
+/*									*/
+/*	The data buffer comprises the following fields , in order :	*/
+/*									*/
+/*	a	atribut id 	: lower case alpha character a .. z 	*/
+/*									*/
+/*	Z	zone type	: upper case hex digit 0 .. F		*/
+/*				  representing the 16 zone types   	*/
+/*									*/
+/*				  0 : block (inhibited : plain text )	*/
+/*				  1 : inset				*/
+/*				  2 : outset				*/
+/*				  3 : ridge				*/
+/*				  4 : groove				*/
+/*				  5 : editbox				*/
+/*				  6 : pushbutton			*/
+/*				  7 : pushedbutton			*/
+/*				  8 : checkbox				*/
+/*				  9 : checkedbox			*/
+/*				  10: radiobutton			*/
+/*				  11: radioedbutton			*/
+/*				  12: off switch			*/
+/*				  13 :on  switch			*/
+/*									*/
+/*	F	font number	: decimal digit between 1 and 9 	*/
+/*				  representing the 9 text fonts		*/
+/*									*/
+/*	T	text colour	: upper case hex digit 0 ... F		*/
+/*				  representing the 16 paint colours	*/
+/*									*/
+/*	W	wash colour	: upper case hex digit 0 ... F		*/
+/*				  representing the 16 paint colours	*/
+/*									*/
+/*	A	alignment  	: L=left, R=right, C=center, J=justify	*/
+/*									*/
+/*	X	text atributs	: B=bold,S=shadow,U=underline		*/
+/*									*/
+/*	Example :							*/
+/*									*/
+/*		nZFTWAX							*/
+/*		b0240LBUS						*/
+/*									*/
+/*			atribut 'b'					*/
+/*			zone 0 (none or plain text)			*/
+/*			font number 2 (proportional)			*/
+/*			left aligned					*/
+/*			bold underlined shadowed			*/
+/*			characters blue on black/transparent		*/
+/*									*/
+/*	------------------------------------------------------------	*/
+</pre>
+</code>
+<p>
+
+
+
+
+</body>
+</html>
+
+

@@ -1,0 +1,38 @@
+# generated makefile : rtlib.mf 
+# ------------------------------------
+$(ABAL)/product33a/rtlib/allocate32.so: $(ABAL)/lib/allocate32.so
+	cp $* $@ 
+$(ABAL)/product33a/rtlib/asfun32.so: $(ABAL)/lib/asfun32.so
+	cp $* $@ 
+$(ABAL)/product33a/rtlib/audio32.so: $(ABAL)/lib/audio32.so
+	cp $* $@ 
+$(ABAL)/product33a/rtlib/bibmath32.so: $(ABAL)/lib/bibmath32.so
+	cp $* $@ 
+$(ABAL)/product33a/rtlib/fac32.so: $(ABAL)/lib/fac32.so
+	cp $* $@ 
+$(ABAL)/product33a/rtlib/libaccess32.so: $(ABAL)/lib/libaccess32.so
+	cp $* $@ 
+$(ABAL)/product33a/rtlib/libedit32.so: $(ABAL)/lib/libedit32.so
+	cp $* $@ 
+$(ABAL)/product33a/rtlib/libflfile32.so: $(ABAL)/lib/libflfile32.so
+	cp $* $@ 
+$(ABAL)/product33a/rtlib/libimage32.so: $(ABAL)/lib/libimage32.so
+	cp $* $@ 
+$(ABAL)/product33a/rtlib/libjpeg32.so: $(ABAL)/lib/libjpeg32.so
+	cp $* $@ 
+$(ABAL)/product33a/rtlib/libprint32.so: $(ABAL)/lib/libprint32.so
+	cp $* $@ 
+$(ABAL)/product33a/rtlib/ljii32.so: $(ABAL)/lib/ljii32.so
+	cp $* $@ 
+$(ABAL)/product33a/rtlib/ljiv32.so: $(ABAL)/lib/ljiv32.so
+	cp $* $@ 
+$(ABAL)/product33a/rtlib/psiii32.so: $(ABAL)/lib/psiii32.so
+	cp $* $@ 
+$(ABAL)/product33a/rtlib/tty32.so: $(ABAL)/lib/tty32.so
+	cp $* $@ 
+$(ABAL)/product33a/rtlib/visual32.so: $(ABAL)/lib/visual32.so
+	cp $* $@ 
+$(ABAL)/product33a/rtlib/z32.so: $(ABAL)/lib/z32.so
+	cp $* $@ 
+$(ABAL)/product33a/rtlib/zgr32.so: $(ABAL)/lib/zgr32.so
+	cp $* $@ 

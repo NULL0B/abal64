@@ -1,0 +1,4 @@
+
+$(POBJ)jpeg$(OBJ):  $(SP01)jpeg.c $(SP01)jpegtype.h $(SP01)jpegdef.h $(SP01)jinclude.h $(SP01)jpeglib.h $(SP01)xp_core.h $(SP01)prtypes.h $(SP01)prcpucfg.h $(SP01)protypes.h $(SP01)jconfig.h $(SP01)jmorecfg.h $(SP01)jwinfig.h $(SP01)jos2fig.h $(SP01)jprlfig.h $(SP01)jri.h $(SP01)jpegint.h '
+$(SP01)jerror.h $(SP01)jpegfunc.h /home/abal64/src/pixel/vga.c /home/abal64/src/pixel/palet.h /home/abal64/src/pixel/sysfile.h $(SP01)jpegid.c $(SP01)jpegfunc.c $(SP01)catcher.h $(SP01)jpegflag.h $(SP01)jpegbits.c
+

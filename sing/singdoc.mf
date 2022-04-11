@@ -1,0 +1,125 @@
+# ------------------------------------------------------------------------- 
+# Warning : this file has been generated and should not be modified by hand 
+# ------------------------------------------------------------------------- 
+# Sing Version   : 1.1a.0.03  
+# Production     : MAKE  
+# Project        : singdoc.htm  
+# Target         : singdoc.mf  
+# Identification : 0.0-1065019012-2581.2580 
+# ------------------------------------------------------------------------- 
+
+# Class files and Inclusions 
+
+vdebug.c: vdebug.sng
+	sing -cc $*
+
+vaed.c: vaed.sng
+	sing -cc $*
+
+vtrad.c: vtrad.sng
+	sing -cc $*
+
+vlink.c: vlink.sng
+	sing -cc $*
+
+vfselect.c: vfselect.sng
+	sing -cc $*
+
+vfsave.c: vfsave.sng
+	sing -cc $*
+
+vfload.c: vfload.sng
+	sing -cc $*
+
+vaprod.c: vaprod.sng
+	sing -cc $*
+
+vrefer.c: vrefer.sng
+	sing -cc $*
+
+vform.c: vform.sng
+	sing -cc $*
+
+vwidget.c: vwidget.sng
+	sing -cc $*
+
+vmsave.c: vmsave.sng
+	sing -cc $*
+
+vmload.c: vmload.sng
+	sing -cc $*
+
+vexit.c: vexit.sng
+	sing -cc $*
+
+vcube.c: vcube.sng
+	sing -cc $*
+
+vpage.c: vpage.sng
+	sing -cc $*
+
+vrecrep.c: vrecrep.sng
+	sing -cc $*
+
+visave.c: visave.sng
+	sing -cc $*
+
+viload.c: viload.sng
+	sing -cc $*
+
+vparam.c: vparam.sng
+	sing -cc $*
+
+vamake.c: vamake.sng
+	sing -cc $*
+
+vana.c: vana.sng
+	sing -cc $*
+
+vcompose.c: vcompose.sng
+	sing -cc $*
+
+vnation.c: vnation.sng
+	sing -cc $*
+
+vhelper.c: vhelper.sng
+	sing -cc $*
+
+! make 
+
+# Modules and Objects 
+
+vexadb.o: vexadb.sng
+	sing -cc $*
+
+! make 
+
+# Programs and Overlays 
+
+singbmap.at: singbmap.sng
+	sing -ca $*
+
+singedit.at: singedit.sng
+	sing -ca $*
+
+singfont.at: singfont.sng
+	sing -ca $*
+
+singform.at: singform.sng
+	sing -ca $*
+
+singproj.at: singproj.sng
+	sing -ca $*
+
+singtree.at: singtree.sng
+	sing -ca $*
+
+flow.at: flow.sng
+	sing -ca $*
+
+hardcopy.at: hardcopy.sng
+	sing -ca $*
+
+! make 
+
+# End of file 

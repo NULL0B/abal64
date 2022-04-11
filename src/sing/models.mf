@@ -1,0 +1,19 @@
+# extensions for the new visual database editor
+# ---------------------------------------------
+basemenu.o: $(SP01)basemenu.c $(SP01)visual.h $(SP01)vwidget.h
+flowmenu.o: $(SP01)flowmenu.c $(SP01)visual.h $(SP01)vwidget.h
+linkmenu.o: $(SP01)linkmenu.c $(SP01)visual.h $(SP01)vwidget.h
+modelmenu.o: $(SP01)modelmenu.c $(SP01)visual.h $(SP01)vwidget.h
+actormenu.o: $(SP01)actormenu.c $(SP01)visual.h $(SP01)vwidget.h
+membermenu.o: $(SP01)membermenu.c $(SP01)visual.h $(SP01)vwidget.h
+widgetmenu.o: $(SP01)widgetmenu.c $(SP01)visual.h $(SP01)vwidget.h
+methodmenu.o: $(SP01)methodmenu.c $(SP01)visual.h $(SP01)vwidget.h
+vxmlname.o:  $(SP01)vxmlname.c $(SP01)visual.h $(SP01)vwidget.h
+vrelate.o:  $(SP01)vrelate.c $(SP01)visual.h $(SP01)vwidget.h
+vbase.o:  $(SP01)vbase.c $(SP01)visual.h $(SP01)vwidget.h
+vmodel.o:  $(SP01)vmodel.c $(SP01)visual.h $(SP01)vwidget.h
+! make
+
+VDBEDIT  = basemenu.o modelmenu.o membermenu.o linkmenu.o vxmlname.o vrelate.o vbase.o vmodel.o flowmenu.o actormenu.o widgetmenu.o methodmenu.o 
+
+

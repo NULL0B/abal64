@@ -1,0 +1,6 @@
+! include $(ABAL)/common/grapil.def
+
+$(ABAL)/common/vexadb.def: vexadb.o vdbok.o vobject.o vwatch.o vshow.o velement.o $(GRAPIL)
+	echo VEXADB = $(ABAL)/pixel64/vexadb.o $(ABAL)/pixel64/vwatch.o $(ABAL)/pixel64/velement.o $(ABAL)/pixel64/vdbok.o $(ABAL)/pixel64/vshow.o $(ABAL)/pixel64/vobject.o $(GRAPIL) > $@
+! make
+

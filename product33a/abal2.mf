@@ -1,0 +1,67 @@
+# ---------------------------------------------------------------
+#                  ABAL 3 Runtime Production Makefile
+# ---------------------------------------------------------------
+# This makefile transfers all files to this production directory
+# and its subdirectories prior to building the tar zipped image
+# package. This image package is then installed in the INSTALL
+# directory. The installed image is then used for the production
+# of the RPM binary package
+# The tar package or the rpm package may be wrapped into an auto
+# installable binary executable program using the abal product33a 
+# builder utility using the following variables.
+# ---------------------------------------------------------------
+SUFFIX  = .abal2
+! include header.mf
+# -------------------
+# Make file variables
+# -------------------
+INSTALL     = install$(SUFFIX)
+STRIP       = echo 
+SOURCE      = $(ABAL)/
+TARGET      = $(ABAL)/product33a/
+INSTALLPATH = /home/abal3
+PAYLOAD     = abal2.tgz
+
+# --------------------------------------------------------------
+# Check all package components against source production modules
+# --------------------------------------------------------------
+! include bin16.mf
+! include lib16.mf
+! include fonts.mf
+! include images.mf
+! make
+
+# --------------------------------------
+# Build the Runtime Installation package
+# --------------------------------------
+$(PAYLOAD): $(INSTALL) bin16 lib16 fonts images
+	tar -czvf $@ $?
+! make
+
+# --------------------------------------
+# production of autoinstallation release
+# --------------------------------------
+! ifdef RELEASE
+PRODUCT     = "-t/home/abal3/$(PAYLOAD)"
+PREINSTALL  = "-bcd /home/abal3"
+DOINSTALL   = "-itar -xzf" 
+POSTINSTALL = "-a./$(INSTALL)"
+$(SOURCE)release/$(RELEASE): $(TARGET)$(PAYLOAD)
+	apb -p -z -v -s$* $(PRODUCT) -d/home/abal3 $(PREINSTALL) $(DOINSTALL) $(POSTINSTALL) $@
+! make
+! endif
+
+# -------------------------------------------
+# Transfer to target machine for distribution
+# -------------------------------------------
+! ifdef WEB
+! shell scp $(PORTSCP) $(SOURCE)release/$(RELEASE) $(WEB)
+! endif
+
+
+# ---------------
+# End of Makefile
+# ---------------
+ 
+
+

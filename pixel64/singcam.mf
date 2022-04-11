@@ -1,0 +1,11 @@
+
+$(POBJ)singcam$(OBJ):  $(SP01)singcam.c $(SP01)sing.h $(SP01)ctrl.h /home/abal64/include/allocate.h $(SP01)singname.h $(SP01)singtrac.h $(SP01)singstyle.h $(SP01)singnatl.h $(SP01)vform.h $(SP01)singeve.h $(SP01)singtree.h $(SP01)singform.h $(SP01)singpage.h /home/abal64/src/pixel/stdpsu.h '
+/home/abal64/src/pixel/stdtypes.h /home/abal64/src/pixel/sysfile.h $(SP01)singmod.h $(SP01)vwidget.h /home/abal64/src/pixel/threed.h $(SP01)process.h /home/abal64/src/pixel/palet.h /home/abal64/src/pixel/guimouse.h $(SP01)singrel.h $(SP01)vframe.h $(SP01)singpix.h $(SP01)genimage.h '
+/home/abal64/src/pixel/sysimage.h $(SP01)vimage.h $(SP01)strucpsu.h /home/abal64/src/pixel/zgif.h /home/abal64/src/pixel/zpng.h /home/abal64/src/pixel/zico.h /home/abal64/src/pixel/zbmp.h /home/abal64/src/pixel/zjpeg.h /home/abal64/src/pixel/stdimage.h $(SP01)singlang.h $(SP01)singprod.h '
+$(SP01)singpal.h $(SP01)singbar.h $(SP01)singmenu.h $(SP01)vnatlang.h $(SP01)singalig.h $(SP01)singprot.h $(SP01)vobject.h $(SP01)vobjapi.h $(SP01)pixelgui.h $(SP01)pubmanagercico.h $(SP01)vcamera.h $(SP01)vclass.h $(SP01)choixrepfic.h $(SP01)singtool.h $(SP01)singtext.h $(SP01)singtype.h '
+$(SP01)singimg.h $(SP01)singclas.h $(SP01)singconf.h $(SP01)singlist.h $(SP01)singcam.h /home/abal64/src/pixel/scene.h /home/abal64/src/pixel/texture.h /home/abal64/src/pixel/align.h $(SP01)vconf.h $(SP01)valign.h $(SP01)singappl.h $(SP01)singfile.h $(SP01)abaldata.h $(SP01)abaltype.h '
+$(SP01)object3d.c $(SP01)camera3d.c $(SP01)view3d.c $(SP01)menu3d.c $(SP01)singlist.c $(SP01)singpack.c $(SP01)singdict.c $(SP01)singdict.h $(SP01)singapp.c $(SP01)singexpo.h $(SP01)singlab.c $(SP01)singfmed.c $(SP01)singfmed.h $(SP01)vstyle.h $(SP01)singplan.h $(SP01)singpars.h $(SP01)singsmed.c '
+$(SP01)singsmed.h $(SP01)singdeep.c
+$(POBJ)threed$(OBJ):  $(SP01)threed.c $(SP01)singprot.h $(SP01)vobject.h $(SP01)vobjapi.h $(SP01)pixelgui.h $(SP01)pubmanagercico.h $(SP01)vcamera.h $(SP01)vclass.h $(SP01)choixrepfic.h /home/abal64/src/pixel/threed.h $(SP01)process.h /home/abal64/src/pixel/texture.h $(SP01)vimage.h '
+$(SP01)strucpsu.h /home/abal64/src/pixel/align.h $(SP01)valign.h $(SP01)gui.c $(SP01)face3d.c
+

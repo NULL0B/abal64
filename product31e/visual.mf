@@ -1,0 +1,101 @@
+# ---------------------------------------------------------------------
+# this makefile is included by class.mf
+# ---------------------------------------------------------------------
+# generated makefile : visual.mf 
+# ------------------------------
+$(TP01)visual/asfuni.cls: $(SP01)visual/asfuni.cls
+	cp $* $@
+$(TP01)visual/audioi.cls: $(SP01)visual/audioi.cls
+	cp $* $@
+$(TP01)visual/bibmathi.cls: $(SP01)visual/bibmathi.cls
+	cp $* $@
+$(TP01)visual/gprinter.cls: $(SP01)visual/gprinter.cls
+	cp $* $@
+$(TP01)visual/printeri.cls: $(SP01)visual/printeri.cls
+	cp $* $@
+$(TP01)visual/ttyi.cls: $(SP01)visual/ttyi.cls
+	cp $* $@
+$(TP01)visual/vargv.cls: $(SP01)visual/vargv.cls
+	cp $* $@
+$(TP01)visual/vbuffer.cls: $(SP01)visual/vbuffer.cls
+	cp $* $@
+$(TP01)visual/vcall.cls: $(SP01)visual/vcall.cls
+	cp $* $@
+$(TP01)visual/vcheck.cls: $(SP01)visual/vcheck.cls
+	cp $* $@
+$(TP01)visual/vcmdline.cls: $(SP01)visual/vcmdline.cls
+	cp $* $@
+$(TP01)visual/vcolour.cls: $(SP01)visual/vcolour.cls
+	cp $* $@
+$(TP01)visual/vedit.cls: $(SP01)visual/vedit.cls
+	cp $* $@
+$(TP01)visual/vevent.cls: $(SP01)visual/vevent.cls
+	cp $* $@
+$(TP01)visual/vfill.cls: $(SP01)visual/vfill.cls
+	cp $* $@
+$(TP01)visual/vfname.cls: $(SP01)visual/vfname.cls
+	cp $* $@
+$(TP01)visual/vfont.cls: $(SP01)visual/vfont.cls
+	cp $* $@
+$(TP01)visual/vframe.cls: $(SP01)visual/vframe.cls
+	cp $* $@
+$(TP01)visual/vgraph.cls: $(SP01)visual/vgraph.cls
+	cp $* $@
+$(TP01)visual/vgroup.cls: $(SP01)visual/vgroup.cls
+	cp $* $@
+$(TP01)visual/vimage.cls: $(SP01)visual/vimage.cls
+	cp $* $@
+$(TP01)visual/visuali.cls: $(SP01)visual/visuali.cls
+	cp $* $@
+$(TP01)visual/vlabels.cls: $(SP01)visual/vlabels.cls
+	cp $* $@
+$(TP01)visual/vlibrary.cls: $(SP01)visual/vlibrary.cls
+	cp $* $@
+$(TP01)visual/vmessage.cls: $(SP01)visual/vmessage.cls
+	cp $* $@
+$(TP01)visual/voverlay.cls: $(SP01)visual/voverlay.cls
+	cp $* $@
+$(TP01)visual/vpage.cls: $(SP01)visual/vpage.cls
+	cp $* $@
+$(TP01)visual/vprinter.cls: $(SP01)visual/vprinter.cls
+	cp $* $@
+$(TP01)visual/vprogres.cls: $(SP01)visual/vprogres.cls
+	cp $* $@
+$(TP01)visual/vpush.cls: $(SP01)visual/vpush.cls
+	cp $* $@
+$(TP01)visual/vradio.cls: $(SP01)visual/vradio.cls
+	cp $* $@
+$(TP01)visual/vsaver.cls: $(SP01)visual/vsaver.cls
+	cp $* $@
+$(TP01)visual/vscroll.cls: $(SP01)visual/vscroll.cls
+	cp $* $@
+$(TP01)visual/vselect.cls: $(SP01)visual/vselect.cls
+	cp $* $@
+$(TP01)visual/vswitch.cls: $(SP01)visual/vswitch.cls
+	cp $* $@
+$(TP01)visual/vtable.cls: $(SP01)visual/vtable.cls
+	cp $* $@
+$(TP01)visual/vtabpage.cls: $(SP01)visual/vtabpage.cls
+	cp $* $@
+$(TP01)visual/vtext.cls: $(SP01)visual/vtext.cls
+	cp $* $@
+$(TP01)visual/vtrigger.cls: $(SP01)visual/vtrigger.cls
+	cp $* $@
+$(TP01)visual/vtypes.cls: $(SP01)visual/vtypes.cls
+	cp $* $@
+$(TP01)visual/vwidget.cls: $(SP01)visual/vwidget.cls
+	cp $* $@
+$(TP01)visual/vwindow.cls: $(SP01)visual/vwindow.cls
+	cp $* $@
+
+! make
+
+$(TP01)visual/visual.as: $(SP01)visual/visual31e.as
+	cp $* $@
+$(TP01)visual/printer.as: $(SP01)visual/printer.as
+	cp $* $@
+$(TP01)visual/makefile: $(SP01)visual/makefile
+	cp $* $@
+
+! make
+

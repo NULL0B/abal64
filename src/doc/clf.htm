@@ -1,0 +1,619 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>ABAL 3 : Common Library Functions </title>
+<META NAME="VERSION" CONTENT="*PRL@INFO*$6:31a001">
+<link href="style.css" rel="STYLESHEET" type="text/css" media="SCREEN">
+</head>
+<body>
+<div align=center>
+<table  >
+<tr><th><h1>ABAL 3 : Common Library Functions </h1><td>
+<tr><th><h2>Programmer Reference Manual</h2><td>
+</table>
+<p>
+<table  >
+<tr><th>Syntaxical conventions
+<tr><td>
+<div align=center>
+<p>The following terms will be used in the description of the syntax of the ABAL 3 common library functions.
+<p>
+<table  >
+<tr><th>variable<td class=relief>represents a local or global variable declaration
+<tr><th>pointer<td class=relief>represents a local or global variable declaration of pointer type
+<tr><th>constant<td class=relief>represents a valid local, global or implicite constant expression
+<tr><th>procedure<td class=relief>represents a legal, extern, forward or declared procedure identifier
+<tr><th>segement<td class=relief>represents a legal, extern or declared segment name or number
+<tr><th>library<td class=relief>represents a legal library identifier as provided by the runtime clause of the library definition.
+<tr><th>expression<td class=relief>represents any legal combination of constants, variables, functions and operators.
+<tr><th>label<td class=relief>a token repesenting a tcode location or a symbolic term.
+<tr><th>result<td class=relief>either a target variable or a parameter of type expression in any other function.
+<tr><th>format<td class=relief>any legal combination of format instructions
+<tr><th>[ ]<td class=relief>represents an enclosed optional construction
+<tr><th>...<td class=relief>represents an optional repetition of the preceeding term
+</table>
+<p>All other punctuation characters are to be provided as shown in the syntax of the example.
+<p>
+</div>
+</table>
+<p>
+<p><table  ><tr><th width="30%"> CONV#	<td>explicite conversion to 8  bit integer
+<tr><td colspan=2><p><dl>
+<dt><b>Syntax</b><dd><p><code>result = CONV#( expression )<p></code><dt><b>Description</b><DD><P>
+Returns an sign extended 8 bit integer value resulting from the conversion of its expression parameter.
+</DL></table>
+<p><table  ><tr><th width="30%"> CONV%	<td>explicite conversion to 16 or 32 bit integer
+<tr><td colspan=2><p><dl>
+<dt><b>Syntax</b><dd><p><code>result = CONV%( expression )<p></code><dt><b>Description</b><DD><P>
+Returns an sign extended 16 bit integer value resulting from the conversion of its expression parameter.
+</DL></table>
+<p><table  ><tr><th width="30%"> CONV	<td>implicite conversion to type 
+<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>result = CONV( expression )<p></code><dt><b>Description</b><DD><P>
+Returns an operand resulting from the conversion of its expression parameter. The resulting type
+will depend on the type required of the operand, its use as a parameter to other strict typed
+functions or procedures or dictated by a target lvalue or variable.
+</DL></table>
+<p><table  ><tr><th width="30%"> CONV$<td>explicite conversion to string 
+<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>result = CONV$( expression )<p></code><dt><b>Description</b><DD><P>
+Returns a string value resulting from the conversion of its expression operand.
+The length of the string will depend on the size and nature of the arguement.
+</DL></table>
+<p><table  ><tr><th width="30%"> MOD	<td>remainder after division
+<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>result = MOD( expression , expression )<p></code><dt><b>Description</b><DD><P>
+Returns the remainder after division of the two expression parameters.
+</DL></table>
+<p><table  ><tr><th width="30%"> PRINT	<td>print to buffer 
+<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>
+variable = Print( [ ( format ) , ] expression [ , expression ... ] )<p>
+</code><dt><b>Description</b><DD><P>
+Causes all bytes output by the various print functions and operands to stored to the target buffer
+variable. Remaining space in the buffer will be padded with space characters up to the
+length of the buffer, whilst any excedant bytes that would overspill the buffer are silently discard.
+</DL></table>
+<p><table  ><tr><th width="30%"> #DATE	<td>translation date
+<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>#DATE<p></code><dt><b>Description</b><DD><P>
+Returns a string containing the system date at the moment the instruction is translated.
+</DL></table>
+<p><table  ><tr><th width="30%"> #TIME	<td>translation time
+<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>#TIME<p></code><dt><b>Description</b><DD><P>
+Returns a string containing the system time at the moment the instruction is translated.
+</DL></table>
+<p><table  ><tr><th width="30%"> #FILE	<td>translation file
+<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>#FILE<p></code><dt><b>Description</b><DD><P>
+Returns a string containing the full filename of the current translation source.
+</DL></table>
+<p><table  ><tr><th width="30%"> #LINE	<td>translation line
+<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>#LINE<p></code><dt><b>Description</b><DD><P>
+Returns an integer value providing the current line number of the current translation source.
+</DL></table>
+<p><table  ><tr><th width="30%"> NULL	<td>generic null value
+<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>NULL<p></code><dt><b>Description</b><DD><P>
+Returns a generic null value that may be used to reset any type of variable or represent any type
+of pointer.
+</DL></table>
+<p><table  ><tr><th width="30%"> CLASS_NAME <td>current class name 
+<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>CLASS_NAME<p></code><dt><b>Description</b><DD><P>
+Returns a string value representing the host class name of the current class method undergoing translation expansion.
+</DL></table>
+<p><table  ><tr><th width="30%"> OBJECT_NAME<td>current object name
+<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>OBJECT_NAME<p></code><dt><b>Description</b><DD><P>
+Returns a string value representing the host object name of the instance for which the current method has been invoked.
+</DL></table>
+<p><table  ><tr><th width="30%"> SIZEOF	<td>class instance size
+<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>result = SIZEOF( classname )<p></code><dt><b>Description</b><DD><P>
+This function returns an integer value providing the exact memory occupation size of its parameter
+in a similar fashion to the LEN function but also for class, union and struct types.
+</DL></table>
+<p><table  ><tr><th width="30%"> CLASS_NUMBER<td>contextual class identifier
+<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>CLASS_NUMBER<p></code><dt><b>Description</b><DD><P>
+Returns an integer value providing the unique number of the current active class.
+</DL></table>
+<p><table  ><tr><th width="30%"> OBJECT_NUMBER<td>contextual object identifier
+<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>OBJECT_NUMBER<p></code><dt><b>Description</b><DD><P>
+Returns an integer value providing the unique number of the current active instance.
+</DL></table>
+<p><table  ><tr><th width="30%"> VALIDPTR	<td>pointer validity check
+<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>
+result = VALIDPTR( pointer )<p>
+</code><dt><b>Description</b><DD><P>
+This function returns an integer values providing information as to the validity and nature of its
+pointer parameter as shown in the following table.
+<p>
+<table>
+<tr><th>Value<th>Description
+<tr><td>/01<td>Aliased Memory Data Pointer
+<tr><td>/03<td>Allocated Memory Data Pointer
+<tr><td>/05<td>Internal Procedure Pointer
+<tr><td>/85<td>External Overlay Procedure Pointer
+<tr><td>/09<td>Segment Pointer
+<tr><td>/11<td>Dynamic Library Function Pointer
+</table>
+<p>All other values especially zero, represent illegal pointers.
+</DL></table>
+<p><table  ><tr><th width="30%"> ALIAS	<td>pointer duplication<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p>
+<code>result = ALIAS( pointer )</code><p>
+<code>result = ALIAS( variable)<p>
+</code><dt><b>Description</b><DD><P>
+Returns and affects a memory address to a pointer variable or as a pointer return value for 
+functions returning pointer types. The parameter may be a pointer variable or a standard
+local or global variable or constant. It may be neither an expression, nor an extended variable 
+nor a virtual, file variable.
+<p>
+</DL></table>
+
+<p><table  ><tr><th width="30%"> LOADGO	<td>system command with result<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>
+result = LOADGO( handle [, command ] )<p>
+</code><dt><b>Description</b><DD><P>
+<p>This function will perform the same action as the equivalent instruction <b>LOAD.GO=handle,command</b>
+except that an eventual return code from the executed program will be returned in the result variable or register.
+<p>Any error encountered by the execution of this instruction may be trapped by an <b>on error goto</b> mechanism.
+<p>Example
+<p><code><pre>
+	ERROR = LOADGO(1,"PROGRAM,COMMAND")
+</pre> </code> <p>
+</DL></table>
+
+<p><table  ><tr><th width="30%"> CREATE	<td>pointer creation<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>
+CREATE pointer [ ( expression [ , expression [ , expression ] ] ) ] [ : label, variable ] <p>
+</code><dt><b>Description</b><DD><P>
+This instruction performs dynamic memory allocation.
+The result of the allocation will be
+stored to the target pointer variable after have been initialised in accordance with the
+variables declared type. The optional length and dimensional value expressions may be 
+provided in order to over-ride the declared size and dimensions. The dimensional information
+thus provided will be stored to the corresponding variable control table  overwriting 
+the previous values.
+</DL></table> 
+<p><table  ><tr><th width="30%"> REMOVE	<td>pointer release<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>
+REMOVE pointer <p></code><dt><b>Description</b><DD><P>
+This function must be used in order to release memory allocated by the preceeding <b>CREATE</b> instruction.
+If the pointer passed as the parameter indicates an aliased type the pointer memory will not
+be released, the memory in which the pointer itself is stored will simply be reset to indicate
+a NULL pointer.
+</DL></table>
+<p><table  ><tr><th width="30%"> FORGET	<td>pointer reset<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>
+FORGET pointer
+</code><dt><b>Description</b><DD><P>
+This function does not release memory. It simply resets the memory in which the pointer itself is 
+stored to indicate a NULL pointer.
+</DL></table>
+<p><table  ><tr><th width="30%"> ATTACH	<td>overlay attachment<tr><td colspan=2><p>
+<dl>
+<dt><b>Syntax</b><dd><p><code>ATTACH pointer ( expression  ) [ : label, variable ] <p></code>
+<dt><b>Description</b><DD><P>
+This instruction performs dynamic memory allocation, loading an ABAL Tcode program,
+identified by the expression parameter, as an <b>OVERLAY</b> object and affecting the resulting 
+pointer to the target operand pointer.
+<p>The expression may be of numeric type, indicating an ASSIGN handle, or of string type indicating
+a filename.
+<p>This instruction returns a pointer to an extremly complex allocated data structure which must
+<b>not</b> be tampered with. The following code represents the program visible aspects of this structure
+and their semantics.
+<p>
+<code><pre>
+	PTR	POINTER$=10
+	FIELD=M,POINTER
+		PTR PROC TABLE(PROCEDURE_COUNT)
+		PTR      MEMORY$=GLOBAL_MEMORY_SIZE
+	FIELD=M
+</pre></code>
+<p>The procedure table will contain one procedure pointer for each procedure in the attached program.
+<p>The procedures will occur in the table in the same order as they, or their <b>FORWARD</b>
+declarations, occured in the program source.
+<p>The memory variable will point to the globalvariables of the program and may be redefined
+in order to be able to access individual items by name.
+<p>Multiple instances of Tcode programs loaded by this instruction will share all code and 
+constant sections, duplicating only the variable storage areas.
+</DL></table>
+<p><table  ><tr><th width="30%"> DETACH	<td>overlay detachment<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>
+DETACH pointer</code><dt><b>Description</b><DD><P>
+This instruction will detach an instance of an overlay program from an attached pointer.
+When the attachment instance count falls to zero the Tcode program will be effectivly released
+from memory.
+</DL></table>
+<p><table  ><tr><th width="30%"> ALTER	<td>pointer alteration<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>
+ALTER pointer [ ( expression [ , expression [ , expression ] ] ) ] [ : label, variable ] <p>
+</code><dt><b>Description</b><DD><P>
+This instruction does not allocate memory, it simply affects the variable table control entry
+will the provided values. The provided values must be legal values. Abuse of this function may
+have disastrous consequences.
+</DL></table>
+<p><table  ><tr><th width="30%"> WAIT	<td>unconditional wait<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>
+WAIT expression <p></code><dt><b>Description</b><DD><P>
+This instructions performs an unconditional wait for the number of seconds indicated by its
+parameter expresssion which may be zero in which the wait not occur.
+</DL></table>
+<p><table  ><tr><th width="30%"> MASK	<td>set ask mask<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>
+MASK expression<p></code><dt><b>Description</b><DD><P>
+This instruction causes the bitfield values of its parameter expression to be established as the
+current value of the <b>ASK</b> control mask.
+</DL></table>
+<p><table  ><tr><th width="30%"> RESTORE	<td>set data readpoint<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>
+RESTORE expression<p></code><dt><b>Description</b><DD><P>
+This instruction sets the data pointer for the next memory read function to the value provided
+by the expression parameter.
+</DL></table>
+<p><table  ><tr><th width="30%"> DATE	<td>set date value<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>
+DATE( expression ) = expression </code><p>
+<code>DATE( expression , expression ) <p>
+</code><dt><b>Description</b><DD><P>
+This instruction sets the system date component described by the first parameter to the value provided by the
+second parameter.
+Legal date component values are shown in the following table:
+<p>
+<table>
+<tr><th>Value<th>Description
+<tr><td>1<td>Year Value
+<tr><td>2<td>Month Value
+<tr><td>3<td>Day Value
+<tr><td>4<td>Day of the Year
+<tr><td>5<td>Hour Value
+<tr><td>6<td>Minute Value
+<tr><th>7<th>Second Value
+<tr><th>8<th>Tenth of Second
+</table>
+<p>The execution of this function may return an error 58 if the effective user id of the 
+current process is not authorised to modify the system date.
+<p>
+</DL></table>
+<p><table  ><tr><th width="30%"> KBF	<td>set function key value<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>
+KBF( expression ) = expression </code><p>
+<code>KBF( expression , expression ) <p>
+</code><dt><b>Description</b><DD><P></DL></table>
+<p><table  ><tr><th width="30%"> ASKCOLOR	<td>set ask colour<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>
+ASKCOLOR ( expression , expression ) <p>
+</code><dt><b>Description</b><DD><P></DL></table>
+<p><table  ><tr><th width="30%"> ASKATB	<td>set ask atribut<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>
+ASKATB [(] expression [)] <p>
+</code><dt><b>Description</b><DD><P></DL></table>
+<p><table  ><tr><th width="30%"> HOTKEY	<td>set hotkey<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>
+HOTKEY [(] expression [)] <p>
+</code><dt><b>Description</b><DD><P></DL></table>
+<p><table  ><tr><th width="30%"> LANG	<td>set language code<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>
+LANG [(] expression [)]<p>
+</code><dt><b>Description</b><DD><P></DL></table>
+<p><table  ><tr><th width="30%"> INITDATA	<td>initialise data variables <tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>
+INITLOCAL</code><p>
+<code>INITGLOBAL<p>
+</code><dt><b>Description</b><DD><P></DL></table>
+<p><table  ><tr><th width="30%"> END_USER	<td>drop library function<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>
+END_USER library<p>
+</code><dt><b>Description</b><DD><P></DL></table>
+<p><table  ><tr><th width="30%"> END_PROC	<td>release procedure<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>
+END_PROC [ procedurename ]<p>
+</code><dt><b>Description</b><DD><P></DL></table>
+<p><table  ><tr><th width="30%"> END_SEG	<td>release segment<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>
+END_SEG [ segmentname | segment_number ]<p>
+</code><dt><b>Description</b><DD><P></DL></table>
+<p><table  ><tr><th width="30%"> EVENT	<td>set event value<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>
+EVENT ( expression ) = expression<p>
+</code><dt><b>Description</b><DD><P></DL></table>
+<p><table  ><tr><th width="30%"> LOADUSER	<td>set library name<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>
+LOADUSER ( expression ) = expression</code><p>
+<code>LOADUSER ( expression , expression ) <p>
+</code><dt><b>Description</b><DD><P>
+<p>This function affects a name to the dynamic library represented by the number parameter.
+<p>Dynamic library definition files provide logical filenames by means of the <b>RUNTIME</b> clause.
+<p>This logical name will be used as the physical name for the resolution of the library unless
+a physical name alternative is provided by this instruction.
+<p>The logical library number may be retrived by presenting the logical library name to the
+new <a href="#runtime">RUNTIME</a> function to thiseffect.
+<p>Example
+<p><code><pre>
+	LOADUSER( RUNTIME("printer") ) = "psiii" 
+</pre> </code> <p>
+</DL></table>
+<p><table  ><tr><th width="30%"> ABS	<td>absolute value<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>
+result = ABS ( expression )<p>
+</code><dt><b>Description</b><DD><P></DL></table>
+<p><table  ><tr><th width="30%"> INCLUD	<td>include in string<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>
+variable = INCLUD( expression , expresion [ , expression ] )<p>
+</code><dt><b>Description</b><DD><P></DL></table>
+<p><table  ><tr><th width="30%"> TRAN	<td>transcode string<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>
+variable = TRAN( expression , expression , expression , expression )<p>
+</code><dt><b>Description</b><DD><P></DL></table>
+<p><table  ><tr><th width="30%"> INSERT	<td>insert into string<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>
+variable = INSERT( expression , expresion [ , expression ] )<p>
+</code><dt><b>Description</b><DD><P></DL></table>
+<p><table  ><tr><th width="30%"> LARGE	<td>upper case conversion<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>
+result = LARGE( expression ) <p>
+</code><dt><b>Description</b><DD><P></DL></table>
+<p><table  ><tr><th width="30%"> SMALL	<td>lower case conversion<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>
+result = SMALL( expression ) <p>
+</code><dt><b>Description</b><DD><P></DL></table>
+<p><table  ><tr><th width="30%"> SHL	<td>align string left<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>
+result = SHL( expression ) <p>
+</code><dt><b>Description</b><DD><P></DL></table>
+<p><table  ><tr><th width="30%"> SHR	<td>align string right<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>
+result = SHL( expression ) <p>
+</code><dt><b>Description</b><DD><P></DL></table>
+<p><table  ><tr><th width="30%"> INV	<td>invert string<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>
+result = INV( expression ) <p>
+</code><dt><b>Description</b><DD><P></DL></table>
+<p><table  ><tr><th width="30%"> FM	<td>format conversion<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>
+variable = FM ( variable ) </code><p>
+<code>variable = FM ( expression )</code> <p>
+<code>variable = FM ( format )<p>
+</code><dt><b>Description</b><DD><P></DL></table>
+<p><table  ><tr><th width="30%"> ENV	<td>environment variable<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>
+result = ENV ( result )
+</code><dt><b>Description</b><DD><P></DL></table>
+<p><table  ><tr><th width="30%"> ASCIIFM	<td>ascii format<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>
+result = ASCIIFM ( expression ) <p>
+</code><dt><b>Description</b><DD><P>
+<p>This function provides the reverse conversion of binary format data to the ascii equivalent.
+It expects a variable containing valid ABAL format code and will return a string result containing the
+equivalent symbolic format.
+<p>Example
+<p><code><pre>
+	B = FM(SN5Z.ZZ)
+	S = ASCIIFM(B)
+</pre> </code> <p>
+</DL></table>
+<p><table  ><tr><th width="30%"> HASH	<td>hash code calculation<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>
+result = HASH ( expression , expression ) <p>
+</code><dt><b>Description</b><DD><P>
+<p>This function will calculate a hash code value of the string parameter using the value parameter.
+The hash calculation is performed as the sum of the character values int the string modulus the has value.
+<p>Hash code values are best chosen from the set of prime numbers.
+<p>Example
+<p><code><pre>
+	V = HASH("string data",57)
+</pre> </code> <p>
+</DL></table>
+<p><table  ><tr><th width="30%"> DEC	<td>decimal conversion<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>
+result = DEC ( expression )<p>
+</code><dt><b>Description</b><DD><P></DL></table>
+<p><table  ><tr><th width="30%"> LEN	<td>data size<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>
+result = LEN( variable )</code><p>
+<code>result = LEN( constant )</code><p>
+<code>result = LEN( expression )<p>
+</code><dt><b>Description</b><DD><P></DL></table>
+<p><table  ><tr><th width="30%"> LEN$	<td>data length<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>
+result = LEN$( expression )<p>
+</code><dt><b>Description</b><DD><P></DL></table>
+<p><table  ><tr><th width="30%"> SGN	<td>numeric sign<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>
+result = SGN( expression )<p>
+</code><dt><b>Description</b><DD><P></DL></table>
+<p><table  ><tr><th width="30%"> INDEX	<td>offset in string<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>
+result = INDEX( expression , expression )<p>
+</code><dt><b>Description</b><DD><P></DL></table>
+<p><table  ><tr><th width="30%"> INSTR	<td>presence in string<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>
+result = INSTR( expression , expression , expression )<p>
+</code><dt><b>Description</b><DD><P></DL></table>
+<p><table  ><tr><th width="30%"> VPTR	<td>offset in memory<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>
+result = VPTR( variable )<p>
+</code><dt><b>Description</b><DD><P></DL></table>
+<p><table  ><tr><th width="30%"> FMINT	<td>exponent digits<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>
+result = FMINT( expression )<p>
+</code><dt><b>Description</b><DD><P></DL></table>
+<p><table  ><tr><th width="30%"> FMFP	<td>mantissa digits<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>
+result = FMFP( expression )<p>
+</code><dt><b>Description</b><DD><P></DL></table>
+<p><table  ><tr><th width="30%"> POWER	<td>numeric power of ten<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>
+result = POWER( expression )<p>
+</code><dt><b>Description</b><DD><P></DL></table>
+
+<p><table  ><tr><th width="30%"> CHECKFMT	<td>format verification<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>
+result = CHECKFMT( variable, expression ) </code><p>
+<code>result = CHECKFMT( variable, format )<p>
+</code><dt><b>Description</b><DD><P>
+<p>This function will perform a format compliance check on the variable contents.
+<p>This is the exact same operation  as performed by the <b>ASK</b> instruction during data input
+and upon data input completion.
+<p>The format may be presented as an ASCII string or by variable as the result of an <b>FM</b>
+instruction.
+<p>The function will return zero to indicate success, all other  values indicate failure.
+<p>Example
+<p><code><pre>
+	IF ( CHECKFMT(123.45,"(N4Z.Z2)") = 0 )
+		PAUSE "OK"
+	ELSE :: PAUSE "FAIL"
+	ENDIF
+</pre> </code> <p>
+</DL></table>
+
+<p><table  ><tr><th width="30%"> DAYS	<td>date information<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>
+result = DAYS ( expression , expression , expression ) <p>
+</code><dt><b>Description</b><DD><P>
+<p> This function will return an integer value representing : 
+<p><ol><li>The day of the week from 1, sunday to 7, saturday, when a full and valid date value is represented
+by the day, month and year integer parameters.
+<li>The number of days in the month, when the day parameter is set to zero with valid month and year values.
+<li>The number of days in the year, when the day and and month parameters are set to zero and a valid year
+value parameter is present.
+</ol>
+<p> Valid years are years after the zero time point of 1970.
+<p> Valid months are values between 1 and 12 inclusive.
+<p> Valid day values depend on the month and year values.
+<p> Examples
+<p><code><pre>
+	RESULT = DAYS(26,11,2003)	;** the day of the week number
+	RESULT = DAYS(0,11,2003)	;** the day count for november
+	RESULT = DAYS(0,0,2003)		;** the total day count for 2003
+</pre></code><p>
+</DL></table>
+
+<p><table  ><tr><th width="30%"> RUNTIME	<td>library number<tr><td colspan=2>
+<p><dl><dt><b>Syntax</b><dd><p><code>
+result = RUNTIME ( expression ) </code><p>
+<code>result = RUNTIME ( library )<p>
+</code><dt><b>Description</b><DD><P>
+<p>This instruction returns the internal number of the dynamic library identified by the string value
+passed as the name parameter.
+<p>This number may be used as the parameter to the <b>LoadUser</b> instruction allowing a new library name
+to be set for a logical dynamic library.
+<p>
+</DL></table>
+<p><table><tr><th width="30%">WILDCOMP<td>Wild Card Compare<tr><td colspan=2>
+<p><dl><dt><b>Syntax</b><dd><p><code>result = WILDCOMP( expression, expression )<p></code>
+<dt><b>Description</b><DD><P></DL>
+<p>This function will perform a wild card compare operation between the two string arguements.
+If the compare is true the ZERO  is returned to indicate SUCCESS. All other values represent failure.
+<p>Wild cards may be present in the right most string only.
+<p>Example
+<p><code><pre>
+	IF ( WILDCOMP("/home/dev/filename.ext","/home/dev/*") = 0 )
+		PAUSE "OK"
+	ELSE :: PAUSE "FAIL"
+	ENDIF
+</pre> </code> <p>
+</table>
+<p><table  ><tr><th width="30%"> LEFT	<td>left string portion<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>
+result = LEFT( expression , expression ) <p>
+</code><dt><b>Description</b><DD><P></DL></table>
+<p><table  ><tr><th width="30%"> RIGHT	<td>right string portion<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>
+result = RIGHT( expression , expression ) <p>
+</code><dt><b>Description</b><DD><P></DL></table>
+<p><table  ><tr><th width="30%"> SUBSTR	<td>sub string<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>
+result = SUBSTR( expression , expression ,expression ) <p>
+</code><dt><b>Description</b><DD><P></DL></table>
+<p><table  ><tr><th width="30%"> MOVE	<td>memory move<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>
+variable = MOVE( variable, expression ,expression ) <p>
+</code><dt><b>Description</b><DD><P></DL></table>
+<p><table  ><tr><th width="30%"> SWAP	<td>memory swap<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>
+variable = SWAP( variable, expression ,expression ) <p>
+</code><dt><b>Description</b><DD><P></DL></table>
+<p><table  ><tr><th width="30%"> PARSE	<td>file name parser<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>
+result = PARSE( expression , expression ) <p>
+</code><dt><b>Description</b><DD><P></DL></table>
+<p><table  ><tr><th width="30%"> ABALANFC	<td>file name convert<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>
+result = ABALANFC( expression , expression ) <p>
+</code><dt><b>Description</b><DD><P>
+<p>This instruction is the recommended alternative to the soon to be redundant environment variable
+of the same name.
+<p>The function will return the conversion of the source parameter filename string using the option
+parameter values.
+<p>Legal values are
+<table border=1>
+<tr><th>VALUE<th>EFFECT
+<tr><th>0<td>no conversion, source is returned as result.
+<tr><th>1<td>upper case conversion
+<tr><th>2<td>lower case conversion
+<tr><th>8<td>conversion of mnemonics using environment variable values 
+<tr><th>9<td>upper case conversion and mnemonic conversion.
+<tr><th>10<td>lower case conversion and mnemonic conversion.
+</table>
+<p>Example
+<p><code><pre>
+	S = ABALANFC("MD0.FILENAME.EXT",10)
+</pre> </code> <p>
+</DL></table>
+<p><table  ><tr><th width="30%"> GENER	<td>string generation<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>
+result = GENER( expression , expression ) </code><p>
+<code>variable  = GENER( expression , expression ) <p>
+</code><dt><b>Description</b><DD><P></DL></table>
+<p><table  ><tr><th width="30%"> SPACE	<td>space sgeneration<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>
+result = SPACE( expression ) </code><p>
+<code>variable = SPACE( expression ) <p>
+</code><dt><b>Description</b><DD><P></DL></table>
+<p><table  ><tr><th width="30%"> DATE	<td>date item<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>
+result = DATE( expression ) <p>
+</code><dt><b>Description</b><DD><P></DL></table>
+<p><table  ><tr><th width="30%"> KBF	<td>function key value<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>
+result = KBF( expression ) <p>
+</code><dt><b>Description</b><DD><P></DL></table>
+<p><table  ><tr><th width="30%"> CURDIR	<td>current directory<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>
+result = CURDIR<p>
+</code><dt><b>Description</b><DD><P></DL></table>
+<p><table  ><tr><th width="30%"> CURVOL	<td>current volume<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>
+result = CURVOL<p>
+</code><dt><b>Description</b><DD><P></DL></table>
+<p><table  ><tr><th width="30%"> HEX	<td>hexadecimal conversion<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>
+result = HEX ( expression )<p>
+</code><dt><b>Description</b><DD><P></DL></table>
+<p><table  ><tr><th width="30%"> CHR	<td>character<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>
+result = CHR$ ( expression ) </code><p>
+<code>variable = CHR$ ( expression )<p>
+</code><dt><b>Description</b><DD><P></DL></table>
+<p><table  ><tr><th width="30%"> REPSTR	<td>repeat string<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>
+result = REPSTR ( expression , expression )<p>
+</code><dt><b>Description</b><DD><P></DL></table>
+<p><table  ><tr><th width="30%"> CRYPT	<td>encryption<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>
+result = CRYPT ( expression , expresion, expression )<p>
+</code><dt><b>Description</b><DD><P></DL></table>
+<p><table  ><tr><th width="30%"> SYSERROR	<td>system error<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>
+result = SYSERROR <p>
+</code><dt><b>Description</b><DD><P></DL></table>
+<p><table  ><tr><th width="30%"> PROC	<td>procedure pointer<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>
+variable = PROC PTR ( procedure )</code><p>
+<code>variable = PROC PTR ( variable  )<p>
+</code><dt><b>Description</b><DD><P></DL></table> 
+<p><table  ><tr><th width="30%"> USER	<td>library function pointer<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>
+variable = USER PTR ( library function )</code><p>
+<code>variable = USER PTR ( variable  )<p>
+</code><dt><b>Description</b><DD><P></DL></table> 
+<p><table  ><tr><th width="30%"> SEGMENT	<td>segment pointer<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>
+variable = SEGM PTR ( segment )</code><p>
+<code>variable = SEGM PTR ( variable  )<p>
+</code><dt><b>Description</b><DD><P></DL></table> 
+<p><table  ><tr><th width="30%"> FIX	<td>numerical fix<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>
+result   = FIX ( expression [ , expression ] ) </code><p>
+<code>variable = FIX ( expression [ , expression ] ) <p>
+</code><dt><b>Description</b><DD><P></DL></table>
+<p><table  ><tr><th width="30%"> ROUN	<td>numerical roundup<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>
+result   = ROUN ( expression [ , expression ] ) <p>
+</code><dt><b>Description</b><DD><P></DL></table>
+<p><table  ><tr><th width="30%"> FP	<td>floating point<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>
+result   = FP ( expression ) <p>
+</code><dt><b>Description</b><DD><P></DL></table>
+<p><table  ><tr><th width="30%"> INT	<td>integer portion<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>
+result   = INT ( expression ) <p>
+</code><dt><b>Description</b><DD><P></DL></table>
+<p><table  ><tr><th width="30%"> VAL	<td>numeric value<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>
+result   = VAL ( expression ) <p>
+</code><dt><b>Description</b><DD><P></DL></table>
+<p><table  ><tr><th width="30%"> STDFORM	<td>standard form conversion<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>
+result   = STDFORM ( expression ) <p>
+</code><dt><b>Description</b><DD><P></DL></table>
+<p><table  ><tr><th width="30%"> REAL	<td>real conversion<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>
+result   = REAL ( expression , expression ) <p>
+</code><dt><b>Description</b><DD><P></DL></table>
+<p><table  ><tr><th width="30%"> STRN	<td>numeric to string<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>
+result   = STRN ( expression ) <p>
+</code><dt><b>Description</b><DD><P></DL></table>
+<p><table  ><tr><th width="30%"> LONG	<td>numeric to long<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>
+result   = LONG ( expression ) <p>
+</code><dt><b>Description</b><DD><P></DL></table>
+<p><table  ><tr><th width="30%"> COL	<td>column position<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>
+result   = COL ( expression ) <p>
+</code><dt><b>Description</b><DD><P></DL></table>
+<p><table  ><tr><th width="30%"> LIN	<td>line position<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>
+result   = LIN ( expression ) <p>
+</code><dt><b>Description</b><DD><P></DL></table>
+<p><table  ><tr><th width="30%"> PROCESS	<td>process number<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>
+result   = PROCESS <p>
+</code><dt><b>Description</b><DD><P></DL></table> 
+<p><table  ><tr><th width="30%"> RND	<td>random integer value<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>
+result   = RND [ ( expression ) ] <p>
+</code><dt><b>Description</b><DD><P></DL></table>
+<p><table  ><tr><th width="30%"> MASK	<td>keyboard mask<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>
+result   = MASK <p>
+</code><dt><b>Description</b><DD><P></DL></table> 
+<p><table  ><tr><th width="30%"> CONF	<td>configuration value<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>
+result   = CONF ( expression ) <p>
+</code><dt><b>Description</b><DD><P></DL></table>
+<p><table  ><tr><th width="30%"> ERRADR	<td>error address<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>
+result   = ERRADR <p>
+</code><dt><b>Description</b><DD><P></DL></table>
+<p><table  ><tr><th width="30%"> RESTORE	<td>data pointer<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>
+result   = RESTORE <p>
+</code><dt><b>Description</b><DD><P></DL></table> 
+<p><table  ><tr><th width="30%"> EVENTADR	<td>event address<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>
+result   = EVENTADR <p>
+</code><dt><b>Description</b><DD><P></DL></table>
+<p><table  ><tr><th width="30%"> HOTKEY	<td>hotkey value<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>
+result   = HOTKEY <p>
+</code><dt><b>Description</b><DD><P></DL></table> 
+<p><table  ><tr><th width="30%"> EVENT	<td>event item<tr><td colspan=2><p><dl><dt><b>Syntax</b><dd><p><code>
+result   = EVENT ( expression ) <p>
+</code><dt><b>Description</b><DD><P></DL></table>
+<p>
+<table  >
+<tr><th width="30%"><h3 align=center>Copyright &copy; <a href="http://www.prologue.fr">Prologue</a></h3>
+<tr><th width="30%"><h3 align=center>Version Fran&ccedil;aise <a href="fr/event.htm"><img src="tricolor.gif"></a>
+</table>
+</div>
+</body>
+</html>
+

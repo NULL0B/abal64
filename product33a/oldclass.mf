@@ -1,0 +1,120 @@
+# generated makefile : class.mf 
+# ------------------------------------
+$(ABAL)/product33a/class/abal3.mf: $(ABAL)/src/class/abal3.mf
+	cp $* $@ 
+$(ABAL)/product33a/class/asfuni.as: $(ABAL)/src/class/asfuni.as
+	cp $* $@ 
+$(ABAL)/product33a/class/audioi.as: $(ABAL)/src/class/audioi.as
+	cp $* $@ 
+$(ABAL)/product33a/class/bdaneti.as: $(ABAL)/src/class/bdaneti.as
+	cp $* $@ 
+$(ABAL)/product33a/class/bibmathi.as: $(ABAL)/src/class/bibmathi.as
+	cp $* $@ 
+$(ABAL)/product33a/class/errors.as: $(ABAL)/src/class/errors.as
+	cp $* $@ 
+$(ABAL)/product33a/class/filelib.as: $(ABAL)/src/class/filelib.as
+	cp $* $@ 
+$(ABAL)/product33a/class/files.as: $(ABAL)/src/class/files.as
+	cp $* $@ 
+$(ABAL)/product33a/class/files.mf: $(ABAL)/src/class/files.mf
+	cp $* $@ 
+$(ABAL)/product33a/class/fstream.as: $(ABAL)/src/class/fstream.as
+	cp $* $@ 
+$(ABAL)/product33a/class/gprinter.as: $(ABAL)/src/class/gprinter.as
+	cp $* $@ 
+$(ABAL)/product33a/class/handle.as: $(ABAL)/src/class/handle.as
+	cp $* $@ 
+$(ABAL)/product33a/class/mcfile.as: $(ABAL)/src/class/mcfile.as
+	cp $* $@ 
+$(ABAL)/product33a/class/pragmas.as: $(ABAL)/src/class/pragmas.as
+	cp $* $@ 
+$(ABAL)/product33a/class/printeri.as: $(ABAL)/src/class/printeri.as
+	cp $* $@ 
+$(ABAL)/product33a/class/sifile.as: $(ABAL)/src/class/sifile.as
+	cp $* $@ 
+$(ABAL)/product33a/class/stdfile.as: $(ABAL)/src/class/stdfile.as
+	cp $* $@ 
+$(ABAL)/product33a/class/ttyi.as: $(ABAL)/src/class/ttyi.as
+	cp $* $@ 
+$(ABAL)/product33a/class/vargv.as: $(ABAL)/src/class/vargv.as
+	cp $* $@ 
+$(ABAL)/product33a/class/vbuffer.as: $(ABAL)/src/class/vbuffer.as
+	cp $* $@ 
+$(ABAL)/product33a/class/vcall.as: $(ABAL)/src/class/vcall.as
+	cp $* $@ 
+$(ABAL)/product33a/class/vcheck.as: $(ABAL)/src/class/vcheck.as
+	cp $* $@ 
+$(ABAL)/product33a/class/vcmdline.as: $(ABAL)/src/class/vcmdline.as
+	cp $* $@ 
+$(ABAL)/product33a/class/vcolour.as: $(ABAL)/src/class/vcolour.as
+	cp $* $@ 
+$(ABAL)/product33a/class/vedit.as: $(ABAL)/src/class/vedit.as
+	cp $* $@ 
+$(ABAL)/product33a/class/vevent.as: $(ABAL)/src/class/vevent.as
+	cp $* $@ 
+$(ABAL)/product33a/class/vfill.as: $(ABAL)/src/class/vfill.as
+	cp $* $@ 
+$(ABAL)/product33a/class/vfname.as: $(ABAL)/src/class/vfname.as
+	cp $* $@ 
+$(ABAL)/product33a/class/vfont.as: $(ABAL)/src/class/vfont.as
+	cp $* $@ 
+$(ABAL)/product33a/class/vframe.as: $(ABAL)/src/class/vframe.as
+	cp $* $@ 
+$(ABAL)/product33a/class/vgraph.as: $(ABAL)/src/class/vgraph.as
+	cp $* $@ 
+$(ABAL)/product33a/class/vgroup.as: $(ABAL)/src/class/vgroup.as
+	cp $* $@ 
+$(ABAL)/product33a/class/vimage.as: $(ABAL)/src/class/vimage.as
+	cp $* $@ 
+$(ABAL)/product33a/class/visilib.as: $(ABAL)/src/class/visilib.as
+	cp $* $@ 
+$(ABAL)/product33a/class/visual.as: $(ABAL)/src/class/visual.as
+	cp $* $@ 
+$(ABAL)/product33a/class/visuali.as: $(ABAL)/src/class/visuali.as
+	cp $* $@ 
+$(ABAL)/product33a/class/visual.mf: $(ABAL)/src/class/visual.mf
+	cp $* $@ 
+$(ABAL)/product33a/class/vlabels.as: $(ABAL)/src/class/vlabels.as
+	cp $* $@ 
+$(ABAL)/product33a/class/vlibrary.as: $(ABAL)/src/class/vlibrary.as
+	cp $* $@ 
+$(ABAL)/product33a/class/vmessage.as: $(ABAL)/src/class/vmessage.as
+	cp $* $@ 
+$(ABAL)/product33a/class/voverlay.as: $(ABAL)/src/class/voverlay.as
+	cp $* $@ 
+$(ABAL)/product33a/class/vpage.as: $(ABAL)/src/class/vpage.as
+	cp $* $@ 
+$(ABAL)/product33a/class/vprinter.as: $(ABAL)/src/class/vprinter.as
+	cp $* $@ 
+$(ABAL)/product33a/class/vprogres.as: $(ABAL)/src/class/vprogres.as
+	cp $* $@ 
+$(ABAL)/product33a/class/vpush.as: $(ABAL)/src/class/vpush.as
+	cp $* $@ 
+$(ABAL)/product33a/class/vradio.as: $(ABAL)/src/class/vradio.as
+	cp $* $@ 
+$(ABAL)/product33a/class/vsaver.as: $(ABAL)/src/class/vsaver.as
+	cp $* $@ 
+$(ABAL)/product33a/class/vscroll.as: $(ABAL)/src/class/vscroll.as
+	cp $* $@ 
+$(ABAL)/product33a/class/vselect.as: $(ABAL)/src/class/vselect.as
+	cp $* $@ 
+$(ABAL)/product33a/class/vswitch.as: $(ABAL)/src/class/vswitch.as
+	cp $* $@ 
+$(ABAL)/product33a/class/vtable.as: $(ABAL)/src/class/vtable.as
+	cp $* $@ 
+$(ABAL)/product33a/class/vtabpage.as: $(ABAL)/src/class/vtabpage.as
+	cp $* $@ 
+$(ABAL)/product33a/class/vtext.as: $(ABAL)/src/class/vtext.as
+	cp $* $@ 
+$(ABAL)/product33a/class/vtrigger.as: $(ABAL)/src/class/vtrigger.as
+	cp $* $@ 
+$(ABAL)/product33a/class/vtypes.as: $(ABAL)/src/class/vtypes.as
+	cp $* $@ 
+$(ABAL)/product33a/class/vwidget.as: $(ABAL)/src/class/vwidget.as
+	cp $* $@ 
+$(ABAL)/product33a/class/vwindow.as: $(ABAL)/src/class/vwindow.as
+	cp $* $@ 
+! make
+! shell chmod uog+r class/*
+! make
+

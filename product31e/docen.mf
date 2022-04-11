@@ -1,0 +1,531 @@
+# generated makefile : docen.mf 
+# ------------------------------------
+/home/Dev/abal32/product31e/doc/en/abal3.htm: /home/Dev/abal32/src/doc/en/abal3.htm
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/abal31e.htm: /home/Dev/abal32/src/doc/en/abal31e.htm
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/abalprod.htm: /home/Dev/abal32/src/doc/en/abalprod.htm
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/abqtop.htm: /home/Dev/abal32/src/doc/en/abqtop.htm
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/access.htm: /home/Dev/abal32/src/doc/en/access.htm
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/access.gif: /home/Dev/abal32/src/doc/en/access.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/abalunix.htm: /home/Dev/abal32/src/doc/en/abalunix.htm
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/abalunix.gif: /home/Dev/abal32/src/doc/en/abalunix.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/unix.htm: /home/Dev/abal32/src/doc/en/unix.htm
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/kitbda.htm: /home/Dev/abal32/src/doc/en/kitbda.htm
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/aed.htm: /home/Dev/abal32/src/doc/en/aed.htm
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/audio.htm: /home/Dev/abal32/src/doc/en/audio.htm
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/class.htm: /home/Dev/abal32/src/doc/en/class.htm
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/clf.htm: /home/Dev/abal32/src/doc/en/clf.htm
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/conf.htm: /home/Dev/abal32/src/doc/en/conf.htm
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/env.htm: /home/Dev/abal32/src/doc/en/env.htm
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/esc.htm: /home/Dev/abal32/src/doc/en/esc.htm
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/event.htm: /home/Dev/abal32/src/doc/en/event.htm
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/grafabal.htm: /home/Dev/abal32/src/doc/en/grafabal.htm
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/index.htm: /home/Dev/abal32/src/doc/en/index.htm
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/install.htm: /home/Dev/abal32/src/doc/en/install.htm
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/ldap.htm: /home/Dev/abal32/src/doc/en/ldap.htm
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/limits.htm: /home/Dev/abal32/src/doc/en/limits.htm
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/logo.jpg: /home/Dev/abal32/src/doc/en/logo.jpg
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/Logo_Prologue.gif: /home/Dev/abal32/src/doc/en/Logo_Prologue.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/methods1.gif: /home/Dev/abal32/src/doc/en/methods1.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/methods2.gif: /home/Dev/abal32/src/doc/en/methods2.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/methods3.gif: /home/Dev/abal32/src/doc/en/methods3.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/methods4.gif: /home/Dev/abal32/src/doc/en/methods4.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/methods5.gif: /home/Dev/abal32/src/doc/en/methods5.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/methods6.gif: /home/Dev/abal32/src/doc/en/methods6.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/methods.htm: /home/Dev/abal32/src/doc/en/methods.htm
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/newclf.htm: /home/Dev/abal32/src/doc/en/newclf.htm
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/object.htm: /home/Dev/abal32/src/doc/en/object.htm
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/old.htm: /home/Dev/abal32/src/doc/en/old.htm
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/otrcmd.htm: /home/Dev/abal32/src/doc/en/otrcmd.htm
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/otrcmd.gif: /home/Dev/abal32/src/doc/en/otrcmd.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/otrerr.htm: /home/Dev/abal32/src/doc/en/otrerr.htm
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/otr.htm: /home/Dev/abal32/src/doc/en/otr.htm
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/otrint.htm: /home/Dev/abal32/src/doc/en/otrint.htm
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/otrprag.htm: /home/Dev/abal32/src/doc/en/otrprag.htm
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/otrwarn.htm: /home/Dev/abal32/src/doc/en/otrwarn.htm
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/print.css: /home/Dev/abal32/src/doc/en/print.css
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/printer.htm: /home/Dev/abal32/src/doc/en/printer.htm
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/sing4nul.htm: /home/Dev/abal32/src/doc/en/sing4nul.htm
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/singpage.htm: /home/Dev/abal32/src/doc/en/singpage.htm
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/singbmap.gif: /home/Dev/abal32/src/doc/en/singbmap.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/singbmap.htm: /home/Dev/abal32/src/doc/en/singbmap.htm
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/singedit.gif: /home/Dev/abal32/src/doc/en/singedit.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/singedit.htm: /home/Dev/abal32/src/doc/en/singedit.htm
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/singform.gif: /home/Dev/abal32/src/doc/en/singform.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/singform.htm: /home/Dev/abal32/src/doc/en/singform.htm
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/singproj.gif: /home/Dev/abal32/src/doc/en/singproj.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/singproj.htm: /home/Dev/abal32/src/doc/en/singproj.htm
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/singtree.gif: /home/Dev/abal32/src/doc/en/singtree.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/singtree.htm: /home/Dev/abal32/src/doc/en/singtree.htm
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/style.css: /home/Dev/abal32/src/doc/en/style31e.css
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/style.gif: /home/Dev/abal32/src/doc/en/style.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/timer.htm: /home/Dev/abal32/src/doc/en/timer.htm
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/vaed.gif: /home/Dev/abal32/src/doc/en/vaed.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/vaed.htm: /home/Dev/abal32/src/doc/en/vaed.htm
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/vamake.gif: /home/Dev/abal32/src/doc/en/vamake.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/vamake.htm: /home/Dev/abal32/src/doc/en/vamake.htm
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/vaprod1.gif: /home/Dev/abal32/src/doc/en/vaprod1.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/vaprod2.gif: /home/Dev/abal32/src/doc/en/vaprod2.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/vaprod3.gif: /home/Dev/abal32/src/doc/en/vaprod3.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/vaprod4.gif: /home/Dev/abal32/src/doc/en/vaprod4.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/vaprod.htm: /home/Dev/abal32/src/doc/en/vaprod.htm
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/vatb.htm: /home/Dev/abal32/src/doc/en/vatb.htm
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/wstyle.htm: /home/Dev/abal32/src/doc/en/wstyle.htm
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/wstyle1.gif: /home/Dev/abal32/src/doc/en/wstyle1.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/wstyle2.gif: /home/Dev/abal32/src/doc/en/wstyle2.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/wstyle3.gif: /home/Dev/abal32/src/doc/en/wstyle3.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/wstyle4.gif: /home/Dev/abal32/src/doc/en/wstyle4.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/wstyle5.gif: /home/Dev/abal32/src/doc/en/wstyle5.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/wstyle6.gif: /home/Dev/abal32/src/doc/en/wstyle6.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/vcamera.gif: /home/Dev/abal32/src/doc/en/vcamera.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/vcamera.htm: /home/Dev/abal32/src/doc/en/vcamera.htm
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/vcolours.gif: /home/Dev/abal32/src/doc/en/vcolours.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/vcolours.htm: /home/Dev/abal32/src/doc/en/vcolours.htm
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/vcompare1.gif: /home/Dev/abal32/src/doc/en/vcompare1.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/vcompare2.gif: /home/Dev/abal32/src/doc/en/vcompare2.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/vcompare.htm: /home/Dev/abal32/src/doc/en/vcompare.htm
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/vcompose.gif: /home/Dev/abal32/src/doc/en/vcompose.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/vcompose.htm: /home/Dev/abal32/src/doc/en/vcompose.htm
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/vcprod.gif: /home/Dev/abal32/src/doc/en/vcprod.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/vcprod.htm: /home/Dev/abal32/src/doc/en/vcprod.htm
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/vcube.gif: /home/Dev/abal32/src/doc/en/vcube.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/vcube.htm: /home/Dev/abal32/src/doc/en/vcube.htm
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/vcursor.gif: /home/Dev/abal32/src/doc/en/vcursor.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/vcursor.htm: /home/Dev/abal32/src/doc/en/vcursor.htm
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/vdebug.gif: /home/Dev/abal32/src/doc/en/vdebug.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/vdebug.htm: /home/Dev/abal32/src/doc/en/vdebug.htm
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/vedcmd.gif: /home/Dev/abal32/src/doc/en/vedcmd.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/vedcmd.htm: /home/Dev/abal32/src/doc/en/vedcmd.htm
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/vexadb1.gif: /home/Dev/abal32/src/doc/en/vexadb1.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/vexadb2.gif: /home/Dev/abal32/src/doc/en/vexadb2.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/vexadb3.gif: /home/Dev/abal32/src/doc/en/vexadb3.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/vexadb4.gif: /home/Dev/abal32/src/doc/en/vexadb4.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/vexadb.htm: /home/Dev/abal32/src/doc/en/vexadb.htm
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/exadb.htm: /home/Dev/abal32/src/doc/en/exadb.htm
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/vexit.gif: /home/Dev/abal32/src/doc/en/vexit.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/vexit.htm: /home/Dev/abal32/src/doc/en/vexit.htm
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/vfile1.gif: /home/Dev/abal32/src/doc/en/vfile1.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/vfile2.gif: /home/Dev/abal32/src/doc/en/vfile2.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/vfile3.gif: /home/Dev/abal32/src/doc/en/vfile3.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/vfile.htm: /home/Dev/abal32/src/doc/en/vfile.htm
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/vfload.gif: /home/Dev/abal32/src/doc/en/vfload.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/vfload.htm: /home/Dev/abal32/src/doc/en/vfload.htm
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/vform1.gif: /home/Dev/abal32/src/doc/en/vform1.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/vform2.gif: /home/Dev/abal32/src/doc/en/vform2.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/vform3.gif: /home/Dev/abal32/src/doc/en/vform3.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/vform4.gif: /home/Dev/abal32/src/doc/en/vform4.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/vform.htm: /home/Dev/abal32/src/doc/en/vform.htm
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/vfsave.gif: /home/Dev/abal32/src/doc/en/vfsave.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/vfsave.htm: /home/Dev/abal32/src/doc/en/vfsave.htm
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/vtsave.gif: /home/Dev/abal32/src/doc/en/vtsave.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/vtsave.htm: /home/Dev/abal32/src/doc/en/vtsave.htm
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/vfselect.gif: /home/Dev/abal32/src/doc/en/vfselect.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/vfselect.htm: /home/Dev/abal32/src/doc/en/vfselect.htm
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/vhelper1.gif: /home/Dev/abal32/src/doc/en/vhelper1.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/vhelper2.gif: /home/Dev/abal32/src/doc/en/vhelper2.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/vhelper3.gif: /home/Dev/abal32/src/doc/en/vhelper3.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/vhelper4.gif: /home/Dev/abal32/src/doc/en/vhelper4.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/vhelper5.gif: /home/Dev/abal32/src/doc/en/vhelper5.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/vhelper6.gif: /home/Dev/abal32/src/doc/en/vhelper6.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/vhelper7.gif: /home/Dev/abal32/src/doc/en/vhelper7.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/vhelper8.gif: /home/Dev/abal32/src/doc/en/vhelper8.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/vhelper.htm: /home/Dev/abal32/src/doc/en/vhelper.htm
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/vhtml.gif: /home/Dev/abal32/src/doc/en/vhtml.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/vhtml.htm: /home/Dev/abal32/src/doc/en/vhtml.htm
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/viload.gif: /home/Dev/abal32/src/doc/en/viload.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/viload.htm: /home/Dev/abal32/src/doc/en/viload.htm
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/vimage.gif: /home/Dev/abal32/src/doc/en/vimage.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/vimage.htm: /home/Dev/abal32/src/doc/en/vimage.htm
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/visave.gif: /home/Dev/abal32/src/doc/en/visave.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/visave.htm: /home/Dev/abal32/src/doc/en/visave.htm
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/visual.htm: /home/Dev/abal32/src/doc/en/visual.htm
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/vlink1.gif: /home/Dev/abal32/src/doc/en/vlink1.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/vlink2.gif: /home/Dev/abal32/src/doc/en/vlink2.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/vlink3.gif: /home/Dev/abal32/src/doc/en/vlink3.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/vlink.htm: /home/Dev/abal32/src/doc/en/vlink.htm
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/vload.gif: /home/Dev/abal32/src/doc/en/vload.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/vload.htm: /home/Dev/abal32/src/doc/en/vload.htm
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/vlocate.gif: /home/Dev/abal32/src/doc/en/vlocate.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/vlocate.htm: /home/Dev/abal32/src/doc/en/vlocate.htm
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/vfileref.gif: /home/Dev/abal32/src/doc/en/vfileref.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/vfileref.htm: /home/Dev/abal32/src/doc/en/vfileref.htm
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/vmethod1.gif: /home/Dev/abal32/src/doc/en/vmethod1.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/vmethod2.gif: /home/Dev/abal32/src/doc/en/vmethod2.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/vmethod.htm: /home/Dev/abal32/src/doc/en/vmethod.htm
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/vmload.gif: /home/Dev/abal32/src/doc/en/vmload.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/vmload.htm: /home/Dev/abal32/src/doc/en/vmload.htm
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/vmprod.gif: /home/Dev/abal32/src/doc/en/vmprod.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/vmprod.htm: /home/Dev/abal32/src/doc/en/vmprod.htm
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/vmsave.gif: /home/Dev/abal32/src/doc/en/vmsave.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/vmsave.htm: /home/Dev/abal32/src/doc/en/vmsave.htm
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/vnation1.gif: /home/Dev/abal32/src/doc/en/vnation1.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/vnation2.gif: /home/Dev/abal32/src/doc/en/vnation2.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/vnation3.gif: /home/Dev/abal32/src/doc/en/vnation3.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/vnation4.gif: /home/Dev/abal32/src/doc/en/vnation4.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/vnation5.gif: /home/Dev/abal32/src/doc/en/vnation5.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/vnation6.gif: /home/Dev/abal32/src/doc/en/vnation6.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/vnation7.gif: /home/Dev/abal32/src/doc/en/vnation7.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/vnation8.gif: /home/Dev/abal32/src/doc/en/vnation8.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/vnation.htm: /home/Dev/abal32/src/doc/en/vnation.htm
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/vorder.gif: /home/Dev/abal32/src/doc/en/vorder.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/vorder.htm: /home/Dev/abal32/src/doc/en/vorder.htm
+	cp $* $@ 
+
+/home/Dev/abal32/product31e/doc/en/vpage.gif: /home/Dev/abal32/src/doc/en/vpage.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/vpage.htm: /home/Dev/abal32/src/doc/en/vpage.htm
+	cp $* $@ 
+
+/home/Dev/abal32/product31e/doc/en/printers.htm: /home/Dev/abal32/src/doc/en/printers.htm
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/printers.gif: /home/Dev/abal32/src/doc/en/printers.gif
+	cp $* $@ 
+
+/home/Dev/abal32/product31e/doc/en/singpage.htm: /home/Dev/abal32/src/doc/en/singpage.htm
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/singfail.htm: /home/Dev/abal32/src/doc/en/singfail.htm
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/printarch.jpg: /home/Dev/abal32/src/doc/en/printarch.jpg
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/vparam.gif: /home/Dev/abal32/src/doc/en/vparam.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/vparam.htm: /home/Dev/abal32/src/doc/en/vparam.htm
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/vrecrep.gif: /home/Dev/abal32/src/doc/en/vrecrep.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/vrecrep.htm: /home/Dev/abal32/src/doc/en/vrecrep.htm
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/vrefer1.gif: /home/Dev/abal32/src/doc/en/vrefer1.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/vrefer2.gif: /home/Dev/abal32/src/doc/en/vrefer2.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/vrefer3.gif: /home/Dev/abal32/src/doc/en/vrefer3.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/vrefer4.gif: /home/Dev/abal32/src/doc/en/vrefer4.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/vrefer5.gif: /home/Dev/abal32/src/doc/en/vrefer5.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/vrefer6.gif: /home/Dev/abal32/src/doc/en/vrefer6.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/vrefer7.gif: /home/Dev/abal32/src/doc/en/vrefer7.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/vrefer8.gif: /home/Dev/abal32/src/doc/en/vrefer8.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/vrefer.htm: /home/Dev/abal32/src/doc/en/vrefer.htm
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/vreplace.gif: /home/Dev/abal32/src/doc/en/vreplace.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/vreplace.htm: /home/Dev/abal32/src/doc/en/vreplace.htm
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/vgridlock.gif: /home/Dev/abal32/src/doc/en/vgridlock.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/vgridlock.htm: /home/Dev/abal32/src/doc/en/vgridlock.htm
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/vsave.gif: /home/Dev/abal32/src/doc/en/vsave.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/vsave.htm: /home/Dev/abal32/src/doc/en/vsave.htm
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/vsearch.gif: /home/Dev/abal32/src/doc/en/vsearch.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/vsearch.htm: /home/Dev/abal32/src/doc/en/vsearch.htm
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/vshow.gif: /home/Dev/abal32/src/doc/en/vshow.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/vshow.htm: /home/Dev/abal32/src/doc/en/vshow.htm
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/vstdfont.gif: /home/Dev/abal32/src/doc/en/vstdfont.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/vstdfont.htm: /home/Dev/abal32/src/doc/en/vstdfont.htm
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/vsysfont1.gif: /home/Dev/abal32/src/doc/en/vsysfont1.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/vsysfont2.gif: /home/Dev/abal32/src/doc/en/vsysfont2.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/vsysfont.htm: /home/Dev/abal32/src/doc/en/vsysfont.htm
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/vtrad.gif: /home/Dev/abal32/src/doc/en/vtrad.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/vtrad.htm: /home/Dev/abal32/src/doc/en/vtrad.htm
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/vtree.gif: /home/Dev/abal32/src/doc/en/vtree.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/vtree.htm: /home/Dev/abal32/src/doc/en/vtree.htm
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/vwatch.gif: /home/Dev/abal32/src/doc/en/vwatch.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/vwatch.htm: /home/Dev/abal32/src/doc/en/vwatch.htm
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/vwidget1.gif: /home/Dev/abal32/src/doc/en/vwidget1.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/vwidget2.gif: /home/Dev/abal32/src/doc/en/vwidget2.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/vwidget3.gif: /home/Dev/abal32/src/doc/en/vwidget3.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/vwidget4.gif: /home/Dev/abal32/src/doc/en/vwidget4.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/vwidget5.gif: /home/Dev/abal32/src/doc/en/vwidget5.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/vwidget6.gif: /home/Dev/abal32/src/doc/en/vwidget6.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/vwidget7.gif: /home/Dev/abal32/src/doc/en/vwidget7.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/vwidget8.gif: /home/Dev/abal32/src/doc/en/vwidget8.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/vwidget.htm: /home/Dev/abal32/src/doc/en/vwidget.htm
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/wabal3.htm: /home/Dev/abal32/src/doc/en/wabal3.htm
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/yabal.htm: /home/Dev/abal32/src/doc/en/yabal.htm
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/vcss.htm: /home/Dev/abal32/src/doc/en/vcss.htm
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/vcss.gif: /home/Dev/abal32/src/doc/en/vcss.gif
+	cp $* $@ 
+
+! make
+
+/home/Dev/abal32/product31e/doc/en/vwall.htm: /home/Dev/abal32/src/doc/en/vwall.htm     
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/vwimage.htm: /home/Dev/abal32/src/doc/en/vwimage.htm
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/vwbutton.htm: /home/Dev/abal32/src/doc/en/vwbutton.htm  
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/vwline.htm: /home/Dev/abal32/src/doc/en/vwline.htm
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/vwcheck.htm: /home/Dev/abal32/src/doc/en/vwcheck.htm  
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/vwprogress.htm: /home/Dev/abal32/src/doc/en/vwprogress.htm
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/vwdata.htm: /home/Dev/abal32/src/doc/en/vwdata.htm    
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/vwradio.htm: /home/Dev/abal32/src/doc/en/vwradio.htm
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/vwscroll.htm: /home/Dev/abal32/src/doc/en/vwscroll.htm
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/vwedit.htm: /home/Dev/abal32/src/doc/en/vwedit.htm    
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/vwselect.htm: /home/Dev/abal32/src/doc/en/vwselect.htm
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/vwfill.htm: /home/Dev/abal32/src/doc/en/vwfill.htm    
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/vwswitch.htm: /home/Dev/abal32/src/doc/en/vwswitch.htm
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/vwform.htm: /home/Dev/abal32/src/doc/en/vwform.htm    
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/vwtabpage.htm: /home/Dev/abal32/src/doc/en/vwtabpage.htm
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/vwframe.htm: /home/Dev/abal32/src/doc/en/vwframe.htm   
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/vwtext.htm: /home/Dev/abal32/src/doc/en/vwtext.htm
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/vwgraph.htm: /home/Dev/abal32/src/doc/en/vwgraph.htm   
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/vwwindow.htm: /home/Dev/abal32/src/doc/en/vwwindow.htm
+	cp $* $@ 
+
+/home/Dev/abal32/product31e/doc/en/vwall.gif: /home/Dev/abal32/src/doc/en/vwall.gif     
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/vwimage.gif: /home/Dev/abal32/src/doc/en/vwimage.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/vwbutton.gif: /home/Dev/abal32/src/doc/en/vwbutton.gif  
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/vwline.gif: /home/Dev/abal32/src/doc/en/vwline.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/vwcheck.gif: /home/Dev/abal32/src/doc/en/vwcheck.gif  
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/vwprogress.gif: /home/Dev/abal32/src/doc/en/vwprogress.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/vwdata.gif: /home/Dev/abal32/src/doc/en/vwdata.gif    
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/vwradio.gif: /home/Dev/abal32/src/doc/en/vwradio.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/vwscroll.gif: /home/Dev/abal32/src/doc/en/vwscroll.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/vwedit.gif: /home/Dev/abal32/src/doc/en/vwedit.gif    
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/vwselect.gif: /home/Dev/abal32/src/doc/en/vwselect.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/vwfill.gif: /home/Dev/abal32/src/doc/en/vwfill.gif    
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/vwswitch.gif: /home/Dev/abal32/src/doc/en/vwswitch.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/vwform.gif: /home/Dev/abal32/src/doc/en/vwform.gif    
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/vwtabpage.gif: /home/Dev/abal32/src/doc/en/vwtabpage.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/vwframe.gif: /home/Dev/abal32/src/doc/en/vwframe.gif   
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/vwtext.gif: /home/Dev/abal32/src/doc/en/vwtext.gif
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/vwgraph.gif: /home/Dev/abal32/src/doc/en/vwgraph.gif   
+	cp $* $@ 
+/home/Dev/abal32/product31e/doc/en/vwwindow.gif: /home/Dev/abal32/src/doc/en/vwwindow.gif
+	cp $* $@ 
+! make
+

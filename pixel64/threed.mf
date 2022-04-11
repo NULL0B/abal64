@@ -1,0 +1,6 @@
+threed.o: $(SP01)threed.c
+	-$(COMPILE) $* 1> pipo1 2> pipo2
+	cat pipo1 pipo2 > pipo
+	agr -apipo
+! make
+

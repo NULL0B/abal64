@@ -1,0 +1,95 @@
+sing_window_shadow	{
+	content: none;
+	}
+
+sing_window_frame	{
+	class: singframe;
+	border-style: outset;
+	content: none;
+	}
+
+sing_window_title	{
+	background-image: url(goldrough.gif);
+	border-style: inset;
+	height: 7mm;
+	margin: 1mm;
+	text-font: url(arial2.fmf);
+	text-colour: yellow;
+	text-align: center;
+	}
+
+sing_window_inner	{
+	class: sing_window_frame;
+	border-style: inset;
+	margin: 1mm;
+	margin-top: 6mm;
+	}
+
+sing_window_exit {	
+	position: relative;
+	background-image: url(uparrow.png);
+	background-align: transparent;
+	width:  24px;
+	height: 20px;
+	margin:  3px;
+	padding: 1px;
+	right:  26px;
+	content: none;
+	}
+
+sing_window_help {	
+	position: relative;
+	background-image: url(help.png);
+	background-align: makefit;
+	background-align: transparent;
+	width:  24px;
+	height: 20px;
+	margin:  3px;
+	padding: 1px;
+	right:  44px;
+	content: none;
+	}
+
+sing_window_lang {	
+	position: relative;
+	background-image: url(flag);
+	width:  24px;
+	height: 18px;
+	margin:  3px;
+	margin-top:  4px;
+	margin-bottom:  2px;
+	padding: 1px;
+	right:  65px;
+	content: none;
+	}
+
+sing_window_maxi {	
+	position: relative;
+	background-image: url(maxi.gif);
+	width:  24px;
+	height: 18px;
+	margin:  3px;
+	margin-top:  4px;
+	margin-bottom:  2px;
+	padding: 1px;
+	right:  85px;
+	content: none;
+	}
+
+sing_window_mini {	
+	class: sing_window_maxi;
+	background-image: url(mini.gif);
+	}
+
+
+sing_window_style	{
+	alias: 	sing/sing_window_shadow,
+		sing/sing_window_frame,
+		sing/sing_window_title,
+		sing/sing_window_inner,
+		sing/sing_window_exit,
+		sing/sing_window_help,
+		sing/sing_window_lang;
+	}
+
+

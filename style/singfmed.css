@@ -1,0 +1,325 @@
+@domain sing;
+
+flowchart_editor_frame	{
+	background-colour: white;
+	border-style: none;
+	background-image: url(singbg.jpg);
+	background-align: tile;
+	content: none;
+	}
+
+flowchart_member_margin {
+	margin: 		1mm;
+	height: 		8mm;
+	}
+
+flowchart_editor_title	{
+	text-font: url(arial1.fmf);
+	text-align: center;
+	text-colour: black;
+	background-image: url(singbg.jpg);
+	background-align: tile;
+	border-style: solid;
+	border-colour: black;
+	height: 8mm;
+	}
+
+flowchart_editor_header	{
+	class:	flowchart_member_margin;
+	text-font: url(arial3.fmf);
+	text-align: center;
+	text-colour: black;
+	background-colour: yellow;
+	border-style: solid;
+	border-colour: green;
+	border-style: solid;
+	}
+
+flowchart_editor_focus	{
+	class: flowchart_editor_header;
+	background-colour: red;
+	text-colour: yellow;
+	border-style: double;
+	}
+
+flowchart_model_tray	{
+	margin-top: 2mm;
+	margin-left: 2mm;
+	border-colour: grey;
+	border-style: shade;
+	border-width: 0px;
+	width: 2mm+;
+	height: 2mm+;
+	}
+
+flowchart_model_frame	{
+	background-colour: white;
+	border-colour: black;
+	border-style: solid;
+	text-font: url(arial1.fmf);
+	text-align: center;
+	border-style: vconcave;
+	border-colour: grey;
+	}
+
+flowchart_model_focus	{
+	background-colour: white;
+	border-colour: blue;
+	border-style: solid;
+	}
+
+flowchart_member_frame	{
+	class:	flowchart_member_margin;
+	text-font: 		url(arial1.fmf);
+	text-align: 		center;
+	text-colour: 		yellow;
+	background-colour: 	green;
+	border-colour: 		black;
+	margin-top: 		0.5mm;
+	margin-bottom: 		0.5mm;
+	border-style: rounded(1);
+	}
+
+flowchart_member_focus	{
+	class:	flowchart_member_frame;
+	border-colour: 		red;
+	border-style: 		double;
+	text-colour: 		white;
+	border-style: rounded(1);
+	}
+
+flowchart_component_frame	{
+	class:	flowchart_member_frame;
+	background-colour: 	blue;
+	border-style: solid;
+	}
+
+flowchart_component_focus	{
+	class:	flowchart_component_frame;
+	border-colour: 		red;
+	border-style: 		double;
+	text-colour: 		white;
+	}
+
+flowchart_index_frame	{
+	class: flowchart_member_frame;
+	text-colour: 		yellow;
+	background-colour: 	blue;
+	}
+
+flowchart_index_focus	{
+	class:	flowchart_index_frame;
+	border-colour: 		red;
+	border-style: 		double;
+	text-colour: 		white;
+	}
+
+/* Database Interfile Relation Tracing */
+/* ----------------------------------- */
+flowchart_relation_source {
+	content: right;
+	background-colour: blue;
+	border-colour: white;
+	border-style: solid;
+	width:  5mm;
+	height: 5mm;
+	background-align: makefit;
+	background-align: transparent;
+	}
+
+flowchart_rev_relation_source {
+	class: flowchart_relation_source;
+	content: left;
+	}
+
+flowchart_overlay_source 	{ 
+	class: flowchart_relation_source; 
+	background-image: url(flowoverlay.png);
+	content: none; 
+	border-style: none; 
+	background-colour: transparent;
+	}
+
+flowchart_rev_overlay_source 	{  class: flowchart_overlay_source; 	}
+
+flowchart_relation_extern {
+	class: flowchart_relation_source; 
+	background-image: url(cancel.gif); 
+	content: none; 
+	border-style: none; 
+	background-colour: transparent;
+	}
+
+flowchart_relation_unknown {
+	class: flowchart_relation_source; 
+	background-image: url(warning.png);
+	content: none; 
+	border-style: none; 
+	background-colour: transparent;
+	}
+
+flowchart_module_source 	{ 
+	class: flowchart_relation_source; 
+	background-image: url(flowlibrary.png);
+	content: none; 
+	border-style: none; 
+	background-colour: transparent;
+	}
+
+flowchart_chain_source 		{ 
+	class: flowchart_relation_source; 
+	background-image: url(flowchain.png);
+	content: none; 
+	border-style: none; 
+	background-colour: transparent;
+	}
+
+flowchart_loadgo_source 	{ 
+	class: flowchart_relation_source; 
+	background-image: url(flowloadgo.png);
+	content: none; 
+	border-style: none; 
+	background-colour: transparent;
+	}
+
+flowchart_null_source 		{ class: flowchart_relation_source; }
+
+flowchart_rev_module_source  	{ class: flowchart_module_source; }
+
+flowchart_rev_chain_source   	{ 
+	class: flowchart_rev_relation_source; 
+	background-image: url(flowrevchain.png);
+	content: none; 
+	border-style: none; 
+	background-colour: transparent;
+	}
+
+flowchart_rev_loadgo_source  	{ class: flowchart_loadgo_source; }
+
+flowchart_rev_null_source    	{ class: flowchart_rev_relation_source; }
+
+
+flowchart_relation_target {
+	class: flowchart_relation_source;
+	background-colour: green;
+	border-colour: white;
+	content: right;
+	}
+
+flowchart_overlay_target	{ 
+	class: flowchart_relation_target; 
+	background-image: url(flowoverlay.png);
+	content: none; 
+	border-style: none; 
+	background-colour: transparent;
+	}
+
+flowchart_module_target 	{ 
+	class: flowchart_relation_target; 
+	background-image: url(flowlibrary.png);
+	content: none; 
+	border-style: none; 
+	background-colour: transparent;
+	}
+
+flowchart_chain_target 		{ 
+	class: flowchart_relation_target; 
+	background-image: url(flowprogram.png);
+	content: none; 
+	border-style: none; 
+	background-colour: transparent;
+	}
+
+flowchart_loadgo_target 	{ 
+	class: flowchart_relation_target; 
+	background-image: url(flowprogram.png);
+	content: none; 
+	border-style: none; 
+	background-colour: transparent;
+	}
+
+flowchart_null_target 		{ class: flowchart_relation_target; }
+
+flowchart_rev_relation_target {
+	class: flowchart_relation_target;
+	content: left;
+	}
+
+flowchart_rev_overlay_target	{ class: flowchart_overlay_target; }
+flowchart_rev_module_target 	{ class: flowchart_module_target; }
+flowchart_rev_chain_target 	{ class: flowchart_chain_target; }
+flowchart_rev_loadgo_target 	{ class: flowchart_loadgo_target; }
+flowchart_rev_null_target	{ class: flowchart_rev_relation_target; }
+
+
+flowchart_trace_north	{
+	content: none;
+	background-colour: #101010;
+	border-style: hconvex;
+	width: 1mm;
+	}
+
+flowchart_trace_south	{
+	class: flowchart_trace_north;
+	background-colour: #101010;
+	}
+
+flowchart_trace_east	{
+	content: none;
+	background-colour: #101010;
+	border-style: vconvex;
+	height: 1mm;
+	}
+
+flowchart_trace_west	{
+	class: flowchart_trace_east;
+	background-colour: #101010;
+	}
+
+flowchart_trace_point	{
+	content: none;
+	border-style: vconvex;
+	background-colour: #101010;
+	width: 1mm;
+	height: 1mm;
+	}
+
+flowchart_help_bubble	{
+	background-colour: white;
+	border-colour: green;
+	text-colour: red;
+	border-style: double;
+	text-align: justify;
+	padding: 2mm;
+	content: text;
+	text-font: url(arial2.fmf);
+	}
+
+flowchart_hyperview_tray {
+	border-style:  outset;
+	content: none;
+	}
+
+flowchart_hyperview_frame {
+	border-style:  inset;
+	margin: 1mm;
+	content: none;
+	}
+
+flowchart_hyperview_cursor {
+	border-style:  solid;
+	border-colour: black;
+	content: none;
+	}
+
+flowchart_hyperview_zoom {
+	border-style:  vconcave;
+	border-colour: transparent;
+	content: none;
+	}
+@domain null;
+
+
+
+
+

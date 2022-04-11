@@ -1,0 +1,179 @@
+# ---------------------------------------------------------------
+#                  ABAL 3 Production Makefile
+# ---------------------------------------------------------------
+# This makefile transfers all files to this production directory
+# and its subdirectories prior to building the tar zipped image
+# package. This image package is then installed in the INSTALL
+# directory. The installed image is then used for the production
+# of the RPM binary package
+# The tar package or the rpm package may be wrapped into an auto
+# installable binary executable program using the abal product 
+# builder utility using the following variables.
+# ---------------------------------------------------------------
+# The following may be activated to rebuild makefile inclusions
+# ---------------------------------------------------------------
+# include rebuild.mf
+# make
+# ---------------------------------------------------------------
+#SEIT14_PRODUCTION = TRUE
+# previous version limit
+#AIREAMH = 24
+#VABAL   = abal3.1a.0
+# ---------------------------------------------------------------
+# previous version limit
+#AIREAMH = 08
+#VABAL   = abal3.1b.0
+# ---------------------------------------------------------------
+SUFFIX  = 
+AIREAMH = 02$(SUFFIX)
+VABAL   = abal3.1c.0.
+
+$1 = $(VABAL)$(AIREAMH)
+$2 = root@172.17.1.1:/usr/local/httpd/htdocs/download/
+$3 = abal31a0$(AIREAMH)
+
+# -------------------
+# Make file variables
+# -------------------
+STRIP      = echo 
+SOURCE     = $(ABAL)/
+TARGET     = $(ABAL)/product31e/
+INSTALL    = /home/abal3
+PAYLOAD    = abal3.tgz
+PAYLOADA   = abal3a.tgz
+PAYLOADB   = abal3b.tgz
+PAYLOADBIN = abal3bin.tgz
+PAYLOADLIB = abal3lib.tgz
+PAYLOADDOC = abal3doc.tgz
+PAYLOADZIP = abal3doc.zip
+
+# REDHAT_PACKMAN = abal3.spec
+
+# --------------------------------------------------------------
+# Check all package components against source production modules
+# --------------------------------------------------------------
+! include bin.mf
+! include bin16.mf
+! include lib16.mf
+! include lib.mf
+! include doc.mf
+! include class.mf
+! include style.mf
+! include fonts.mf
+! include images.mf
+! include include.mf
+! make
+
+# --------------------------------------------------
+# Build the beta and test version tar zipped package
+# --------------------------------------------------
+$(PAYLOAD): install$(SUFFIX) bin lib doc doc/fr doc/en class style fonts images include example
+	tar -czvf $@ $?
+
+$(PAYLOADA): install$(SUFFIX) bin lib 
+	tar -czvf $@ $?
+
+$(PAYLOADB): doc doc/fr doc/en class style fonts images include example
+	tar -czvf $@ $?
+
+$(PAYLOADBIN): install$(SUFFIX) bin
+	tar -czvf $@ $?
+
+$(PAYLOADLIB): lib
+	tar -czvf $@ $?
+
+$(PAYLOADDOC): doc doc/fr doc/en
+	tar -czvf $@ $?
+
+$(PAYLOADZIP): doc doc/fr doc/en
+	zip -r $@ doc
+
+! make
+
+! ifdef REDHAT_PACKMAN
+# -------------------------------------------------------
+# Creation of the Source Image and the RPM Binary package
+# -------------------------------------------------------
+$(REDHAT_PACKMAN): abal3.ins abal3.tgz
+! ifdef	CLEAN
+	rm -r $(INSTALL)
+	mkdir $(INSTALL)
+! endif
+	cp $? /tmp
+	cd /tmp; ./$*
+	cat header                > $@
+	ls $(INSTALL)/bin/*      >> $@
+	ls $(INSTALL)/lib/*.so   >> $@
+	ls $(INSTALL)/lib/cico/* >> $@
+	ls $(INSTALL)/class/*.as >> $@
+	ls $(INSTALL)/class/*.mf >> $@
+	ls $(INSTALL)/doc/*.htm  >> $@
+	ls $(INSTALL)/doc/*.gif  >> $@
+	ls $(INSTALL)/doc/*.css  >> $@
+	ls $(INSTALL)/doc/fr/*.htm  >> $@
+	ls $(INSTALL)/doc/fr/*.gif  >> $@
+	ls $(INSTALL)/doc/fr/*.css  >> $@
+	ls $(INSTALL)/doc/en/*.htm  >> $@
+	ls $(INSTALL)/doc/en/*.gif  >> $@
+	ls $(INSTALL)/doc/en/*.css  >> $@
+	ls $(INSTALL)/fonts/*    >> $@
+	ls $(INSTALL)/images/*   >> $@
+	ls $(INSTALL)/include/*  >> $@
+	ls $(INSTALL)/example/*  >> $@
+	rpm -bb $@
+
+! make
+! endif
+
+# --------------------------------------
+# production of autoinstallation release
+# --------------------------------------
+
+! ifdef RELEASE
+
+PRODUCT     = "-t/home/abal3/$(PAYLOAD)"
+PREINSTALL  = "-bcd /home/abal3"
+DOINSTALL   = "-itar -xzf" 
+POSTINSTALL = "-a./install$(SUFFIX)"
+
+$(RELEASE): $(TARGET)abal3.tgz
+	apb -p -z -v -s$* $(PRODUCT) -d/home/abal3 $(PREINSTALL) $(DOINSTALL) $(POSTINSTALL) $(SOURCE)release/$@
+! make
+! ifdef ZBUILDER
+z32$(RELEASE): $(ABAL)/zlib/zabal3.tgz
+	apb -p -z -v -s$* -t/home/zlib/zabal3.tgz -d/home/zlib "-bcd /home/zlib" "-itar -xzf" $(ABAL)/release/$@
+
+z16$(RELEASE): $(ABAL)/zlib/zabal2.tgz
+	apb -p -z -v -s$* -t/home/zlib/zabal2.tgz -d/home/zlib "-bcd /home/zlib" "-itar -xzf" $(ABAL)/release/$@
+! make
+! endif
+
+! ifdef WEB
+# -------------------------------------------
+# Transfer to target machine for distribution
+# -------------------------------------------
+! shell scp $(SOURCE)release/$(RELEASE) $(WEB)
+! shell scp $(SOURCE)release/$(RELEASE).txt $(WEB)
+# shell cd ../release; ./archive $(AIREAMH)
+! ifdef CVSTAG
+! shell cd $ABAL/src; cvs commit
+! shell cd $ABAL/src; $(MAKE) cvstag $(CVSTAG)
+! endif
+! endif
+
+
+# ----------------------------------------
+# Perform Useit Runtime Package Production
+# ----------------------------------------
+! endif
+# ifdef USEIT14_PRODUCTION
+#! shell cd $(ABAL)/release/useit14b; $(MAKE)
+# endif
+
+# ---------------
+# End of Makefile
+# ---------------
+ 
+b
+v
+

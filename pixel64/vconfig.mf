@@ -1,0 +1,5 @@
+
+$(POBJ)vrecrep$(OBJ):  $(SP01)vrecrep.c $(SP01)visual.h /home/Dev/abal32/src/pixel/allocate.h /home/Dev/abal32/src/pixel/guimouse.h $(SP01)vframe.h $(SP01)vwidget.h
+$(POBJ)vparam$(OBJ):  $(SP01)vparam.c $(SP01)visual.h /home/Dev/abal32/src/pixel/allocate.h /home/Dev/abal32/src/pixel/guimouse.h $(SP01)vframe.h $(SP01)vwidget.h
+$(POBJ)vrefer$(OBJ):  $(SP01)vrefer.c $(SP01)visual.h /home/Dev/abal32/src/pixel/allocate.h /home/Dev/abal32/src/pixel/guimouse.h $(SP01)vframe.h $(SP01)vwidget.h
+

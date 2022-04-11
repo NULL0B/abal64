@@ -1,0 +1,16 @@
+
+! include $(ABAL)/common/common.def
+
+SP01 = $(ABAL)/src/amake/
+
+yabal.o: $(SP01)yabal.c $(SP01)ymain.c $(SP01)ymake.c $(SP01)yparse.c '
+         $(SP01)yfind.c $(SP01)yfile.c $(SP01)youtput.c $(SP01)ysymbol.c
+	-$(GCC) -c -g $(GDB) -DUNIX $* 1> pipo1 2> pipo2
+	cat pipo1 pipo2 > pipo
+	agr -apipo
+! make
+
+$(ABAL)/bin/yabal: yabal.o $(WILDCOMP) $(FNPARSER)
+	$(GCC) -g $(GDB) -o $@ $? 
+! make
+

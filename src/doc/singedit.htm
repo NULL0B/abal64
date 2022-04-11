@@ -1,0 +1,683 @@
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="generator" content="Prologue Sing Html Version 1.0a">
+<meta name="version" content="*PRL@INFO*#11a040">
+<link href="style.css" type="text/css" rel="stylesheet" media="screen">
+<link href="style.css" type="text/css" rel="stylesheet" media="print">
+<title>Sing Version 1.0a
+</title>
+</head><body>
+<div align="center">
+<table class="DOC">
+<tr><th><h1 align="center">
+Sing Version 1.0a
+</h1>
+<td><div align="center"><img src="logo.jpg">
+</div></table></div><p>
+<a name="singedit.xml">
+
+<p>
+<div align="center">
+<table class="DS">
+<tr><th><h2 align="center">
+Text Editor
+</h2>
+
+<tr><td><p><div align="center"><img src="singedit.gif" usemap="#Text_Editor" >
+</div><p>
+<tr><td>
+
+<map name="Text_Editor">
+<area type=rect href="#downicon.gif" coords="19,2,44,27">
+<area type=rect href="#downicon.gif" coords="840,4,864,29">
+<area type=rect href="#File" coords="64,7,160,30">
+<area type=rect href="#New" coords="68,40,156,60">
+<area type=rect href="#Save" coords="68,56,160,76">
+<area type=rect href="#Save As" coords="68,72,160,92">
+<area type=rect href="#Open" coords="68,88,156,108">
+<area type=rect href="#Production" coords="68,104,156,124">
+<area type=rect href="#Drop" coords="68,120,156,140">
+<area type=rect href="#Quit" coords="68,136,156,156">
+<area type=rect href="#View" coords="169,6,266,28">
+<area type=rect href="#Run" coords="170,40,217,58">
+<area type=rect href="#Text" coords="168,56,238,76">
+<area type=rect href="#Image" coords="172,72,227,90">
+<area type=rect href="#Font" coords="172,88,248,108">
+<area type=rect href="#Properties" coords="172,104,252,124">
+<area type=rect href="#Visual" coords="172,120,252,140">
+<area type=rect href="#TreeView" coords="172,136,260,156">
+<area type=rect href="#Application" coords="172,152,260,172">
+<area type=rect href="#Event" coords="271,6,364,27">
+<area type=rect href="#Options" coords="350,6,443,28">
+<area type=rect href="#Parameters" coords="358,40,454,60">
+<area type=rect href="#Refresh" coords="358,56,454,76">
+<area type=rect href="#Configure" coords="358,72,454,92">
+<area type=rect href="#Screen Capture" coords="358,88,462,108">
+<area type=rect href="#Animate" coords="358,104,454,124">
+<area type=rect href="#Editor" coords="462,3,559,31">
+<area type=rect href="#Find" coords="470,40,566,60">
+<area type=rect href="#Replace" coords="470,56,566,76">
+<area type=rect href="#Syntax" coords="470,72,562,92">
+<area type=rect href="#Search" coords="470,88,562,108">
+<area type=rect href="#Trace" coords="578,4,682,35">
+<area type=rect href="#InsertSwitch" coords="632,7,665,25">
+<area type=rect href="#SelectSwitch" coords="662,7,695,25">
+<area type=rect href="#LineNumber" coords="693,7,724,23">
+<area type=rect href="#Executeur" coords="729,7,747,22">
+<area type=rect href="#First" coords="586,40,694,60">
+<area type=rect href="#Previous" coords="586,56,694,76">
+<area type=rect href="#Widget" coords="586,72,690,92">
+<area type=rect href="#Method" coords="586,88,690,108">
+<area type=rect href="#Next" coords="586,104,690,124">
+<area type=rect href="#Last" coords="586,120,690,140">
+<area type=rect href="#Executer" coords="748,7,766,22">
+<area type=rect href="#EditConf" coords="768,7,786,22">
+<area type=rect href="#Translate" coords="788,7,806,22">
+<area type=rect href="#Linker" coords="808,7,826,22">
+</map>
+The internal text editor of the ABAL 3 development environment is an greatly enhanced
+version of the 
+standard ABAL text editor known as <b>AED</b>.
+<br>
+It has been reworked
+to allow tight integration into the new development environment and to offer the
+following
+series of new features :
+<p>
+<OL>
+<LI> Mouse driven operation
+<LI> Vertical scroll
+bar positioning
+<LI> Syntaxical colouration of text content with an ABAL, C and HTML
+orientation.
+<LI> Powerful Search mechanisms.
+</OL>
+<p>
+The behaviour of the editor
+is identical to the original ABAL editor as far as the video mode is concerned.
+The
+escape key however opens the <a href="vedcmd.htm">command window </a> 
+in which standard
+AED command sequences are possible.
+The escape key in the command window performs
+closure of the window and connot therfore be used for 
+the concatenation of command
+sequences.
+To this effect, since the standard editor replace command required the
+escape key to be used to separate
+the search and replace strings, menu driven search
+and replace versions of these commands are available
+instead.
+<p>
+The standard insert,indent
+and basket messages have been replaced by the new switch controls in the main
+menu
+bar.
+<p>Information concerning the configuration of the editor may be found in the
+section relating to the
+menu option <a href="vrefer.htm">Options.Configure</a> in
+this document or that of the other model editors.
+<p>
+The internal text editor will
+be activated to fulfill the various needs for text editing as follows :
+<ol>
+<li>Activation
+of the menu option <b>View.Text</b> for forms or source file project components.
+<li>Activation
+of the menu option <b>Event.ItemDocument</b> from the forms editor.
+<li>Activation
+of the menu option <b>Event.FormDocument</b> from the forms editor or the project
+modelling 
+tool.
+<li>Activation of an <b>Edit</b> button in one of the secondary dialog
+boxes.
+<li>By selection of an event method from the main menu from within the forms
+editor.
+<li>By selection of an event method page from within the <a href="vwidget.htm">widget
+properties</a>
+dialog box.
+<li>By selection of either the <b>inclusion</b> or <b>modules</b>
+page from within the <a href="vaprod.htm">
+abal production</a> dialog box.
+<li>When
+error tracing has been activated for abal translation in the <a href="vtrad.htm">abal
+translator</a>
+dialog box, if the translator returns a translation error then the
+trace file will be read and loaded by
+the integrated error trace mechanisms. Each
+error will be prompted for correction using the trace version
+of this internal text
+editor, in which case the suplementary <b>trace</b> menu will be main available.
+</ol>
+
+
+
+
+
+
+<p>
+
+<dl>
+<dt class=type><a name="downicon.gif">
+<b>downicon.gif
+</b></a>
+<dd class=data>The display of the various model editor tools bars is controlled by this
+button. When
+the arrow points upwards a click will cause the display of the
+tool bar to be inhibited.
+The arrow button will then point downwards in which
+case a click will cause the tool
+bar to be redisplayed.
+
+
+<p>
+<dt class=type><a name="downicon.gif">
+<b>downicon.gif
+</b></a>
+<dd class=data>The display of the colour palette bar to the right of the  screen is controlled by
+this
+button. When the arrow points upwards a click will cause the display of the
+palette
+bar to be inhibited. The arrow button will then point downwards in which
+case a click
+will cause the palette bar to be redisplayed.
+
+
+<p>
+<dt class=type><a name="File">
+<b><u>F</u>ile
+</b></a>
+<dd class=data>Selection of this menu options gives access to the generic file operations 
+menu whose
+options are described here below.
+<dl><dd>
+
+
+
+<p>
+<dt class=type><a name="New">
+<b><u>N</u>ew
+</b></a>
+<dd class=data>This menu option produces no effect whilst the text editor is active.
+
+
+<p>
+<dt class=type><a name="Save">
+<b><u>S</u>ave
+</b></a>
+<dd class=data>This menu options performs a quick save of the current editor text file to disk 
+without
+prompting the user for confirmation.
+
+
+<p>
+<dt class=type><a name="Save As">
+<b>Sa<u>v</u>e As
+</b></a>
+<dd class=data>Activation of this menu option produces the same effect as the quick save operation.
+
+
+<p>
+<dt class=type><a name="Open">
+<b><u>O</u>pen
+</b></a>
+<dd class=data>When the cursor of the text editor is positioned over a valid filename string in the
+text document,
+activation of this menu option will cause the current file to saved
+and the new file to be opened and loaded
+into the text editor.
+
+
+
+<p>
+<dt class=type><a name="Production">
+<b><u>P</u>roduction
+</b></a>
+<dd class=data>This menu option produces no effect whilst the text editor is active.
+
+
+<p>
+<dt class=type><a name="Drop">
+<b><u>D</u>rop
+</b></a>
+<dd class=data>This menu option produces no effect whilst the text editor is active.
+
+
+<p>
+<dt class=type><a name="Quit">
+<b><u>Q</u>uit
+</b></a>
+<dd class=data>Selection of this menu option allows exit from the text editor and return to the 
+parent
+context or model. Any modifications that are unsave will be lost unless
+the return
+is to the <a href="vwidget.htm">widget properties</a> dialog box or to 
+the master
+trace file in error tracing mode.
+ 
+
+
+<p>
+<dt class=type><a name="View">
+<b><u>V</u>iew
+</b></a>
+<dd class=data>Selection of this menu option of the main menu gives access to the 
+view or tool operations
+menu whose options are described below.
+<dl><dd>
+
+
+
+<p>
+<dt class=type><a name="Run">
+<b><u>R</u>un
+</b></a>
+<dd class=data>Select this option in order to gain access to the <a href="vdebug.htm">debug and runtime
+control</a> dialog
+box allowing abal applications to be run, tested and debugged from
+within the development tool.
+
+
+<p>
+<dt class=type><a name="Text">
+<b>Te<u>x</u>t
+</b></a>
+<dd class=data>Selection of this menu option gives explicite access to the 
+<a href="singedit.htm">standard
+text editor </a>
+for the current model component.
+
+
+
+<p>
+<dt class=type><a name="Image">
+<b><u>I</u>mage
+</b></a>
+<dd class=data>Activation of this menu option gives explicite access to the <a href="singbmap.htm">bitmap
+editor</a>.
+allowing inspection and modification of the model image. 
+
+
+<p>
+<dt class=type><a name="Font">
+<b>Fo<u>n</u>t
+</b></a>
+<dd class=data>Select this menu option to gain access to the <a href="singfont.htm">font editor</a>.
+
+
+
+<p>
+<dt class=type><a name="Properties">
+<b><u>P</u>roperties
+</b></a>
+<dd class=data>Selection of the properties menu option gives access to the 
+<a href="vcube.htm">3D
+component</a> properties dialog box
+allowing the various properties to be inspected
+and eventually modified.
+
+
+<p>
+<dt class=type><a name="Visual">
+<b><u>V</u>isual
+</b></a>
+<dd class=data>Selection of this menu option gives access to the component specific visual model
+editor.
+For forms and document models this will be the <a href="singform.htm">visual
+forms editor</a>.
+For Image components
+this will be the <a href="singbmap.htm">bitmap
+editor</a>
+ and for Source components this will be the <a href="singedit.htm">standard
+text editor</a>.
+
+
+<p>
+<dt class=type><a name="TreeView">
+<b>Tr<u>e</u>eView
+</b></a>
+<dd class=data>Selection of the treeview menu option toggles the <a href="singtree.htm">treeview</a>
+
+mechanism between visible and hidden states.
+
+
+<p>
+<dt class=type><a name="Application">
+<b><u>A</u>pplication
+</b></a>
+<dd class=data>Selection of this menu option returns control to this project model editor from the
+vrious other
+model editor views.
+</dl>
+
+
+<p>
+<dt class=type><a name="Event">
+<b><u>E</u>vent
+</b></a>
+<dd class=data>This menu option is inhibited whilst the text editor is active.
+
+
+<p>
+<dt class=type><a name="Options">
+<b><u>O</u>ptions
+</b></a>
+<dd class=data>Selection of this menu options gives access to the general operations 
+menu the options
+of which are described here below.
+<dl><dd>
+
+
+<p>
+<dt class=type><a name="Parameters">
+<b><u>P</u>arameters
+</b></a>
+<dd class=data>Selection of this menu option gives access to the <a href="vparam.htm">General Parameters</a>
+dialog
+box allowing the various editor parameters to be inspected and modified.
+These parameters
+will be used as default values for all subsequent new widget 
+and other model components
+as they are created.
+
+
+<p>
+<dt class=type><a name="Refresh">
+<b><u>R</u>efresh
+</b></a>
+<dd class=data>Selection of this menu option simply causes the development screen to be redraw
+for
+any particular reason.
+
+
+<p>
+<dt class=type><a name="Configure">
+<b><u>C</u>onfigure
+</b></a>
+<dd class=data>Activation of this menu option gices access to the <a href="vrefer.htm">Configuration
+Parameters</a>
+of the ABAL 3 development tool.
+These configuration values are read
+from the configuration file, normally <b>sing.cfg</b>,
+during the start up and construction
+phase of the development environment.
+
+
+
+<p>
+<dt class=type><a name="Screen Capture">
+<b><u>S</u>creen Capture
+</b></a>
+<dd class=data>This menu option may be activated  in order to perform a screen capture operation.
+The entire screen will 
+be captured to a virtual bitmap then the <a href="visave.htm">
+image save</a> dialog box will be presented
+allowing the target image type and file
+name to be specified.
+
+
+
+<p>
+<dt class=type><a name="Animate">
+<b><u>A</u>nimate
+</b></a>
+<dd class=data>Selection of this menu operation gives access to the 
+<a href="vrecrep.htm">Animation
+Record and Replay</a>
+control dialog box.
+Animation recording allows  user input events,
+equally keyboard and mouse events,
+to the development environment to be recorded to
+an animation script file.
+Animation replay allows a recorded script to be re-enacted
+performing the
+identical sequence of input events.
+These features may be used to create
+input macros or for tutorial purposes.
+</dl>
+
+
+<p>
+<dt class=type><a name="Editor">
+<b><u>E</u>ditor
+</b></a>
+<dd class=data>Selection of the project menu options gives access to the following 
+project model
+specific menu functions
+<dl><dd>
+
+
+<p>
+<dt class=type><a name="Find">
+<b><u>F</u>ind
+</b></a>
+<dd class=data>Selction of this menu option gives access to the <a href="vsearch.htm">Text Find</a>
+dialog
+box allowing control of the corresponding text editor mechanim.
+
+
+<p>
+<dt class=type><a name="Replace">
+<b><u>R</u>eplace
+</b></a>
+<dd class=data>Selection of this menu option gives access to the <a href="vreplace.htm">Text Replace</a>
+dialog
+fbox allowing control of the corresponding editor text search and replace mechanism.
+
+
+<p>
+<dt class=type><a name="Syntax">
+<b>S<u>y</u>ntax
+</b></a>
+<dd class=data>Selection of this menu option gives access to the method editor 
+<a href="vcompose.htm">syntax
+composer</a> dialog box offering assistance for
+widget member expression construction
+via selection lists.
+Expressions constructed in this way are more reliable.
+
+
+
+
+<p>
+<dt class=type><a name="Search">
+<b><u>S</u>earch
+</b></a>
+<dd class=data>Selection of this menu option will launch the AED <b>Ctrl Z</b> or external text search
+operation 
+for the token situated under the editor cursor position using the external
+abal grep utility <b>AGR</b>.
+In order to be able to search in files other than those
+in the current working directory it may be 
+necessary to issue the new editor command
+<b>Z</b> allowing the search directory and pattern to be defined.
+</dl>
+
+
+<p>
+<dt class=type><a name="Trace">
+<b><u>T</u>race
+</b></a>
+<dd class=data>This option of the main menu will only be available whhen the text editor has been
+activated in 
+error trace mode as a result of errors being detected upon completion
+of an abal translation operation.
+Selection of the menu option will give access to
+the following popup menu of trace functions.
+<dl><dd>
+ 
+
+<p>
+<dt class=type><a name="InsertSwitch">
+<b>InsertSwitch
+</b></a>
+<dd class=data>This switch control displays the current state of the editor insert toggle.
+This is
+active by default causing all input characters to be inserted pushing
+existing characters
+to the right. The editor INSERT key allows this to be toggled
+between INSERT and OVERWRITE
+modes.
+
+
+<p>
+<dt class=type><a name="SelectSwitch">
+<b>SelectSwitch
+</b></a>
+<dd class=data>This switch control display the status of the editor text selection mode.
+The control
+will light when the editor selection key <code>Ctrl W</code> 
+is pressed,
+or when
+the right button of the mouse is pressed, 
+indicating that the text selection mode
+is active.
+The switch will go off when the selection mode is disactivated by the <code>Q</code>
+key
+which cancels text selection mode returning to standard video mode.
+For more information
+concerning this please consult the <a href="aed.htm">Abal Text
+Editor : AED </a> section
+of the documentation.
+
+
+<p>
+<dt class=type><a name="LineNumber">
+<b>LineNumber
+</b></a>
+<dd class=data>This edit field displays the current cursor line number.
+
+
+<p>
+<dt class=type><a name="Executeur">
+<b>Executeur
+</b></a>
+<dd class=data>This button allows the ABAL Debug Utility to be launched for the inspection and correction
+of
+ABAL program components.
+<p>By clicking with the right button of the mouse the debug
+parameters
+dialog box will be presented, otherwise with the left button the
+debug
+utility will be direclty launched.
+
+
+
+<p>
+<dt class=type><a name="First">
+<b><u>F</u>irst
+</b></a>
+<dd class=data>Selection of this menu option causes the trace editor to reposition the text editor
+to the first item in 
+the internal list of trace items.
+ 
+
+
+<p>
+<dt class=type><a name="Previous">
+<b><u>P</u>revious
+</b></a>
+<dd class=data>This menu options is identical to the standard trace editor <b>Ctrl V</b> keyboard
+action which causes
+the trace editor to position the text editor to the previous item
+in the internal list of trace items.
+
+
+<p>
+<dt class=type><a name="Widget">
+<b><u>W</u>idget
+</b></a>
+<dd class=data>Selection of this menu event requests that the <a href="vwidget.htm">widget properties</a>
+dialog frame
+of the parent widget of the source production that raised the error condition,
+
+be located and presented for inspection and eventual modification.
+Any modifications
+performed in this way will be saved direct to disk as a result of clicking on the
+accept
+button under these conditions.
+
+
+<p>
+<dt class=type><a name="Method">
+<b><u>M</u>ethod
+</b></a>
+<dd class=data>Selection of this menu event gives direct access to the widget method text that is
+detected to be responsible
+for the production of the source that gave rise to the
+error condition.
+
+
+
+<p>
+<dt class=type><a name="Next">
+<b><u>N</u>ext
+</b></a>
+<dd class=data>This option, like the standard keyboard <b>Ctrl T</b> action will request that the
+trace editor position
+the text editor to the next item from the list of trace items.
+
+
+<p>
+<dt class=type><a name="Last">
+<b><u>L</u>ast
+</b></a>
+<dd class=data>Selection of this menu option requests the trace editor to position the text editor
+to the last item in
+the internal list of trace items.
+</dl>
+
+
+<p>
+<dt class=type><a name="Executer">
+<b>Executer
+</b></a>
+<dd class=data>This icon button provides access to the ABAL 3 <a href="vdebug.htm">Runtime and Debug
+Parameters</a> dialog
+box allowing execution and debug of ABAL 3 programs from within
+the ABAL 3 development environment.
+
+
+<p>
+<dt class=type><a name="EditConf">
+<b>EditConf
+</b></a>
+<dd class=data>This icon button provides access to the <a href="vaed.htm">Editor Configuration</a>
+dialog box for
+modification of editor parameters.
+
+
+<p>
+<dt class=type><a name="Translate">
+<b>Translate
+</b></a>
+<dd class=data>This icon button provides access to the ABAL 3 <a href="vtrad.htm">Translator Parameters</a>
+dialog box
+allowing specification of translation parameters prior to the translation
+operation.
+
+
+<p>
+<dt class=type><a name="Linker">
+<b>Linker
+</b></a>
+<dd class=data>This icon button gives access to the ABAL 3 <a href="vlink.htm">Linker Configuration</a>
+dialog box for
+the configuration and activation of ABAL module linking.
+
+
+<p>
+
+
+</dl>
+
+</td>
+</table></div><p>
+
+<p><div align="center">
+<table class="CRT">
+<tr><th><h3 align="center">
+Copyright (c) 2002,2006 Prologue
+</h3>
+</table></div><p>
+</body></html>

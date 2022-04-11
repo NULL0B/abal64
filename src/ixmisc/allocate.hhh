@@ -1,0 +1,9 @@
+#ifndef	_ALLOCATE_H
+#define	_ALLOCATE_H
+
+VPTR	allocate( WORD );
+VOID	liberate( VPTR );
+
+#endif	/* _ALLOCATE_H */
+	/* ----------- */
+

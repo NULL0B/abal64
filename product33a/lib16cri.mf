@@ -1,0 +1,27 @@
+# generated makefile : lib16cri.mf 
+# ------------------------------------
+$(ABAL)/product33a/lib16cri/asfun.so: $(ABAL)/lib/asfun.so
+	cp $* $@ 
+$(ABAL)/product33a/lib16cri/fac.so: $(ABAL)/lib/fac.so
+	cp $* $@ 
+$(ABAL)/product33a/lib16cri/libaccess.so: $(ABAL)/lib/libaccess.so
+	cp $* $@ 
+$(ABAL)/product33a/lib16cri/libflfile.so: $(ABAL)/lib/libflfile.so
+	cp $* $@ 
+$(ABAL)/product33a/lib16cri/libimage.so: $(ABAL)/lib/libimage.so
+	cp $* $@ 
+$(ABAL)/product33a/lib16cri/libprint.so: $(ABAL)/lib/libprint.so
+	cp $* $@ 
+$(ABAL)/product33a/lib16cri/tty.so: $(ABAL)/lib/tty.so
+	cp $* $@ 
+$(ABAL)/product33a/lib16cri/zgr.so: $(ABAL)/lib/zgr.so
+	cp $* $@ 
+$(ABAL)/product33a/lib16cri/z.so: $(ABAL)/lib/z.so
+	cp $* $@ 
+$(ABAL)/product33a/lib16cri/allocate.so: $(ABAL)/lib/allocate.so
+	cp $* $@ 
+$(ABAL)/product33a/lib16cri/libjpeg.so: $(ABAL)/lib/libjpeg.so
+	cp $* $@ 
+$(ABAL)/product33a/lib16cri/bibmath.so: $(ABAL)/lib/bibmath.so
+	cp $* $@ 
+

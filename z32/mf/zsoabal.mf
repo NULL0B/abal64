@@ -1,0 +1,4 @@
+
+$(POBJ)zsoabal$(OBJ):  $(SP01)zsoabal.c /home/abal64/include/bdas/wdef.h /home/abal64/include/bdas/pubsbda.h /home/abal64/include/bdas/pubwbda.h /home/abal64/include/banner.h /home/abal64/src/zgr/ztrace.h /home/abal64/include/trace.h $(SP01)zsoext.h $(SP01)zsotxt.h $(SP01)zsosys.h $(SP01)zsogui.h '
+$(SP01)zsover.h /home/abal64/include/banbuild.h /home/abal64/include/bancode.h version.rc
+

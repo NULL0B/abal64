@@ -1,0 +1,86 @@
+! include $(ABAL)/common/jpeg.def
+
+C    = .c
+H    = .h
+O    = .o
+CC      = $(GCC) -c -g $(GDB) $(SYSPNG) $(V666) -I$(ABAL)/include/
+LD      = $(GCC) -o 
+
+SRC  = $(ABAL)/src/pixel/
+
+COMPILE   = $(CC) $(HOST)
+
+PIPO =  2>> pipo
+AGR = agr
+
+GRAPIL = $(ABAL)/archive/grapil.a
+
+.c.o:
+! ifdef AGR
+	-$(COMPILE) $* 1> pipo1 2> pipo2
+	cat pipo1 pipo2 > pipo
+	$(AGR) -apipo
+! else
+	$(COMPILE) $* 
+! endif
+
+
+! make
+
+# Grapil
+# ------
+zico.o: $(SRC)zico.c
+zpng.o: $(SRC)zpng.c
+zbmp.o: $(SRC)zbmp.c
+zgif.o: $(SRC)zgif.c
+zjpeg.o: $(SRC)zjpeg.c
+zimage.o: $(SRC)zimage.c $(SRC)stdimage.c $(SRC)sysimage.c
+zvga.o: $(SRC)zvga.c $(SRC)vga.c
+grapil.o: $(SRC)grapil.c 
+
+! make
+
+$(GRAPIL): grapil.o zvga.o zimage.o zbmp.o zico.o zpng.o zgif.o zjpeg.o 
+	ar -r $@ $?
+	echo GRAPIL = $(GRAPIL) $(LIBPNG) > $(ABAL)/common/grapil.def
+! make
+
+SP00 = $(ABAL)/include/bdas/
+SP01 = $(ABAL)/src/sing/
+SP02 = $(ABAL)/src/pixel/
+SP03 = $(ABAL)/src/jpeg/
+TP01 = $(ABAL)/pixel/
+
+INCLUSION = -I$(SP00) -I$(SP01) -I$(SP02) -I$(SP03)
+:x
+EXCLUSION = -zstdio.h -zstdlib.h -zmalloc.h
+COMPILE = $(CC) $(GDB) -DVERSION666 $(HOST) $(INCLUSION)
+
+vcapture.o: $(SP01)vcapture.c
+
+! make
+
+! ifdef SHARED_LIBRARIES
+$(ABAL)/lib/libimage64.so: vcapture.o grapil.o zvga.o zimage.o zbmp.o zico.o zpng.o zgif.o zjpeg.o $(LIBJPEG)
+	$(GCC) $(GDB) $(LD_SHARED) -o $(ABAL)/lib/libimage64.so $?
+	echo  LIBIMAGE = $@ $(LIBPNG)> $(ABAL)/common/libimage.def
+
+! make
+! else
+$(ABAL)/lib/libimage64.a: vcapture.o grapil.o zvga.o zimage.o zbmp.o zico.o zpng.o zgif.o zjpeg.o vga.o
+	ar -r $@ $?
+	echo LIBIMAGE = $@ $(LIBPNG) > $(ABAL)/common/libimage.def
+! make
+! endif
+
+stdprod.o: $(SP01)stdprod.c
+	-$(COMPILE) $* 1>pipo1 2> pipo2
+	cat pipo1 pipo2 > pipo
+	agr -apipo
+! make
+
+$(ABAL)/common/stdprod.def: $(ABAL)/pixel64/stdprod.o
+	echo STDPROD = $(ABAL)/pixel64/stdprod.o > $(ABAL)/common/stdprod.def
+
+! make
+

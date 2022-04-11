@@ -1,0 +1,963 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>ABAL 3.2a : Sing Components </title>
+<META NAME="VERSION" CONTENT="*PRL@INFO*$6:31a001">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link href="style.css" rel="STYLESHEET" type="text/css" media="SCREEN">
+</head>
+<body>
+<p>
+<div align=center>
+<table width="95%">
+<tr><th width="30%"><h2 align=center>ABAL 3.2a</h2><th><h2 align=center>Sing Components</h2>
+
+<tr><td colspan=2>
+<p><ol>
+<li><a href="#intro">Introduction</a>
+<li><a href="#compo">Overlay Components</a>
+<ul>
+<li><a href="#bmsg1">One button message box</a>
+<li><a href="#bmsg2">Two button message box</a>
+<li><a href="#bmsg3">Three button message box</a>
+<li><a href="#date">Date Input field Overlay</a>
+<li><a href="#datesel">Date Input field with Calender Selection Overlay</a>
+<li><a href="#fichier">Filename Input and Selection Overlay</a>
+<li><a href="#money">Monetary Ammount Input Field and Calculator Overlay</a>
+<li><a href="#montant">Monetery Ammount Input Field</a>
+<li><a href="#telephone">Telephone Number Entry Overlay with Directory Selection</a>
+<li><a href="#villecp">Town and Post Code Input Field and Selection Overlay.</a>
+
+<li><a href="#hmenu">Horizontal menu management component Overlay.</a>
+<li><a href="#vmenu">Vertical menu management component Overlay.</a>
+<li><a href="#toolbar">Icon toolbar component Overlay.</a>
+
+<li><a href="#editor">Text Editor component Overlay.</a>
+
+</ul>
+<li><a href="#compo">Module Components</a>
+<ul>
+<li><a href="#statusbar">Status message bar</a>
+<li><a href="#charset">Ascii Character Table Module</a>
+<li><a href="#copyfile">File Copy Dialog Box Module</a>
+<li><a href="#filefinder">Directory Parsing Module</a>
+<li><a href="#delfile">File Deletion Confirmation Dialog Box Module</a>
+<li><a href="#teldir">Telephone Directory Selection Module</a>
+<li><a href="#fileinfo">File Information Dialog Box Module</a>
+<li><a href="#filemenu">File Operations Menu Module</a>
+<li><a href="#insee">Town and Post Code File Management Module</a>
+<li><a href="#palette">Colour Palette Selection Module</a>
+<li><a href="#renfile">File Rename Confirmation Dialog Box Module</a>
+<li><a href="#statusbar">Status Bar Module</a>
+<li><a href="#tierces">Biosheet Information File Management Module</a>
+<li><a href="#toolman">File Opening Tool Management Module</a>
+
+
+<li><a href="#pincode">Randomised Secret Decimal Pin Code Input Module</a>
+<li><a href="#hexcode">Randomised Secret Hexa-Decimal Pin Code Input Module</a>
+<li><a href="#alphacode">Randomised Secret Alpha Code Input Module</a>
+<li><a href="#alphanum">Randomised Secret Alpha Numeric Code Input Module</a>
+<li><a href="#keyboard">Compact touch screen keyboard Module</a>
+<li><a href="#clavier">Full 78 key touch screen keyboard Module</a>
+
+
+</ul>
+<li><a href="#intro">Program Examples</a>
+<ul>
+<li><a href="#example1">Example of use of data input components</a>
+<li><a href="#menutest">Example of use of menu components</a>
+<li><a href="#tooldata">Abal Tool File Manager</a>
+</ul>
+
+<li><a href="#printing">Printed Documents Components and Examples</a>
+<ul>
+<li><a href="#printout">Print Document Control Overlay.</a>
+<li><a href="#hardcopy">Example Document.</a>
+<li><a href="#preview">Print Document Screen Preview Module.</a>
+</ul>
+
+</ol>
+<p>
+</table>
+<p>
+<a name="intro"><table width="95%"><tr><th colspan=2><h3>Introduction</h3>
+<tr><td colspan=2><p>This document describes the collection of components, and the associated models,
+provided for use with the graphical user interface design tool <code>Sing</code> from
+the version 3.2a of <code>abal</code> onwards.
+<p>These components are to be used in conjunction with forms widgets of the <code>visual data</code> 
+type and greatly facilitate the use of <code>Sing</code> for the development of complex business application models.
+<p>The storage nature, module or overlay, will be accorded by <code>Sing</code> depending on the explicite 
+model nature type.
+<p>The component models are grouped together in the project model file <code>tools.xml</code> which may
+be opened  using <code>Sing</code> for inspection and modification. 
+The project properties of this project model define the source, binary and production directories 
+as <code>/home/abal3/tools/</code> which may need to be changed depending on eventual usage requirements.
+<p>The component models of project model are aranged in following four distinct views :
+<p> 
+<ol>
+<li><code>Overlays</code> 
+<li><code>Modules</code>  
+<li><code>Programs</code>
+<li><code>All Models</code>
+</ol>
+<p>Navigation amongst these 3D camera positional views is possible using the following key sequences :
+<p>
+<ul>
+<li><code>Alt Home</code>      : Position to the first  camera view - the Overlays
+<li><code>Alt PageDown </code> : Position to the next camera view - the Modules 
+<li><code>Alt End</code>       : Position to the final camera view - the entire project
+<li><code>Alt PageUp </code>   : Position to the previous camera view : the Programs
+</ul>
+<p>In order to make use of these components in application projects built using <code>Sing</code>
+it is necessary to define the components project file <code>/home/abal3/tools/tools.xml</code>
+in the <code>Components</code> edit field of the project properties dialog box of <code>Sing</code>.
+After having done so it is important to save the project and exit then restart the project in order that
+the components project be opened and loaded for use by the application project.
+<p>The various components offered here for use with <code>Sing</code>, rely on the style sheet
+<code>tools.css</code> for the description of their appearance. Applications making use of 
+these components must be also based on the same style sheet for visual compatibillity.
+<p>
+</table>
+
+
+<p>
+<a name="compo"><table width="95%"><tr><th colspan=2><h3>Components</h3>
+<tr><td colspan=2><p>This section of the documentation describes the various components and the use for which they are intended.
+<p>
+</table>
+
+<p>
+<p>
+<a name="bmsg1"><table width="95%"><tr><th width="30%">boitemess1.xml
+<th>a single button message box
+<tr><td colspan=2>
+<p><div align=center><img src="boitemess1.png"></div>
+<p>Use of this component requires a single string parameter to be provided containing the
+text message to be displayed by the message box. The string parameter, as for all string
+parameters of <code>Sing</code> component modules, must be accompanied by its useable length to ensure the 
+correct alteration of the parameter reception pointer in the component module.
+<p>The message box will display the provided message and await either for the user to press
+the escape key on the keyboard or a <code>LEFT</code> mouse button  <code>UP</code> event on the appropriate
+ push button of the dialog box.
+<p>In all cases the dialog box will return the escape key code of <code>27</code>.
+<p>The component provides no public methods other than those of the standard visual interface.
+<p>
+</table>
+<p>
+<a name="bmsg2"><table width="95%"><tr><th width="30%">boitemess2.xml
+<th>a two button message box
+<tr><td colspan=2>
+<p><div align=center><img src="boitemess2.png"></div>
+<p>As for the preceeding single button dialog box, use of this component requires a single 
+string parameter to be provided containing the text message to be displayed by the message box. 
+Again the string parameter must be accompanied by its useable length to ensure the 
+correct alteration of the parameter reception pointer in the component module.
+<p>The message box will display the provided message and await for the user to press
+either the escape key, or the enter key on the keyboard or a <code>LEFT</code> mouse button  
+<code>UP</code> event on any one of the push buttons of the dialog box.
+<p>The dialog box will return either the escape key code of <code>27</code> to indicate <code>No</code>
+or the validation key code <code>13</code> to indicate <code>Yes</code>.
+<p>The component provides no public methods other than those of the standard visual interface.
+<p></table>
+<p>
+<a name="bmsg3"><table width="95%"><tr><th width="30%">boitemess3.xml
+<th>a three button message box
+<tr><td colspan=2>
+<p><div align=center><img src="boitemess3.png"></div>
+<p>As for the preceeding single and two button dialog boxs, use of this component requires a single 
+string parameter to be provided containing the text message to be displayed by the message box. 
+Again the string parameter must be accompanied by its useable length to ensure the 
+correct alteration of the parameter reception pointer in the component module.
+<p>The message box will display the provided message and await for the user to press
+ either the escape key, or the enter key on the keyboard or a <code>LEFT</code> mouse button  
+<code>UP</code> event on either of the  push buttons of the dialog box.
+<p>The dialog box will return either the escape key code of <code>27</code> to indicate <code>No</code>,
+the validation key code <code>13</code> to indicate <code>Yes</code> or the key code <code>1</code> 
+to indicate <code>Cancel</code>.
+<p>The component provides no public methods other than those of the standard visual interface.
+<p></table>
+<p>
+<a name="calculator"><table width="95%"><tr><th width="30%">calculator.xml
+<th>a calculator module
+<tr><td colspan=2>
+<p><div align=center><img src="calculator.png"></div>
+<p>This module provides a complete calculator function for use within an <code>abal</code> application.
+<p>The public methods <code>SetValue</code> and <code>GetValue</code> may be used to transmit
+initial values and for recovery of calculation results. The <code>SetValue</code> method expects
+a single string parameter value and does not require string length. The <code>GetValue</code>
+returns a string value to the caller as its logical result.
+<p>Several private methods are defined for use by the calculator during its internal operation.
+<p>
+<p></table>
+<p>
+<a name="calendar"><table width="95%"><tr><th width="30%">calendar.xml
+<th>a calendar module
+<tr><td colspan=2>
+<p><div align=center><img src="calendar.png"></div>
+<p>This module provides a complete calendar function for use within an <code>abal</code> application.
+<p>The public methods <code>SetDate</code> and <code>GetDate</code> may be used to transmit
+initial date values and for recovery of the final date result. The <code>SetDate</code> method expects
+a single string parameter value and does not require string length to be provided. 
+The <code>GetDate</code> returns a string value to the caller as its logical result.
+<p>The <code>DateString</code> public method, returns an expanded date string complete with 
+day and month name information.
+<p></table>
+<p>
+<a name="charset"><table width="95%"><tr><th width="30%">character.xml
+<th>an ascii character selection module 
+<tr><td colspan=2>
+<p><div align=center><img src="character.png"></div>
+<p>This module provides a complete ascii character code selection mechanism
+for use in an <code>abal</code> application.
+<p>A single string parameter, and assocated length value, are expected by the module containing the
+hexadecimal initial value of the current key code selection and returning the final selected value.
+<p>As is usual for standard dialog box mechanisms an escape code of <code>27</code> my be returned
+to indicate cancellation of the operation.
+<p>
+<p></table>
+<p>
+<a name="copyfile"><table width="95%"><tr><th width="30%">copyfile.xml
+<th>a file copy confirmation dialog box module
+<tr><td colspan=2>
+<p><div align=center><img src="copyfile.png"></div>
+<p>This dialog box implements a complete file copy operation for use by an <code>abal</code> application.
+The module is used by the standard file menu dialog box in response to selection of the 
+appropriate, file copy, option of the menu.
+<p>The module expects a single, length accompanied, string parameter value providing the
+name of the source file to be copied and allows selection of the target name prior to
+activation of the copy operation or cancellation via the appropriate push buttons of the
+dialog box interface controls.
+<p>The copy operation, when activated, will be performed using an <code>abal</code> standard <code>LOADGO</code> instruction
+of the appropriate, system dependant, copy function.
+<p></table>
+<p>
+<a name="date"><table width="95%"><tr><th width="30%">date.xml
+<th>a date input field overlay
+<tr><td colspan=2>
+<p><div align=center><img src="date.png"></div>
+<p>This overlay provides a standard date input field with an associated push button which when activated 
+causes the calendar module to be activated for date value selection. The push button is a standard
+module type pushbutton and the event method activates the calendar module passing the date input 
+field as its parameter.
+<p>
+<p></table>
+<p>
+<a name="datesel"><table width="95%"><tr><th width="30%">datum.xml
+<th>a date input field with calender selection overlay
+<tr><td colspan=2>
+<p><div align=center><img src="datum.png"></div>
+<p>This overlay is similar in principle to the preceding date input and selection overlay 
+providing a standard date input field with an associated push button which when activated 
+causes the calendar module to be activated for date value selection. This case, however,
+provides an example of visual data component usage for the handling of the calendar module.
+<p>The following public interface methods allow the various parts of the date input field
+to be influenced and retrieved by clients of the visual overlay component.
+<p>
+<ul>
+<li><code>ChangeDay</code> : This method allows the day value to be set to the value provided by the integer parameter to the method.
+<li><code>ChangeMonth</code> : This method allows the month value to be set to the value provided by the integer parameter to the method.
+<li><code>ChangeYear</code> : This method allows the year value to be set to the value provided by the integer parameter to the method.
+<li><code>DayValue</code> : This method allows recovery of the day value of the date field as its integer result value.
+<li><code>MonthValue</code> : This method allows recovery of the month value of the date field as its integer result value.
+<li><code>YearValue</code> : This method allows recovery of the year value of the date field as its integer result value.
+</ul>
+<p></table>
+<p>
+<a name="delfile"><table width="95%"><tr><th width="30%">delfile.xml
+<th>file deletion confirmation dialog box module
+<tr><td colspan=2>
+<p><div align=center><img src="delfile.png"></div>
+<p>This dialog box implements a complete file delete operation for use by an <code>abal</code> application.
+The module is used by the standard file menu dialog box in response to selection of the 
+appropriate, file deletion, option of the menu.
+<p>The module expects a single, length accompanied, string parameter value providing the
+name of the source file to be deleted and allows activation or cancellation of the delete operation
+via the appropriate push buttons of the dialog box interface controls.
+<p>The delete operation, when activated, will be performed using an <code>abal</code> standard <code>LOADGO</code> instruction
+of the appropriate, system dependant, delete function.
+<p></table>
+<p>
+<a name="teldir"><table width="95%"><tr><th width="30%">directory.xml
+<th>a telephone directory selection mechanism module
+<tr><td colspan=2>
+<p><div align=center><img src="directory.png"></div>
+<p>This visual component module provides a telephone directory search operation 
+for use in <code>abal</code> applications. The central list component shows the current collection of
+biosheet name index telephone numbers.
+<p>A single public interface string parameter requires reception of an initial value
+and provides for the return of the selection telephone number.
+<p>A <code>RIGHT</code> button mouse <code>UP</code> event permits access to the biosheet
+record dialog box for consultation and modification of the selected biosheet record.
+<p></table>
+<a name="fichier"><table width="95%"><tr><th width="30%">fichier.xml
+<th>a filename input and selection overlay
+<tr><td colspan=2>
+<p><div align=center><img src="fichier.png"></div>
+<p>This overlay provides a filename input and selection mechanism built around a filename 
+input field and an associated push button for the activation of a visual data component 
+file selection module.
+<p>The following public interface methods allow the filename edit buffer to be positioned
+and retrieved by clients of the visual overlay component.
+<p>
+<ul>
+<li><code>SetFileName</code> : This method allows the contents of the filename
+edit field to be established to the value provided by the string parameter.
+<li><code>GetFileName</code> : This method allows retrieval of the contents of the filename
+edit field as its string result.
+</ul>
+<p></table>
+<p>
+<a name="filefinder"><table width="95%"><tr><th width="30%">filefinder.xml
+<th>a directory search and file selection module.
+<tr><td colspan=2>
+<p><div align=center><img src="filefinder.png"></div>
+<p>This module provides a complete file and directory search and selection module for use
+in <code>abal</code> applications. It is called from the preceeding filename input overlay for selection
+of the filename. 
+<p>The uppermost edit field displays the currently selected directory.
+<p>The lowermost edit field displays the currently selected full path and filename and the eventual
+result of the selection mechanisms.
+<p>The overlay presents two lists 
+<ul>
+<li> to the left, the list of directories in the current directory. Here a simple click with the mouse
+will activate the directory as the current directory and the display will be refreshed.
+The standard <code>..</code> directory may be used to go back to the parent directory.
+<li> to the right, the list of files in the current directory. 
+Here a simple click with the left button causes selection of the file as the eventual result of the file selector. 
+A click with the right button will cause the file operations menu to be displayed allowing
+a choice of operations to be performed on the currently selected file dependant on its type.
+</ul>
+<p>Each of the lists is equiped with a scroll bar allowing standard scrolling amongst the members of the
+corresponding list.
+<p>Two public methods are provided for manipulation of the current selection value by
+client components.
+<p><ol>
+<li><code>SetValue</code> : This method allows the current value of the file selection mechanisms
+to be positioned to a file and directory. This will cause the two list to be refreshed to reflect
+the path and its contents.
+<li><code>GetValue</code> : This method may be called for the retrieval of the currently selected
+filename result value.
+</ol>
+
+<p></table>
+<p>
+
+
+<a name="fileinfo"><table width="95%"><tr><th width="30%">fileinfo.xml
+<th>a file information dialog box module
+<tr><td colspan=2>
+<p><div align=center><img src="fileinfo.png"></div>
+<p>This component module will be activated as a result of selection of the <code>File Information</code>
+option of the file menu component and will display the information relevant to the currntly 
+selected file, its name, size, date and time of modification and its nature.
+<p>The nature determines the tool that may eventually be used to open the file and inspect its
+contents of representation.
+<p>No public methods are currently defined for this component.
+<p></table>
+
+<a name="filemenu"><table width="95%"><tr><th width="30%">filemenu.xml
+<th>a file operations menu module
+<tr><td colspan=2>
+<p><div align=center><img src="filemenu.png"></div>
+<p>This module component describes the file menu, displayed as a result of a right button
+mouse event in the file list of the file selection module component. It displays the menu
+of operations that may be performed on the currently selected file as follows :
+<p><ol>
+<li><code>Open</code> : Selection of this option causes the current file to be opend for inspection
+using the tool currently defined for this type of file in the file types data base.
+<li><code>Rename</code> : Selection of this options leads to the dialog box component allowing 
+the file rename operation to be performed.
+<li><code>Delete</code> : Selection of this options leads to the dialog box component allowing 
+the file delete operation to be performed.
+<li><code>Copy to</code> : Selection of this options leads to the dialog box component allowing 
+the file copy operation to be performed.
+<li><code>Properties</code> : Selection of this options leads to display of the file information
+dialog box component for the current file.
+</ol>
+<p>The escape key allows the file menu to be cancelled and control to be returned to the caller.
+<p>A single public method <code>SetFileMenu</code> is provided allowing the current filename 
+value to be positioned for use by the menu for the activation of the eventual file type specific 
+menu operations.
+ 
+<p></table>
+<p>
+<a name="insee"><table width="95%"><tr><th width="30%">insee.xml
+<th>a town and post code file management module
+<tr><td colspan=2>
+<p><div align=center><img src="insee.png"></div>
+<p>This component module provides a post code and town name selection mechanism for the
+town and post code input overlay component.
+<p>The component offers two lists. To the left the departement list presents the list
+of departments sorted by number or by name. To the right the list of locations in the
+currently selected department.
+The two lists are accompagnied by scroll bars allowing for ease of navigation
+through their current information set.
+<p>A simple <code>Left</code> button mouse click in the department list causes the list
+of locations to the right to updated accordingly.
+<p>A location, and consequently the post code, may be selected for return to the
+caller by a simple <code>Left</code> button mouse click on the corresponding location of the 
+right hand list.
+<p>No public methods are currently defined for this component.
+<p></table>
+<p>
+<a name="montant"><table width="95%"><tr><th width="30%">montant.xml
+<th>a monetery input field
+<tr><td colspan=2>
+<p><div align=center><img src="montant.png"></div>
+<p>This overlay provides a standard monetary amount input field with an associated push button which when activated 
+causes the calculator module to be activated for value calculation. The push button is a standard
+module type pushbutton and the event method activates the calculator module passing the current
+amount input field as its parameter.
+<p></table>
+<p>
+<a name="money"><table width="95%"><tr><th width="30%">money.xml
+<th>a monetary input field and calculator overlay
+<tr><td colspan=2>
+<p><div align=center><img src="money.png"></div>
+<p>This overlay is similar in principle to the preceding amount input and calculation overlay 
+providing a standard monetary amount input field with an associated push button which when 
+activated  causes the calculator module to be activated for value calculation.
+ This case, however, provides an example of visual data component usage for the handling of the 
+calculator module.
+<p>The following public interface methods allow the amount field to be established and retrieved
+by clients of the visual overlay component.
+<p>
+<ol>
+<li></code>SetAmount</code> : This method allows the amount value buffer to be set using the string
+value from the <code>Sing</code> string parameter.
+<li></code>GetAmount</code> : This method returns the current value of the amount buffer as its string result.
+</ol>
+<p></table>
+<p>
+
+<a name="palette"><table width="95%"><tr><th width="30%">palette.xml
+<th>a colour palette selection module
+<tr><td colspan=2>
+<p><div align=center><img src="palette.png"></div>
+<p>This module provides a complete colour palette entry code selection mechanism
+for use in an <code>abal</code> application.
+<p>A single string parameter, and assocated length value, are expected by the module containing the
+hexadecimal initial value of the current palette entry code and returning the final selected value.
+<p>As is usual for standard dialog box mechanisms an escape code of <code>27</code> my be returned
+to indicate cancellation of the operation.
+<p></table>
+<p>
+
+
+<a name="renfile"><table width="95%"><tr><th width="30%">renfile.xml
+<th>a file rename confirmation dialog box module
+<tr><td colspan=2>
+<p><div align=center><img src="renfile.png"></div>
+<p>This dialog box implements a complete file rename operation for use by an <code>abal</code> application.
+The module is used by the standard file menu dialog box in response to selection of the 
+appropriate, file rename, option of the menu.
+<p>The module expects a single, length accompanied, string parameter value providing the
+name of the source file to be renamed and allows selection of the target name prior to
+activation of the rename operation or cancellation via the appropriate push buttons of the
+dialog box interface controls.
+<p>The rename operation, when activated, will be performed using an <code>abal</code> standard <code>LOADGO</code> instruction
+of the appropriate, system dependant, rename function.
+<p></table>
+<p>
+<a name="statusbar"><table width="95%"><tr><th width="30%">statusbar.xml
+<th>a status bar module
+<tr><td colspan=2>
+<p><div align=center><img src="statusbar.png"></div>
+<p>This component module provides a redimensionable status bar mechanism for the display of status
+information at the bottom of the user screen.
+<p>The following two public methods are available for use by clients of the component :
+<p>
+<ol>
+<li><code>StatusAt</code> : Repositions and redimensions the status bar using the position and dimension parameters provided.
+<li><code>InitVal</code> : Initialises the current value of the status message using the value of the string parameter.
+</ol>
+<p></table>
+<p>
+<a name="telephone"><table width="95%"><tr><th width="30%">telephone.xml
+<th>a telephone number entry overlay with selection mechanism
+<tr><td colspan=2>
+<p><div align=center><img src="telephone.png"></div>
+This overlay provides a standard telephone number input field with an associated list of names 
+and numbers drawn from a standard biosheet file management mechanism. A push button, when activated,
+ causes the telephone number list to be activated for selection.
+This overlay provides an example of visual data component usage for the handling of the 
+telphone list management module.
+<p>The following public interface methods allow the telephone number field to be established and retrieved
+by clients of the visual overlay component.
+<p>
+<ol>
+<li></code>SetNumber</code> : This method allows the telephone number buffer to be set using the string
+value from the <code>Sing</code> string parameter.
+<li></code>GetNumber</code> : This method returns the current value of the telephone number buffer as its string result.
+</ol>
+
+<p></table>
+<p>
+<a name="tierces"><table width="95%"><tr><th width="30%">tierces.xml
+<th>Biosheet information file management module for telephone number handling and selection. 
+<tr><td colspan=2>
+<p><div align=center><img src="tierces.png"></div>
+<p>This module provides a standardised biosheet information file management mechanism
+for use in <code>abal</code> applications in conjunction with the telephone number component overlay
+and the telephone number selection module.
+<p>In addition to data input fields for the various biosheet properties, this component offers 
+the biosheet record manipulation operations creation, consultation and deletion.
+<p>The biosheet record <code>Number</code> input field requires a parameter value, being an interface item,
+ representing the number of the biosheet record to be loaded. 
+<p>The value of the same <code>Number</code> input field will be returned to the caller unless the
+dialog box is closed using <code>Escape</code>.
+<p>No particular public methods are actually defined for this component.
+<p></table>
+<p>
+<a name="toolman"><table width="95%"><tr><th width="30%">toolman.xml
+<th>File opening tool management module
+<tr><td colspan=2>
+<p><div align=center><img src="toolman.png"></div>
+<p>This module provides a standardised file tool configuration management mechanism
+for use in <code>abal</code> applications in conjunction with the file operations menu and the filename
+selection component used by the filename overlay component.
+<p>In addition to data input fields for the various tool configuration properties, this component offers 
+the tool record manipulation operations creation, consultation and deletion.
+<p>The filename extension <code>File Type</code> input field requires a parameter value, being an interface item,
+ allowing access to the biosheet record to be loaded. 
+<p>The <code>Tool Name</code> edit field allows the full path and filename of the tools to be
+used to open files of the type specified by the value of the <code>File Type</code> edit field.
+<p>The <code>Options</code> edit field permits definition of eventual operations required 
+for the specific fiel type.
+<p>The value of the same <code>File Type</code> input field will be returned to the caller unless the
+dialog box is closed using <code>Escape</code>.
+<p>No particular public methods are actually defined for this component.
+<p></table>
+<p>
+<a name="villecp"><table width="95%"><tr><th width="30%">villecp.xml
+<th>a town and post code entry and selection overlay.
+<tr><td colspan=2>
+<p><div align=center><img src="villecp.png"></div>
+<p>This overlay component provides a complete town and postcode input and selection mechanism
+for use in <code>abal</code> applications. The town and post code input fields are accompanied by a file list
+offering selection of all town and post code values using the national standard <code>INSEE</code> file.
+<p>The following public methods are available for initialisation and recovery of the 
+two internal field values for use by external clients.
+<p>
+<ol>
+<li><code>GetTown</code> :  This method returns the value of the <code>Town</code> data input field as its string result.
+<li><code>GetPostCode</code> :  This method returns the value of the <code>PostCode</code> data input field as its string result.
+<li><code>SetTown</code> :  This method sets the value of the <code>Town</code> data input field using the string value provided by the method parameter.
+<li><code>SetPostCode</code> :  This method sets the value of the <code>PostCode</code> data input field using the string value provided by the method parameter.
+</ol>
+<p></table>
+<p>
+
+<a name="pincode"><table width="95%"><tr><th width="30%">pincode.xml
+<th>Randomised Secret Decimal Pin Code Input Module
+<tr><td colspan=2>
+<p><div align=center><img src="pincode.png"></div>
+<p>This module provides a secret, random, decimal, pincode input mechanism for use in 
+<code>abal</code> applications.
+The modules generates a random positioned collection of numeric keypad push buttons that must be
+activated using the mouse for the composition of the pincode value of up to 6 characters in length.
+<p>In addition to the numeric key buttons two other push buttons are provided, one for validation of 
+the input value, the other for reset and eventual abandon of the pincode entry operation.
+<p>A single public method <code>GetPinCode</code> is provided for the retrieval of the pincode
+input operation result value, returned as the string result of the method. 
+<p></table>
+<p>
+
+<a name="hexcode"><table width="95%"><tr><th width="30%">hexcode.xml
+<th>Randomised Secret Hexa-Decimal Pin Code Input Module
+<tr><td colspan=2>
+<p><div align=center><img src="hexcode.png"></div>
+<p>This module, similar to the preceeding component, provides a secret, random, hexa-decimal, pincode input mechanism for use in 
+<code>abal</code> applications.
+The modules generates a random positioned collection of hexa decimal keypad push buttons that must be
+activated using the mouse for the composition of the pincode value of up to 8 characters in length.
+<p>In addition to the numeric key buttons two other push buttons are provided, one for validation of 
+the input value, the other for reset and eventual abandon of the pincode entry operation.
+<p>A single public method <code>GetHexCode</code> is provided for the retrieval of the pincode
+input operation result value, returned as the string result of the method. 
+<p></table>
+<p>
+
+<a name="alphacode"><table width="95%"><tr><th width="30%">alphacode.xml
+<th>Randomised Secret Alpha Code Input Module
+<tr><td colspan=2>
+<p><div align=center><img src="alphacode.png"></div>
+<p>This module, similar to the preceeding components, provides a secret, random, alphabetical, code input mechanism for use in 
+<code>abal</code> applications.
+The modules generates a random positioned collection of alphabetical keypad push buttons that must be
+activated using the mouse for the composition of the code string of up to 26 characters in length.
+<p>In addition to the alpha key buttons two other push buttons are provided, one for validation of 
+the input string, the other for reset and eventual abandon of the alpha code entry operation.
+<p>A single public method <code>GetAlphaCode</code> is provided for the retrieval of the code
+input operation result string, returned as the string result of the method. 
+<p></table>
+<p>
+
+<a name="alphanum"><table width="95%"><tr><th width="30%">alphanum.xml
+<th>Randomised Secret Alpha Numeric Code Input Module
+<tr><td colspan=2>
+<p><div align=center><img src="alphanum.png"></div>
+<p>This module, similar to the preceeding components, provides a secret, random, alpha-numerical, code input mechanism for use in 
+<code>abal</code> applications.
+The modules generates a random positioned collection of alpha-numeric keypad push buttons that must be
+activated using the mouse for the composition of the code string of up to 26 characters in length.
+<p>In addition to the alpha key buttons two other push buttons are provided, one for validation of 
+the input string, the other for reset and eventual abandon of the alphanumeric code entry operation.
+<p>A single public method <code>GetAlphaCode</code> is provided for the retrieval of the code
+input operation result string, returned as the string result of the method. 
+<p></table>
+<p>
+
+<a name="keyboard"><table width="95%"><tr><th width="30%">keyboard.xml
+<th>Compact touch screen keyboard Module
+<tr><td colspan=2>
+<p><div align=center><img src="keyboard.png"></div>
+<p>This component provides a complete 62 key, yet concise, visual keyboard module for use in <code>abal</code> application
+for which a physical keyboard is either undesirable of simply not possible.
+<p>The usual modifier keys : left and right Shift, left and right Ctrl, Alt, AltGr, CapsLock and NumLock perform
+their standard transformation operation.
+<p>In addition, the Lock key, allows both the Shift and AltGr selection to be lock into place
+for multiple use of their alternative key symbols.
+<p>A single public method <code>GetResult</code> is provided for the retrieval of the 
+keyboard input string returned as thestring result of the method.
+<p></table>
+<p>
+
+<a name="clavier"><table width="95%"><tr><th width="30%">clavier.xml
+<th>Full 78 key touch screen keyboard Module
+<tr><td colspan=2>
+<p><div align=center><img src="clavier.png"></div>
+<p>This component provides a complete 79 key visual keyboard module for use in <code>abal</code> application
+for which a physical keyboard is either undesirable of simply not possible.
+<p>The usual modifier keys : left and right Shift, left and right Ctrl, Alt, AltGr, CapsLock and NumLock perform
+their standard transformation operation.
+<p>In addition, the Lock key, allows both the Shift and AltGr selection to be lock into place
+for multiple use of their alternative key symbols.
+<p>A single public method <code>GetResult</code> is provided for the retrieval of the 
+keyboard input string returned as the string result of the method.
+<p></table>
+<p>
+
+<a name="editor"><table width="95%"><tr><th width="30%">editor.xml
+<th>Text Editor component Overlay
+<tr><td colspan=2>
+<p><div align=center><img src="editor.png"></div>
+<p>This component provides an overlay package using the new <code>abal</code> editor dynamic library <code>bdaedit</code>.
+<p>This dynamic library encapsualtes the standard <code>abal</code> text editor <code>aed</code>
+and offers interface functions for its tight integration within application programs.
+<p>This component demonstrates the use of the various editor interface functions and provides
+a reusable editor component suitable for most uses.
+<p>Two public interface methods <code>UseFileName</code> and <code>DropFileName</code> allow a named text file 
+to be loaded or released by the underlying editor instance.
+<p>For further information relating to the editor library please consult the document <a href="bdaedit.htm">Abal Text Editor Dynamic Library</a>.
+<p></table>
+<p>
+
+<a name="hmenu"><table width="95%"><tr><th width="30%">hmenu.xml
+<th>Horizontal menu bar and option management component Overlay.
+<tr><td colspan=2>
+<p><div align=center><img src="hmenu.png"></div>
+<p>This overlay component provides a complete horizontal menu management mechanism for use in <code>abal</code> applications.
+The mechanism provides for the management of up to ten menu options to be presented for selection
+by the user.
+<p>The following public interface methods allow completion of the description of the component during
+the construction, <code>Create</code>, method of the component's hosting widget, prior to its use in the
+parent forms model.
+<p>
+<ol>
+<li> <code>MenuReset</code> : This method takes no parameters and allows the internal structures of the menu
+management mechanisms to be reset to empty. This may be required when re-using a menu component within
+a forms model.
+
+<li> <code>MenuOption</code> : This method allows the definition of a menu option. Taking four parameters, in order : 
+	<ul>
+	<li><code>Number</code> : The number of the menu option to be defined ranging from 1 to 10.
+	<li><code>Label</code> : The option label string, of up to 32 characters, to be displayed
+	 in the menu bar to represent the option. This may be provided as a blank string to represent
+	 a menu separator.
+	<li><code>Target</code> : The option target string of up to 64 characters providing the name of
+	a visual form to be activated by its attachement and execution in response to the selection 
+	of the associated option. This parameter may be provided blank in which case the following 
+	parameter value code will be returned instead, upon activation of the option.
+	<li><code>Value</code> : The value to be returned to represent selection of the option
+	when the preceeding target overlay name parameter has not been defined.
+	</ul>
+
+
+<li> <code>MenuChain</code> : This method is similar to the preceeding method and allows the definition of a menu option.
+	Taking three parameters in order :
+	<ul>
+	<li><code>Number</code> : The number of the menu option to be defined ranging from 1 to 10.
+	<li><code>Label</code> : The option label string, of up to 32 characters, to be displayed
+	 in the menu bar to represent the option. This may be provided as a blank string to represent
+	 a menu separator.
+	<li><code>Target</code> : The option target string of up to 64 characters providing the name of
+	a visual form or other abal program to be activated by a <code>Chain</code> instruction 
+	in response to the selection of the associated option. This parameter should not be provided blank.
+	</ul>
+
+<li> <code>MenuLoadGo</code> : This method is similar to the preceeding method and allows the definition of a menu option.
+	Taking three parameters in order :
+	<ul>
+	<li><code>Number</code> : The number of the menu option to be defined ranging from 1 to 10.
+	<li><code>Label</code> : The option label string, of up to 32 characters, to be displayed
+	 in the menu bar to represent the option. This may be provided as a blank string to represent
+	 a menu separator.
+	<li><code>Target</code> : The option target string of up to 64 characters providing the name of
+	a visual form or other abal program to be activated by a <code>Load.Go</code> instruction 
+	in response to the selection of the associated option. This parameter should not be provided blank.
+	</ul>
+
+<li> <code>MenuWidth</code> : This method should be called after definition of the various 
+menu options. A a value is to be provided for the width, described in pixels, required for 
+calculation of  the overall horizontal menu bar width. The width of the individual menu options
+will be calculated as this width divided by the option count. The option count is the cumul of all
+calls to the menu option methods described above, after the call to the reset method.
+<p>
+</ol>
+<p>
+ 
+<p></table>
+<p>
+
+<a name="vmenu"><table width="95%"><tr><th width="30%">vmenu.xml
+<th>Vertical menu and option management component Overlay.
+<tr><td colspan=2>
+<p><div align=center><img src="vmenu.png"></div>
+<p>This overlay component provides a complete vertical menu management mechanism for use in <code>abal</code> applications.
+The mechanism provides for the management of up to twenty menu options to be presented for selection
+by the user.
+<p>The description of the menu is similar to the preceeding horizontal menu component.
+<p>The following public interface methods allow completion of the description of the component during
+the construction, <code>Create</code>, method of the component's hosting widget, prior to its use in the
+parent forms model.
+<ol>
+<li> <code>MenuReset</code> : This method takes no parameters and allows the internal structures of the menu
+management mechanisms to be reset to empty. This may be required when re-using a menu component within
+a forms model.
+
+<li> <code>MenuOption</code> : This method allows the definition of a menu option. Taking four parameters, in order : 
+	<ul>
+	<li><code>Number</code> : The number of the menu option to be defined ranging from 1 to 20.
+	<li><code>Label</code> : The option label string, of up to 32 characters, to be displayed
+	 in the menu bar to represent the option. This may be provided as a blank string to represent
+	 a menu separator.
+	<li><code>Target</code> : The option target string of up to 64 characters providing the name of
+	a visual form to be activated by its attachement and execution in response to the selection 
+	of the associated option. This parameter may be provided blank in which case the following 
+	parameter value code will be returned instead, upon activation of the option.
+	<li><code>Value</code> : The value to be returned to represent selection of the option
+	when the preceeding target overlay name parameter has not been defined.
+	</ul>
+
+
+<li> <code>MenuChain</code> : This method is similar to the preceeding method and allows the definition of a menu option.
+	Taking three parameters in order :
+	<ul>
+	<li><code>Number</code> : The number of the menu option to be defined ranging from 1 to 20.
+	<li><code>Label</code> : The option label string, of up to 32 characters, to be displayed
+	 in the menu bar to represent the option. This may be provided as a blank string to represent
+	 a menu separator.
+	<li><code>Target</code> : The option target string of up to 64 characters providing the name of
+	a visual form or other abal program to be activated by a <code>Chain</code> instruction 
+	in response to the selection of the associated option. This parameter should not be provided blank.
+	</ul>
+
+<li> <code>MenuLoadGo</code> : This method is similar to the preceeding method and allows the definition of a menu option.
+	Taking three parameters in order :
+	<ul>
+	<li><code>Number</code> : The number of the menu option to be defined ranging from 1 to 20.
+	<li><code>Label</code> : The option label string, of up to 32 characters, to be displayed
+	 in the menu bar to represent the option. This may be provided as a blank string to represent
+	 a menu separator.
+	<li><code>Target</code> : The option target string of up to 64 characters providing the name of
+	a visual form or other abal program to be activated by a <code>Load.Go</code> instruction 
+	in response to the selection of the associated option. This parameter should not be provided blank.
+	</ul>
+
+<li> <code>MenuTitle</code> : This method may be called to provide a string value to be used
+as the title of the vertical menu display window.
+<p>
+</ol>
+<p>Vertical menus will recalculate their height corresponding to the accumulated option
+count.
+<p>
+ 
+<p></table>
+<p>
+
+<a name="toolbar"><table width="95%"><tr><th width="30%">toolbar.xml
+<th>Icon toolbar component Overlay.
+<tr><td colspan=2>
+<p><div align=center><img src="toolbar.png"></div>
+<p>This overlay component provides a complete horizontal icon tool menu management mechanism for use in <code>abal</code> applications.
+The mechanism provides for the management of up to thirty two menu options to be presented for selection
+by the user.
+<p>The description of a tool bar component is similar to that of the horizontal menu bar except
+that filenames are to be provided, instead of text messages, to be used for the display of the
+tool bar options.
+<p>The following public interface methods allow completion of the description of the component during
+the construction, <code>Create</code>, method of the component's hosting widget, prior to its use in the
+parent forms model.
+<p>
+<ol>
+<li> <code>MenuReset</code> : This method takes no parameters and allows the internal structures of the menu
+management mechanisms to be reset to empty. This may be required when re-using a menu component within
+a forms model.
+
+<li> <code>MenuOption</code> : This method allows the definition of a menu option. Taking four parameters, in order : 
+	<ul>
+	<li><code>Number</code> : The number of the tool option to be defined ranging from 1 to 32.
+	<li><code>Image</code> : The option image name string, of up to 64 characters, to be used to locate the
+	image to be displayed in the tool bar to represent the option. This may be provided as a blank string to represent
+	 a menu separator.
+	<li><code>Target</code> : The option target string of up to 64 characters providing the name of
+	a visual form to be activated by its attachement and execution in response to the selection 
+	of the associated option. This parameter may be provided blank in which case the following 
+	parameter value code will be returned instead, upon activation of the option.
+	<li><code>Value</code> : The value to be returned to represent selection of the option
+	when the preceeding target overlay name parameter has not been defined.
+	</ul>
+
+
+<li> <code>MenuChain</code> : This method is similar to the preceeding method and allows the definition of a menu option.
+	Taking three parameters in order :
+	<ul>
+	<li><code>Number</code> : The number of the menu option to be defined ranging from 1 to 32.
+	<li><code>Image</code> : The option image name string, of up to 64 characters, to be used to locate the
+	image to be displayed in the tool bar to represent the option. This may be provided as a blank string to represent
+	 a menu separator.
+	<li><code>Target</code> : The option target string of up to 64 characters providing the name of
+	a visual form or other abal program to be activated by a <code>Chain</code> instruction 
+	in response to the selection of the associated option. This parameter should not be provided blank.
+	</ul>
+
+<li> <code>MenuLoadGo</code> : This method is similar to the preceeding method and allows the definition of a menu option.
+	Taking three parameters in order :
+	<ul>
+	<li><code>Number</code> : The number of the menu option to be defined ranging from 1 to 32.
+	<li><code>Image</code> : The option image name string, of up to 64 characters, to be used to locate the
+	image to be displayed in the tool bar to represent the option. This may be provided as a blank string to represent
+	 a menu separator.
+	<li><code>Target</code> : The option target string of up to 64 characters providing the name of
+	a visual form or other abal program to be activated by a <code>Load.Go</code> instruction 
+	in response to the selection of the associated option. This parameter should not be provided blank.
+	</ul>
+
+<li> <code>MenuWidth</code> : This method should be called after definition of the various 
+tool options. A a value is to be provided for the width, described in pixels, required for 
+calculation of  the overall horizontal tool bar width. The width of the individual tool options
+will be calculated as this width divided by the option count. The option count is the cumul of all
+calls to the tool option methods described above, after the call to the reset method.
+<p>
+</ol>
+<p></table>
+<p>
+
+<p>
+
+<a name="examples"><table width="95%"><tr><th colspan=2><h3>Example Programs</h3>
+<tr><td colspan=2><p>This section of the documentation describes the various components and the use for which they are intended.
+</table>
+<p>
+
+<a name="example1"><table width="95%"><tr><th width="30%">program.xml
+<th>Program showing examples of component use.
+<tr><td colspan=2>
+<p><div align=center><img src="program.png"></div>
+<p>This forms model program shows examples of use of all overlay  components available
+with the current version of <code>Sing</code> and <code>abal</code>.
+<p>Overlay components are like instances, or objects, having storage associated with each
+usage forthe state variables of each instance.
+<p>First off, we see four examples of use of the <code>datum</code> component for date input
+and selection.
+<p>Next we see four exampels of use of the <code>money</code> component for monetary ammount
+input or calculation.
+<p>Below this we see an example of the <code>fichier</code> file selection component.
+<p>This is followed by two examples of the <code>telephone</code> component for telephone
+number input or selection.
+<p>Finally, above the push buttons, we see an example of use of the <code>villecp</code>
+component allowing town and post code selection using the standard french insee file of
+locations provided with the component.
+<p>Each of the push buttons give access to the corresponding component as indicated by their label.
+<p></table>
+<p>
+
+<a name="menutest"><table width="95%"><tr><th width="30%">menutest.xml
+<th>Example Program showing use of menu and tool bar components
+<tr><td colspan=2>
+<p><div align=center><img src="menutest.png"></div>
+<p>This program shows an example menu similar to the restaurant selection system provided
+as an example for the asfun dynamic library. This example comprises a horizontal menu
+offering seven options each leading to a vertical menu selection component for each category.
+<p>A tool bar component has been added simply to demonstrate its use.
+<p>The <code>Create</code> method, of each menu component hosting widget, contains the description
+on the menu using the appropriate menu component interface method calls.
+<p></table>
+<p>
+
+<a name="tooldata"><table width="95%"><tr><th width="30%">tooldata.xml
+<th>Abal Tool Data Management Program
+<tr><td colspan=2>
+<p><div align=center><img src="tooldata.png"></div>
+<p>This program provides a utility program allowing inspection and modification of the abal tool
+virtual memory data file. This file describes the name and localisation of the various abal tools,
+editor, translator, linker etc, used by the new visual components and other derived application
+programs such as the web server and services tool and administration.
+<p>The localisation of the <code>abal.meme</code> tool data file is defined by the value of the 
+<code>TOOLDATA</code> environment variable depending on the host operating system installation.
+<p></table>
+<p>
+
+<a name="intro"><table width="95%"><tr><th colspan=2><h3>Printing Components and Example</h3>
+<tr><td colspan=2>
+<p>This section of the document presents two components for use with printed
+document models and an example document to demonstrate their use.
+<p>
+</table>
+<p>
+<a name="printout"><table width="95%"><tr><th width="30%">printout.xml
+<th>Printed Document Control Overlay 
+<tr><td colspan=2>
+<p><div align=center><img src="printout.png"></div>
+<p>This overlay component provides print control functions allowing document
+paged previewing and printing to a variety of output destinations.
+<p>The overlay may be activated from a standard overlay pushbutton widget and should be provided with
+a single parameter representing the the filename of the Print Document Overlay Program.
+<p>
+<p></table>
+
+<p>
+<a name="hardcopy"><table width="95%"><tr><th width="30%">hardcopy.xml
+<th>Example Printed Document Model
+<tr><td colspan=2>
+<p><div align=center><img src="hardcopy.png"></div>
+<p>This overlay program provides an example printed document for the demonstration of the 
+preceeding print control overlay and the following screen output preview module.
+<p>The overlay expects the printer name and driver names to be provided as the two
+command line parameters in the standard fashion.
+<p></table>
+<p>
+
+<a name="preview"><table width="95%"><tr><th width="30%">previewer.xml
+<th>Printed Document Screen Preview Module
+<tr><td colspan=2>
+<p><div align=center><img src="previewer.png"></div>
+<p>This module provides a screen preview mechanism for use with printer document modules.
+<p>The module will be activated at each page break of the document model for presentation
+of the current page on the screen. The page is saved to an image file which is then 
+displayed by the component. Scrolling through pages may be performed using the appropriate
+push buttons.
+<p></table>
+
+<p>
+<table width="95%">
+<tr><th><h3 align=center>Copyright &copy; <a href="http://www.prologue.fr">Prologue</a></h3>
+<tr><th><h3 align=center>Version Fran&ccedil;aise <a href="index.htm"><div align=center><img src="tricolor.png" alt="french"></a></h3>
+</table>
+</div>
+</body>
+</html>
+
+
+

@@ -1,0 +1,91 @@
+
+editmenu.o: $(SP01)editmenu.c $(SP01)visual.h $(SP01)vwidget.h
+evenmenu.o: $(SP01)evenmenu.c $(SP01)visual.h $(SP01)vwidget.h
+filemenu.o: $(SP01)filemenu.c $(SP01)visual.h $(SP01)vwidget.h
+formmenu.o: $(SP01)formmenu.c $(SP01)visual.h $(SP01)vwidget.h
+imagmenu.o: $(SP01)imagmenu.c $(SP01)visual.h $(SP01)vwidget.h
+mainmenu.o: $(SP01)mainmenu.c $(SP01)visual.h $(SP01)vwidget.h
+optimenu.o: $(SP01)optimenu.c $(SP01)visual.h $(SP01)vwidget.h
+projmenu.o: $(SP01)projmenu.c $(SP01)visual.h $(SP01)vwidget.h
+tracmenu.o: $(SP01)tracmenu.c $(SP01)visual.h $(SP01)vwidget.h
+viewmenu.o: $(SP01)viewmenu.c $(SP01)visual.h $(SP01)vwidget.h
+widgmenu.o: $(SP01)widgmenu.c $(SP01)visual.h $(SP01)vwidget.h
+
+#vtest.o: $(SP01)vtest.c $(SP01)visual.h $(SP01)vwidget.h
+#vana.o:  $(SP01)vana.c $(SP01)visual.h $(SP01)vwidget.h
+
+vaed.o:      $(SP01)vaed.c $(SP01)visual.h $(SP01)vwidget.h
+vstatus.o:  $(SP01)vstatus.c $(SP01)visual.h $(SP01)vwidget.h
+vlocate.o:  $(SP01)vlocate.c $(SP01)visual.h $(SP01)vwidget.h
+valign.o:  $(SP01)valign.c $(SP01)visual.h $(SP01)vwidget.h
+vcompose.o:  $(SP01)vcompose.c $(SP01)visual.h $(SP01)vwidget.h
+vcompare.o:  $(SP01)vcompare.c $(SP01)visual.h $(SP01)vwidget.h
+vnation.o:  $(SP01)vnation.c $(SP01)visual.h $(SP01)vwidget.h
+vhelper.o:  $(SP01)vhelper.c $(SP01)visual.h $(SP01)vwidget.h
+vaprod.o:    $(SP01)vaprod.c $(SP01)visual.h $(SP01)vwidget.h
+vcobprod.o:    $(SP01)vcobprod.c $(SP01)visual.h $(SP01)vwidget.h
+vcamera.o:   $(SP01)vcamera.c $(SP01)visual.h $(SP01)vwidget.h
+vcprod.o:    $(SP01)vcprod.c $(SP01)visual.h $(SP01)vwidget.h
+vcube.o:     $(SP01)vcube.c $(SP01)visual.h $(SP01)vwidget.h
+vtree.o:     $(SP01)vtree.c $(SP01)visual.h $(SP01)vwidget.h
+vseek.o: $(SP01)vseek.c $(SP01)visual.h $(SP01)vwidget.h
+vfile.o:     $(SP01)vfile.c $(SP01)singfile.h $(SP01)visual.h $(SP01)vwidget.h
+vcursor.o:    $(SP01)vcursor.c $(SP01)visual.h $(SP01)vwidget.h
+vdebug.o:    $(SP01)vdebug.c $(SP01)visual.h $(SP01)vwidget.h
+vedcmd.o:    $(SP01)vedcmd.c $(SP01)visual.h $(SP01)vwidget.h
+veditor.o:   $(SP01)veditor.c $(SP01)visual.h $(SP01)vwidget.h
+verror.o:    $(SP01)verror.c $(SP01)visual.h $(SP01)vwidget.h
+vexit.o:     $(SP01)vexit.c $(SP01)visual.h $(SP01)vwidget.h
+vfextr.o:    $(SP01)vfextr.c $(SP01)visual.h $(SP01)vwidget.h
+vfload.o:    $(SP01)vfload.c $(SP01)visual.h $(SP01)vwidget.h
+vform.o:     $(SP01)vform.c $(SP01)visual.h $(SP01)vwidget.h
+vmethod.o:   $(SP01)vmethod.c $(SP01)visual.h $(SP01)vwidget.h
+vfsave.o:    $(SP01)vfsave.c $(SP01)visual.h $(SP01)vwidget.h
+vfselect.o:  $(SP01)vfselect.c $(SP01)visual.h $(SP01)vwidget.h
+vhtml.o:     $(SP01)vhtml.c $(SP01)visual.h $(SP01)vwidget.h
+vwebgen.o:   $(SP01)vwebgen.c $(SP01)visual.h $(SP01)vwidget.h
+viload.o:    $(SP01)viload.c $(SP01)visual.h $(SP01)vwidget.h
+vimage.o:    $(SP01)vimage.c $(SP01)visual.h $(SP01)vwidget.h
+vimport.o:   $(SP01)vimport.c $(SP01)visual.h $(SP01)vwidget.h
+vintro.o:    $(SP01)vintro.c $(SP01)visual.h $(SP01)vwidget.h
+visave.o:    $(SP01)visave.c $(SP01)visual.h $(SP01)vwidget.h
+vlink.o:     $(SP01)vlink.c $(SP01)visual.h $(SP01)vwidget.h
+vload.o:     $(SP01)vload.c $(SP01)visual.h $(SP01)vwidget.h
+vmload.o:    $(SP01)vmload.c $(SP01)visual.h $(SP01)vwidget.h
+vmprod.o:    $(SP01)vmprod.c $(SP01)visual.h $(SP01)vwidget.h
+vmsave.o:    $(SP01)vmsave.c $(SP01)visual.h $(SP01)vwidget.h
+vamake.o:    $(SP01)vamake.c $(SP01)visual.h $(SP01)vwidget.h
+vpage.o:     $(SP01)vpage.c $(SP01)visual.h $(SP01)vwidget.h
+vparam.o:    $(SP01)vparam.c $(SP01)visual.h $(SP01)vwidget.h
+vrecrep.o:   $(SP01)vrecrep.c $(SP01)visual.h $(SP01)vwidget.h
+vrefer.o:    $(SP01)vrefer.c $(SP01)visual.h $(SP01)vwidget.h
+vreplace.o:  $(SP01)vreplace.c $(SP01)visual.h $(SP01)vwidget.h
+vsave.o:     $(SP01)vsave.c $(SP01)visual.h $(SP01)vwidget.h
+vsearch.o:   $(SP01)vsearch.c $(SP01)visual.h $(SP01)vwidget.h
+vexadb.o:    $(SP01)vexadb.c $(SP01)visual.h $(SP01)vwidget.h
+vwatch.o:    $(SP01)vwatch.c $(SP01)visual.h $(SP01)vwidget.h
+vshow.o:     $(SP01)vshow.c $(SP01)visual.h $(SP01)vwidget.h
+vtrad.o:     $(SP01)vtrad.c $(SP01)visual.h $(SP01)vwidget.h
+vwidget.o:   $(SP01)vwidget.c $(SP01)visual.h $(SP01)vwidget.h
+vcolours.o:  $(SP01)vcolours.c $(SP01)visual.h $(SP01)vwidget.h
+vstdfont.o:  $(SP01)vstdfont.c $(SP01)visual.h $(SP01)vwidget.h
+vsysfont.o:  $(SP01)vsysfont.c $(SP01)visual.h $(SP01)vwidget.h
+! make
+vcompare.o:  $(SP01)vcompare.c $(SP01)visual.h $(SP01)vwidget.h
+! make
+
+VGENERAL = vrefer.o verror.o vintro.o vparam.o vrecrep.o vexit.o vfselect.o vstatus.o 
+VIMAGES  = visave.o viload.o vimage.o vcolours.o
+VFONTS   = vfload.o vfsave.o vimport.o vfextr.o vstdfont.o vsysfont.o
+VFORMS   = vwidget.o vform.o vsave.o vload.o vcompose.o vmethod.o vlocate.o
+VEDIT    = vaed.o vedcmd.o vsearch.o vreplace.o vnation.o vhelper.o  vcompare.o $(AVNFILE)
+# vcompare.o
+# vana.o
+VTOOLS   = vdebug.o vtrad.o vlink.o vamake.o vfile.o vtree.o vseek.o
+VPROJECT = vcamera.o vcube.o vmsave.o vmload.o veditor.o vcursor.o valign.o
+VPRODUCT = vcprod.o vaprod.o vmprod.o vhtml.o vpage.o vwebgen.o vcobprod.o 
+VMENUS   = editmenu.o evenmenu.o filemenu.o formmenu.o imagmenu.o mainmenu.o optimenu.o projmenu.o tracmenu.o viewmenu.o widgmenu.o
+VSING = $(VGENERAL) $(VIMAGES) $(VFONTS) $(VFORMS) $(VPROJECT) $(VTOOLS) $(VEDIT) $(VPRODUCT) $(VMENUS)
+
+! make
+

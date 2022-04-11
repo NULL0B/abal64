@@ -1,0 +1,33 @@
+# -------------------------------------------------------------------------------------------
+# this makefile shows the minimum required for the construction of a basic graphic.al program
+# built around the pixel library. this may be used to derive more complicated programs.
+# -------------------------------------------------------------------------------------------
+
+STUBNAME  = graphic
+
+! include $(ABAL)/common/common.def
+! include $(ABAL)/common/editor.def
+! include $(ABAL)/common/allocate.def
+! include $(ABAL)/common/libaccess.def
+! include $(ABAL)/common/ixmisc.def 
+! include $(ABAL)/common/repmisc.def 
+! include $(ABAL)/common/dirmisc.def 
+! include $(ABAL)/common/misc.def 
+! include $(ABAL)/common/jpeg.def 
+! include $(ABAL)/common/ldap.def 
+! include $(ABAL)/common/libimage.def
+! include $(ABAL)/common/pixilib.def
+! include $(ABAL)/common/ixciconr32.def
+
+STDPROD   = $(ABAL)/pixel/stdprod.o
+LIBRARIES = $(PIXILIB) $(ALLOCATE) $(LIBJPEG) $(LIBIMAGE) $(IXCICONR32) $(XLIB) $(STDPROD) $(LIBACCESS)
+INCLUDE   = -I$(ABAL)/src/pixel
+
+$(STUBNAME).o: $(STUBNAME).c
+	gcc -c $(INCLUDE) $(STUBNAME).c
+! make
+$(STUBNAME): $(STUBNAME).o
+	gcc -o $@ $? $(LIBRARIES)
+! make
+
+

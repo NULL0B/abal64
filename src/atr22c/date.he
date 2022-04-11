@@ -1,0 +1,50 @@
+/*
+ *      Projet  : ABAL                  Copyright Prologue s.a. (c) 1993, 1995
+ *      Module  : ATR
+ *      Fichier : DATE.HE
+ *      Version : 2.1f
+ *      Date    : 22/11/95
+ *      Systeme : PRL / UNIX / VMS
+ *
+ *      Traducteur ABAL
+ *
+ *      [Fonction de conversion date systeme]
+ *
+ */
+
+#ifdef _DATE
+#define EXT_DATE
+#else
+#define EXT_DATE extern
+#endif /* _DATE */
+
+/* PUBLIC */
+/* ------ */
+
+/* PUBLIC VARIABLES */
+/* ---------------- */
+
+/* PUBLIC FONCTIONS */
+/* ---------------- */
+
+#ifdef LINT_ARGS
+
+EXT_DATE void xdate(char *);
+EXT_DATE void xtime(char *);
+
+#else
+
+EXT_DATE void xdate();
+EXT_DATE void xtime();
+
+
+#endif /* LINT_ARGS */
+
+/* PUBLIC END */
+/* ---------- */
+
+/* FIN DEFINITIONS INTERNES */
+/* ------------------------ */
+
+/* ---------------- FIN date.he ----------------------------------------- */
+

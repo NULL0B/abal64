@@ -1,0 +1,24 @@
+AIREAMH = 02$(SUFFIX)
+VABAL   = abal3.3a.0.
+
+# ancien en locale chez prologue
+# ------------------------------
+IPSCP   = 172.17.1.1
+PORTSCP = 
+
+# a travers l'internet
+# --------------------
+IPSCP   = 213.223.244.10
+PORTSCP = -P 22100
+
+# nouveau en locale chez prologue
+# -------------------------------
+IPSCP   = 172.17.117.1
+PORTSCP = 
+
+$1 = $(VABAL)$(AIREAMH)
+$2 = root@$(IPSCP):/usr/local/httpd/htdocs/download/
+$2 = root@$(IPSCP):/home/stockoutils/download/
+$3 = abal31c1$(AIREAMH)
+
+

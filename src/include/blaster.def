@@ -1,0 +1,44 @@
+version = 1
+runtime = "blaster"
+% sbinit(%,%,%)
+% sbliber()
+% sbputb(%)
+% sbputz(%,$)
+% sbsend(%,$)
+% sbstatus() 
+% sbreset()
+% sbtempo(%,%,%)
+% sbrecv(%,$?)
+% sbgetz(%,$?)
+% sbgetb()
+% sbsound(%)
+% sbdmastate()
+
+% sbalsm($?,%)
+% sblbsm($?) 
+
+; get mixer register value
+% sbgetmix(%)
+; put mixer register value
+% sbputmix(%,%)
+; put opl fm synth register value
+% sbputopl(%,%)
+; set opl fm synth channel note  on or off
+% sboplnote(%,%,%,%)
+; set opl fm synth channel mode
+% sboplmode(%,%)
+; set opl fm synth channel control 9 or 5+drums
+% sboplctrl(%)
+
+; play wave file filename, length, mode
+% sbwavefile($,%,%)
+; record direct to wave file
+% sbrecord($,%,%,%,%)
+; submit track for multi track play : track,name,length,level,pan,mute
+% sbtrack(%,$,%,%,%,%)
+; submit play
+% sbplay(%,%)
+% sbcontrol(%,%,%,%)
+
+end
+

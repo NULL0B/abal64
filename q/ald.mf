@@ -1,0 +1,17 @@
+# Optimised External Fields Module linkage tester 
+# -----------------------------------------------
+qprg.o: qprg.as
+	atr22cuk -m $*
+qmod1.o: qmod1.as
+	atr22cuk -m $*
+qmod2.o: qmod2.as
+	atr22cuk -m $*
+
+! make
+
+qprg.at: qprg.o qmod1.o qmod2.o
+	ald22b qprg.o qmod1.o qmod2.o 
+
+! make
+	
+

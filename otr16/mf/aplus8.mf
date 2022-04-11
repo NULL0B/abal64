@@ -1,0 +1,9 @@
+
+!make
+APLUS8 =  $(POBJ)library$(OBJ) $(POBJ)overlay$(OBJ)
+$(POBJ)library$(OBJ):  $(SP01)library.c $(SP01)aplus.h $(SP01)stdtypes.h $(SP01)hosts.h $(SP01)truser.h $(SP01)buffers.h $(SP01)value.h $(SP01)status.h $(SP01)options.h $(SP01)struct.h $(SP01)relation.h $(SP01)friend.h $(SP01)member.h $(SP01)trapping.h $(SP01)abal.h $(SP01)library.h '
+$(SP01)allocate.h
+$(POBJ)overlay$(OBJ):  $(SP01)overlay.c $(SP01)aplus.h $(SP01)stdtypes.h $(SP01)hosts.h $(SP01)truser.h $(SP01)buffers.h $(SP01)value.h $(SP01)struct.h $(SP01)relation.h $(SP01)friend.h $(SP01)overlay.h $(SP01)macros.h $(SP01)options.h $(SP01)status.h $(SP01)syntax.h $(SP01)memory.h $(SP01)exrdef.h '
+$(SP01)member.h $(SP01)trapping.h $(SP01)abal.h $(SP01)allocate.h $(SP01)context.h
+
+

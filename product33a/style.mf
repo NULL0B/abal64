@@ -1,0 +1,66 @@
+# generated makefile : style.mf 
+# ------------------------------------
+$(ABAL)/product33a/style/button.css: $(ABAL)/src/style/button.css
+	cp $* $@ 
+$(ABAL)/product33a/style/check.css: $(ABAL)/src/style/check.css
+	cp $* $@ 
+$(ABAL)/product33a/style/frame.css: $(ABAL)/src/style/frame.css
+	cp $* $@ 
+$(ABAL)/product33a/style/icon.css: $(ABAL)/src/style/icon.css
+	cp $* $@ 
+$(ABAL)/product33a/style/progress.css: $(ABAL)/src/style/progress.css
+	cp $* $@ 
+$(ABAL)/product33a/style/radio.css: $(ABAL)/src/style/radio.css
+	cp $* $@ 
+$(ABAL)/product33a/style/scroll.css: $(ABAL)/src/style/scroll.css
+	cp $* $@ 
+$(ABAL)/product33a/style/select.css: $(ABAL)/src/style/select.css
+	cp $* $@ 
+$(ABAL)/product33a/style/switch.css: $(ABAL)/src/style/switch.css
+	cp $* $@ 
+$(ABAL)/product33a/style/table.css: $(ABAL)/src/style/table.css
+	cp $* $@ 
+$(ABAL)/product33a/style/tabpage.css: $(ABAL)/src/style/tabpage.css
+	cp $* $@ 
+$(ABAL)/product33a/style/textfont.css: $(ABAL)/src/style/textfont.css
+	cp $* $@ 
+$(ABAL)/product33a/style/visual.css: $(ABAL)/src/style/visual.css
+	cp $* $@ 
+$(ABAL)/product33a/style/window.css: $(ABAL)/src/style/window.css
+	cp $* $@ 
+$(ABAL)/product33a/style/sing.css: $(ABAL)/src/style/sing.css
+	cp $* $@ 
+$(ABAL)/product33a/style/singtree.css: $(ABAL)/src/style/singtree.css
+	cp $* $@ 
+$(ABAL)/product33a/style/singmenu.css: $(ABAL)/src/style/singmenu.css
+	cp $* $@ 
+$(ABAL)/product33a/style/singwind.css: $(ABAL)/src/style/singwind.css
+	cp $* $@ 
+$(ABAL)/product33a/style/singctrl.css: $(ABAL)/src/style/singctrl.css
+	cp $* $@ 
+$(ABAL)/product33a/style/singbar.css: $(ABAL)/src/style/singbar.css
+	cp $* $@ 
+
+! make
+
+$(ABAL)/product33a/style/schema.css: $(ABAL)/src/style/schema.css
+	cp $* $@ 
+$(ABAL)/product33a/style/merise.css: $(ABAL)/src/style/merise.css
+	cp $* $@ 
+$(ABAL)/product33a/style/uml.css: $(ABAL)/src/style/uml.css
+	cp $* $@ 
+$(ABAL)/product33a/style/singfmed.css: $(ABAL)/src/style/singfmed.css
+	cp $* $@ 
+$(ABAL)/product33a/style/singsmed.css: $(ABAL)/src/style/singsmed.css
+	cp $* $@ 
+
+! make
+
+$(ABAL)/product33a/style/blueframe.css: $(ABAL)/src/style/blueframe.css
+	cp $* $@ 
+$(ABAL)/product33a/style/greyframe.css: $(ABAL)/src/style/greyframe.css
+	cp $* $@ 
+
+! make
+
+

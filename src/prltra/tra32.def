@@ -1,0 +1,12 @@
+LIBRARY PrlTra32
+
+DESCRIPTION 'DLL ABAL - Bibliotheque de trace pour Z-Library'
+
+EXETYPE WINDOWS
+
+EXPORTS
+	__rt_error
+	__rt_fin
+	__rt_init
+	__rt_arg
+	__InitRelais

@@ -1,0 +1,28 @@
+CTR   = ctr32
+ctr   = $(EXABIN)/$(CTR)
+CTR   = $(ABAL)/bin/ctr64
+
+POBJ  =
+OBJ   = .o
+
+SP01  = $(ABAL)/src/otr/
+SP02  = $(ABAL)/include/
+PATHMF = $(ABAL)/otr64/mf/
+
+.c.o:
+! ifdef AGR
+	-$(GCC) -c -g $(GDB) -DUNIX -I$(SP01) -I$(SP02) -Dotr32 -Dotr64 $* $(PIPO)
+	cat pipo1 pipo2 > pipo
+	$(AGR) -w -apipo
+! else
+	$(GCC) -c -g $(GDB) -DUNIX -I$(SP01) -I$(SP02) -Dotr32 -Dotr64 $* 
+! endif
+
+! include $(PATHMF)ctr2.mf
+! include $(PATHMF)ctrb.mf
+! include $(PATHMF)ctrc.mf
+! include $(PATHMF)ctrd.mf
+! make
+! include $(PATHMF)ctr.mf
+! make
+

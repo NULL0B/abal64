@@ -1,0 +1,49 @@
+VERSION = 22c
+ABAL = /home/Dev/abal32
+! include $(ABAL)/common/allocate.def
+! include $(ABAL)/common/common.def
+! include $(ABAL)/common/libaccess.def
+! include $(ABAL)/common/ixciconr.def
+
+! include options.atr
+
+
+SP01 =  $(ABAL)/src/atr$(VERSION)/
+IP01 = $(ABAL)/include/
+SPECIAL = -DVERSION_XX -DUNIX -D_KEYWORD_DLLNAME -D_KEYWORD_TRACE 
+CCDEF = -DUNIX -Dunix -Dver15 -DUSEIT -DLINUX -Dpilote $(SPECIAL) $(OPTATR) -DLINT_ARGS
+
+.c.o:
+	-gcc -c -g $(CCDEF) -I$(IP01) $* 1>pipo1 2>pipo2
+	-cat pipo1 pipo2 > pipo
+	agr -apipo
+
+date.o:     $(SP01)date.c
+debug.o:    $(SP01)debug.c
+expr.o:     $(SP01)expr.c $(SP01)expr1.c $(SP01)expr2.c
+gencode.o:  $(SP01)gencode.c
+gestfic.o:  $(SP01)gestfic.c
+iofnt.o:    $(SP01)iofnt.c
+lexical.o:  $(SP01)lexical.c
+parser.o:   $(SP01)parser.c $(SP01)parse1.c $(SP01)parse2.c
+symboles.o: $(SP01)symboles.c
+table.o:    $(SP01)table.c
+tr.o:       $(SP01)tr.c
+trmessfr.o:   $(SP01)trmessfr.c $(SP01)message.hg
+trmessuk.o:   $(SP01)trmessuk.c $(SP01)message.hg
+debugzon.o: $(SP01)debugzon.c
+! make
+
+$(ABAL)/bin/atr$(VERSION)fr: tr.o trmessfr.o table.o symboles.o parser.o lexical.o '
+        iofnt.o gestfic.o gencode.o expr.o debug.o date.o debugzon.o '
+        $(LIBACCESS) $(WILDCOMP) $(IXCICONR) $(ALLOCATE)
+	gcc -o $@ $?
+	cp $@ $(EXABIN)/atr$(VERSION)
+
+$(ABAL)/bin/atr$(VERSION)uk: tr.o trmessuk.o table.o symboles.o parser.o lexical.o '
+        iofnt.o gestfic.o gencode.o expr.o debug.o date.o debugzon.o '
+        $(LIBACCESS) $(WILDCOMP) $(IXCICONR) $(ALLOCATE)
+	gcc -o $@ $?
+	cp $@ $(EXABIN)/atr$(VERSION)uk
+! make
+

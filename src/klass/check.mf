@@ -1,0 +1,56 @@
+# generated makefile : check.mf 
+# ------------------------------------
+
+.as.as:
+	avnor -x $* $@
+
+/home/abal3/class/asfuni.as: asfuni.as
+/home/abal3/class/bdaneti.as: bdaneti.as
+/home/abal3/class/bibmathi.as: bibmathi.as
+/home/abal3/class/errors.as: errors.as
+/home/abal3/class/filelib.as: filelib.as
+/home/abal3/class/files.as: files.as
+/home/abal3/class/gprinter.as: gprinter.as
+/home/abal3/class/handle.as: handle.as
+/home/abal3/class/mcfile.as: mcfile.as
+/home/abal3/class/pragmas.as: pragmas.as
+/home/abal3/class/printeri.as: printeri.as
+/home/abal3/class/sifile.as: sifile.as
+/home/abal3/class/stdfile.as: stdfile.as
+/home/abal3/class/ttyi.as: ttyi.as
+/home/abal3/class/vbuffer.as: vbuffer.as
+/home/abal3/class/vcheck.as: vcheck.as
+/home/abal3/class/vcolour.as: vcolour.as
+/home/abal3/class/vedit.as: vedit.as
+/home/abal3/class/vevent.as: vevent.as
+/home/abal3/class/vfill.as: vfill.as
+/home/abal3/class/vfname.as: vfname.as
+/home/abal3/class/vfont.as: vfont.as
+/home/abal3/class/vframe.as: vframe.as
+/home/abal3/class/vgraph.as: vgraph.as
+/home/abal3/class/vgroup.as: vgroup.as
+/home/abal3/class/vimage.as: vimage.as
+/home/abal3/class/visilib.as: visilib.as
+/home/abal3/class/visual.as: visual.as
+/home/abal3/class/visuali.as: visuali.as
+/home/abal3/class/vlabels.as: vlabels.as
+/home/abal3/class/vlibrary.as: vlibrary.as
+/home/abal3/class/vmessage.as: vmessage.as
+/home/abal3/class/voverlay.as: voverlay.as
+/home/abal3/class/vpage.as: vpage.as
+/home/abal3/class/vprinter.as: vprinter.as
+/home/abal3/class/vprogres.as: vprogres.as
+/home/abal3/class/vpush.as: vpush.as
+/home/abal3/class/vradio.as: vradio.as
+/home/abal3/class/vsaver.as: vsaver.as
+/home/abal3/class/vscroll.as: vscroll.as
+/home/abal3/class/vselect.as: vselect.as
+/home/abal3/class/vswitch.as: vswitch.as
+/home/abal3/class/vtable.as: vtable.as
+/home/abal3/class/vtabpage.as: vtabpage.as
+/home/abal3/class/vtext.as: vtext.as
+/home/abal3/class/vtrigger.as: vtrigger.as
+/home/abal3/class/vtypes.as: vtypes.as
+/home/abal3/class/vwidget.as: vwidget.as
+/home/abal3/class/vwindow.as: vwindow.as
+

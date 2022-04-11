@@ -1,0 +1,34 @@
+Version = 1
+Runtime = "visual"
+% VisualZone(%,%,%,%,%)
+% VisualLine(%,%,%,%,%,%)
+% VisualFont($,%)
+% VisualText(%,%,%,%, %, %,%, $,%,%)
+% VisualEdit(%,%,%,%,%,$?,%)
+% VisualWindow(%,%,%,%,%,$,%)
+% VisualButton(%,%,%,%, %, %,%, $,%,%)
+% VisualCheck (%,%,%,%, %, %,%, $,%,%)
+% VisualRadio (%,%,%,%, %, %,%, $,%, %,%)
+% VisualImage(%,%,%,%,$,%)
+% VisualTabPage(%,%,%,%,%,$,%,%,%)
+% VisualSelect(%,%,%,%, %, %,%, $,%, %?,%)
+% VisualScroll(%,%,%,%, %, %,%, %,%,%, %)
+% VisualPalette($,%)
+% VisualInitialise(%)
+% VisualLiberate()
+% VisualFreeze()
+% VisualThaw(%,%,%,%)
+% VisualEvent($?)
+% VisualFill(%,%,%,%,%,%)
+% VisualKey(%)
+% VisualControl(%,$?,%)
+% VisualProgress(%,%,%,%, %, %,%, %,%, %)
+% VisualTable(%,%,%,%, %, %,%, $,%, $,%, %)
+% VisualBuffer(%,%)
+% VisualPage(%)
+% VisualRow(%,$?,%)
+% VisualColour(%,$?,%,%)
+End
+
+
+

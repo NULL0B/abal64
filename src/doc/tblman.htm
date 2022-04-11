@@ -1,0 +1,334 @@
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="generator" content="Prologue Sing Html Version 1.0a">
+<meta name="version" content="*PRL@INFO*#11a040">
+<link href="style.css" type="text/css" rel="stylesheet" media="screen">
+<link href="style.css" type="text/css" rel="stylesheet" media="print">
+<title>Sing Version 1.0a
+</title>
+</head><body>
+<div align="center">
+<table class="DOC">
+<tr><th><h1 align="center">
+Sing Version 1.0a
+</h1>
+<td><div align="center"><img src="logo.jpg">
+</div></table></div><p>
+<a name="tblman.xml">
+
+<p>
+<div align="center">
+<table class="DS">
+<tr><th><h2 align="center">
+tbl manager
+</h2>
+
+<tr><td><p><tr><td>
+
+<map name="ListPage">
+<area type=rect href="#Directory" coords="40,110,760,126">
+<area type=rect href="#FileList" coords="40,140,740,560">
+<area type=rect href="#ListBar" coords="740,140,760,560">
+</map>
+
+<map name="HeadPage">
+<area type=rect href="#FileName" coords="40,120,608,136">
+<area type=rect href="#Status" coords="670,120,750,136">
+<area type=rect href="#Load" coords="640,180,738,212">
+<area type=rect href="#Save" coords="640,230,738,262">
+<area type=rect href="#iTable" coords="40,300,740,380">
+<area type=rect href="#aTable" coords="40,390,740,560">
+<area type=rect href="#aBar" coords="740,390,760,560">
+<area type=rect href="#TblVersion" coords="220,170,300,186">
+<area type=rect href="#LgTabAtb" coords="220,230,300,246">
+<area type=rect href="#LgBufConv" coords="220,260,300,276">
+<area type=rect href="#OfTabInit" coords="510,200,590,216">
+<area type=rect href="#LgTabInit" coords="220,200,300,216">
+<area type=rect href="#OfTabAtb" coords="510,230,590,246">
+<area type=rect href="#OfTabConv" coords="510,260,590,276">
+</map>
+
+<map name="CharPage">
+<area type=rect href="#HexTable" coords="130,210,514,466">
+<area type=rect href="#CharTable" coords="540,210,668,466">
+</map>
+This utility program allows tbl files to be modified. The program presents the list
+of
+tbl files for selection, inspection and modification.
+
+
+<p>
+<ol><img src="tblman1.gif" usemap="#ListPage" >
+<ul><li>
+<dl>
+<dt class=type><a name="Directory">
+<b>Directory
+</b></a>
+<dd class=data>This edit field allows the source directory path name to be specified. This
+directory
+will be used for all tbl file operations and will be prefixed to
+all tbl filenames.
+
+
+<p>
+
+</dl>
+<li>
+<dl>
+<dt class=type><a name="FileList">
+<b>FileList
+</b></a>
+<dd class=data>This table presents the list of tbl files currently present in the source directory.
+A
+tbl file may be opened by a simple click on its name in this list. Control
+will be
+transered directly to the tbl header and data page.
+
+<p>
+
+</dl>
+<li>
+<dl>
+<dt class=type><a name="ListBar">
+<b>ListBar
+</b></a>
+<dd class=data>This scroll bar allows the tbl file list to be scrolled.
+
+<p>
+
+</dl>
+</ul><img src="tblman2.gif" usemap="#HeadPage" >
+<ul><li>
+<dl>
+<dt class=type><a name="FileName">
+<b>FileName
+</b></a>
+<dd class=data>This edit field defines the filename of the current tbl file. It is set by the
+click
+in the file list window. It may be modified by hand for the loading of 
+files in conjunction
+with the <b>Load</b> push button or when saving new files
+in conjunction with the
+<b>Save</b> push button.
+In all cases it will be prefixed with the source directory.
+
+<p>
+
+</dl>
+<li>
+<dl>
+<dt class=type><a name="Status">
+<b>Status
+</b></a>
+<dd class=data>This edit field displays the status of the load and file operations.
+
+<p>
+
+</dl>
+<li>
+<dl>
+<dt class=type><a name="Load">
+<b>Load
+</b></a>
+<dd class=data>This push button may be activated to load a tbl file by hand. The filename will
+be
+taken from the corresponding edit field and prefixed by the source directory
+value.
+The various tables will be loaded into the temporary matrixs for inspection
+and modification.
+
+
+<p>
+
+</dl>
+<li>
+<dl>
+<dt class=type><a name="Save">
+<b>Save
+</b></a>
+<dd class=data>This push button may be activated to save the contents of the temporary matrixs to
+
+a tbl file. The filename will be taken from the corresponding edit field and 
+prefixed
+by the source directory value. 
+
+
+<p>
+
+</dl>
+<li>
+<dl>
+<dt class=type><a name="iTable">
+<b>iTable
+</b></a>
+<dd class=data>This table control displays for inspection and modification the
+hexadecimal codes
+of the initialisation sequences.
+The values must be carefully modified by hand with
+valid hexadecimal data.
+
+
+<p>
+
+</dl>
+<li>
+<dl>
+<dt class=type><a name="aTable">
+<b>aTable
+</b></a>
+<dd class=data>This table control displays for inspection and modification the
+hexadecimal codes
+of the atribut sequences.
+For further information concerning the meaning of these
+sequences please
+consule the accompanying <a href="tbl.htm">tbl sequences</a> document.
+These
+values must be carefully modified by hand with valid hexadecimal data.
+
+
+
+<p>
+
+</dl>
+<li>
+<dl>
+<dt class=type><a name="aBar">
+<b>aBar
+</b></a>
+<dd class=data>This scroll bar allows the Atribut Table data entries to be scrolled.
+
+
+<p>
+
+</dl>
+<li>
+<dl>
+<dt class=type><a name="TblVersion">
+<b>TblVersion
+</b></a>
+<dd class=data>This edit field displays the file version number either MP12 or MP14
+
+<p>
+
+</dl>
+<li>
+<dl>
+<dt class=type><a name="LgTabAtb">
+<b>LgTabAtb
+</b></a>
+<dd class=data>This edit field displays the length of a atribut table entry.
+
+
+<p>
+
+</dl>
+<li>
+<dl>
+<dt class=type><a name="LgBufConv">
+<b>LgBufConv
+</b></a>
+<dd class=data>This edit field displays the conversion buffer size.
+
+
+<p>
+
+</dl>
+<li>
+<dl>
+<dt class=type><a name="OfTabInit">
+<b>OfTabInit
+</b></a>
+<dd class=data>This edit field displays the file offset of the initialisation table comprising three
+entries.
+
+
+
+<p>
+
+</dl>
+<li>
+<dl>
+<dt class=type><a name="LgTabInit">
+<b>LgTabInit
+</b></a>
+<dd class=data>This edit field displays the length of a initialisation table entry.
+
+
+<p>
+
+</dl>
+<li>
+<dl>
+<dt class=type><a name="OfTabAtb">
+<b>OfTabAtb
+</b></a>
+<dd class=data>This edit field displays the file offset of the atribut table comprising 
+thirty two
+(32) entries.
+
+
+
+<p>
+
+</dl>
+<li>
+<dl>
+<dt class=type><a name="OfTabConv">
+<b>OfTabConv
+</b></a>
+<dd class=data>This edit field displays the file offset of the character conversion table
+comprising
+256 bytes.
+
+
+
+<p>
+
+</dl>
+</ul><img src="tblman3.gif" usemap="#CharPage" >
+<ul><li>
+<dl>
+<dt class=type><a name="HexTable">
+<b>HexTable
+</b></a>
+<dd class=data>This edit field displays, for inspection and modification, 
+the hexadecimal values
+of the various printer character conversions.
+This is a simple patch mechanism where
+the standard cursor keys allow the 
+cursor item to be moved. Hexadecimal data may
+be directly input at the cursor
+position. The mouse may be used to position to any
+character value.
+
+
+<p>
+
+</dl>
+<li>
+<dl>
+<dt class=type><a name="CharTable">
+<b>CharTable
+</b></a>
+<dd class=data>This edit field works in conjunction with the previous control and displays the
+character
+values of the hexadecimal codes. The mouse allows positioning to specifiec
+characters
+though direct character input is not possible.
+
+
+<p>
+
+</dl>
+</ul></ol>
+
+</td>
+</table></div><p>
+
+<p><div align="center">
+<table class="CRT">
+<tr><th><h3 align="center">
+Copyright (c) 2002,2006 Prologue
+</h3>
+</table></div><p>
+</body></html>

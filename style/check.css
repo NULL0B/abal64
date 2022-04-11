@@ -1,0 +1,39 @@
+/* ------------------------------------ */
+/* Default Visual Library  Frame Styles */
+/* ------------------------------------ */
+
+checkframe	{	
+		text-font: none;
+		border-style: edit;		
+		width: 5mm;
+		height:5mm;
+		}
+
+checktrue	{
+		width: 5mm;
+		height: 5mm;
+		margin: 1mm;
+		background-colour: black;		
+		}
+
+
+checklabel	{	
+		class: proportional;
+		margin-left: 8mm;
+		text-colour: black;
+		content: trigger;
+		border-style: none;
+		text-align: left;
+		background-colour: ihm(5);
+		}
+
+checkfocus	{
+		class: checklabel;
+		text-colour: navy;
+		}
+
+/* ----------- */
+/* End of File */
+/* ----------- */
+
+

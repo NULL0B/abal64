@@ -1,0 +1,23 @@
+! include $(ABAL)/common/common.def
+iview.o: $(SP02)iview.c
+	-$(COMPILE) $(INCLUSION) $(SP02)iview.c 1>pipo1 2>pipo2
+	-cat pipo1 pipo2 > pipo
+	agr -apipo
+
+../bin/iview: iview.o stdprod.o $(PIXILIB) $(LIBIMAGE) $(ALLOCATE) $(LIBJPEG) $(LIBACCESS) $(FNPARSER) 
+	$(LD) $@ iview.o stdprod.o $(PIXILIB) $(LIBIMAGE) $(LIBJPEG) $(ALLOCATE) $(LIBACCESS) $(IXCICONR) $(XLIB) $(FNPARSER)
+	cp $@ $(EXABIN)
+
+! make
+! error ok
+fon2fmf.o:  $(SP02)fon2fmf.c
+	-$(COMPILE) $(INCLUSION) $* 1>pipo1 2>pipo2
+	-cat pipo1 pipo2 > pipo
+	agr -apipo
+
+$(ABAL)/fon2fmf: fon2fmf.o
+	$(GCC) -g $(GDB) -o $@ $?
+	cp $@ $(EXABIN)
+! make
+
+

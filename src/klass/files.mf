@@ -1,0 +1,7 @@
+
+
+files$(OBJ):   $(SP01)files.as   $(SP01)filelib.as '
+               $(SP01)handle.as  $(SP01)errors.as  '
+               $(SP01)stdfile.as $(SP01)sifile.as $(SP01)mcfile.as
+
+

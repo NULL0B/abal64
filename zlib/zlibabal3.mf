@@ -1,0 +1,12 @@
+zlibabal3.tgz: include run module
+	tar -czvf $@ include/*.* '
+                     run/*.at '
+                     module/*.o '
+                     module/*.dbo 
+
+zlibabal2.tgz: include run/abal2 module/abal2
+	tar -czvf $@ include/*.* '
+                     run/abal2/*.at '
+                     module/abal2/*.o '
+                     module/abal2/*.dbo 
+

@@ -1,0 +1,106 @@
+! include $(ABAL)/common/allocate.def
+! include $(ABAL)/common/linbda.def
+! include $(ABAL)/common/common.def
+! include $(ABAL)/common/jpeg.def
+! include $(ABAL)/common/ldap.def
+! include $(ABAL)/common/libimage.def
+! include $(ABAL)/common/trace.def
+! include $(ABAL)/common/mpeg.def
+
+SP00 = $(ABAL)/include/
+SP00 = $(ABAL)/include/bdas/
+SP01 = $(ABAL)/src/sing/
+SP02 = $(ABAL)/src/pixel/
+SP03 = $(ABAL)/include/
+TP01 = $(ABAL)/pixel/
+AGR  = TRUE
+
+INCLUSION = -I$(SP00) -I$(SP01) -I$(SP02) -I$(SP03)
+EXCLUSION = -zstdio.h -zstdlib.h -zmalloc.h "-zwin*"
+COMPILE = -$(CC) $(CC_SHARED) $(GDB) -DVERSION666 $(HOST) $(INCLUSION) $(SYSLDAP)
+
+
+$(SP01)vgui.c: $(SP02)visual.def $(LINBDA)
+	$(LINBDA) -bVisual64.$(MASTER3) -v -r$(SP01)vgui -d -tVISUAL_TRACE $(SP02)visual
+
+! make
+
+vgui.o: $(SP01)vgui.c
+! ifdef AGR
+	-$(COMPILE) $(SP01)vgui.c 1> pipo1 2>pipo2
+	cat pipo1 pipo2 > pipo
+	agr -apipo
+! else
+	$(COMPILE) $(SP01)vgui.c 
+! endif
+! make
+
+.c.mf:
+	genmake -v -m$@ -x $(INCLUSION) $(EXCLUSION) $?
+
+visual.mf: $(SP01)visual.c $(SP01)vobject.c $(SP01)exmpegcl.c
+
+! make
+! undef COMPILE
+
+.c.o:
+! ifdef AGR
+	-$(COMPILE) $* 1>pipo1 2> pipo2
+	cat pipo1 pipo2 > pipo
+	agr -apipo
+! else
+	$(COMPILE) $* 
+! endif
+	
+! include visual.mf
+! make
+textual.mf: $(SP01)textual.c
+! make
+#! include textual.mf
+! make
+
+
+SP01 = $(ABAL)/src/pixel/
+rgraph.mf: $(SP01)rgraph.c
+! make
+! include rgraph.mf
+! make
+
+$(ABAL)/lib/visual64.so: vgui.o visual.o vobject.o rgraph.o stdprod.o $(LIBIMAGE) $(ALLOCATE) $(FNPARSER) $(LIBJPEG) $(WILDCOMP) $(LIBMPEG)
+	$(GCC) $(GDB) -shared -o $@ $?  $(LIBLDAP) $(TRACE)
+	cp $@ $(ABAL)/lib/testvisual64.so
+	bdatester64 testvisual
+	rm $(ABAL)/lib/testvisual64.so -f
+
+! make
+
+$(ABAL)/common/vobject.def: $(ABAL)/pixel64/vobject.o
+	echo VOBJECT = $* > $@
+
+! make
+
+! ifdef textualmaker
+$(ABAL)/lib/textual64.so: vgui.o textual.o vobject.o stdprod.o rgraph.o $(LIBIMAGE) $(ALLOCATE) $(FNPARSER) $(LIBJPEG)
+	$(GCC) $(GDB) -shared -o $@ $?  $(LIBLDAP)
+	cp $@ $(ABAL)/lib/testtextual64.so
+	bdatester64 testtextual
+	rm $(ABAL)/lib/testtextual64.so -f
+! make
+! endif
+! ifdef make_vexadb
+../bin/vexadb: vexadb.o vobject.o $(LIBIMAGE) $(PIXILIB) $(XLIB) $(IXCICONR) $(LIBACCESS) $(ALLOCATE) $(LIBJPEG)
+	$(GCC) -g $(GDB) -o $@ $?
+	cp $@ $(EXABIN)/vexadb
+! make
+! endif
+
+! ifdef andctest
+../bin/ctest: ctest.o vobject.o $(LIBIMAGE) $(PIXILIB) $(XLIB) $(IXCICONR) $(LIBACCESS) $(ALLOCATE) $(FNPARSER) $(LIBJPEG)
+	-$(GCC) -g $(GDB) -o $@ $? $(LIBLDAP) 2> pipo2 1>pipo1
+	cat pipo1 pipo2 > pipo
+	agr -apipo
+	cp $@ $(EXABIN)/ctest
+! make
+! endif
+
+

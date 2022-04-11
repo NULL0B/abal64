@@ -1,0 +1,45 @@
+
+$(POBJ)lkdebug$(OBJ): 
+/home/Dev/abal32/src/ald22c/lkdebug.c
+  /home/Dev/abal32/src/ald22c/aldtype.h
+    <stdio.h>
+    <stdlib.h>
+    <string.h>
+    /home/Dev/abal32/src/ald22c/lkdef.h
+      /home/Dev/abal32/src/global/wabaldef.h
+        <malloc.h>
+        <windows.h>
+        <windowsx.h>
+        <pubexcep.h>
+        <wabalobj.h>
+      /home/Dev/abal32/src/global/pubslist.h
+        /home/Dev/abal32/src/global/pubsnode.h
+      <ctype.h>
+      <prl.h>
+      <fcntl.h>
+      <setjmp.h>
+      <io.h>
+      <alloc.h>
+      <sys\types.h>
+      <sys\stat.h>
+      <errno.h>
+      <sys/types.h>
+      <sys/stat.h>
+      <file.h>
+      <unixio.h>
+      <stsdef.h>
+    /home/Dev/abal32/src/ald22c/lkwind.h
+    /home/Dev/abal32/src/ald22c/cttype.h
+      /home/Dev/abal32/src/ald22c/ctappli.h
+      <ctMacLib.h>
+      <typeinfo.h>
+      <iostream>
+      <iostream.h>
+    /home/Dev/abal32/src/ald22c/lksignal.h
+      <signal.h>
+  /home/Dev/abal32/src/ald22c/lkfile.h
+    /home/Dev/abal32/src/ald22c/lkstruct.h
+  /home/Dev/abal32/src/ald22c/lkdebug.h
+  /home/Dev/abal32/src/ald22c/lkdebugs.h
+  /home/Dev/abal32/src/ald22c/display.h
+

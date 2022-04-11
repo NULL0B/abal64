@@ -1,0 +1,772 @@
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="generator" content="Prologue Sing Html Version 1.0a">
+<meta name="version" content="*PRL@INFO*#11a040">
+<link href="style.css" type="text/css" rel="stylesheet" media="screen">
+<link href="style.css" type="text/css" rel="stylesheet" media="print">
+<title>Sing Version 1.0a
+</title>
+</head><body>
+<div align="center">
+<table class="DOC">
+<tr><th><h1 align="center">
+Sing Version 1.0a
+</h1>
+<td><div align="center"><img src="logo.jpg">
+</div></table></div><p>
+<a name="singbmap.xml">
+
+<p>
+<div align="center">
+<table class="DS">
+<tr><th><h2 align="center">
+Image Editor
+</h2>
+
+<tr><td><p><div align="center"><img src="singbmap.gif" usemap="#Image_Editor" >
+</div><p>
+<tr><td>
+
+<map name="Image_Editor">
+<area type=rect href="#ImageData" coords="62,31,821,590">
+<area type=rect href="#upicon.gif" coords="19,2,44,27">
+<area type=rect href="#ImageTools" coords="4,40,59,325">
+<area type=rect href="#upicon.gif" coords="840,4,864,29">
+<area type=rect href="#Palette" coords="827,38,873,620">
+<area type=rect href="#File" coords="70,7,150,27">
+<area type=rect href="#New" coords="68,40,148,60">
+<area type=rect href="#Save" coords="68,56,148,76">
+<area type=rect href="#Save As" coords="68,72,148,92">
+<area type=rect href="#Open" coords="68,88,148,108">
+<area type=rect href="#Production" coords="68,104,148,124">
+<area type=rect href="#Drop" coords="68,120,148,140">
+<area type=rect href="#Quit" coords="68,136,148,156">
+<area type=rect href="#View" coords="174,7,254,27">
+<area type=rect href="#Run" coords="168,40,248,60">
+<area type=rect href="#Text" coords="168,56,248,76">
+<area type=rect href="#Image" coords="172,72,252,92">
+<area type=rect href="#Font" coords="172,88,252,108">
+<area type=rect href="#Properties" coords="172,104,252,124">
+<area type=rect href="#Visual" coords="172,120,252,140">
+<area type=rect href="#TreeView" coords="172,136,252,156">
+<area type=rect href="#Application" coords="172,152,252,172">
+<area type=rect href="#Event" coords="283,7,363,27">
+<area type=rect href="#Options" coords="390,7,470,27">
+<area type=rect href="#Parameters" coords="390,38,490,58">
+<area type=rect href="#Refresh" coords="390,56,490,76">
+<area type=rect href="#Configure" coords="390,72,490,92">
+<area type=rect href="#ScreenCapture" coords="390,90,492,109">
+<area type=rect href="#Animate" coords="390,106,490,126">
+<area type=rect href="#Image" coords="500,2,570,31">
+<area type=rect href="#Copy" coords="500,38,630,58">
+<area type=rect href="#Paste" coords="500,56,630,76">
+<area type=rect href="#Cut" coords="500,72,630,92">
+<area type=rect href="#Rotate 90" coords="500,88,630,108">
+<area type=rect href="#Rotate 180" coords="500,106,630,126">
+<area type=rect href="#Rotate 270" coords="500,123,630,143">
+<area type=rect href="#Change Colour" coords="500,139,630,159">
+<area type=rect href="#Grey Scale" coords="500,155,630,175">
+<area type=rect href="#Vertical Mirror" coords="500,172,630,192">
+<area type=rect href="#Horizontal Mirror" coords="500,189,630,209">
+<area type=rect href="#Dimensions" coords="500,206,630,226">
+<area type=rect href="#Executer" coords="695,7,713,22">
+<area type=rect href="#Editor" coords="713,7,731,22">
+<area type=rect href="#Traducteur" coords="732,7,750,22">
+<area type=rect href="#Linker" coords="751,7,769,22">
+<area type=rect href="#Executeur" coords="677,7,695,22">
+<area type=rect href="#Editeur" coords="713,7,731,22">
+<area type=rect href="#Translate" coords="732,7,750,22">
+<area type=rect href="#Linkeur" coords="751,7,769,22">
+</map>
+The Image, or bitmap, editor of the ABAL 3 development environment provides a collection
+of functions
+for the design and maintanance of image files to be used in the construction
+of ABAL 3 application
+programs.<p>
+The ABAL 3 development environment and Application
+runtime libraries may read images from the following 
+image file formats :
+<ol>
+<li>BMP
+<li>ICO
+<li>GIF
+<li>JPEG
+<li>PNG
+</ol>
+Images
+are loaded into virtual bitmap buffers, also refered to as pixel storage units.
+These
+bitmap buffers may be loaded into the bitmap editor for inspection, modification,
+enhancement and 
+transformation.
+<p>
+In the current version the ABAL 3 development
+environment may only write images in the following file formats:
+<ol>
+<li>BMP
+<li>GIF
+</ol>
+
+
+
+
+
+
+
+
+
+
+<p>
+
+<dl>
+<dt class=type><a name="ImageData">
+<b>ImageData
+</b></a>
+<dd class=data>
+
+<p>
+<dt class=type><a name="upicon.gif">
+<b>upicon.gif
+</b></a>
+<dd class=data>The display of the various model editor tools bars is controlled by this
+button. When
+the arrow points upwards a click will cause the display of the
+tool bar to be inhibited.
+The arrow button will then point downwards in which
+case a click will cause the tool
+bar to be redisplayed.
+
+
+<p>
+<dt class=type><a name="ImageTools">
+<b>ImageTools
+</b></a>
+<dd class=data>The Bitmap or Image Editor allows modification of images at a pixel level. To this
+purpose the following
+selection of pixel manipulation tools are offered and can be
+seen presented on the vertical
+tool bar to the left of the desktop area.<p>
+<ol>
+<li>Filled
+Rectangle.<p>
+An area defined by its top left corner and bottom right corner may be
+filled with the foreground colour
+by using the left button or with the background
+colour by using the right button of the mouse.
+<li>Outlined Rectangle<p>
+An area defined
+by its top left corner and bottom right corner may be Outline with the foreground
+colour
+by using the left button or with the background colour by using the right button
+of the mouse.
+<li>Outset Rectangle<p>
+An outset relief frame defined by its top left
+and bottom right corner using the standard palette relief
+colours.By pressing the
+left button a background fill will be applied. By pressing the right button the
+background
+fill will be inhibited with only the frame being drawn. 
+<li>Inset Rectangle<p>
+An
+inset relief frame as for the above outset rectangle.
+<li>Ridge Rectangle<p>
+A ridged
+relief frame as for the inset and outset rectangles.
+<li>Groove Rectangle<p>
+A grooved
+relief frame as for the above ridge, inset and outset rectangles.
+<li>Pixel Pen<p>
+Allows
+freehand pixel colouring using the left button foreground colour and right button
+background colour.
+<li>Pixel Sampler<p>
+Sets the current foreground, when left button,
+or background colour, when right button, by sampling the 
+source pixel colour value.
+<li>Line<p>
+Draws
+a line between the two points defining its extremities.
+<li>Area Fill<p>
+Fills all
+reachable and contiguous pixels with the foreground colour,when left button, or the
+background
+colour when right button operation.
+<li>Outlined Circle<p>
+Draws a circle
+outline to fit the rectangle defined by its topleft corner and bottom left corner
+using
+the foreground colour, left button, or background colour when right button operation.
+<li>Filled
+Circle<p>
+Draws a filled circle fit the rectangle defined by its topleft corner and
+bottom left corner
+using the foreground colour, left button, or background colour
+when right button operation.
+<li>Zone Selection<p>
+Allows definition of a source pixel
+area or zone for the menu option <b>Image Copy</b> or a target
+pixel coordinate for
+the menu option <b>Image Paste</b>
+<li>Pointer<p>
+This tool does not modified pixels
+in any way it may be used for movement of the image by dragging on image
+pixels as
+follows :
+<ul>
+<li>Drag with left button downwards : half page up
+<li>Drag with left
+button upwards   : half page down
+<li>Drag with left button leftwards : half page
+right
+<li>Drag with left button rightwards: half page left
+<li>Drag with right button
+downwards : direct to top edge
+<li>Drag with right button upwards   : direct to bottom
+edge
+<li>Drag with right button leftwards : direct to right edge
+<li>Drag with right
+button rightwards: direct to left edge
+</ol>
+<p>
+
+
+
+<p>
+<dt class=type><a name="upicon.gif">
+<b>upicon.gif
+</b></a>
+<dd class=data>The display of the colour palette bar to the right of the  screen is controlled by
+this
+button. When the arrow points upwards a click will cause the display of the
+palette
+bar to be inhibited. The arrow button will then point downwards in which
+case a click
+will cause the palette bar to be redisplayed.
+
+
+<p>
+<dt class=type><a name="Palette">
+<b>Palette
+</b></a>
+<dd class=data>The Palette bar displays all colours of the currently loaded palette and allows colour
+selection 
+by a simple click on the required colour.
+A click with the left button
+will set the current foreground colour whilst a click with the right button
+will set
+the current background colour.
+When using the various image tools for the modification
+of pixel values, clicking with the left button 
+will apply the foreground colour whilst
+clicking with the right button will apply the background colour.
+
+
+
+<p>
+<dt class=type><a name="File">
+<b><u>F</u>ile
+</b></a>
+<dd class=data>Selection of this menu options gives access to the generic file operations 
+menu whose
+options are described here below.
+<dl><dd>
+
+
+
+<p>
+<dt class=type><a name="New">
+<b><u>N</u>ew
+</b></a>
+<dd class=data>Selection of this menu option causes the contents of the current image data to be
+reset
+and filled with the current background colour.
+
+
+<p>
+<dt class=type><a name="Save">
+<b><u>S</u>ave
+</b></a>
+<dd class=data>This menu options performs a quick save of the current image to its current image
+file format
+without prompting the user for confirmation.
+
+
+<p>
+<dt class=type><a name="Save As">
+<b>Sa<u>v</u>e As
+</b></a>
+<dd class=data>Activation of this menu option gives access to the corresponding 
+<a href="visave.htm">image
+save</a> parameter input dialog box prior to the eventual 
+image save operation.
+
+
+<p>
+<dt class=type><a name="Open">
+<b><u>O</u>pen
+</b></a>
+<dd class=data>This menu operation gives access to the corresponding <a href="viload.htm">image load</a>
+
+parameter input dialog box allowing a new image file to opened 
+replacing the current
+image component.
+
+
+<p>
+<dt class=type><a name="Production">
+<b><u>P</u>roduction
+</b></a>
+<dd class=data>Selection of this menu option gives access to the <a href="visave.htm">image save</a>
+parameter
+input dialog box as for the file save menu option.
+
+
+<p>
+<dt class=type><a name="Drop">
+<b><u>D</u>rop
+</b></a>
+<dd class=data>This menu option has no effect whilst the image editor is active.
+
+<p>
+<dt class=type><a name="Quit">
+<b><u>Q</u>uit
+</b></a>
+<dd class=data>This menu option should be selected if you wish to leave the ABAL 3
+development tool.
+If unsaved modifications are detected amongst any of
+the open project models you will
+be prompted via the 
+<a href="vexit.htm"> exit check </a> dialog box for the appropriate
+action
+required to be taken prior to return to the host operating
+system or calling process.
+</dl>
+
+
+
+
+<p>
+<dt class=type><a name="View">
+<b><u>V</u>iew
+</b></a>
+<dd class=data>Selection of this menu option of the main menu gives access to the 
+view or tool operations
+menu whose options are described below.
+<dl><dd>
+
+
+
+<p>
+<dt class=type><a name="Run">
+<b><u>R</u>un
+</b></a>
+<dd class=data>Select this option in order to gain access to the <a href="vdebug.htm">debug and runtime
+control</a> dialog
+box allowing abal applications to be run, tested and debugged from
+within the development tool.
+
+
+<p>
+<dt class=type><a name="Text">
+<b>Te<u>x</u>t
+</b></a>
+<dd class=data>Selection of this menu option gives explicite access to the 
+<a href="singedit.htm">standard
+text editor </a>
+for the current model component.
+
+
+
+<p>
+<dt class=type><a name="Image">
+<b><u>I</u>mage
+</b></a>
+<dd class=data>Activation of this menu option gives explicite access to the <a href="singbmap.htm">bitmap
+editor</a>.
+allowing inspection and modification of the model image. 
+
+
+<p>
+<dt class=type><a name="Font">
+<b>Fo<u>n</u>t
+</b></a>
+<dd class=data>Select this menu option to gain access to the <a href="singfont.htm">font editor</a>.
+
+
+
+<p>
+<dt class=type><a name="Properties">
+<b><u>P</u>roperties
+</b></a>
+<dd class=data>Selection of the properties menu option gives access to the 
+<a href="vcube.htm">3D
+component</a> properties dialog box
+allowing the various properties to be inspected
+and eventually modified.
+
+
+<p>
+<dt class=type><a name="Visual">
+<b><u>V</u>isual
+</b></a>
+<dd class=data>Selection of this menu option gives access to the component specific visual model
+editor.
+For forms and document models this will be the <a href="singform.htm">visual
+forms editor</a>.
+For Image components
+this will be the <a href="singbmap.htm">bitmap
+editor</a>
+and for Source components this will be the <a href="singedit.htm">standard
+
+text editor</a>.
+
+<p>
+<dt class=type><a name="TreeView">
+<b>Tr<u>e</u>eView
+</b></a>
+<dd class=data>Selection of the treeview menu option toggles the <a href="singtree.htm">treeview</a>
+
+mechanism between visible and hidden states.
+
+
+<p>
+<dt class=type><a name="Application">
+<b><u>A</u>pplication
+</b></a>
+<dd class=data>Selection of this menu option returns control to this project model editor from the
+vrious other
+model editor views.
+</dl>
+ 
+<p>
+<dt class=type><a name="Event">
+<b><u>E</u>vent
+</b></a>
+<dd class=data>The Event popup menu is inhibited whilst the image editor is active.
+
+
+<p>
+<dt class=type><a name="Options">
+<b><u>O</u>ptions
+</b></a>
+<dd class=data>Selection of this menu options gives access to the general operations 
+menu the options
+of which are described here below.
+<dl><dd>
+
+
+<p>
+<dt class=type><a name="Parameters">
+<b><u>P</u>arameters
+</b></a>
+<dd class=data>Selection of this menu option gives access to the <a href="vparam.htm">General Parameters</a>
+dialog
+box allowing the various editor parameters to be inspected and modified.
+These parameters
+will be used as default values for all subsequent new widget 
+and other model components
+as they are created.
+
+
+<p>
+<dt class=type><a name="Refresh">
+<b><u>R</u>efresh
+</b></a>
+<dd class=data>Selection of this menu option simply causes the development screen to be redraw
+for
+any particular reason.
+
+
+<p>
+<dt class=type><a name="Configure">
+<b><u>C</u>onfigure
+</b></a>
+<dd class=data>Activation of this menu option gices access to the <a href="vrefer.htm">Configuration
+Parameters</a>
+of the ABAL 3 development tool.
+These configuration values are read
+from the configuration file, normally <b>sing.cfg</b>,
+during the start up and construction
+phase of the development environment.
+
+
+
+<p>
+<dt class=type><a name="ScreenCapture">
+<b><u>S</u>creenCapture
+</b></a>
+<dd class=data>This menu option may be activated  in order to perform a screen capture operation.
+The entire screen will 
+be captured to a virtual bitmap then the <a href="visave.htm">
+image save</a> dialog box will be presented
+allowing the target image type and file
+name to be specified.
+
+
+
+<p>
+<dt class=type><a name="Animate">
+<b><u>A</u>nimate
+</b></a>
+<dd class=data>Selection of this menu operation gives access to the 
+<a href="vrecrep.htm">Animation
+Record and Replay</a>
+control dialog box.
+Animation recording allows  user input events,
+equally keyboard and mouse events,
+to the development environment to be recorded to
+an animation script file.
+Animation replay allows a recorded script to be re-enacted
+performing the
+identical sequence of input events.
+These features may be used to create
+input macros or for tutorial purposes.
+</dl>
+
+
+<p>
+<dt class=type><a name="Image">
+<b><u>I</u>mage
+</b></a>
+<dd class=data>Selection of the Image option of the main menu gives access to the following 
+image
+editor specific menu functions
+<dl><dd>
+
+
+
+<p>
+<dt class=type><a name="Copy">
+<b><u>C</u>opy
+</b></a>
+<dd class=data>Selction of this menu option causes the selected pixel area of the current image being
+edited
+to be copied into the image editor clipboard memory.
+The selection of a pixel
+area is performed as follows :
+<ol>
+<li>Select the image editor cut frame tool.
+<li>Press
+the left button of the mouse while the mouse pointer is over the top left pixel
+of
+the zone to be selected.
+<li>Drag the mouse,maintaining the left button pressed, until
+the mouse pointer tip is over the bottom left
+most pixel of the zone to be selected.
+<li>Release
+the left button of the mouse.
+</ol>
+As a result of this a green cut frame will be
+left visible defining the selected pixel area.
+
+
+<p>
+<dt class=type><a name="Paste">
+<b><u>P</u>aste
+</b></a>
+<dd class=data>Selection of this menu option allows the contents of the image editor clipboard memory
+to be
+pasted into the current image at the image editor pixel cursor position.
+The
+image editor clipboard memory is maintained whilst the ABAL 3 development tool is
+active, consequently
+image portions may be easily cut from one image and pasted into
+another.
+If the pixels pasted from the clipboard memory would exceed the left or bottom
+edge of the target image
+the excess will be silently discarded.
+
+
+<p>
+<dt class=type><a name="Cut">
+<b>C<u>u</u>t
+</b></a>
+<dd class=data>Selection of this menu option causes the all pixels from the current pixel curser
+position down to the
+bottom right corner of the image to be copied to the image editor
+clipboard.
+
+
+<p>
+<dt class=type><a name="Rotate 90">
+<b><u>R</u>otate 90
+</b></a>
+<dd class=data>Selection of this menu option causes the current contents of the image editor to be
+rotated 90 degrees
+in a clockwise direction. The image dimensions will be altered
+to reflect the final dimensions of the
+resulting image with the new width equal to
+the previous height and the new height taking the previous 
+width value.
+
+
+<p>
+<dt class=type><a name="Rotate 180">
+<b>R<u>o</u>tate 180
+</b></a>
+<dd class=data>Selection of this menu option causes the image editor contents to be rotated a full
+180 degrees.
+The image dimensions will naturally be preserved.
+
+
+<p>
+<dt class=type><a name="Rotate 270">
+<b>Ro<u>t</u>ate 270
+</b></a>
+<dd class=data>Selection of this menu option causes the current contents of the image editor to be
+rotated 270 degrees
+in a clockwise direction, or 90 degrees in an anticlockise direction.
+
+The image dimensions will be altered to reflect the final dimensions of the
+resulting
+image with the new width equal to the previous height and the new height taking the
+previous 
+width value.
+
+
+<p>
+<dt class=type><a name="Change Colour">
+<b><u>C</u>hange Colour
+</b></a>
+<dd class=data>Selection of this menu option performs a colour substitution.
+All pixels matching
+the current background colour are replaced by that of the current foreground colour.
+
+
+<p>
+<dt class=type><a name="Grey Scale">
+<b><u>G</u>rey Scale
+</b></a>
+<dd class=data>Selection of this menu option causes the entire image to be reduced to the nearest
+grey scale
+conversion. This operation is similar to that performed by the graphical
+printing mechanisms
+for non colour printer drivers and consequently allows colour
+conversion checking of a application
+document image.
+
+
+<p>
+<dt class=type><a name="Vertical Mirror">
+<b><u>V</u>ertical Mirror
+</b></a>
+<dd class=data>Selection of this menu option causes the contents of the image editor to be transformed
+by reflection
+across the central vertical axis. 
+
+
+<p>
+<dt class=type><a name="Horizontal Mirror">
+<b><u>H</u>orizontal Mirror
+</b></a>
+<dd class=data>Selection of this menu option causes the contents of the image editor to be transformed
+by reflection
+across the central horizontal axis. 
+
+
+<p>
+<dt class=type><a name="Dimensions">
+<b><u>D</u>imensions
+</b></a>
+<dd class=data>Selection of this menu option gives access to image editor <a href="vimage.htm">image
+dimensions</a>
+dialog box allowing the image dimensions to be changed.
+</dl>
+
+
+<p>
+<dt class=type><a name="Executer">
+<b>Executer
+</b></a>
+<dd class=data>This icon button provides access to the ABAL 3 <a href="vdebug.htm">Runtime and Debug
+Parameters</a> dialog
+box allowing execution and debug of ABAL 3 programs from within
+the ABAL 3 development environment.
+
+
+<p>
+<dt class=type><a name="Editor">
+<b>Editor
+</b></a>
+<dd class=data>This icon button provides access to the <a href="vaed.htm">Editor Configuration</a>
+dialog box for
+modification of editor parameters.
+
+
+<p>
+<dt class=type><a name="Traducteur">
+<b>Traducteur
+</b></a>
+<dd class=data>This icon button provides access to the ABAL 3 <a href="vtrad.htm">Translator Parameters</a>
+dialog box
+allowing specification of translation parameters prior to the translation
+operation.
+
+
+<p>
+<dt class=type><a name="Linker">
+<b>Linker
+</b></a>
+<dd class=data>This icon button gives access to the ABAL 3 <a href="vlink.htm">Linker Configuration</a>
+dialog box for
+the configuration and activation of ABAL module linking.
+
+
+<p>
+<dt class=type><a name="Executeur">
+<b>Executeur
+</b></a>
+<dd class=data>This button allows the ABAL Debug Utility to be launched for the inspection and correction
+of
+ABAL program components.
+<p>By clicking with the right button of the mouse the debug
+parameters
+dialog box will be presented, otherwise with the left button the
+debug
+utility will be direclty launched.
+
+
+
+<p>
+<dt class=type><a name="Editeur">
+<b>Editeur
+</b></a>
+<dd class=data>This icon button provides access to the <a href="vaed.htm">Editor Configuration</a>
+dialog box for
+modification of editor parameters.
+
+
+<p>
+<dt class=type><a name="Translate">
+<b>Translate
+</b></a>
+<dd class=data>This icon button provides access to the ABAL 3 <a href="vtrad.htm">Translator Parameters</a>
+dialog box
+allowing specification of translation parameters prior to the translation
+operation.
+
+
+<p>
+<dt class=type><a name="Linkeur">
+<b>Linkeur
+</b></a>
+<dd class=data>This icon button gives access to the ABAL 3 <a href="vlink.htm">Linker Configuration</a>
+dialog box for
+the configuration and activation of ABAL module linking.
+
+
+<p>
+
+
+</dl>
+
+</td>
+</table></div><p>
+
+<p><div align="center">
+<table class="CRT">
+<tr><th><h3 align="center">
+Copyright (c) 2002,2006 Prologue
+</h3>
+</table></div><p>
+</body></html>

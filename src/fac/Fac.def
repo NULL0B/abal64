@@ -1,0 +1,12 @@
+LIBRARY fac32
+
+DESCRIPTION 'DLL ABAL - Bibliotheque'
+
+EXETYPE WINDOWS
+
+EXPORTS
+	__rt_error
+	__rt_fin
+	__rt_init
+	__rt_arg
+	__InitRelais

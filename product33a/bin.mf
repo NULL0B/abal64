@@ -1,0 +1,75 @@
+# generated makefile : bin.mf 
+# ------------------------------------
+$(ABAL)/product33a/bin/abal: $(ABAL)/bin/abal
+	cp $* $@ 
+$(ABAL)/product33a/bin/abal3.access: $(ABAL)/bin/abal3.access
+	cp $* $@ 
+$(ABAL)/product33a/bin/abal3doc: $(ABAL)/bin/abal3doc
+	cp $* $@ 
+$(ABAL)/product33a/bin/abal3.ins: $(ABAL)/bin/abal3.ins
+	cp $* $@ 
+$(ABAL)/product33a/bin/abal3.schema: $(ABAL)/bin/abal3.schema
+	cp $* $@ 
+$(ABAL)/product33a/bin/abalprocess: $(ABAL)/bin/abalprocess
+	cp $* $@ 
+$(ABAL)/product33a/bin/access: $(ABAL)/bin/access
+	cp $* $@ 
+$(ABAL)/product33a/bin/aed32: $(ABAL)/bin/aed32
+	cp $* $@ 
+$(ABAL)/product33a/bin/agr: $(ABAL)/bin/agr
+	cp $* $@ 
+$(ABAL)/product33a/bin/asb: $(ABAL)/bin/asb
+	cp $* $@ 
+$(ABAL)/product33a/bin/agr32: $(ABAL)/bin/agr32
+	cp $* $@ 
+$(ABAL)/product33a/bin/amake32: $(ABAL)/bin/amake32
+	cp $* $@ 
+$(ABAL)/product33a/bin/ao32: $(ABAL)/bin/ao32
+	cp $* $@ 
+$(ABAL)/product33a/bin/avnor: $(ABAL)/bin/avnor
+	cp $* $@ 
+$(ABAL)/product33a/bin/bdatester32: $(ABAL)/bin/bdatester32
+	cp $* $@ 
+$(ABAL)/product33a/bin/bdapreload: $(ABAL)/bin/bdapreload
+	cp $* $@ 
+#$(ABAL)/product33a/bin/exa32.36: $(ABAL)/bin/exa32.36
+#	cp $* $@ 
+#$(ABAL)/product33a/bin/exa32.37: $(ABAL)/bin/exa32.37
+#	cp $* $@ 
+#$(ABAL)/product33a/bin/exa32.38: $(ABAL)/bin/exa32.38
+#	cp $* $@ 
+$(ABAL)/product33a/bin/exa32.40: $(ABAL)/bin/exa32.40
+	cp $* $@ 
+#$(ABAL)/product33a/bin/exadb32.36: $(ABAL)/bin/exadb32.36
+#	cp $* $@ 
+#$(ABAL)/product33a/bin/exadb32.37: $(ABAL)/bin/exadb32.37
+#	cp $* $@ 
+#$(ABAL)/product33a/bin/exadb32.38: $(ABAL)/bin/exadb32.38
+#	cp $* $@ 
+$(ABAL)/product33a/bin/exadb32.40: $(ABAL)/bin/exadb32.40
+	cp $* $@ 
+$(ABAL)/product33a/bin/genmake: $(ABAL)/bin/genmake
+	cp $* $@ 
+#$(ABAL)/product33a/bin/install: $(ABAL)/bin/install
+#	cp $* $@ 
+$(ABAL)/product33a/bin/iview: $(ABAL)/bin/iview
+	cp $* $@ 
+$(ABAL)/product33a/bin/old32: $(ABAL)/bin/old32
+	cp $* $@ 
+$(ABAL)/product33a/bin/otr16: $(ABAL)/bin/otr16
+	cp $* $@ 
+$(ABAL)/product33a/bin/otr32: $(ABAL)/bin/otr32
+	cp $* $@ 
+$(ABAL)/product33a/bin/sandr: $(ABAL)/bin/sandr
+	cp $* $@ 
+$(ABAL)/product33a/bin/sing: $(ABAL)/bin/sing
+	cp $* $@ 
+$(ABAL)/product33a/bin/sing.cfg: $(ABAL)/bin/sing.cfg
+	cp $* $@ 
+$(ABAL)/product33a/bin/visual.cfg: $(ABAL)/bin/visual.cfg
+	cp $* $@ 
+$(ABAL)/product33a/bin/yabal: $(ABAL)/bin/yabal
+	cp $* $@ 
+$(ABAL)/product33a/bin/linbda: $(ABAL)/bin/linbda
+	cp $* $@ 
+

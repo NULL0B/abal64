@@ -1,0 +1,46 @@
+# generated makefile : lib.mf 
+# ------------------------------------
+$(ABAL)/product32b/lib/allocate32.so: $(ABAL)/lib/allocate32.so
+	cp $* $@ 
+$(ABAL)/product32b/lib/asfun32.so: $(ABAL)/lib/asfun32.so
+	cp $* $@ 
+$(ABAL)/product32b/lib/audio32.so: $(ABAL)/lib/audio32.so
+	cp $* $@ 
+$(ABAL)/product32b/lib/bdaedit32.so: $(ABAL)/lib/bdaedit32.so
+	cp $* $@ 
+$(ABAL)/product32b/lib/bibmath32.so: $(ABAL)/lib/bibmath32.so
+	cp $* $@ 
+$(ABAL)/product32b/lib/dassv132.so: $(ABAL)/lib/dassv132.so
+	cp $* $@ 
+$(ABAL)/product32b/lib/fac32.so: $(ABAL)/lib/fac32.so
+	cp $* $@ 
+$(ABAL)/product32b/lib/libaccess32.so: $(ABAL)/lib/libaccess32.so
+	cp $* $@ 
+$(ABAL)/product32b/lib/libedit32.so: $(ABAL)/lib/libedit32.so
+	cp $* $@ 
+$(ABAL)/product32b/lib/libflfile32.so: $(ABAL)/lib/libflfile32.so
+	cp $* $@ 
+$(ABAL)/product32b/lib/libimage32.so: $(ABAL)/lib/libimage32.so
+	cp $* $@ 
+$(ABAL)/product32b/lib/libjpeg32.so: $(ABAL)/lib/libjpeg32.so
+	cp $* $@ 
+$(ABAL)/product32b/lib/libprint32.so: $(ABAL)/lib/libprint32.so
+	cp $* $@ 
+$(ABAL)/product32b/lib/ljii32.so: $(ABAL)/lib/ljii32.so
+	cp $* $@ 
+$(ABAL)/product32b/lib/ljiv32.so: $(ABAL)/lib/ljiv32.so
+	cp $* $@ 
+$(ABAL)/product32b/lib/psiii32.so: $(ABAL)/lib/psiii32.so
+	cp $* $@ 
+$(ABAL)/product32b/lib/psiiit32.so: $(ABAL)/lib/psiiit32.so
+	cp $* $@ 
+$(ABAL)/product32b/lib/bj30033032.so: $(ABAL)/lib/bj30033032.so
+	cp $* $@ 
+$(ABAL)/product32b/lib/tty32.so: $(ABAL)/lib/tty32.so
+	cp $* $@ 
+$(ABAL)/product32b/lib/visual32.so: $(ABAL)/lib/visual32.so
+	cp $* $@ 
+$(ABAL)/product32b/lib/z32.so: $(ABAL)/lib/z32.so
+	cp $* $@ 
+$(ABAL)/product32b/lib/zgr32.so: $(ABAL)/lib/zgr32.so
+	cp $* $@ 

@@ -1,0 +1,12 @@
+.s.at:
+	otr32 -m $*
+	ao32 -l$(@B).tc $@
+	./fcheck $(@B).tc q/$(@B).tc
+
+testatb.at:   testatb.s
+testcfile.at: testcfile.s
+testptr.at:   testptr.s
+testsubs.at:  testsubs.s
+
+! make
+

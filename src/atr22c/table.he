@@ -1,0 +1,274 @@
+/*
+ *      Projet  : ABAL                  Copyright Prologue s.a. (c) 1993, 1995
+ *      Module  : ATR
+ *      Fichier : TABLE.HE
+ *      Version : 2.1f
+ *      Date    : 22/11/95
+ *      Systeme : DOS / PRL / UNIX / VMS
+ *
+ *      Module de gestion des tables ( DCL, CST, PROC, SEG )
+ *
+ */
+
+#ifdef _TABLE
+#define EXT_TABLE
+#else
+#define EXT_TABLE extern
+#endif /* _SYMBOLES */
+
+/* PUBLIC */
+/* ------ */
+
+#define DCL_TABLE	1	
+#define CST_TABLE	2
+#define PROC_TABLE	3
+#define SEG_TABLE	4
+
+/* TABFIC 									*/
+/* ------ 									*/
+/*      Definition de la structure d'information sur un fichier	 	*/
+/*      -------------------------------------------------------	 	*/
+
+#define Tabfic struct _Tfic
+Tabfic {
+	BYTE *ptbuf;		/* Adresse du buffer memoire  */
+	BINAIRE longueur;	/* longueur du buffer memoire */
+};
+
+/* BUF 									*/
+/* --- 									*/
+/*      Definition de la structure d'information sur un buffer	 	*/
+/*      ------------------------------------------------------	 	*/
+
+#define BUFInfo struct _BuInf
+BUFInfo {
+	BYTE *ptbuf;		/* Adresse du buffer memoire  */
+	BINAIRE longueur;	/* longueur du buffer memoire */
+	BUFInfo *suiv;		/* buffer memoire suivant     */
+};
+
+/* TABLE 									*/
+/* --- 									*/
+/*      Definition de la structure d'information sur une table	 	*/
+/*      --------------------------------------------------------- 	*/
+
+#define TABLEInfo struct _TbInf
+TABLEInfo {
+	BOOL type;		/* type de la table */
+	BINAIRE nb;		/* nb d'elements de la table */
+	BINAIRE tmem;		/* taille de memoire */
+	BUFInfo *binfo;		/* Buffer memoire */	
+};
+
+/* DCL 									*/
+/* --- 									*/
+/*      Definition de la structure d'information sur une variable 	*/
+/*      --------------------------------------------------------- 	*/
+
+#define DCLInfo struct _VrInf
+DCLInfo {
+	BOOL ext;		/* externe */
+	BOOL local;		/* Local ou Global */
+	BOOL etendue;		/* Field=E */
+	BOOL virtuelle;		/* Field=no */
+	BINAIRE nologique;	/* nologique =no */
+	BOOL trou;		/* trou de traduction */
+	BOOL arg;		/* arg ou proc */
+	BOOL ptr;		/* Pointeur ou non */
+	BYTE tptr;		/* Pointeur, ... */
+	BYTE type;		/* type */
+	BINAIRE longueur;	/* longueur */
+	BINAIRE ptlongueur;	/* longueur pointee */
+	BINAIRE dim1;		/* 1ere dimension */
+	BINAIRE dim2;		/* 2eme dimension */
+	BINAIRE adredefptr;	/* adresse en cas de redef de zone pointee */
+	BINAIRE adrvar;		/* adresse de la variable */
+	BINAIRE adrfield;	/* adresse de la variable Field E, NO */
+	BINAIRE adrdesc;	/* adresse du descripteur */
+	BINAIRE lgdesc;		/* longueur du descripteur en octet */	
+};
+/**/
+/* CST 									*/
+/* --- 									*/
+/*      Definition de la structure d'information sur une constante 	*/
+/*      ---------------------------------------------------------- 	*/
+
+#define CSTInfo struct _CsInf
+CSTInfo {
+	BOOL local;		/* Local ou Global */
+	BYTE type;		/* type */
+	BINAIRE longueur;	/* longueur */
+	BYTE *val;		/* valeur */
+	BINAIRE adrdesc;	/* adresse du descripteur */
+	BINAIRE lgdesc;		/* longueur du descripteur en octet */	
+};
+
+/* PROC 								*/
+/* ---- 								*/
+/*      Definition de la structure d'information sur une procedure 	*/
+/*      ---------------------------------------------------------- 	*/
+#define PROCInfo struct _PrInf
+PROCInfo {
+	BINAIRE adrcode;	/* Adresse du code 	*/
+	BINAIRE lgcode;		/* Longueur du code 	*/
+	BINAIRE adrdcl;		/* Adresse table des variables locales  */
+	BINAIRE lgdcl;		/* Longueur table des variables locales */
+	BINAIRE adrcst;		/* Adresse table des constantes locales  */
+	BINAIRE lgcst;		/* Longueur table des constantes locales */
+	BOOL differload;	/* Chargement differe */	
+	BOOL staticdcl;		/* Variables locales statiques */
+	BOOL noinline;		/* Inhibition d'INLINE */
+	BINAIRE adrdesc;	/* adresse du descripteur */
+	BINAIRE lgdesc;		/* longueur du descripteur en octet */	
+};
+
+
+
+/* SEG 									*/
+/* --- 									*/
+/*      Definition de la structure d'information sur un segment 	*/
+/*      ------------------------------------------------------- 	*/
+#define SEGInfo struct _SgInf
+SEGInfo {
+	BINAIRE num;		/* numero de segment */
+	BINAIRE adrcode;	/* Adresse du code  */
+	BINAIRE lgcode;		/* Longueur du code */
+	BINAIRE adrdcl;		/* Adresse table des variables locales  */
+	BINAIRE lgdcl;		/* Longueur table des variables locales */
+	BINAIRE adrcst;		/* Adresse table des constantes locales  */
+	BINAIRE lgcst;		/* Longueur table des constantes locales */
+	BOOL resident;		/* Chargement differe */	
+	BOOL staticdcl;		/* Variables locales statiques */
+	BOOL noinline;		/* Inhibition d'INLINE */
+	BINAIRE adrdesc;	/* adresse du descripteur */
+	BINAIRE lgdesc;		/* longueur du descripteur en octet */	
+};
+
+
+/* PSUC 									 */
+/* --- 									 */
+/*      Definition de la structure d'information sur un pointeur de code */
+/*      ---------------------------------------------------------------- */
+
+#define PSUC_LOCAL	0x8000	/* parametrage de la liberation */
+#define PSUC_ALL	0xFFFF
+
+#define PSUC_PROC	0	/* Type de ptr de code */
+#define PSUC_SEGMENT	1
+#define PSUC_USER	2
+#define PSUC_CODE	3
+
+#define PSUCInfo struct _PsuInf
+PSUCInfo {
+	BINAIRE adr;		/* adresse de la variable */
+	BOOL	ext;		/* externe ou pas */
+	BYTE	type;		/* type de pointeur de code */
+	PSUCInfo *suiv;		/* variable suivante */	
+};
+
+#define All_PSUC() (PSUCInfo *) XNmalloc("PSUC",sizeof(PSUCInfo))
+#define Free_PSUC(p) Xfree((char *) p)
+
+/* PUBLIC VARIABLES */
+/* ---------------- */
+EXT_TABLE PSUCInfo *psuc_lst;	/* liste des types de ptr de code */
+
+EXT_TABLE BINAIRE glob_desc; /* ptr vers constantes aliassee */
+
+/*      Definition relative a l'utilisation des variables "pointeur"    */
+/*      ------------------------------------------------------------    */
+EXT_TABLE BOOL fldptr;             /* redefinition d'une zone pointee      */
+EXT_TABLE BINAIRE adrptr;
+
+EXT_TABLE int lgptrfld;   	/* longueur du pointeur redefinit par Field */
+EXT_TABLE int local_niv_field; /* niveau (imbrications) des field = M en local */
+/* PUBLIC FONCTIONS */
+/* ---------------- */
+
+#ifdef LINT_ARGS
+
+EXT_TABLE BINAIRE InitTable(TABLEInfo *);
+EXT_TABLE BINAIRE EndTable(TABLEInfo *);
+
+EXT_TABLE BINAIRE MakeDCLTable(DCLInfo *);
+EXT_TABLE BINAIRE GetDCLTable(DCLInfo *);
+EXT_TABLE BINAIRE ModifDCLTable(DCLInfo *);
+
+EXT_TABLE BINAIRE MakeCSTTable(CSTInfo *);
+EXT_TABLE BINAIRE GetCSTTable(CSTInfo *);
+EXT_TABLE BINAIRE ModifCSTTable(CSTInfo *);
+
+EXT_TABLE BINAIRE MakePROCTable(PROCInfo *);
+EXT_TABLE BINAIRE GetPROCTable(PROCInfo *);
+EXT_TABLE BINAIRE ModifPROCTable(PROCInfo *);
+
+EXT_TABLE BINAIRE MakeSEGTable(SEGInfo *);
+EXT_TABLE BINAIRE GetSEGTable(SEGInfo *);
+EXT_TABLE BINAIRE ModifSEGTable(SEGInfo *);
+
+EXT_TABLE BINAIRE GetTABLETable(TABLEInfo *);
+EXT_TABLE BINAIRE GetTable(Tabfic *,TABLEInfo *);
+EXT_TABLE BINAIRE PutTable(Tabfic *,TABLEInfo *);
+
+EXT_TABLE BINAIRE MakePSUCTable(PSUCInfo *);
+EXT_TABLE BINAIRE GetPSUCTable(PSUCInfo *);
+EXT_TABLE BINAIRE LibPSUCTable(BINAIRE);
+EXT_TABLE BINAIRE ModifPSUCTable(PSUCInfo *);
+
+EXT_TABLE BINAIRE mkdcldesc ( BOOL , BOOL, BOOL, BYTE , BINAIRE , BINAIRE , BINAIRE, BYTE, BOOL, int, BINAIRE );
+EXT_TABLE BYTE *mkprocdesc ( TabProc *, BOOL, BINAIRE , BINAIRE , BINAIRE, BINAIRE, BINAIRE );
+EXT_TABLE BYTE *mksegdesc ( TabSeg *, BOOL, BINAIRE, BINAIRE , BINAIRE , BINAIRE, BINAIRE, BINAIRE, BINAIRE, BINAIRE );
+EXT_TABLE BINAIRE mkcstgloloc ( BINAIRE, BINAIRE *);
+EXT_TABLE BINAIRE mkcststr ( BINAIRE, BINAIRE *, char * );
+EXT_TABLE BINAIRE mkcstbcd ( BINAIRE, BINAIRE *, BYTE * );
+
+EXT_TABLE BINAIRE matchcst (char *,BINAIRE,BINAIRE,BOOL);
+
+EXT_TABLE void affvinfo(DCLInfo *);
+
+#else
+
+EXT_TABLE BINAIRE InitTable();
+EXT_TABLE BINAIRE EndTable();
+
+EXT_TABLE BINAIRE MakeDCLTable();
+EXT_TABLE BINAIRE GetDCLTable();
+EXT_TABLE BINAIRE ModifDCLTable();
+
+EXT_TABLE BINAIRE MakeCSTTable();
+EXT_TABLE BINAIRE GetCSTTable();
+EXT_TABLE BINAIRE ModifCSTTable();
+
+EXT_TABLE BINAIRE MakePROCTable();
+EXT_TABLE BINAIRE GetPROCTable();
+EXT_TABLE BINAIRE ModifPROCTable();
+
+EXT_TABLE BINAIRE MakeSEGTable();
+EXT_TABLE BINAIRE GetSEGTable();
+EXT_TABLE BINAIRE ModifSEGTable();
+
+EXT_TABLE BINAIRE GetTABLETable();
+EXT_TABLE BINAIRE GetTable();
+EXT_TABLE BINAIRE PutTable();
+
+EXT_TABLE BINAIRE MakePSUCTable();
+EXT_TABLE BINAIRE GetPSUCTable();
+EXT_TABLE BINAIRE LibPSUCTable();
+EXT_TABLE BINAIRE ModifPSUCTable();
+
+EXT_TABLE BINAIRE mkdcldesc ();
+EXT_TABLE BYTE *mkprocdesc ();
+EXT_TABLE BYTE *mksegdesc ();
+EXT_TABLE BINAIRE mkcstgloloc ();
+EXT_TABLE BINAIRE mkcststr ();
+EXT_TABLE BINAIRE mkcstbcd ();
+
+EXT_TABLE BINAIRE matchcst ();
+
+#endif /* LINT_ARGS */
+
+/* FIN DEFINITIONS INTERNES */
+/* ------------------------ */
+
+/* ---------------- Fin du fichier : table.he --------------------------- */
+
