@@ -1,0 +1,16 @@
+! include $(ABAL)/common/libmafl.def
+! include $(ABAL)/common/libflfile.def
+! include $(ABAL)/common/criteria.def
+
+
+! ifdef	CRIVER37
+LIBMAFL = $(LIBMAFL)
+! else
+! ifdef CRIVER38
+LIBMAFL = $(LIBMAFL)
+!else
+LIBMAFL = $(LIBMAFL) $(LIBFLFILE)
+!endif
+!endif
+
+

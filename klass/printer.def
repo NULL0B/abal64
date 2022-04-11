@@ -1,0 +1,13 @@
+Version = 1
+Runtime = "printer"
+
+% DriverInitialise($?,%,%,%)
+% DriverColours()
+% DriverConnect($,$,$)
+% DriverStartRaster($?)
+% DriverPrintRow($?,$)
+% DriverEndRaster($?)
+% DriverLiberate($?)
+
+End
+

@@ -1,0 +1,9 @@
+! ifdef ABALCRITERIA
+! ifdef ABALDEBIAN
+LIBCRITERIA     = /usr/lib/abal3/libcriter32.so
+! else
+LIBCRITERIA     = /lib/libcriter32.so
+!endif
+! else
+LIBCRITERIA     = /usr/lib/abal3/libinxsql64.so $(LIBFLFILE)
+! endif

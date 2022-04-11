@@ -1,0 +1,24 @@
+! include $(ABAL)/common/host.def
+# ----------------------------------------------
+# version de criteria a generer 
+# ----------------------------------------------
+# ( change this only if provisionary generation 
+# otherwise change both ) 37 or 36
+# this controls the use of the relevant libcriteria
+# and flfile combinations
+# prior to 37 both were needed by exa
+# now only libcriter is needed since it encapsulates
+# the flfile
+# ----------------------------------------------
+CRIVER = 40
+
+# version de criteria a utiliser
+# -----------------------------
+CRIUSE = 40
+
+# flag to indicate which version for compile
+# ------------------------------------------
+CRIVER$(CRIVER) = true
+
+
+

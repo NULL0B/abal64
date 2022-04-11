@@ -1,0 +1,29 @@
+ABALDEBIAN       = TRUE
+SHARED_LIBRARIES = TRUE
+ABAL32A          = TRUE
+VABAL            = -DABAL32A -DABAL32B -DABALXML -DABAL33A -DABALSQL
+! ifndef ABALDEBIAN
+EXALIB           = /lib
+EXABIN           = /opt/prologue/bin
+ABALINCLUDE      = /home/abal3/include
+ABALFONTS        = /home/abal3/fonts
+ABALIMAGES       = /home/abal3/images 
+ABALCLASS        = /home/abal3/class
+! else
+EXALIB           = /usr/lib/abal3
+EXABIN           = /usr/share/abal3/bin
+ABALINCLUDE      = /usr/share/abal3/include
+ABALFONTS        = /usr/share/abal3/fonts
+ABALIMAGES       = /usr/share/abal3/images 
+ABALCLASS        = /usr/share/abal3/class
+! endif
+HOST             = -DLINUX -DUNIX -DUSEIT -Dunix $(VABAL)
+GCC              = gcc -DLINT_ARGS=1 -DI_NEED_OS2_H=1
+CC_SHARED        = 
+LD_SHARED        = -shared
+LIBREF           = cp 
+# LIBREF         = ln -s -f 
+BDATESTER        = $(ABAL)/bin/bdatester
+BDATESTER32      = $(ABAL)/bin/bdatester32
+
+

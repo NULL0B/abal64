@@ -1,0 +1,14 @@
+SHARED_LIBRARIES = TRUE
+ABAL31E          = TRUE
+VABAL            = -DABALXML 
+
+HOST             = -DLINUX -DUNIX -DUSEIT -Dunix $(VABAL)
+GCC              = gcc
+CC_SHARED        = 
+LD_SHARED        = -shared
+LIBREF           = cp 
+# LIBREF         = ln -s -f 
+BDATESTER        = $(ABAL)/bin/bdatester
+BDATESTER32      = $(ABAL)/bin/bdatester32
+
+

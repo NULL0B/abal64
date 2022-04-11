@@ -1,0 +1,9 @@
+Version = 1
+Runtime = "test"
+: rint32(:,.)
+$ rstr($,.?)
+End
+
+
+
+

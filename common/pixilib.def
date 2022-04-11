@@ -1,0 +1,25 @@
+# SHARED_PIXELS = TRUE
+
+! ifdef ABALDEBIAN
+XPATH   = /usr/lib/x86_64-linux-gnu
+XTPATH  = /usr/lib/x86_64-linux-gnu
+XAWPATH = /usr/lib/x86_64-linux-gnu
+! else
+XPATH   = /usr/lib/x86_64-linux-gnu
+XTPATH  = /usr/lib/x86_64-linux-gnu
+XAWPATH = /usr/lib/x86_64-linux-gnu
+! endif
+USEGIGO = 1
+! ifdef USEGIGO
+XLIB    = $(XPATH)/libX11.so $(XTPATH)/libXt.so 
+! IFDEF SHARED_PIXELS
+PIXILIB = /lib/libpixel64.so
+! else
+PIXILIB  = $(ABAL)/archive/libpixel.a
+! endif
+! else
+PIXILIB = 
+XLIB    = 
+! endif
+
+

@@ -1,0 +1,35 @@
+include = -I/home/abal3/include/ -I$(ABAL)/zlib/source/ -I$(ABAL)/zlib/include/  -I/opt/prologue/include/
+
+XZL     = $1 -a -o -x 
+
+.s.o:
+	$(otr) -m $(XZL) $(include)  -d$@ $*
+
+.as.o:
+	$(otr) -m $(XZL) $(include) -d$@  $*
+
+.as.at:
+	$(otr)   -m $(XZL) $(include) -d$@  $*
+	$(ao)    -l$(@B)$(tc) $@
+	$(avnor)  $(@B)$(tc) qtc/$(@B)$(tc)
+
+.s.at:
+	$(otr) -m $(XZL) $(include) -d$@ $*
+	$(ao)    -l$(@B)$(tc) $@
+	$(avnor)  $(@B)$(tc) qtc/$(@B)$(tc)
+
+.o.at:
+	$(old) -m -d$@ $?
+	$(ao)    -l$(@B)$(tc) $@
+	$(avnor)  $(@B)$(tc) qtc/$(@B)$(tc)
+
+! make
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,5 @@
+REMOVE  = -ar d 
+ARCHIVE = ar q 
+
+
+

@@ -1,0 +1,9 @@
+USELDAP = TRUE
+! ifdef USELDAP
+LIBLDAP = -lldap
+SYSLDAP = -DSYSTEM_LDAP
+! else
+LIBLDAP = 
+SYSLDAP = 
+! endif
+

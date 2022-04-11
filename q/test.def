@@ -1,0 +1,28 @@
+Version = 1
+Runtime = "test"
+ int8(#,.)
+ int16(%,.)
+ int32(:,.)
+ num(*,.)
+ str($,.)
+ pint8(#,.?)
+ pint16(%,.?)
+ pint32(:,.?)
+ pnum(*,.?)
+ pstr($,.?)
+# rint8(#,.)
+% rint16(%,.)
+: rint32(:,.)
+* rnum(*,.)
+$ rstr($,.)
+# rpint8(#,.?)
+% rpint16(%,.?)
+: rpint32(:,.?)
+* rpnum(*,.?)
+$ rpstr($,.?)
+End
+
+
+
+
+

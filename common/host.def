@@ -1,0 +1,26 @@
+ABAL             = /home/abal64
+ABAL64ONLY       = TRUE
+GCC              = gcc -fPIC -O0 
+GDB              = -g -ggdb
+ABALINCLUDE      = $(ABAL)/include
+ABALDEBIAN       = TRUE
+SHARED_LIBRARIES = TRUE
+ABAL32A          = TRUE
+VABAL            = -DABAL32A -DABAL32B -DABALXML -DABAL33A -DABALSQL
+! ifndef ABALDEBIAN
+EXALIB           = /lib
+EXABIN           = /opt/prologue/bin
+! else
+EXALIB           = /usr/lib/abal3
+EXABIN           = /usr/share/abal3/bin
+! endif
+HOST             = -DLINUX -DUNIX -DUSEIT -Dunix $(VABAL)
+GCC              = gcc -fPIC -O0
+CC_SHARED        = -fPIC -O0 
+LD_SHARED        = -shared
+LIBREF           = cp 
+# LIBREF         = ln -s -f 
+BDATESTER        = $(ABAL)/bin/bdatester
+BDATESTER32      = $(ABAL)/bin/bdatester32
+
+

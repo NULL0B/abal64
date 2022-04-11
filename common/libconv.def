@@ -1,0 +1,15 @@
+# -------------------------------------------------------------
+# this file provides the variables which control the use of
+# the standard i conv library for conversion of utf8 characters
+# encountered in XML files to ISO-8859-1 characters
+# -------------------------------------------------------------
+! ifdef ABALDEBIAN
+LIBCONV = /usr/lib/libiconv_hook.so
+! else
+LIBCONV = /usr/lib/libiconv.so
+! endif
+USEICONV = -DUSEICONV
+# -------------------------------------------------------------
+# end of file
+# -------------------------------------------------------------
+

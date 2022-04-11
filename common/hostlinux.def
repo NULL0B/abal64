@@ -1,0 +1,6 @@
+SHARED_LIBRARIES = /usr/lib/libdl.so
+HOST             = -DLINUX
+GCC              = gcc
+CC_SHARED        = 
+LD_SHARED        = -shared
+

@@ -1,0 +1,2 @@
+LIBACCESS = /home/abal64/lib/libaccess64.so
+OBJACCESS = /home/abal64/access64/exaccess.o

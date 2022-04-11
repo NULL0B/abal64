@@ -1,0 +1,12 @@
+MASTER2         = Abal.3.1d.0.11
+MASTER3         = Abal.3.1d.0.11
+
+FNPARSER        = $(ABAL)/common/fnparser.o
+WILDCOMP        = $(ABAL)/common/wildcomp.o
+SYSTEME         = $(ABAL)/common/systeme.o
+SYSTEMD         = $(ABAL)/common/systemd.o
+
+LIBDL           = /usr/lib/libdl.so
+
+
+

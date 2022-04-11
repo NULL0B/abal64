@@ -1,0 +1,4 @@
+SYSSSL = -DSYSTEM_SSL
+LIBSSL = -lssl
+#INCSSL = /dbase/freeware
+INCSSL = 

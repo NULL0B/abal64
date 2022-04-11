@@ -1,0 +1,29 @@
+; Bibliotheque Dynamique ABAL
+; Fonctions mathematiques
+
+version = 1
+runtime = "bibmath"
+
+; les fonctions
+
+*atn(*)
+*cos(*)
+*exp(*)
+*log(*)
+*sin(*)
+*sqr(*)
+*tan(*)
+
+; puis le fin
+
+end
+                              
+               
+               
+
+               
+               
+               
+               
+               
+

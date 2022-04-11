@@ -1,0 +1,13 @@
+version = 1
+Runtime = "tty"
+
+% ttyopen(%?,$)
+% ttyclose(%)
+% ttyconnect(%,.)
+% ttydcn(%)
+% ttywrite(%,#,$,.)
+% ttyread(%,$?,.)
+% ttybreak(%)
+% ttybuffer(%,%)
+End
+

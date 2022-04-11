@@ -1,0 +1,14 @@
+Version = 1
+
+Runtime = "abal64"
+
+# GetInt8($)
+% GetInt16($)
+: GetInt32($)
+& GetInt64($)
+* GetBcd($)
+$ GetString($)
+
+End
+
+

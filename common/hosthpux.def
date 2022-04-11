@@ -1,0 +1,9 @@
+# this file defines the host definition for HP port
+# -------------------------------------------------
+SHARED_LIBRARIES = /usr/lib/libdld.sl
+HOST      = -DHPUX
+GCC       = gcc
+CC_SHARED = -z -fPIC
+LD_SHARED = -shared -z
+
+

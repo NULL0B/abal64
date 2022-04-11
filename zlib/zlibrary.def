@@ -1,0 +1,13 @@
+! ifndef zlibrary_def
+zlibrary_def = true 
+! include abal3.def
+# Project : zlibrary.jrp
+# ----------------------
+PATH0 = /home/Dev/abal32/zlib/run/
+PATH1 = /home/Dev/abal32/zlib/source/
+PATH2 = /home/Dev/abal32/zlib/module/
+! endif
+
+
+# end of file
+

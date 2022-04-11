@@ -1,0 +1,8 @@
+! include $(ABAL)/common/libmafl37.def
+! include $(ABAL)/common/libflfile.def
+! include $(ABAL)/common/criteria.def
+
+LIBMAFL = $(LIBMAFL37)
+
+
+
