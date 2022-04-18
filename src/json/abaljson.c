@@ -134,6 +134,18 @@ public EXAWORD LdfBdaExecute(
 		case	4 : /* %closejson(%) */
 			result=(*DynamicLibrary->fonction[4])(
 				LdfParaWord(0)); break;
+		case	5 : /* %readavro(%,%,$,%) */
+			result=(*DynamicLibrary->fonction[5])(
+				LdfParaWord(0),
+				LdfParaWord(1),
+				pptr[2],
+				LdfParaWord(3)); break;
+		case	6 : /* %writeavro(%,%,$,%) */
+			result=(*DynamicLibrary->fonction[6])(
+				LdfParaWord(0),
+				LdfParaWord(1),
+				pptr[2],
+				LdfParaWord(3)); break;
 		default	: result=138;
 		break;
 		}
@@ -149,7 +161,7 @@ public EXAWORD LdfBdaInitialise(
 {
 	int	i=0;
 	rt_init = descriptor;
-	function_counter=5;
+	function_counter=7;
 	if (!(DynamicLibrary = InitRelais()))
 		return(139);
 	else	return(0);

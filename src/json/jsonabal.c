@@ -8,8 +8,11 @@
 #include        "bda.h"
 #include        "allocate.h"
 
-#define __JSONABAL_DATE         "18/10/2021"
-#define _JSON_DLL_FUNCTION    5
+#define __JSONABAL_DATE         "18/04/2022"
+#define _JSON_DLL_FUNCTION    7
+
+#define	MAXJSON	64
+#define MAXFILENAME 1024
 
 #ifndef BDA_REDIRECT
 #define BDA_REDIRECT 5
@@ -89,7 +92,7 @@ struct	json_context
 };
 
 static	int		      ready=0;
-static	struct	json_context * Heap[16];
+static	struct	json_context * Heap[MAXJSON];
 
 /*	-----------	*/
 /*	check_ready	*/
@@ -107,13 +110,13 @@ static	void	check_ready()
 /*	-----------	*/
 static	WORD	DllJsonOpen(BPTR filename, WORD length)
 {
-	char	buffer[1024];
+	char	buffer[MAXFILENAME+1];
 	struct	data_element * dptr;
 	struct	json_context * jptr;
 	int	h=0;
 	check_ready();
-	memcpy(buffer,filename,length);
-	buffer[length] = 0;
+	memset(buffer,0,MAXFILENAME+1);
+	memcpy(buffer,filename,(length<MAXFILENAME?length:MAXFILENAME));
 	if (!( dptr = json_parse_file( buffer ) ))
 		return(0);
 	else if (!( jptr = allocate( sizeof( struct json_context ) ) ))
@@ -136,9 +139,9 @@ static	WORD	DllJsonOpen(BPTR filename, WORD length)
 			jptr->item = _ABAL_JSON_OBJECT;
 		else	jptr->item = _ABAL_JSON_ARRAY;
 		jptr->sp   = 0;
-		while (( h < 16 ) && ( Heap[h] ))
+		while (( h < MAXJSON) && ( Heap[h] ))
 			h++;
-		if ( h < 16 )
+		if ( h < MAXJSON)
 		{
 			Heap[h++] = jptr;
 			return(h);
@@ -159,13 +162,13 @@ static	WORD	DllJsonOpen(BPTR filename, WORD length)
 /*	-------------	*/
 static	WORD	DllJsonCreate(BPTR filename, WORD length)
 {
-	char	buffer[1024];
+	char	buffer[MAXFILENAME];
 	struct	data_element * dptr;
 	struct	json_context * jptr;
 	int	h=0;
 	check_ready();
-	memcpy(buffer,filename,length);
-	buffer[length] = 0;
+	memset(buffer,0,MAXFILENAME+1);
+	memcpy(buffer,filename,(length<MAXFILENAME?length:MAXFILENAME));
 	if (!( jptr = allocate( sizeof( struct json_context ) ) ))
 		return(0);
 	else if (!( jptr->filename = allocate_string(buffer) ))
@@ -185,9 +188,9 @@ static	WORD	DllJsonCreate(BPTR filename, WORD length)
 		jptr->mode = 1;
 		jptr->item = 0;
 		jptr->sp   = 0;
-		while (( h < 16 ) && ( Heap[h] ))
+		while (( h < MAXJSON) && ( Heap[h] ))
 			h++;
-		if ( h < 16 )
+		if ( h < MAXJSON)
 		{
 			Heap[h++] = jptr;
 			return(h);
@@ -208,7 +211,7 @@ static	WORD	DllJsonCreate(BPTR filename, WORD length)
 static	WORD	DllJsonClose(WORD handle)
 {
 	struct	json_context * jptr;
-	if ((!( handle )) || ( handle > 16 ))
+	if ((!( handle )) || ( handle > MAXJSON))
 		return(_ABAL_JSON_NULL);
 	else if (!( jptr = Heap[--handle] ))
 		return(_ABAL_JSON_NULL);
@@ -225,6 +228,83 @@ static	WORD	DllJsonClose(WORD handle)
 	}	
 }
 
+/*	----------------	*/
+/*	avro_read_record	*/
+/*	----------------	*/
+static	WORD	avro_read_record( FILE * h, struct data_element * sptr,  struct data_element * jptr )
+{
+	return( 0 );
+}
+
+/*	-----------	*/
+/*	avro_reader	*/
+/*	-----------	*/
+static	WORD	avro_reader( FILE * h, struct data_element * sptr, struct data_element * jptr )
+{
+	struct	data_element * nptr;
+	struct	data_element * tptr;
+	struct	data_element * fptr;
+	if (!( h ))
+		return(0);
+	else if (!( sptr ))
+		return(0);
+	else if (!( jptr ))
+		return(0);
+	else if (!( tptr = json_element( sptr->first, "type") ))
+		return(30);
+	else if (!( tptr->value ))
+		return(31);
+	else if (!( nptr = json_element( sptr->first, "name") ))
+		return(32);
+	else if (!( nptr->value ))
+		return(33);
+	else if (!( strcmp( tptr->value, "record" ) ))
+		return( avro_read_record( h, json_element( sptr->first, "fields"), jptr ) );
+	else	return(50);
+}
+
+/*	-----------	*/
+/*	DllAvroRead	*/
+/*	-----------	*/
+static	WORD	DllAvroRead(WORD schema, WORD handle, BPTR avrofile, WORD avronamelen)
+{
+	struct	json_context * sptr;
+	struct	json_context * jptr;
+	FILE *	h;
+	WORD	status;
+	BYTE	nptr[MAXFILENAME+1];
+
+	// check the avro schema handle
+	if ((!( schema)) || ( schema> MAXJSON))
+		return(_ABAL_JSON_NULL);
+	else if (!( sptr = Heap[--schema] ))
+		return(_ABAL_JSON_NULL);
+	else if ( jptr->mode )
+		return(_ABAL_JSON_ERROR );
+
+	// check the json output file handle
+	if ((!( handle )) || ( handle > MAXJSON))
+		return(_ABAL_JSON_NULL);
+	else if (!( jptr = Heap[--handle] ))
+		return(_ABAL_JSON_NULL);
+	else if (!( jptr->mode ))
+		return(_ABAL_JSON_ERROR );
+
+	// prepare the avro filename
+	memset(nptr, 0, MAXFILENAME+1);
+	memcpy(nptr, avrofile, (avronamelen<MAXFILENAME?avronamelen:MAXFILENAME));
+
+	// open the avro file
+	if (!( h = fopen( nptr, "r") ))
+		return(_ABAL_JSON_ERROR );
+	else
+	{
+		status = avro_reader(h, sptr->root, jptr->root);
+		fclose(h);
+		return(status);
+	}
+}
+
 /*	-----------	*/
 /*	DllJsonRead	*/
 /*	-----------	*/
@@ -234,7 +314,8 @@ static	WORD	DllJsonRead(WORD handle, BPTR dptr, WORD dlen)
 	struct	data_element * eptr;
 	WORD	elen;
 	WORD	i;
-	if ((!( handle )) || ( handle > 16 ))
+
+	if ((!( handle )) || ( handle > MAXJSON))
 		return(_ABAL_JSON_NULL);
 	else if (!( jptr = Heap[--handle] ))
 		return(_ABAL_JSON_NULL);
@@ -317,13 +398,90 @@ static	WORD	DllJsonRead(WORD handle, BPTR dptr, WORD dlen)
 	return(_ABAL_JSON_NULL);
 }
 
+/*	-----------------	*/
+/*	avro_write_record	*/
+/*	-----------------	*/
+static	WORD	avro_write_record( FILE * h, struct data_element * sptr,  struct data_element * jptr )
+{
+	return( 0 );
+}
+
+/*	-----------	*/
+/*	avro_writer	*/
+/*	-----------	*/
+static	WORD	avro_writer( FILE * h, struct data_element * sptr, struct data_element * jptr )
+{
+	struct	data_element * nptr;
+	struct	data_element * tptr;
+	struct	data_element * fptr;
+	if (!( h ))
+		return(0);
+	else if (!( sptr ))
+		return(0);
+	else if (!( jptr ))
+		return(0);
+	else if (!( tptr = json_element( sptr->first, "type") ))
+		return(30);
+	else if (!( tptr->value ))
+		return(31);
+	else if (!( nptr = json_element( sptr->first, "name") ))
+		return(32);
+	else if (!( nptr->value ))
+		return(33);
+	else if (!( strcmp( tptr->value, "record" ) ))
+		return( avro_write_record( h, json_element( sptr->first, "fields"), jptr ) );
+	else	return(50);
+}
+
+/*	------------	*/
+/*	DllAvroWrite	*/
+/*	------------	*/
+static	WORD	DllAvroWrite(WORD schema, WORD handle, BPTR avrofile, WORD avronamelen)
+{
+	struct	json_context * sptr;
+	struct	json_context * jptr;
+	FILE *	h;
+	WORD	status=0;
+	BYTE	nptr[MAXFILENAME+1];
+
+	// check the avro schema handle
+	if ((!( schema)) || ( schema> MAXJSON))
+		return(_ABAL_JSON_NULL);
+	else if (!( sptr = Heap[--schema] ))
+		return(_ABAL_JSON_NULL);
+	else if ( jptr->mode )
+		return(_ABAL_JSON_ERROR );
+
+	// check the json output file handle
+	if ((!( handle )) || ( handle > MAXJSON))
+		return(_ABAL_JSON_NULL);
+	else if (!( jptr = Heap[--handle] ))
+		return(_ABAL_JSON_NULL);
+	else if ( jptr->mode )
+		return(_ABAL_JSON_ERROR );
+
+	// prepare the avro filename
+	memset(nptr, 0, MAXFILENAME+1);
+	memcpy(nptr, avrofile, (avronamelen<MAXFILENAME?avronamelen:MAXFILENAME));
+
+	// open the avro file
+	if (!( h = fopen( nptr, "w") ))
+		return(_ABAL_JSON_ERROR );
+	else
+	{
+		status = avro_writer(h, sptr->root, jptr->root);
+		fclose(h);
+		return(status);
+	}
+}
+
 /*	------------	*/
 /*	DllJsonWrite	*/
 /*	------------	*/
 static	WORD	DllJsonWrite(WORD handle, WORD item, BPTR dptr, WORD dlen)
 {
 	struct	json_context * jptr;
-	if ((!( handle )) || ( handle > 16 ))
+	if ((!( handle )) || ( handle > MAXJSON))
 		return(_ABAL_JSON_NULL);
 	else if (!( jptr = Heap[--handle] ))
 		return(_ABAL_JSON_NULL);
@@ -389,7 +547,7 @@ static	WORD	DllJsonWrite(WORD handle, WORD item, BPTR dptr, WORD dlen)
 static  void    json_liberate()
 {
 	int	i;
-	for ( i = 0; i < 16; i++ )
+	for ( i = 0; i < MAXJSON; i++ )
 		if ( Heap[i] )
 			DllJsonClose(i+1);
         return;
@@ -423,6 +581,8 @@ VOID FAR PTR InitRelais()
         desrt.fonction[2]  = (EXAWORD (FAR PTR)()) DllJsonRead;
         desrt.fonction[3]  = (EXAWORD (FAR PTR)()) DllJsonWrite;
         desrt.fonction[4]  = (EXAWORD (FAR PTR)()) DllJsonClose;
+        desrt.fonction[5]  = (EXAWORD (FAR PTR)()) DllAvroRead;
+        desrt.fonction[6]  = (EXAWORD (FAR PTR)()) DllAvroWrite;
 	
         return((VOID FAR PTR) &desrt);
 

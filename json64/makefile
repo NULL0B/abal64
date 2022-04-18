@@ -16,7 +16,7 @@ $(SP01)abaljson.c: $(SP01)abaljson.def
 ! make
 
 .c.o:
-! ifdef AGR
+! ifdef AGRZ
 	-$(GCC) -c $(CC_SHARED) $(VERSION666)  -I$(SP02) $(HOST) -Dunix  $* > pipo1 2> pipo2
         cat pipo1 pipo2 > pipo
 	$(AGR) -apipo
