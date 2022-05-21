@@ -779,6 +779,9 @@ public	struct xs_base *	inxsql_allocate_database( struct xs_connection * xptr, c
 	// allocate the database management structure
 	if (!( bptr = allocate(sizeof(struct xs_base)) ))
 		return( bptr );
+	else if (!( bptr->name = inxsql_allocate_string( name ) ))
+		return( inxsql_remove_base( bptr ) );
+
 #ifdef	INXSQL_DEBUG_BASE
 	printf("INXSQLDBG:allocate_database( %llx )\n",(unsigned long long)bptr);
 #endif
