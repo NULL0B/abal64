@@ -1,6 +1,7 @@
+#ifndef _json_def
+#def    _json_def
 version = 1
 runtime = "json"
-
 %openjson($,%)
 %createjson($,%)
 %readjson(%,$,%)
@@ -8,6 +9,5 @@ runtime = "json"
 %closejson(%)
 %readavro(%,%,$,%)
 %writeavro(%,%,$,%)
-
 end
-
+#endif

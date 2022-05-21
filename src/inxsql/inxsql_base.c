@@ -682,7 +682,7 @@ public	 struct xs_connection * inxsql_security_credentials( struct  xs_connectio
 private	struct xs_connection * allocate_connection()
 {
 	struct xs_connection * xptr=(struct xs_connection *) 0;
-	if (!( xptr = allocate_connection( sizeof (struct xs_connection ) )))
+	if (!( xptr = allocate( sizeof (struct xs_connection ) )))
 		return((struct xs_connection *) 0);
 	else
 	{

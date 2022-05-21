@@ -2,14 +2,14 @@
 #include <stdio.h>
 #include <malloc.h>
 
-#define	_LINBDA_DATE	"24/02/2022"
+#define	_LINBDA_DATE	"14/05/2022"
 
 static  char	VersionStatus[16]= { 
 	'V','E','R','S','I','O','N','_','S','T','A','T','U','S',':','2' 
 	};
 
 static	char 	LaPaterne[32] = { 
-	'*','P','R','L','@','I','N','F','O','*','#',6,'2','1','a','0','0','3',0
+	'*','P','R','L','@','I','N','F','O','*','#',6,'2','1','a','0','0','4',0
 	};
 
 static	char *	bannerman=(char *) 0;
@@ -640,7 +640,7 @@ void	generate_footer( FILE * target, char * namestub )
 /*	--------	*/
 /*	get_line	*/
 /*	--------	*/
-int	get_line( FILE * handle )
+int	ll_get_line( FILE * handle )
 {
 	int	lindent=0;
 	int	c;
@@ -701,6 +701,27 @@ int	get_line( FILE * handle )
 			else	return(0);
 		}
 	}
+}
+
+int	get_line( FILE * handle )
+{
+	int	n;
+	while (( n = ll_get_line( handle )) != 0)
+	{
+		linebuffer[n] = 0;
+		if (!( strncasecmp( linebuffer, "#ifdef", strlen("#ifdef") ) ))
+			continue;
+		else if (!( strncasecmp( linebuffer, "#ifndef",strlen("#ifndef") ) ))
+			continue;
+		else if (!( strncasecmp( linebuffer, "#def",strlen("#def") ) ))
+			continue;
+		else if (!( strncasecmp( linebuffer, "#else", strlen("#else") ) ))
+			continue;
+		else if (!( strncasecmp( linebuffer, "#endif",strlen("#endif") ) ))
+			continue;
+		else	break;
+	}	
+	return(n);
 }
 
 /*	------	*/
