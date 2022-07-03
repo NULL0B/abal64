@@ -267,7 +267,7 @@ int	main(int argc, char * argv[])
 	int	argi;
 	int	retcode=0;
 	if ( argc == 1 )
-		printf("\n   ABAL Dynamic/Shared Library Tester : Version 1.0.1\n   Copyright (c) 2021 Amenesik / Sologic \n\n");
+		printf("\n   ABAL Dynamic/Shared Library Tester : Version 1.0.1\n   Copyright (c) 2022 Amenesik / Sologic \n\n");
 	else	{
 		for ( argi=1; argi < argc; argi++ )  {
 			if ((retcode = InitRunTime(1,argv[argi],0,(void *) 0, 0)) != GOODRESULT) {

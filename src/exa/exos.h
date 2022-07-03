@@ -7,7 +7,7 @@
 /*									*/
 /*		Module  :	EXOS  - H				*/
 /*		Version :	1.4c / 2.1e / 3.1c 			*/
-/*		Date 	:	14/0/9/2005				*/
+/*		Date 	:	14/0/9/2022				*/
 /*									*/
 /*----------------------------------------------------------------------*/
 /*	11/01/2007							*/
@@ -77,7 +77,7 @@
 /*	(NIXDORF) (ICL) (GOUPIL)					*/
 /*	-----------------------------------------------------		*/
 
-#define MODULE_COPYRIGHT    "\r\n   Copyright (c) 2021 Amenesik / Sologic"
+#define MODULE_COPYRIGHT    "\r\n   Copyright (c) 2022 Amenesik / Sologic"
 #ifdef 	ABAL64
 	#define	ABAL_Version	'5'		/* Version Major		*/
 	#define	ABAL_Index	'1'		/* Version Minor		*/

@@ -131,7 +131,7 @@ char	*argv[];
 	if ( argc < 2 ) 
 	{
 		fprintf(stderr, "\n   File access manager Version 5.1.0 ");
-		fprintf(stderr, "\n   Copyright (c) 2021 Amenesik / Sologic \n");
+		fprintf(stderr, "\n   Copyright (c) 2022 Amenesik / Sologic \n");
 		exit(0);
 	}
 

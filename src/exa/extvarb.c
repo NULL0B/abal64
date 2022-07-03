@@ -3,11 +3,11 @@
 /*		E X E C U T E U R 	A . B . A . L			*/
 /*		-------------------------------------			*/
 /*									*/
-/*		Copyright (c) 2021 Amenesik / Sologic			*/
+/*		Copyright (c) 2022 Amenesik / Sologic			*/
 /*									*/
 /*		Module  :	EXTVARB - C				*/
 /*		Version :	5.1a       				*/
-/*		Date 	:	03/05/2021				*/
+/*		Date 	:	03/05/2022				*/
 /*									*/
 /*----------------------------------------------------------------------*/
 /* Remarque : Ce fichier contient les traitement des LONGS		*/

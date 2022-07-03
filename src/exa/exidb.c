@@ -150,7 +150,7 @@ x_newlyne();
 /*	-----------------------		*/
 
 x_newlyne();
-db_xcprintf((EXBPTR)"   Copyright (c) 2021 Amenesik / Sologic ");
+db_xcprintf((EXBPTR)"   Copyright (c) 2022 Amenesik / Sologic ");
 
 /*	Options de l'Executeur		*/
 /*	----------------------		*/

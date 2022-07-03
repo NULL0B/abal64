@@ -2,12 +2,12 @@
 /*									*/
 /*		Project ABAL : Macro pre-processer			*/
 /*									*/
-/*		 Copyright (c) 2021 Amenesik / Sologic.			*/
+/*		 Copyright (c) 2022 Amenesik / Sologic.			*/
 /*									*/
 /*									*/
 /*		File	:	TRMAIN.C  				*/
 /*		Version :	5.1  					*/
-/*		Date	:	01/05/2021				*/
+/*		Date	:	27/06/2022				*/
 /*									*/
 /* --------------------------------------------------------------------	*/
 
@@ -65,7 +65,7 @@ VOID	verbalise_options();
 #define MODULE_ENVIRONMENT "unspecified"
 #endif
 
-#define	MODULE_COPYRIGHT    "\n   Copyright (c) 2021 Amenesik / Sologic"
+#define	MODULE_COPYRIGHT    "\n   Copyright (c) 2022 Amenesik / Sologic"
 
 static	char *	LaPointeur=(char*)0;
 static	char 	LaVersion[16];

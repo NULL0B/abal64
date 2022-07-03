@@ -3,7 +3,7 @@
 /*		E X E C U T E U R 	A . B . A . L			*/
 /*		-------------------------------------			*/
 /*									*/
-/*		Copyright (c) 1987,1993 Amenesik / Sologic S.A.			*/
+/*		Copyright (c) 1987,1993 Amenesik / Sologic S.A.		*/
 /*									*/
 /*		Module  :	EXMIMO.H  				*/
 /*		Date 	:	28/05/1993				*/

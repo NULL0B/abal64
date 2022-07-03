@@ -140,11 +140,17 @@
 				*((BPTR) (Tx + 1)) = (EXABYTE) ( Vx & 0x00FF );\
 				*((BPTR)  Tx)      = (EXABYTE) (( Vx & 0xFF00) >> 8);\
 				}
-
+#ifdef	ABAL64
+#define	balgetl( Tx )		((BINAIRE)((signed int)((((EXAWORD) *((BPTR)Tx) )    << 24) |\
+			         (((EXAWORD) *((BPTR)(Tx+1))) << 16) |\
+                                 (((EXAWORD) *((BPTR)(Tx+2))) <<  8) |\
+                                 (((EXAWORD) *((BPTR)(Tx+3)))) )))
+#else
 #define	balgetl( Tx )		((((EXAWORD) *((BPTR)Tx) )    << 24) |\
 			         (((EXAWORD) *((BPTR)(Tx+1))) << 16) |\
                                  (((EXAWORD) *((BPTR)(Tx+2))) <<  8) |\
                                  (((EXAWORD) *((BPTR)(Tx+3)))) ) 
+#endif
 
 #define	balputl( Vx , Tx )	{\
 				*((BPTR) (Tx + 3)) = (EXABYTE) ( Vx        & 0x00FF );\
@@ -209,8 +215,12 @@
 				*((BPTR) (Tx + 1)) = (EXABYTE) ( Vx & 0x00FF );\
 				*((BPTR)  Tx)      = (EXABYTE) (( Vx & 0xFF00) >> 8);\
 				}
+#ifdef	ABAL64
+#define	balgetl( Tx )		((BINAIRE)((signed int)((((EXAWORD) *((BPTR)Tx) )    << 24) | (((EXAWORD) *((BPTR)(Tx+1))) << 16) | (((EXAWORD) *((BPTR)(Tx+2))) <<  8) | (((EXAWORD) *((BPTR)(Tx+3)))) )))
 
+#else
 #define	balgetl( Tx )		((((EXAWORD) *((BPTR)Tx) )    << 24) | (((EXAWORD) *((BPTR)(Tx+1))) << 16) | (((EXAWORD) *((BPTR)(Tx+2))) <<  8) | (((EXAWORD) *((BPTR)(Tx+3)))) ) 
+#endif
 
 #define	balputl( Vx , Tx )	{\
 				*((BPTR) (Tx + 3)) = (EXABYTE) ( Vx        & 0x00FF );\
@@ -275,7 +285,11 @@
 				*((BPTR) (Tx + 1)) = (EXABYTE) ( Vx & 0x00FF );\
 				*((BPTR)  Tx)      = (EXABYTE) (( Vx & 0xFF00) >> 8);\
 				}
+#ifdef	ABAL64
+#define	balgetl( Tx )		((BINAIRE)((signed int)((((EXAWORD) *((BPTR)Tx) )    << 24) | (((EXAWORD) *((BPTR)(Tx+1))) << 16) | (((EXAWORD) *((BPTR)(Tx+2))) <<  8) | (((EXAWORD) *((BPTR)(Tx+3)))) )))
+#else
 #define	balgetl( Tx )		((((EXAWORD) *((BPTR)Tx) )    << 24) | (((EXAWORD) *((BPTR)(Tx+1))) << 16) | (((EXAWORD) *((BPTR)(Tx+2))) <<  8) | (((EXAWORD) *((BPTR)(Tx+3)))) ) 
+#endif
 
 #define	balputl( Vx , Tx )	{\
 				*((BPTR) (Tx + 3)) = (EXABYTE) ( Vx        & 0x00FF );\
@@ -287,7 +301,11 @@
 #else
 #define balgetw( Tx )		*((WPTR16) Tx)
 #define balputw( Vx , Tx  ) 	*((WPTR16) Tx) = Vx
+#ifdef	ABAL64
+#define balgetl( Tx )		((BINAIRE)((signed int)*((WPTR) Tx)))
+#else
 #define balgetl( Tx )		*((WPTR) Tx)
+#endif
 #define balputl( Vx , Tx  ) 	*((WPTR) Tx) = Vx
 #endif
 #endif			/* IDIRECT / DIRECT selection		*/

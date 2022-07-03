@@ -90,9 +90,9 @@ EXTERN	VOID	restore_mimo_context();
 
 #define	MIMO_LEFT 		0x0001
 #define	MIMO_RIGHT		0x0002
-#define  MIMO_MIDDLE				0x0004
-#define  MIMO_WHEELUP			0x0008
-#define  MIMO_WHEELDOWN			0x0010
+#define MIMO_MIDDLE		0x0004
+#define MIMO_WHEELUP		0x0008
+#define MIMO_WHEELDOWN		0x0010
 
 
 #endif 	/* _EXMIMO_H */

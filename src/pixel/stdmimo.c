@@ -5,8 +5,8 @@
 
 extern	int GigoXtrace;
 
-static	struct	mimo_event	{
-
+static	struct	mimo_event	
+{
 	int	active;
 	int	buttons;
 
@@ -28,9 +28,14 @@ static	struct	mimo_event	{
 	Time	clicktime;
 
 	Time	doubletime;
-	} MimoEvent = { 0,0,	0,0,	0,0,	0,0,	0,
-			0,0,	0,	100,	250 };
+} 	MimoEvent = 
+{ 	0,0,	0,0,	0,0,	0,0,	0,
+	0,0,	0,	100,	250 
+};
 
+/*	 ---------------	*/
+/*	 mimo_save_event	*/
+/*	 ---------------	*/
 int	mimo_save_event( int	mode, int x, int y, int b, Time t)
 {
 	MimoEvent.buttons = 0;
@@ -56,6 +61,9 @@ int	mimo_save_event( int	mode, int x, int y, int b, Time t)
 	return(-1);
 }
 
+/*	------------------	*/
+/*	mimo_restore_event	*/
+/*	------------------	*/
 int	mimo_restore_event( int	mode, int x, int y, int b, Time t)
 {
 	MimoEvent.buttons = 0;
@@ -81,21 +89,28 @@ int	mimo_restore_event( int	mode, int x, int y, int b, Time t)
 	return(-1);
 }
 
+/*	--------------	*/
+/*	mimo_key_event	*/
+/*	--------------	*/
 int	mimo_key_event( int keycode )
 {
 	if (!((	MimoEvent.parameter = keycode ) & _MIMO_ALT))
 		MimoEvent.type =  _MIMO_KEYBOARD;
 	else if (!( MimoEvent.mask & _MIMO_ALT ))
 		MimoEvent.type =  _MIMO_KEYBOARD;
-	else	{
+	else	
+	{
 		keycode = 256;
 		MimoEvent.type =  (MimoEvent.mask & (_MIMO_DOWN | _MIMO_UP | _MIMO_ALT));
-		}
+	}
 	MimoEvent.textcol = MimoEvent.textlin = 0;
 	MimoEvent.grafrow = MimoEvent.grafcol = 0;
 	return( keycode );
 }
 
+/*	-----------------	*/
+/*	mimo_signal_event	*/
+/*	-----------------	*/
 int	mimo_signal_event( int sigid )
 {
 	MimoEvent.type = _MIMO_SIGNAL;
@@ -107,6 +122,9 @@ int	mimo_signal_event( int sigid )
 	else	return(256);
 }
 
+/*	-----------------	*/
+/*	 mimo_task_event	*/
+/*	-----------------	*/
 int	mimo_task_event( int sigid )
 {
 	MimoEvent.type = _MIMO_INTERRUPT;
@@ -118,20 +136,24 @@ int	mimo_task_event( int sigid )
 	else	return(256);
 }
 
+/*	----------------	*/
+/*	 mimo_use_event 	*/
+/*	----------------	*/
 int	mimo_use_event( int	mode, int x, int y, int b, Time t)
 {
-	if ( GigoXtrace & 16 ) {
+	if ( GigoXtrace & 16 ) 
+	{
 		printf("buttonmap L=%u, R=%u, M=%u\r\n",XGC.leftbutton,XGC.rightbutton,XGC.middlebutton);
 		printf("mimo_use_event(%x,x=%u,y=%u,b=%x)\r\n",mode,x,y,b);
 		printf("mimo state    (%x,x=%u,y=%u,b=%x)\r\n",
 			MimoEvent.type,MimoEvent.grafcol,MimoEvent.grafrow,
 			MimoEvent.buttons );
-		}
+	}
 
 	/* if not simple motion set the button value */
 	/* ----------------------------------------- */
-	if ( b != _MIMO_MOVE ) {
-
+	if ( b != _MIMO_MOVE ) 
+	{
 		if ( b == XGC.leftbutton )
 			b = _MIMO_LEFT;
 		else if ( b == XGC.rightbutton )
@@ -143,24 +165,27 @@ int	mimo_use_event( int	mode, int x, int y, int b, Time t)
 		else if ( b == XGC.downwheel )
 			b = _MIMO_WHEELDOWN;
 		else	b = 0;
-	
-		}
+	}
 
 	if (!( MimoEvent.active ))
 		return(-1);
 
-	else if ( mode == _MIMO_MOVE ) {
-		if ( MimoEvent.buttons ) {
+	else if ( mode == _MIMO_MOVE ) 
+	{
+		if ( MimoEvent.buttons ) 
+		{
 			mode = _MIMO_WHILE_DOWN;
 			b    = MimoEvent.buttons;
-			}
-		else	b = 0;
 		}
+		else	b = 0;
+	}
 	else if ( mode == _MIMO_DOWN ) 
 		MimoEvent.buttons |= b;
-	else if ( mode == _MIMO_UP ) {
+
+	else if ( mode == _MIMO_UP ) 
+	{
 		MimoEvent.buttons &= (b ^ 0xFFFF);
-		}
+	}
 
 	/* save these now */
 	/* -------------- */
@@ -170,7 +195,8 @@ int	mimo_use_event( int	mode, int x, int y, int b, Time t)
 
 	/* Calculate Text Coordinates */
 	/* -------------------------- */
-	if ( Gigo.fontwidth ) {
+	if ( Gigo.fontwidth ) 
+	{
 		if ( x < Gigo.leftmargin )
 			MimoEvent.textcol = 0;
 		else if (x > (Gigo.leftmargin+Gigo.width) )
@@ -180,10 +206,11 @@ int	mimo_use_event( int	mode, int x, int y, int b, Time t)
 		 	MimoEvent.textcol = (Gigo.columns - ((x-Gigo.leftmargin) / Gigo.fontwidth));
 #endif
 		else 	MimoEvent.textcol = (((x-Gigo.leftmargin) / Gigo.fontwidth)+1);
-		}
+	}
 	else	MimoEvent.textcol = 1;
 
-	if ( Gigo.fontheight ) {
+	if ( Gigo.fontheight ) 
+	{
 		if ( y < Gigo.topmargin )
 			MimoEvent.textlin = 0;
 		else if (y > (Gigo.topmargin+Gigo.height) )
@@ -193,33 +220,38 @@ int	mimo_use_event( int	mode, int x, int y, int b, Time t)
 			MimoEvent.textlin = (Gigo.lines - ((y-Gigo.topmargin) / Gigo.fontheight));
 #endif
 		else	MimoEvent.textlin = (((y-Gigo.topmargin) / Gigo.fontheight)+1);
-		}
+	}
 	else	MimoEvent.textlin = 1;
 
 
 	/* test for click/double click or just up */
 	/* -------------------------------------- */
-	if ( mode == _MIMO_UP ) {
-/*		printf("up-down   : %lu < %lu ?\r\n",t-MimoEvent.down,MimoEvent.clicktime);	*/
-/*		printf("up-lastup : %lu < %lu ?\r\n",t-MimoEvent.up,MimoEvent.doubletime);	*/
-		if (!( MimoEvent.mask & _MIMO_UP )) {
-			if (( t - MimoEvent.down) < MimoEvent.clicktime ) {
-				if (!( MimoEvent.mask & _MIMO_DOUBLE )) {
+	if ( mode == _MIMO_UP ) 
+	{
+		if (!( MimoEvent.mask & _MIMO_UP )) 
+		{
+			if (( t - MimoEvent.down) < MimoEvent.clicktime ) 
+			{
+				if (!( MimoEvent.mask & _MIMO_DOUBLE )) 
+				{
 					mode = _MIMO_CLICK;
-					}
-				else  if (( t - MimoEvent.up) < MimoEvent.doubletime ) {
+				}
+				else  if (( t - MimoEvent.up) < MimoEvent.doubletime ) 
+				{
 					mode = _MIMO_DOUBLE;
-					}
-				else	{
+				}
+				else	
+				{
 					mode = _MIMO_CLICK;
-					}
 				}
 			}
+		}
 		MimoEvent.up = t;
-		}
-	else if ( mode == _MIMO_DOWN ) {
+	}
+	else if ( mode == _MIMO_DOWN ) 
+	{
 		MimoEvent.down = t;
-		}
+	}
 
 	/* save these now */
 	/* -------------- */
@@ -228,11 +260,12 @@ int	mimo_use_event( int	mode, int x, int y, int b, Time t)
 
 	/* Determine nature of event */
 	/* ------------------------- */
-	if ( GigoXtrace & 16 ) {
+	if ( GigoXtrace & 16 ) 
+	{
 		printf("ME(t=%x,m=%x,b=%u,l=%u,c=%u)\r\n",MimoEvent.type,MimoEvent.mask,
 			b,
 			MimoEvent.textlin,MimoEvent.textcol);
-		}
+	}
 	if ((   b == _MIMO_LEFT )
 	&&  (!( MimoEvent.mask & _MIMO_SEND_LEFT )))
 		return( -1 );
@@ -255,9 +288,17 @@ int	mimo_use_event( int	mode, int x, int y, int b, Time t)
 	else	return( -1 );
 }
 
+/*	------------	*/
+/*	use_new_mimo	*/
+/*	------------	*/
+void	use_new_mimo()
+{	
+	return;
+}
 
-void	use_new_mimo()		{	return;   		}
-
+/*	---------	*/
+/*	init_mimo	*/
+/*	---------	*/
 void	init_mimo()		
 {	
 	MimoEvent.active    =
@@ -272,15 +313,18 @@ void	init_mimo()
 	return;			
 }
 
+/*	--------------	*/
+/*	mimo_set_event	*/
+/*	--------------	*/
 void	mimo_set_event( int t, int b, int c, int l )
 {
-	/* printf("mimo_set_event( %u, %u, %u, %u ) \r\n",t,b,c,l); */
 	MimoEvent.type     = t;
 	if ( t == _MIMO_DOWN ) 
 		MimoEvent.buttons |= b;
-	else if (t == _MIMO_UP ) {
+	else if (t == _MIMO_UP ) 
+	{
 		MimoEvent.buttons &= (b ^ 0xFFFF);
-		}
+	}
 	MimoEvent.parameter = b;
 	MimoEvent.grafrow  = l;
 	MimoEvent.grafcol  = c;
@@ -289,20 +333,29 @@ void	mimo_set_event( int t, int b, int c, int l )
 	return;
 }
 
+/*	-------------	*/
+/*	activate_mimo	*/
+/*	-------------	*/
 int	activate_mimo()		
 {	
-	if (!( MimoEvent.active )) { 
+	if (!( MimoEvent.active ))
+	{
+	 
 		MimoEvent.active = 1;
 		set_enhanced_events();
-		}
+	}
 	return(0);
 }
 
+/*	-------------	*/
+/*	set_mimo_mask	*/
+/*	-------------	*/
 void	set_mimo_mask(int v)	
 {
-	if ( GigoXtrace & 16 ) {
+	if ( GigoXtrace & 16 ) 
+	{
 		printf("set_mimo_mask(%x)\r\n",v);	
-		}
+	}
 
 	if (!((MimoEvent.mask = v) & (_MIMO_BUTTONS)))
 		MimoEvent.mask |= _MIMO_SEND_LEFT;
@@ -310,9 +363,9 @@ void	set_mimo_mask(int v)
 	return;	
 }
 
-
-
-
+/*	------------	*/
+/*	inhibit_mimo	*/
+/*	------------	*/
 int	inhibit_mimo()		
 {	
 	MimoEvent.active = 0;
@@ -320,7 +373,14 @@ int	inhibit_mimo()
 	return(0);
 }
 
-void	fin_mimo()		{	init_mimo(); 		return;				}
+/*	--------	*/
+/*	fin_mimo	*/
+/*	--------	*/
+void	fin_mimo()
+{	
+	init_mimo(); 
+	return;
+}
 int	mimo_getch()		{	return(x_getch());					}
 int	mimo_kbhit()		{	return(x_kbhit());					}
 int	mimo_detect()		{	return( (x_detect() == 256 ? Gigo.thisevent : 0 ) );	}
@@ -334,6 +394,9 @@ int 	get_mimo_mask()		{	return( MimoEvent.mask );				}
 int	get_mimo_status()	{ 	return((MimoEvent.active?MimoEvent.mask:0)); 		}
 int	get_mimo_buttons()	{ 	return((MimoEvent.active?MimoEvent.buttons:0)); 	}
 
+/*	----------	*/
+/*	flush_mimo	*/
+/*	----------	*/
 int 	flush_mimo()		
 {
 	while ( mimo_kbhit() )
@@ -352,7 +415,9 @@ int	clear_wakeup_status()	{	return(0);			}
 
 #define	mimogetw(b,v) v = ((*((unsigned char*)b) << 8) | *((unsigned char*)(b+1)))
 
-
+/*	-----------------	*/
+/*	save_mimo_context	*/
+/*	-----------------	*/
 void	save_mimo_context( buffer )
 char *	buffer;
 {
@@ -368,6 +433,9 @@ char *	buffer;
 	return;
 }
 
+/*	--------------------	*/
+/*	restore_mimo_context	*/
+/*	--------------------	*/
 void	restore_mimo_context( buffer )	
 char *	buffer;
 { 
@@ -389,7 +457,6 @@ int	cancel_mimo_alarm() 	{	return(0); 			}
 int	simulate_mimo() 	{	return(0); 			}
 char *	Mgetenv(char * nptr) 	{	return( getenv(nptr) );		}
 int	set_mimo_curser() 	{ 	return(0); 			}
-
 
 #endif	/* _stdmimo_c */
 

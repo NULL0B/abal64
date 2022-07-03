@@ -7,7 +7,7 @@
 /*                                                                      */
 /*      Module  :	ANAQUEST - H                                    */
 /*      Version :	5.1a                                            */ 
-/*      Date 	:	19/10/2021                                      */
+/*      Date 	:	19/10/2022                                      */
 /*                                                                      */
 /*       Analyse syntaxique du nouveau posit  - header                  */
 /*----------------------------------------------------------------------*/

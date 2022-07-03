@@ -550,7 +550,7 @@ BPTR	tptr;
 /*	The ABAL64 version requires very	*/
 /*	careful handling of each case.		*/
 /*	---------------------------------	*/
-/*		IJM 04/05/2021			*/
+/*		IJM 04/05/2022			*/
 /*	---------------------------------	*/
 
 EXAWORD	establish_alias( tptr, adesc )
