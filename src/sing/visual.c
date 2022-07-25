@@ -2427,6 +2427,7 @@ private	void  	connect_access_controller( BDA_INIT * iptr, void * eptr, struct c
 }
 
 #include "voverload.c"
+#define	x_putch(i) (CicoAccessController.FunctionRelay[CICO_CO])(i)
 #ifdef	_voverload_c
 #include "vsvg.c"
 #endif
@@ -2465,9 +2466,6 @@ public	int	xgr_lcfo(int i, char * c, int l )
 	return( (CicoAccessController.FunctionRelay[CICO_LCFO])(i,c,l) );
 }
 
-
-
-#define	x_putch(i) (CicoAccessController.FunctionRelay[CICO_CO])(i)
 #ifndef	x_putch
 public	int	x_putch(int i)
 {

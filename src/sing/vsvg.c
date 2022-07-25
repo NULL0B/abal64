@@ -1,23 +1,66 @@
 #ifndef	_vsvg_c
 #define	_vsvg_c
 
+/*      ------------------------------------------------        */
+/*                                                              */
+/*      VSVG C : Visual Library SVG Output Driver Module        */
+/*                                                              */
+/*      ------------------------------------------------        */
+/*                                                              */
+/*           Copyright (c) 2014-2022 Amenesik SARL              */
+/*                                                              */
+/*          Iain James Marshall  <ijm@amenesik.com>             */
+/*                                                              */
+/*      ------------------------------------------------        */
+
 #include "exmpegs.h"
 
-char	SvgWorkBuffer[8192];
+#ifndef	public
+#define	public
+#endif
+#ifndef	private
+#define	private static
+#endif
 
-FILE * 	SvgHandle=(FILE*)0;
-int	SvgSocket=-1;
+private	char	SvgWorkBuffer[8192];
+private	char	iri_buffer[2048];
+private	FILE * 	SvgHandle=(FILE*)0;
+private	int	SvgSocket=-1;
+private	int	SvgLts=0;
+private	int	svgfg=0;
+private	int	svgbg=0;
+private	int	svg_pattern_counter=0;
 
-int	svg_flush()
+/*	-----------	*/
+/*	svg_cprintf	*/
+/*	-----------	*/
+private	void	svg_cprintf( char * sptr )
 {
+	while ( *sptr ) x_putch( *(sptr++) );
+	return;
+}
+
+/*	---------	*/
+/*	svg_flush	*/
+/*	---------	*/
+private	int	svg_flush()
+{
+	if ( SvgLts )
+		svg_cprintf( SvgWorkBuffer );
+
 	if ( SvgSocket != -1 )
 		puts_mpeg_client( SvgSocket, SvgWorkBuffer );
+
 	if ( SvgHandle )
 		fprintf(SvgHandle,"%s",SvgWorkBuffer);
+
 	return(0);
 }
 
-void	svg_colour( char * bptr, int x )
+/*	----------	*/
+/*	svg_colour	*/
+/*	----------	*/
+public	void	svg_colour( char * bptr, int x )
 {
 	int	r=0;
 	int	g=0;
@@ -25,8 +68,11 @@ void	svg_colour( char * bptr, int x )
 	get_rgb_values(x & 0x00FF,&r,&g,&b);	
 	sprintf(bptr,"rgb(%u,%u,%u)",r,g,b);
 	return;
-
 }
+
+/*	--------------	*/
+/*	svg_fill_item	*/
+/*	--------------	*/
 public	int	svg_fill_item( int x, int y, int w , int h, int colour )
 {
 	char	buffer[256];
@@ -40,6 +86,9 @@ public	int	svg_fill_item( int x, int y, int w , int h, int colour )
 	return(svg_flush());
 }
 
+/*	--------------	*/
+/*	svg_xfill_item	*/
+/*	--------------	*/
 public	int	svg_xfill_item( int x, int y, int w , int h, int colour )
 {
 	char	buffer[256];
@@ -53,6 +102,9 @@ public	int	svg_xfill_item( int x, int y, int w , int h, int colour )
 	return(svg_flush());
 }
 
+/*	---------------	*/
+/*	svg_circle_item	*/
+/*	---------------	*/
 public	int	svg_circle_item( int x, int y, int w , int h, int colour, int length )
 {
 	char	buffer[256];
@@ -66,6 +118,9 @@ public	int	svg_circle_item( int x, int y, int w , int h, int colour, int length 
 	return(svg_flush());
 }
 
+/*	------------------	*/
+/*	svg_roundfill_item	*/
+/*	------------------	*/
 public	int	svg_roundfill_item( int x, int y, int w , int h, int colour )
 {
 	char	buffer[256];
@@ -79,6 +134,9 @@ public	int	svg_roundfill_item( int x, int y, int w , int h, int colour )
 	return(svg_flush());
 }
 
+/*	-------------------	*/
+/*	svg_roundframe_item	*/
+/*	-------------------	*/
 public	int	svg_roundframe_item( int x, int y, int w , int h, int colour)
 {
 	char	buffer[256];
@@ -92,13 +150,17 @@ public	int	svg_roundframe_item( int x, int y, int w , int h, int colour)
 	return(svg_flush());
 }
 
+/*	-------------	*/
+/*	svg_line_item	*/
+/*	-------------	*/
 public	int	svg_line_item( int x, int y, int w , int h, int colour )
 {
 	return(svg_flush());
 }
 
-private	char	iri_buffer[2048];
-
+/*	---------	*/
+/*	 svg_iri	*/
+/*	---------	*/
 private	char *	svg_iri( char * sptr )
 {
 	int	i;
@@ -118,8 +180,9 @@ private	char *	svg_iri( char * sptr )
 	return( iri_buffer );
 }
 
-int	svg_pattern_counter=0;
-
+/*	--------------	*/
+/*	svg_image_item	*/
+/*	--------------	*/
 public	int	svg_image_item( int x, int y, int w , int h, void * vptr, int options)
 {
 	char	work[64];
@@ -214,9 +277,9 @@ public	int	svg_image_item( int x, int y, int w , int h, void * vptr, int options
 	}
 }
 
-static	int	svgfg=0;
-static	int	svgbg=0;
-
+/*	----------------	*/
+/*	svg_print_colour	*/
+/*	----------------	*/
 public	int	svg_print_colour( int foregr, int backgr )
 {
 	svgfg = foregr; //& 0x00FF;
@@ -224,6 +287,9 @@ public	int	svg_print_colour( int foregr, int backgr )
 	return(0);
 }
 
+/*	-------------	*/
+/*	svg_text_item	*/
+/*	-------------	*/
 public	int	svg_text_item(  int x, int y, int font, char * buffer, int length, int w, int h, int value )
 {
 	char	work[256];
@@ -241,18 +307,23 @@ public	int	svg_text_item(  int x, int y, int font, char * buffer, int length, in
 	return(svg_flush());
 }
 
+/*	--------------	*/
+/*	initialise_svg	*/
+/*	--------------	*/
 public	void	initialise_svg(char * SvgName)
 {
 	struct mpeg_url uptr;
 	int	w;
 	int	h;
-	if ((!( SvgHandle )) && ( SvgSocket == -1 ))
+	if ((!( SvgHandle )) && ( SvgSocket == -1 ) && (!( SvgLts )))
 	{
 		if ( analyse_mpeg_url( &uptr, SvgName ) != 0 )
 			return;
 		else if (!( uptr.port ))
 		{
-			if (!( SvgHandle = fopen( SvgName, "w" ) ))
+			if (!( strcmp( SvgName, "LTS" ) ))
+				SvgLts = 1;
+			else if (!( SvgHandle = fopen( SvgName, "w" ) ))
 				return;
 		}
 		else if (( SvgSocket = open_mpeg_client( SvgName )) == -1)
@@ -285,41 +356,49 @@ public	void	initialise_svg(char * SvgName)
 			0x0022,"tiny",0x0022);
 		(void)svg_flush();
 #else
-		sprintf(SvgWorkBuffer,"<svg xmlns=%c%s%c\n\txmlns:xlink=%c%s%c\n\twidth=%c%upx%c height=%c%upx%c\n\tversion=%c%s%c>\n",
-			0x0022,"http://www.w3.org/2000/svg",0x0022,
-			0x0022,"http://www.w3.org/1999/xlink",0x0022,
-			0x0022,w,0x0022,
-			0x0022,h,0x0022,
-			0x0022,"1.1",0x0022);
-		(void)svg_flush();
-
+		if (!( SvgLts ))
+		{
+			sprintf(SvgWorkBuffer,"<svg xmlns=%c%s%c\n\txmlns:xlink=%c%s%c\n\twidth=%c%upx%c height=%c%upx%c\n\tversion=%c%s%c>\n",
+				0x0022,"http://www.w3.org/2000/svg",0x0022,
+				0x0022,"http://www.w3.org/1999/xlink",0x0022,
+					0x0022,w,0x0022,
+				0x0022,h,0x0022,
+				0x0022,"1.1",0x0022);
+			(void)svg_flush();
+		}
 #endif
 	}
 	return;
 }
 
+/*	-------------	*/
+/*	terminate_svg	*/
+/*	-------------	*/
 public	void	terminate_svg(char * SvgName)
 {
-	if ( SvgHandle )
+	if (( SvgHandle ) || ( SvgLts ) || ( SvgSocket != -1 ))
 	{
-		sprintf(SvgWorkBuffer,"</svg>\n");
-		(void)svg_flush();
-		if ( SvgHandle )
+		if ( SvgLts )
+			SvgLts = 0;
+		else
 		{
-			fclose( SvgHandle );
-			SvgHandle = (FILE *) 0;
-		}
-		if ( SvgSocket != -1 )
-		{
-			SvgSocket = close_mpeg_client( SvgSocket );
-		}
+			sprintf(SvgWorkBuffer,"</svg>\n");
+			(void)svg_flush();
+			if ( SvgHandle )
+			{
+				fclose( SvgHandle );
+				SvgHandle = (FILE *) 0;
+			}
+			if ( SvgSocket != -1 )
+			{
+				SvgSocket = close_mpeg_client( SvgSocket );
+			}
+		}	
 		overload.status = 0;
 		*XgraphPtr = XgraphRelay;
 	}
 	return;
 }
-
-
 
 	/* ------- */
 #endif 	/* _vsvg_c */

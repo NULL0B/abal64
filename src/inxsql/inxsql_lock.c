@@ -156,14 +156,26 @@ interface int inxsql_base_lock( struct xs_base * bptr, int requested)
 	}
 }
 
+/*	-----------------------------------------------------------	*/
+/*	IJM: 7/7/2022							*/
+/*	-----------------------------------------------------------	*/
+/*	this has been added to see if the locking conflict that has 	*/
+/*	been encountered between SEARCH.M and INXSQUERY updates has	*/
+/*	been caused by the hard hitting RECORD locking.			*/
+/*	-----------------------------------------------------------	*/
+private int avoid_lock_bug=1;
+
 /*	---------------------------	*/
 /*	 inxsql_file_unlock_record	*/
 /*	---------------------------	*/
+
 public  int inxsql_file_unlock_record( struct xs_file * fptr)
 {
 	char	lockname[_INXS_LOCK_NAME_SIZE];	
 	int	status=_SUCCESS;
-	if ( fptr->lock & _INXS_RECORD_LOCK )
+	if ( avoid_lock_bug )
+		return( _SUCCESS );
+	else if ( fptr->lock & _INXS_RECORD_LOCK )
 	{
 		sprintf(lockname,"%s.rl",inxsql_table_name(fptr));
 		if ((status = inxsql_release_lock( fptr->connection, lockname )) != _SUCCESS )
@@ -180,7 +192,9 @@ public  int inxsql_file_lock_record( struct xs_file * fptr)
 {
 	char	lockname[_INXS_LOCK_NAME_SIZE];	
 	int	status=_SUCCESS;
-	if (!( fptr->lock & _INXS_RECORD_LOCK ))
+	if ( avoid_lock_bug )
+		return( _SUCCESS );
+	else if (!( fptr->lock & _INXS_RECORD_LOCK ))
 	{
 		sprintf(lockname,"%s.rl",inxsql_table_name(fptr));
 		if ((status = inxsql_acquire_lock( fptr->connection, lockname )) != _SUCCESS )
