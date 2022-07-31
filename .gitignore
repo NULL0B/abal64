@@ -1,8 +1,8 @@
 */*.o
+*/*.run
 q/
 qualification/
 product*/
-kitcico/
 */*/*.o
 */*.a
 */*.so
