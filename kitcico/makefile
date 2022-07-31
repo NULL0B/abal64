@@ -8,6 +8,7 @@
 	@cc -c mkp.c
 	@cc -o $@ $(*B).o mkp.o
 	@./$@
+	chmod +x $(*B)
 	cp $(*B) /home/abal64/cico/lib
 
 xfree324.run: xfree324.c
@@ -31,6 +32,8 @@ useitmv40.run: useitmv40.c
 xcico.run: xcico.c
 xcicodyn.run: xcicodyn.c
 cgi.run: cgi.c
+cgi-plain.run: cgi-plain.c
+cgi-html.run: cgi-html.c
 html.run: html.c
 xmimo.run: xmimo.c
 
