@@ -1364,6 +1364,7 @@ EXAWORD	ngf_infos()
 #endif
 				  break;
 
+		case NGF_MC	:
 		case NGF_SI	: fidinfo1  = si_lgdata( fidreel );
 				  fidinfo2  = si_lgcle ( fidreel );
 				  xfiletype = si_type  ( fidreel ); 
