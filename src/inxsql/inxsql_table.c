@@ -50,6 +50,9 @@ public	int	inxsql_create_pgsql_table( struct xs_file * fptr, int keytype )
 		sprintf(query,"CREATE TABLE %s ( %s BYTEA PRIMARY KEY )",inxsql_table_name(fptr),fptr->primary.name);
 		break;
 	case _INXS_LKEY	:
+		fptr->primary.type = _INXS_STRING;
+		sprintf(query,"CREATE TABLE %s ( %s CHAR(%u) PRIMARY KEY )",inxsql_table_name(fptr),fptr->primary.name,fptr->primary.size);
+		break;
 	case _INXS_RKEY	:
 		fptr->primary.type = _INXS_STRING;
 		sprintf(query,"CREATE TABLE %s ( %s CHAR(%u) PRIMARY KEY )",inxsql_table_name(fptr),fptr->primary.name,fptr->primary.size);
@@ -76,12 +79,15 @@ public	int	inxsql_create_mysql_table( struct xs_file * fptr, int keytype )
 	{
 	case _INXS_BKEY	:
 		fptr->primary.type = _INXS_BIN;
-		sprintf(query,"CREATE TABLE %s ( %s BINARY(%u) PRIMARY KEY )",inxsql_table_name(fptr),fptr->primary.name,fptr->primary.size);
+		sprintf(query,"CREATE TABLE %s ( %s BINARY(%u) PRIMARY KEY COMMENT 'BK' )",inxsql_table_name(fptr),fptr->primary.name,fptr->primary.size);
 		break;
 	case _INXS_LKEY	:
+		fptr->primary.type = _INXS_STRING;
+		sprintf(query,"CREATE TABLE %s ( %s CHAR(%u) PRIMARY KEY COMMENT 'LK' )",inxsql_table_name(fptr),fptr->primary.name,fptr->primary.size);
+		break;
 	case _INXS_RKEY	:
 		fptr->primary.type = _INXS_STRING;
-		sprintf(query,"CREATE TABLE %s ( %s CHAR(%u) PRIMARY KEY )",inxsql_table_name(fptr),fptr->primary.name,fptr->primary.size);
+		sprintf(query,"CREATE TABLE %s ( %s CHAR(%u) PRIMARY KEY COMMENT 'RK' )",inxsql_table_name(fptr),fptr->primary.name,fptr->primary.size);
 		break;
 	default		:
 		return( _ERROR_SYNTAX );
@@ -792,7 +798,7 @@ private int inxsql_load_mysql_columns( struct xs_connection * xptr, char * query
 	struct	xs_field * cptr=(struct xs_field *) 0;
 	int	status=_SUCCESS;
 
-	sprintf(query,"SHOW COLUMNS FROM %s",inxsql_table_name(fptr));
+	sprintf(query,"SHOW FULL COLUMNS FROM %s",inxsql_table_name(fptr));
 
 	if ((status = inxsql_query(fptr->connection, query, strlen(query))) != _SUCCESS)
 	{
@@ -817,11 +823,21 @@ private int inxsql_load_mysql_columns( struct xs_connection * xptr, char * query
 			int length=15;
 			int type=_INXS_STRING;
 			int primary=0;
+			int align=0;
 			/* --------------------------------- */
 			/* detect the primary key definition */
 			/* --------------------------------- */
-			if (!( strcasecmp( inxsql_fetch_field(xptr,row,3), "pri" ) )) 
+			if (!( strcasecmp( inxsql_fetch_field(xptr,row,4), "pri" ) )) 
+			{
 				primary = 1;
+				if (!( strcasecmp( inxsql_fetch_field(xptr,row,8), "bk" ) )) 
+					align = 0;
+				else if (!( strcasecmp( inxsql_fetch_field(xptr,row,8), "lk" ) )) 
+					align = 1;
+				else if (!( strcasecmp( inxsql_fetch_field(xptr,row,8), "rk" ) )) 
+					align = 2;
+				else	align = 0;
+			}
 
 			/* --------------------------------- */
 			/* analyse the field characteristics */
@@ -844,7 +860,7 @@ private int inxsql_load_mysql_columns( struct xs_connection * xptr, char * query
 				switch ((fptr->primary.type  = type))
 				{
 				case	_INXS_STRING	:
-					fptr->align = _INXS_LKEY;
+					fptr->align = ( align == 1 ? _INXS_LKEY : _INXS_RKEY );
 					break;
 				case	_INXS_BIN	:
 					fptr->align = _INXS_BKEY;

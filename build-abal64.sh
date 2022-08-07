@@ -72,7 +72,7 @@ export TIO="abal64/cico/lib/*"
 export CLS="abal64/class/*.*"
 export BDA="abal64/include/bdas/*.*"
 
-tar -czf $TARBALL abal64/abal64-$VERSION.sh $BIN $LIB $ASH $TIO $FMF $RGB $PNG $CSS $CLS $BDA
+tar -czf $TARBALL abal64/abal64-$VERSION.sh $BIN $LIB $ASH $TIO $FMF $RGB $PNG $CSS $CLS $BDA 
 zip $ZIPFILE abal64/abal64-$VERSION.sh $BIN $LIB $ASH $TIO $FMF $RGB $PNG $CSS $CLS $BDA > /dev/null
 
 # ----------------------------------------------- 

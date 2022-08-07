@@ -1,9 +1,10 @@
 #user "abaljson.def"
 
-program "jsonparser"
+program "jsonparser", noclr
 
 #include "json.as"
 
+extern proc CreateFile(handle%,pathname$=1024,rsize%,ksize%,ktype%,mode%) : %
 extern proc RtSi(handle%,filename$=256,cflags%) : %
 
 dcl	doit%
@@ -32,25 +33,6 @@ dcl	keyoffset%
 dcl	linktype%
 dcl	linkname$=50
 dcl	linkparts$=4096
-
-proc	CreateFile()
-	Print=1:("ASSIGN=1,",$,"MC,WR,EX",/1),filename
-	if ( doit <> 0 ) 
-		Assign=44,filename,MC,WR,EX:Next,e,keystorage 
-		Dfile=44:Next,e
-	endif
-	Select ktype
-	Case	0
-		Print=1:("CFILE=1,D=",$,",K=",$,/1),conv$(rsize),conv$(ksize)
-		if ( doit <> 0 ) :: Cfile=44,D=rsize,K=ksize:Next,e :: endif
-	Case	1
-		Print=1:("CFILE=1,D=",$,",LK=",$,/1),conv$(rsize),conv$(ksize)
-		if ( doit <> 0 ) :: Cfile=44,D=rsize,LK=ksize:Next,e :: endif
-	Case	2
-		Print=1:("CFILE=1,D=",$,",RK=",$,/1),conv$(rsize),conv$(ksize)
-		if ( doit <> 0 ) :: Cfile=44,D=rsize,RK=ksize:Next,e :: endif
-	EndSel
-endproc
 
 proc	CreateKeys()
 	Print=1:($,/1),"CKEY=1"
@@ -94,7 +76,7 @@ segment 0
 	wend
 
 	if ( Len$(filename) =0 )
-		print=1:(/1,$),"SV MC Abal 64 : Version 1.0a"
+		print=1:(/1,$),"RT MC Abal 64 : Version 1.0a"
 		print=1:(/1,$,/1),"Copyright (c) 2022 Amenesik / Sologic "
 		stop
 	endif
@@ -121,7 +103,7 @@ segment 0
 			case	JSON_ARRAY
 				Select Large(keyword)
 				Case	"COLUMNS"
-					CreateFile()
+					CreateFile(44,filename,rsize,ksize,ktype,3)
 					gosub &columns
 					CreateKeys()
 				Case	"INDEXES"

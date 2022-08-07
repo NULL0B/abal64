@@ -356,6 +356,36 @@ public  struct xs_file * inxsql_create_file( struct xs_connection * xptr, char *
 	}
 }
 
+/*	----------------------	*/
+/*	inxsql_file_desription	*/
+/*	----------------------	*/
+public	int	inxsql_file_description(struct xs_file * fptr, char * dptr, int dlen )
+{
+	if (!( fptr ))
+		return( _ERROR_CONNECTION );
+	else if (!( dptr ))
+		return( _ERROR_SYNTAX );
+	else if (!( dlen ))
+		inxsql_buffer_too_small(fptr);
+	else if ( dlen < _ABAL_INFO_SIZE )
+		inxsql_buffer_too_small(fptr);
+	else
+	{
+		/* ---------------- */
+		/* reset all fields */
+		/* ---------------- */
+		memset(dptr, 0, dlen);
+
+		dptr[0] = ((fptr->datalength & 0xFF00) >> 8);
+		dptr[1] = (fptr->datalength & 0x00FF);
+		dptr[2] = ((fptr->primary.size & 0xFF00) >> 8);
+		dptr[1] = (fptr->primary.size & 0x00FF);
+		dptr[4] = fptr->align;
+
+		return( _SUCCESS );
+	}
+}
+
 /*	----------------	*/
 /*	inxsql_file_info	*/
 /*	----------------	*/

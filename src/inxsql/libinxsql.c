@@ -489,6 +489,14 @@ public	int	IsamRename(struct xs_file * h, char * newname)
 	else	return( inxsql_rename_table( h, newname ) );
 }
 
+/*	------------	*/
+/*	IsamFileInfo	*/
+/*	------------	*/
+public	int	IsamFileInfo(struct xs_file * h,char * bptr, int blen)
+{ 
+	return(inxsql_file_description(h,bptr,blen));
+}
+
 /*	--------	*/
 /*	IsamInfo	*/
 /*	--------	*/
@@ -724,6 +732,14 @@ public	int	McIsamRename(struct xs_file * h, char * newname)
 public	int	McIsamAtbOpen(struct xs_file * h, int x, int c) 
 { 
 	return( inxsql_file_lock( h, (x ? _INXS_FILE_LOCK : _INXS_UNLOCKED) ) );
+}
+
+/*	--------------	*/
+/*	McIsamFileInfo	*/
+/*	--------------	*/
+public	int	McIsamFileInfo(struct xs_file * h,char * bptr, int blen)
+{ 
+	return(inxsql_file_description(h,bptr,blen));
 }
 
 /*	----------	*/

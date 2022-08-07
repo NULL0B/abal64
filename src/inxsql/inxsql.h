@@ -142,6 +142,7 @@
 #define	_ABAL_KEY_MAX_EXT		50 	/* Maximum ABAL KEY/COLUMN Name Size	*/
 #define	_ABAL_JOIN_NAME_SIZE		15	/* size of the name of ABAL join name	*/
 #define	_ABAL_STATS_SIZE		23	/* size of the ABAL STAT buffer      	*/
+#define	_ABAL_INFO_SIZE			5	/* two words and a byte			*/
 #define	_PENDING_CREATE	-1			/* Signals an Index for creation	*/
 #define	_PENDING_DELETE	-2			/* Signals an Index for deletion	*/
 #define	_INXS_POSIT_VIEW "posit"		/* the suffix used for POSIT views	*/
@@ -641,6 +642,7 @@ public  int inxsql_drop_database( struct xs_connection * xptr, char * nptr );
 
 public  int inxsql_file_info( struct xs_file * fptr, char * dptr, int dlen );
 public  int inxsql_base_info( struct xs_base * rbtr, char * dptr, int dlen );
+public	int inxsql_file_description(struct xs_file * fptr, char * dptr, int dlen );
 
 public  int inxsql_file_lock( struct xs_file * fptr, int lock);
 public  int inxsql_base_lock( struct xs_base * rbtr, int lock);

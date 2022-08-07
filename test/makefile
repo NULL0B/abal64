@@ -1,24 +1,20 @@
-OPT = -sas -m 
 
-.as.at:
-	otr64 $(OPT) $*
-	ao64 -l$(@B).tc $@
+.as.o:
+	otr64 -m $*
 
-rests.at: rests.as 
-restc.at: restc.as 
-edic.at: edic.as 
-qedi.at: qedi.as 
-qocci.at: qocci.as 
-qocciedi.at: qocciedi.as 
+.o.at:
+	old64 -m $?
+
+svsi.o: svsi.as
+rtsi.o: rtsi.as
+svmc.o: svmc.as
+rtmc.o: rtmc.as
+
+! make
+
+svmc.at: svmc.o svsi.o
+rtmc.at: rtmc.o rtsi.o
 
 ! make
 
-qtc.at: qtc.as
-qsi.at: qsi.as
-qsilv.at: qsilv.as
-qmc.at: qmc.as
-qbd.at: qbd.as
-join.at: join.as
 
-
-! make

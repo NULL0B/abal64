@@ -1,7 +1,7 @@
 #user "abaljson.def"
-program "svmc"
+program "svmc",noclr
 #include "json.as"
-extern proc SvSi(handle%,filename$=256,rl%,kl%) : %
+extern proc SvSi(handle%,filename$=256,rl%,kl%,kt%) : %
 dcl	js%,jn%,jv%,ja%,jc%
 dcl	i%
 dcl	e%
@@ -94,6 +94,10 @@ segment 0
 	e = writejson(h,ja," ",0)
 	lkey=1,(F):next,e,buffer
 	while ( e = 0 )
+		select ( keytype )
+		case 0 :: keytype = /41
+		case 4 :: keytype = /4E
+		endsel
 		print=1:(/1,$,X,$,X,HZ2),keyname,conv$(keylen),keytype
 		e = writejson(h,js," ",0)
 		e = writejson(h,jn,"name",len$("name"))
@@ -139,7 +143,7 @@ segment 0
 
 	e = writejson(h,jn,"records",len$("records"))
 	e = writejson(h,js," ",0)
-	SvSi(1,filename,rsize,ksize)
+	SvSi(1,filename,rsize,ksize,ktype)
 	savename = Print(($,$),filename,".u")
 	e = writejson(h,jn,"name",len$("name"))
 	e = writejson(h,jv,savename,len$(savename))

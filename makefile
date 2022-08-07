@@ -47,6 +47,7 @@
 ! shell cd z64;        $(MAKE)
 ! shell cd zgr64;      $(MAKE)
 ! shell cd fac64;      $(MAKE)
+! shell cd svrtsimc;   $(MAKE)
 # shell cd grafabal64; $(MAKE)
 # --------------------------
 # end of production makefile
