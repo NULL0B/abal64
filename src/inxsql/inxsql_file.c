@@ -379,7 +379,7 @@ public	int	inxsql_file_description(struct xs_file * fptr, char * dptr, int dlen 
 		dptr[0] = ((fptr->datalength & 0xFF00) >> 8);
 		dptr[1] = (fptr->datalength & 0x00FF);
 		dptr[2] = ((fptr->primary.size & 0xFF00) >> 8);
-		dptr[1] = (fptr->primary.size & 0x00FF);
+		dptr[3] = (fptr->primary.size & 0x00FF);
 		dptr[4] = fptr->align;
 
 		return( _SUCCESS );

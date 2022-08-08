@@ -1363,7 +1363,10 @@ EXAWORD	ngf_infos()
 				  fidinfo3  = sq_records( fidreel );
 #endif
 				  break;
-
+#ifndef INXSQL
+		/* --------------------------------------------------- */
+		/* when INXSQL is not used then the old method is used */
+		/* --------------------------------------------------- */
 		case NGF_MC	:
 		case NGF_SI	: fidinfo1  = si_lgdata( fidreel );
 				  fidinfo2  = si_lgcle ( fidreel );
@@ -1372,6 +1375,18 @@ EXAWORD	ngf_infos()
 				  fidinfo3  = si_records( fidreel );
 #endif
 				  break;
+#else	/* INXSQL */
+		/* --------------------------------------------------- */
+		/* when INXSQL is declared then SQL COMMENT has infos. */
+		/* --------------------------------------------------- */
+		case NGF_SI	:
+				IsamFileInfo(fidreel, workptr1, worklen1);
+				return(0);
+		case NGF_MC	:
+				McIsamFileInfo(fidreel, workptr1, worklen1);
+				return(0);
+
+#endif
 
 		/* --------------------------------------- */	
 		/* Attention Code manquant pour ABAL_TCPIP */

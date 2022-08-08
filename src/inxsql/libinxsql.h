@@ -25,7 +25,8 @@
 #define	XSFILE void 
 #endif
 
-public	int	IsamBegin(unsigned char * buffer, unsigned int callback) 	;
+public	int	IsamBegin(unsigned char * buffer, unsigned int callback);
+public	int	IsamFileInfo(XSFILE * h,char * bptr, int blen);
 public	int	IsamEnd(void * vptr);
 public	void * 	IsamCreate(char * n, int * i, int * d, int x, int c, int a, int v, int * e);
 public	int	IsamClose(void * h);
@@ -42,6 +43,7 @@ public	int	IsamUpDown(XSFILE * h, int dir, int lock, int * mptr, char * rptr, in
 public	int	IsamWriteZc(XSFILE * h);
 public	int	IsamReadZc(XSFILE * h);
 public	int	IsamCriExt(XSFILE * h);	
+public	int	McIsamFileInfo(XSFILE * h,char * bptr, int blen);
 public	void *  McIsamCreate(char * n, int * i, int * d, int x, int c, int a, int v, int * e);
 public	int	McIsamClose(void * h); 	
 public	void *	McIsamOpen(char * n, int x, int c, int w, int * i, int * d, int * e);
