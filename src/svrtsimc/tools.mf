@@ -1,0 +1,9 @@
+! shell $(MAKE)
+! make
+
+! shell cp *.at /home/abal64/bin
+! shell tar -czvf /home/abal64/bin/svrtsimc.tgz *.as *.def  makefile
+! shell zip /home/abal64/bin/svrtsimc.zip *.as *.def makefile
+
+
+
